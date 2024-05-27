@@ -127,3 +127,7 @@ b = eval(parts[1])
 result = eval(parts[0]) < b
 
 print(f"{a} < {b} → {result}")
+
+ch = 'Prix: 10 €'
+print ((lambda s: 'Prix' in s)(ch))
+print(ch)
