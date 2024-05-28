@@ -16,5 +16,7 @@ https://python-guide-fr.readthedocs.io/fr/latest/
 https://pypi.org/
 
 pip install nom_package
+
 pip uninstall nom_package
+
 pip freeze (Liste des packages installés)

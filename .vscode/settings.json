@@ -1,3 +1,4 @@
 {
-  "python.analysis.extraPaths": ["./gc7/tools"]
+  "python.analysis.extraPaths": ["./gc7/tools"],
+  "cSpell.ignoreWords": ["travaillees"]
 }
