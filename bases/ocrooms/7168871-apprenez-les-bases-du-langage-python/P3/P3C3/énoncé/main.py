@@ -1,5 +1,6 @@
 import csv
 
+
 def extract():
     data = []
     with open("input.csv", mode="r") as file:
@@ -10,20 +11,22 @@ def extract():
 
     return data
 
+
 def transform(data_to_transform):
+    print(data_to_transform)
     data_to_load = []
     for data in data_to_transform:
         transformed_data = {}
-        print(data)
         transformed_data["nom"] = data["nom"]
         data["heures_travaillees"] = int(data["heures_travaillees"]) * 15
         transformed_data["salaire"] = str(data["heures_travaillees"])
         data_to_load.append(transformed_data)
+    print("→\n", data_to_load)
     return data_to_load
 
 
 def load(data_to_load):
-    with open("output.csv", mode="w", newline='') as file:
+    with open("output.csv", mode="w", newline="") as file:
         fieldnames = ["nom", "salaire"]
         writer = csv.DictWriter(file, fieldnames=fieldnames)
         writer.writeheader()
