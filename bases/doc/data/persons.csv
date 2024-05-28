@@ -1,4 +1,4 @@
-first_name, age, last_name
-Lionel    , 59 , NOM
-MP        , 68 , NOM
-Antje     , 46 , NOM
+first_name, age, Birth_city
+Lionel    , 9  , Dijon
+MP        , 68 , Semur
+Antje     , 46 , Berlin

@@ -3,10 +3,14 @@ from bs4 import BeautifulSoup
 with open("index.html", "r") as file:
     soup = BeautifulSoup(file, "html.parser")
 
-title = soup.find("title").string
-h1_text = soup.find("h1").string
+# title = soup.find("title").string
+title = soup.title.string
+# h1_text = soup.find("h1").string
+h1_text = soup.h1.string
 
 products = soup.find_all("li")
+# products = type(soup.li) // only first element
+
 products_list = []
 description_list = []
 for product in products:
@@ -18,13 +22,13 @@ for product in products:
 
 print(f"Titre la page: {title}")
 print(f"Texte de la balise H1: {h1_text}")
-print('Liste des produits:', products_list)
-print('Liste des descriptions:',description_list)
+print("Liste des produits:", products_list)
+print("Liste des descriptions:", description_list)
 
 
 for i, (name, price) in enumerate(products_list):
-    euro_price_str = ''.join(filter(str.isdigit, price.split()[2]))
-    dollar_price=int(euro_price_str)*1.2
+    euro_price_str = "".join(filter(str.isdigit, price.split()[2]))
+    dollar_price = int(euro_price_str) * 1.2
     products_list[i] = (name, f"${dollar_price}")
 
     # print (f'{name}: ${int(euro_price_str)*1.2}')

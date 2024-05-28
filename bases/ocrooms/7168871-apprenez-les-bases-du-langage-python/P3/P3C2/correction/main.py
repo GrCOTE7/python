@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 
 # Étape 1 : Extraction des informations souhaitées avec Beautiful Soup
-with open("index.html", 'r') as file:
+with open("index.html", 'r', encoding="utf-8") as file:
     soup = BeautifulSoup(file, 'html.parser')
 
 # Extraction du titre de la page
@@ -40,3 +40,6 @@ for i, (name, price) in enumerate(products_list):
 
 # Étape 4 : Affichage de la nouvelle liste avec les prix en dollars
 print("Liste des produits :", products_list)
+
+print('Fini.')
+
