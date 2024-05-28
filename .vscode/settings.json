@@ -1,0 +1,3 @@
+{
+  "python.analysis.extraPaths": ["./gc7/tools"]
+}

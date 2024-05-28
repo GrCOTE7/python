@@ -1,7 +1,10 @@
-import csv
+from gc7.tools.file import get_data, get_caller_depth
 
-with open("persons.csv", encoding="utf-8") as file_csv:
-    reader = csv.DictReader(file_csv, delimiter=",")
-    for line in reader:
-      # line = {key.strip(): value.strip() for key, value in line.items()}
-      print(line)
+# import gc
+
+# gc.file_depth.file_depth()
+
+get_data()
+
+print('Appelant: ', get_caller_depth())
+# 
