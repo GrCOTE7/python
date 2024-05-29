@@ -1,22 +1,50 @@
 # Cours OpenClassRooms
 
+
 ## Bases
+
+
+### Suivis:
 
 https://openclassrooms.com/fr/courses/7168871-apprenez-les-bases-du-langage-python
 
-## 2do Tuto OCRooms
-https://openclassrooms.com/fr/courses/7160741-ecrivez-du-code-python-maintenable/7187209-tirez-le-maximum-de-ce-cours
+
+### 2do Tutos OCRooms
+
+https://openclassrooms.com/fr/courses/6951236-mettez-en-place-votre-environnement-python
+
+https://openclassrooms.com/fr/courses/7160741-ecrivez-du-code-python-maintenable
+
+https://openclassrooms.com/fr/courses/7150616-apprenez-la-programmation-orientee-objet-avec-python
+
+https://openclassrooms.com/fr/courses/7771531-decouvrez-les-librairies-python-pour-la-data-science
+
 
 ## 2do Zen Python
+
 https://python-guide-fr.readthedocs.io/fr/latest/
 
 ---
 
 ### Annuaire des packages
+
 https://pypi.org/
 
+```
 pip install nom_package
 
 pip uninstall nom_package
 
-pip freeze (Liste des packages installés)
+pip freeze (List installed packages)
+```
+Start tests:
+
+```
+pytest tests.py
+```
+
+Note: If not exists: 
+
+```
+pip install pytest
+```
