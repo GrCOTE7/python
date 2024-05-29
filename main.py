@@ -14,3 +14,4 @@ with open (filename, 'w', newline="") as file:
     writer.writerow(headers)
     for row in data:
         writer.writerow(row)
+
