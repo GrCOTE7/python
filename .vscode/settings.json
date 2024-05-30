@@ -1,5 +1,5 @@
 {
   "python.analysis.extraPaths": ["./gc7/tools"],
   "cSpell.ignoreWords": ["travaillees"],
-  "cSpell.words": ["funct", "hexa", "zorro"]
+  "cSpell.words": ["funct", "hexa", "myline", "newzip", "zorro"]
 }

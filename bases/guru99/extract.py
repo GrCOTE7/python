@@ -8,7 +8,7 @@ def extract():
     print("Extraction...")
     
     data=[]
-    with open("Emissions.csv") as file:
+    with open("data_app/Emissions.csv") as file:
         csv_reader = csv.DictReader(file)
         for line in csv_reader:
             line = {key.strip(): value.strip() for key, value in line.items()}
