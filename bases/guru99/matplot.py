@@ -22,3 +22,26 @@ plt.plot(x, prob)
 plt.title("Probabilité")
 plt.show()
 
+
+# Frequency in terms of Hertz
+fre = 1
+# Sample rate
+fre_samp = 50
+t = np.linspace(0, 2, 2 * fre_samp, endpoint=False)
+a = np.sin(fre * 2 * np.pi * t)
+figure, axis = plt.subplots()
+axis.plot(t, a)
+axis.set_xlabel("Time (s)")
+axis.set_ylabel("Signal amplitude")
+plt.show()
+
+
+from scipy import misc
+from matplotlib import pyplot as plt
+import numpy as np
+
+# get face image of panda from misc package
+panda = misc.face()
+# plot or show image of face
+plt.imshow(panda)
+plt.show()
