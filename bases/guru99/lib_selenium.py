@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 import os, time
+import unittest
 
 
 def extract01():
@@ -16,29 +17,9 @@ def extract01():
     assert "No results found." not in driver.page_source
     time.sleep(3)
     driver.close()
-
-
-import unittest
-
-
-class PythonOrgSearch(unittest.TestCase):
-
-    def setUp(self):
-        self.driver = webdriver.Firefox()
-
-    def test_search_in_python_org(self):
-        driver = self.driver
-        driver.get("http://www.python.org")
-        self.assertIn("Python", driver.title)
-        elem = driver.find_element(By.NAME, "q")
-        elem.send_keys("pywxcwcon")
-        elem.send_keys(Keys.RETURN)
-        self.assertNotIn("No results found.", driver.page_source)
-
-    def tearDown(self):
-        self.driver.close()
+    print("Request finish")
 
 
 if __name__ == "__main__":
-    unittest.main(module="test_python_org_search", argv=["ignored", "-k"], exit=False)
-
+    extract01()
+    unittest.main(module="test_python_org_search", argv=["ignored"], exit=False)
