@@ -15,30 +15,30 @@ import io
 #         unittest.main(module="test_python_org_search")
 
 
-class NullIO(io.StringIO):
-    def write(self, txt):
-        pass
-
+# class NullIO(io.StringIO):
+#     def write(self, txt):
+#         pass
 
 if __name__ == "__main__":
     script_path = os.path.abspath(__file__)
 
-    with NullIO() as null_io:
-        old_stdout = sys.stdout
-        sys.stdout = null_io  # Rediriger la sortie standard vers null_io
-        try:
-            unittest.main(module="test_python_org_search", argv=["ignored"], exit=False)
-        except Exception as e:
-            print(e)
-        finally:
-            sys.stdout = old_stdout  # Restaurer la sortie standard
+    # with NullIO() as null_io:
+    #     old_stdout = sys.stdout
+    #     sys.stdout = null_io  # Rediriger la sortie standard vers null_io
+    #     try:
+    #         unittest.main(module="test_python_org_search", argv=["ignored"], exit=False)
+    #     except Exception as e:
+    #         print(e)
+    #     finally:
+    #         sys.stdout = old_stdout  # Restaurer la sortie standard
 
+    unittest.main(module="test_python_org_search", argv=["ignored"], exit=False)
 
 # Pour tests in preview
 # Param AREPL: Env fil de VSC: c:\Users\utilisateur\env
 # contient:
 #   ENV=preview
 #   WORKDIR=C:\laragon\www\python\bases\guru99
-print(script_path)
+print('-'*70, script_path)
 print("ENV: ", os.getenv("ENV"))
 print("WORKDIR:", os.getenv("WORKDIR"))

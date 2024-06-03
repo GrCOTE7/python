@@ -4,7 +4,6 @@ from selenium.webdriver.common.by import By
 import os, time
 import unittest
 
-
 def extract01():
     """Simple search"""
     driver = webdriver.Firefox()
@@ -19,7 +18,23 @@ def extract01():
     driver.close()
     print("Request finish")
 
+def facebook():
+    driver = webdriver.Firefox()
+    driver.get("http://www.facebook.com")
+    assert "Facebook" in driver.title
+    elem = driver.find_element(By.NAME, "email")
+    elem.send_keys("loginEmail")
+    elem = driver.find_element(By.NAME, "pass")
+    elem.send_keys("password")
+    elem.send_keys(Keys.RETURN)
+    time.sleep(10)
+    driver.close()
+    print("Request finish")
+
 
 if __name__ == "__main__":
     extract01()
-    unittest.main(module="test_python_org_search", argv=["ignored"], exit=False)
+    # unittest.main(module="test_python_org_search", argv=["ignored"], exit=False)
+    # facebook()
+    # pass
+
