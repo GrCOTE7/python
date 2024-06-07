@@ -1,14 +1,8 @@
+import numpy
 
-#templates = gabarits (fr)
-from string import Template
 
-t = Template("${village}folk send $$10 to $cause.")
+print(numpy.floor(1.2))
 
-g = t.substitute(village="Nottingham", cause="the ditch fund")
-print(g)
+print(numpy.ceil(1.933))
 
-t = Template("Return the $item to $owner.")
-d = dict(item="unladen swallow")
-# t.substitute(d) → Error
-
-print(t.safe_substitute(d))
+print(numpy.floor(1.2))
