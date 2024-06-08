@@ -14,12 +14,12 @@ https://openclassrooms.com/fr/courses/6951236-mettez-en-place-votre-environnemen
 
 https://openclassrooms.com/fr/courses/7150616-apprenez-la-programmation-orientee-objet-avec-python
 
-
-### 2do Tutos OCRooms
-
 https://openclassrooms.com/fr/courses/5647281-appliquez-le-principe-du-domain-driven-design-a-votre-application
 
 https://openclassrooms.com/fr/courses/7160741-ecrivez-du-code-python-maintenable
+
+### 2do Tutos OCRooms
+
 
 https://openclassrooms.com/fr/courses/7771531-decouvrez-les-librairies-python-pour-la-data-science
 
@@ -27,6 +27,9 @@ https://openclassrooms.com/fr/courses/7771531-decouvrez-les-librairies-python-po
 ## 2do Zen Python
 
 https://python-guide-fr.readthedocs.io/fr/latest/
+
+https://docs.python.org/fr/3/
+
 
 ---
 

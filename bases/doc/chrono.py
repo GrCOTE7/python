@@ -12,4 +12,3 @@ for i in range(200):
     total_time += t.timeit()
 print(f"Temps total : {round(total_time,2)} secondes")
 
-
