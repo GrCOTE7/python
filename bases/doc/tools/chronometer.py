@@ -16,9 +16,17 @@ def chrono(function):
         # Différence entre 2 temps "epochs", celui qui est gardé dans
         # "start", et celui qui sera gardé dans votre variable 'end'. ;)
         time_spent = end - start
-        print(f"{args[0]}: {time_spent:.2f}\"")
+
+        # if len(args) > 0:
+        #     print(f'{args[0]}: {time_spent:.2f}"')
+        # else:
+        #     print(f'{time_spent:.2f}"')
+
+        print(f"{args[0] + ': ' if args else ''}{time_spent:.2f}\"")
+
 
         return result
+
     wrapper.__doc__ = function.__doc__
     return wrapper
 

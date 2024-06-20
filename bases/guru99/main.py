@@ -1,4 +1,4 @@
-arr = 'lionel'
+arr = 'lionelo'
 res1 = arr[-1]
 res2 = arr[::-1]
 res3 = arr[:4:1]

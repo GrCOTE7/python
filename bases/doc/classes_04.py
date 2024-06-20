@@ -26,3 +26,4 @@ johnny = Employee("johnny", "labo", 1500)
 
 print(f"Nom: {johnny.name}, Salaire: ${johnny.salary}")
 
+print(johnny)

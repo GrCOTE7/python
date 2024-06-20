@@ -12,12 +12,13 @@ x = Complex(3.0, -4.5)
 print(x.r, x.i, x.sum)
 
 counter = 1
+print("Boucle de counter: ")
 while counter < 10:
     counter *= 2
-    print(counter)
+    print(counter, end=" ")
 del counter
 
-print(len(list(x.f())))
+print("\nNbre de valeurs: ", len(list(x.f())))
 print(x.f(55))
 
 y = Complex(2, 5)

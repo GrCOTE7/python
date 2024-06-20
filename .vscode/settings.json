@@ -2,12 +2,16 @@
   "python.analysis.extraPaths": ["./gc7/tools"],
   "cSpell.ignoreWords": ["travaillees"],
   "cSpell.words": [
+    "Cmder",
+    "Coeurs",
     "funct",
     "Hedwige",
     "hexa",
     "myline",
     "newzip",
     "pycon",
+    "venv",
     "zorro"
-  ]
+  ],
+  "cSpell.language": "en,fr-FR,fr,lorem"
 }

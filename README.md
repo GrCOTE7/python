@@ -1,10 +1,15 @@
-# Cours OpenClassRooms
+# But: 2do Monetize Actor
+
+https://www.youtube.com/watch?v=4nxStxC1BJM&list=PLObrtcm1Kw6PEnu5BpeEFb8XEoQXMw0g7
 
 
-## Bases
+## Cours OpenClassRooms
 
 
-### Suivis:
+### Bases
+
+
+#### Suivis:
 
 https://www.guru99.com/fr/python-tutorials.html
 
@@ -20,20 +25,20 @@ https://openclassrooms.com/fr/courses/7160741-ecrivez-du-code-python-maintenable
 
 ### 2do Tutos OCRooms
 
-
 https://openclassrooms.com/fr/courses/7771531-decouvrez-les-librairies-python-pour-la-data-science
 
 
 ## 2do Zen Python
-
 https://python-guide-fr.readthedocs.io/fr/latest/
 
-https://docs.python.org/fr/3/
+### 2do Doc officielle
+https://docs.python.org/fr/3/tutorial/index.html
 
+En cours: https://docs.python.org/fr/3/tutorial/stdlib.html
 
 ---
 
-### Annuaire des packages
+#### Annuaire des packages
 
 https://pypi.org/
 
@@ -50,7 +55,7 @@ pip list
 
 ```
 
-### venv
+#### venv
 
 ```
  py -m venv env
@@ -60,7 +65,7 @@ deactivate
 ```
 NB: Dans Cmder pas besoin du .bat + indique l'environment
 
-### Start tests:
+#### Start tests:
 
 ```
 pytest tests.py

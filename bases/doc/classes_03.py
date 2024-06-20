@@ -1,5 +1,5 @@
 class Dog:
-    
+
     def __init__(self, name):
         self.name = name
         self.tricks = []  # creates a new empty list for each dog
@@ -8,10 +8,10 @@ class Dog:
         self.tricks.append(trick)
 
 
-d = Dog("Fido")
-e = Dog("Buddy")
-d.add_trick("roll over")
-e.add_trick("play dead")
-e.add_trick("play always")
-print(d.tricks)
-print(e.tricks)
+Fido = Dog("Fido")
+Bud = Dog("Buddy")
+Fido.add_trick("roll over")
+Bud.add_trick("play dead")
+Bud.add_trick("play always")
+print(Fido.tricks)
+print(Bud.tricks)
