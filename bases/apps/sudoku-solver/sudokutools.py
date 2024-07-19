@@ -3,7 +3,6 @@
 
 from random import randint, shuffle
 
-
 def print_board(board):
     """
     Prints the sudoku board.

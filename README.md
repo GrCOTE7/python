@@ -23,6 +23,8 @@ https://openclassrooms.com/fr/courses/5647281-appliquez-le-principe-du-domain-dr
 
 https://openclassrooms.com/fr/courses/7160741-ecrivez-du-code-python-maintenable
 
+[Algomius](https://www.youtube.com/watch?v=5MzhGQ8WL70&t=8s) - Fr Série en cours
+
 ### 2do Tutos OCRooms
 
 https://openclassrooms.com/fr/courses/7771531-decouvrez-les-librairies-python-pour-la-data-science
