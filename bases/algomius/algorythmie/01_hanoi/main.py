@@ -1,3 +1,6 @@
+
+# https://www.youtube.com/watch?v=5KoTcO7LjhE&list=PLo53cbpzes8ZDG62Pn4U4plWpP8_EBFal&index=1
+# 2fix: Graphic version (https://drive.google.com/file/d/1uq7nVcOq_GDmYIIpdO5P58V1Oa2rN15f/view) that doesn't work
 def hanoi(nb_disques, depart, arrivee, intermediaire):
 
     # Si il n'y a rien à déplacer
