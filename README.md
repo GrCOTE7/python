@@ -47,6 +47,8 @@ https://pypi.org/
 ```
 pip install nom_package
 
+pip install jupyter
+
 pip uninstall nom_package
 
 pip freeze --local | xargs pip uninstall -y
