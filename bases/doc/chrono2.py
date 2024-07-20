@@ -1,6 +1,6 @@
 """ Exemple de chronométrage"""
 
-from tools.chronometer import chrono
+from tools.chrono import chrono
 
 TIMES = int(2e8)
 
@@ -16,7 +16,6 @@ def method1(value):
         a = 1
         b = 2
 
-
 @chrono
 def method2():
     """Affectations multiples (tuples)"""
@@ -26,6 +25,14 @@ def method2():
         a = 1
         b = 2
     print(method2.__doc__, end=': ')
+    
+@chrono
+def myPrint():
+    """myPrint"""
+    # print('ok')
+    print(myPrint.__doc__, end=': ')
+
 
 method1(method1.__doc__)
 method2()
+myPrint()

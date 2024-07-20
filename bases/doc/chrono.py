@@ -11,4 +11,3 @@ for i in range(200):
     t = Timer("a,b = b,a", "a=1; b=2")
     total_time += t.timeit()
 print(f"Temps total : {round(total_time,2)} secondes")
-

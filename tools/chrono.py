@@ -1,8 +1,7 @@
 from time import time, sleep
 
-
 def chrono(function):
-    """calcule le temps que met une fonction à s'executer."""
+    """Décorateur: Calcule le temps en secondes que met une fonction à s'executer."""
 
     def wrapper(*args, **kwargs):
         """Décore la fonction avec un calcul du temps."""
@@ -38,6 +37,6 @@ def calculate_the_trajectory(value):
     sleep(3)  # on met le programme en pause pendant 3 secondes !
     print("Calcul terminé !")
 
-
 if __name__ == "__main__":
     calculate_the_trajectory("Vol")
+
