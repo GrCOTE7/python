@@ -59,6 +59,9 @@ pip list
 
 ```
 
+Super outil pour debug:
+https://pythontutor.com/
+
 #### venv
 
 ```
@@ -80,3 +83,11 @@ Note: If not exists:
 ```
 pip install pytest
 ```
+
+2see https://www.youtube.com/watch?v=XUPhj9-8PnA&t=23s
+
+Algorythmie:
+2see: https://www.youtube.com/watch?v=5KoTcO7LjhE&list=PLo53cbpzes8ZDG62Pn4U4plWpP8_EBFal
+
+2see: 120 exos d'algorythmie
+https://www.youtube.com/watch?v=iNeqb-URBj4
