@@ -76,3 +76,5 @@ if __name__ == '__main__':
             print(arrivee)
     else:
         print("La destination ne peut pas être atteinte")
+
+# 2fix: @ continuer
