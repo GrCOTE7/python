@@ -29,7 +29,6 @@ def donneCasesLibres(listDames):
 
     return listValides
 
-
 def position8Dames(listDames=[]):
     """oki2"""
     global listSolutions
