@@ -1,7 +1,8 @@
 # https://www.youtube.com/watch?v=KMjaEtSjsjM&list=PLo53cbpzes8ZDG62Pn4U4plWpP8_EBFal&index=4
 
+
 def kadane(l):
-    """ La fonction kadane prend en argument une liste d'entiers
+    """La fonction kadane prend en argument une liste d'entiers
     Cette fonction retourne:
         - la somme maximum d'une sous-liste de l
         - la sous-liste qui donne la plus grande somme
@@ -35,14 +36,15 @@ def kadane(l):
 
     return maximum_meilleur, liste_meilleur, indice_meilleur
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
 
     liste = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
 
     print("Liste de départ", liste)
-    somme, ssliste, indice =  kadane(liste)
+    somme, ssliste, indice = kadane(liste)
     if indice == -1:
         print("Il n'y a pas de nombre positif dans la liste")
-    else :
-        print("La sous-liste", ssliste, "maximise la somme qui est de",somme)
+    else:
+        print("La sous-liste", ssliste, "maximise la somme qui est de", somme)
         print("Nous commençons la sous liste à l'indice", indice)
