@@ -3,6 +3,7 @@
   "cSpell.ignoreWords": ["travaillees"],
   "cSpell.words": [
     "arrivee",
+    "blit",
     "capacite",
     "Cmder",
     "Coeurs",
@@ -17,6 +18,8 @@
     "myline",
     "newzip",
     "pycon",
+    "pygame",
+    "randint",
     "recursif",
     "ssliste",
     "venv",

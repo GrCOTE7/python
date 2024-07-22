@@ -1,8 +1,8 @@
 """ Exemple de chronométrage"""
 
-from tools.chrono import chrono
+from chrono import chrono
 
-TIMES = int(2e8)
+TIMES = int(2e10)
 
 
 @chrono
@@ -36,3 +36,4 @@ def myPrint():
 method1(method1.__doc__)
 method2()
 myPrint()
+
