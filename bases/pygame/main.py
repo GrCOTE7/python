@@ -8,6 +8,8 @@ class Game:
         self.running = True
         self.clock = pygame.time.Clock()
         self.player = Player(0, 0)
+        self.area = pygame.Rect(300, 150, 300, 300)
+        self.area_color = "red"
 
     def handling_events(self):
 
@@ -32,9 +34,14 @@ class Game:
 
     def update(self):
         self.player.move()
+        if self.area.colliderect(self.player.rect):
+            self.area_color = "blue"
+        else:
+            self.area_color = "red"
 
     def display(self):
         self.screen.fill("white")
+        pygame.draw.rect(self.screen, self.area_color, self.area)
         self.player.draw(self.screen)
         pygame.display.flip()
 
