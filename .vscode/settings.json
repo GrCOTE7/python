@@ -2,13 +2,17 @@
   "python.analysis.extraPaths": ["./gc7/tools"],
   "cSpell.ignoreWords": ["travaillees"],
   "cSpell.words": [
+    "algomius",
     "arrivee",
     "blit",
     "capacite",
     "Cmder",
     "Coeurs",
     "deplacements",
+    "ecran",
+    "ecrans",
     "elts",
+    "facecolor",
     "funct",
     "Grumpycat",
     "Hedwige",
@@ -22,7 +26,9 @@
     "randint",
     "recursif",
     "ssliste",
+    "tkagg",
     "venv",
+    "xdec",
     "zorro"
   ],
   "cSpell.language": "en,fr-FR,fr,lorem"
