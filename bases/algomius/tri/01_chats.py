@@ -74,6 +74,7 @@ class chat:
     def __ge__(self, other):
         return self > other or self == other
 
+
 if __name__ == "__main__":
     # name, color, neutered, sex, size
     list_chats = []
@@ -90,6 +91,6 @@ if __name__ == "__main__":
 for n in range(2):
     for i in list_chats:
         print(f"{i.name}\t{i.color}\t{i.neutered}\t{i.sex}\t{i.size}")
-    if ( not n ):
+    if not n:
         print("\n============== Trions les chats =========================\n")
         sort_insertion(list_chats)

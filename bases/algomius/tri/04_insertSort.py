@@ -1,7 +1,11 @@
 import random
 
-l = [random.randint(1, 1000) for _ in range(10)]
+# 2 façons de faire la même chose
+l = [random.randint(1, 9) for _ in range(9)]
+l2 = random.choices(range(1, 10), k=9)
 
-print(max(list(l)))
+l3 = random.sample(range(1, 10), 9)  # Uniques
 
-
+print(l)
+print(l2)
+print(l3)

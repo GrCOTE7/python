@@ -31,7 +31,7 @@ def sort_bubble_display(l):
                 # l[i], l[i+1] = l[i+1], l[i]
                 print(l)
                 hasChanged = True
-    # graph.waitQuit()
+    graph.waitQuit()
 
 if __name__ == "__main__":
     #l = random.sample(range(1, 1000), 50)
