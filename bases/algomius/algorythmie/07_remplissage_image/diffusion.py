@@ -76,8 +76,7 @@ def remplissageDiffusionIteratif(image, pointDepart, nouvelleCouleur):
 
 def remplissageDiffusionRecursif(image, pointDepart, nouvelleCouleur):
     """
-    Fonction de remplissage par diffusion récursive. Cette fonction utilise la
-    méthode de parcourt en profondeur dans la théorie des graphes.
+    Fonction de remplissage par diffusion récursive. Cette fonction utilise la méthode de parcours en profondeur dans la théorie des graphes.
     Les arguments de la fonction sont:
     - L'image sous forme de liste de Liste
     - Les coordonnées du point de départ de la diffusion
@@ -110,8 +109,9 @@ if __name__ == "__main__":
         ["B", "M", "M", "V", "M", "M", "M", "M", "V", "V"],
         ["B", "M", "M", "V", "V", "V", "V", "V", "V", "V"],
     ]
-    
+
     import copy
+
     # image[::] ne copie pas les sous-listes
     imagePourR = copy.deepcopy(image)
 
@@ -135,13 +135,11 @@ if __name__ == "__main__":
     pointDepart = (3, 9)
     nouvelleCouleur = "C"
     image = imagePourR
-    # for r in image:
-    #   print(r)
-    
+    for r in image:
+        print(r)
+
     remplissageDiffusionRecursif(imagePourR, pointDepart, nouvelleCouleur)
     print("Récursif")
 
     for r in image:
         print(r)
-
-    # print("-" * 50)
