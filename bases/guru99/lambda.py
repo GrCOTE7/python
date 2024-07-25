@@ -3,8 +3,8 @@ from functools import reduce
 
 sequences = [1, 2, 3, 4, 5]
 product = reduce(lambda x, y: x * y, sequences)
-print(sequences, '→', product)
-# print(list(maping_result))
+print(sequences, "→", product)
+# print(list(mapping_result))
 # print(*maping_result)
 # print(*enumerate(maping_result, 1))
 print("-" * 72)

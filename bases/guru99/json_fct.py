@@ -11,6 +11,7 @@ x = {
 # sorting result in ascending order by keys:
 sorted_string = json.dumps(x, indent=4, sort_keys=False)
 print(sorted_string)
-print()
+print('-'*36)
 sorted_string = json.dumps(x, indent=4, sort_keys=True)
 print(sorted_string)
+ 
