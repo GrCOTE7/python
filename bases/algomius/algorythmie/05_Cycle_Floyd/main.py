@@ -1,4 +1,5 @@
 # https://www.youtube.com/watch?v=e45QoKaK8r0&list=PLo53cbpzes8ZDG62Pn4U4plWpP8_EBFal&index=5
+# Résumé: Si le lièvre rattrape la tortue, c'est qu'il y a un cycle ! ;-)
 
 
 class Noeud:
@@ -10,7 +11,7 @@ class Noeud:
 
 
 def detectionCycleNaif(transition):
-    """Fonction qui permet de détecter un cycle dans une structure de liste chainée représentée par un dictionnaire en connaissant le point de départ : debut
+    """Fonction qui permet de détecter un cycle dans une structure de liste chaînée représentée par un dictionnaire en connaissant le point de départ : debut
     Cette fonction retourne :
     - Un booléen qui indique s'il y a un cycle (True) ou non (False)
     """
@@ -43,7 +44,7 @@ def detectionCycleFloyd(transition):
 
 
 if __name__ == "__main__":
-    # Création des éléments de la liste chainée
+    # Création des éléments de la liste chaînée
     transitionG = Noeud("G", None)
     transitionF = Noeud("F", transitionG)
     transitionE = Noeud("E", transitionF)
@@ -57,14 +58,11 @@ if __name__ == "__main__":
         transitionA.prochain.prochain
     )
 
-    print("Naïf  : ", end="")
-    if detectionCycleNaif(transitionA):
-        print("Cycle trouvé")
-    else:
-        print("Aucun cycle trouvé")
+    types = ["Naif ", "Floyd"]
 
-    print("Floyd : ", end="")
-    if detectionCycleFloyd(transitionA):
-        print("Cycle trouvé")
-    else:
-        print("Aucun cycle trouvé")
+    for type in types:
+        f_name = "detectionCycle" + type.strip()
+        type = type.replace('i', 'ï')
+        func = globals().get(f_name)
+        # print (type, callable(func))
+        print(f"{type} : Cycle {'trouvé' if func(transitionA) else 'non trouvé'}")
