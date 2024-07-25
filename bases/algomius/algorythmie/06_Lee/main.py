@@ -4,7 +4,8 @@
 from collections import deque
 
 # Liste des déplacement Possible
-depl_possible = [(-1,0),(0,-1),(1, 0),(0,1),(1,1),(1,-1),(-1,1),(-1,-1)]
+# depl_possible = [(-1,0),(0,-1),(1, 0),(0,1),(1,1),(1,-1),(-1,1),(-1,-1)]
+depl_possible = [(-1,0),(0,-1),(1, 0),(0,1)]
 
 # Retrouver la distance minimum entre le point (i, j) et la destination (x, y)
 def parcours_largeur(carte, deb_x, deb_y, fin_x, fin_y):
@@ -62,7 +63,7 @@ if __name__ == '__main__':
     ]
 
     depart=(0,0)
-    arrivee=(9,9)
+    arrivee=(8,0)
 
     # Trouver le chemin le plus court entre le point (0, 0) et la destination (7, 5)
     dist, pred = parcours_largeur(carte, depart[0], depart[1], arrivee[0], arrivee[1])
