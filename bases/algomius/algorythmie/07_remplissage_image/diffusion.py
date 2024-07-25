@@ -54,22 +54,22 @@ def remplissageDiffusionIteratif(image, pointDepart, nouvelleCouleur):
         for depl in deplacement:
             # Addition du point courant et d'un déplacement pour obtenir les coordonnées d'un point adjacent
             pointVoisin = tuple(p + q for p, q in zip(pointCourant, depl))
-            
-# pointCourant et depl :
-# pointCourant et depl sont probablement des tuples ou des listes de coordonnées. Par exemple, dans un contexte de manipulation de points dans un espace 2D ou 3D, pointCourant pourrait être (x, y) ou (x, y, z) et depl pourrait être (dx, dy) ou (dx, dy, dz).
 
-# zip(pointCourant, depl) :
-# La fonction zip prend deux ou plusieurs itérables (dans ce cas, pointCourant et depl) et les agrège en un seul itérable de tuples. Par exemple, si pointCourant = (1, 2) et depl = (3, 4), alors zip(pointCourant, depl) produira [(1, 3), (2, 4)].
+            # Voir base/tuple_list.py
 
-# Compréhension de liste :
-# La partie p + q for p, q in zip(pointCourant, depl) est une compréhension de liste qui itère sur chaque tuple produit par zip. Pour chaque tuple (p, q), elle calcule la somme p + q.
-# Par exemple, avec pointCourant = (1, 2) et depl = (3, 4), cela produira [1 + 3, 2 + 4] soit [4, 6].
+            # pointCourant et depl :
+            # pointCourant et depl sont probablement des tuples ou des listes de coordonnées. Par exemple, dans un contexte de manipulation de points dans un espace 2D ou 3D, pointCourant pourrait être (x, y) ou (x, y, z) et depl pourrait être (dx, dy) ou (dx, dy, dz).
 
-# Conversion en tuple :
-# Enfin, tuple(...) convertit la liste résultante en un tuple. Donc, [4, 6] devient (4, 6).
-            
-            
-            
+            # zip(pointCourant, depl) :
+            # La fonction zip prend deux ou plusieurs itérables (dans ce cas, pointCourant et depl) et les agrège en un seul itérable de tuples. Par exemple, si pointCourant = (1, 2) et depl = (3, 4), alors zip(pointCourant, depl) produira [(1, 3), (2, 4)].
+
+            # Compréhension de liste :
+            # La partie p + q for p, q in zip(pointCourant, depl) est une compréhension de liste qui itère sur chaque tuple produit par zip. Pour chaque tuple (p, q), elle calcule la somme p + q.
+            # Par exemple, avec pointCourant = (1, 2) et depl = (3, 4), cela produira [1 + 3, 2 + 4] soit [4, 6].
+
+            # Conversion en tuple :
+            # Enfin, tuple(...) convertit la liste résultante en un tuple. Donc, [4, 6] devient (4, 6).
+
             if pointValide(image, pointVoisin, ancienneCouleur):
                 resteATraiter.append((pointVoisin))
 
@@ -110,6 +110,10 @@ if __name__ == "__main__":
         ["B", "M", "M", "V", "M", "M", "M", "M", "V", "V"],
         ["B", "M", "M", "V", "V", "V", "V", "V", "V", "V"],
     ]
+    
+    import copy
+    # image[::] ne copie pas les sous-listes
+    imagePourR = copy.deepcopy(image)
 
     pointDepart = (3, 9)
     nouvelleCouleur = "C"
@@ -122,9 +126,22 @@ if __name__ == "__main__":
     print("-" * 50)
 
     remplissageDiffusionIteratif(image, pointDepart, nouvelleCouleur)
-    # remplissageDiffusionRecursif(image, pointDepart, nouvelleCouleur)
-
+    print("Itératif")
     for r in image:
         print(r)
 
     print("-" * 50)
+
+    pointDepart = (3, 9)
+    nouvelleCouleur = "C"
+    image = imagePourR
+    # for r in image:
+    #   print(r)
+    
+    remplissageDiffusionRecursif(imagePourR, pointDepart, nouvelleCouleur)
+    print("Récursif")
+
+    for r in image:
+        print(r)
+
+    # print("-" * 50)

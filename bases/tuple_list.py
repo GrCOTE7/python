@@ -34,4 +34,4 @@ print('-'*50, '\n')
 
 mytuple = ((2,3), (4,5))
 print(p+q for p, q in mytuple)
-print('mytupe:', tuple(p+q for p, q in mytuple))
+print('mytuple:', tuple(p+q for p, q in mytuple))
