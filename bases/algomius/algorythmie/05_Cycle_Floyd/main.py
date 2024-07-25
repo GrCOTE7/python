@@ -61,8 +61,7 @@ if __name__ == "__main__":
     types = ["Naif ", "Floyd"]
 
     for type in types:
-        f_name = "detectionCycle" + type.strip()
+        func = globals().get("detectionCycle" + type.strip())
         type = type.replace('i', 'ï')
-        func = globals().get(f_name)
         # print (type, callable(func))
         print(f"{type} : Cycle {'trouvé' if func(transitionA) else 'non trouvé'}")
