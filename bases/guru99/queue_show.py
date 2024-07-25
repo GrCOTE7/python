@@ -21,5 +21,4 @@ def show():
     print("Queue triée:", *ll)
     print("Queue inversée:", reverse_queue(q1))
 
-if __name__=='__main__':
-    show()
+show()
