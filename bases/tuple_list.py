@@ -34,4 +34,16 @@ print('-'*50, '\n')
 
 mytuple = ((2,3), (4,5))
 print(p+q for p, q in mytuple)
-print('mytuple:', tuple(p+q for p, q in mytuple))
+# print('mytuple:', tuple(p+q for p, q in mytuple))
+print('mytuple:', (tuple) ((p+q for p, q in mytuple)))
+
+print('-'*50, '\n')
+
+a = {"a": 1, "b": 2}
+b = ["3"]
+
+t = (a, b)
+
+print("a =", a, type(a))
+print("b =", b, type(b))
+print("t =", t, type(t))
