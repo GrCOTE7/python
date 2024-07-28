@@ -34,6 +34,7 @@
     "pygame",
     "randint",
     "recursif",
+    "reponse",
     "ssliste",
     "tkagg",
     "venv",
