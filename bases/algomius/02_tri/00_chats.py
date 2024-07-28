@@ -1,7 +1,6 @@
 """
-    Fonction de tri que nous allons utiliser pour trier nos chats
-    Les variables utilisant un typage implicite, nous pouvons trier n'importe quoi à partir du moment 
-    ou les opérateurs existent 
+    Fonction de tri que nous allons utiliser pour trier nos chats. Les variables utilisant un typage implicite, nous pouvons trier n'importe quoi à partir du moment 
+    où les opérateurs existent 
 """
 
 
@@ -43,7 +42,7 @@ class chat:
 
     # !=
     def __ne__(self, other):
-        return not (self == other)
+        return self != other
 
     # <
     def __lt__(self, other):
@@ -64,7 +63,7 @@ class chat:
 
     # >
     def __gt__(self, other):
-        return not (self < other) and not (self == other)
+        return (self >= other) and (self != other)
 
     # <=
     def __le__(self, other):
@@ -92,5 +91,6 @@ for n in range(2):
     for i in list_chats:
         print(f"{i.name}\t{i.color}\t{i.neutered}\t{i.sex}\t{i.size}")
     if not n:
-        print("\n============== Trions les chats =========================\n")
+        nbs = 12
+        print("\n" + "=" * nbs, "Trions les chats", "=" * nbs, "\n")
         sort_insertion(list_chats)

@@ -39,17 +39,17 @@ def runDisplayIterativeSort():
     from modules.graphData import graphData
 
     # Voir le code nécessaire commenté directement dans le fichier graphData.py pour le copier/coller comme ci-dessous
-
+    
     data = {
-        "max_value": 21,  # Dans les données,  valeur maximum des items - Max: 1e18 (Soit 1 suivi de 18 zéros))
-        "numbers_number": 7,  # Mini 1e0 + 1 (Soit 2)
+        "max_value": 50,  # Dans les données,  valeur maximum des items - Max: 1e18 (Soit 1 suivi de 18 zéros))
+        "numbers_number": 20,  # Mini 1e0 + 1 (Soit 2)
         "min_value": 1,  # Dans les données,  valeur minimale des items (Max: 1e18)
         "twice_authorized": 1,  # 0 : Pas de double 1 si OK
     }
 
     graph_params = {
         "op_name": "Tri itératif",
-        "speed": 2,  # Délai entre 2 changements (En secondes)
+        "speed": 1,  # Délai entre 2 changements (En secondes)
         "screen_number": 2,  # Pour faire que le graphique sorte sur le 2ème écran et ne pas perdre la main sur l'éditeur (et le code)
     }
 
