@@ -6,7 +6,8 @@
 
 print("Bonjour")
 
-reponse = {"ca va ?" : "Bien et toi ?"}
+reponse = {"ca va ?" : "Bien et toi ?",
+           "Coucou" : "Bonjour !" }
 
 question = input()
 
@@ -19,4 +20,4 @@ while question != "Au revoir":
         print("Merci, je m'en souviendrai et maintenant ?")
     question = input()
 
-print("Au revoir")
+print("À +")

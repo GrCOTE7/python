@@ -15,7 +15,7 @@ def fibo(n):
 """
     Fonction qui retourne l'élément n de la suite de Fibonacci de manière récursive en programmation dynamique
 """
- 
+
 
 def fiboDyn(n, d):
     if n == 0 or n == 1:
@@ -29,21 +29,17 @@ def fiboDyn(n, d):
 
 
 """
-    Exemple de temps d'éxécution des deux fonctions
+    Exemple de temps d’exécution des deux fonctions
 """
+
+# debut = time.time()
+# print(fibo(10))
+# fin = time.time()
+# print(fin - debut)
 
 debut = time.time()
 d = {}
-print(fiboDyn(500, d))
-
+n = 50
+print(n, "→", fiboDyn(n, d))
 fin = time.time()
-
-print(fin - debut)
-
-
-debut = time.time()
-print(fiboDyn(500, d))
-
-fin = time.time()
-
 print(fin - debut)
