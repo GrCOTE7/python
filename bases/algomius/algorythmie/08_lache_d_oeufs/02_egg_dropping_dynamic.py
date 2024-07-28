@@ -34,7 +34,7 @@ if __name__ == "__main__":
     nb_oeufs = 12
     # nb_etages = (1585+1586) //2  # 20
     nb_etages = (int)(1.584e3)  # 20
- 
+
     nb_diff = 0
     while nb_diff < 7:
 
@@ -49,7 +49,7 @@ if __name__ == "__main__":
                 print(
                     f"Nombre minimum de laches dans le pire cas: {oeufs:>2} oeufs et {nb_etages} étages: {nb:>4}"
                 )
-                if (nb_diff>6):
+                if nb_diff > 6:
                     break
         nb_etages += 1
 
