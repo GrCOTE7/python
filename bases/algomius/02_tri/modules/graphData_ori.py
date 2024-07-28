@@ -78,7 +78,23 @@ def graphData(data, graph_params=None):
         print("<>" * 52, "Vérifiez vos valeurs !", "<>" * 53)
 
 
+def validData(data):
+    """
+    return True si les données sont valides
+    Args :
+        data (dict): (int) minima, (int) maxima, (int) nombre de nombres, (bool) double accepté
 
+    Returns :
+        bool : True si toutes les entrées cohérentes sinon False
+    """
+    return (
+        data["numbers_number"] > 1
+        and data["max_value"] <= 1e18
+        and data["min_value"] <= data["max_value"]
+        and data["numbers_number"] < (data["max_value"] - data["min_value"] + 1)
+        if not data["twice_authorized"]
+        else True
+    )
 
     # tableaux = IterativeSortArr(
     #     random.choices(

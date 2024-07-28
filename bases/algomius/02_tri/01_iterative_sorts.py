@@ -30,7 +30,7 @@ def runIterativeSort():
     IterativeSort(l)
 
 
-def runDisplayIterativeSort():
+def runDisplayIterativeSort(type=''):
     """
     Définition des critères pour :
     - data : La population des data l'affichage
