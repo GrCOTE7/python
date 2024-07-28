@@ -98,4 +98,4 @@ elif paragraphe == 5:
     # py 02_inOut.py > 02_sortie.txt 2> 02_erreur.txt
 
     # Redirection dans le même fichier
-    # py inOut.py > sortie.txt 2>&1
+    # py 02_inOut.py > 02_sortie.txt 2>&1
