@@ -6,12 +6,11 @@ def showLine(i, l, un, deux):
     print(str(i).rjust(2), l, "→", str(un).rjust(2), "↔", str(deux).rjust(2))
     # print(str(i).rjust(2), end=' ')
 
-
-# showLine(0, l, l[0], min(l[1:]))
+    # showLine(0, l, l[0], min(l[1:]))
 
 
 def IterativeSort(l):
-    
+
     for i in range(len(l) - 1):
         minInd = i
 
@@ -46,5 +45,6 @@ def IterativeSortArr(l):
 
     return res
 
+
 if __name__ == "__main__":
-    IterativeSort([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+    IterativeSort([10, 2, 3, 4, 5, 6, 7, 8, 9, 1])

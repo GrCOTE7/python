@@ -5,6 +5,8 @@ script_dir = os.path.dirname(__file__)
 modules_dir = os.path.join(script_dir, "modules")
 sys.path.append(modules_dir)
 
+from modules.graphData import graphData
+
 
 def get_l():
     return [11, 39, 9, 2, 8, 87, 92, 63, 74, 6, 5, 69, 63, 33, 46]
@@ -30,42 +32,26 @@ def runIterativeSort():
     IterativeSort(l)
 
 
-def runDisplaySort(type="itératif"):
-    """
-    Définition des critères pour :
-    - data : La population des data l'affichage
-    - graph_params : Appel de graphData(data, graph_params)
-    """
-    from modules.graphData import graphData
+if __name__ == "__main__":
 
-    # Voir le code nécessaire commenté directement dans le fichier graphData.py pour le copier/coller comme ci-dessous
+    # basicSort()
+    # print()
+    # runIterativeSort()
+
+    # runDisplayIterativeSort()
 
     data = {
-        "max_value": 5,  # Dans les données,  valeur maximum des items - Max: 1e18 (Soit 1 suivi de 18 zéros))
-        "numbers_number": 3,  # Mini 1e0 + 1 (Soit 2)
+        "max_value": 20,  # Dans les données,  valeur maximum des items - Max: 1e18 (Soit 1 suivi de 18 zéros))
+        "numbers_number": 12,  # Mini 1e0 + 1 (Soit 2)
         "min_value": 1,  # Dans les données,  valeur minimale des items (Max: 1e18)
         "twice_authorized": 1,  # 0 : Pas de double 1 si OK
     }
 
     graph_params = {
-        "op_name": "Tri " + type,
+        "op_name": "Tri itératif",
         "speed": 1,  # Délai entre 2 changements (En secondes)
         "screen_number": 2,  # Pour faire que le graphique sorte sur le 2ème écran et ne pas perdre la main sur l'éditeur (et le code)
     }
 
     graphData(data, graph_params)
-
-
-if __name__ == "__main__":
-
-    import time
-    
-    # basicSort()
-    # print()
-    # runIterativeSort()
-
-    runDisplaySort()
-
-    time.sleep(7)
-    print('Script terminé.')
  

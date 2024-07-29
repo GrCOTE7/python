@@ -11,15 +11,14 @@ class GraphApp:
     def default_params(self):
         self.graph_params = self.graph_params or {}
 
-        self.graph_params.update(
-            {"op_name": self.graph_params.get("op_name", "Opération")},
-        )
-        self.graph_params.update(
-            {"speed": self.graph_params.get("speed", 0.5)},
-        )
-        self.graph_params.update(
-            {"x_move": 0 if self.graph_params.get("screen_number", 1) != 2 else 1800},
-        )
+        default_values = {
+            "op_name": "Opération",
+            "speed": 0.5,
+            "x_move": 0 if self.graph_params.get("screen_number", 1) != 2 else 1800,
+        }
+        # On récupère les graph_params, et si indéfini, ou pas de graph_params, on attribue aux clés les valeurs par défaut
+        for key, default_value in default_values.items():
+            self.graph_params.update({key: self.graph_params.get(key, default_value)})
 
     def __init__(self, master, tableaux, graph_params=None):
         self.tableaux = tableaux
@@ -64,7 +63,7 @@ class GraphApp:
         # Ajouter un label pour le message
         self.message_label = tk.Label(
             self.master,
-            text="Affichage des étapes en cours...",
+            text=self.graph_params["op_name"] + ": Affichage des étapes en cours...",
             width="50",
             fg="green",
             bg="white",
@@ -139,9 +138,13 @@ class GraphApp:
         # Afficher les valeurs au-dessus des bâtons
         sticks = self.get_sticks(self.tableaux[-1])
         for i, v in enumerate(tableau):
+            color = "black"
+            if index == i:
+                color = "red"
+                self.der_change = (index, v)
             if sticks == [] or i in sticks:
-                self.ax.text(i, v, str(v), ha="center", va="bottom")
-
+                self.ax.text(i, v, str(v), ha="center", va="bottom", color=color)
+        # Mettre à jour le titre de la fenêtre
         if index == len(self.tableaux) - 1:
             self.master.after(0, self.change_background)
 
@@ -151,6 +154,16 @@ class GraphApp:
         msg = "Cliquez ou appuyez sur une touche pour fermer la fenêtre."
         print("\nLe script a terminé son exécution.")
         print(msg)
+
+        # print("der étape:", self.der_change)
+        self.ax.text(
+            self.der_change[0],
+            self.der_change[1],
+            str(self.der_change[1]),
+            ha="center",
+            va="bottom",
+            color="purple",
+        )
 
         # Changer la couleur de fond pour indiquer que c'est terminé
         # self.fig.patch.set_facecolor("#eee")
@@ -188,60 +201,16 @@ class GraphApp:
 
 if __name__ == "__main__":
 
-    from IterativeSorts import IterativeSortArr
-    import random
+    from dataTemplate import dataTemplate
 
-    # IterativeSort([5, 6, 2, 1, 9, 8, 3, 4, 7])
+    # On récupère les données nécessaires:
+    # Des data pour définir l'échantillon de données
+    # Des params d'affichage du graphique
+    data, graphParams = dataTemplate()
+    print(data)
+    print(graphParams, "\n", "-" * 74)
 
-    # tableaux = IterativeSortArr([5, 6, 2, 1, 9, 8, 3, 4, 7])
-    # print("\nres:")
-    # pprint(tableaux)
+    # On demande les données et le graphique correspondant
+    from graphData import graphData
 
-    # 1) On défini l'échantillon de valeurs uniques à trier (Nombre et valeur de la + grande)
-    # À noter:  Vu que uniques, max_value >= numbers_number
-    data = {
-        "max_value": 9,  # Dans les données,  valeur maximum des items - Max: 1e18 (Soit 1 suivi de 18 zéros))
-        "numbers_number": 9,  # Mini 1e0 + 1 (Soit 2)
-        "min_value": 1,  # Dans les données,  valeur minimale des items (Max: 1e18)
-        "twice_authorized": 0,
-    }
-
-    if (
-        data["numbers_number"] > 1
-        and data["max_value"] <= 1e18
-        and data["min_value"] <= data["max_value"]
-        and data["numbers_number"] < data["max_value"] + 1
-        if not data["twice_authorized"]
-        else True
-    ):
-
-        tableaux = IterativeSortArr(
-            random.choices(
-                range(data["min_value"], (int)(data["max_value"] + 1)),
-                k=(int)(data["numbers_number"]),
-            )
-            if data["twice_authorized"]
-            else random.sample(
-                range(data["min_value"], (int)(data["max_value"] + 1)),
-                (int)(data["numbers_number"]),
-            )
-        )
-
-        # tableaux = [
-        #     [3, 1, 2],
-        #     [11, 33, 22],
-        #     [111, 222, 333],
-        # ]
-
-        # 2) On défini ici
-        graph_params = {
-            "op_name": "Tri itératif",
-            "speed": 0.5,  # Délai entre 2 changements (En secondes)
-            "screen_number": 2,  # Pour faire que le graphique sorte sur le 2ème écran et ne pas perdre la main sur l'éditeur (et le code)
-        }
-
-        GraphApp.main(tableaux, graph_params)
-        # GraphApp.main(tableaux)
-
-    else:
-        print("<>" * 50, "Vérifiez vos valeurs !", "<>" * 50)
+    graphData(data, graphParams)
