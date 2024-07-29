@@ -23,34 +23,29 @@ def recursiveSort(l, StartInd=0):
 def recursiveSortArr(l):
     res = []
 
-    def recursionSort(l, res, StartInd=0):
+    def recursionSort(l, StartInd=0):
+        nonlocal res
         if len(l) - 1 > StartInd:
             minValInd = StartInd
             for j in range(StartInd + 1, len(l)):
                 if l[j] < l[minValInd]:
                     minValInd = j
 
+            showLine(StartInd, l, l[StartInd], l[minValInd])
+            res.append(l.copy())
             l[StartInd], l[minValInd] = l[minValInd], l[StartInd]
 
-            print(str(StartInd).rjust(3), l)
-            # res.append(l)  # Copie de l, et pas valeur finale
-            # recursionSort(l, StartInd + 1)
-
-            showLine(StartInd, l[minValInd], 111, 222)
             recursionSort(l, StartInd + 1)
 
-    res.append(l)
-    return recursionSort(l, res)
-
-    # showLine(StartInd, l, "ni", "Fi")
-
-    return recursionSort(l, res)
+    # res = recursionSort(l)
+    recursionSort(l)
+    return res
 
 
 if __name__ == "__main__":
     # l = [11, 39, 9, 2, 8, 87, 92, 63, 74, 6, 5, 69, 63, 33, 46]
     l = [3, 1, 4, 2]
-    print(" # ", l)
+    # print(" # ", l)
     res = recursiveSortArr(l)
     # recursiveSort(l)
     print("-" * 55)

@@ -15,6 +15,11 @@ class SortSelection:
 
             tableaux = IterativeSortArr(initialList)
 
+        if graph_params["op_name"] == "Tri récursif":
+            from sort2_RecursiveSort import RecursiveSortArr
+
+            tableaux = RecursiveSortArr(initialList)
+
         return tableaux
 
 
@@ -31,9 +36,11 @@ if __name__ == "__main__":
         3: "Tri par sélection",
     }
 
+    # //2fix try other than 0
     graphParams["op_name"] = sortTypes[0]
 
-    print(data, graphParams, "\n", "-" * 55)
+    print(data, "\n")
+    print(graphParams, "\n", "-" * 55)
 
     initialList = getInitialList.getInitialList(data)
 
