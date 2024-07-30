@@ -152,7 +152,7 @@ class GraphApp:
     def change_background(self):
         self.complete = True
         tableaux = self.tableaux
-        msg = "Cliquez ou appuyez sur une touche pour fermer la fenêtre (Ou attendez 7 secondes)."
+        msg = "Cliquez ou appuyez sur une touche pour fermer la fenêtre."
         print("\nLe script a terminé son exécution.")
         print(msg)
 
@@ -173,18 +173,17 @@ class GraphApp:
         # Mettre à jour le titre de la fenêtre
         self.master.title("Animation terminée - " + msg)
         self.ax.set_title(
-            f"Tri itératif - Étape {len(tableaux)} / {len(tableaux)} (Fini  !) → {msg}"  
+            f"Tri itératif - Étape {len(tableaux)} / {len(tableaux)} (Fini  !) → {msg}"
         )
         self.canvas.draw() 
 
         # Afficher le message dans le label
-        self.message_label.config(text=msg, fg="blue", bg="#eee", width=100) 
+        self.message_label.config(text=msg, fg="blue", bg="#eee")
 
-        self.schedule_auto_close()
+        # if self.auto_close:
+        # time.sleep(7)
+        # self.on_closing()
 
-    def schedule_auto_close(self):
-        self.master.after(7000, self.on_closing)
-        
     def close_on_click(self, event):
         self.on_closing()
 

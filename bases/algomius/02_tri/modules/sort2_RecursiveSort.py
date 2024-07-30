@@ -20,7 +20,7 @@ def recursiveSort(l, StartInd=0):
     return l
 
 
-def recursiveSortArr(l):
+def SortArr(l):
     res = []
 
     def recursionSort(l, StartInd=0):
@@ -35,18 +35,23 @@ def recursiveSortArr(l):
             res.append(l.copy())
             l[StartInd], l[minValInd] = l[minValInd], l[StartInd]
 
+            if len(l) - 2 == StartInd:
+                # print ('xxx', len(l), StartInd)
+                res.append(l.copy())
             recursionSort(l, StartInd + 1)
 
-    # res = recursionSort(l)
     recursionSort(l)
+    showLine(len(l) + 1, l, "ni", "Fi → Fini !")
     return res
 
 
 if __name__ == "__main__":
+    from pprint import pprint
+
     # l = [11, 39, 9, 2, 8, 87, 92, 63, 74, 6, 5, 69, 63, 33, 46]
     l = [3, 1, 4, 2]
     # print(" # ", l)
-    res = recursiveSortArr(l)
+    res = SortArr(l)
     # recursiveSort(l)
     print("-" * 55)
-    print(res)
+    pprint(res, width=50)

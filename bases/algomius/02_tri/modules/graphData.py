@@ -67,3 +67,4 @@ if __name__ == "__main__":
 
     # On demande les données et le graphique correspondant
     graphData(data, graphParams)
+ 

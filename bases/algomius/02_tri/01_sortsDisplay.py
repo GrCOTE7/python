@@ -47,8 +47,21 @@ if __name__ == "__main__":
         "twice_authorized": 1,  # 0 : Pas de double 1 si OK
     }
 
+    types = {
+        1: "itératif",
+        2: "récursif",
+        3: "à bulles",
+        4: "par insertion",
+        5: "fusion",
+        6: "rapide",
+        7: "tas",
+        8: "par comptage",
+        9: "dichotomique",
+        10: "complexité",
+        }
+
     graph_params = {
-        "op_name": "Tri itératif",
+        "op_name": "Tri " + types[4],  # "Tri itératif" ou "Tri récursif",
         "speed": 1,  # Délai entre 2 changements (En secondes)
         "screen_number": 2,  # Pour faire que le graphique sorte sur le 2ème écran et ne pas perdre la main sur l'éditeur (et le code)
     }

@@ -22,10 +22,9 @@ def IterativeSort(l):
             showLine(i, l, l[i], l[minInd])
             l[i], l[minInd] = l[minInd], l[i]
 
-    showLine(i + 1, l, "ni", "Fi")
+    showLine(i + 1, l, "ni", "Fi → Fini !")
 
-
-def IterativeSortArr(l):
+def SortArr(l):
     res = []
 
     for i in range(len(l) - 1):
@@ -40,7 +39,7 @@ def IterativeSortArr(l):
             res.append(l[:])  # Copie de l, et pas valeur finale
             l[i], l[minInd] = l[minInd], l[i]
 
-    showLine(i + 1, l, "ni", "Fi")
+    showLine(i + 1, l, "ni", "Fi → Fini !")
     res.append(l)  # Valeur finale de l
 
     return res

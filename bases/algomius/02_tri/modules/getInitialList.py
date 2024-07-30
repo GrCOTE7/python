@@ -11,8 +11,6 @@ def getInitialList(data):
 
         import random
 
-        from sort1_IterativeSorts import IterativeSortArr
-
         liste = (
             random.choices( 
                 range(data["min_value"], (int)(data["max_value"] + 1)),
