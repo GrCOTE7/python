@@ -22,6 +22,7 @@ def getInitialList(data):
                 (int)(data["numbers_number"]),
             )
         )
+        # liste = [3, 5, 1, 4, 2]
         return liste
 
 

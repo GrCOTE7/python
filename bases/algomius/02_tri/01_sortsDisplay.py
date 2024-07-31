@@ -23,7 +23,7 @@ def basicSort():
     sgc7 = l.copy()
     sgc7 = sorted(sgc7, key=lambda x: x)
     print(f"{' ' * 4}sgc7() : {sgc7}")
-
+ 
 
 def runIterativeSort():
     from modules.IterativeSorts import IterativeSort
@@ -52,19 +52,19 @@ if __name__ == "__main__":
         2: "récursif",
         3: "à bulles",
         4: "par insertion",
-        5: "fusion",
+        5: "par fusion",
         6: "rapide",
         7: "tas",
         8: "par comptage",
         9: "dichotomique",
         10: "complexité",
-        }
+        } 
 
     graph_params = {
-        "op_name": "Tri " + types[4],  # "Tri itératif" ou "Tri récursif",
+        "op_name": "Tri " + types[5],  # "Tri itératif" ou "Tri récursif",
         "speed": 1,  # Délai entre 2 changements (En secondes)
         "screen_number": 2,  # Pour faire que le graphique sorte sur le 2ème écran et ne pas perdre la main sur l'éditeur (et le code)
-    }
+    } 
 
     graphData(data, graph_params)
- 
+  

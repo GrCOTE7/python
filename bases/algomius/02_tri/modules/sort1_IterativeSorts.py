@@ -46,4 +46,5 @@ def SortArr(l):
 
 
 if __name__ == "__main__":
-    IterativeSort([10, 2, 3, 4, 5, 6, 7, 8, 9, 1])
+    # IterativeSort([10, 2, 3, 4, 5, 6, 7, 8, 9, 1])
+    SortArr([3, 5, 1, 4, 2])

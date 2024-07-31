@@ -14,6 +14,7 @@ class SortSelection:
             "Tri récursif": "sort2_RecursiveSort",
             "Tri à bulles": "sort3_BubbleSort",
             "Tri par insertion": "sort4_InsertionSort",
+            "Tri par fusion": "sort5_MergeSort",
         }
 
         module_name = sort_modules.get(graph_params["op_name"])
@@ -30,11 +31,17 @@ if __name__ == "__main__":
 
     data, graphParams = dataTemplate()
 
-    sortTypes = {
-        1: "Tri itératif",
-        2: "Tri récursif",
-        3: "Tri à bulles",
-        4: "Tri par insertion",
+    types = {
+        1: "itératif",
+        2: "récursif",
+        3: "à bulles",
+        4: "par insertion",
+        5: "par fusion",
+        6: "rapide",
+        7: "tas",
+        8: "par comptage",
+        9: "dichotomique",
+        10: "complexité",
     }
 
     graphParams["op_name"] = sortTypes[4]
