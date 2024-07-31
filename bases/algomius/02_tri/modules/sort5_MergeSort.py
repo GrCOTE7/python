@@ -21,7 +21,7 @@ def showLine(i, l, un, deux):
 def mergeSort(l):
     n = len(l)
 
-    if n > 1:
+    if n > 1: 
         mid = n // 2
         left_half = l[:mid]
         right_half = l[mid:]
@@ -116,7 +116,7 @@ if __name__ == "__main__":
 
     data = {
         "max_value": 200,  # Dans les données,  valeur maximum des items - Max: 1e18 (Soit 1 suivi de 18 zéros))
-        "numbers_number": 100,  # Mini 1e0 + 1 (Soit 2)
+        "numbers_number": 200,  # Mini 1e0 + 1 (Soit 2)
         "min_value": 1,  # Dans les données,  valeur minimale des items (Max: 1e18)
         "twice_authorized": 1,  # 0 : Pas de double 1 si OK
     }

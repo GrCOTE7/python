@@ -61,7 +61,7 @@ if __name__ == "__main__":
         } 
 
     graph_params = {
-        "op_name": "Tri " + types[5],  # "Tri itératif" ou "Tri récursif",
+        "op_name": "Tri " + types[4],  # "Tri itératif" ou "Tri récursif",
         "speed": 1,  # Délai entre 2 changements (En secondes)
         "screen_number": 2,  # Pour faire que le graphique sorte sur le 2ème écran et ne pas perdre la main sur l'éditeur (et le code)
     } 

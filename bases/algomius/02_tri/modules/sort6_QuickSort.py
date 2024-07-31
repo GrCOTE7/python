@@ -1,3 +1,5 @@
+# https://www.youtube.com/watch?v=JyXNda9Frrw&list=PLo53cbpzes8YitYTmH9Z2wxLt73sL_CJj&index=6
+
 import sys
 import os
 from pprint import pprint
@@ -50,7 +52,7 @@ if __name__ == "__main__":
     # l = random.sample(range(1, 101), 10)
     l = [3, 5, 1, 4, 2]
 
-    quickSort(l[::]) 
+    quickSort(l[::])
     # print("-" * 68)
     # res = SortArr(l)
     # print("-" * 68)
