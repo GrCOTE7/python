@@ -173,7 +173,7 @@ class GraphApp:
         # Mettre à jour le titre de la fenêtre
         self.master.title("Animation terminée - " + msg)
         self.ax.set_title(
-            f"Tri itératif - Étape {len(tableaux)} / {len(tableaux)} (Fini  !) → {msg}"  
+            f"{self.graph_params['op_name']} - Étape {len(tableaux)} / {len(tableaux)} (Fini  !) → {msg}"
         )
         self.canvas.draw() 
 
@@ -184,7 +184,7 @@ class GraphApp:
 
     def schedule_auto_close(self):
         self.master.after(7000, self.on_closing)
-        
+
     def close_on_click(self, event):
         self.on_closing()
 
@@ -197,7 +197,7 @@ class GraphApp:
         self.master.destroy()
         completeProcess = "terminé" if self.complete else "interrompu"
         print(f"\nFenêtre fermée - Process {completeProcess}.")
-        
+
     def auto_close(self):
         self.on_closing() 
 
@@ -209,7 +209,7 @@ class GraphApp:
         # if (auto_close):
         #     time.sleep(3)
         #     root.mainloop().on_closing()
-  
+
 
 if __name__ == "__main__":
 
@@ -228,4 +228,3 @@ if __name__ == "__main__":
     from graphData import graphData
 
     graphData(data, graphParams)
- 
