@@ -12,11 +12,22 @@ sys.path.append(modules_dir)
 from graphData import graphData
 
 
-def showLine(i, l, un, deux):
-    print(str(i).rjust(2), l, "→", str(un).rjust(2), "↔", str(deux).rjust(2))
+def showLine(i, l, pivot, un, deux):
+    print(
+        str(i).rjust(2), l, " :", pivot, "→", str(un).rjust(2), "↔", str(deux).rjust(2)
+    )
+
+
+FINI = "Fi → Fini !"
+
+res = []
+i_count = 0
 
 
 def partitionner(l, debut, fin):
+
+    global i_count
+
     valeur_pivot = l[fin]
     # Fixer la valeur et l'indice du pivot
     indice_pivot = debut
@@ -28,24 +39,30 @@ def partitionner(l, debut, fin):
             # Inverser l'élément avec l'élément à gauche du pivot
             l[i], l[indice_pivot] = l[indice_pivot], l[i]
             if i != indice_pivot:
-                print(l)
+                # print(l)
+                res.append(l[::])
+                showLine(i_count, res[i_count], valeur_pivot, l[i], l[indice_pivot])
+                i_count += 1
             # Incrémenter l'indice du pivot
             indice_pivot += 1
 
     # Inverser le pivot avec l'élément à droite du pivot
     l[fin], l[indice_pivot] = l[indice_pivot], l[fin]
     if fin != indice_pivot:
-        print(l)
+        # print(l)
+        res.append(l[::])
+        showLine(i_count, res[i_count], valeur_pivot, l[indice_pivot], l[fin])
+        i_count += 1
     # Retourner l'indice du pivot
-    return indice_pivot
-
-    # Retourner l'indice de pivot
     return indice_pivot
 
 
 def tri_rapide(l, debut=0, fin=None):
     if fin == None:
+
+        res.append(l[::])
         fin = len(l) - 1
+        # showLine(0, l, l[fin],l[fin])
 
     if fin > debut:
         # Condition de fin
@@ -55,6 +72,9 @@ def tri_rapide(l, debut=0, fin=None):
         tri_rapide(l, debut, pivot - 1)
         # Tri sur la partie de droite
         tri_rapide(l, pivot + 1, fin)
+        return res
+    elif fin == len(l) - 1:
+        showLine(i_count, l, fin, "ni", FINI)
 
 
 def partition(l, start, end):
@@ -70,7 +90,7 @@ def partition(l, start, end):
             j += 1
 
     lj = l[j]
-    lend = l[end]
+    l_end = l[end]
     l[j], l[end] = l[end], l[j]
     if end != j:
         print(l)
@@ -97,7 +117,7 @@ def quickSort(l):
             i += 1
             l[j - 1], l[j] = l[j], l[j - 1]
             j -= 1
-    showLine(i, l, "ni", "Fi → Fini !")
+    showLine(i, l, "ni", FINI)
     return l
 
 
@@ -112,7 +132,7 @@ def SortArr(l):
             res.append(l[::])
             l[j - 1], l[j] = l[j], l[j - 1]
             j -= 1
-    showLine(i, l, "ni", "Fi → Fini !")
+    showLine(i, l, "ni", FINI)
     res.append(l)
     return res
 
@@ -123,16 +143,17 @@ if __name__ == "__main__":
 
     # génère 10 nombres uniques entre 1 et 100
     # l = random.sample(range(1, (int)(1e5 + 1)), 100000)
-    # l = [3, 5, 1, 4, 2]
+    # l = [3, 7, 5, 1, 4, 6, 2]
 
-    print(l)
+    # print(l)
     # sort_quicksort(l)
-    tri_rapide(l)
-    print(l)
+    tri_rapide(l, 0)
+    # pprint(res, width=50)
 
     # quickSort(l[::])
     # print("-" * 68)
     # res = SortArr(l)
+
     # print("-" * 68)
     # pprint(res)
 
