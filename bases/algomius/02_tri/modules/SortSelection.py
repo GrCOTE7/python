@@ -15,6 +15,8 @@ class SortSelection:
             "Tri à bulles": "sort3_BubbleSort",
             "Tri par insertion": "sort4_InsertionSort",
             "Tri par fusion": "sort5_MergeSort",
+            "Tri rapide": "sort6_QuickSort",
+            "Tri par tas": "sort7_HeapSort",
         }
 
         module_name = sort_modules.get(graph_params["op_name"])

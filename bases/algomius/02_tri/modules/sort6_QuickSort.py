@@ -122,19 +122,7 @@ def quickSort(l):
 
 
 def SortArr(l):
-    res = []
-    i = 0
-    for indice in range(len(l)):
-        j = indice
-        while j > 0 and l[j - 1] > l[j]:
-            showLine(i, l, l[j - 1], l[j])
-            i += 1
-            res.append(l[::])
-            l[j - 1], l[j] = l[j], l[j - 1]
-            j -= 1
-    showLine(i, l, "ni", FINI)
-    res.append(l)
-    return res
+    return tri_rapide(l)
 
 
 if __name__ == "__main__":
@@ -147,7 +135,7 @@ if __name__ == "__main__":
 
     # print(l)
     # sort_quicksort(l)
-    tri_rapide(l, 0)
+    # tri_rapide(l, 0)
     # pprint(res, width=50)
 
     # quickSort(l[::])
@@ -157,19 +145,33 @@ if __name__ == "__main__":
     # print("-" * 68)
     # pprint(res)
 
+    # SortArr = quickSort()
+
     data = {
-        "max_value": 20,  # Dans les données,  valeur maximum des items - Max: 1e18 (Soit 1 suivi de 18 zéros))
-        "numbers_number": 12,  # Mini 1e0 + 1 (Soit 2)
+        "max_value": 100,  # Dans les données,  valeur maximum des items - Max: 1e18 (Soit 1 suivi de 18 zéros))
+        "numbers_number": 100,  # Mini 1e0 + 1 (Soit 2)
         "min_value": 1,  # Dans les données,  valeur minimale des items (Max: 1e18)
         "twice_authorized": 1,  # 0 : Pas de double 1 si OK
     }
 
-    types = {1: "itératif", 2: "récursif", 3: "à bulles"}
-
-    graph_params = {
-        "op_name": "Tri " + types[3],  # "Tri itératif" ou "Tri récursif",
-        "speed": 1,  # Délai entre 2 changements (En secondes)
-        "screen_number": 2,  # Pour faire que le graphique sorte sur le 2ème écran et ne pas perdre la main sur l'éditeur (et le code)
+    # print(l)
+    types = {
+        1: "itératif",
+        2: "récursif",
+        3: "à bulles",
+        4: "par insertion",
+        5: "par fusion",
+        6: "rapide",
+        7: "tas",
+        8: "par comptage",
+        9: "dichotomique",
+        10: "complexité",
     }
 
-    # graphData(data, graph_params)
+    graph_params = {
+        "op_name": "Tri " + types[6],  # "Tri itératif" ou "Tri récursif",
+        "speed": 0.01,  # Délai entre 2 changements (En secondes)
+        "screen_number": 1,  # Pour faire que le graphique sorte sur le 2ème écran et ne pas perdre la main sur l'éditeur (et le code)
+    }
+
+    graphData(data, graph_params)
