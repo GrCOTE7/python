@@ -8,7 +8,7 @@ def dataTemplate():
     }
 
     graph_params = {
-        "op_name": "Tri itératif",
+        "op_name": "Tri par tas",
         "speed": 1,  # Délai entre 2 changements (En secondes)
         "screen_number": 2,  # Pour faire que le graphique sorte sur le 2ème écran et ne pas perdre la main sur l'éditeur (et le code)
     }

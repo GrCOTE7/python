@@ -16,7 +16,7 @@ class SortSelection:
             "Tri par insertion": "sort4_InsertionSort",
             "Tri par fusion": "sort5_MergeSort",
             "Tri rapide": "sort6_QuickSort",
-            "Tri par tas": "sort7_HeapSort",
+            "Tri par tas": "sort7_HeapSort"
         }
 
         module_name = sort_modules.get(graph_params["op_name"])
@@ -40,22 +40,23 @@ if __name__ == "__main__":
         4: "par insertion",
         5: "par fusion",
         6: "rapide",
-        7: "tas",
+        7: "par tas",
         8: "par comptage",
         9: "dichotomique",
         10: "complexité",
     }
 
-    graphParams["op_name"] = sortTypes[4]
+    graphParams["op_name"] = 'Tri ' + types[6]
 
     print(data, "\n")
     print(graphParams, "\n", "-" * 55)
 
     initialList = getInitialList.getInitialList(data)
-    # initialList = [3, 1, 4, 2]
+    initialList = [3, 7, 5, 1, 4, 6, 2]
 
     print(initialList, "\n")
 
     tableaux = SortSelection().get_tableaux(initialList, graphParams)
-    # print(" " * ((len(initialList) // 2) * 3 + 10), "→")
-    # pprint(tableaux)
+    print(" " * ((len(initialList) // 2) * 3 + 10), "→")
+    pprint(tableaux)
+  

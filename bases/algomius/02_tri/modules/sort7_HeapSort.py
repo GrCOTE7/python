@@ -71,9 +71,11 @@ def heap_sort_arr(l):
         i_count += 1
         res.append(l[::])
         heapify_arr(l, i, 0)
+    showLine(len(res) - 1, l, "ni", FINI)
+    return res
 
 
-# restore heap properties (liste, dernier indice, racine à évaluer)
+# restore heap properties (liste, dernier indice, racine à évaluer) 
 def heapify_arr(l, n, i):
     """
     Ajuste récursivement les éléments de la liste pour maintenir la propriété de max-heap.
@@ -103,61 +105,8 @@ def heapify_arr(l, n, i):
         heapify_arr(l, n, maxVal)
 
 
-def partitionner(l, debut, fin):
-
-    global i_count
-
-    valeur_pivot = l[fin]
-    # Fixer la valeur et l'indice du pivot
-    indice_pivot = debut
-
-    # Parcourir les éléments
-    for i in range(debut, fin):
-        # Si l'élément est plus petit que le pivot
-        if l[i] < valeur_pivot:
-            # Inverser l'élément avec l'élément à gauche du pivot
-            l[i], l[indice_pivot] = l[indice_pivot], l[i]
-            if i != indice_pivot:
-                # print(l)
-                res.append(l[::])
-                showLine(i_count, res[i_count], valeur_pivot, l[i], l[indice_pivot])
-                i_count += 1
-            # Incrémenter l'indice du pivot
-            indice_pivot += 1
-
-    # Inverser le pivot avec l'élément à droite du pivot
-    l[fin], l[indice_pivot] = l[indice_pivot], l[fin]
-    if fin != indice_pivot:
-        # print(l)
-        res.append(l[::])
-        showLine(i_count, res[i_count], valeur_pivot, l[indice_pivot], l[fin])
-        i_count += 1
-    # Retourner l'indice du pivot
-    return indice_pivot
-
-
-def tri_par_tas(l, debut=0, fin=None):
-    if fin == None:
-
-        res.append(l[::])
-        fin = len(l) - 1
-        # showLine(0, l, l[fin],l[fin])
-
-    if fin > debut:
-        # Condition de fin
-        pivot = partitionner(l, debut, fin)
-        # Chercher le pivot
-        # Tri sur la partie de gauche
-        tri_rapide(l, debut, pivot - 1)
-        # Tri sur la partie de droite
-        tri_rapide(l, pivot + 1, fin)
-        return res
-    elif fin == len(l) - 1:
-        showLine(i_count, l, fin, "ni", FINI)
-
-
 def SortArr(l):
-    return tri_rapide(l)
+    return heap_sort_arr(l)
 
 
 if __name__ == "__main__":
@@ -166,15 +115,16 @@ if __name__ == "__main__":
 
     # génère 10 nombres uniques entre 1 et 100
     # l = random.sample(range(1, (int)(1e5 + 1)), 100000)
-    l = [3, 7, 5, 1, 4, 6, 2]
+    # l = [3, 7, 5, 1, 4, 6, 2]
 
-    print(l)
-    heap_sort_arr(l)
-    print(l)
-    print("-" * 68)
-    pprint(res, width=50)
+    # print(l)
+    # heap_sort_arr(l)
+    # print(l)
+    # print("-" * 68)
+    # pprint(res, width=150)
 
     # quickSort(l[::])
+    # res =
     # res = SortArr(l)
 
     # print("-" * 68)
@@ -184,9 +134,9 @@ if __name__ == "__main__":
 
     data = {
         "max_value": 100,  # Dans les données,  valeur maximum des items - Max: 1e18 (Soit 1 suivi de 18 zéros))
-        "numbers_number": 100,  # Mini 1e0 + 1 (Soit 2)
+        "numbers_number": 10,  # Mini 1e0 + 1 (Soit 2)
         "min_value": 1,  # Dans les données,  valeur minimale des items (Max: 1e18)
-        "twice_authorized": 1,  # 0 : Pas de double 1 si OK
+        "twice_authorized": 0,  # 0 : Pas de double 1 si OK
     }
 
     # print(l)
@@ -204,9 +154,9 @@ if __name__ == "__main__":
     }
 
     graph_params = {
-        "op_name": "Tri " + types[7],  # "Tri itératif" ou "Tri récursif",
-        "speed": 0.01,  # Délai entre 2 changements (En secondes)
-        "screen_number": 1,  # Pour faire que le graphique sorte sur le 2ème écran et ne pas perdre la main sur l'éditeur (et le code)
+        "op_name": "Tri " + types[3],  # "Tri itératif" ou "Tri récursif",
+        "speed": 0.1,  # Délai entre 2 changements (En secondes)
+        "screen_number": 2,  # Pour faire que le graphique sorte sur le 2ème écran et ne pas perdre la main sur l'éditeur (et le code)
     }
 
-    # graphData(data, graph_params)
+    graphData(data, graph_params)

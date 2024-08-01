@@ -128,7 +128,7 @@ if __name__ == "__main__":
         4: "par insertion",
         5: "par fusion",
         6: "rapide",
-        7: "tas",
+        7: "par tas",
         8: "par comptage",
         9: "dichotomique",
         10: "complexité",

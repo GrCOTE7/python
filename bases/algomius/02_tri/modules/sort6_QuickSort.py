@@ -135,16 +135,16 @@ if __name__ == "__main__":
 
     # print(l)
     # sort_quicksort(l)
-    # tri_rapide(l, 0)
+    tri_rapide(l, 0)
     # pprint(res, width=50)
 
     # quickSort(l[::])
     # print("-" * 68)
     # res = SortArr(l)
 
-    # print("-" * 68)
-    # pprint(res)
-
+    print("-" * 68)
+    pprint(res)
+ 
     # SortArr = quickSort()
 
     data = {
@@ -162,16 +162,17 @@ if __name__ == "__main__":
         4: "par insertion",
         5: "par fusion",
         6: "rapide",
-        7: "tas",
+        7: "par tas",
         8: "par comptage",
         9: "dichotomique",
         10: "complexité",
     }
-
+ 
     graph_params = {
         "op_name": "Tri " + types[6],  # "Tri itératif" ou "Tri récursif",
         "speed": 0.01,  # Délai entre 2 changements (En secondes)
-        "screen_number": 1,  # Pour faire que le graphique sorte sur le 2ème écran et ne pas perdre la main sur l'éditeur (et le code)
+        "screen_number": 2,  # Pour faire que le graphique sorte sur le 2ème écran et ne pas perdre la main sur l'éditeur (et le code)
     }
 
     graphData(data, graph_params)
+ 

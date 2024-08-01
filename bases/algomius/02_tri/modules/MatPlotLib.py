@@ -220,9 +220,12 @@ if __name__ == "__main__":
     # Des params d'affichage du graphique
     data, graphParams = dataTemplate()
     print(data)
+    # graphParams['op_name']="Tri par tas"
+    # graphParams['op_name']="Tri rapide"
     print(graphParams, "\n", "-" * 74)
 
     # On demande les données et le graphique correspondant
     from graphData import graphData
 
     graphData(data, graphParams)
+ 
