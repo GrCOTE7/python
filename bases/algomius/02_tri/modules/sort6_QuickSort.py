@@ -3,6 +3,7 @@
 import sys
 import os
 from pprint import pprint
+import random
 
 script_dir = os.path.dirname(__file__)
 modules_dir = os.path.join(script_dir, "modules")
@@ -13,6 +14,78 @@ from graphData import graphData
 
 def showLine(i, l, un, deux):
     print(str(i).rjust(2), l, "→", str(un).rjust(2), "↔", str(deux).rjust(2))
+
+
+def partitionner(l, debut, fin):
+    valeur_pivot = l[fin]
+    # Fixer la valeur et l'indice du pivot
+    indice_pivot = debut
+
+    # Parcourir les éléments
+    for i in range(debut, fin):
+        # Si l'élément est plus petit que le pivot
+        if l[i] < valeur_pivot:
+            # Inverser l'élément avec l'élément à gauche du pivot
+            l[i], l[indice_pivot] = l[indice_pivot], l[i]
+            if i != indice_pivot:
+                print(l)
+            # Incrémenter l'indice du pivot
+            indice_pivot += 1
+
+    # Inverser le pivot avec l'élément à droite du pivot
+    l[fin], l[indice_pivot] = l[indice_pivot], l[fin]
+    if fin != indice_pivot:
+        print(l)
+    # Retourner l'indice du pivot
+    return indice_pivot
+
+    # Retourner l'indice de pivot
+    return indice_pivot
+
+
+def tri_rapide(l, debut=0, fin=None):
+    if fin == None:
+        fin = len(l) - 1
+
+    if fin > debut:
+        # Condition de fin
+        pivot = partitionner(l, debut, fin)
+        # Chercher le pivot
+        # Tri sur la partie de gauche
+        tri_rapide(l, debut, pivot - 1)
+        # Tri sur la partie de droite
+        tri_rapide(l, pivot + 1, fin)
+
+
+def partition(l, start, end):
+    piv = l[end]
+    j = start
+    for i in range(start, end):
+        li = l[i]
+        lj = l[j]
+        if l[i] <= piv:
+            l[i], l[j] = l[j], l[i]
+            if i != j:
+                print(l)
+            j += 1
+
+    lj = l[j]
+    lend = l[end]
+    l[j], l[end] = l[end], l[j]
+    if end != j:
+        print(l)
+    return j
+
+
+# Tri rapide sans affichage
+def sort_quicksort(l, start=0, end=None):
+    if end == None:
+        end = len(l) - 1
+
+    if end > start:
+        pivot = partition(l, start, end)
+        sort_quicksort(l, start, pivot - 1)
+        sort_quicksort(l, pivot + 1, end)
 
 
 def quickSort(l):
@@ -46,13 +119,18 @@ def SortArr(l):
 
 if __name__ == "__main__":
 
-    # l = [11, 39, 9, 2, 8, 87, 92, 63, 74, 6, 5, 69, 63, 33, 46]
+    l = [11, 39, 9, 2, 8, 87, 92, 63, 74, 6, 5, 69, 63, 33, 46]
 
     # génère 10 nombres uniques entre 1 et 100
-    # l = random.sample(range(1, 101), 10)
-    l = [3, 5, 1, 4, 2]
+    # l = random.sample(range(1, (int)(1e5 + 1)), 100000)
+    # l = [3, 5, 1, 4, 2]
 
-    quickSort(l[::])
+    print(l)
+    # sort_quicksort(l)
+    tri_rapide(l)
+    print(l)
+
+    # quickSort(l[::])
     # print("-" * 68)
     # res = SortArr(l)
     # print("-" * 68)
