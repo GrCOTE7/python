@@ -1,6 +1,7 @@
 import sys
 import os
 from pprint import pprint
+import random
 
 script_dir = os.path.dirname(__file__)
 modules_dir = os.path.join(script_dir, "modules")
@@ -82,10 +83,10 @@ def SortArr(l):
 
 if __name__ == "__main__":
 
-    l = [11, 39, 9, 2, 8, 87, 92, 63, 74, 6, 5, 69, 63, 33, 46]
+    # l = [11, 39, 9, 2, 8, 87, 92, 63, 74, 6, 5, 69, 63, 33, 46]
 
     # génère 10 nombres uniques entre 1 et 100
-    # l = random.sample(range(1, 101), 10)
+    l = random.sample(range(1, 101), 100)
     # l = [3, 5, 1, 4, 2]
     sortedL = SortArr(l)
     # print("-" * 68)

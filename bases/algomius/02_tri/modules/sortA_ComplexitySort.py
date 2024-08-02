@@ -1,74 +1,63 @@
-import sys
-import os
-from pprint import pprint
-
-script_dir = os.path.dirname(__file__)
-modules_dir = os.path.join(script_dir, "modules")
-sys.path.append(modules_dir)
-
-from graphData import graphData
+import random
+import time
 
 
-def showLine(i, l, un, deux):
-    print(str(i).rjust(2), l, "→", str(un).rjust(2), "↔", str(deux).rjust(2))
+def sort_selection(l):
+    for i in range(len(l)-1):
+        minInd = i
+        for j in range(i+1, len(l)):
+            if l[j] < l[minInd]:
+                minInd = j
+        if i!=minInd:
+            l[i], l[minInd] = l[minInd], l[i]
 
 
-def complexitySort(l):
-    i = 0
-    for indice in range(len(l)):
-        j = indice
-        while j > 0 and l[j - 1] > l[j]:
-            showLine(i, l, l[j - 1], l[j])
-            i += 1
-            l[j - 1], l[j] = l[j], l[j - 1]
-            j -= 1
-    showLine(i, l, "ni", "Fi → Fini !")
-    return l
+def sort_bubble(l):
+    hasChanged = True
+    while hasChanged:
+        hasChanged = False
+        for i in range(len(l) - 1):
+            if l[i] > l[i + 1]:
+                l[i], l[i + 1] = l[i + 1], l[i]
+                hasChanged = True
 
 
-def SortArr(l):
-    res = []
-    i = 0
-    for indice in range(len(l)):
-        j = indice
-        while j > 0 and l[j - 1] > l[j]:
-            showLine(i, l, l[j - 1], l[j])
-            i += 1
-            res.append(l[::])
-            l[j - 1], l[j] = l[j], l[j - 1]
-            j -= 1
-    showLine(i, l, "ni", "Fi → Fini !")
-    res.append(l)
-    return res
+def partition(l, start, end):
+    piv = l[end]
+    j = start
+    for i in range(start, end):
+        if l[i] <= piv:
+            l[i], l[j] = l[j], l[i]
+            j += 1
+    l[j], l[end] = l[end], l[j]
+    return j
 
 
-if __name__ == "__main__":
+def sort_quick(l, start=0, end=None):
+    if end == None:
+        end = len(l) - 1
 
-    # l = [11, 39, 9, 2, 8, 87, 92, 63, 74, 6, 5, 69, 63, 33, 46]
+    if end > start:
+        pivot = partition(l, start, end)
+        sort_quick(l, start, pivot - 1)
+        sort_quick(l, pivot + 1, end)
 
-    # génère 10 nombres uniques entre 1 et 100
-    # l = random.sample(range(1, 101), 10)
-    l = [3, 5, 1, 4, 2]
 
-    complexitySort(l[::]) 
-    # print("-" * 68)
-    # res = SortArr(l)
-    # print("-" * 68)
-    # pprint(res)
+l1 = random.sample(range(0, 1000000), 5000)
+l2 = l1[::]
+l3 = l1[::]
 
-    data = {
-        "max_value": 20,  # Dans les données,  valeur maximum des items - Max: 1e18 (Soit 1 suivi de 18 zéros))
-        "numbers_number": 12,  # Mini 1e0 + 1 (Soit 2)
-        "min_value": 1,  # Dans les données,  valeur minimale des items (Max: 1e18)
-        "twice_authorized": 1,  # 0 : Pas de double 1 si OK
-    }
+start = time.time()
+sort_selection(l1)
+end = time.time()
+print("Selection:", end - start)
 
-    types = {1: "itératif", 2: "récursif", 3: "à bulles"}
+start = time.time()
+sort_bubble(l2)
+end = time.time()
+print("Bubble:", end - start)
 
-    graph_params = {
-        "op_name": "Tri " + types[3],  # "Tri itératif" ou "Tri récursif",
-        "speed": 1,  # Délai entre 2 changements (En secondes)
-        "screen_number": 2,  # Pour faire que le graphique sorte sur le 2ème écran et ne pas perdre la main sur l'éditeur (et le code)
-    }
-
-    # graphData(data, graph_params)
+start = time.time()
+sort_quick(l3)
+end = time.time()
+print("Quick:", end - start)
