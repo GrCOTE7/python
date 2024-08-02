@@ -1,3 +1,5 @@
+# https://www.youtube.com/watch?v=Xz4lZd07VH0&list=PLo53cbpzes8YitYTmH9Z2wxLt73sL_CJj&index=8
+
 import sys
 import os
 from pprint import pprint
@@ -13,19 +15,22 @@ def showLine(i, l, un, deux):
     print(str(i).rjust(2), l, "→", str(un).rjust(2), "↔", str(deux).rjust(2))
 
 
-def countingSort(l):
-    i = 0
-    for indice in range(len(l)):
-        j = indice
-        while j > 0 and l[j - 1] > l[j]:
-            showLine(i, l, l[j - 1], l[j])
-            i += 1
-            l[j - 1], l[j] = l[j], l[j - 1]
-            j -= 1
-    showLine(i, l, "ni", "Fi → Fini !")
+def countSort(l):
+    maxVal = max(l)
+    output = [0 for i in range(maxVal + 1)]
+
+    for i in l:
+        output[i] += 1
+
+    ind = 0
+    for i in range(len(output)):
+        for j in range(output[i]):
+            l[ind] = i
+            ind += 1
+        # print(l)
     return l
 
-
+# 2do display pour countsort
 def SortArr(l):
     res = []
     i = 0
@@ -48,9 +53,11 @@ if __name__ == "__main__":
 
     # génère 10 nombres uniques entre 1 et 100
     # l = random.sample(range(1, 101), 10)
-    l = [3, 5, 1, 4, 2]
-
-    countingSort(l[::]) 
+    l = [3, 5, 9, 1, 4, 2]
+    l = [777777, 1]
+    print(l)
+    l = countSort(l[::])
+    print(l)
     # print("-" * 68)
     # res = SortArr(l)
     # print("-" * 68)
