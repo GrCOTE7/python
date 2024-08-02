@@ -13,17 +13,27 @@ def showLine(i, l, un, deux):
     print(str(i).rjust(2), l, "→", str(un).rjust(2), "↔", str(deux).rjust(2))
 
 
-def dichotomySort(l):
-    i = 0
-    for indice in range(len(l)):
-        j = indice
-        while j > 0 and l[j - 1] > l[j]:
-            showLine(i, l, l[j - 1], l[j])
-            i += 1
-            l[j - 1], l[j] = l[j], l[j - 1]
-            j -= 1
-    showLine(i, l, "ni", "Fi → Fini !")
-    return l
+def dichotomySearch(l, val):
+    print(f"Recherche de {val} dans {l}")
+    etape = 0
+    indice_gauche = 0
+    indice_droit = len(l) - 1
+
+    while indice_gauche <= indice_droit:
+        indice_milieu = (indice_gauche + indice_droit) // 2
+        etape += 1
+        print(
+            f"Étape #{etape} : {l[indice_gauche]} < {l[indice_milieu]} < {l[indice_droit]}"
+        )
+
+        if l[indice_milieu] == val:
+            print(f"Element {val} trouve a l'indice {indice_milieu}")
+            return indice_milieu
+        elif l[indice_milieu] < val:
+            indice_gauche = indice_milieu + 1
+        else:
+            indice_droit = indice_milieu - 1
+    print(f"Element {val} non trouvé dans {l}")
 
 
 def SortArr(l):
@@ -44,17 +54,19 @@ def SortArr(l):
 
 if __name__ == "__main__":
 
-    # l = [11, 39, 9, 2, 8, 87, 92, 63, 74, 6, 5, 69, 63, 33, 46]
+    l = [11, 39, 9, 2, 8, 87, 92, 63, 74, 6, 5, 69, 63, 33, 46]
 
     # génère 10 nombres uniques entre 1 et 100
     # l = random.sample(range(1, 101), 10)
-    l = [3, 5, 1, 4, 2]
+    # l = [3, 5, 1, 4, 2]
+    sortedL = SortArr(l)
+    print("-" * 68)
 
-    dichotomySort(l[::]) 
+    # pprint(sortedL)
+
+    dichotomySearch(sortedL[len(sortedL) - 1], 63)
     # print("-" * 68)
     # res = SortArr(l)
-    # print("-" * 68)
-    # pprint(res)
 
     data = {
         "max_value": 20,  # Dans les données,  valeur maximum des items - Max: 1e18 (Soit 1 suivi de 18 zéros))
