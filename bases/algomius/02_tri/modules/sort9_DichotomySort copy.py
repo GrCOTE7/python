@@ -14,7 +14,7 @@ def showLine(i, l, un, deux):
 
 
 def dichotomySearch(l, val):
-    print(f"Recherche de {val} dans {l}")
+    print(f"Recherche de {val} dans:\n{l}")
     etape = 0
     indice_gauche = 0
     indice_droit = len(l) - 1
@@ -23,31 +23,59 @@ def dichotomySearch(l, val):
         indice_milieu = (indice_gauche + indice_droit) // 2
         etape += 1
         print(
-            f"Étape #{etape} : {l[indice_gauche]} < {l[indice_milieu]} < {l[indice_droit]}"
+            f"\nÉtape #{etape} : {l[indice_gauche]} <= {l[indice_milieu]} <= {l[indice_droit]}"
         )
 
         if l[indice_milieu] == val:
-            print(f"Element {val} trouve a l'indice {indice_milieu}")
+            print(f"\nElement {val} trouvé a l'indice {indice_milieu}")
             return indice_milieu
         elif l[indice_milieu] < val:
             indice_gauche = indice_milieu + 1
         else:
             indice_droit = indice_milieu - 1
-    print(f"Element {val} non trouvé dans {l}")
+
+    print(f"\nElement {val} non trouvé dans la liste")
+
+
+def dichotomyRecursiveSearch(l, val, etape=0, indice_gauche=0, indice_droit=None):
+    if indice_droit == None:
+        print(f"Recherche de {val} dans:\n{l}")
+        etape = 0
+        indice_droit = len(l) - 1
+
+    if indice_gauche > indice_droit:
+        print(f"\nElement {val} non trouvé dans la liste")
+        return -1
+
+    indice_milieu = (indice_gauche + indice_droit) // 2
+    etape += 1
+
+    print(
+        f"\nÉtape #{etape} : {l[indice_gauche]} <= {l[indice_milieu]} <= {l[indice_droit]}"
+    )
+
+    if l[indice_milieu] == val:
+        print(f"\nElement {val} trouvé a l'indice {indice_milieu}")
+        return indice_milieu
+
+    elif l[indice_milieu] < val:
+        dichotomyRecursiveSearch(l, val, etape, indice_milieu + 1, indice_droit)
+    else:
+        dichotomyRecursiveSearch(l, val, etape, indice_gauche, indice_milieu - 1)
 
 
 def SortArr(l):
     res = []
-    i = 0
+    # i = 0
     for indice in range(len(l)):
         j = indice
         while j > 0 and l[j - 1] > l[j]:
-            showLine(i, l, l[j - 1], l[j])
-            i += 1
+            # showLine(i, l, l[j - 1], l[j])
+            # i += 1
             res.append(l[::])
             l[j - 1], l[j] = l[j], l[j - 1]
             j -= 1
-    showLine(i, l, "ni", "Fi → Fini !")
+    # showLine(i, l, "ni", "Fi → Fini !")
     res.append(l)
     return res
 
@@ -60,11 +88,12 @@ if __name__ == "__main__":
     # l = random.sample(range(1, 101), 10)
     # l = [3, 5, 1, 4, 2]
     sortedL = SortArr(l)
-    print("-" * 68)
+    # print("-" * 68)
 
     # pprint(sortedL)
 
-    dichotomySearch(sortedL[len(sortedL) - 1], 63)
+    # dichotomyRecursiveSearch(sortedL[len(sortedL) - 1], 5)
+    dichotomySearch(sortedL[len(sortedL) - 1], 5)
     # print("-" * 68)
     # res = SortArr(l)
 
