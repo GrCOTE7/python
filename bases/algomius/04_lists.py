@@ -7,14 +7,14 @@ import random
 # 5. Concaténation
 # 6. Opération sur les listes
 
-paragraphe = 1
+paragraphe = 6 
 if paragraphe == 1:
 
     # Création d'une liste vide
     liste1 = []
     print("Liste vide", liste1, type(liste1))
 
-    # Création d'une liste avec des valuers
+    # Création d'une liste avec des valeurs
     liste2 = ["oeufs", "farine", "beurre"]
     print("Liste de valeurs", liste2, type(liste2))
 
@@ -30,18 +30,18 @@ if paragraphe == 1:
     ]
     print("Liste de listes", liste4)
 
-    # Création d\'une liste à partir d'une chaine de caractères
+    # Création d\'une liste à partir d'une chaîne de caractères
     liste5 = "nom,prénom,âge,profession".split(",")
     print("Liste à partir d'une chaîne de caractères", liste5, type(liste5))
-    print("Chaîne de caractères à partir d'une liste", ";".join(liste5))
+    print("Chaîne de caractères à partir d'une liste", "-".join(liste5))
 
     # Liste initialisée avec une valeur par défaut
     liste6 = [0] * 10
     print("Liste avec valeurs par défaut", liste6)
 
     # Liste initialisée avec la fonction random
-    liste7 = random.sample(range(0, 1000), 15)
-    print("Liste avec valeurs aléatoires", liste7)
+    liste7 = random.sample(range(0, 100), 5)
+    print("Liste avec 5 valeurs aléatoires entre 0 et 100", liste7)
 
 elif paragraphe == 2:
 
@@ -85,7 +85,7 @@ elif paragraphe == 3:
     del liste1[0]
     print("Suppression du premier élément", liste1)
     monObjet = liste1.pop()
-    print("Elément de la liste", monObjet)
+    print("Element de la liste", monObjet)
     print("Liste sans l'élément", liste1)
 
     # Vidage de la liste
@@ -99,21 +99,18 @@ elif paragraphe == 4:
     liste2 = liste1
     print("Liste 1", liste1)
     print("Liste 2", liste2)
-    print("*" * 100)
+    print("*" * 78)
     liste1[0] = "moutarde"
     print("Liste 1", liste1)
     print("Liste 2", liste2)
-    print("*" * 100)
+    print("*" * 78)
 
     # Utilisation de la fonction copy
-    liste2 = liste1.copy()
-    print("Liste 1", liste1)
-    print("Liste 2", liste2)
-    print("*" * 100)
+    liste2 = liste1[::]
     liste1[0] = "oeufs"
     print("Liste 1", liste1)
     print("Liste 2", liste2)
-    print("*" * 100)
+    print("*" * 78)
 
 elif paragraphe == 5:
 
@@ -126,7 +123,7 @@ elif paragraphe == 5:
     print("Liste 1", liste1)
     print("Liste 2", liste2)
     print("Liste 3", liste3)
-    print("*" * 100)
+    print("*" * 78)
 
     # Concaténation dans une nouvelle variable
     liste4 = liste1 + liste2
@@ -134,7 +131,7 @@ elif paragraphe == 5:
     print("Liste 2", liste2)
     print("Liste 3", liste3)
     print("Liste 4", liste4)
-    print("*" * 100)
+    print("*" * 78)
 
 elif paragraphe == 6:
 
