@@ -31,7 +31,7 @@ def countSort(l):
         # print(l)
     return l
 
-# 2do display pour countsort
+# 2do display pour count_sort
 def SortArr(l):
     res = []
     i = 0
@@ -54,8 +54,8 @@ if __name__ == "__main__":
 
     # génère 10 nombres uniques entre 1 et 100
     # l = random.sample(range(1, 101), 10)
-    l = [3, 5, 9, 1, 4, 2]
-    l = [777777, 1]
+    l = [3, 5, 9, 3, 4, 2]
+    # l = [777777, 1]
     print(l)
     l = countSort(l[::])
     print(l)
