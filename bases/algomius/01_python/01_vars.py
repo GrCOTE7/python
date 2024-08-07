@@ -1,4 +1,4 @@
-# 2do La toute première: https://www.youtube.com/watch?v=3ACDFB13aVM
+# La toute première: https://www.youtube.com/watch?v=3ACDFB13aVM
 
 # 1. Généralité sur les variables
 # 2. les variables entières
@@ -11,7 +11,7 @@ def lg(n=27):
     print("*" * n)
 
 
-paragraphe = 5
+paragraphe = 1
 
 if paragraphe == 1:
     entier = 1
@@ -129,7 +129,7 @@ elif paragraphe == 4:
     # 0 est faux, le reste est vrai
     valeurBool6 = bool(0)
     print("valeurBool6", valeurBool6)
-    valeurBool7 = bool(1)
+    valeurBool7 = bool(7)
     print("valeurBool7", valeurBool7)
 
     # Vide est faux, le reste est vrai (pour str, list, tuple, dict, set)

@@ -1,10 +1,15 @@
 # 2do https://www.youtube.com/watch?v=c3GywHt7Kdg
 
+
 # 1. Fonction et retour de fonction (return yield)
 # 2. Paramètre de fonctions (mutable, defaut, *tuple d'argument, **dictionnaire d'argument)
 # 3. Récursivité
 # 4. Lambda fonctions
 # 5. Méthodes associées aux fonctions (callable, filter)
+
+
+def lg():
+    print("*" * 25)
 
 paragraphe = 1
 
@@ -16,21 +21,21 @@ if paragraphe == 1:
         print("La voiture est démarrée")
 
     demarrage()
-    print("*" * 25)
+    lg()
 
     # Fonction sans retour avec paramètre
     def boite_de_vitesse(num_vitesse):
         print("J'ai passé la vitesse", num_vitesse)
 
     boite_de_vitesse(1)
-    print("*" * 25)
+    lg()
 
     # Fonction avec retour
     def acceleration(vitesse):
         return vitesse + 10
 
     print("Nouvelle vitesse", acceleration(50))
-    print("*" * 25)
+    lg()
 
     # Utilisation de la fonction yield
     def vitesseDeLaBoite(num_vitesse):
@@ -50,7 +55,7 @@ elif paragraphe == 2:
     vitesse = 100
     acceleration(vitesse)
     print("Nouvelle vitesse", vitesse)
-    print("*" * 25)
+    lg()
 
     # Fonction avec un paramètre mutable
     def allumagePhare(element):
@@ -59,7 +64,7 @@ elif paragraphe == 2:
     element = {"Climatisation", "Radio"}
     allumagePhare(element)
     print("Elements allumés", element)
-    print("*" * 25)
+    lg()
 
     # Regroupement des paramètres sous forme de liste
     def allumage(*element):
@@ -81,7 +86,7 @@ elif paragraphe == 2:
             print("La climatisation est allumée")
 
     test_allumage(clim=True, phares=False, radio=True)
-    print("*" * 25)
+    lg()
 
     # Regroupement des paramètres sous forme de dictionnaire
     def test_allumage_dict(**element):
@@ -95,7 +100,7 @@ elif paragraphe == 2:
             print("La climatisation est allumée")
 
     test_allumage_dict(clim=True, phares=False, radio=True)
-    print("*" * 25)
+    lg()
 
     # Utilisation d'une valeur par défaut dans une fonction
     def destination(dest="France"):
@@ -115,7 +120,7 @@ elif paragraphe == 3:
         print("J'ai fini, bonne route")
 
     changement_roue(4)
-    print("*" * 25)
+    lg()
 
     # La même fonction en récursif
     def changement_roue_rec(nb_roues):
@@ -144,7 +149,7 @@ elif paragraphe == 5:
     # Test de la fonction callable sur un entier
     entier1 = 5
     print("Est-ce qu'un entier est appelable ?", callable(entier1))
-    print("*" * 25)
+    lg()
 
     # Test de la fonction callable sur une fonction def
     def demarrage():
@@ -152,12 +157,12 @@ elif paragraphe == 5:
 
     fonction1 = demarrage
     print("Est-ce qu'une fonction def est appelable ?", callable(fonction1))
-    print("*" * 25)
+    lg()
 
     # Test de la fonction callable sur une fonction lambda
     vitessePlus10 = lambda vitesse: vitesse + 10
     print("Est-ce qu'une fonction lambda est appelable ?", callable(vitessePlus10))
-    print("*" * 25)
+    lg()
 
     # Filtrage d'une liste à partir d'une fonction
     vitesses = [10, 140, 110, 85, 90, 45, 50]
@@ -172,7 +177,7 @@ elif paragraphe == 5:
     for vit in vitessesFiltrees:
         print(vit)
 
-    print("*" * 25)
+    lg()
 
     vitesses = [10, 140, 110, 85, 90, 45, 50]
 
