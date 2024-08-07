@@ -1,5 +1,5 @@
 # https://www.youtube.com/watch?v=d_4B9tLaqIY&list=PLo53cbpzes8YitYTmH9Z2wxLt73sL_CJj&index=9
-# //2do voir aussi: https://www.youtube.com/watch?v=OEmlVnH3aUg&ab_channel=C%C3%A9dricGERLAND
+# Aussi: https://www.youtube.com/watch?v=OEmlVnH3aUg&ab_channel=C%C3%A9dricGERLAND
 
 import sys
 import os
@@ -13,7 +13,7 @@ sys.path.append(modules_dir)
 
 from graphData import graphData
 
- 
+
 def showLine(i, l, un, deux):
     print(str(i).rjust(2), l, "→", str(un).rjust(2), "↔", str(deux).rjust(2))
 
@@ -21,7 +21,7 @@ def showLine(i, l, un, deux):
 def mergeSort(l):
     n = len(l)
 
-    if n > 1: 
+    if n > 1:
         mid = n // 2
         left_half = l[:mid]
         right_half = l[mid:]

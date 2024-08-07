@@ -19,8 +19,6 @@ arr = [
 import pygame
 import time
 
-# 2fix: Bon affichage des batonnets
-
 pygame.init()
 
 # taille de l'ecran

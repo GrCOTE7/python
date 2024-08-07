@@ -17,9 +17,9 @@ def showLine(i, l, un, deux):
 
 def countSort(l):
     maxVal = max(l)
-    output = [0 for i in range(maxVal + 1)]
-    # 2do tester output = [0]*(maxVal+1)
-
+    # output = [0 for i in range(maxVal + 1)]
+    output = [0]*(maxVal+1)
+ 
     for i in l:
         output[i] += 1
 

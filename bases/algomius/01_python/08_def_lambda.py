@@ -1,4 +1,4 @@
-# 2do https://www.youtube.com/watch?v=c3GywHt7Kdg
+# https://www.youtube.com/watch?v=c3GywHt7Kdg
 
 
 # 1. Fonction et retour de fonction (return yield)
@@ -10,6 +10,7 @@
 
 def lg():
     print("*" * 25)
+
 
 paragraphe = 1
 
@@ -40,8 +41,9 @@ if paragraphe == 1:
     # Utilisation de la fonction yield
     def vitesseDeLaBoite(num_vitesse):
         for i in range(1, num_vitesse + 1):
-            yield i
+            yield i, type(2)
 
+    print(vitesseDeLaBoite(6), type(vitesseDeLaBoite(6)))
     for i in vitesseDeLaBoite(6):
         print(i)
 
