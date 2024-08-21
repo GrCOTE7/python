@@ -1,4 +1,4 @@
-# 2do https://www.youtube.com/watch?v=472-NbPTe2k
+# https://www.youtube.com/watch?v=472-NbPTe2k
 
 
 from collections import deque
@@ -7,13 +7,13 @@ from collections import deque
 # 2. Parcours en profondeur recursif
 # 3. Parcours en profondeur itératif
 
+# Liste d'adjacences
 généaListe = {}
 généaListe["Robert"] = ["William", "Martha", "John"]
 généaListe["William"] = ["Amy"]
 généaListe["Amy"] = ["Steve", "Kim"]
 généaListe["Steve"] = []
 généaListe["Kim"] = []
-généaListe["Amy"]
 généaListe["Martha"] = []
 généaListe["John"] = ["Alison", "Jack"]
 généaListe["Alison"] = []
@@ -21,7 +21,8 @@ généaListe["Jack"] = ["Julia", "Madison"]
 généaListe["Julia"] = []
 généaListe["Madison"] = []
 
-paragraphe = 1
+paragraphe = 3
+# À noter: voisin signifie a une relation (Ici, dans le cadre de la généalogie, 'est descendant de')
 
 if paragraphe == 1:
     # Parcours en largeur d'un graphe
@@ -38,7 +39,7 @@ if paragraphe == 1:
 
     print("Parcours en largeur")
     parcours_largeur(généaListe, "Robert")
-    print("*" * 25)
+    print("*" * 28)
 
 elif paragraphe == 2:
 
@@ -52,8 +53,7 @@ elif paragraphe == 2:
 
     print("Parcours en profondeur récursif")
     parcours_profondeur_recursive(généaListe, "Robert")
-    print("*" * 25)
-
+    print("*" * 28)
 
 elif paragraphe == 3:
     # Parcours en profondeur itératif
@@ -70,4 +70,4 @@ elif paragraphe == 3:
 
     print("Parcours en profondeur itératif")
     parcours_profondeur_iterative(généaListe, "Robert")
-    print("*" * 25)
+    print("*" * 28)

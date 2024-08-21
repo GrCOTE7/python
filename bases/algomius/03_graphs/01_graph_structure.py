@@ -13,7 +13,7 @@ if paragraphe == 0:
     personne["Jack"] = [175, 75]
     print(personne)
 
-if paragraphe == 1:
+elif paragraphe == 1:
 
     reseauListe = {}
     reseauListe["Emma"] = ["John"]
