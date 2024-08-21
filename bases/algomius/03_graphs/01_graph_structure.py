@@ -1,4 +1,4 @@
-# 2do https://www.youtube.com/watch?v=ip9SGUd_cuc&t=643s
+# https://www.youtube.com/watch?v=ip9SGUd_cuc&t=643s
 
 # 1. Relation non orienté et non pondérée
 # 2. Relation orienté et non pondérée
@@ -6,6 +6,12 @@
 
 
 paragraphe = 1
+
+if paragraphe == 0:
+    personne = {}
+    personne["John"] = [180, 80]
+    personne["Jack"] = [175, 75]
+    print(personne)
 
 if paragraphe == 1:
 
