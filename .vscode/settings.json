@@ -3,6 +3,7 @@
   "cSpell.ignoreWords": ["travaillees"],
   "cSpell.words": [
     "algomius",
+    "annee",
     "arrivee",
     "blit",
     "booleen",
@@ -42,6 +43,7 @@
     "Noeud",
     "oeuf",
     "oeufs",
+    "pyautogui",
     "pycon",
     "pygame",
     "randint",
