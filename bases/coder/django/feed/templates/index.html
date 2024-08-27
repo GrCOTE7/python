@@ -1,0 +1,11 @@
+{{ messages }}
+
+<ul>
+  {% for message in messages %}
+  <li>
+    {{ message.content }}<br> 
+    {{ message.username }}<br> 
+    {{ message.created_at }}
+    {%endfor%}
+  </li>
+</ul>

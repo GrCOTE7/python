@@ -93,3 +93,5 @@ Algorythmie:
 https://www.youtube.com/watch?v=iNeqb-URBj4
 
 Outils: https://markmap.js.org/repl
+
+2do: refer https://www.ilovepdf.com/
