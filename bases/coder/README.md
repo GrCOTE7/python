@@ -10,9 +10,9 @@
 
 ## ViteJS
   - Django-Vite
-    - 2see [Louxdon](https://github.com/Louxsdon/django-vite)
-    - 2see [Django-MrBin99](https://github.com/MrBin99/django-vite)
-  -2see [Django-vite-plugin](https://github.com/protibimbok/django-vite-plugin) - Seul à gérer auto-reload
+    - [Louxdon](https://github.com/Louxsdon/django-vite)
+    - [Django-MrBin99](https://github.com/MrBin99/django-vite)
+  - 2see [Django-vite-plugin](https://github.com/protibimbok/django-vite-plugin) - Seul à gérer auto-reload
   - [Django-Breeze](https://github.com/Louxsdon/django-breeze)
 
 ## Domaines d'applications
