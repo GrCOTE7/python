@@ -24,4 +24,4 @@ def about(request, target="YOOO"):
 
 
 def contact(request):
-    return HttpResponse("<h1>Contact US</h1><p>Paragraphe</p>")
+    return render(request, "listings/contact.html")
