@@ -117,6 +117,10 @@ deactivate
 ```
 NB: Dans Cmder pas besoin du .bat + indique l'environment
 
+```
+pip freeze > requirements.txt
+```
+
 #### Start tests:
 
 ```
