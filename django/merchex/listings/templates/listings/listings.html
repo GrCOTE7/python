@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <title>Merchex</title>
+  </head>
+  <body>
+    <h1>Hello Django !</h1>
+    <p>Listing :</p>
+
+    <h2>{{listings|length}} groupes :</h2>
+    <ul>
+      {% for listing in listings %}
+      <li>{{ listing.title }}</li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>

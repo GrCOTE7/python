@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <title>Merchex</title>
+  </head>
+  <body>
+    <h1>Hello Django !</h1>
+    <p>Mes groupes préférés sont :</p>
+
+    {% with nb=30 %}
+      {% if nb <= 3 %}
+        Il y a peu de groupes
+      {% elif nb > 9 %}
+        Il y a beaucoup de groupes
+      {% else %}
+        Pas de groupe
+      {% endif %}
+    {% endwith %}
+
+    <hr />
+
+    <h2>{{bands|length}} groupes :</h2>
+    <ul>
+      {% for band in bands %}
+      <li>{{ band.name|upper }}</li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
