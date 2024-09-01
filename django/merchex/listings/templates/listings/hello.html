@@ -1,24 +1,20 @@
 {% extends 'listings/base.html' %} {% block content %}
 
-    <h1>Hello Django !</h1>
-    <p>Mes groupes préférés :</p>
+<h1>Hello Django !</h1>
+<p>Mes groupes préférés :</p>
 
-    {% with nb=30 %} {% if nb <= 3 %} Il y a peu de groupes {% elif nb > 9 %} Il y a
-    beaucoup de groupes {% else %} Pas de groupe {% endif %} {% endwith %}
+{% with nb=30 %} {% if nb <= 3 %} Il y a peu de groupes {% elif nb > 9 %} Il y a
+beaucoup de groupes {% else %} Pas de groupe {% endif %} {% endwith %}
 
-    {% firstof nb "<strong>fallback value</strong>"|safe %}
-    
-    <hr />
+<hr />
 
-    <h2>{{bands|length}} groupes :</h2>
-    <ul>
-      {% for band in bands %}
-      <li>{{ band.name|upper }}</li>
-      {% endfor %}
-    </ul>
+<h2>{{bands|length}} groupes :</h2>
+<ul>
+  {% for band in bands %}
+  <li>{{ band.name|upper }}</li>
+  {% endfor %}
+</ul>
 
-    <hr>
-    
-    &copy; {% now "Y" %}
-    
-{% endblock %}
+<hr />
+
+&copy; {% now "Y" %} {% endblock %}
