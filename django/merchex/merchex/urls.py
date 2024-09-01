@@ -20,8 +20,8 @@ from django.urls import path
 from listings import views
 
 urlpatterns = [
+    path("", views.hello),
     path("admin/", admin.site.urls),
-    path("hello/", views.hello),
     path("listings/", views.listings),
     path("about/", views.about),
     path("contact/", views.contact),
