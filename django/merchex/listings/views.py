@@ -4,10 +4,12 @@ from django.shortcuts import render, HttpResponse
 
 from listings.models import Band, Listing
 
-
 def hello(request):
+    return render(request, "listings/home.html")
+
+def band_list(request):
     bands = Band.objects.all()
-    return render(request, "listings/hello.html", context={"bands": bands})
+    return render(request, "listings/band_list.html", context={"bands": bands})
 
 
 def listings(request):
