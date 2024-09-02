@@ -37,10 +37,11 @@ class Listing(models.Model):
 
     title = models.fields.CharField(max_length=100)
     band = models.ForeignKey(Band, null=True, on_delete=models.SET_NULL)
-    description = models.fields.TextField(default='', blank=True)
+    description = models.fields.TextField(default="", blank=True)
     price = models.fields.DecimalField(max_digits=10, decimal_places=2)
     sold = models.fields.BooleanField(default=False)
     year = models.fields.IntegerField(
         null=True, validators=[MinValueValidator(1900), MaxValueValidator(2024)]
     )
     types = models.fields.CharField(choices=Type.choices, max_length=5)
+    # like_new = models.fields.BooleanField(default=False)
