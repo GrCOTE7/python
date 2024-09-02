@@ -4,6 +4,11 @@ body {
   background: rgb(245, 240, 218);
 }
 
+.small {
+  color: #777;
+  font-size: 12px;
+}
+
 nav ul {
   list-style-type: none;
   /* Supprime les puces de la liste */

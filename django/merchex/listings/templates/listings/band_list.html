@@ -2,18 +2,24 @@
 
 {% block content %}
 
-<h1>Hello Django !</h1>
+<h1>BANDS</h1>
 <p>Mes groupes préférés :</p>
 
-{% with nb=30 %} {% if nb <= 3 %} Il y a peu de groupes {% elif nb > 9 %} Il y a
-beaucoup de groupes {% else %} Pas de groupe {% endif %} {% endwith %}
+{% with nb=bands|length %} 
+  {% if nb < 1 %} Pas de groupe 
+  {% elif nb < 3 %} Il y a peu de groupes 
+  {% else %} Il y a pas mal de groupes
+  {% endif %}
+{% endwith %}
 
 <hr />
 
 <h2>{{bands|length}} groupes :</h2>
 <ul>
   {% for band in bands %}
-  <li>{{ band.name|upper }}</li>
+  <li>{{ band.name|upper }}
+    <div class="small"> {{  band.year_formed }} </div>
+  </li>
   {% endfor %}
 </ul>
 
