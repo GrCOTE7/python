@@ -1,7 +1,6 @@
 from django.contrib import admin
 
-from listings.models import Band
-from listings.models import Listing
+from listings.models import Band, Listing
 
 
 class BandAdmin(admin.ModelAdmin):
@@ -11,7 +10,7 @@ class BandAdmin(admin.ModelAdmin):
 
 class ListingAdmin(admin.ModelAdmin):
 
-    list_display = ("title", "description", "price", "types", "year")
+    list_display = ("title", "band", "description", "price", "types", "year")
 
 
 admin.site.register(Band, BandAdmin)

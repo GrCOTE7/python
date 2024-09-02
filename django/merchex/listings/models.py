@@ -36,6 +36,7 @@ class Listing(models.Model):
         MISCELLANEOUS = "M"
 
     title = models.fields.CharField(max_length=100)
+    band = models.ForeignKey(Band, null=True, on_delete=models.SET_NULL)
     description = models.fields.TextField(default='', blank=True)
     price = models.fields.DecimalField(max_digits=10, decimal_places=2)
     sold = models.fields.BooleanField(default=False)
