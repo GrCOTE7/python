@@ -10,7 +10,7 @@ class BandAdmin(admin.ModelAdmin):
 
 class ListingAdmin(admin.ModelAdmin):
 
-    list_display = ("title", "band", "description", "price", "types", "year")
+    list_display = ("title", "band", "description", "price", "types", "year", "sold")
 
 
 admin.site.register(Band, BandAdmin)

@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<h1>BANDS</h1>
+<h1 class="center">Groupes</h1>
 <p>Mes groupes préférés :</p>
 
 {% with nb=bands|length %} 
@@ -17,14 +17,10 @@
 <h2>{{bands|length}} groupes :</h2>
 <ul>
   {% for band in bands %}
-  <li>{{ band.name|upper }}
+  <li><a href="{% url 'band-detail' band.id %}">{{ band.id }} - {{ band.name|upper }}</a>
     <div class="small"> {{  band.year_formed }} </div>
   </li>
   {% endfor %}
 </ul>
-
-<hr />
-
-&copy; {% now "Y" %} 
 
 {% endblock %}

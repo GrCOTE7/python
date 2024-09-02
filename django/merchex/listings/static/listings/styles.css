@@ -4,6 +4,10 @@ body {
   background: rgb(245, 240, 218);
 }
 
+.center {
+  text-align: center;
+}
+
 .small {
   color: #777;
   font-size: 12px;

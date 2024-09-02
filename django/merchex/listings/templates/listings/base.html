@@ -7,7 +7,11 @@
     <link rel="stylesheet" href="{% static 'listings/styles.css' %}" />
   </head>
   <body>
-    {% block nav %}{% include 'listings/nav.html' %} {% endblock %} 
-    {% block content %}{% endblock %}
+    {% block nav %} {% include 'listings/nav.html' %} {% endblock %} 
+    {% block content %} {% endblock %}
+
+    <hr />
+
+    &copy; {% now "Y" %}
   </body>
 </html>

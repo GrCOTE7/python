@@ -1,0 +1,30 @@
+{% extends 'listings/base.html' %} {% block content %}
+
+<br /><a href="{% url 'bands_list' %}">Retour à la liste de tous les groupes</a>
+
+<h1 class="center">Groupe #{{ band.id }}</h1>
+
+<h2>{{ band.name }}</h2>
+
+<ul>
+  <li>Genre : <b>{{ band.get_genre_display }}</b></li>
+  <li>Année de formation : {{ band.year_formed }}</li>
+  <li>Actif : {{ band.active|yesno|capfirst }}</li>
+  <li>Web site : {{ band.official_homepage }}</li>
+</ul>
+
+<p>{{ band.biography|capfirst }}</p>
+
+{% with listings=band.listing_set.all %} 
+  {% if listings %}
+    <p>Objet{% if listings > 1 %}s{% endif %} :</p>
+
+    <ul>
+      {% for listing in listings %}
+        <li>{{ listing.title }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %} 
+{% endwith %} 
+
+{% endblock %}
