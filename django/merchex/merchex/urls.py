@@ -20,11 +20,11 @@ from django.urls import path
 from listings import views
 
 urlpatterns = [
-    path("", views.hello, name="home"),
-    path("bands", views.bands_list, name="bands_list"),
-    path("band/<int:band_id>", views.band_detail, name="band-detail"),
+    path("", views.home, name="home"),
+    path("bands", views.bands, name="bands"),
+    path("band/<int:band_id>", views.band_show, name="band-show"),
     path("listings", views.listings, name="listings"),
-    path("listing/<int:listing_id>", views.listing_detail, name="listing-detail"),
+    path("listing/<int:listing_id>", views.listing_show, name="listing-show"),
     path("about", views.about, name="about"),
     path("contact", views.contact, name="contact"),
     path("admin/", admin.site.urls, name="admin"),

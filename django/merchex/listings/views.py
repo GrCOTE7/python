@@ -5,19 +5,19 @@ from django.shortcuts import render, get_object_or_404
 from listings.models import Band, Listing
 
 
-def hello(request):
+def home(request):
     return render(request, "listings/home.html")
 
 
-def bands_list(request):
+def bands(request):
     bands = Band.objects.all()
-    return render(request, "listings/bands_list.html", context={"bands": bands})
+    return render(request, "listings/bands.html", context={"bands": bands})
 
 
-def band_detail(request, band_id):
+def band_show(request, band_id):
     # band = Band.objects.get(id=band_id)
-    band = get_object_or_404(Band, pk=band_id)  # Band.objects.get(id=band_id)
-    return render(request, "listings/band_detail.html", {"band": band})
+    band = get_object_or_404(Band, pk=band_id)
+    return render(request, "listings/band_show.html", {"band": band})
 
 
 def listings(request):
@@ -29,9 +29,9 @@ def listings(request):
     return render(request, "listings/listings.html", context={"listings": listings})
 
 
-def listing_detail(request, listing_id):
+def listing_show(request, listing_id):
     listing = get_object_or_404(Listing, pk=listing_id)
-    return render(request, "listings/listing_detail.html", {"listing": listing})
+    return render(request, "listings/listing_show.html", {"listing": listing})
 
 
 def about(request, target="YOOO"):

@@ -1,17 +1,20 @@
 {% extends 'listings/base.html' %} {% block content %}
 
-<br><a href="{% url 'listings' %}">Retour à la liste de tous les objets</a>
+<br /><a href="{% url 'listings' %}">Retour à la liste de tous les objets</a>
 
 <h1 class="center">Objet #{{ listing.id }}</h1>
+<hr />
 
-<h2>{{ listing.title }} : {{ listing.band }}</h2>
+<h2>
+  {{ listing.title }} :
+  <a href="{%  url 'band-show' listing.band.id %}">{{ listing.band }}</a>
+</h2>
 
 <ul>
   <li>Type : <b>{{ listing.get_types_display }}</b></li>
   <li>Year : <b>{{ listing.year }}</b></li>
   <li>Price : <b>{{ listing.price }}</b></li>
   <li>Sold : <b>{{ listing.sold|yesno|capfirst }}</b></li>
-  
 </ul>
 
 <p>{{ listing.description }}</p>
