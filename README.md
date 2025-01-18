@@ -1,8 +1,10 @@
 # PYTHON
 
-## But: → 2do Monetize Actor
+## But: → //2do [Monetize Actor](https://www.youtube.com/watch?v=4nxStxC1BJM&list=PLObrtcm1Kw6PEnu5BpeEFb8XEoQXMw0g7)
 
-https://www.youtube.com/watch?v=4nxStxC1BJM&list=PLObrtcm1Kw6PEnu5BpeEFb8XEoQXMw0g7
+## Divers
+  
+* //2do [5 idées de Web](https://www.youtube.com/watch?v=qfVc-o-in7g)
 
 ## Tutos
 
@@ -10,18 +12,22 @@ https://www.youtube.com/watch?v=4nxStxC1BJM&list=PLObrtcm1Kw6PEnu5BpeEFb8XEoQXMw
 
 - Django
   - 2do [OpenClassRoom](https://openclassrooms.com/fr/courses/7172076-debutez-avec-le-framework-django)
+  - 2do [2H complete formation FR](https://www.youtube.com/watch?v=Bn0k9DDYBZM)
   - 2do [doctor](https://python.doctor/page-django-introduction-python)
   - 2do Django: [Doc](https://docs.djangoproject.com/fr/5.1/)
   - 2do Toutes les parties - [Dépôt GH](https://github.com/commentcoder/apprendre-django-debutants-2024/?tab=readme-ov-file)
   - 2do La 1ère [DJANGO en 1H08](https://www.youtube.com/watch?v=xJNvJaLl8bU)
   - 2do Les 9 parties
+  - 2do [Django PortFolio](https://www.youtube.com/watch?v=4cL73hx525k&list=PLnbUkgm50ApWT-Z8UPnvWaFYD1PBKUCyz)
 - 2do [Scraping avec Python](https://www.youtube.com/watch?v=sOAZpHDEdkg)
+  - 2do [2H formation complete](https://www.youtube.com/watch?v=sOAZpHDEdkg&t=5s)
+
 
 ## ViteJS
   - Django-Vite
     - [Louxdon](https://github.com/Louxsdon/django-vite)
     - [Django-MrBin99](https://github.com/MrBin99/django-vite)
-  - 2see [Django-vite-plugin](https://github.com/protibimbok/django-vite-plugin) - Seul à gérer auto-reload
+  - 2see [Django-vite-plugin](https://github.com/protibimbok/django-vite-plugin) - Seul à gérer l'auto-reload
   - [Django-Breeze](https://github.com/Louxsdon/django-breeze)
 
 ## Domaines d'applications
@@ -144,3 +150,5 @@ https://www.youtube.com/watch?v=iNeqb-URBj4
 Outils: https://markmap.js.org/repl
 
 2do: refer https://www.ilovepdf.com/
+
+2do: Tester ceci avec codium: https://www.youtube.com/watch?v=2TAEcYCQtuY

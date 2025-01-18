@@ -16,7 +16,7 @@ import sys
 def lg(n=27):
     print("*" * n)
 
-paragraphe = 1
+paragraphe = 2
 
 if paragraphe == 1:
     # Ceci est un Commentaire

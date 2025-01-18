@@ -1,6 +1,5 @@
-for i in range(1, 101):
+for i in range(1, 100):
     if i == 51:
-        print("\n\n51...? Sors le Pastaga !\n")
+        print(f"\n\n{i}...? Sors le Pastaga !\n")
         continue
     print(i, end=" ")
-
