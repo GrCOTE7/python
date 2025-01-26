@@ -1,21 +1,10 @@
 def msg():
-    a = 12
-    d = 45
-    ville = "paris"
-    note = 10
-    pays = "france"
-    age = 18
-    print(1)
-    print(ville.capitalize() + " est la capitale de la " + pays.capitalize() + ".")
-    print(2)
-    print(ville.capitalize(), "est la capitale de la", pays.capitalize() + ".")
-    print(3)
-    print("%s est la capitale de la %s." % (ville.capitalize(), pays.capitalize()))
-    print(4)
-    print(f"{ville.capitalize()} est la capitale de la { pays.capitalize()}.")
-    print(5)
-    print("{} est la capitale de la {}.".format(ville.capitalize(), pays.capitalize()))
-    print()
+    ma_liste = ["un", "deux", "trois", "quatre", "cinq"]
+
+    # Supprimer l'élément à l'index 1
+    element = ma_liste.pop(1)
+    print(element)  # Affiche "deux"
+    print(ma_liste)  # Affiche ["un", "trois", "quatre", "cinq"]
 
 
 if __name__ == "__main__":
