@@ -36,6 +36,14 @@ def msg():
     # voiture.clear()
     # pjson(voiture) # → {}
 
+    the_keys = voiture.keys()
+    the_values = voiture.values()
+    the_items = voiture.items()
+
+    pjson(list(the_keys))
+    pjson(list(the_values))
+    pjson(list(the_items))
+
     print()
 
 
