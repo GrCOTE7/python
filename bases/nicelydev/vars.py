@@ -5,10 +5,16 @@ def msg():
     note = 10
     pays = "france"
     age = 18
-    print()
+    print(1)
+    print(ville.capitalize() + " est la capitale de la " + pays.capitalize() + ".")
+    print(2)
+    print(ville.capitalize(), "est la capitale de la", pays.capitalize() + ".")
+    print(3)
     print("%s est la capitale de la %s." % (ville.capitalize(), pays.capitalize()))
-    print()
+    print(4)
     print(f"{ville.capitalize()} est la capitale de la { pays.capitalize()}.")
+    print(5)
+    print("{} est la capitale de la {}.".format(ville.capitalize(), pays.capitalize()))
     print()
 
 
