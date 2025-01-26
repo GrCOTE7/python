@@ -4,7 +4,7 @@ def msg():
 
     ma_liste = ["un", "deux", "trois", "deux", "quatre", "cinq"]
 
-    print(ma_liste.count('deux'))
+    print('index de l\'élement "deux":', ma_liste.index('deux'))
     
     print("ma_liste:", ma_liste)  # Affiche ["un", "trois", "quatre", "cinq"]
 
