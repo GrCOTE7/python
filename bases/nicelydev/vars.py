@@ -1,28 +1,21 @@
 def msg():
     print()
 
-    nombres = 1, 2, 3, 1  # tuple
-    nombresSet = set(nombres)
-    print(nombresSet)
+    a = {1, 3, 3, 4, 8}
+    b = {2, 7, 3, 4, 5}
     
-    informations = {"Mélanie", 10, 23, "Henrique"}
-    print(informations)
-    print(tuple(informations)[1])
+    unionAB = a.union(b)
 
-    nombres = {50, 50, 50, 10, 23, 12}
-    print(nombres)
-    # Affiche : {50, 10, 12, 23}
+    print("a: ", a, "- b:", b)
+    print("union: ", unionAB)
+    print("intersection: ", a.intersection(b))
 
-    prenoms = {'Pier', 'Pol', 'Jack'}
-    print(prenoms)
-    print('Pol' in prenoms)
-    
-    prenoms.add('Juda')
-    print(prenoms)
-    
-    prenoms.remove('Pol')
-    print(prenoms)
+    print("a diff(b):", a.difference(b))
+    print("b diff(a):", b.difference(a))
+    print("a symmetric_diff(b):", a.symmetric_difference(b))
 
     print()
+
+
 if __name__ == "__main__":
     msg()
