@@ -1,15 +1,14 @@
 def msg():
-    for i in range(10):
-        print()
+    print()
 
-    ma_liste = ["un", "deux", "trois", "deux", "quatre", "cinq"]
+    nombres = 1, 2, 3, 1
+    print(nombres)
+    print(type(nombres)) # tuple immutable
+    print(len(nombres))
+    print(nombres.count(1))
+    print(nombres.index(2))
 
-    print('index de l\'élement "deux":', ma_liste.index('deux'))
-    
-    print("ma_liste:", ma_liste)  # Affiche ["un", "trois", "quatre", "cinq"]
-
-    for i in range(7):
-        print()
+    print()
 
 
 if __name__ == "__main__":
