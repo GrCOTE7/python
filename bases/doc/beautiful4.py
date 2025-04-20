@@ -2,6 +2,8 @@ import requests
 
 from bs4 import BeautifulSoup
 
+# /-\ TTention: Only works in CLI
+
 # url = "https://www.gov.uk/search/news-and-communications"
 # html = requests.get(url)
 
@@ -20,19 +22,17 @@ html = """<html>
 </html>
 """
 
-# print(html.content)
-# print(html.text)
-
 soup = BeautifulSoup(html, "html.parser")
 
-print("Titre: ", soup.title.string)
 print()
+print("Titre: ", soup.title.string)
+print("-" * 68)
+
 print(soup.find_all("a"))
 print()
 print(soup.find(id="lien1"))
 print()
 print(soup.find_all("p", class_="title"))
-
 print("-" * 68)
 
 print(html)

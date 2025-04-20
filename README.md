@@ -1,154 +1,119 @@
-# PYTHON
-
-## But: → //2do [Monetize Actor](https://www.youtube.com/watch?v=4nxStxC1BJM&list=PLObrtcm1Kw6PEnu5BpeEFb8XEoQXMw0g7)
-
-## Divers
-  
-* //2do [5 idées de Web](https://www.youtube.com/watch?v=qfVc-o-in7g)
+# Python & Django
 
 ## Tutos
 
-- [Déb - PYTHON en 1H](https://www.youtube.com/watch?v=5EnpNI2iCZA)
+* [/] [Python - Doc](https://docs.python.org/3/tutorial/index.html)
 
-- Django
-  - 2do [OpenClassRoom](https://openclassrooms.com/fr/courses/7172076-debutez-avec-le-framework-django)
-  - 2do [2H complete formation FR](https://www.youtube.com/watch?v=Bn0k9DDYBZM)
-  - 2do [doctor](https://python.doctor/page-django-introduction-python)
-  - 2do Django: [Doc](https://docs.djangoproject.com/fr/5.1/)
-  - 2do Toutes les parties - [Dépôt GH](https://github.com/commentcoder/apprendre-django-debutants-2024/?tab=readme-ov-file)
-  - 2do La 1ère [DJANGO en 1H08](https://www.youtube.com/watch?v=xJNvJaLl8bU)
-  - 2do Les 9 parties
-  - 2do [Django PortFolio](https://www.youtube.com/watch?v=4cL73hx525k&list=PLnbUkgm50ApWT-Z8UPnvWaFYD1PBKUCyz)
-- 2do [Scraping avec Python](https://www.youtube.com/watch?v=sOAZpHDEdkg)
-  - 2do [2H formation complete](https://www.youtube.com/watch?v=sOAZpHDEdkg&t=5s)
+* [ ] [django - Doc](https://docs.djangoproject.com/fr/5.2/)
 
+* [ ] [Tuto OCR: debutez-avec-le-framework-django](https://openclassrooms.com/fr/courses/7172076-debutez-avec-le-framework-django)
 
-## ViteJS
-  - Django-Vite
-    - [Louxdon](https://github.com/Louxsdon/django-vite)
-    - [Django-MrBin99](https://github.com/MrBin99/django-vite)
-  - 2see [Django-vite-plugin](https://github.com/protibimbok/django-vite-plugin) - Seul à gérer l'auto-reload
-  - [Django-Breeze](https://github.com/Louxsdon/django-breeze)
+## Résumé
 
-## Domaines d'applications
+* Création PUIS Lancement de l'environnement virtuel :
 
-- Automatisation
-  - Selenium
-  - PyAutoGUI
-- Dév WEB
-  - Django
-  - Flask
-  - FastAPI
-- DataScience
-  - PyTorch
-  - Pandas
-  - NumPY
-- Jeux vidéos
-  - PyGame
-  - Keras
-  - Kivy
-- I.A.
-- Réseaux
-- Cybersecurité
-- Machine Learning
-- Big Data
+  ```python
+  py -m venv env
+  PUIS
+  .\env\Scripts\activate
+  ```
 
+* Installation de Django et Sav des versions des librairies :
 
-## Cours OpenClassRooms
+  ```python
+  pip install django
+  pip freeze > requirements.txt
+  ```
 
+* Création de l'application :
 
-### Bases
+  ```python
+  django-admin startproject merchex
+  ```
 
+* Démarrage du serveur :
 
-#### Suivis:
+  ```python
+  cd merchex
+  py manage.py migrate (La 1ère fois)
+  py manage.py runserver
+  ```
 
-https://www.guru99.com/fr/python-tutorials.html
+* Exermples de script :
 
-https://openclassrooms.com/fr/courses/7168871-apprenez-les-bases-du-langage-python
+  ```python
+  import os
+  # Réinitialiser la console
+  os.system("cls" if os.name == "nt" else "clear")
+  print()
+  a = ["Mary", "had", "a", "little", "lamb"]
+  for i in range(len(a)):
+      print(i, a[i], end=",")
+  print()
+  print("-" * 55)
+  s = ", ".join(f"{i}: {word}" for i, word in enumerate(a))  # print(i, "word", end=",")
+  print(s)
+  ```
+  
+  ```python
+  def cheeseshop(kind, *arguments, **keywords):
+    <!-- Optional: / for pos or kwd args and * for kwf only args -->
+    print("-- Do you have any", kind, "?")
+    print("-- I'm sorry, we're all out of", kind)
+    for arg in arguments:
+        print(arg)
+    print("-" * 40)
+    for kw in keywords:
+        print(kw, ":", keywords[kw])
 
-https://openclassrooms.com/fr/courses/6951236-mettez-en-place-votre-environnement-python
+  cheeseshop(
+    "Limburger",
+    "It's very runny, sir.",
+    "It's really very, VERY runny, sir.",
+    shopkeeper="Michael Palin",
+    client="John Cleese",
+    sketch="Cheese Shop Sketch",
+  )
+  ```
 
-https://openclassrooms.com/fr/courses/7150616-apprenez-la-programmation-orientee-objet-avec-python
+* Alignement de texte :
+  
+  ```python
+  print("{0:b}".format(8))
+  print(int("1000", 2))
+  print("{:,.2f}".format(123456789.456789).replace(",", " "))
+  print("-" * 55)
 
-https://openclassrooms.com/fr/courses/5647281-appliquez-le-principe-du-domain-driven-design-a-votre-application
+  for i, j in zip(range(1, 11), range(101, 999)):
+      print(f"{i:>2} * {j:>3} = {i * j:>4}")
+  print("-" * 55)
 
-https://openclassrooms.com/fr/courses/7160741-ecrivez-du-code-python-maintenable
+  for align, text in zip("<^>", [" left ", " center ", " right "]):
+      print(
+          "{0:{fill}{align}55}".format(
+              text, fill="-" if align == "^" else align, align=align
+          )
+      )
+    print("-" * 55)
 
-[Algomius](https://www.youtube.com/watch?v=5MzhGQ8WL70&t=8s) - Fr Série en cours
+    width = 7
+    print("  Decimal   Hexa    Octal Binary")
+    for num in range(5, 13):
+        # print("{0: >55}".format(num))
+        for base in "dXob":
+            print("{0:{width}{base}}".format(num, base=base, width=width), end=" ")
+        print()
+    print("-" * 55)
+    print()
+  ```
 
-### 2do Tutos OCRooms
-
-https://openclassrooms.com/fr/courses/7771531-decouvrez-les-librairies-python-pour-la-data-science
-
-
-## 2do Zen Python
-https://python-guide-fr.readthedocs.io/fr/latest/
-
-### 2do Doc officielle
-https://docs.python.org/fr/3/tutorial/index.html
-
-En cours: https://docs.python.org/fr/3/tutorial/stdlib.html
-
----
-
-#### Annuaire des packages
-
-https://pypi.org/
-
-```
-pip install nom_package
-
-pip install jupyter
-
-pip uninstall nom_package
-
-pip freeze --local | xargs pip uninstall -y
-
-
-pip freeze (List installed packages)
-pip list
-
-```
-
-Super outil pour debug:
-https://pythontutor.com/
-
-#### venv
-
-```
- py -m venv env
- 
- .\env\Scripts\activate.bat
-deactivate
-```
-NB: Dans Cmder pas besoin du .bat + indique l'environment
-
-```
-pip freeze > requirements.txt
-```
-
-#### Start tests:
-
-```
-pytest tests.py
-```
-
-Note: If not exists: 
-
-```
-pip install pytest
-```
-
-2see https://www.youtube.com/watch?v=XUPhj9-8PnA&t=23s
-
-Algorythmie:
-2see: https://www.youtube.com/watch?v=5KoTcO7LjhE&list=PLo53cbpzes8ZDG62Pn4U4plWpP8_EBFal
-
-2see: 120 exos d'algorythmie
-https://www.youtube.com/watch?v=iNeqb-URBj4
-
-Outils: https://markmap.js.org/repl
-
-2do: refer https://www.ilovepdf.com/
-
-2do: Tester ceci avec codium: https://www.youtube.com/watch?v=2TAEcYCQtuY
+* Dans un module pour exécution en script, en module ou en CLI :
+  
+  ```python
+  if __name__ == "__main__":
+    import sys
+    if len(sys.argv) > 1:
+        fib(int(sys.argv[1]))
+    else:
+        fib(50)
+  ```
