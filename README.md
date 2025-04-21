@@ -104,6 +104,15 @@
             print("{0:{width}{base}}".format(num, base=base, width=width), end=" ")
         print()
     print("-" * 55)
+    print("-" * 55)
+    table = {"Sjoerd": 7, "Jack": 123, "Dcab": 7678}
+    for name, phone in table.items():
+        print(f"{name:7} ==> {phone:7d}")
+    print("-" * 55)
+
+    var = 123.456
+    print(f"var={var:.2f}")
+    print(f"{var=:.2f}")
     print()
   ```
 
