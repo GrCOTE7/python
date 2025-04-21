@@ -1,15 +1,9 @@
 # 2do https://www.youtube.com/results?search_query=tuto+python+en+fran%C3%A7ais
-import os, sys
-from enum import Enum
-
-# Réinitialiser la console
-os.system("cls" if os.name == "nt" else "clear")
-print()
-# print()
-# print("-" * 55)
 
 
-# from modules.fibo import fib, fib2
+from tools.cls import cls
+
+cls("tuple")
 
 if __name__ == "__main__":
 
@@ -20,13 +14,6 @@ if __name__ == "__main__":
     print("-" * 55)
     print()
 
-    def generate_ints(N):
-        for i in range(N):
-            yield i
-
-    gen = generate_ints(3)
-    print(gen)
-
-    print(next(gen))
-    print(next(gen))
-    print(next(gen))
+    print("{0: ^55}".format("x"))
+    print()
+    print()

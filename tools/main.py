@@ -1,6 +1,6 @@
-from tools.cls import cls
+from cls import cls
 
-cls("Script racine")
+cls("Test de mes tools")
 
 if __name__ == "__main__":
 
