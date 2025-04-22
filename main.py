@@ -4,5 +4,6 @@ cls("Script racine")
 
 if __name__ == "__main__":
 
-    print("{0: ^55}".format("x"))
+    print("A".center(55))
+    print("{0: ^55}".format("B"))
     print()
