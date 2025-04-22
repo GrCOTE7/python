@@ -5,7 +5,7 @@ import os, sys
 def cls(title="module CLS"):
     # Réinitialiser la console
     os.system("cls" if os.name == "nt" else "clear")
-    print()
+    # print()
     print("-" * 55)
     print("{0: ^55}".format(title[0].upper() + title[1:]))
     print("-" * 55)

@@ -17,12 +17,9 @@ cls("Script tuto/")
 
 if __name__ == "__main__":
 
-    print("{0: ^55}".format("Path"))
+    print("{0: ^55}".format("Tuple"))
     print()
 
-    width = 8
-    print(f"{'File':<{width}}:", str(Path(__file__))[15:])
-    print(f"{'Dossier':<{width}}:", str(Path(__file__).resolve().parent)[15:])
     print("-" * 55)
     print("Ready.")
     print()
