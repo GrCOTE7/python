@@ -9,7 +9,7 @@ tools_path1 = "c:\\laragon\\www\\PYTHON\\python\\tools"
 print(f"{sys.path}")
 # quit()
 
-# Solution 2
+# Solution 2 - La + performante (Path + légers eet rapides que str)
 from pathlib import Path
 
 tools_path2 = Path(__file__).parent.parent.parent.parent / "tools"
@@ -26,12 +26,12 @@ sys.path.append(str(tools_path1))  # Choix du path
 
 from cls import cls
 
-cls("Script tuto/")
+cls("Pathes/")
 
 if __name__ == "__main__":
     time.sleep(1)
     print("\033[1;36;40m", end="\r")  # Remonte d'une ligne
-    print("{0: ^55}".format("Pathes"))
+    print("{0: >55}".format("Chemins de base :"))
     print("\033[0;37;40m")
 
     mea = "\033[1;33;40m"  # Mise En Avant
