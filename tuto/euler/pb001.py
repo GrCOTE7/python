@@ -7,6 +7,8 @@ from tools import nf, dg, fg, lg, cls, exit, pf, chrono
 
 cls("Exercice EULER # 001")
 
+# 2fi  xontinuer lecture: https://projecteuler.net/thread=1;page=5
+
 if __name__ == "__main__":
 
     nb = 100000  # Nombre d'itérations
@@ -74,7 +76,7 @@ if __name__ == "__main__":
             return a * b * (b + 1) // 2
 
         res = sum(a, x) + sum(b, x) - sum(a * b, x)
-        # sum (a,x) est la somme des multime de a jusqu'a x
+        # sum (a,x) est la somme des multiples de a jusqu'a x
         print("\n#5 → ", int(res))
         return res
 
