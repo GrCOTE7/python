@@ -48,7 +48,7 @@ def pf(var: str):
     value = eval(var, frame.f_globals, frame.f_locals)
     # print(lg)
     print(f"{var}={value}", end="\n")
-    print(f"{' '+str(lineNumber())+' ':-^55}\n")
+    print(f"{' '+'Lg. '+str(lineNumber())+' ':-^55}\n")
 
 
 def exit():
