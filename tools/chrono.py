@@ -1,5 +1,6 @@
 from time import time, sleep
 
+
 def chrono(function):
     """Décorateur: Calcule le temps en secondes que met une fonction à s'executer."""
 
@@ -21,7 +22,7 @@ def chrono(function):
         # else:
         #     print(f'{time_spent:.2f}"')
 
-        print(f"{args[0] + 'xxx: ' if args else ''}{time_spent:.2f}\"")
+        print(f"{str(args[0]) + ': ' if args else ''}{time_spent:.2f}\"")
 
         return result
 
@@ -37,5 +38,13 @@ def calculate_the_trajectory(value):
     print("Calcul terminé !")
 
 
+@chrono
+def test(v="777"):
+    for i in range(1000000):
+        pass
+    print("Test Ok:", i + 1)
+
+
 if __name__ == "__main__":
-    calculate_the_trajectory("Vol")
+    # calculate_the_trajectory("Vol")
+    test("Compte jusqu'à 1 000 000")

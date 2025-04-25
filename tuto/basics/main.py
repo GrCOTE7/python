@@ -8,11 +8,52 @@ from tools import dg, fg, lg, cls, exit, pf
 cls("Script tuto/")
 
 if __name__ == "__main__":
+    pass
 
     lg = "\n" + "-" * 55
-    print("{0: ^55}".format("Tuple"))
-    print()
+    print("{0: ^55}".format("Divers"))
     print(lg)
+
+    # //2fix classer ci-dessous
+
+    class Personne:
+        def __init__(self, nom, age):
+            self.nom = nom
+            self.age = age
+
+        def se_presenter(self):
+            print(f"Je m'appelle {self.nom} et j'ai {self.age} ans.", end="")
+
+    # Création d'un objet
+    p1 = Personne("Lionel", 61)
+    p1.se_presenter()
+    print(lg)
+
+    import numpy as np
+
+    arr = np.array([1, 2, 3, 4, 5, 6])
+    print(arr.mean(), end="")  # Moyenne des éléments
+
+    print(lg)
+
+    import pandas as pd
+
+    data = {"Nom": ["Alice", "Bob"], "Âge": [25, 30]}
+    df = pd.DataFrame(data)
+    print(df)
+
+    print(lg)
+
+    import matplotlib.pyplot as plt
+
+    x = [1, 2, 3, 4]
+    y = [10, 20, 25, 30]
+    plt.plot(x, y)
+    # plt.show()
+
+    print(lg)
+
+    exit()
     s = "Lionel"
     print(s[2:4])
     print()

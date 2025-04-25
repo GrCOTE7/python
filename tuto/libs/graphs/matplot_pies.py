@@ -11,7 +11,7 @@ from tools import dg, fg, lg, cls, exit, pf
 cls("Pie/")
 
 if __name__ == "__main__":
-
+    pass
     lg = "\n" + "-" * 55
     print("{0: ^55}".format("Pie"))
     print(lg)

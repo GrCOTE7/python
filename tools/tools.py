@@ -1,5 +1,8 @@
 # 2do https://www.youtube.com/results?search_query=tuto+python+en+fran%C3%A7ais
-import os, sys, inspect
+import os, sys, inspect, locale
+from time import time, sleep
+
+locale.setlocale(locale.LC_ALL, "fr_FR")
 
 lg = "\n" + "↔" * 55
 dg = "\033[1m"  # Début gras
@@ -26,11 +29,6 @@ def cls(title="module CLS"):
 
 
 # from modules.fibo import fib, fib2
-
-if __name__ == "__main__":
-
-    cls()
-    print("Ready.\n\n" + "-" * 55)
 
 
 def lineNumber():
@@ -61,3 +59,47 @@ def exit():
         :=>55}',
     )
     sys.exit()
+
+
+def chrono(function):
+    """Décorateur: Calcule le temps en secondes que met une fonction à s'executer."""
+
+    def wrapper(*args, **kwargs):
+        """Décore la fonction avec un calcul du temps."""
+        # retourne le temps en secondes depuis le 01/01/1970.
+        # (Le temps "epoch").
+        start = time()
+
+        result = function(*args, **kwargs)
+
+        end = time()
+        # Différence entre 2 temps "epochs", celui qui est gardé dans "start", et celui qui sera gardé dans "end". ;)
+        time_spent = end - start
+
+        # if len(args) > 0:
+        #     print(f'{args[0]}: {time_spent:.2f}"')
+        # else:
+        #     print(f'{time_spent:.2f}"')
+
+        print(f"{str(args[0]) + ': ' if args else ''}{time_spent:.2f}\"")
+
+        return result
+
+    wrapper.__doc__ = function.__doc__
+    return wrapper
+
+
+def nf(f, dec=2):
+    "Number Format 123456789 → 123 456,79"
+    format_str = "%." + str(dec) + "f"
+    return locale.format_string(format_str, f, grouping=True)
+
+
+if __name__ == "__main__":
+
+    cls()
+    # sleep(3)
+
+    n = 123456.789
+    print(nf(n))
+    print("Ready.\n\n" + "-" * 55)
