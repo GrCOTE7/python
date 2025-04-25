@@ -1,4 +1,4 @@
-from cls import cls
+from tools.tools import cls
 
 cls("Test de mes tools")
 

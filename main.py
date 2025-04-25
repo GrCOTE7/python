@@ -1,4 +1,4 @@
-from tools.cls import cls
+from tools.tools import cls
 
 cls("Script racine")
 

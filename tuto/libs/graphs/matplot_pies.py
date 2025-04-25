@@ -6,8 +6,7 @@ import numpy as np
 
 tools_path = Path(__file__).parent.parent.parent.parent / "tools"
 sys.path.append(str(tools_path))
-
-from cls import cls
+from tools import dg, fg, lg, cls, exit, pf
 
 cls("Pie/")
 

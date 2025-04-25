@@ -1,13 +1,9 @@
-# 2do https://www.youtube.com/results?search_query=tuto+python+en+fran%C3%A7ais
-
-# Solution 1
-import sys, os
+import sys
 from pathlib import Path
 
-tools_path = Path(__file__).parent.parent.parent.parent / "tools"
+tools_path = Path(__file__).parent.parent.parent / "tools"
 sys.path.append(str(tools_path))
-
-from cls import cls
+from tools import dg, fg, lg, cls, exit, pf
 
 cls("Script tuto/")
 

@@ -1,7 +1,7 @@
 import sys
 
 sys.path.insert(0, "./")
-from tools.cls import cls
+from tools.tools import cls
 
 cls("tuple")
 
