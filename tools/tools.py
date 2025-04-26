@@ -4,7 +4,6 @@ from time import time, sleep
 
 locale.setlocale(locale.LC_ALL, "fr_FR")
 
-lg = "\n" + "↔" * 55
 dg = "\033[1m"  # Début gras
 fg = "\033[0m"  # Fin gras
 
@@ -25,6 +24,11 @@ def cls(title="module CLS"):
     print("-" * 55 + f"{normal}")
     print()
     # print()
+
+    # print()
+    # print("-" * 55)
+    # print("x".center(55))
+    # print(f"{'x': ^55}")
     # print("-" * 55)
 
 
@@ -33,7 +37,7 @@ def cls(title="module CLS"):
 
 def lineNumber():
     """Renvoie la ligne courante (De l'appel)"""
-
+    # return 123456789
     try:
         return inspect.currentframe().f_back.f_back.f_lineno
     except:
@@ -41,12 +45,12 @@ def lineNumber():
 
 
 def pf(var: str):
-    """Affiche la (str) 'var' et sa valeur"""
+    """Affiche la (str) 'var' et sa valeur = prinf(f'{var}=') en cyan"""
     frame = inspect.currentframe().f_back
     value = eval(var, frame.f_globals, frame.f_locals)
-    # print(lg)
-    print(f"{var}={value}", end="\n")
-    print(f"{' '+'Lg. '+str(lineNumber())+' ':-^55}\n")
+
+    print(f"\033[1;36;40m{var}={value}", end="\n")
+    print(f"\033[0;36;40m{' '+'Lg. '+str(nf(lineNumber(),0))+' ':-^55}\033[0;37;40m\n")
 
 
 def exit():
@@ -95,11 +99,42 @@ def nf(f, dec=2):
     return locale.format_string(format_str, f, grouping=True)
 
 
+def lg():
+    ln = " L. " + nf(lineNumber(), 0) + " "  # Number Line
+    lln = len(ln)  # Length of Number Line (with ' Lg. ')
+    tl = 55 - lln  # Traits length
+    # pf("tl")
+    p2 = tl // 3  # partie 2
+    p1 = tl - p2
+
+    # print(p1, lln, p2, p1 + lln + p2)
+    # print("-" * 55)
+    print("↔" * p1 + dg + ln + fg + "↔" * p2)
+
+
 if __name__ == "__main__":
 
-    cls()
-    # sleep(3)
+    sleep(1)
+
+    cls()  # Rerset l'affichage de la console
+    sleep(1)
 
     n = 123456.789
-    print(nf(n))
+    print("Dans le code:", "n =", n)
+    sleep(1)
+
+    print('pf("n")', end=" → (En cyan)\n\n")
+    pf("n")  # Affiche 'n=' et sa valeur en cyan
+    sleep(1)
+
+    print(
+        f"nf(n) → {dg}{nf(n): >10}{fg}\n( Nombre formatté 'à la française' ;-) )\n"
+    )  # nf: Number format
+    sleep(1)
+
+    lg()  # Affiche un ligne de séparation avec son numéro dans le script
+    sleep(1)
     print("Ready.\n\n" + "-" * 55)
+    sleep(1)
+
+    exit()  # Arrête le script eg affiche le n°
