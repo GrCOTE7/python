@@ -1,0 +1,19 @@
+{
+  "__name__": "__main__",
+  "__doc__": None,
+  "__package__": None,
+  "__loader__": <_frozen_importlib_external.SourceFileLoader object at 0x000002A2E86A9E00>,
+  "__spec__": None,
+  "__annotations__": {},
+  "__builtins__": <module "builtins" (built-in)>,
+  "__file__": "c:\\laragon\\www\\PYTHON\\python\\tools\\tools.py",
+  "__cached__": None,
+  "os": <module "os" (frozen)>,
+  "sys": <module "sys" (built-in)>,
+  "inspect": <module "inspect" from "C:\\Users\\utilisateur\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\inspect.py">,
+  "locale": <module "locale" from "C:\\Users\\utilisateur\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\locale.py">,
+  "time": <built-in function time>,
+  "sleep": <built-in function sleep>,
+  "sb": "\x1b[1m", "eb": "\x1b[
+    0m", "get_caller_function": <function get_caller_function at 0x000002A2E8918180>, "get_caller_file_info": <function get_caller_file_info at 0x000002A2E8DBC0E0>, "cls": <function cls at 0x000002A2E8DBD3A0>, "lineNumber": <function lineNumber at 0x000002A2E8DBD440>, "pf": <function pf at 0x000002A2E8DBD4E0>, "exit": <function exit at 0x000002A2E8DBD580>, "chrono": <function chrono at 0x000002A2E8DBD620>, "nf": <function nf at 0x000002A2E8DBD6C0>, "ls": <function ls at 0x000002A2E8DBD760>, "caller_info": <function caller_info at 0x000002A2E8DBD800>, "line": <function line at 0x000002A2E8DBD8A0>
+  }

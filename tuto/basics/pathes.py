@@ -36,8 +36,6 @@ if __name__ == "__main__":
 
     mea = "\033[1;33;40m"  # Mise En Avant
     normal = "\033[0;37;40m"
-    # 0 : noir - 1 : rouge - 2 : vert - 3 : jaune - 4 : bleu - 5 : magenta - 6 : cyan - 7 : blanc
-    # 3x pour encre, 4x pour fond
 
     widthHead = 8
     widthTxt = 22

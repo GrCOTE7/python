@@ -3,13 +3,30 @@ from pathlib import Path
 
 tools_path = Path(__file__).parent.parent.parent / "tools"
 sys.path.append(str(tools_path))
-from tools import dg, fg, lg, cls, exit, pf
+from tools import *
+
+from tools import line
+
+line
 
 cls("Script tuto/")
+
 
 if __name__ == "__main__":
     pass
 
+    class Personne:
+        def __init__(self, nom, age):
+            self.nom = nom
+            self.age = age
+            print(77777)
+
+        def se_presenter(self):
+            print(f"Je m'appelle {self.nom} et j'ai {self.age} ans.", end="")
+
+            line()
+
+    # exit()
     lg = "\n" + "-" * 55
     print("{0: ^55}".format("Divers"))
     print(lg)
@@ -27,6 +44,7 @@ if __name__ == "__main__":
     # Création d'un objet
     p1 = Personne("Lionel", 61)
     p1.se_presenter()
+    line()
     print(lg)
 
     import numpy as np
