@@ -5,10 +5,6 @@ tools_path = Path(__file__).parent.parent.parent / "tools"
 sys.path.append(str(tools_path))
 from tools import *
 
-from tools import line
-
-line
-
 cls("Script tuto/")
 
 
@@ -38,13 +34,14 @@ if __name__ == "__main__":
             self.nom = nom
             self.age = age
 
+        ls()
+
         def se_presenter(self):
             print(f"Je m'appelle {self.nom} et j'ai {self.age} ans.", end="")
 
     # Création d'un objet
     p1 = Personne("Lionel", 61)
     p1.se_presenter()
-    line()
     print(lg)
 
     import numpy as np

@@ -6,15 +6,15 @@ from operator import itemgetter, attrgetter
 
 tools_path = Path(__file__).parent.parent.parent / "tools"
 sys.path.append(str(tools_path))
-from tools import dg, fg, lg, cls, exit, pf
+from tools import sb, eb, cls, ls, exit, pf
 
 cls("Sorts 1/2 ()")
 
 if __name__ == "__main__":
 
-    # print("{0: ^55}".format(f"{dg}{' Sorts 1/2 ': ^55}{fg}\n"))
+    # print("{0: ^55}".format(f"{sb}{' Sorts 1/2 ': ^55}{eb}\n"))
     print(
-        f"Note: Parties séparées par des :\n    exit()  #################################\n{f'{dg}→ Les commenter progressivement...{fg}': >55}"
+        f"Note: Parties séparées par des :\n    exit()  #################################\n{f'{sb}→ Les commenter progressivement...{eb}': >55}"
     )
 
     # exit()  #################################
@@ -22,19 +22,19 @@ if __name__ == "__main__":
     print(
         tabulate(
             [
-                [f"{dg}list.sort(){fg}", "Oui", "Non"],
-                [f"{dg}sorted(list){fg}", "Non", "Oui"],
+                [f"{sb}list.sort(){eb}", "Oui", "Non"],
+                [f"{sb}sorted(list){eb}", "Non", "Oui"],
             ],
             headers=["Méthode", "Original modifié?", "Retourne new liste"],
             tablefmt="rounded_outline",
         )
     )
 
-    print(lg)
+    ls()
     import time
 
     # time.sleep(1)
-    exit()  #################################
+    # exit()  #################################
 
     print()
     student_tuples = [
@@ -49,7 +49,7 @@ if __name__ == "__main__":
         print(
             f" {student[0][0].upper()+student[0][1:]:<6} | {student[1]:^6} | {student[2]:>6} "
         )
-    print(lg)
+    ls()
 
     print("\nSorted().reverse() on iterables:\n\n  Name  |  Sex   |  Note  ")
     print("--------|--------|--------")
@@ -57,9 +57,9 @@ if __name__ == "__main__":
         print(
             f" {student[0][0].upper()+student[0][1:]:<6} | {student[1]:^6} | {student[2]:>6} "
         )
-    print(lg)
+    ls()
 
-    exit()  #################################
+    # exit()  #################################
 
     class Student:
         def __init__(self, name, sex, age=None, note=None):
@@ -84,7 +84,7 @@ if __name__ == "__main__":
     pf("vars(so[0]).keys()")
     pf("vars(so[0]).values()")
 
-    exit()  #################################
+    # exit()  #################################
 
     print("Sorted() on objects: (Sorted by age)\n\n  Name  |  Sex   |  Age   |  Note  ")
     print("--------|--------|--------|--------")
@@ -95,21 +95,21 @@ if __name__ == "__main__":
         print(
             f"  {(student.name[0]).upper()+student.name[1:]:<5} | {student.sex:^6} | {student.age:>5}  | {student.note:>5}  "
         )
-    print(lg + "\n")
+    ls()
 
-    exit()  #################################
+    # exit()  #################################
 
     import pprint
 
     sorted_arr = sorted(student_tuples, key=itemgetter(1), reverse=True)
     pprint.pprint(sorted_arr, width=20)
-    print(lg)
+    ls()
 
-    exit()  #################################
+    # exit()  #################################
 
     from prettytable import PrettyTable
 
-    print("\n" + dg + "'PrettyTable' librairy :".center(55) + fg + "\n")
+    print("\n" + sb + "'PrettyTable' librairy :".center(55) + eb + "\n")
     table = PrettyTable()
     table.field_names = ["City name", "Area", "Population", "Annual Rainfall"]
     table.add_row(["Adelaide", 1295, 1158259, 600.5])
@@ -124,7 +124,7 @@ if __name__ == "__main__":
 
     print(table)
 
-    print("\n" + dg + "All 'tabulate' librairy types :".center(55) + fg + "\n")
+    print("\n" + sb + "All 'tabulate' librairy types :".center(55) + eb + "\n")
 
     # exit()  #################################
     tabulate_types = (
@@ -167,7 +167,7 @@ if __name__ == "__main__":
 
     nb = len(tabulate_types)
     for i, tt in enumerate(tabulate_types):
-        print(f"{dg}{tt: >40}{fg} ({i+1} / {nb})")
+        print(f"{sb}{tt: >40}{eb} ({i+1} / {nb})")
         table = tabulate(
             student_tuples,
             headers=["Name", "Sex", "Note"],
@@ -178,16 +178,16 @@ if __name__ == "__main__":
         )
         print(table)
         if i != nb - 1:
-            print(lg, "777")
+            print("-" * 55)
 
-    print(lg * 2)
+    ls()
 
-    exit()  #################################
+    # exit()  #################################
 
     import locale
 
     locale.setlocale(locale.LC_ALL, "fr_FR")
-    print("\n", f"{dg}{'Pour test rapide': >40}{fg}")
+    print("\n", f"{sb}{'Pour test rapide': >40}{eb}")
 
     print(
         "Au + simple :\n\n"
@@ -231,7 +231,7 @@ if __name__ == "__main__":
     )
 
     print("Avec formattages et ligne vide :\n" + table, end="")
-    print("\n" + lg + "\n")
+    ls()
 
     exit()  #################################
 
@@ -245,7 +245,7 @@ if __name__ == "__main__":
 
     print(lg + "\n")
 
-    print(dg + "Students sorts :".center(55) + fg + "\n")
+    print(sb + "Students sorts :".center(55) + eb + "\n")
 
     students = [
         [
@@ -286,7 +286,7 @@ if __name__ == "__main__":
     tbl(sorted_students)
 
     print(
-        f"Itérable → {dg}itemgetter(){fg}\nListe triée par 1 critère ('Âge' décroissant) :"
+        f"Itérable → {sb}itemgetter(){eb}\nListe triée par 1 critère ('Âge' décroissant) :"
     )
     sorted_students = sorted(students, key=itemgetter(2), reverse="True")
     tbl(sorted_students)
@@ -297,7 +297,7 @@ if __name__ == "__main__":
     formated_students = [[s.name, s.sex, s.age, s.note] for s in sorted_students]
     # Affichage
     print(
-        f"Objects → {dg}attrgetter(){dg}\nListe triée par 1 critère ('Note' décroissante) :"
+        f"Objects → {sb}attrgetter(){sb}\nListe triée par 1 critère ('Note' décroissante) :"
     )
     tbl(formated_students)
 
@@ -305,10 +305,10 @@ if __name__ == "__main__":
 
     print(lg)
 
-    print(f"{dg}Alternative + compacte (Pas de tri) :{fg}")
+    print(f"{sb}Alternative + compacte (Pas de tri) :{eb}")
     tbl([vars(student).values() for student in student_objects])
 
-    print(f"\n{dg}Alternative + compacte (Tri par nom) :{fg}")
+    print(f"\n{sb}Alternative + compacte (Tri par nom) :{eb}")
     sorted_data_by_name = sorted(
         [list(vars(student).values()) for student in student_objects],
         key=lambda x: x[3],
