@@ -4,12 +4,20 @@ from tabulate import tabulate
 cliWR = shutil.get_terminal_size().columns  # Réelle CLI Width
 
 
-def tbl(data, headers=[], indexes=False):
+def tbl(
+    data,
+    headers=[],
+    indexes=False,
+    tablefmt="rounded_outline",
+):
+    tabulate.WIDE_CHARS_MODE = False
+    tabulate.PRESERVE_WHITESPACE = True
     print(
         tabulate(
             data,
             headers,
-            tablefmt="rounded_outline",
+            maxcolwidths=[None, 55],
+            tablefmt=tablefmt,
             showindex=indexes,
         )
     )
@@ -66,7 +74,40 @@ def caller_info(justFileName: bool = False) -> tuple | str:
     return callerFilePath, context, callerLineNumber
 
 
-def pf(var: str, style: int = 0):
+def format_string(text, w=55):
+    """
+    Formats a string to fit within a defined width,
+    ensuring line breaks occur only at appropriate places (after a comma).
+    """
+    w -= 1
+    lines = []
+    current_line = ""
+
+    for segment in text.split(", "):  # Preserve ", " in the structure
+        if len(current_line) + len(segment) + 1 > w:  # +2 for the ", │"
+            lines.append(
+                "│ " + current_line + ","
+            )  # Keep the comma at the end of the line
+            current_line = segment  # Start a new line with the next segment
+        else:
+            current_line += (
+                ", " + segment if current_line else segment
+            )  # Append normally
+
+    lines.append("│ " + current_line + "\b")  # Last line without extra comma
+
+    # allLines = "\n".join(lines)
+    # allLines[0] = ""
+    print(type(lines))
+    lines[0] = lines[0][2:]
+
+    # print(lines, len(lines))
+    print([(i, lines[i], "\n") for i in range(len(lines))])
+    allLines = "\n".join(lines)
+    return allLines  # Join lines with newlines
+
+
+def pf(var: str, style: int = 0, w=cliWR):
     """Show (str) 'var', type and value as prinf(f'{var}=') if int=1 (color cyan)
     else show same data in a table
     """
@@ -119,11 +160,30 @@ def pf(var: str, style: int = 0):
     # Handle multiple variables passed in `var`
     vars = [v.strip() for v in var.split(",")]
     formatted_values = []
+
     try:
+        allFVL = 0
+
         for single_var in vars:
-            # Evaluate and format each variable independently
+
             value = eval(single_var, frame.f_globals, frame.f_locals)
-            formatted_values.append((single_var, format_value(value)))
+
+            newValue = format_value(value)
+            # lenNV = len(newValue) + 3
+
+            # currentLL += lenNV
+            # print(value, f"{currentLL=}")
+
+            # print("allFVL", allFVL)
+
+            formatted_values.append((single_var, newValue))
+            # print("lenV", lenNV)
+
+            # Check if we have complex data or long values
+            # if isinstance(value, (list, tuple, dict)) or hasattr(value, "__dict__"):
+            #     # 2do check if we have long values // cliWR
+            #     complex_data = True  # Mark as complex
+        allFVL = sum([len(str(v)) for v in formatted_values]) + 1
     except NameError as e:
         print(f"Error: {e}")
         return
@@ -131,23 +191,67 @@ def pf(var: str, style: int = 0):
     # Print the formatted values for non-table styles
     if style:
         for var_name, formatted_value in formatted_values:
-            print(f"\n\033[1;36;40m{var_name} = {formatted_value}\033[0m")
+            print(f"\n\033[1;33;40m{var_name} = {formatted_value}\033[0m")
     else:
-        # Display the main en-tête
-        print(f"\033[0;36;40m{f' pf({var})':-^{cliWR}}\033[0;37;40m")
-        print()
+        print(f"\033[0;35;40m{f' pf({var}) ':-^{cliWR}}\033[0;37;40m")
 
-        # Display separate tables for each variable without separation
-        for var_name, formatted_value in formatted_values:
-            # Create a separate table for each variable
-            data = [[formatted_value]]
-            headers = [f"\033[1;36m{var_name}\033[0;37;40m"]
+        print("allFVL", allFVL, cliWR)
 
-            # print("DATA for tbl:", data)
-            # print("HEADERS for tbl:", headers)
-            tbl(data, headers)  # No text between tables
+        # If all variables are scalar, display them in a single-row table
+        if allFVL < cliWR:
+            headers = [
+                f"\033[1;36m{var_name}\033[0;37;40m" for var_name, _ in formatted_values
+            ]
+            data = [[formatted_value for _, formatted_value in formatted_values]]
+            tbl(data, headers)
+        else:
+            # Separate tables for each complex variable
+            for var_name, formatted_value in formatted_values:
+                # print("LONGLINE", len(formatted_value), cliWR)
+                fv = formatted_value
+                data = (
+                    [[fv]]
+                    if len(fv) < cliWR
+                    else [
+                        [format_string(fv, cliWR - 4)],
+                        ["\033[0;30;40m" + "-" * (cliWR - 4) + "\033[0;37m"],
+                    ]
+                )
+                # data = [[" " * 50], [fv]]
+                headers = [f"\033[1;36m{var_name}\033[0;37;40m"]
+                tbl(data, headers)
 
-    # Display the final line (only once)
     print(
-        f"\033[0;36;40m{' '+'Lg. '+str(nf(lineNumber, 0))+' ':-^{cliWR}}\033[0;37;40m"
+        f"\033[0;35;40m{' '+'Lg. '+str(nf(lineNumber, 0))+' ':-^{cliWR}}\033[0;37;40m"
     )
+
+
+if __name__ == "__main__":
+    os.system("cls" if os.name == "nt" else "clear")
+
+    a = 777
+    b = 888
+    c = "111"
+    d = (1, 2, 3, 4, "555")
+    pf("a, b, c, d, a, c, b, d, b, c, a")
+
+    # exit()
+
+    vars = (a, b, c, d, b, c, d, b, c, a)
+    pf("vars")
+    # print("vars", vars)
+
+    def vv(v):
+        return f"<{type(v).__name__}> {v}"
+
+    values = [vv(a) for a in vars]
+    # print(values)
+
+    # lengths = sum([len(str(v)) for v in values]) + 2 * len(vars)
+    # print(lengths)
+    # exit()
+    # # Example usage:
+    # text = "<list> [<int> 777, <int> 888, <str> 111, <tuple> (1, 2, 3, 4, '555'), <int> 888, <str> 111, <tuple> (1, 2, 3, 4, '555'), <int> 888, <str> 111, <int> 888, <str> 111, <tuple> (1, 2, 3, 4, '555'), <int> 888, <str> 111, <tuple> (1, 2, 3, 4, '555'), <int> 777]"
+
+    # formatted_text = format_string(text, 44)
+    # print(text + "\n\n\n" + formatted_text)

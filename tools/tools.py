@@ -255,7 +255,7 @@ def showMsg(
             print(msg)
             sl(w=cliWR)
 
-        elif style == "cliWInfo":
+        elif target == "cliWInfo":
             print(msg)
 
         else:
@@ -316,6 +316,11 @@ def exit():
         showMsg(alertMsg)
 
     pf("cliW, simucliW, cliWR")
+
+    atuple = (777, "abc")
+    alist = [777, "abc"]
+    adict = {"a": 777, "b": "abc"}
+    # pf("atuple, alist, adict")
 
     sys.exit()
 
