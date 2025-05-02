@@ -180,9 +180,9 @@ def pf(var: str, style: int = 0, w=cliWR):
             # print("lenV", lenNV)
 
             # Check if we have complex data or long values
-            # if isinstance(value, (list, tuple, dict)) or hasattr(value, "__dict__"):
-            #     # 2do check if we have long values // cliWR
-            #     complex_data = True  # Mark as complex
+            if isinstance(value, (list, tuple, dict)) or hasattr(value, "__dict__"):
+                # 2do check if we have long values // cliWR
+                complex_data = True  # Mark as complex
         allFVL = sum([len(str(v)) for v in formatted_values]) + 1
     except NameError as e:
         print(f"Error: {e}")
@@ -234,8 +234,13 @@ if __name__ == "__main__":
     c = "111"
     d = (1, 2, 3, 4, "555")
     pf("a, b, c, d, a, c, b, d, b, c, a")
+    pf("a, b, c")
 
-    # exit()
+    import json
+
+    print(json.dumps(d, indent=4))
+
+    exit()
 
     vars = (a, b, c, d, b, c, d, b, c, a)
     pf("vars")
