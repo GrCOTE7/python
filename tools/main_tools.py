@@ -181,28 +181,23 @@ def frenchLine(w: int | None = cliWR) -> str:
 
 
 def setTitle(title=None, filename=""):
-
     showMsg(alertMsg)
-
+    
     title = title or "Script Python"
-    title = "\033[1;33m" + title[0].upper() + title[1:] + "\033[0;37m"
-
-    if not filename:
-        filename = caller_info(1)
-    filename = f"(\033[3;4;30m{filename}\033[23;24;37m)"
-
-    # tlfl = Title Lengths filename Lengths
-    tlfl = list(rawStrLength(s) for s in (title, filename))
-    lengthes = list(zip(*tlfl))
-    pureLengthes = sum(lengthes[0]) + 1
-    print(f"{tlfl=}", f"{lengthes=}", f"{pureLengthes=}", sep="\n")
-
+    formatted_title = f"\033[1;33m{title[0].upper()}{title[1:]}\033[0;37m"
+    
+    filename = filename or caller_info(1)
+    formatted_filename = f"(\033[3;4;30m{filename}\033[23;24;37m)"
+    
+    title_lengths = [rawStrLength(part) for part in (formatted_title, formatted_filename)]
+    total_length = sum(length[0] for length in title_lengths) + 1
+    
     sl()
-    if pureLengthes <= cliWR:
-        completeTitle = f"{title} {filename}"
-        print(f"{completeTitle:^{cliWR+rawStrLength(completeTitle)[1]}}")
+    if total_length <= cliWR:
+        complete_title = f"{formatted_title} {formatted_filename}"
+        print(f"{complete_title:^{cliWR + rawStrLength(complete_title)[1]}}")
     else:
-        print(f"{title:^{cliWR+lengthes[0][1]}}{filename:^{cliWR+lengthes[1][1]-1}}")
+        print(f"{formatted_title:^{cliWR + title_lengths[0][0]}}{formatted_filename:^{cliWR + title_lengths[1][0] - 1}}")
     sl()
 
 
