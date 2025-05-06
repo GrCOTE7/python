@@ -7,19 +7,19 @@ from time import sleep, time
 from globals import *
 
 
-def cls(title=None, fileName=""):
+def cls(title=None, filename=""):
     """Réinitialise la console
     Affiche title sauf si title=0
     """
     os.system("cls" if os.name == "nt" else "clear")
 
     if title != 0:
-        setTitle(title, fileName)
+        setTitle(title, filename)
 
-    alertMsg = "Mon simple message" * 5 + "\n"
-    showMsg(alertMsg)
-    alertMsg = "Mon cli message" * 5
-    showMsg(alertMsg, target="cliWInfo")
+    # alertMsg = ("Mon simple message\n" * 5 + "\n",)
+    # showMsg(alertMsg) # 2ar
+    # 2ar alertMsg = "Mon cli message" * 5
+    # 2ar showMsg(alertMsg, target="cliWInfo")
 
 
 def nf(f, dec=2):
@@ -28,9 +28,9 @@ def nf(f, dec=2):
     return locale.format_string(format_str, f, grouping=True)
 
 
-def caller_info(justFileName: bool = False) -> tuple | str:
+def caller_info(justfilename: bool = False) -> tuple | str:
     """
-    Without argument: (tuple) Path of caller file, caller function name, index of line where is the instruction.\nIf argument is True (or 1): (str) Just theCcller file name
+    Return (tuple) Path of caller file, caller function name, index of line where is the instruction.\nIf argument is True (or 1): (str) Just theCcller file name
     """
     # Obtenir le cadre deux niveaux au-dessus dans la pile
     frame = inspect.currentframe().f_back.f_back
@@ -42,7 +42,7 @@ def caller_info(justFileName: bool = False) -> tuple | str:
     function_name = frame.f_code.co_name
     context = "main" if function_name == "<module>" else f"{function_name}()"
 
-    if justFileName:
+    if justfilename:
         # return callerFilePath # 2ar vérif si dessous ok
         return os.path.basename(callerFilePath)
     return callerFilePath, context, callerLineNumber
@@ -180,36 +180,34 @@ def frenchLine(w: int | None = cliWR) -> str:
     exit()  # 2ar
 
 
-def setTitle(title=None, fileName=""):
+def setTitle(title=None, filename=""):
 
     showMsg(alertMsg)
 
-    # # 2fix \n si trop ling titre & filename
-
     title = title or "Script Python"
-    title = "\033[1;33m" + title[0].upper() + title[1:] + "\033[0;30m"
+    title = "\033[1;33m" + title[0].upper() + title[1:] + "\033[0;37m"
 
-    filename = caller_info(1)
-    filename = "abcdef777abcdefghijklmnopqrstuvwcyz1234567"  # 2ar
-    filename = "abcdef777"  # 2ar
-    filename = f"(\033[4m{filename})\033[23;24;37m"
+    if not filename:
+        filename = caller_info(1)
+    filename = f"(\033[3;4;30m{filename}\033[23;24;37m)"
 
-    completeTitle = f"{title} {filename}"
-    # compleeTitleLengths = rawStrLength(completeTitle)
+    # tlfl = Title Lengths filename Lengths
+    tlfl = list(rawStrLength(s) for s in (title, filename))
+    lengthes = list(zip(*tlfl))
+    pureLengthes = sum(lengthes[0]) + 1
+    print(f"{tlfl=}", f"{lengthes=}", f"{pureLengthes=}", sep="\n")
 
-    # 2fix \n si trop ling titre & filename
-
-    t = (title, 123, filename)
-    showMsg(t, target="title", w=cliWR)
-    # showMsg((title, filename), style="title")
-    # showMsg((title, filename, "oki"), style="title")
+    sl()
+    if pureLengthes <= cliWR:
+        completeTitle = f"{title} {filename}"
+        print(f"{completeTitle:^{cliWR+rawStrLength(completeTitle)[1]}}")
+    else:
+        print(f"{title:^{cliWR+lengthes[0][1]}}{filename:^{cliWR+lengthes[1][1]-1}}")
+    sl()
 
 
 def showMsg(
-    msg: str | tuple,
-    color: int | str | None = 0,
-    target: str = "info",
-    w: int = cliW,
+    msg: str | tuple, color: int | str | None = 0, target: str = "info", w: int = cliW
 ):
     """Show msg if msg != None\n
     Selon style:
@@ -217,14 +215,14 @@ def showMsg(
     title\n
     alert\n
     """
-    from text_tools import wordWrap
+    # from text_tools import wordWrap
 
     if color:
         msg = f"\033[{color}m{msg}\033[0;{color}m{cs}"
 
     if msg and type(msg) == tuple:
         align = "^" if target == "title" else "<"
-        msg = wordWrap(msg, w=w, align=align)
+        # msg = wordWrap(msg, w=w, align=align)
 
         if target == "alert":
             sl(french)
@@ -232,13 +230,15 @@ def showMsg(
             sl(french)
 
         elif target == "title":
-            pass
             # sl(w=cliWR)
             # print(str(msg[0]))
-            # print("x".center(cliWR))
-            # print("-" * cliWR)
+            print(msg[0].center(cliWR))
+            print(msg[1].center(cliWR))
+            print("x".center(cliWR))
+            print("-" * cliWR)
             # ls()
-            # print("FIN TITRE".center(cliWR))
+            print("FIN TITRE".center(cliWR))
+            pass
 
         elif target == "cliWInfo":
             print(msg)
@@ -252,7 +252,6 @@ def showMsg(
             sl(french)
 
         elif target == "title":
-            sl(w=cliWR)
             sl(w=cliWR)
             print(msg)
             sl(w=cliWR)
@@ -337,16 +336,12 @@ def ls():
 
 
 if __name__ == "__main__":
-
-    # sleep(sleepDuration)
-
     sleep(sleepDuration)
-    cls()  # 2ar titre à tester aussi dans cas simulatedW ces 3 cas
-    # cls("un très long titre")
+    # # 2ar titre à tester aussi dans cas simulatedW ces 3 cas
+    cls("un très long Titre")
+    # cls()
     # cls(0)
     sleep(sleepDuration)
-    # cls("un très long titre")
-    # cls(0)
 
     exit()  # 2ar
     # t1 = [1, 2, 3]
