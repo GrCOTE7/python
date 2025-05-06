@@ -94,3 +94,8 @@ if __name__ == "__main__":
     txt = lorem.paragraph()
     print(justify(txt, 55), "\n\n", justifyCenter(txt, 55), "\n\n", txt)
     print(wordWrap(txt))
+
+    print(lorem.paragraph())
+    print("-" * 55)
+    long_lorem = lorem._Lorem(prange=(20, 30))
+    print(long_lorem.paragraph())

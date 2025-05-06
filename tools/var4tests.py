@@ -1,5 +1,5 @@
 import inspect
-from tools import cls, tbl, exit
+from tools import cls, cliWR, sb, eb, tbl, exit
 
 if __name__ == "__main__":
     cls()
@@ -67,11 +67,41 @@ if __name__ == "__main__":
     for var in vars:
         data.append(list(get_var_infos(var)))
     print(data)
-    print("-" * 55)
+    print("-" * cliWR)
 
-    # data = ["age", eval(type(age).__name__), age]
-    tbl(
-        data,
-        headers,
-    )
+    import random
+
+    # uniques et ordonnée
+    numbers = set(random.sample(range(1, 10), 9))
+    print(numbers)
+    numbers = tuple(random.sample(range(1, 10), 9))
+    print(numbers)
+    # Pas uniques
+    numbers = tuple(random.choices(range(1, 10), k=9))
+    print(numbers)
+    print("-" * cliWR)
+
+    def auto_partition(data, L):
+        """Découpe la liste 'data' en sous-groupes en fonction de L."""
+        partitions = []
+        index = 0
+        sizes = []
+
+        # Génération dynamique des tailles de groupe en fonction de L
+        while sum(sizes) < L:
+            next_size = 3 if len(sizes) % 3 == 0 else (1 if len(sizes) % 3 == 1 else 2)
+            if sum(sizes) + next_size > L:
+                next_size = L - sum(sizes)  # Ajuster pour ne pas dépasser L
+            sizes.append(next_size)
+
+        # Découpage des éléments selon les tailles calculées
+        for size in sizes:
+            partitions.append(tuple(data[index : index + size]))
+            index += size
+
+        return partitions
+
+
+    print()
+
     exit()

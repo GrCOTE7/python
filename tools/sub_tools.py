@@ -1,7 +1,8 @@
 import os, sys, inspect, locale, shutil, time
 from tabulate import tabulate
 
-cliWR = shutil.get_terminal_size().columns  # Réelle CLI Width
+from globals import *
+from main_tools import *
 
 
 def tbl(
@@ -46,32 +47,6 @@ def chrono(function):
 
     wrapper.__doc__ = function.__doc__
     return wrapper
-
-
-def nf(f, dec=2):
-    "Number Format 123456789 → 123 456,79"
-    format_str = "%." + str(dec) + "f"
-    return locale.format_string(format_str, f, grouping=True)
-
-
-def caller_info(justFileName: bool = False) -> tuple | str:
-    """
-    Without argument: (tuple) Path of caller file, caller function name, index of line where is the instruction.\nIf argument is True (or 1): (str) Just theCcller file name
-    """
-    # Obtenir le cadre deux niveaux au-dessus dans la pile
-    frame = inspect.currentframe().f_back.f_back
-    # Obtenir le chemin complet du fichier appelant
-    callerFilePath = os.path.relpath(inspect.getfile(frame))  # Chemin relatif
-    # Obtenir le numéro de ligne
-    callerLineNumber = frame.f_lineno
-    # Nom de la fonction appelante
-    function_name = frame.f_code.co_name
-    context = "main" if function_name == "<module>" else f"{function_name}()"
-
-    if justFileName:
-        # return callerFilePath # 2ar vérif si dessous ok
-        return os.path.basename(callerFilePath)
-    return callerFilePath, context, callerLineNumber
 
 
 def format_string(text, w=55):
@@ -239,8 +214,6 @@ if __name__ == "__main__":
     import json
 
     print(json.dumps(d, indent=4))
-
-    exit()
 
     vars = (a, b, c, d, b, c, d, b, c, a)
     pf("vars")
