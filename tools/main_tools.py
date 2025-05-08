@@ -93,21 +93,48 @@ def cls(title=None, filename=""):
 
 def nf(f, dec=2):
     "Number Format 123456789 → 123 456,79"
-    format_str = "%." + str(dec) + "f"
-    return locale.format_string(format_str, f, grouping=True)
+    try:
+        f = float(f)
+        return locale.format_string(f"%.{dec}f", f, grouping=True)
+    except ValueError:
+        src = caller_info()
+        print(src)
+        print(
+            f"⚠️ Errorfor nf() in main_tools:\n\033[1;31mBad data type ({type(f).__name__}) -> {f} (Line {src[2]} in {src[0]}){eb}"
+        )
+        return str(f)
+
+    if not isinstance(f, (int, float)):
+        return nf(int(f))  # Évite l'erreur en retournant une chaîne
+    return locale.format_string(f"%.{dec}f", f, grouping=True)
 
 
-def caller_info(justfilename: bool = False) -> tuple | str:
+def caller_info(justfilename: bool = False, notForTitle=2) -> tuple | str:
     """
     Return (tuple) Path of caller file, caller function name, index of line where is the instruction.\nIf argument is True (or 1): (str) Just theCcller file name
     """
-    # Obtenir le cadre deux niveaux au-dessus dans la pile
-    
-    frame = inspect.currentframe().f_back.f_back.f_back
-    # Obtenir le chemin complet du fichier appelant
-    callerFilePath = os.path.relpath(inspect.getfile(frame))  # Chemin relatif
+
+    frame = inspect.currentframe()
+
+    # Vérifier la profondeur de la pile avant d'accéder à f_back plusieurs fois
+    for _ in range(notForTitle):
+        if frame is not None and frame.f_back is not None:
+            frame = frame.f_back
+        else:
+            return "Frame introuvable"
+
+    # Vérifier si frame est toujours valide avant de l'utiliser
+    if frame is None:
+        return "Frame introuvable"
+
+    try:
+        callerFilePath = os.path.relpath(inspect.getfile(frame))  # Chemin relatif
+    except TypeError:
+        return "Impossible de récupérer le fichier appelant"
     # Obtenir le numéro de ligne
-    callerLineNumber = frame.f_lineno
+    # callerLineNumber = frame.f_lineno
+    callerLineNumber = int(frame.f_lineno) if frame is not None else -1
+
     # Nom de la fonction appelante
     function_name = frame.f_code.co_name
     context = "main" if function_name == "<module>" else f"{function_name}()"
@@ -228,7 +255,7 @@ def setTitle(title=None, filename=""):
     title = title or "Script Python"
     formatted_title = f"\033[1;33m{title[0].upper()}{title[1:]}\033[0;37m"
 
-    filename = filename or caller_info(1)
+    filename = filename or caller_info(1, notForTitle=3)
     # filename = "(main_tools.py)(main_tools.py)(main_tools.p)"
     formatted_filename = f"(\033[3;4;37m{filename}\033[23;24;37m)"
 
@@ -340,6 +367,11 @@ if __name__ == "__main__":
 
     # cls()
     # cls(0)
+
+    print(nf("123456"))
+    print(nf("a"))
+    print(nf("123456"), nf(123456789.789))
+
     sleep(sleepDuration)
 
     exit()  # 2ar

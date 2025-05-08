@@ -46,6 +46,8 @@ if __name__ == "__main__":
     # pf("list(zip(t1, t2))")  # pf("*(list(zip(t1, t2)))")
     print(*list(zip(t1, t2)))  # pf("*(list(zip(t1, t2)))")
 
+    print(nf("a"), nf(123456789.789))
+
     exit()  # 2ar
 
     # sleep(sleepDuration)
