@@ -1,4 +1,3 @@
-import os, sys, inspect, locale, shutil, time
 from tabulate import tabulate
 
 from globals import *
@@ -202,14 +201,16 @@ def pf(var: str, style: int = 0, w=cliWR):
 
 
 if __name__ == "__main__":
-    os.system("cls" if os.name == "nt" else "clear")
+
+    cls("pf()")
 
     a = 777
     b = 888
     c = "111"
     d = (1, 2, 3, 4, "555")
+    pf("a, b, c, d")
+    exit()
     pf("a, b, c, d, a, c, b, d, b, c, a")
-    pf("a, b, c")
 
     import json
 

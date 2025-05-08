@@ -1,25 +1,94 @@
+from re import LOCALE
 from stat import SF_IMMUTABLE
 import os, sys, inspect, locale, shutil
+from tkinter import N
 from matplotlib import lines
 from pyparsing import line
 from time import sleep, time
 
 from globals import *
 
+# # 2ar
+# simuCliW = 40
+# cliWMsgF = None
+
+
+def setMsg(txt, **args):
+    """<str> content,\n
+    Option: <int> type (0 = info (default), 1 = centered, 2 = alert)
+    """
+    global cliWMsg
+    if not txt:
+        print("⚠️ Aucun message fourni !")
+        return
+
+    cliWMsg = txt
+
+
+def cliWAnalysis():
+
+    # print(
+    #     f"{str(cliW) +' // '+str(cliWR)} - Analyse CLIW: {sb}{'SIMU' if simuCliW else 'RÉEL'}{eb}".center(
+    #         cliWR
+    #     )
+    #     + "\n"
+    # )
+
+    def withMsg(simuDecal: int = 0):
+        realMsg = f"\033[3;36mReal CLI Width \033[0m"
+        nbCols = f": {nbCliCols(cliWR, red)[1:-1]}"
+        ideal = f"(\033[3;37mIdeal: {sb}{idealCliWs.start} → {idealCliWs.stop-1}{eb})"
+
+        shortStr = realMsg + ideal + nbCols
+        longStr = realMsg + nbCols + "\n" + ideal
+        msgL, decal = rawStrLength(shortStr)
+
+        # print(msgL, decal, rawStrLength(ideal))
+
+        s = (
+            shortStr.center(cliWR + decal - 1 - simuDecal)
+            if msgL <= cliWR
+            else (realMsg + nbCols).center(cliWR + decal - 16 - simuDecal)
+            + "\n"
+            + " " * 6
+            + ideal.center(cliWR + 2 + simuDecal)
+        )
+        return s
+
+    if not simuCliW and cliWR not in idealCliWs:
+        s = withMsg()
+
+    elif simuCliW <= cliWR:
+
+        traitRefChiffred = (
+            "-" * (simuCliW // 2 - 3)
+            + " "
+            + f"{sb+str(simuCliW)+eb: >4}"
+            + " "
+            + "-" * (simuCliW // 2 - 3)
+        ).center(cliWR)
+        traitRef = ("-" * simuCliW).center(cliWR)
+        s = "\033[1;2;3;30;45m SIMU \033[0;31m" + withMsg(6) + "\n" + traitRefChiffred
+    else:
+        s = (
+            frenchLine()
+            + f"⚠️ : Your {sb}CLI has a simulated width of {eb} {nbCliCols(simuCliW)[1:-1]} \033[1;31mBIGGER{eb} as it {sb}real width!{eb} {nbCliCols(cliWR)}:\n\033[1;34m→ Faux \033[0;37mproblèmes d'apparence \033[1;31mpossibles...\033[0;37m\n"
+            + frenchLine()
+        )
+    setMsg(s)
+
 
 def cls(title=None, filename=""):
     """Réinitialise la console
     Affiche title sauf si title=0
     """
+
     os.system("cls" if os.name == "nt" else "clear")
+
+    cliWAnalysis()
 
     if title != 0:
         setTitle(title, filename)
-
-    # alertMsg = ("Mon simple message\n" * 5 + "\n",)
-    # showMsg(alertMsg) # 2ar
-    # 2ar alertMsg = "Mon cli message" * 5
-    # 2ar showMsg(alertMsg, target="cliWInfo")
 
 
 def nf(f, dec=2):
@@ -33,7 +102,8 @@ def caller_info(justfilename: bool = False) -> tuple | str:
     Return (tuple) Path of caller file, caller function name, index of line where is the instruction.\nIf argument is True (or 1): (str) Just theCcller file name
     """
     # Obtenir le cadre deux niveaux au-dessus dans la pile
-    frame = inspect.currentframe().f_back.f_back
+    
+    frame = inspect.currentframe().f_back.f_back.f_back
     # Obtenir le chemin complet du fichier appelant
     callerFilePath = os.path.relpath(inspect.getfile(frame))  # Chemin relatif
     # Obtenir le numéro de ligne
@@ -73,33 +143,6 @@ def rawStrLength(s: str) -> tuple:
 
 def nbCliCols(n, color=white):
     return f"(\033[1;3{color}m{n}\033[0;3;3{color}m cols{eb})"
-
-
-if simuCliW:
-
-    # Showl cliW if SIMU
-    cliWMsg = f"Ref1. \033[1;37mSIMU{eb}: CLI with {nbCliCols(cliW)[1:-1]}"
-
-    if simuCliW == cliWR:
-        cliWMsgDetails = f"\033[0;37m(As Real)"
-
-    elif simuCliW < cliWR:
-        cliWMsgDetails = f" \033[1;3m(" + str(cliWR) + f" \033[0;3mreally" + f"){eb}"
-
-    else:
-        cliWMsgDetails = f"⚠️ : Your {sb}CLI has a simulated width of {eb} {nbCliCols(simuCliW)} \033[1;31mBIGGER{eb} as it{sb}real width!{eb} {nbCliCols(cliWR)}:\n"
-        cliWMsgDetails = "\033[1;34m→ Faux \033[0;37mproblèmes d'apparence \033[1;31mpossibles...\033[0;37m"
-
-        alertMsg = f"{cliWMsg+cliWMsgDetails: ^{cliWR+rawStrLength(cliWMsgDetails)[1]}}"
-    completeCliWMsg = cliWMsg + cliWMsgDetails
-    completeCliWMsgL = rawStrLength(completeCliWMsg)[1]
-
-    cliWMsg += cliWMsgDetails + "."
-# 0 : noir - 1 : rouge - 2 : vert - 3 : jaune - 4 : bleu - 5 : magenta - 6 : cyan - 7 : blanc
-# 3x pour encre, 4x pour fond
-# \033[3mItalique\033[23m)
-# \033[4mSouligné\033[24m)
-# \033[3;4mSouligné & Italique\033[23;24m)
 
 
 def sl(color: str | None = None, w: int = cliW, toPrint: bool = True) -> str | None:
@@ -181,28 +224,35 @@ def frenchLine(w: int | None = cliWR) -> str:
 
 
 def setTitle(title=None, filename=""):
-    showMsg(alertMsg)
-    
+
     title = title or "Script Python"
     formatted_title = f"\033[1;33m{title[0].upper()}{title[1:]}\033[0;37m"
-    
+
     filename = filename or caller_info(1)
-    formatted_filename = f"(\033[3;4;30m{filename}\033[23;24;37m)"
-    
-    title_lengths = [rawStrLength(part) for part in (formatted_title, formatted_filename)]
-    total_length = sum(length[0] for length in title_lengths) + 1
-    
-    sl()
-    if total_length <= cliWR:
+    # filename = "(main_tools.py)(main_tools.py)(main_tools.p)"
+    formatted_filename = f"(\033[3;4;37m{filename}\033[23;24;37m)"
+
+    title_lengths = [
+        rawStrLength(part) for part in (formatted_title, formatted_filename)
+    ]
+    total_pure_length = sum(length[0] for length in title_lengths)
+    total_codes_length = sum(length[1] for length in title_lengths)
+
+    statusLine = sl(w=cliWR, toPrint=False)
+    print(statusLine)
+    if total_pure_length <= cliWR:
         complete_title = f"{formatted_title} {formatted_filename}"
-        print(f"{complete_title:^{cliWR + rawStrLength(complete_title)[1]}}")
+        print(f"{complete_title:^{cliWR + total_codes_length+1}}", end="\b")
     else:
-        print(f"{formatted_title:^{cliWR + title_lengths[0][0]}}{formatted_filename:^{cliWR + title_lengths[1][0] - 1}}")
-    sl()
+        print(
+            f"{formatted_title:^{cliWR + title_lengths[0][1]}}{formatted_filename:^{cliWR + title_lengths[1][1]+1}}",
+            end="\b",
+        )
+    print(statusLine)
 
 
 def showMsg(
-    msg: str | tuple, color: int | str | None = 0, target: str = "info", w: int = cliW
+    msg: str | tuple, color: int | str | None = 0, type: str = "info", w: int = cliW
 ):
     """Show msg if msg != None\n
     Selon style:
@@ -213,109 +263,29 @@ def showMsg(
     # from text_tools import wordWrap
 
     if color:
-        msg = f"\033[{color}m{msg}\033[0;{color}m{cs}"
+        msg = f"\033[{color}m{msg}\033[{color}m"
 
-    if msg and type(msg) == tuple:
-        align = "^" if target == "title" else "<"
-        # msg = wordWrap(msg, w=w, align=align)
+    print(msg, end="ok")
 
-        if target == "alert":
-            sl(french)
-            print(msg)
-            sl(french)
+    # if msg and type(msg) is tuple:
+    #     align = "^" if type == "title" else "<"
+    #     # msg = wordWrap(msg, w=w, align=align)
 
-        elif target == "title":
-            # sl(w=cliWR)
-            # print(str(msg[0]))
-            print(msg[0].center(cliWR))
-            print(msg[1].center(cliWR))
-            print("x".center(cliWR))
-            print("-" * cliWR)
-            # ls()
-            print("FIN TITRE".center(cliWR))
-            pass
+    #     if type == "alert":
+    #         sl(french)
+    #         print(msg)
+    #         sl(french)
 
-        elif target == "cliWInfo":
-            print(msg)
-
-        else:
-            print(msg)
-
-        if target == "alert":
-            sl(french)
-            print(msg)
-            sl(french)
-
-        elif target == "title":
-            sl(w=cliWR)
-            print(msg)
-            sl(w=cliWR)
-
-        elif target == "cliWInfo":
-            print(msg)
-
-        else:
-            print(msg)
-
-
-def exit():
-
-    complExitMsg = (
-        ""
-        if cliW not in idealCliWs
-        else f" - \033[3;30m" + "CLI: " + nbCliCols(cliW, black)[1:-5] + "\033[0m"
-    )
-
-    s = (
-        "> exit() - Line "
-        + sb
-        + str(inspect.currentframe().f_back.f_lineno)
-        + eb
-        + complExitMsg
-    )
-    print(f"\n\033[0;32m{s:=>{cliWR+rawStrLength(s)[1]}}\033[0;37m")
-
-    msg = (
-        f"⚠️ : Votre {sb}CLI a une largeur simulée{eb} {nbCliCols(simuCliW)} \033[1;31mSUPÉRIEURE{eb} à sa {sb}largeur réelle{eb} {nbCliCols(cliWR)}:\n"
-        + f"{'→ \033[1;31mFaux problèmes d\'apparence possibles\033[0;37m...'.center(cliWR)}"
-    )
-
-    w = nbCliCols(cliWR)
-
-    s2 = (
-        ""
-        if cliWR in idealCliWs
-        else f" (\033[3;31mIDEAL: {sb}{idealCliWs.start} → {idealCliWs.stop-1}{eb})"
-    )
-
-    s3 = f" - SIMU: {sb}{simuCliW}{eb} cols." if simuCliW else ""
-
-    s = f"\033[3;36mReal CLI width:\033[0m {w[1:-1]}{s2}{s3}"
-
-    print(
-        # "CLI width: XXX COL (Simulées / Réelles)\n".center(cliW) + f"{'-'*55}\n" + msg
-        ""
-        if cliWR in idealCliWs
-        else f"{s: ^{cliWR+rawStrLength(s)[1]+1}}"
-    )
-
-    if cliWMsg:
-        print(f"{cliWMsg: ^{cliW+rawStrLength(cliWMsg)[1]}}")
-        print(str("s" * 54).center(60))
-        print("r" * cliWR)
-        print()
-
-    if alertMsg:
-        showMsg(alertMsg)
-
-    # pf("cliW, simuCliW, cliWR") # 2ar
-
-    atuple = (777, "abc")
-    alist = [777, "abc"]
-    adict = {"a": 777, "b": "abc"}
-    # pf("atuple, alist, adict")
-
-    sys.exit()
+    #     elif type == "title":
+    #         # sl(w=cliWR)
+    #         # print(str(msg[0]))
+    #         print(msg[0].center(cliWR))
+    #         print(msg[1].center(cliWR))
+    #         print("x".center(cliWR))
+    #         print("-" * cliWR)
+    #         # ls()
+    #         print("FIN TITRE".center(cliWR))
+    #         pass
 
 
 def ls():
@@ -330,10 +300,44 @@ def ls():
     # print("-" * cliW, "Réf.")
 
 
+def exit():
+
+    complExitMsg = (
+        ""
+        if cliW not in idealCliWs or simuCliW
+        else f" - \033[3;35m" + "CLI: " + nbCliCols(cliW, magenta)[1:-5] + "\033[0m"
+    )
+
+    s = (
+        "> exit() - Line "
+        + sb
+        + str(inspect.currentframe().f_back.f_lineno)
+        + eb
+        + complExitMsg
+    )
+
+    print(f"\n\033[0;32m{s:=>{cliWR+rawStrLength(s)[1]}}\033[0;37m")
+
+    if cliWMsg:
+        print(cliWMsg)
+
+    try:
+        sleep(sleepDuration)
+        pf("cliW, simuCliW, cliWR")  # 2ar
+    except:
+        pass
+        print(f"\033[1;31mNo pf() !!!{eb}")
+
+    sys.exit()
+
+
 if __name__ == "__main__":
     sleep(sleepDuration)
     # # 2ar titre à tester aussi dans cas simulatedW ces 3 cas
-    cls("un très long Titre")
+
+    # exit()
+    cls("un long long Titre")
+
     # cls()
     # cls(0)
     sleep(sleepDuration)

@@ -6,6 +6,7 @@ from time import sleep, time
 
 from globals import *
 from main_tools import *
+
 from sub_tools import pf, tbl
 
 # Initalisation des variables globales dans globals.py
@@ -42,7 +43,7 @@ if __name__ == "__main__":
     t2 = (4, 5, 6)
     t3 = {4, 5, 4, 6}
     pf("t1, t2, t3")
-    pf("list(zip(t1, t2))")  # pf("*(list(zip(t1, t2)))")
+    # pf("list(zip(t1, t2))")  # pf("*(list(zip(t1, t2)))")
     print(*list(zip(t1, t2)))  # pf("*(list(zip(t1, t2)))")
 
     exit()  # 2ar
