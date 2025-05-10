@@ -5,6 +5,7 @@ from tkinter import N
 from matplotlib import lines
 from pyparsing import line
 from time import sleep, time
+from tabulate import tabulate
 
 from globals import *
 
@@ -277,7 +278,7 @@ def frenchLine(w: int | None = cliWR) -> str:
 def setTitle(title=None, filename=""):
 
     title = title or "Script Python"
-    formatted_title = f"\033[1;33m{title[0].upper()}{title[1:]}\033[0;37m"
+    formatted_title = f"\033[0;33m{title[0].upper()}{title[1:]}\033[0;37m"
 
     filename = filename or caller_info(1, level=3)
     formatted_filename = f"(\033[3;4;37m{filename}\033[23;24;37m)"
@@ -383,6 +384,25 @@ def ls(level=2, **kwargs):
     # print("-" * cliW, "Réf.")
 
 
+def tbl(
+    data,
+    headers=[],
+    indexes=False,
+    tablefmt="rounded_outline",
+):
+    tabulate.WIDE_CHARS_MODE = False
+    tabulate.PRESERVE_WHITESPACE = True
+    print(
+        tabulate(
+            data,
+            headers,
+            maxcolwidths=[None, 55],
+            tablefmt=tablefmt,
+            showindex=indexes,
+        )
+    )
+
+
 def exit():
 
     complExitMsg = (
@@ -438,7 +458,7 @@ if __name__ == "__main__":
         print(f"\n{'← Fin script\n': >{cliW}}")
         exit()  # 2ar
 
-    if 0: # 2ar Activer aprè_s pf() OK et finir tests dessous
+    if 0:  # 2ar Activer aprè_s pf() OK et finir tests dessous
         sleep(sleepDuration)
 
         cls()

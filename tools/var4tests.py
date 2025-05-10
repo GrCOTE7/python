@@ -1,6 +1,7 @@
 import inspect
-from tools import cls, cliWR, sb, eb, tbl, exit
-from sub_tools import pf
+from tools import *
+
+# from sub_tools import pf
 
 if __name__ == "__main__":
     cls()
@@ -82,30 +83,13 @@ if __name__ == "__main__":
     print(numbers3)
     print("-" * cliWR)
 
-    def auto_partition(data, L):
-        """Découpe la liste 'data' en sous-groupes en fonction de L."""
-        partitions = []
-        index = 0
-        sizes = []
+    
+    ls()
 
-        # Génération dynamique des tailles de groupe en fonction de L
-        while sum(sizes) < L:
-            next_size = 3 if len(sizes) % 3 == 0 else (1 if len(sizes) % 3 == 1 else 2)
-            if sum(sizes) + next_size > L:
-                next_size = L - sum(sizes)  # Ajuster pour ne pas dépasser L
-            sizes.append(next_size)
+    # print(auto_partition(range(1, 10), 9))
 
-        # Découpage des éléments selon les tailles calculées
-        for size in sizes:
-            partitions.append(tuple(data[index : index + size]))
-            index += size
-
-        return partitions
-
-    print()
-
-    pf(
-        "age,name,price,is_active,fruits,coordonnees,person,numbers,numbers1,numbers2,numbers3,response,my_car"
-    )
+    # pf(
+    #     "age,name,price,is_active,fruits,coordonnees,person,numbers,numbers1,numbers2,numbers3,response,my_car"
+    # )
 
     exit()

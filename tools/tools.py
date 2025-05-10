@@ -8,7 +8,7 @@ from time import sleep, time
 from globals import *
 from main_tools import *
 
-from sub_tools import pf, tbl
+from pf_tools import pf
 
 # Initalisation des variables globales dans globals.py
 
@@ -36,7 +36,7 @@ if __name__ == "__main__":
 
     # sleep(sleepDuration)
 
-    cls()  # 2ar tester aussi dans cas simulatedW
+    cls("pf()")  # 2ar tester aussi dans cas simulatedW
     # cls("un très long titre")
     # cls(0)
 

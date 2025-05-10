@@ -1,5 +1,7 @@
 import lorem, random
-from tools import cls, cliW, ls, sb, eb, exit
+
+from globals import *
+from tools import *
 
 cls(f"Test pour {sb}mes tools{eb}")
 

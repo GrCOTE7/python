@@ -1,5 +1,5 @@
 import lorem, textwrap
-from tools import cls
+from tools import *
 
 # from tools import cliW, rawStrLength
 
