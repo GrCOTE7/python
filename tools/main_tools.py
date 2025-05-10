@@ -8,7 +8,7 @@ from time import sleep, time
 
 from globals import *
 
-# # 2ar
+# 2ar pour tests ponctuels
 # simuCliW = 40
 # cliWMsgF = None
 
@@ -25,10 +25,32 @@ def setMsg(txt, **args):
     cliWMsg = txt
 
 
+def refSimu(center=False, toPrint=True):
+    if not simuCliW:
+        return
+    else:
+        centered = ".center(cliWR)" if center else ""
+        traitRefChiffred = (
+            "-" * (simuCliW // 2 - 2)
+            + " "
+            + f"{str(simuCliW): ^{2+simuCliW%2}}"
+            + " "
+            + "-" * (simuCliW // 2 - 2)
+        )
+    tRC = traitRefChiffred.center(cliWR) if center else traitRefChiffred
+    if toPrint:
+        print(tRC)
+    else:
+        return tRC
+
+
 def cliWAnalysis():
 
+    realMode = 0 if simuCliW else 1
+    ideal = cliW in idealCliWs
+
     # print(
-    #     f"{str(cliW) +' // '+str(cliWR)} - Analyse CLIW: {sb}{'SIMU' if simuCliW else 'RÉEL'}{eb}".center(
+    #     f"{str(cliW) +' // '+str(cliWR)} - Analyse CLIW: {sb}{'SIMU' if not realMode else 'RÉEL'}{eb} and {sb}{'IDEAL' if ideal else 'NOT IDEAL'}{eb}".center(
     #         cliWR
     #     )
     #     + "\n"
@@ -55,26 +77,20 @@ def cliWAnalysis():
         )
         return s
 
-    if not simuCliW and cliWR not in idealCliWs:
-        s = withMsg()
+    if realMode and ideal:
+        return
 
-    elif simuCliW <= cliWR:
-
-        traitRefChiffred = (
-            "-" * (simuCliW // 2 - 3)
-            + " "
-            + f"{sb+str(simuCliW)+eb: >4}"
-            + " "
-            + "-" * (simuCliW // 2 - 3)
-        ).center(cliWR)
-        traitRef = ("-" * simuCliW).center(cliWR)
-        s = "\033[1;2;3;30;45m SIMU \033[0;31m" + withMsg(6) + "\n" + traitRefChiffred
-    else:
+    elif not realMode and simuCliW > cliWR:
         s = (
             frenchLine()
             + f"⚠️ : Your {sb}CLI has a simulated width of {eb} {nbCliCols(simuCliW)[1:-1]} \033[1;31mBIGGER{eb} as it {sb}real width!{eb} {nbCliCols(cliWR)}:\n\033[1;34m→ Faux \033[0;37mproblèmes d'apparence \033[1;31mpossibles...\033[0;37m\n"
             + frenchLine()
         )
+    elif not realMode:
+        s = "\033[1;2;3;30;45m SIMU \033[0;31m " + withMsg(6) + "\n" + refSimu(1, 0)
+    else:
+        s = withMsg()
+
     setMsg(s)
 
 
@@ -98,7 +114,7 @@ def nf(f, dec=2):
         return locale.format_string(f"%.{dec}f", f, grouping=True)
     except ValueError:
         src = caller_info()
-        print(src)
+        # print(src)
         print(
             f"⚠️ Errorfor nf() in main_tools:\n\033[1;31mBad data type ({type(f).__name__}) -> {f} (Line {src[2]} in {src[0]}){eb}"
         )
@@ -109,7 +125,7 @@ def nf(f, dec=2):
     return locale.format_string(f"%.{dec}f", f, grouping=True)
 
 
-def caller_info(justfilename: bool = False, notForTitle=2) -> tuple | str:
+def caller_info(justfilename: bool = False, level=2) -> tuple | str:
     """
     Return (tuple) Path of caller file, caller function name, index of line where is the instruction.\nIf argument is True (or 1): (str) Just theCcller file name
     """
@@ -117,7 +133,7 @@ def caller_info(justfilename: bool = False, notForTitle=2) -> tuple | str:
     frame = inspect.currentframe()
 
     # Vérifier la profondeur de la pile avant d'accéder à f_back plusieurs fois
-    for _ in range(notForTitle):
+    for _ in range(level):
         if frame is not None and frame.f_back is not None:
             frame = frame.f_back
         else:
@@ -172,15 +188,23 @@ def nbCliCols(n, color=white):
     return f"(\033[1;3{color}m{n}\033[0;3;3{color}m cols{eb})"
 
 
-def sl(color: str | None = None, w: int = cliW, toPrint: bool = True) -> str | None:
-    """Simple Line\nparal: blue, red, ... or french"""
+def sl(
+    color: str | None = None,
+    w: int = cliW,
+    trait="─",
+    finTrait="",
+    toPrint: bool = True,
+) -> str | None:
+    """Simple Line\nparm: blue, red, ... or french"""
     global lineColor
 
     if color == "french":
         lineCode = frenchLine()
     else:
         lineColor = color if color else green if cliWR in idealCliWs else red
-        lineCode = f"\033[0;3{lineColor};40m" + "─" * w + "\033[0;37;40m"
+        lineCode = (
+            f"\033[0;3{lineColor};40m" + f"{trait}{finTrait}" * w + "\033[0;37;40m"
+        )
 
     if toPrint:
         print(lineCode)
@@ -255,8 +279,7 @@ def setTitle(title=None, filename=""):
     title = title or "Script Python"
     formatted_title = f"\033[1;33m{title[0].upper()}{title[1:]}\033[0;37m"
 
-    filename = filename or caller_info(1, notForTitle=3)
-    # filename = "(main_tools.py)(main_tools.py)(main_tools.p)"
+    filename = filename or caller_info(1, level=3)
     formatted_filename = f"(\033[3;4;37m{filename}\033[23;24;37m)"
 
     title_lengths = [
@@ -315,15 +338,48 @@ def showMsg(
     #         pass
 
 
-def ls():
+# 2do lien clicable comme erreurs
+def ls(level=2, **kwargs):
     """Draw a line with the line number, function and the caller file."""
-    (callerFile, context, lineNumber) = caller_info()
-    s = f" \033[1;31;47m L.: {nf(lineNumber, 0)} \033[0;37;40m - {context} - F.: {callerFile}"
-    textLength = rawStrLength(s)
-    # pf("cliW, textLength")
-    trait = sl(w=cliWR - textLength[0], toPrint=False)
+    # print("kwargs = ", kwargs)  # Pour debug
+    color = kwargs.get("color", yellow)
 
-    print(trait + s)
+    (callerFile, context, lineNumber) = caller_info(level=level)
+    # context = "ABCDEFGHIJKL"
+    # callerFile = "ahcestmontoolsunpeulong\main_tools.py"
+    s = f"\033[0;3{color}m{context}𐍈𐍈𐍈F.: {callerFile}:\033[1;31;47m{lineNumber}{eb}"
+    textLength = rawStrLength(s)
+    traitL = cliWR - textLength[0] - 1
+
+    multiLine = 0
+    # traitL2 = cliW - textLength[0] - 1
+    if traitL < 0:
+        traitL = cliWR // 2
+        ss = s.split("𐍈𐍈𐍈")
+        ss1L = rawStrLength(ss[1])[1]
+        s = s.replace("𐍈𐍈𐍈", "\n")
+        multiLine = 1
+    else:
+        s = s.replace("𐍈𐍈𐍈", " - ")
+    trait = f"\033[0;3{color}m" + "─" * traitL + " "
+
+    # print(
+    #     f"{sb}{level=} | {textLength[0]=} | {cliW=} | {simuCliW=} |{cliWR=} | {len(trait)=} avec codes & 1 space"
+    # )
+    print(
+        trait + s
+        if not multiLine
+        else trait + ss[0] + "\n" + f"{'→ '+ ss[1]: >{cliWR +ss1L}}" + "\n"
+    )
+    # refSimu()
+
+    # Juste une ls() rapide pour DEBUG la fonction... ls() !
+    # (callerFile, context, lineNumber) = caller_info(level=1)
+    # s4Debugls = (
+    #     f"DEBUG \033[3;31m{context} - F.: {callerFile}:\033[1;31;47m{lineNumber}{eb}"
+    # )
+    # print("" + s4Debugls.center(cliWR + rawStrLength(s4Debugls)[1]))
+
     # print("-" * cliW, "Réf.")
 
 
@@ -331,22 +387,27 @@ def exit():
 
     complExitMsg = (
         ""
-        if cliW not in idealCliWs or simuCliW
-        else f" - \033[3;35m" + "CLI: " + nbCliCols(cliW, magenta)[1:-5] + "\033[0m"
+        if cliW not in idealCliWs or simuCliW or cliW == 55
+        else f"(\033[3;35m" + nbCliCols(cliW, magenta)[1:-8] + ".\033[0;32m)" + eb
     )
 
-    s = (
-        "> exit() - Line "
-        + sb
-        + str(inspect.currentframe().f_back.f_lineno)
-        + eb
-        + complExitMsg
-    )
+    (callerFile, context, lineNumber) = caller_info(level=2)
 
-    print(f"\n\033[0;32m{s:=>{cliWR+rawStrLength(s)[1]}}\033[0;37m")
+    s1 = f"EXIT{complExitMsg}\033[0;32m:"
+    s2 = f"{context} - F.: {callerFile}:\033[1;31;47m{lineNumber}{eb}"
+
+    n = cliWR - rawStrLength(s1)[0] - rawStrLength(s2)[0] - 3
+    trait = f"\033[0;3{green}m" + "=" * abs(n) + ">"
+    print(
+        f"{trait} {s1} {s2}"
+        if n > 0
+        else f"{trait} {s1}\n{s2: >{cliWR+rawStrLength(s2)[1]}}"
+    )
 
     if cliWMsg:
         print(cliWMsg)
+        # print(f"{'*' *45}".center(66))
+        # ls()
 
     try:
         sleep(sleepDuration)
@@ -358,36 +419,42 @@ def exit():
     sys.exit()
 
 
+def bidon():
+    s = "bidon"
+    print("Bidon")
+    ls()
+
+
 if __name__ == "__main__":
     sleep(sleepDuration)
-    # # 2ar titre à tester aussi dans cas simulatedW ces 3 cas
+    cls("Main TOOLS")
 
-    # exit()
-    cls("un long long Titre")
+    if 0:  # Simple test, Mettre 1 pour cette partie
+        sleep(sleepDuration)
+        print("Début script →\n")
+        sleep(sleepDuration)
+        ls()
+        sleep(sleepDuration)
+        print(f"\n{'← Fin script\n': >{cliW}}")
+        exit()  # 2ar
 
-    # cls()
-    # cls(0)
+    if 0: # 2ar Activer aprè_s pf() OK et finir tests dessous
+        sleep(sleepDuration)
 
-    print(nf("123456"))
-    print(nf("a"))
-    print(nf("123456"), nf(123456789.789))
+        cls()
+        cls(0)
 
-    sleep(sleepDuration)
+        t1 = [1, 2, 3]
+        t2 = (4, 5, 6)
+        t3 = {4, 5, 4, 6}
+        pf("t1, t2, t3")
+        pf("list(zip(t1, t2))")  # pf("*(list(zip(t1, t2)))")
+        ls()
+        print(*list(zip(t1, t2)))  # pf("*(list(zip(t1, t2)))")
 
-    exit()  # 2ar
-    # t1 = [1, 2, 3]
-    # t2 = (4, 5, 6)
-    # t3 = {4, 5, 4, 6}
-    # pf("t1, t2, t3")
-    # pf("list(zip(t1, t2))")  # pf("*(list(zip(t1, t2)))")
-    # print(*list(zip(t1, t2)))  # pf("*(list(zip(t1, t2)))")
-
-    exit()  # 2ar
+        exit()  # 2ar
     # sleep(sleepDuration)
 
-    print("Début script...\n")
-
-    exit()  # 2ar
     # sl()
     # sl(blue)
     # sl(green, 70)

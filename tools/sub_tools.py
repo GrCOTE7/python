@@ -87,6 +87,7 @@ def pf(var: str, style: int = 0, w=cliWR):
     """
 
     def format_value(value):
+
         if isinstance(value, dict):
             # Format each key-value pair for dictionaries
             return (
@@ -128,7 +129,7 @@ def pf(var: str, style: int = 0, w=cliWR):
             return f"<{type(value).__name__}> {value}"
 
     # Retrieve caller information
-    lineNumber = caller_info()[2]
+    caller = caller_info()
     frame = inspect.currentframe().f_back
 
     # Handle multiple variables passed in `var`
@@ -196,7 +197,14 @@ def pf(var: str, style: int = 0, w=cliWR):
                 tbl(data, headers)
 
     print(
-        f"\033[0;35;40m{' '+'Lg. '+str(nf(lineNumber, 0))+' ':-^{cliWR}}\033[0;37;40m"
+        f"\033[0;35;40m{' '+'Lg. '+str(nf(caller[2], 0))+f' - {caller[0]}':-^{cliWR}}\033[0;37;40m"
+    )
+    print("oooooooooooooooooo")
+    # ls(level=2)
+    print("oooooooooooooooooo")
+    # ls(color=magenta, trait='-')
+    print(
+        f"\033[0;35;40m{' '+'Lg. '+str(nf(caller[2], 0))+f' - {caller[0]}':-^{cliWR}}\033[0;37;40m"
     )
 
 
@@ -209,6 +217,7 @@ if __name__ == "__main__":
     c = "111"
     d = (1, 2, 3, 4, "555")
     pf("a, b, c, d")
+    ls()
     exit()
     pf("a, b, c, d, a, c, b, d, b, c, a")
 

@@ -1,5 +1,6 @@
 import inspect
 from tools import cls, cliWR, sb, eb, tbl, exit
+from sub_tools import pf
 
 if __name__ == "__main__":
     cls()
@@ -72,13 +73,13 @@ if __name__ == "__main__":
     import random
 
     # uniques et ordonnée
-    numbers = set(random.sample(range(1, 10), 9))
-    print(numbers)
-    numbers = tuple(random.sample(range(1, 10), 9))
-    print(numbers)
+    numbers1 = set(random.sample(range(1, 10), 9))
+    print(numbers1)
+    numbers2 = tuple(random.sample(range(1, 10), 9))
+    print(numbers2)
     # Pas uniques
-    numbers = tuple(random.choices(range(1, 10), k=9))
-    print(numbers)
+    numbers3 = tuple(random.choices(range(1, 10), k=9))
+    print(numbers3)
     print("-" * cliWR)
 
     def auto_partition(data, L):
@@ -101,7 +102,10 @@ if __name__ == "__main__":
 
         return partitions
 
-
     print()
+
+    pf(
+        "age,name,price,is_active,fruits,coordonnees,person,numbers,numbers1,numbers2,numbers3,response,my_car"
+    )
 
     exit()

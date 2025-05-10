@@ -1,3 +1,4 @@
+from calendar import c
 from stat import SF_IMMUTABLE
 import os, sys, inspect, locale, shutil
 from matplotlib import lines
@@ -39,16 +40,44 @@ if __name__ == "__main__":
     # cls("un très long titre")
     # cls(0)
 
+    a = 2
+    b = 3
+    c = [a + b]
+    pf("a,b,c")
+    ls()
+    sleep(sleepDuration)
+
+    exit()  # 2ar
+
+    a = 1
+    b = "2"
+    c = [1, 5]
+    d = a + int(b)
+    e = (1, 2, 3, 4, "555")
+    f = {4, 5, 4, 6}
+    g = range(5)
+    pf("a, b, c, d")
+
+    bidon()
+
+    exit()  # 2ar
+
+    ls()
+    exit()  # 2ar
+
+    pf("a, b, c, d, e, f, g")
+    exit()  # 2ar
+
     t1 = [1, 2, 3]
     t2 = (4, 5, 6)
     t3 = {4, 5, 4, 6}
     pf("t1, t2, t3")
-    # pf("list(zip(t1, t2))")  # pf("*(list(zip(t1, t2)))")
-    print(*list(zip(t1, t2)))  # pf("*(list(zip(t1, t2)))")
-
-    print(nf("a"), nf(123456789.789))
+    ls()
 
     exit()  # 2ar
+
+    # pf("list(zip(t1, t2))")  # pf("*(list(zip(t1, t2)))")
+    print(*list(zip(t1, t2)))  # pf("*(list(zip(t1, t2)))")
 
     # sleep(sleepDuration)
 
