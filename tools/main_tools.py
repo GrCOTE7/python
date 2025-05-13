@@ -200,7 +200,7 @@ def sl(
     global lineColor
 
     if color == "french":
-        lineCode = frenchLine()
+        lineCode = frenchLine(trait=trait)
     else:
         lineColor = color if color else green if cliWR in idealCliWs else red
         lineCode = (
@@ -214,7 +214,10 @@ def sl(
         return lineCode
 
 
-def frenchLine(w: int | None = cliWR) -> str:
+def frenchLine(
+    w: int | None = cliWR,
+    trait="─",
+) -> str:
     """w is None | w != cliWR Print a blue-white-red line"""
 
     def partsLength(totalLength: int) -> tuple:
@@ -236,8 +239,8 @@ def frenchLine(w: int | None = cliWR) -> str:
 
     colorsCodes = [4, 7, 1, 7]
 
-    endsLine = "─" * pL[0]
-    centerLine = "─" * pL[1]
+    endsLine = f"{trait}" * pL[0]
+    centerLine = f"{trait}" * pL[1]
 
     endColors = ""
     (partBlue, partWhite, partRed, endColors) = (
@@ -438,7 +441,7 @@ def exit():
         pf("cliW, simuCliW, cliWR")  # 2ar
     except:
         pass
-        print(f"\033[1;31mNo pf() !!!{eb}")
+        # 2ar print(f"\033[1;31mNo pf() !!!{eb}")
 
     sys.exit()
 

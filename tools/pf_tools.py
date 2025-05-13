@@ -454,7 +454,7 @@ def pf(ks: str, style: int = 0, indexes=False, w=cliWR):
 
     # print([formatted_value for formatted_value in formatted_values])
 
-    print(f"{style=} | {indexes=}")
+    # 2ar print(f"{style=} | {indexes=}")
 
     if style > 0:
         lengths = [len(str(val)) for item in formatted_values for val in item[1:]]
@@ -468,7 +468,7 @@ def pf(ks: str, style: int = 0, indexes=False, w=cliWR):
         colalign = ["center", "left", "right"]
         # tbl(data, headers, indexes)
     elif style == 2:
-        print("style 2 - ", lengths)
+        # print("style 2 - ", lengths)
         headers = [
             f"\033[1;36;40mType{eb}",
             f"\033[1;36;40mKey{eb}",
@@ -546,14 +546,26 @@ def pf(ks: str, style: int = 0, indexes=False, w=cliWR):
 
 if __name__ == "__main__":
 
-    cls("tests de pf()")
+    cls("tests de pf()")  # @i Clear Screen (Effacer l'ecran et indique le nom du fichier)
 
     aaaaatreslong = 7
     bb = "22222222222"
     c = 333
-    pf("aaaaatreslong,bb,c", 2)
+    pf("aaaaatreslong,bb,c", 2)  # @i print('f"{vars=}")
+    # 2fix: pf("aaaaatreslong,bb,c")
+
+    ls()  # @i Line Separator (Ligne Séparatrice)
+    sl(french, trait="x")  # @i Simple Line (Ligne Séparatrice)
+
+    sl(blue)  # @i Simple Line (Bleue)
+    print(sl(white, toPrint=0) + sl(red, toPrint=0))  # @i Simple Lines (Blanche et rouge)
+    sl(french)  # @i Simple Line (Ligne Séparatrice)
+
+    exit()  # @i Exit (Quitter) avec infos (Nombre de colonne de la console, fonction appelante, fichier et n° de ligne) - Lien clicable → Directement dans le code)
+
+    data = [13, 11, 3]
+
     pf("aaaaatreslong,bb,c")
-    exit()
 
     pf("aaaaatreslong,b,c", 2, False)
     pf("aaaaatreslong,b,c", 1, True)
@@ -564,7 +576,6 @@ if __name__ == "__main__":
     # a.insert(0, 0)
     # print(a)
 
-    data = [13, 8, 9]
     L = 27
     ls()
     if 1:
@@ -586,16 +597,18 @@ if __name__ == "__main__":
     if 0:
         ls()
         aaa = 7
-        pf2("aaa")
         exit()
+        pf2("aaa")
         b = 88
         c = "111"
         d = (1, 2, 3, 4, "555")
+        ls()
+
+        exit()
         pf2("aaa, b, c, d")
 
         # pf2("a, b, c")
         # ls()
-        exit()
         # pf("a, b, c, d, a, c")
         # pf("a, b, c, d, a, c, b, d, b, c, a")
         ls()
