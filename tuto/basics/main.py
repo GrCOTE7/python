@@ -5,10 +5,11 @@ tools_path = Path(__file__).parent.parent.parent / "tools"
 sys.path.append(str(tools_path))
 from tools import *
 
-cls("Script tuto/")
 
+# 2fix ranger ces toutes parties et reprndre https://docs.python.org/fr/3.8/whatsnew/3.8.html ici
 
 if __name__ == "__main__":
+    cls("Script tuto/")
     pass
 
     class Personne:

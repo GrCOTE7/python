@@ -37,7 +37,7 @@ def format_string(text, w=55):
     return allLines  # Join lines with newlines
 
 
-def pf(var: str, style: int = 0, w=cliWR):
+def pf_ori(var: str, style: int = 0, w=cliWR):
     """Show (str) 'var', type and value as prinf(f'{var}=') if int=1 (color cyan)
     else show same data in a table
     """
@@ -216,7 +216,11 @@ def pf2(var: str, style: int = 0, w=cliWR):
             # Default formatting for scalar values
             s = f"<{type(value).__name__}> {value}"
 
-        return s, len(s)
+        return (
+            s,
+            len(s),
+            len(s[0]),
+        )
 
     # Retrieve caller information
     caller = caller_info()
@@ -230,23 +234,23 @@ def pf2(var: str, style: int = 0, w=cliWR):
     # formatted_values = []
     # sl(yellow)
 
-    ls(color=yellow)
+    ls(color=red)
 
     fvs = []
-    v = "a"
-    value = eval(v, frame.f_globals, frame.f_locals)
-    fv = [v, *format_value(value)]
-    fvs.append(fv)
-    v = "b"
-    value = eval(v, frame.f_globals, frame.f_locals)
-    fv = [v, *format_value(value)]
-    fvs.append(fv)
-    v = "c"
-    value = eval(v, frame.f_globals, frame.f_locals)
-    fv = [v, *format_value(value)]
-    fvs.append(fv)
-
+    # v = "aaa"
+    # value = eval(v, frame.f_globals, frame.f_locals)
+    # fv = [v, *format_value(value)]
+    # fvs.append(fv)
+    # v = "b"
+    # value = eval(v, frame.f_globals, frame.f_locals)
+    # fv = [v, *format_value(value)]
+    # fvs.append(fv)
+    # v = "c"
+    # value = eval(v, frame.f_globals, frame.f_locals)
+    # fv = [v, *format_value(value)]
+    # fvs.append(fv)
     print(fvs)
+    # exit()
 
     ls(color=yellow)
     ls(color=blue)
@@ -269,6 +273,9 @@ def pf2(var: str, style: int = 0, w=cliWR):
     ls(color=blue)
     print(7 * 7 + 7 * 2)
     print(56 // 2)
+
+    ls()
+
     # v = vars[0]
     # value = eval(v, frame.f_globals, frame.f_locals)
     # newValue = format_value(value)
@@ -348,35 +355,265 @@ def pf2(var: str, style: int = 0, w=cliWR):
     # )
 
 
+def pf(ks: str, style: int = 0, indexes=False, w=cliWR):
+    """Show (str) 'var', type and value as prinf(f'{var}=')
+    style :
+        0 | None → tableau simple (Default)
+        1 → En colonne
+        2 → En colonne avec lengthes
+    """
+
+    def format_value(val):
+
+        if isinstance(val, dict):
+            # Format each key-value pair for dictionaries
+            return (
+                "<dict> {"
+                + ", ".join(
+                    f"<{type(val).__name__}> {val}: <{type(v).__name__}> {val}"
+                    for k, v in k.items()
+                )
+                + "}"
+            )
+        elif isinstance(val, tuple):
+            # Format each element for tuples, using parentheses
+            return (
+                f"<tuple> ("
+                + ", ".join(f"<{type(item).__name__}> {item}" for item in val)
+                + ")"
+            )
+        elif isinstance(val, list):
+            # Format each element for lists, using brackets
+            return (
+                f"<list> ["
+                + ", ".join(f"<{type(item).__name__}> {item}" for item in val)
+                + "]"
+            )
+        elif hasattr(val, "__dict__"):  # Safely handle objects with attributes
+            try:
+                return (
+                    "<object> {"
+                    + ", ".join(
+                        f"<{type(val).__name__}> {val}: {v}"
+                        for k, v in val.__dict__.items()
+                    )
+                    + "}"
+                )
+            except Exception as e:
+                return f"<object> Error extracting attributes: {e}"
+        else:
+            # Default formatting for scalar values
+            return f"{type(val).__name__}", val
+
+    def auto_partition(data: list, L: int, decalU: int = 0, decalP: int = 0) -> list:
+        """Retourne le nombre d'élément pour chaque sous-groupe en fonction de L.
+        decalU: Décallage Unitaire
+        decalP: Décallage Partie
+        """
+
+        parts = []
+        part = 0
+        part_cumul = decalP
+        for v in data:
+            if part_cumul + v + decalU > L:
+                if part:
+                    parts.append(
+                        part
+                    )  # Ajoute l'index du dernier élément du segment valide
+                part_cumul = v + decalU  # Redémarre le cumul avec l'élément actuel
+                part = 1
+            else:
+                part += 1
+                part_cumul += v + decalU
+        parts.append(part)
+        return parts
+
+    # Retrieve caller information
+    caller = caller_info()
+    frame = inspect.currentframe().f_back
+    # Handle if multiple variables passed in `var`
+    kso = ks
+    ks = [k.strip() for k in ks.split(",")]
+    formatted_values = []
+    # print(keys)
+    # print(vals)
+
+    try:
+        for k in ks:
+            v = eval(k, frame.f_globals, frame.f_locals)
+            newV = format_value(v)
+            formatted_values.append((newV[0], k, newV[1]))
+            # Check if we have complex data or long values
+            if isinstance(v, (list, tuple, dict)) or hasattr(v, "__dict__"):
+                # 2do check if we have long values // cliWR
+                complex_data = True  # Mark as complex
+        # allFVL = sum([len(str(v)) for v in formatted_values]) + 1
+    except NameError as e:
+        print(f"Error: {e}")
+        return
+
+    # print([formatted_value for formatted_value in formatted_values])
+
+    print(f"{style=} | {indexes=}")
+
+    if style > 0:
+        lengths = [len(str(val)) for item in formatted_values for val in item[1:]]
+    if style == 1:
+        headers = [
+            f"\033[1;36;40mType{eb}",
+            f"\033[1;36;40mVar{eb}",
+            f"\033[1;36;40mVal{eb}",
+        ]
+        data = [[v[0], v[1], v[2]] for v in formatted_values]
+        colalign = ["center", "left", "right"]
+        # tbl(data, headers, indexes)
+    elif style == 2:
+        print("style 2 - ", lengths)
+        headers = [
+            f"\033[1;36;40mType{eb}",
+            f"\033[1;36;40mKey{eb}",
+            "KLen",
+            f"\033[1;36;40mVal{eb}",
+            "VLen",
+            "MaxLen",
+        ]
+        data = [
+            [
+                v[0],
+                v[1],
+                len(v[1]),
+                v[2],
+                len(str(v[2])),
+                max(len(v[1]), len(str(v[2]))),
+            ]
+            for v in formatted_values
+        ]
+        colalign = ["center", "left", "right", "right", "right", "right"]
+        # tbl(data, headers)
+    else:
+        indexes = False
+
+        # print(formatted_values)
+        # lengths = [max(len(v[1]), len(v[2])) for v in formatted_values]
+        lengths = [len(str(val)) for item in formatted_values for val in item[1:]]
+        print("ligne 460: ", lengths)
+        # print(auto_partition(lengthes, cliWR))
+        # print(auto_partition(lengths, 20, 3, 1))
+        # Print the formatted values for non-table styles
+        # print(f"{allFVL=}", cliWR)
+
+        # If all variables are scalar, display them in a single-row table
+        if 1000 < cliWR + 10 and 0:
+            headers = [
+                f"\033[1;36m{var_name}\033[0;37;40m" for var_name, _ in formatted_values
+            ]
+            data = [[formatted_value for _, formatted_value in formatted_values]]
+            # tbl(data, headers, indexes)
+        elif 0:
+            # Separate tables for each complex variable
+            for var_name, formatted_value in formatted_values:
+                # print("LONGLINE", len(formatted_value), cliWR)
+                fv = formatted_value
+                data = (
+                    [[fv]]
+                    if len(fv) < cliWR
+                    else [
+                        [format_string(fv, cliWR - 4)],
+                        ["\033[0;30;40m" + "-" * (cliWR - 4) + "\033[0;37m"],
+                    ]
+                )
+                # data = [[" " * 50], [fv]]
+                headers = [f"\033[1;36m{var_name}\033[0;37;40m"]
+                # tbl(data, headers, indexes=False)
+
+    print(
+        f"\033[1;36;40m{f' pf(\'{kso}\', {style}, {indexes*1}) ':-^{cliWR}}\033[0;37;40m"
+    )
+    if indexes:
+        headers.insert(0, "#")
+        colalign.insert(0, "right")
+    # print(headers)
+    # print(data)
+    tbl(
+        data,
+        headers,
+        colalign=colalign,
+        indexes=indexes,
+    )
+    s = f"\033[1;36;40m{f' {caller[1]}'+f' - {caller[0]}:{'\033[1;31;47m'+str(nf(caller[2], 0))}'}{eb} "
+    print(f"{s:-^{cliWR+rawStrLength(s)[1]}}")
+
+
 if __name__ == "__main__":
 
     cls("tests de pf()")
 
-    a = 7
-    b = 88
-    c = "111"
-    d = (1, 2, 3, 4, "555")
-    # pf2("a, b, c")
-    # ls()
-    pf2("a, b, c, d")
+    aaaaatreslong = 7
+    bb = "22222222222"
+    c = 333
+    pf("aaaaatreslong,bb,c", 2)
+    pf("aaaaatreslong,bb,c")
     exit()
-    pf("a, b, c, d, a, c")
-    pf("a, b, c, d, a, c, b, d, b, c, a")
+
+    pf("aaaaatreslong,b,c", 2, False)
+    pf("aaaaatreslong,b,c", 1, True)
+    pf("aaaaatreslong,b,c", 1, False)
+
+    exit()
+    # a = [1, 2]
+    # a.insert(0, 0)
+    # print(a)
+
+    data = [13, 8, 9]
+    L = 27
     ls()
+    if 1:
+        print(str(data) + "\n")
+        l = auto_partition(data, L, 3, 1)
+        if L == 14:
+            print(f"LIMITE={L}")
+            print("─" * len(str(l)) + "\n" + str(l) + "\n" + "─" * len(str(l)))
+
+        print("Reconstitution:")
+        i = 0
+        for n in l:
+            print(data[i : i + n])
+            i += n
+
     exit()
 
-    import json
+    exit()
+    if 0:
+        ls()
+        aaa = 7
+        pf2("aaa")
+        exit()
+        b = 88
+        c = "111"
+        d = (1, 2, 3, 4, "555")
+        pf2("aaa, b, c, d")
 
-    print(json.dumps(d, indent=4))
+        # pf2("a, b, c")
+        # ls()
+        exit()
+        # pf("a, b, c, d, a, c")
+        # pf("a, b, c, d, a, c, b, d, b, c, a")
+        ls()
+        exit()
 
-    vars = (a, b, c, d, b, c, d, b, c, a)
-    pf("vars")
-    # print("vars", vars)
+        import json
+
+        print(json.dumps(d, indent=4))
+
+        vars = (a, b, c, d, b, c, d, b, c, a)
+        pf("vars")
+        # print("vars", vars)
 
     def vv(v):
         return f"<{type(v).__name__}> {v}"
 
-    values = [vv(a) for a in vars]
+    # values = [vv(a) for a in vars]
+
     # print(values)
 
     # lengths = sum([len(str(v)) for v in values]) + 2 * len(vars)

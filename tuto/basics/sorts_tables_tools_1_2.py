@@ -231,6 +231,7 @@ if __name__ == "__main__":
     )
 
     print("Avec formattages et ligne vide :\n" + table, end="")
+    
     ls()
 
     exit()  #################################

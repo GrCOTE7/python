@@ -7,6 +7,7 @@ from time import sleep, time
 
 from globals import *
 from main_tools import *
+from width_tests import auto_partition
 
 from pf_tools import pf
 

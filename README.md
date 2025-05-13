@@ -4,12 +4,9 @@
 
 ### Basics
 
-
-* [/] [Python - Doc Tutorial](https://docs.python.org/3.13/tutorial/index.html)
-
-* [/] [Python - Doc HowTo](https://docs.python.org/3.13/howto/annotations.html#annotations-howto)
-
-  * [ ] [À faire depuis le début](https://docs.python.org/3.13/howto/annotations.html#annotations-howto)
+* [/] [Python - Doc](https://docs.python.org/fr/3.8)
+  [/]  Tutoriel
+  * [ ] HowTo [À faire depuis le début]
   * [/] [Sort démarré: Continuer sorts_tables_tools_2_2.py](https://docs.python.org/3.13/howto/sorting.html#sortinghowto)
   
 * [/] [Tutos en français](https://www.youtube.com/results?search_query=tuto+python+en+fran%C3%A7ais)

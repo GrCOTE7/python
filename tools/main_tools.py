@@ -368,7 +368,7 @@ def ls(level=2, **kwargs):
     #     f"{sb}{level=} | {textLength[0]=} | {cliW=} | {simuCliW=} |{cliWR=} | {len(trait)=} avec codes & 1 space"
     # )
     print(
-        trait + s
+        "\n" + trait + s
         if not multiLine
         else trait + ss[0] + "\n" + f"{'→ '+ ss[1]: >{cliWR +ss1L}}" + "\n"
     )
@@ -387,15 +387,19 @@ def ls(level=2, **kwargs):
 def tbl(
     data,
     headers=[],
+    colalign=None,
     indexes=False,
     tablefmt="rounded_outline",
 ):
     tabulate.WIDE_CHARS_MODE = False
     tabulate.PRESERVE_WHITESPACE = True
+    if colalign is None:
+        colalign = ["center"] * len(headers)  # Alignement à gauche par défaut
     print(
         tabulate(
             data,
             headers,
+            colalign=colalign,
             maxcolwidths=[None, 55],
             tablefmt=tablefmt,
             showindex=indexes,
