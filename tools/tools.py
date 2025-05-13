@@ -23,7 +23,7 @@ from pf_tools import pf
 
 # tools_path = Path(__file__).parent.parent.parent.parent.parent / "tools"
 # sys.path.append(str(tools_path))
-# from tools import dg, fg, lg, cls, exit, pf
+# from tools import*
 
 # cls("APPRENDRE LE PYTHON")
 
