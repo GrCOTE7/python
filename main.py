@@ -1,9 +1,14 @@
-from tools.tools import cls
+import sys
+from pathlib import Path
 
-cls("Script racine")
+sys.path.append(str(Path(__file__).parent / "tools"))
+from tools.tools import *
 
 if __name__ == "__main__":
 
+    cls("Script racine")
+
     print("A".center(55))
-    print("{0: ^55}".format("B"))
+    print(f"{'B': ^{CLIWR}}")
+    # print(f"{0: ^{CLIWR}}".format("B"))
     print()

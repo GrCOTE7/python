@@ -37,7 +37,7 @@ def format_string(text, w=55):
     return allLines  # Join lines with newlines
 
 
-def pf_ori(var: str, style: int = 0, w=cliWR):
+def pf_ori(var: str, style: int = 0, w=CLIWR):
     """Show (str) 'var', type and value as prinf(f'{var}=') if int=1 (color cyan)
     else show same data in a table
     """
@@ -163,7 +163,7 @@ def pf_ori(var: str, style: int = 0, w=cliWR):
     )
 
 
-def pf2(var: str, style: int = 0, w=cliWR):
+def pf2(var: str, style: int = 0, w=CLIWR):
     """Show (str) 'var', type and value as prinf(f'{var}=') if int=1 (color cyan)
     else show same data in a table
     """
@@ -355,7 +355,7 @@ def pf2(var: str, style: int = 0, w=cliWR):
     # )
 
 
-def pf(ks: str, style: int = 0, indexes=False, w=cliWR):
+def pf(ks: str, style: int = 0, indexes=False, w=CLIWR):
     """Show (str) 'var', type and value as prinf(f'{var}=')
     style :
         0 | None → tableau simple (Default)
@@ -460,8 +460,8 @@ def pf(ks: str, style: int = 0, indexes=False, w=cliWR):
         lengths = [len(str(val)) for item in formatted_values for val in item[1:]]
     if style == 1:
         headers = [
-            f"\033[1;36;40mType{eb}",
-            f"\033[1;36;40mVar{eb}",
+            f"\033[1;36;40mType{EB}",
+            f"\033[1;36;40mVar{EB}",
             f"\033[1;36;40mVal{eb}",
         ]
         data = [[v[0], v[1], v[2]] for v in formatted_values]
@@ -470,10 +470,10 @@ def pf(ks: str, style: int = 0, indexes=False, w=cliWR):
     elif style == 2:
         # print("style 2 - ", lengths)
         headers = [
-            f"\033[1;36;40mType{eb}",
-            f"\033[1;36;40mKey{eb}",
+            f"\033[1;36;40mType{EB}",
+            f"\033[1;36;40mKey{EB}",
             "KLen",
-            f"\033[1;36;40mVal{eb}",
+            f"\033[1;36;40mVal{EB}",
             "VLen",
             "MaxLen",
         ]
@@ -503,7 +503,7 @@ def pf(ks: str, style: int = 0, indexes=False, w=cliWR):
         # print(f"{allFVL=}", cliWR)
 
         # If all variables are scalar, display them in a single-row table
-        if 1000 < cliWR + 10 and 0:
+        if 1000 < CLIWR + 10 and 0:
             headers = [
                 f"\033[1;36m{var_name}\033[0;37;40m" for var_name, _ in formatted_values
             ]
@@ -516,10 +516,10 @@ def pf(ks: str, style: int = 0, indexes=False, w=cliWR):
                 fv = formatted_value
                 data = (
                     [[fv]]
-                    if len(fv) < cliWR
+                    if len(fv) < CLIWR
                     else [
-                        [format_string(fv, cliWR - 4)],
-                        ["\033[0;30;40m" + "-" * (cliWR - 4) + "\033[0;37m"],
+                        [format_string(fv, CLIWR - 4)],
+                        ["\033[0;30;40m" + "-" * (CLIWR - 4) + "\033[0;37m"],
                     ]
                 )
                 # data = [[" " * 50], [fv]]
@@ -527,7 +527,7 @@ def pf(ks: str, style: int = 0, indexes=False, w=cliWR):
                 # tbl(data, headers, indexes=False)
 
     print(
-        f"\033[1;36;40m{f' pf(\'{kso}\', {style}, {indexes*1}) ':-^{cliWR}}\033[0;37;40m"
+        f"\033[1;36;40m{f' pf(\'{kso}\', {style}, {indexes*1}) ':-^{CLIWR}}\033[0;37;40m"
     )
     if indexes:
         headers.insert(0, "#")
@@ -540,13 +540,15 @@ def pf(ks: str, style: int = 0, indexes=False, w=cliWR):
         colalign=colalign,
         indexes=indexes,
     )
-    s = f"\033[1;36;40m{f' {caller[1]}'+f' - {caller[0]}:{'\033[1;31;47m'+str(nf(caller[2], 0))}'}{eb} "
-    print(f"{s:-^{cliWR+rawStrLength(s)[1]}}")
+    s = f"\033[1;36;40m{f' {caller[1]}'+f' - {caller[0]}:{'\033[1;31;47m'+str(nf(caller[2], 0))}'}{EB} "
+    print(f"{s:-^{CLIWR+rawStrLength(s)[1]}}")
 
 
 if __name__ == "__main__":
 
-    cls("tests de pf()")  # @i Clear Screen (Effacer l'ecran et indique le nom du fichier)
+    cls(
+        "tests de pf()"
+    )  # @i Clear Screen (Effacer l'ecran et indique le nom du fichier)
 
     aaaaatreslong = 7
     bb = "22222222222"
@@ -555,11 +557,13 @@ if __name__ == "__main__":
     # 2fix: pf("aaaaatreslong,bb,c")
 
     ls()  # @i Line Separator (Ligne Séparatrice)
-    sl(french, trait="x")  # @i Simple Line (Ligne Séparatrice)
+    sl(FRENCH, trait="x")  # @i Simple Line (Ligne Séparatrice)
 
-    sl(blue)  # @i Simple Line (Bleue)
-    print(sl(white, toPrint=0) + sl(red, toPrint=0))  # @i Simple Lines (Blanche et rouge)
-    sl(french)  # @i Simple Line (Ligne Séparatrice)
+    sl(BLUE)  # @i Simple Line (Bleue)
+    print(
+        sl(WHITE, toPrint=0) + sl(RED, toPrint=0)
+    )  # @i Simple Lines (Blanche et rouge)
+    sl(FRENCH)  # @i Simple Line (Ligne Séparatrice)
 
     exit()  # @i Exit (Quitter) avec infos (Nombre de colonne de la console, fonction appelante, fichier et n° de ligne) - Lien clicable → Directement dans le code)
 

@@ -1,23 +1,8 @@
 # Python & Django
 
-## Tutos
+## Bases
 
-### Basics
-
-* [/] [Python - Doc](https://docs.python.org/fr/3.8)
-  [/]  Tutoriel
-  * [ ] HowTo [À faire depuis le début]
-  * [/] [Sort démarré: Continuer sorts_tables_tools_2_2.py](https://docs.python.org/3.13/howto/sorting.html#sortinghowto)
-  
-* [/] [Tutos en français](https://www.youtube.com/results?search_query=tuto+python+en+fran%C3%A7ais)
-
-### Librairies
-
-* [ ] [django - Doc](https://docs.djangoproject.com/fr/5.2/)
-
-* [ ] [Tuto OCR: debutez-avec-le-framework-django](https://openclassrooms.com/fr/courses/7172076-debutez-avec-le-framework-django)
-
-## Résumé
+[Super outil pour debug](https://pythontutor.com)
 
 * Création PUIS Lancement de l'environnement virtuel :
 
@@ -25,7 +10,7 @@
   py -m venv env
   PUIS
   .\env\Scripts\activate
-  ```
+    ```
 
 * Installation de Django et Sav des versions des librairies :
 

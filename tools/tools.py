@@ -5,38 +5,38 @@ from matplotlib import lines
 from pyparsing import line
 from time import sleep, time
 
-from globals import *
+# from main_tools import cls
 from main_tools import *
+
 from width_tests import auto_partition
 
 from pf_tools import pf
 
 # Initalisation des variables globales dans globals.py
 
-# Pour installer les librairies nécessaires🧮
+# Pour installer les librairies nécessaires :
 # pip install -r requirements.txt
 
 # Pour importer ce tools.py de n'importe quel endroit, autre que même parent:
-# Adapter le nomber de .parent selon la profondeur du script
-
+# Adapter le nombre de .parent selon la profondeur du dossier duscript
 # from pathlib import Path
-
-# tools_path = Path(__file__).parent.parent.parent.parent.parent / "tools"
-# sys.path.append(str(tools_path))
-# from tools import*
+# sys.path.append(str(Path(__file__).parent.parent.parent / "tools"))
+# from tools.tools import cls
 
 # cls("APPRENDRE LE PYTHON")
 
 # if __name__ == "__main__":
-#     pass
-#     Code du script ici
+#     cls("APPRENDRE LE PYTHON")
+#     pass OU code du script ici
 #     exit()
 
 
 if __name__ == "__main__":
 
-    # sleep(sleepDuration)
+    # sleep(SLEEP_DURATION)
 
+    print(CLIWR)
+    exit
     cls("pf()")  # 2ar tester aussi dans cas simulatedW
     # cls("un très long titre")
     # cls(0)
@@ -44,9 +44,9 @@ if __name__ == "__main__":
     a = 2
     b = 3
     c = [a + b]
-    pf("a,b,c")
+    #2fix pf("a,b,c")
     ls()
-    sleep(sleepDuration)
+    sleep(SLEEP_DURATION)
 
     exit()  # 2ar
 
@@ -80,7 +80,7 @@ if __name__ == "__main__":
     # pf("list(zip(t1, t2))")  # pf("*(list(zip(t1, t2)))")
     print(*list(zip(t1, t2)))  # pf("*(list(zip(t1, t2)))")
 
-    # sleep(sleepDuration)
+    # sleep(SLEEP_DURATION)
 
     print("Début script...\n")
 
@@ -107,11 +107,11 @@ if __name__ == "__main__":
 
     # print(*(range(1, 8)))  # print(*[range(5)])
 
-    sleep(sleepDuration)
+    sleep(SLEEP_DURATION)
 
     exit()  # 2ar
 
-    sleep(sleepDuration)
+    sleep(SLEEP_DURATION)
     data = [
         ("lg", "Simple ligne sans info"),
         ("sb", "Déclenche mise en gras"),
@@ -136,24 +136,24 @@ if __name__ == "__main__":
 
     n = 123456.789
     print("\nDans le code:", "n =", n)
-    sleep(sleepDuration)
+    sleep(SLEEP_DURATION)
 
     print('\npf("n")', end=" → (En cyan) :\n\n")
     pf("n")  # Affiche 'n=' et sa valeur en cyan
-    sleep(sleepDuration)
+    sleep(SLEEP_DURATION)
 
     print(
-        f"\nnf(n) → {sb}{nf(n): >10}{eb}\n( Nombre formatté 'à la française' ;-) )\n"
+        f"\nnf(n) → {SB}{nf(n): >10}{EB}\n( Nombre formatté 'à la française' ;-) )\n"
     )  # nf: Number format
-    sleep(sleepDuration)
+    sleep(SLEEP_DURATION)
 
     ls()  # Affiche un ligne de séparation avec son numéro dans le script
     print("(Une ligne séparatrice avec juste l'instruction 'ls()')")
-    sleep(sleepDuration)
+    sleep(SLEEP_DURATION)
 
     print("\nReady.\n\n" + "-" * 55)
 
-    sleep(sleepDuration)
+    sleep(SLEEP_DURATION)
 
     print("\nUn arrêt du script avec juste l'instruction 'exit()' :", end="\r")
 
