@@ -9,11 +9,10 @@ sys.path.append(str(Path(__file__).parent.parent / "tools"))
 from tools import *
 
 # Réf.: https://zestedesavoir.com/tutoriels/2514/un-zeste-de-python/
-# cls("Zestedesavoir.com")
 
 if __name__ == "__main__":
 
-    cls()
+    cls("Zestedesavoir.com")
 
     def aFunction():
         x = 0

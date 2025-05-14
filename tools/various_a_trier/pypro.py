@@ -1,6 +1,5 @@
 import sys
 from pathlib import Path
-
 sys.path.append(str(Path(__file__).parent.parent.parent / "tools"))
 from globals import CLIWR
 from main_tools import cls, sl, ls
@@ -23,10 +22,11 @@ if __name__ == "__main__":
     a = 2
     b = "3"
     c = "a+b → " + str((a + int(b)))
-    pf(f"a,b, c", 2)
+    [pf("a,b, c", i, 1 if i == 1 else 0) for i in range(1, 3)]
+    print()
 
     [ print(f"Couleur n°{c}: " + sl(c, w=CLIWR - len("Couleur n°x: "), toPrint=0)) for c in range(8) ]
 
     print(f"\n{'← Fin du script': >{CLIWR}}")
-    aFunction()
+    aFunction() #2ar Cas particulier ( Devrait être + avant... ;-) )
     exit()  # @i Jamais atteint ;-) !
