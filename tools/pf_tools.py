@@ -462,7 +462,7 @@ def pf(ks: str, style: int = 0, indexes=False, w=CLIWR):
         headers = [
             f"\033[1;36;40mType{EB}",
             f"\033[1;36;40mVar{EB}",
-            f"\033[1;36;40mVal{eb}",
+            f"\033[1;36;40mVal{EB}",
         ]
         data = [[v[0], v[1], v[2]] for v in formatted_values]
         colalign = ["center", "left", "right"]

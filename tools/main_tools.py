@@ -18,12 +18,12 @@ def setMsg(txt, **args):
     """<str> content,\n
     Option: <int> type (0 = info (default), 1 = centered, 2 = alert)
     """
-    global CLIWMsg
+    global cliWMsg
     if not txt:
         print("⚠️ Aucun message fourni !")
         return
 
-    CLIWMsg = txt
+    cliWMsg = txt
 
 
 def refSimu(center=False, toPrint=True):
@@ -120,6 +120,7 @@ def nf(f, dec=2):
             f"⚠️ Errorfor nf() in main_tools:\n\033[1;31mBad data type ({type(f).__name__}) -> {f} (Line {src[2]} in {src[0]}){EB}"
         )
         return str(f)
+
 
 def caller_info(justfilename: bool = False, level=2) -> tuple | str:
     """
@@ -338,10 +339,11 @@ def showMsg(
 
 
 # 2do lien clicable comme erreurs
-def ls(level=2, **kwargs):
+def ls(color=YELLOW, level=2, **kwargs):
     """Draw a line with the line number, function and the caller file."""
     # print("kwargs = ", kwargs)  # Pour debug
-    color = kwargs.get("color", YELLOW)
+    color = kwargs.get("color", YELLOW) if color is None else color
+    toPrint = kwargs.get("toPrint", True)
 
     (callerFile, context, lineNumber) = caller_info(level=level)
     # context = "ABCDEFGHIJKL"
@@ -365,11 +367,14 @@ def ls(level=2, **kwargs):
     # print(
     #     f"{sb}{level=} | {textLength[0]=} | {CLIW=} | {SIMU_CLIW=} |{CLIWR=} | {len(trait)=} avec codes & 1 space"
     # )
-    print(
+
+    s = (
         "\n" + trait + s
         if not multiLine
         else trait + ss[0] + "\n" + f"{'→ '+ ss[1]: >{CLIWR +ss1L}}" + "\n"
     )
+    return s if not toPrint else print(s)
+
     # refSimu()
 
     # Juste une ls() rapide pour DEBUG la fonction... ls() !
@@ -436,7 +441,7 @@ def exit():
         pf("CLIW, SIMU_CLIW, CLIWR")  # 2ar
     except:
         pass
-        print(f"\033[1;31mNo pf() !!!{EB}")
+        # print(f"\033[1;31mNo pf() !!!{EB}")
 
     sys.exit()
 
@@ -449,18 +454,21 @@ def bidon():
 
 if __name__ == "__main__":
 
-    sleep(SLEEP_DURATION)
-
     cls("Main TOOLS")
 
-    if 0:  # Simple test, Mettre 1 pour cette partie
-        sleep(SLEEP_DURATION)
-        print("Début script →\n")
-        sleep(SLEEP_DURATION)
-        ls()
-        sleep(SLEEP_DURATION)
-        print(f"\n{'← Fin script\n': >{CLIW}}")
-        exit()  # 2ar
+    print("Début script →\n")
+
+    [print(f"Code couleur {c}: ", ls(c, toPrint=0)) for c in range(8)]
+
+    print(f"\n{'← Fin script': >{CLIWR}}")
+
+    exit()  # 2ar
+
+    # colors = [BLUE, WHITE, RED, CYAN, MAGENTA, YELLOW, GREEN, BLACK]
+    # print([c for c in colors])
+    # [ls(color=c) for c in colors]
+    # s = sl(CYAN, w=CLIWR // 2, toPrint=0)
+    # print(s.center(CLIWR + rawStrLength(s)[1]))
 
     if 0:  # 2ar Activer aprè_s pf() OK et finir tests dessous
         sleep(SLEEP_DURATION)
@@ -479,11 +487,11 @@ if __name__ == "__main__":
         exit()  # 2ar
     # sleep(SLEEP_DURATION)
 
-    # sl()
-    # sl(BLUE)
-    # sl(GREEN, 70)
-    # sl(CYAN)
-    # sl(FRENCH)
+    sl()
+    sl(BLUE)
+    sl(GREEN, 70)
+    sl(CYAN)
+    sl(FRENCH)
     # print("uuuuuuuuuuu")
     # sl(FRENCH, 20)
     # sl("FRENCH", 30)

@@ -21,7 +21,7 @@ from pf_tools import pf
 # Adapter le nombre de .parent selon la profondeur du dossier duscript
 # from pathlib import Path
 # sys.path.append(str(Path(__file__).parent.parent.parent / "tools"))
-# from tools.tools import cls
+# from tools.tools import * ou from tools import *
 
 # cls("APPRENDRE LE PYTHON")
 
@@ -44,7 +44,8 @@ if __name__ == "__main__":
     a = 2
     b = 3
     c = [a + b]
-    #2fix pf("a,b,c")
+    # 2fix pf("a,b,c")
+    pf("a,b,c", 1)
     ls()
     sleep(SLEEP_DURATION)
 
