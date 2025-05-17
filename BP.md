@@ -5,12 +5,25 @@
 ## But: → //2do [Monetize Actor](https://www.youtube.com/watch?v=4nxStxC1BJM&list=PLObrtcm1Kw6PEnu5BpeEFb8XEoQXMw0g7)
 
 ## Divers
-  
+
+### 2do Quotidien (Une leçon de chacun)
+
+* [Algorea](https://parcours.algorea.org/fr/a/1417442972267407150;p=4702,1471479157476024035,811541682595963124;pa=0)
+  * [Actuel](https://zestedesavoir.com/tutoriels/2514/un-zeste-de-python/2-manipulations/5-objets-methodes/)
+
+* [/] [ZesteDeSavoir](https://zestedesavoir.com/tutoriels/2514/un-zeste-de-python/)
+
+* [/]  [ioi](https://www.france-ioi.org/algo/chapter.php?idChapter=642)
+
+
+### 2do Hebdo
+
+* [EULER](tuto/euler/README.md)
+
+### À L4OCCASE
 * //2do [5 idées de Web](https://www.youtube.com/watch?v=qfVc-o-in7g)
 
 ## Tutos
-
-* [/] [ZesteDeSavoir](https://zestedesavoir.com/tutoriels)
 
 * [ ] [Déb - PYTHON en 1H](https://www.youtube.com/watch?v=5EnpNI2iCZA)
 

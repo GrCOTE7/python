@@ -3,23 +3,22 @@ from pathlib import Path
 
 tools_path = Path(__file__).parent.parent.parent / "tools"
 sys.path.append(str(tools_path))
-from tools import nf, dg, fg, lg, cls, exit, pf, chrono
+from tools import cls, nf, SB, EB, exit
 
-cls("Exercice EULER # 001")
-
-# 2fi  xontinuer lecture: https://projecteuler.net/thread=1;page=5
+# Réf.: https://projecteuler.net
 
 if __name__ == "__main__":
 
+    cls("Exercice EULER # 001")
     # Bound = 1000
-    # 233 168 - Time Elapsed #  1: 73.068 s pour 1 000 000 fois
-    # 233 168 - Time Elapsed #  2: 0.576 s pour 1 000 000 fois
-    # 233 168 - Time Elapsed #  3: 0.606 s pour 1 000 000 fois
-    # 233 168 - Time Elapsed #  4: 0.414 s pour 1 000 000 fois
-    # 233 168 - Time Elapsed #  5: 0.517 s pour 1 000 000 fois
-    # 233 168 - Time Elapsed #  6: 35.559 s pour 1 000 000 fois
-    # 233 168 - Time Elapsed #  7: 0.582 s pour 1 000 000 fois
-    # 233 168 - Time Elapsed #  8: 0.403 s pour 1 000 000 fois
+    # 233 168 - Time #  1: 73.068 s pour 1 000 000 fois
+    # 233 168 - Time #  2:  0.576 s pour 1 000 000 fois
+    # 233 168 - Time #  3:  0.606 s pour 1 000 000 fois
+    # 233 168 - Time #  4:  0.414 s pour 1 000 000 fois
+    # 233 168 - Time #  5:  0.517 s pour 1 000 000 fois
+    # 233 168 - Time #  6: 35.559 s pour 1 000 000 fois
+    # 233 168 - Time #  7:  0.582 s pour 1 000 000 fois
+    # 233 168 - Time #  8:  0.403 s pour 1 000 000 fois
 
     # @chrono
     def euler1_01(nTimes=1):
@@ -29,10 +28,10 @@ if __name__ == "__main__":
         print(
             nf(res, 0),
             "-",
-            f"Time Elapsed #{dg}{1: >3}{fg}: %.3f s pour %s fois"
+            f"Time #{SB}{1: >3}{EB}: %.3f s pour %s fois"
             % (time.time() - start_time, nf(nTimes, 0)),
         )
-        return nf(res) + " Time Elapsed: %.3f s" % (time.time() - start_time)
+        return nf(res) + " Time: %.3f s" % (time.time() - start_time)
 
     # @chrono
     def euler1_02(nTimes=1):
@@ -46,10 +45,10 @@ if __name__ == "__main__":
         print(
             nf(res, 0),
             "-",
-            f"Time Elapsed #{dg}{2: >3}{fg}: %.3f s pour %s fois"
+            f"Time #{SB}{2: >3}{EB}: %.3f s pour %s fois"
             % (time.time() - start_time, nf(nTimes, 0)),
         )
-        return nf(res) + " Time Elapsed: %.3f s" % (time.time() - start_time)
+        return nf(res) + " Time: %.3f s" % (time.time() - start_time)
 
     # @chrono
     def euler1_03(nTimes=1):
@@ -71,10 +70,10 @@ if __name__ == "__main__":
         print(
             nf(res, 0),
             "-",
-            f"Time Elapsed #{dg}{3: >3}{fg}: %.3f s pour %s fois"
+            f"Time #{SB}{3: >3}{EB}: %.3f s pour %s fois"
             % (time.time() - start_time, nf(nTimes, 0)),
         )
-        return nf(res) + " Time Elapsed: %.3f s" % (time.time() - start_time)
+        return nf(res) + " Time: %.3f s" % (time.time() - start_time)
 
     # @chrono
     def euler1_04(nTimes=1):
@@ -89,10 +88,10 @@ if __name__ == "__main__":
         print(
             nf(res, 0),
             "-",
-            f"Time Elapsed #{dg}{4: >3}{fg}: %.3f s pour %s fois"
+            f"Time #{SB}{4: >3}{EB}: %.3f s pour %s fois"
             % (time.time() - start_time, nf(nTimes, 0)),
         )
-        return nf(res) + " Time Elapsed: %.3f s" % (time.time() - start_time)
+        return nf(res) + " Time: %.3f s" % (time.time() - start_time)
 
     # @chrono
     def euler1_05(nTimes=1):
@@ -112,10 +111,10 @@ if __name__ == "__main__":
         print(
             nf(res, 0),
             "-",
-            f"Time Elapsed #{dg}{5: >3}{fg}: %.3f s pour %s fois"
+            f"Time #{SB}{5: >3}{EB}: %.3f s pour %s fois"
             % (time.time() - start_time, nf(nTimes, 0)),
         )
-        return nf(res) + " Time Elapsed: %.3f s" % (time.time() - start_time)
+        return nf(res) + " Time: %.3f s" % (time.time() - start_time)
 
     # @chrono
     def euler1_06(nTimes=1):
@@ -146,10 +145,10 @@ if __name__ == "__main__":
         print(
             nf(res, 0),
             "-",
-            f"Time Elapsed #{dg}{6: >3}{fg}: %.3f s pour %s fois"
+            f"Time #{SB}{6: >3}{EB}: %.3f s pour %s fois"
             % (time.time() - start_time, nf(nTimes, 0)),
         )
-        return nf(res) + " Time Elapsed: %.3f s" % (time.time() - start_time)
+        return nf(res) + " Time: %.3f s" % (time.time() - start_time)
 
     # @chrono
     def euler1_07(nTimes=1):
@@ -165,10 +164,10 @@ if __name__ == "__main__":
         print(
             nf(res, 0),
             "-",
-            f"Time Elapsed #{dg}{7: >3}{fg}: %.3f s pour %s fois"
+            f"Time #{SB}{7: >3}{EB}: %.3f s pour %s fois"
             % (time.time() - start_time, nf(nTimes, 0)),
         )
-        return nf(res) + " Time Elapsed: %.3f s" % (time.time() - start_time)
+        return nf(res) + " Time: %.3f s" % (time.time() - start_time)
 
     # @chrono
     def euler1_08(nTimes=1):
@@ -191,29 +190,23 @@ if __name__ == "__main__":
         print(
             nf(res, 0),
             "-",
-            f"Time Elapsed #{dg}{8: >3}{fg}: %.3f s pour %s fois"
+            f"Time #{SB}{8: >3}{EB}: %.3f s pour %s fois"
             % (time.time() - start_time, nf(nTimes, 0)),
         )
-        return nf(res) + " Time Elapsed: %.3f s" % (time.time() - start_time)
+        return nf(res) + " Time: %.3f s" % (time.time() - start_time)
 
     # euler1_01(nb)
     # euler1_03(nb)
 
-    # for i in range(3, 11):
-    #     bound = 10**i
-    #     print(f"{nf(bound,0)} (10 ** {i})".center(55))
-    #     euler1_02(nb)
-    #     euler1_04(nb)
-    #     print(lg)
-
-    pownb = 7
+    pownb = 3
     nb = 10**pownb  # Nombre d'itérations
 
     pow = 3
-    bound = 10**pow
+    # bound = 10**pow
+    bound = 1000
 
     print(
-        f"limite = {nf(bound,0)} (10**{dg}{pow}{fg})".center(63) + "\n"
+        f"limite = {nf(bound,0)} (10**{SB}{pow}{EB})".center(63) + "\n"
     )  # 63 au lieu de 55 car {dg & {fg} = car. invisibles}
     # exit()
 

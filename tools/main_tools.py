@@ -424,7 +424,7 @@ def exit():
     s2 = f"{context} - F.: {callerFile}:\033[1;31;47m{lineNumber}{EB}"
 
     n = CLIWR - rawStrLength(s1)[0] - rawStrLength(s2)[0] - 3
-    trait = f"\033[0;3{GREEN}m" + "=" * abs(n) + ">"
+    trait = f"\n\033[0;3{GREEN}m" + "=" * abs(n) + ">"
     print(
         f"{trait} {s1} {s2}"
         if n > 0
