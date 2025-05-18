@@ -9,9 +9,10 @@
 ### 2do Quotidien (Une leçon de chacun)
 
 * [Algorea](https://parcours.algorea.org/fr/a/1417442972267407150;p=4702,1471479157476024035,811541682595963124;pa=0)
-  * [Actuel](https://zestedesavoir.com/tutoriels/2514/un-zeste-de-python/2-manipulations/5-objets-methodes/)
+  * [Actuel]()
 
 * [/] [ZesteDeSavoir](https://zestedesavoir.com/tutoriels/2514/un-zeste-de-python/)
+  * [Actuel](https://zestedesavoir.com/tutoriels/2514/un-zeste-de-python/2-manipulations/6-tp/)
 
 * [/]  [ioi](https://www.france-ioi.org/algo/chapter.php?idChapter=642)
 

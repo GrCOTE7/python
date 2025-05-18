@@ -50,8 +50,7 @@ def tourneGauche():
 
 if __name__ == "__main__":
 
-    # cls(" france-ioi.org")
-    cls("Dial Thomas / PyPRO")
+    cls(" france-ioi.org")
     # from robot import *
 
     exit()

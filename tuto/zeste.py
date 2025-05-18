@@ -12,23 +12,12 @@ from tools import *
 
 if __name__ == "__main__":
 
-    cls("Zestedesavoir.com")
+    cls(" zestedesavoir.com")
 
-    def aFunction():
-        x = 0
-        x -= 8
-        x *= -11
-        x //= 4
-        x **= 3
-        x %= 10
-        print(x)
-        exit()
+    s = "  Lionel    CÔTE"
+    x = 7
+    x = 2.3
+    print(x.numerator, x.denominator)
 
-    def hello(name: str = None) -> str:
-        print("Hello " + ("World" if name is None else name) + "!")
-
-    hello("Zestedesavoir")
-    hello()
-
-    aFunction()
+    # print(input().strip())
     exit()
