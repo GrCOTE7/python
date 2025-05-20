@@ -53,9 +53,56 @@ if __name__ == "__main__":
     cls(" france-ioi.org")
     # from robot import *
 
+    # nVilles = int(input())
+    # nbVilles = 0
+    # for _ in range(nVilles):
+    #     nbVilles += 1 if int(input()) > 10000 else 0
+
+    # print(nbVilles)
+
+    def uuu():
+
+        a = 1
+
+        d, f, n = (int(input()) for _ in range(3))
+        print(sum(1 for _ in range(n) if d <= int(input()) <= f))
+
+    uuu()
     exit()
+    # x = int(input(()))
+    # y = int(input())
 
     #####################################
+    #####################################
+    # n = int(input())
+    # px = [int(input()) for _ in range(n)]
+    # print(len(px) - px[::-1].index(min(px))) Donne la dernière pos du min
+    #####################################
+    # arbres = {
+    #     "Tinuviel": lambda h, f: h <= 5 and f >= 8,
+    #     "Calaelen": lambda h, f: h >= 10 and f >= 10,
+    #     "Falarion": lambda h, f: h <= 8 and f <= 5,
+    #     "Dorthonoin": lambda h, f: h >= 12 and f <= 7,
+    # }
+    # # h = int(input())
+    # # f = int(input())
+    # h = 12
+    # f = 12
+    # print("".join([nom for nom, test in arbres.items() if test(h, f)]))
+    # print((lambda h, f: h <= 5 and f >= 8)(h, f))
+    # print(list(arbres.keys()))
+    # print([nom for nom, test in arbres.items() if test(h, f)])
+    #################################
+    # js = int(input())
+    # data = [int(input()) for _ in range(js)]
+    # print(sum(x for x in data if x > 0), sum(-x for x in data if x < 0), sep='\'n')
+
+    # print("Tarif", "réduit" if int(input()) < 21 else "plein")
+
+    # fs = {name: int(input()) for name in ["Arignon", "Evaran"]}
+    # print(fs)
+    # if abs(fs["Arignon"] - fs["Evaran"]) > 10 :
+    #     print ("La famille", max(fs, key=fs.get), "a un champ trop grand")
 
     # Socles pour statues
     # print(sum(list(i**2 for i in range(int(input()), int(input()) - 1, -1))))

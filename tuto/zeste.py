@@ -14,10 +14,7 @@ if __name__ == "__main__":
 
     cls(" zestedesavoir.com")
 
-    s = "  Lionel    CÔTE"
-    x = 7
-    x = 2.3
-    print(x.numerator, x.denominator)
+    
 
     # print(input().strip())
     exit()
