@@ -62,10 +62,15 @@ if __name__ == "__main__":
 
     def uuu():
 
-        a = 1
-
-        d, f, n = (int(input()) for _ in range(3))
-        print(sum(1 for _ in range(n) if d <= int(input()) <= f))
+        minX, maxX, minY, maxY, n = (int(input()) for _ in range(5))
+        
+        inVillage=0
+        for _ in range(n):
+            x = int(input())
+            y = int(input())
+            inVillage += minX <= x <= maxX and minY <= y <= maxY
+        
+        print(inVillage)
 
     uuu()
     exit()
@@ -73,6 +78,11 @@ if __name__ == "__main__":
     # y = int(input())
 
     #####################################
+    # minX, maxX, minY, maxY, n = (int(input()) for _ in range(5))
+    # print(sum(1 for _ in range(n) if (x := int(input())) and (y := int(input())) and minX <= x <= maxX and minY <= y <= maxY))
+    #####################################
+    # d, f, n = (int(input()) for _ in range(3))
+    # print(sum(1 for _ in range(n) if d <= int(input()) <= f))
     #####################################
     # n = int(input())
     # px = [int(input()) for _ in range(n)]

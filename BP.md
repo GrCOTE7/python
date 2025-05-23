@@ -8,8 +8,9 @@
 
 ### 2do Quotidien (Une leçon de chacun)
 
+* [À lire Algorithmes et programmation](https://www.france-ioi.org/algo/course.php?idChapter=552&idCourse=1801)
+
 * [Algorea](https://parcours.algorea.org/fr/)
-  
 
 * [/] [ZesteDeSavoir](https://zestedesavoir.com/tutoriels/2514/un-zeste-de-python/)
   * [Actuel](https://zestedesavoir.com/tutoriels/2514/un-zeste-de-python/3-structures-conditionnelles/2-expressions-booleennes/)
