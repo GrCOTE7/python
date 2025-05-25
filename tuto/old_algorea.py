@@ -51,24 +51,45 @@ def tourneGauche():
 
 if __name__ == "__main__":
 
-    cls(" france-ioi.org")
+    cls(" old.algorea.org")
     # from robot import *
 
-    # nVilles = int(input())
-    # nbVilles = 0
-    # for _ in range(nVilles):
-    #     nbVilles += 1 if int(input()) > 10000 else 0
+    mvts = [
+        (1, 2),
+        (1, 3),
+        (2, 3),
+        (1, 2),
+        (3, 1),
+        (3, 2),
+        (1, 2),
+        (1, 3),
+        (2, 3),
+        (2, 1),
+        (3, 1),
+        (2, 3),
+        (1, 2),
+        (1, 3),
+        (2, 3),
+    ]
+
+    # print(*(t * (t + 1) // 2 for t in range(1, 51)), sep="\n")
+    def uuu():
+
+        print(777)
+
+    uuu()
+    # print(*[eval("deplacer" + f" {mvt[0], mvt[1]}" for mvt in mvts)], sep="\n")
 
     # print(nbVilles)
 
-    def uuu():
-        print('Hello world!')
-
-    uuu()
     exit()
     # x = int(input(()))
     # y = int(input())
 
+    #####################################
+    # 108 tours de 13 kms
+    # senses = ["haut", "droite", "bas", "gauche"]
+    # [eval(f"{sens}()") for _ in range(108) for sens in senses for _ in range(13)]
     #####################################
     # minX, maxX, minY, maxY, n = (int(input()) for _ in range(5))
     # print(sum(1 for _ in range(n) if (x := int(input())) and (y := int(input())) and minX <= x <= maxX and minY <= y <= maxY))

@@ -55,5 +55,6 @@
     "xdec",
     "zorro"
   ],
-  "cSpell.language": "en,fr-FR,fr,lorem"
+  "cSpell.language": "en,fr-FR,fr,lorem",
+  "zencoder.enableRepoIndexing": true
 }
