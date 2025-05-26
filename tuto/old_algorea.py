@@ -74,8 +74,13 @@ if __name__ == "__main__":
 
     # print(*(t * (t + 1) // 2 for t in range(1, 51)), sep="\n")
     def uuu():
-
-        print(777)
+        l = 6
+        h, b, d, g = "haut", "bas", "droite", "gauche"
+        mvs = [(h, l - 1), (d, l - 1), (b, 1)]
+        for go_down in range((l - 2) // 2):
+            mvs.extend([(g, l - 2), (b, 1), (d, l - 2), (b, 1)])
+        mvs.append((g, l - 1))
+        [eval(mv + "()") for mv, n in mvs for _ in range(n)]
 
     uuu()
     # print(*[eval("deplacer" + f" {mvt[0], mvt[1]}" for mvt in mvts)], sep="\n")
@@ -86,6 +91,14 @@ if __name__ == "__main__":
     # x = int(input(()))
     # y = int(input())
 
+    #####################################
+    # l = 8
+    # h, b, d, g = "haut", "bas", "droite", "gauche"
+    # mvs = [(h, l - 1), (d, l - 1), (b, 1)]
+    # for go_down in range((l - 2) // 2):
+    #     mvs.extend([(g, l - 2), (b, 1), (d, l - 2), (b, 1)])
+    # mvs.append((g, l - 1))
+    # [eval(mv + "()") for mv, n in mvs for _ in range(n)]
     #####################################
     # 108 tours de 13 kms
     # senses = ["haut", "droite", "bas", "gauche"]
