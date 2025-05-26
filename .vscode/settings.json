@@ -56,5 +56,6 @@
     "zorro"
   ],
   "cSpell.language": "en,fr-FR,fr,lorem",
-  "zencoder.enableRepoIndexing": true
+  "zencoder.enableRepoIndexing": true,
+  "git.ignoreLimitWarning": true
 }
