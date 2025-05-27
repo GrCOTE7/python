@@ -49,6 +49,14 @@ def tourneGauche():
     print("G", end=" ")
 
 
+def ramasser():
+    print("T", end=" ")
+
+
+def deposer():
+    print("P", end=" ")
+
+
 if __name__ == "__main__":
 
     cls(" old.algorea.org")
@@ -74,13 +82,15 @@ if __name__ == "__main__":
 
     # print(*(t * (t + 1) // 2 for t in range(1, 51)), sep="\n")
     def uuu():
-        l = 6
-        h, b, d, g = "haut", "bas", "droite", "gauche"
-        mvs = [(h, l - 1), (d, l - 1), (b, 1)]
-        for go_down in range((l - 2) // 2):
-            mvs.extend([(g, l - 2), (b, 1), (d, l - 2), (b, 1)])
-        mvs.append((g, l - 1))
-        [eval(mv + "()") for mv, n in mvs for _ in range(n)]
+        g = [[m * n for m in range(1, 6)] for n in range(1, 6)]
+        for row in g:
+            print(*row)
+
+    uuu()
+    ls()
+
+    def uuu():
+        pass
 
     uuu()
     # print(*[eval("deplacer" + f" {mvt[0], mvt[1]}" for mvt in mvts)], sep="\n")
@@ -88,9 +98,22 @@ if __name__ == "__main__":
     # print(nbVilles)
 
     exit()
+
     # x = int(input(()))
     # y = int(input())
 
+    #####################################
+    # Table de multiplication
+    # print(*[" ".join(map(str, row)) for row in [[m * n for m in range(1, 6)] for n in range(1, 6)]], sep="\n")
+    #####################################
+    # [
+    #     [droite() for _ in range(i + 1)]
+    #     + [ramasser()]
+    #     + [gauche() for _ in range(i + 1)]
+    #     + [deposer()]
+    #     + [print()]
+    #     for i in range(10)
+    # ]
     #####################################
     # l = 8
     # h, b, d, g = "haut", "bas", "droite", "gauche"
@@ -193,4 +216,3 @@ if __name__ == "__main__":
     #     for _ in range(3):
     #         print(chr(l) + "_", end="")
     #     print()
-    exit()
