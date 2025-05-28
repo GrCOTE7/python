@@ -62,46 +62,40 @@ if __name__ == "__main__":
     cls(" old.algorea.org")
     # from robot import *
 
-    mvts = [
-        (1, 2),
-        (1, 3),
-        (2, 3),
-        (1, 2),
-        (3, 1),
-        (3, 2),
-        (1, 2),
-        (1, 3),
-        (2, 3),
-        (2, 1),
-        (3, 1),
-        (2, 3),
-        (1, 2),
-        (1, 3),
-        (2, 3),
-    ]
-
-    # print(*(t * (t + 1) // 2 for t in range(1, 51)), sep="\n")
-    def uuu():
-        g = [[m * n for m in range(1, 6)] for n in range(1, 6)]
-        for row in g:
-            print(*row)
-
-    uuu()
-    ls()
 
     def uuu():
         pass
 
     uuu()
-    # print(*[eval("deplacer" + f" {mvt[0], mvt[1]}" for mvt in mvts)], sep="\n")
-
-    # print(nbVilles)
 
     exit()
 
     # x = int(input(()))
     # y = int(input())
 
+    #####################################
+    print(
+        (
+            lambda nMembres=int(input("Enter the number of members in each team: ")): (
+                lambda weights: (
+                    lambda format_output: (
+                        f"L'équipe {1 if (s1 := sum(weights[::2])) > (s2 := sum(weights[1::2])) else 2} a un avantage.\n"
+                        f"{format_output(1, s1)}\n"
+                        f"{format_output(2, s2)}"
+                    )
+                )(lambda team, weight: f"Poids total pour l'équipe {team} : {weight}")
+            )(
+                [
+                    int(
+                        input(
+                            f"Enter weight for member {i // 2 + 1} of team {1 if i % 2 == 0 else 2}: "
+                        )
+                    )
+                    for i in range(2 * nMembres)
+                ]
+            )
+        )()
+    )
     #####################################
     # Table de multiplication
     # print(*[" ".join(map(str, row)) for row in [[m * n for m in range(1, 6)] for n in range(1, 6)]], sep="\n")
