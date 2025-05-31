@@ -1,212 +1,291 @@
-from re import I, L
 import sys
-
-# sys.path.append("c:/laragon/www/PYTHON/python/tools/")
-# from tools import *
-# from tools import cls
 from pathlib import Path
-
-from cycler import V
 
 sys.path.append(str(Path(__file__).parent.parent / "tools"))
 from tools import *
 from tools import cls
+from mvts import *
 
 # Réf.: https://www.france-ioi.org/
 # Code Démo Algorea: m5iycsiw
 # Code ALGORÉA: yqp4gbnf
 
-
-def haut():
-    print("↑", end=" ")
-
-
-def bas():
-    print("↓", end=" ")
-
-
-def gauche():
-    print("←", end=" ")
-
-
-def droite():
-    print("→", end=" ")
-
-
-def avance():
-    print("↑", end=" ")
-
-
-def recule():
-    print("↓", end=" ")
-
-
-def tourneDroite():
-    print("D", end=" ")
-
-
-def tourneGauche():
-    print("G", end=" ")
-
-
-def ramasser():
-    print("T", end=" ")
-
-
-def deposer():
-    print("P", end=" ")
-
-
 if __name__ == "__main__":
-
     cls(" old.algorea.org")
-    # from robot import *
-
 
     def uuu():
-        pass
+
+        [
+            [
+                ramasser(),
+                *[droite() for _ in range(3)],
+                deposer(),
+                *[gauche() for _ in range(3)],
+                (ls() if i < 1 else None),
+            ]
+            for i in range(2)
+        ]
 
     uuu()
 
     exit()
 
-    # x = int(input(()))
-    # y = int(input())
 
-    #####################################
-    print(
-        (
-            lambda nMembres=int(input("Enter the number of members in each team: ")): (
-                lambda weights: (
-                    lambda format_output: (
-                        f"L'équipe {1 if (s1 := sum(weights[::2])) > (s2 := sum(weights[1::2])) else 2} a un avantage.\n"
-                        f"{format_output(1, s1)}\n"
-                        f"{format_output(2, s2)}"
-                    )
-                )(lambda team, weight: f"Poids total pour l'équipe {team} : {weight}")
-            )(
-                [
-                    int(
-                        input(
-                            f"Enter weight for member {i // 2 + 1} of team {1 if i % 2 == 0 else 2}: "
-                        )
-                    )
-                    for i in range(2 * nMembres)
-                ]
-            )
-        )()
-    )
-    #####################################
-    # Table de multiplication
-    # print(*[" ".join(map(str, row)) for row in [[m * n for m in range(1, 6)] for n in range(1, 6)]], sep="\n")
-    #####################################
-    # [
-    #     [droite() for _ in range(i + 1)]
-    #     + [ramasser()]
-    #     + [gauche() for _ in range(i + 1)]
-    #     + [deposer()]
-    #     + [print()]
-    #     for i in range(10)
-    # ]
-    #####################################
-    # l = 8
-    # h, b, d, g = "haut", "bas", "droite", "gauche"
-    # mvs = [(h, l - 1), (d, l - 1), (b, 1)]
-    # for go_down in range((l - 2) // 2):
-    #     mvs.extend([(g, l - 2), (b, 1), (d, l - 2), (b, 1)])
-    # mvs.append((g, l - 1))
-    # [eval(mv + "()") for mv, n in mvs for _ in range(n)]
-    #####################################
-    # 108 tours de 13 kms
-    # senses = ["haut", "droite", "bas", "gauche"]
-    # [eval(f"{sens}()") for _ in range(108) for sens in senses for _ in range(13)]
-    #####################################
-    # minX, maxX, minY, maxY, n = (int(input()) for _ in range(5))
-    # print(sum(1 for _ in range(n) if (x := int(input())) and (y := int(input())) and minX <= x <= maxX and minY <= y <= maxY))
-    #####################################
-    # d, f, n = (int(input()) for _ in range(3))
-    # print(sum(1 for _ in range(n) if d <= int(input()) <= f))
-    #####################################
-    # n = int(input())
-    # px = [int(input()) for _ in range(n)]
-    # print(len(px) - px[::-1].index(min(px))) Donne la dernière pos du min
-    #####################################
-    # arbres = {
-    #     "Tinuviel": lambda h, f: h <= 5 and f >= 8,
-    #     "Calaelen": lambda h, f: h >= 10 and f >= 10,
-    #     "Falarion": lambda h, f: h <= 8 and f <= 5,
-    #     "Dorthonoin": lambda h, f: h >= 12 and f <= 7,
-    # }
-    # # h = int(input())
-    # # f = int(input())
-    # h = 12
-    # f = 12
-    # print("".join([nom for nom, test in arbres.items() if test(h, f)]))
-    # print((lambda h, f: h <= 5 and f >= 8)(h, f))
-    # print(list(arbres.keys()))
-    # print([nom for nom, test in arbres.items() if test(h, f)])
-    #################################
-    # js = int(input())
-    # data = [int(input()) for _ in range(js)]
-    # print(sum(x for x in data if x > 0), sum(-x for x in data if x < 0), sep='\'n')
+#############
+# Example of using list comprehensions for repetitive actions
+# actions = [(gauche, 2), (ramasser, 1), (droite, 32), (deposer, 1)]
+# [func() for func, count in actions for _ in range(count)]
+#############
+# Example of a compact input and processing
+# print(
+#     max(
+#         [
+#             int(input("Enter value: "))
+#             for _ in range(int(input("Enter the number of values: ")))
+#         ]
+#     )
+# )
+#############
+# Example of a compact simulation
+# print(sum(1 for v in [230, 350, 113, 187, 95, 129] if abs(v - 100) >= 10))
+#############
+# Example of a simple sum of n items
+# print(
+#     sum(
+#         i
+#         for i in (
+#             int(input("Enter value of item: "))
+#             for _ in range(int(input("Enter the number of items: ")))
+#         )
+#         if i < 10
+#     )
+# )
+#############
+# Example of a team weight comparison
+# nMembres = int(input("Enter the number of members in each team: "))
+# weights = [
+#     int(
+#         input(
+#             f"Enter weight for member {i // 2 + 1} of team {1 if i % 2 == 0 else 2}: "
+#         )
+#     )
+#     for i in range(2 * nMembres)
+# ]
+# s1, s2 = sum(weights[::2]), sum(weights[1::2])
+# print(
+#     f"L'équipe {1 if s1 > s2 else 2} a un avantage.\nPoids total pour l'équipe 1 : {s1}\nPoids total pour l'équipe 2 : {s2}"
+# )
+#############
+# Example of a multiplication table
+# print(
+#     *[
+#         " ".join(map(str, row))
+#         for row in [[m * n for m in range(1, 6)] for n in range(1, 6)]
+#     ],
+#     sep="\n",
+# )
+#############
+#  [[ramasser(), *[droite() for _ in range(15)], deposer(), *[gauche() for _ in range(15)],] for i in range(2)]
+#############
+# aas = [(gauche, 2), (ramasser, 1), (droite, 32), (deposer, 1)]
+# [func() for func, count in aas for _ in range(count)]
+#############
+# Execute each movement the specified number of times
+# [
+#     eval(f"{mv}()")
+#     for movement in movements
+#     for mv, count in [
+#         (
+#             movement.split()[-1],
+#             int(movement.split()[0]) if len(movement.split()) > 1 else 1,
+#         )
+#     ]
+#     for _ in range(count)
+# ]
+#############
+# Define the number of values you will input
+#     n = int(input("Enter the number of values: "))  # You will enter 6
 
-    # print("Tarif", "réduit" if int(input()) < 21 else "plein")
+#     # Collect the values
+#     values = [int(input("Enter value: ")) for _ in range(n)]
 
-    # fs = {name: int(input()) for name in ["Arignon", "Evaran"]}
-    # print(fs)
-    # if abs(fs["Arignon"] - fs["Evaran"]) > 10 :
-    #     print ("La famille", max(fs, key=fs.get), "a un champ trop grand")
+#     # Find and print the maximum value
+#     print(max(values))
+# # En concentré :
+# print(
+#     max(
+#         [
+#             int(input("Enter value: "))
+#             for _ in range(int(input("Enter the number of values: ")))
+#         ]
+#     )
+# )
+#####################################
+# Simulation:
+# pos = 120
+# n = 5
+# vs = [30, 113, 187, 145, 129]
+# print(sum(1 for v in vs if abs(v - pos) <= 25))
+# print(
+#     sum(
+#         (
+#             lambda pos=int(input("Enter the pos: ")): (
+#                 1
+#                 for _ in range(int(input("Enter n: ")))
+#                 if abs(int(input("Enter v: ")) - pos) <= 25
+#             )
+#         )()
+#     )
+# )
+#####################################
+# Simple somme de n items:
+# print(
+#     sum(
+#         (
+#             lambda n=int(input("Enter the number of items: ")): (
+#                 i
+#                 for i in (int(input("Enter value of item: ")) for _ in range(n))
+#                 if i < 10
+#             )
+#         )()
+#     )
+# )
+#####################################
+# print(
+#     (
+#         lambda nMembres=int(input("Enter the number of members in each team: ")): (
+#             lambda weights: (
+#                 lambda format_output: (
+#                     f"L'équipe {1 if (s1 := sum(weights[::2])) > (s2 := sum(weights[1::2])) else 2} a un avantage.\n"
+#                     f"{format_output(1, s1)}\n"
+#                     f"{format_output(2, s2)}"
+#                 )
+#             )(lambda team, weight: f"Poids total pour l'équipe {team} : {weight}")
+#         )(
+#             [
+#                 int(
+#                     input(
+#                         f"Enter weight for member {i // 2 + 1} of team {1 if i % 2 == 0 else 2}: "
+#                     )
+#                 )
+#                 for i in range(2 * nMembres)
+#             ]
+#         )
+#     )()
+# )
+#####################################
+# Table de multiplication
+# print(*[" ".join(map(str, row)) for row in [[m * n for m in range(1, 6)] for n in range(1, 6)]], sep="\n")
+#####################################
+# [
+#     [
+#         ramasser(),
+#         *[droite() for _ in range(3)],
+#         deposer(),
+#         *[gauche() for _ in range(3)],
+#         (ls() if i < 1 else None),
+#     ]
+#     for i in range(2)
+# ]
+#####################################
+# l = 8
+# h, b, d, g = "haut", "bas", "droite", "gauche"
+# mvs = [(h, l - 1), (d, l - 1), (b, 1)]
+# for go_down in range((l - 2) // 2):
+#     mvs.extend([(g, l - 2), (b, 1), (d, l - 2), (b, 1)])
+# mvs.append((g, l - 1))
+# [eval(mv + "()") for mv, n in mvs for _ in range(n)]
+#####################################
+# 108 tours de 13 kms
+# senses = ["haut", "droite", "bas", "gauche"]
+# [eval(f"{sens}()") for _ in range(108) for sens in senses for _ in range(13)]
+#####################################
+# minX, maxX, minY, maxY, n = (int(input()) for _ in range(5))
+# print(sum(1 for _ in range(n) if (x := int(input())) and (y := int(input())) and minX <= x <= maxX and minY <= y <= maxY))
+#####################################
+# d, f, n = (int(input()) for _ in range(3))
+# print(sum(1 for _ in range(n) if d <= int(input()) <= f))
+#####################################
+# n = int(input())
+# px = [int(input()) for _ in range(n)]
+# print(len(px) - px[::-1].index(min(px))) Donne la dernière pos du min
+#####################################
+# arbres = {
+#     "Tinuviel": lambda h, f: h <= 5 and f >= 8,
+#     "Calaelen": lambda h, f: h >= 10 and f >= 10,
+#     "Falarion": lambda h, f: h <= 8 and f <= 5,
+#     "Dorthonoin": lambda h, f: h >= 12 and f <= 7,
+# }
+# # h = int(input())
+# # f = int(input())
+# h = 12
+# f = 12
+# print("".join([nom for nom, test in arbres.items() if test(h, f)]))
+# print((lambda h, f: h <= 5 and f >= 8)(h, f))
+# print(list(arbres.keys()))
+# print([nom for nom, test in arbres.items() if test(h, f)])
+#################################
+# js = int(input())
+# data = [int(input()) for _ in range(js)]
+# print(sum(x for x in data if x > 0), sum(-x for x in data if x < 0), sep='\'n')
 
-    # Socles pour statues
-    # print(sum(list(i**2 for i in range(int(input()), int(input()) - 1, -1))))
-    # print(*range(100, -1, -1), "Décollage !", sep="\n")
-    # print("Partie de cache-cache", *range(1, 11), "J'arrive !", sep="\n")
+# print("Tarif", "réduit" if int(input()) < 21 else "plein")
 
-    # kms parcourus en 1j, 2j et 3j pour 3 disciplines
-    # print(*list((2 + 34 + 6) * i for i in range(1, 4)))
+# fs = {name: int(input()) for name in ["Arignon", "Evaran"]}
+# print(fs)
+# if abs(fs["Arignon"] - fs["Evaran"]) > 10 :
+#     print ("La famille", max(fs, key=fs.get), "a un champ trop grand")
 
-    # # Parcours une damier lxl une seule fois par case et retour pos de départ
-    # l = 4
-    # h, b, d, g = "haut", "bas", "droite", "gauche"
-    # # Génération des commandes
-    # mvs = [(h, l - 1), (d, l - 1), (b, 1)]
-    # for go_down in range((l - 2) // 2):
-    #     mvs.extend([(g, l - 2), (b, 1), (d, l - 2), (b, 1)])
-    # mvs.append((g, l - 1))
-    # # Exécution des mouvements
-    # for mv in [sens for sens, n in mvs for _ in range(n)]:
-    #     # eval(mv + "()")
-    #     print(mv + "()")
-    # print()
+# Socles pour statues
+# print(sum(list(i**2 for i in range(int(input()), int(input()) - 1, -1))))
+# print(*range(100, -1, -1), "Décollage !", sep="\n")
+# print("Partie de cache-cache", *range(1, 11), "J'arrive !", sep="\n")
 
-    # taille = 4
-    # tours = taille**2 // 4
-    # while tours > 0:
-    #     tours -= 1
-    #     print(tours)
-    #     for mvt in ["haut", "droite", "bas", "gauche"]:
-    #         eval(mvt + "()")
-    #     print()
+# kms parcourus en 1j, 2j et 3j pour 3 disciplines
+# print(*list((2 + 34 + 6) * i for i in range(1, 4)))
 
-    # # 108 tours de 13 kms
-    # for _ in range(108):
-    #     for mvt in ["haut", "droite", "bas", "gauche"]:
-    #         for _ in range(13):
-    #             eval(mvt + "()")
-    #         print()
+# # Parcours une damier lxl une seule fois par case et retour pos de départ
+# l = 4
+# h, b, d, g = "haut", "bas", "droite", "gauche"
+# # Génération des commandes
+# mvs = [(h, l - 1), (d, l - 1), (b, 1)]
+# for go_down in range((l - 2) // 2):
+#     mvs.extend([(g, l - 2), (b, 1), (d, l - 2), (b, 1)])
+# mvs.append((g, l - 1))
+# # Exécution des mouvements
+# for mv in [sens for sens, n in mvs for _ in range(n)]:
+#     # eval(mv + "()")
+#     print(mv + "()")
+# print()
 
-    # for mvt in [["haut", "droite"], ["gauche", "bas"]]:
-    #     for _ in range(2):
-    #         eval(mvt[0] + "()")
-    #         eval(mvt[1] + "()")
+# taille = 4
+# tours = taille**2 // 4
+# while tours > 0:
+#     tours -= 1
+#     print(tours)
+#     for mvt in ["haut", "droite", "bas", "gauche"]:
+#         eval(mvt + "()")
+#     print()
 
-    # taille = 40
-    # for l in range(taille):
-    #     for r in range(taille // 2):
-    #         print("XO" if l % 2 else "OX", end="")
-    #     print()
+# # 108 tours de 13 kms
+# for _ in range(108):
+#     for mvt in ["haut", "droite", "bas", "gauche"]:
+#         for _ in range(13):
+#             eval(mvt + "()")
+#         print()
 
-    # for l in range(ord("a"), ord("z") + 1):
-    #     for _ in range(3):
-    #         print(chr(l) + "_", end="")
-    #     print()
+# for mvt in [["haut", "droite"], ["gauche", "bas"]]:
+#     for _ in range(2):
+#         eval(mvt[0] + "()")
+#         eval(mvt[1] + "()")
+
+# taille = 40
+# for l in range(taille):
+#     for r in range(taille // 2):
+#         print("XO" if l % 2 else "OX", end="")
+#     print()
+
+# for l in range(ord("a"), ord("z") + 1):
+#     for _ in range(3):
+#         print(chr(l) + "_", end="")
+#     print()
