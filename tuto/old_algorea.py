@@ -1,3 +1,4 @@
+from re import S
 import sys
 from pathlib import Path
 
@@ -13,24 +14,88 @@ from mvts import *
 if __name__ == "__main__":
     cls(" old.algorea.org")
 
-    def uuu():
+    def resolve(d, f, ps):
+        print(sum(1 for p in ps if p[0] <= f and p[1] >= d))
 
-        [
-            [
-                ramasser(),
-                *[droite() for _ in range(3)],
-                deposer(),
-                *[gauche() for _ in range(3)],
-                (ls() if i < 1 else None),
-            ]
-            for i in range(2)
-        ]
+    def case():
 
-    uuu()
+        pass
+
+    case()
 
     exit()
 
 
+#############
+# print(
+#     (
+#         lambda d, f, n: sum(
+#             1 for _ in range(n) if d <= int(input(f"v {_+1} ? ")) <= f
+#         )
+#     )(*[int(input(prompt)) for prompt in ["D ? ", "F ? "]], int(input("n ? ")))
+# )
+#############
+# xys = [1, 6, 1, 5, 4, 9, 3, 8, 7, 6, 7, 5, 1, 5, 1, 8]
+# print(
+#     '\n'.join("NON"
+#     if (nums := xys[i:i+8])
+#     and (nums[1] <= nums[4] or nums[6] <= nums[0])
+#     or (nums[3] <= nums[6] or nums[7] <= nums[2])
+#     else "OUI"
+#     for i in range(0, len(xys), 8)
+#     )
+# )
+#############
+# print(s if (vals := [int(input()) for _ in range(2)]) and (s := sum(vals)) else 0)
+# print((nums := [1, 6, 1, 55]) and 'Max: ',nums[3], 'et', nums, "→", sorted(nums, reverse=True))
+# print((nums := [1, 6, 1, 55]) and (sorted(nums, reverse=True)))
+# print(*[(i, j) for i in range(2) for j in range(n)])
+# print("Amies" if (nums := [int(input()) for _ in range(4)])[1] >= nums[2] and nums[3] >= nums[0] else "Ne se connaissent pas encore")
+# print("↑" if (nums := [int(input("Enter a number: ")) for _ in range(2)])[0] < nums[1] else "↓")
+# print('↑' if int(input("Enter a number 1: "))< int(input("Enter a number 2: ")) else '↓')
+# print([int(input("Enter a number: ")) for _ in range(2)][1])
+#############
+# xys = [1, 1, 2, 3, 4, 5, 1, 10, 0, 0, 11, 11]
+# inis = [1, 4, 1, 8, len(xys) // 2]
+# sss = {}
+# xMin, xMax, yMin, yMax, n = (inis[i] for i in range(5))
+# print(
+#     (
+#         sum(
+#             1
+#             for i in range(n)
+#             if (
+#                 (x := int(xys[i * 2])) is not None
+#                 and (y := int(xys[i * 2 + 1])) is not None
+#                 and (
+#                     (
+#                         xMin <= x <= xMax
+#                         and yMin <= y <= yMax
+#                         and (sss.update({(x, y): 111}) or True)
+#                     )
+#                     or (sss.update({(x, y): 222}) and False)
+#                 )
+#             )
+#         ),
+#         sss,
+#     )
+# )
+
+
+#############
+# ops = {}
+#         print(
+#             sum(
+#                 1
+#                 for _ in range(int(input("Enter the number of operations: ")))
+#                 if (a := int(input("a: "))) + (b := int(input("b: "))) > 4
+#                 # Add those that meet the condition
+#                 and ops.update({(a, "+", b): a + b})
+#                 # Add those that do not meet the condition
+#                 or ops.update({(a, "+", b): a + b}) and False
+#             ),
+#             ops,
+#         )
 #############
 # Example of using list comprehensions for repetitive actions
 # actions = [(gauche, 2), (ramasser, 1), (droite, 32), (deposer, 1)]
@@ -210,20 +275,17 @@ if __name__ == "__main__":
 # px = [int(input()) for _ in range(n)]
 # print(len(px) - px[::-1].index(min(px))) Donne la dernière pos du min
 #####################################
+# print(0 if (a := int(input())) == 60 else 5 if a < 10 else 40 if int(input()) >= 20 else 30)
+#####################################
 # arbres = {
 #     "Tinuviel": lambda h, f: h <= 5 and f >= 8,
 #     "Calaelen": lambda h, f: h >= 10 and f >= 10,
 #     "Falarion": lambda h, f: h <= 8 and f <= 5,
-#     "Dorthonoin": lambda h, f: h >= 12 and f <= 7,
+#     "Dorthonion": lambda h, f: h >= 12 and f <= 7,
 # }
-# # h = int(input())
-# # f = int(input())
-# h = 12
-# f = 12
+# h = int(input())
+# f = int(input())
 # print("".join([nom for nom, test in arbres.items() if test(h, f)]))
-# print((lambda h, f: h <= 5 and f >= 8)(h, f))
-# print(list(arbres.keys()))
-# print([nom for nom, test in arbres.items() if test(h, f)])
 #################################
 # js = int(input())
 # data = [int(input()) for _ in range(js)]

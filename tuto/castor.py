@@ -12,52 +12,13 @@ from flask.cli import F
 sys.path.append(str(Path(__file__).parent.parent / "tools"))
 from tools import *
 from tools import cls
+from mvts import *
+
 
 # Réf.: https://concours.castor-informatique.fr
 # X (Garder) Code Prépa Concours 2025 ORANGE uftm3fkb et v37y3j6i
 # X (Garder) Code Prépa Concours 2025 VERTE1 vmv6ypbt
 #                                     VERTE2 mc65hnr9
-
-
-def haut():
-    print("↑", end=" ")
-
-
-def bas():
-    print("↓", end=" ")
-
-
-def gauche():
-    print("←", end=" ")
-
-
-def droite():
-    print("→", end=" ")
-
-
-def avance():
-    print("↑", end=" ")
-
-
-def recule():
-    print("↓", end=" ")
-
-
-def tourneDroite():
-    droite()
-
-
-def tourneGauche():
-    gauche()
-
-
-def ramasser():
-    print("T", end=" ")
-
-
-def deposer():
-    print("P", end=" ")
-
 
 if __name__ == "__main__":
 
