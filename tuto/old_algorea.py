@@ -14,10 +14,25 @@ from mvts import *
 if __name__ == "__main__":
     cls(" old.algorea.org")
 
-    def resolve(d, f, ps):
-        print(sum(1 for p in ps if p[0] <= f and p[1] >= d))
+    def calculate_m(pop):
+        a, m = 1, 1
+        while a < pop:
+            a *= 3
+            m += 1
+        return a
+
+    def suite(n):
+        return round(3 ** (n - 1))
 
     def case():
+        import itertools
+
+        pop = 3
+        print(
+            (lambda pop: next(m for m in itertools.count(1) if 3 ** (m - 1) >= pop))(
+                pop
+            )
+        )
 
         pass
 
@@ -203,19 +218,6 @@ if __name__ == "__main__":
 #     )
 # )
 #####################################
-# Simple somme de n items:
-# print(
-#     sum(
-#         (
-#             lambda n=int(input("Enter the number of items: ")): (
-#                 i
-#                 for i in (int(input("Enter value of item: ")) for _ in range(n))
-#                 if i < 10
-#             )
-#         )()
-#     )
-# )
-#####################################
 # print(
 #     (
 #         lambda nMembres=int(input("Enter the number of members in each team: ")): (
@@ -252,6 +254,9 @@ if __name__ == "__main__":
 #     ]
 #     for i in range(2)
 # ]
+#####################################
+# print(*(n := int(input()),) and (n := n * i for i in range(1, int(input()) + 1)), sep="\n")
+# print(*(lambda n: (n * i for i in range(1, int(input("Enter the limit: ")) + 1)))(int(input("Enter a number: "))), sep="\n",)
 #####################################
 # l = 8
 # h, b, d, g = "haut", "bas", "droite", "gauche"
