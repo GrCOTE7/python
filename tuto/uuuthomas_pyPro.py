@@ -65,7 +65,7 @@ if __name__ == "__main__":
     soluceGrCOTE7 = """print(*map(lambda t: f"\b\033[1;33;40m{t[0]}\033[0;37;40m: Ok, ok... {t[1]}\n", enumerate(reaction),)"""
     print("Recherche de la façon la + compacte...:")
     soluceChatGPT = """print(*(f"\b\033[1;33;40m{idx}\033[0;37;40m: Ok, ok... {txt}\n" for idx, txt in enumerate(reaction)))"""
-    pf("len(soluceThomas),len(soluceGrCOTE7), len(soluceChatGPT)", 1)
+    pf("len(soluceThomas),len(soluceGrCOTE7), len(soluceChatGPT)", 2)
     print(
         *(
             f"\b\033[1;33;40m{idx}\033[0;37;40m: Ok, ok... {txt}\n"
