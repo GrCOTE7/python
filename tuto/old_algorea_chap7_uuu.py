@@ -13,24 +13,19 @@ if __name__ == "__main__":
     cls(" old.algorea.org_chap7_enCours")
 
     def case():
+        cls()
+        
+        # 2 4 2 2 1 2 1 2 1 1 1 2 1 1 2 1 1 2 1 1 3 1 2 1 2
+        # from database import *
 
-        # print(
-        #     (
-        #         lambda x: (
-        #             lambda: [
-        #                 (
-        #                     print(f"Nombre d'essais nécessaires :\n{tour}")
-        #                     if (r := int(input())) == x
-        #                     else (
-        #                         print("c'est plus") if r < x else print("c'est moins")
-        #                     )
-        #                     or False
-        #                 )
-        #                 for tour in iter(int, 1)
-        #             ]
-        #         )()
-        #     )(int(input()))
-        # )
+        # a= loadTable('regions')
+        # b= loadTable('villes') 
+
+        # r = joinTables(a, 'capitale', b, 'ville', 'inner')
+        # r= sortByColumn(r,'table2_ville', 'asc')
+        # r= selectColumns(r,['table1_capitale', 'table1_region', 'table2_departement', 'table2_nb_habitants'])
+
+        # displayTable(r)
 
         ls()
 
