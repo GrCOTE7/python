@@ -16,10 +16,11 @@ if __name__ == "__main__":
     # print("\n" + "-" * cliWR)
 
     # 2do Ranger ces tips
+    w = (CLIWR - 18) // 2
     s = ""
     for _ in range(3):
         s += "* "
-    print(s.center(25), *(range(1, 10)), s.center(25), end="\b\n")
+    print(s.center(w), *(range(1, 10)), s.center(w), end="\b\n")
 
     sl(FRENCH)
     print(f"{'Écrit /': <{CLIWR-27}}", end="")

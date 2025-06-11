@@ -8,7 +8,9 @@ if __name__ == "__main__":
 
     cls("Script racine")
 
-    print("A".center(55))
+    print("\n" + "A".center(55), end="")
+    ls()
     print(f"{'B': ^{CLIWR}}")
     # print(f"{0: ^{CLIWR}}".format("B"))
-    print()
+
+    exit()

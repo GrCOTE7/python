@@ -20,7 +20,9 @@
 ### 2do Hebdo
 
 * [/] Finir [Algorea SNT](https://old.parcours.algorea.org/contents/4707-4702-1067253748629066205-1625996270397195025-1389497323817826256-1706233976773214946)
-* 
+
+* [ ] 1 étape / semaine: [Concours](tuto\concours_algorea_2017.py)
+
 * [EULER](tuto/euler/README.md)
 
 ### À L4OCCASE
