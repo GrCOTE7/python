@@ -151,6 +151,11 @@ pip freeze > requirements.txt
 
 * [/] [Flet Tuto](https://www.youtube.com/watch?v=6Tj8_iKqh_k) - Commencé, à reprendre et finir après d'autre tutos de bases de flet
 
+### Resources
+
+* [ ] [Community examples](https://github.com/flet-dev/examples/tree/main/python/community)
+* [ ] [Contrib](https://github.com/flet-dev/flet-contrib/tree/main/flet_contrib)
+
 ### BeeWare
 
 #### BeeWare Base
