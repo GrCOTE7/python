@@ -57,5 +57,6 @@
   ],
   "cSpell.language": "en,fr-FR,fr,lorem",
   "zencoder.enableRepoIndexing": true,
-  "git.ignoreLimitWarning": true
+  "git.ignoreLimitWarning": true,
+  "materialkv.pythonFile": "main.py"
 }

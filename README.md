@@ -1,6 +1,12 @@
-# Python & Django
+---
+markmap:
+  duration: 2100
+  initialExpandLevel: -1
+---
 
-## Bases
+# Python & Django & Flet (Flutter)
+
+## Bases <!-- markmap: fold -->
 
 [ ] [Série Algos féroces](https://www.youtube.com/watch?v=Njpy0kguSfM&list=PLZZpsVWcTOhEtUyJKPvFuJ53g7bVAZDTy&index=2&ab_channel=ThinhNguyen)
 
@@ -122,3 +128,35 @@
     else:
         fib(50)
   ```
+
+## gsm_app
+
+### Flet (Sur-couche Flutter - Dart)
+
+```python
+flet create gsm_app
+
+py -m venv env
+pip install flet
+
+pip freeze > requirements.txt
+(pip install -r requirements.txt)
+```
+
+#### Tutos
+
+[ ] [Quizz - FR](https://www.youtube.com/watch?v=4aiNStwq8oU)
+
+* [ ] [Série Ressource illimitée - Flet-API-APK](https://www.youtube.com/playlist?list=PL8duS-2ZfBKZcxXz0t_4LYtfQM7Qd--je)
+
+* [/] [Flet Tuto](https://www.youtube.com/watch?v=6Tj8_iKqh_k) - Commencé, à reprendre et finir après d'autre tutos de bases de flet
+
+### BeeWare
+
+#### BeeWare Base
+
+* [ ] [Doc](https://beeware.org/)
+
+* [ ] [GH](https://github.com/beeware)
+
+* → BriefCase(Py → IOS, Andr, etc...), Toga (GUI), Batavia(JS) et Cricket (Tests suites)

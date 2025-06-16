@@ -27,7 +27,7 @@ if __name__ == "__main__":
     def case():
         import itertools
 
-        pop = 3
+        pop = 30
         print(
             (lambda pop: next(m for m in itertools.count(1) if 3 ** (m - 1) >= pop))(
                 pop

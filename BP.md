@@ -65,6 +65,8 @@ https://openclassrooms.com/fr/courses/7160741-ecrivez-du-code-python-maintenable
 
 * [ ] [django - Doc](https://docs.djangoproject.com/fr/5.2/)
 
+* [ ] [Humans Simulation](https://github.com/LopoDistrict/HumanSimulation/tree/main)
+
 * [ ] [Tuto OCR: debutez-avec-le-framework-django](https://openclassrooms.com/fr/courses/7172076-debutez-avec-le-framework-django)
 
 * Django
