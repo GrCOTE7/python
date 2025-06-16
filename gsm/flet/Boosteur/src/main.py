@@ -1,18 +1,18 @@
 import flet as ft
 from datetime import datetime as dt
-import tomllib
+# import tomllib
 
-# Définir le chemin du fichier pyproject.toml
-import os
+# # Définir le chemin du fichier pyproject.toml
+# import os
 
-print(os.getcwd())
-file_path = "./gsm/flet/Boosteur/pyproject.toml"  # Modifie avec ton chemin réel
-with open(file_path, "rb") as f:
-    config = tomllib.load(f)
+# print(os.getcwd())
+# file_path = "./Boosteur/pyproject.toml"  # Modifie avec ton chemin réel
+# with open(file_path, "rb") as f:
+#     config = tomllib.load(f)
 
-version = config.get("project", {}).get("version", "Version non définie")
-print(f"Version du projet : {version}")
-
+# version = config.get("project", {}).get("version", "Version non définie")
+# print(f"Version du projet : {version}")
+version='0.00.001'
 BOOSTER_VERSION = "Boosteur_v"+ version
 
 def boosteurIsBack(txt="Boosteur v2 is back!"):
@@ -66,8 +66,6 @@ def main(page: ft.Page):
 
     now = dt.now()
     theTime = f"{now.hour:02d}:{now.minute:02d}:{now.second:02d}"
-
-    
 
     page.title = f"{theTime} - {BOOSTER_VERSION}"
     page.horizontal_alignment = ft.CrossAxisAlignment.CENTER

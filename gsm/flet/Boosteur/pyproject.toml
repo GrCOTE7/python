@@ -1,6 +1,6 @@
 [project]
 name = "Boosteur"
-version = "0.00.17"
+version = "0.00.001"
 description = "Boosteur.com"
 readme = "README.md"
 requires-python = ">=3.9"
