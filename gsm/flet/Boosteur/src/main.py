@@ -1,48 +1,60 @@
 import flet as ft
 from datetime import datetime as dt
-import time
+import tomllib
 
+# Définir le chemin du fichier pyproject.toml
+import os
 
-def boosteurIsBack(txt='Boosteur v2 is back!'):
+print(os.getcwd())
+file_path = "./gsm/flet/Boosteur/pyproject.toml"  # Modifie avec ton chemin réel
+with open(file_path, "rb") as f:
+    config = tomllib.load(f)
 
-        return ft.Container(
-            padding=5,
-            content=ft.Stack(
-                # height=100,
-                # width=400,
-                controls=[
-                    ft.Text(
-                        spans=[
-                            ft.TextSpan(
-                                txt,
-                                ft.TextStyle(
-                                    size=40,
-                                    weight=ft.FontWeight.BOLD,
-                                    foreground=ft.Paint(
-                                        color=ft.Colors.BLUE_700,
-                                        stroke_width=6,
-                                        stroke_join=ft.StrokeJoin.ROUND,
-                                        style=ft.PaintingStyle.STROKE,
-                                    ),
+version = config.get("project", {}).get("version", "Version non définie")
+print(f"Version du projet : {version}")
+
+BOOSTER_VERSION = "Boosteur_v"+ version
+
+def boosteurIsBack(txt="Boosteur v2 is back!"):
+
+    return ft.Container(
+        padding=5,
+        content=ft.Stack(
+            # height=100,
+            # width=400,
+            controls=[
+                ft.Text(
+                    spans=[
+                        ft.TextSpan(
+                            txt,
+                            ft.TextStyle(
+                                size=40,
+                                weight=ft.FontWeight.BOLD,
+                                foreground=ft.Paint(
+                                    color=ft.Colors.BLUE_700,
+                                    stroke_width=6,
+                                    stroke_join=ft.StrokeJoin.ROUND,
+                                    style=ft.PaintingStyle.STROKE,
                                 ),
                             ),
-                        ],
-                    ),
-                    ft.Text(
-                        spans=[
-                            ft.TextSpan(
-                                txt,
-                                ft.TextStyle(
-                                    size=40,
-                                    weight=ft.FontWeight.BOLD,
-                                    color=ft.Colors.GREY_300,
-                                ),
+                        ),
+                    ],
+                ),
+                ft.Text(
+                    spans=[
+                        ft.TextSpan(
+                            txt,
+                            ft.TextStyle(
+                                size=40,
+                                weight=ft.FontWeight.BOLD,
+                                color=ft.Colors.GREY_300,
                             ),
-                        ],
-                    ),
-                ],
-            ),
-        )
+                        ),
+                    ],
+                ),
+            ],
+        ),
+    )
 
 
 def main(page: ft.Page):
@@ -55,7 +67,7 @@ def main(page: ft.Page):
     now = dt.now()
     theTime = f"{now.hour:02d}:{now.minute:02d}:{now.second:02d}"
 
-    BOOSTER_VERSION = "Boosteur_v0.00.01"
+    
 
     page.title = f"{theTime} - {BOOSTER_VERSION}"
     page.horizontal_alignment = ft.CrossAxisAlignment.CENTER

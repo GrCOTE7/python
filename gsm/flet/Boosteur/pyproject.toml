@@ -1,6 +1,6 @@
 [project]
 name = "Boosteur"
-version = "0.0.1"
+version = "0.00.17"
 description = "Boosteur.com"
 readme = "README.md"
 requires-python = ">=3.9"
@@ -26,6 +26,12 @@ company = "COTE"
 # copyright text to display in about app dialogs
 copyright = "Copyright (C) 2025 by GrCOTE7"
 
+compile.app = true # --compile-app
+compile.packages = true # --compile-packages
+compile.cleanup = true # --cleanup-on-compile
+
+build_number=1
+
 [tool.flet.app]
 path = "src"
 
@@ -39,3 +45,11 @@ package-mode = false
 
 [tool.poetry.group.dev.dependencies]
 flet = {extras = ["all"], version = "0.28.3"}
+
+[tool.flet.android]
+split_per_abi = true
+min_sdk_version = 21
+target_sdk_version = 35
+
+[tool.flet.splash]
+android = false
