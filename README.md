@@ -153,6 +153,9 @@ pip freeze > requirements.txt
 
 ### Resources
 
+* [ ] [Icons](https://fonts.google.com/icons)
+  * ft.Icons.*NAME*
+
 * [ ] [Community examples](https://github.com/flet-dev/examples/tree/main/python/community)
 * [ ] [Contrib](https://github.com/flet-dev/flet-contrib/tree/main/flet_contrib)
 
