@@ -1,7 +1,7 @@
 # import reference, gradient
 # import gradient
-import animations2
-
-# reference.main()
-# gradient.main()
-animations.main()
+# import animations2
+# import drag
+# import theme
+# import btns_theme
+import grid
