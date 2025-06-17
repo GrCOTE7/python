@@ -53,3 +53,9 @@ target_sdk_version = 35
 
 [tool.flet.splash]
 android = false
+
+# [tool.flet.android.permission] # --android-permissions
+# "android.permission.CAMERA" = true
+
+# [tool.flet.android.feature] # --android-features
+# "android.hardware.camera" = true

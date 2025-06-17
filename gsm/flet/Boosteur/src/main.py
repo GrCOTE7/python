@@ -1,5 +1,6 @@
 import flet as ft
 from datetime import datetime as dt
+
 # import tomllib
 
 # # Définir le chemin du fichier pyproject.toml
@@ -12,13 +13,14 @@ from datetime import datetime as dt
 
 # version = config.get("project", {}).get("version", "Version non définie")
 # print(f"Version du projet : {version}")
-version='0.00.001'
-BOOSTER_VERSION = "Boosteur_v"+ version
+APP_NAME = 'Boosteur'
+BOOSTER_VERSION = "0.00.001"
 
-def boosteurIsBack(txt="Boosteur v2 is back!"):
+
+def boosteurIsBack(txt=APP_NAME):
 
     return ft.Container(
-        padding=5,
+        padding=-10,
         content=ft.Stack(
             # height=100,
             # width=400,
@@ -28,11 +30,11 @@ def boosteurIsBack(txt="Boosteur v2 is back!"):
                         ft.TextSpan(
                             txt,
                             ft.TextStyle(
-                                size=40,
+                                size=70,
                                 weight=ft.FontWeight.BOLD,
                                 foreground=ft.Paint(
                                     color=ft.Colors.BLUE_700,
-                                    stroke_width=6,
+                                    stroke_width=5,
                                     stroke_join=ft.StrokeJoin.ROUND,
                                     style=ft.PaintingStyle.STROKE,
                                 ),
@@ -45,9 +47,10 @@ def boosteurIsBack(txt="Boosteur v2 is back!"):
                         ft.TextSpan(
                             txt,
                             ft.TextStyle(
-                                size=40,
+                                size=70,
                                 weight=ft.FontWeight.BOLD,
-                                color=ft.Colors.GREY_300,
+                                # color=ft.Colors.GREY_300,
+                                color=ft.Colors.PINK_500,
                             ),
                         ),
                     ],
@@ -67,9 +70,10 @@ def main(page: ft.Page):
     now = dt.now()
     theTime = f"{now.hour:02d}:{now.minute:02d}:{now.second:02d}"
 
-    page.title = f"{theTime} - {BOOSTER_VERSION}"
+    page.title = f"{theTime} - {APP_NAME} v_{BOOSTER_VERSION}"
     page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
-    # page.bgcolor = FG
+    page.bgcolor = BG
+
     # page.add(ft.Text("Hello, world!"))
 
     # t = ft.Text(
@@ -80,11 +84,11 @@ def main(page: ft.Page):
     #     bgcolor=BG,
     # )
 
-    t = boosteurIsBack(BOOSTER_VERSION)
+    t = boosteurIsBack()
     page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
     page.vertical_alignment = ft.MainAxisAlignment.CENTER
 
-    page.add(t)
+    page.add(t, ft.Text("v_" + BOOSTER_VERSION, color=FWG))
 
     print(theTime, page.route)
 

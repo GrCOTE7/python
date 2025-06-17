@@ -3,7 +3,8 @@ from pathlib import Path
 
 tools_path = Path(__file__).parent.parent.parent / "tools"
 sys.path.append(str(tools_path))
-from tools import dg, fg, lg, cls, exit, pf
+from tools import *
+from tools import ls
 
 cls("join()")
 
@@ -13,17 +14,17 @@ if __name__ == "__main__":
     names = ["Alice", "Bob", "Charlie"]
     result = ", ".join(names)
     print(result)  # Output: Alice, Bob, Charlie
-    print(lg)
+    ls()
 
     # Création d'un chemin de fichier avec un séparateur spécifique
     file_parts = ["home", "user", "documents", "file.txt"]
     file_path = "/".join(file_parts)
     print(file_path)  # Output: home/user/documents/file.txt
-    print(lg)
+    ls()
 
     # print(",".join([x for x in [1, 2, 3]])) ERROR
     print(",".join([str(x) for x in [1, 2, 3]]))
-    print(lg)
+    ls()
 
     nombres = [1, 2, 3, 4, 5]
     chaine_nombres = ", ".join(map(str, nombres))
@@ -31,12 +32,12 @@ if __name__ == "__main__":
     print(nombres)
     # print(",".join(nombres)) ERROR
     print(chaine_nombres)
-    print(lg)
+    ls()
 
     email = "example@gmail.com"
     masque_email = email[0] + "***" + "".join(email[email.index("@") :])
     print(masque_email)
-    print(lg)
+    ls()
 
     import random
     import string
@@ -44,7 +45,7 @@ if __name__ == "__main__":
     caracteres = random.choices(string.ascii_letters + string.digits, k=12)
     mot_de_passe = "".join(caracteres)
     print(mot_de_passe)
-    print(lg)
+    ls()
 
     import numpy as np
 
@@ -55,7 +56,7 @@ if __name__ == "__main__":
     # Créer un tableau 2D (matrice)
     matrice = np.array([[1, 2], [3, 4], [5, 6]])
     print(matrice)
-    print(lg)
+    ls()
 
     # Tableau de zéros
     zeros = np.zeros((3, 3))
@@ -69,6 +70,6 @@ if __name__ == "__main__":
     # Tableau d'une séquence de nombres
     range_values = np.arange(0, 10, 2)  # De 0 à 10, pas de 2
 
-    print(zeros, lg, uns, lg, random_values, lg, range_values)
+    print(zeros, uns, random_values, range_values, sep="\n---\n")
 
     exit()

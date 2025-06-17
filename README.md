@@ -153,6 +153,7 @@ pip freeze > requirements.txt
 
 ### Resources
 
+* [ ] [Controls](https://flet-controls-gallery.fly.dev/layout)
 * [ ] [Icons](https://fonts.google.com/icons)
   * ft.Icons.*NAME*
 
