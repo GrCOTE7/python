@@ -10,7 +10,7 @@ markmap:
 
 [ ] [Série Algos féroces](https://www.youtube.com/watch?v=Njpy0kguSfM&list=PLZZpsVWcTOhEtUyJKPvFuJ53g7bVAZDTy&index=2&ab_channel=ThinhNguyen)
 
-[Super outil pour debug](https://pythontutor.com)
+[ ] ∃ [Super outil pour debug](https://pythontutor.com)
 
 * Création PUIS Lancement de l'environnement virtuel :
 
