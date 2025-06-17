@@ -145,7 +145,9 @@ pip freeze > requirements.txt
 
 #### Tutos
 
-[ ] [Quizz - FR](https://www.youtube.com/watch?v=4aiNStwq8oU)
+* [/] [Priorité LineIndent - Série 64 épisodes](https://www.youtube.com/watch?v=4sHrAZFY08E&list=PLDHA4931gtc4g57ARUkh5AeeSmfdI8WhF)
+
+* [ ] [Quizz - FR](https://www.youtube.com/watch?v=4aiNStwq8oU)
 
 * [ ] [Série Ressource illimitée - Flet-API-APK](https://www.youtube.com/playlist?list=PL8duS-2ZfBKZcxXz0t_4LYtfQM7Qd--je)
 
