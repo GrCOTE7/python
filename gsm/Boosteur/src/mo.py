@@ -1,6 +1,8 @@
 import flet as ft
 from datetime import datetime as dt
 
+import gc7
+
 # import tomllib
 
 # # Définir le chemin du fichier pyproject.toml
@@ -13,8 +15,8 @@ from datetime import datetime as dt
 
 # version = config.get("project", {}).get("version", "Version non définie")
 # print(f"Version du projet : {version}")
-APP_NAME = 'Boosteur'
-BOOSTER_VERSION = "0.00.001"
+APP_NAME = "Salam,\nMo 🌞 !"
+BOOSTER_VERSION = "0.00.002"
 
 
 def boosteurIsBack(txt=APP_NAME):
@@ -62,6 +64,8 @@ def boosteurIsBack(txt=APP_NAME):
 
 def main(page: ft.Page):
 
+    page.theme_mode = ft.ThemeMode.DARK
+
     BG = "#041955"
     FWG = "#97b4ff"
     FG = "#3450a1"
@@ -72,7 +76,7 @@ def main(page: ft.Page):
 
     page.title = f"{theTime} - {APP_NAME} v_{BOOSTER_VERSION}"
     page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
-    page.bgcolor = BG
+    # page.bgcolor = BG
 
     # page.add(ft.Text("Hello, world!"))
 
@@ -88,9 +92,15 @@ def main(page: ft.Page):
     page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
     page.vertical_alignment = ft.MainAxisAlignment.CENTER
 
-    page.add(t, ft.Text("v_" + BOOSTER_VERSION, color=FWG))
+    page.add(
+        t,
+        ft.Text("v_" + BOOSTER_VERSION, color=FWG),
+        gc7.toggleTheme(page),
+    )
 
-    print(theTime, page.route)
+    # print (gc7.nf(123456789.987,0))
+
+    print(theTime, page.route, page.theme_mode)
 
 
 ft.app(target=main)
