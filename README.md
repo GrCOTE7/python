@@ -11,6 +11,9 @@ py -m pip freeze | ForEach-Object { py -m pip uninstall -y $_ }
 
 ## Bases <!-- markmap: fold -->
 
+* [CheatSheet](https://www.cheatsheet.fr/2024/06/05/creer-une-application-android-avec-flet)
+→ Utile pour embarquer en APK
+
 [ ] [Série Algos féroces](https://www.youtube.com/watch?v=Njpy0kguSfM&list=PLZZpsVWcTOhEtUyJKPvFuJ53g7bVAZDTy&index=2&ab_channel=ThinhNguyen)
 
 [ ] ∃ [Super outil pour debug](https://pythontutor.com)
