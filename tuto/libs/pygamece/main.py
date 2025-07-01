@@ -9,8 +9,7 @@ from tools import dg, fg, lg, cls, exit, pf
 
 cls("Jeu/")
 
-# * [ ] Créer un jeu en python (10 parties - Graven) https://www.youtube.com/watch?v=Ti_Engsqbic
-
+# * Pour créer un jeu en python (10 parties - Graven) https://www.youtube.com/watch?v=Ti_Engsqbic
 # Réf.: https://pyga.me/docs/
 
 if __name__ == "__main__":

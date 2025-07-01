@@ -51,7 +51,7 @@ def example():
             ),
             ft.PieChartSection(
                 15,
-                title="Boosteur",
+                title="Boosteur\n15%",
                 title_style=normal_title_style,
                 color=ft.Colors.PURPLE,
                 radius=normal_radius,

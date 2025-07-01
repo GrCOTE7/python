@@ -6,7 +6,14 @@
 
 ## Divers
 
+* [x] [Flet Reactive & Routing](https://www.youtube.com/watch?v=yYnd7uFKiYE&ab_channel=SriEdyNurcahyo)
+
 ### 2do Quotidien (Une leçon de chacun)
+
+* [Fletx - Dépôt du gars de Discord PyPRO](https://github.com/GrCOTE7/fletx-routing-sample-app)
+
+* [À suivre ISC](https://www.youtube.com/@InformatiqueSansComplexe/videos)
+→ Derniervu: https://www.youtube.com/watch?v=QItdlkRaCps&ab_channel=InformatiqueSansComplexe%21
 
 * [À lire Algorithmes et programmation](https://www.france-ioi.org/algo/course.php?idChapter=552&idCourse=1801)
 
@@ -88,6 +95,15 @@ https://openclassrooms.com/fr/courses/7160741-ecrivez-du-code-python-maintenable
 * [ ] [Django-MrBin99](https://github.com/MrBin99/django-vite)
 * [ ]  [Django-vite-plugin](https://github.com/protibimbok/django-vite-plugin) - Seul à gérer l'auto-reload
 * [ ] [Django-Breeze](https://github.com/Louxsdon/django-breeze)
+
+
+## Bugged projext to soluce
+
+* [ ] [FleetingViews](tuto\flet\fleeting_views.py)
+
+## Autres à suivre
+
+* [ ] [Créer un jeu en python (10 parties - Graven)](tuto\libs\pygamece\main.py)
 
 ## Domaines d'applications
 

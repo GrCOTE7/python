@@ -15,6 +15,9 @@ py -m pip freeze | ForEach-Object { py -m pip uninstall -y $_ }
 
 [ ] ∃ [Super outil pour debug](https://pythontutor.com)
 
+[ ] [Snake - 1H](https://www.youtube.com/watch?v=1zVlRXd8f7g)
+
+
 * Création PUIS Lancement de l'environnement virtuel :
 
   ```python
