@@ -7,7 +7,7 @@ def AboutView(fv):
 
     def update_data():
         shared_value = fv.get_shared("user_input", {"val": "no value from home"})
-        param_value = fv.get_param("this_parameter", "no param from home")
+        param_value = fv.get_params("this_parameter", "no param from home")
 
         shared_text.value = f"shared : {shared_value['val']}"
         param_text.value = f"param : {param_value['val']}"

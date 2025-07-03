@@ -2,7 +2,7 @@ import flet as ft
 import FleetingViews as fvs
 
 from pages.home import home_init
-from pages.settings import settings_init
+import pages.settings
 
 # Ref: https://www.youtube.com/watch?v=eCoyLg9uHiY&ab_channel=BrunoArellano
 
@@ -62,9 +62,10 @@ def main(page: ft.Page):
         # page.snack_bar.open = True
 
     fv = fvs.create_views(view_definitions = view_definitions, page=page)
+    
     fv.on_view_change = my_callback_hook
 
     home_init(fv)
-    settings_init(fv)
+    pages.settings.settings_init(fv)
 
 ft.app(main)

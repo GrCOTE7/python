@@ -4,7 +4,7 @@ import flet as ft
 def home_init(fv):
     home_button = ft.TextButton(
         icon=ft.Icons.DATA_ARRAY,
-        text="Get home data!",
+        text="Get Home data!",
         on_click=lambda e: print(fv.get_params()),
     )
     home_container = ft.Container(
