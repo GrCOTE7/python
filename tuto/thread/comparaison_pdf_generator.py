@@ -1,7 +1,7 @@
 # import pdfkit # ATTENTION: Problèmes avec les EMOJIS sur Windows !
-import os
-os.add_dll_directory(r"C:\Program Files\GTK3-Runtime Win64\bin")
+# os.add_dll_directory(r"C:\Program Files\GTK3-Runtime Win64\bin")
 from weasyprint import HTML
+import os
 
 html_content = """
 <!DOCTYPE html>
@@ -40,6 +40,14 @@ html_content = """
 </html>
 """
 
+
 # Générer le PDF
 # pdfkit.from_string(html_content, "threading_vs_asyncio.pdf")
-HTML(string=html_content).write_pdf("threading_vs_asyncio.pdf")
+def generate_pdf():
+    pdf_path = "threading_vs_asyncio.pdf"
+    if not os.path.exists(pdf_path):
+        html = html_content
+        HTML(string=html).write_pdf(pdf_path)
+
+if __name__ == '__main__':
+    generate_pdf()
