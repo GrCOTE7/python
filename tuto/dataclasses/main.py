@@ -20,20 +20,16 @@ def example01():
     print(p.adresse.rue)
 
 
-# def example02():
-@dataclass(frozen=True)
-class User:
-    name: str = "Who ?"
-    email: str = "unknown"
+def example02():
+    @dataclass
+    # @dataclass(frozen=True)
+    class User:
+        name: str = "Who ?"
+        email: str = "unknown"
 
+    def modif_user(user):
+        user.name = "Toto"
 
-def modif_user(user):
-    user.name = "Toto"
-
-
-if __name__ == "__main__":
-    # example01()
-    # example02()
     # u = User(name="Lionel", email="lionel@gmail.com")
     # u = User(email="lionel@gmail.com", name="Lionel")
     # u = User(email="lionel@gmail.com")
@@ -41,3 +37,8 @@ if __name__ == "__main__":
     modif_user(u)
 
     print(u)
+
+
+if __name__ == "__main__":
+    # example01()
+    example02()
