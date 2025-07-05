@@ -6,7 +6,7 @@ def main(page: ft.Page):
     gc7.position(page)
 
     txt = "Ready."
-    t = ft.Text(txt, size=30)
+    t = ft.Text(txt, size=24, color=ft.Colors.ORANGE_500)
     page.add(t)
 
 

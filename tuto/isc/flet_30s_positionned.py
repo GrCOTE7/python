@@ -73,7 +73,7 @@ async def main(page: ft.Page):
     # Ajouter les lignes dans une colonne scrollable
     scrollable_column = ft.Column(
         controls=color_rows,
-        width=window_width-100,
+        width=window_width,
         spacing=5.0,
         scroll=ft.ScrollMode.AUTO,
         expand=True,
@@ -82,8 +82,11 @@ async def main(page: ft.Page):
     # Centrer les colonne dans la page
     page.add(
         ft.Container(
-            content=scrollable_column,
             alignment=ft.alignment.center,
+            content=scrollable_column,
+            expand=True,
+            # margin=ft.margin.only(top=80),
+            padding=ft.padding.only(left=60, right=60),
         )
     )
 # print(dir(ft.Colors))
