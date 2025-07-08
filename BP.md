@@ -13,7 +13,10 @@
 * [Fletx - Dépôt du gars de Discord PyPRO](https://github.com/GrCOTE7/fletx-routing-sample-app)
 
 * [À suivre ISC](https://www.youtube.com/@InformatiqueSansComplexe/videos)
-→ Derniervu: https://www.youtube.com/watch?v=QItdlkRaCps&ab_channel=InformatiqueSansComplexe%21
+→ Dernier vu: https://www.youtube.com/watch?v=QItdlkRaCps&ab_channel=InformatiqueSansComplexe%21
+
+* [Identity](https://www.youtube.com/@Indently/videos)
+→ Dernier vu: [-0]
 
 * [À lire Algorithmes et programmation](https://www.france-ioi.org/algo/course.php?idChapter=552&idCourse=1801)
 
@@ -32,8 +35,13 @@
 
 * [EULER](tuto/euler/README.md)
 
-### À L4OCCASE
+### À L'OCCASE
 * //2do [5 idées de Web](https://www.youtube.com/watch?v=qfVc-o-in7g)
+
+### Dès nouvelle Mc
+* [ ] Sous WSL [Ollama 3 avec Max - modular - Mojo - Python](https://www.youtube.com/watch?v=qfVc-o-in7g)
+
+https://docs.modular.com/max/tutorials
 
 ## Tutos
 

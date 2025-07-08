@@ -12,7 +12,6 @@ py -m pip freeze | ForEach-Object { py -m pip uninstall -y $_ }
 ## Bases <!-- markmap: fold -->
 
 * [CheatSheet](https://www.cheatsheet.fr/2024/06/05/creer-une-application-android-avec-flet)
-→ Utile pour embarquer en APK
 
 [ ] [Série Algos féroces](https://www.youtube.com/watch?v=Njpy0kguSfM&list=PLZZpsVWcTOhEtUyJKPvFuJ53g7bVAZDTy&index=2&ab_channel=ThinhNguyen)
 
@@ -181,3 +180,23 @@ pip freeze > requirements.txt
 * [ ] [GH](https://github.com/beeware)
 
 * → BriefCase(Py → IOS, Andr, etc...), Toga (GUI), Batavia(JS) et Cricket (Tests suites)
+
+### Divers
+
+#### Export wsl de C:\ → D:\
+
+* wsl --list --verbose
+
+* Exporter la distribution vers D:
+* wsl --export Ubuntu D:\WSL\ubuntu.tar
+
+* Désenregistrer l’ancienne distribution (⚠️ supprime toutes les données) :
+* wsl --unregister Ubuntu
+
+* Supprimer les fichiers inutiles dans C:\Users\TonNom\AppData\Local\Packages\Canonical... (attention à ne pas supprimer ce que tu utilises encore).
+
+* Réimporter sur D:
+* wsl --import Ubuntu D:\WSL\Ubuntu D:\WSL\ubuntu.tar
+
+* Lancer la nouvelle instance:
+* wsl -d Ubuntu
