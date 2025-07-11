@@ -165,9 +165,10 @@ pip freeze > requirements.txt
 ### Resources
 
 * [ ] [Controls](https://flet-controls-gallery.fly.dev/layout)
+* [ ] [16' - Dataclasses](https://www.youtube.com/watch?v=vBH6GRJ1REM&t=503s)
+* [ ] [8' - Aprofondir dataclasses](https://www.youtube.com/watch?v=vBH6GRJ1REM&t=503s)
 * [ ] [Icons](https://fonts.google.com/icons)
   * ft.Icons.*NAME*
-
 * [ ] [Community examples](https://github.com/flet-dev/examples/tree/main/python/community)
 * [ ] [Contrib](https://github.com/flet-dev/flet-contrib/tree/main/flet_contrib)
 
