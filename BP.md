@@ -10,8 +10,6 @@
 
 ### 2do Quotidien (Une leçon de chacun)
 
-* [Fletx - Dépôt du gars de Discord PyPRO](https://github.com/GrCOTE7/fletx-routing-sample-app)
-
 * [À suivre ISC](https://www.youtube.com/@InformatiqueSansComplexe/videos)
 → Dernier vu: https://www.youtube.com/watch?v=QItdlkRaCps&ab_channel=InformatiqueSansComplexe%21
 
@@ -95,6 +93,8 @@ https://openclassrooms.com/fr/courses/7160741-ecrivez-du-code-python-maintenable
 * [ ] [Django PortFolio](https://www.youtube.com/watch?v=4cL73hx525k&list=PLnbUkgm50ApWT-Z8UPnvWaFYD1PBKUCyz)
 * [ ] [Scraping avec Python](https://www.youtube.com/watch?v=sOAZpHDEdkg)
 * [ ] [2H formation complete](https://www.youtube.com/watch?v=sOAZpHDEdkg&t=5s)
+
+* [ ] Reprendre projet Django-Cotton
 
 ## ViteJS
 
@@ -195,6 +195,11 @@ Outils: https://markmap.js.org/repl
 2do: refer https://www.ilovepdf.com/
 
 2do: Tester ceci avec codium: https://www.youtube.com/watch?v=2TAEcYCQtuY
+
+## Faits
+
+* [x] [Fletx - Dépôt du gars de Discord PyPRO](https://github.com/GrCOTE7/fletx-routing-sample-app) → Super Mini App avec routing et MVC
+[ ] Suivre PR car ne marche pas sous windows (→WS)
 
 ## LEARNING PLAN
 
