@@ -1,3 +1,5 @@
+import flet as ft
+
 def position(page):
     screen_width = 1920
     window_width = 500
@@ -7,6 +9,9 @@ def position(page):
     page.window.width = window_width
     page.window.height = 940 # 1040"
     page.window.resizable = False
+    
+    t = '123 abcd From tools/gc7_positioned.py (Bref, un sous-dossier)'
+    page.add(ft.Text(t, size=24, color=ft.Colors.ORANGE_500))
 
 import locale
 
