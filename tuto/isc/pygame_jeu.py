@@ -11,8 +11,10 @@ class Vaisseau(pygame.sprite.Sprite):
     def __init__(self):
         super(Vaisseau, self).__init__()
         
-        self.surf = pygame.Surface((50, 25))
-        self.surf.fill((255, 255, 255))
+        # self.surf = pygame.Surface((50, 25))
+        # self.surf.fill((255, 255, 255))
+        self.surf = pygame.image.load('ressources/vaisseau.png').convert()
+        self.surf.set_colorkey((255, 255, 255), RLEACCEL)
         
         self.rect = self.surf.get_rect()
 
