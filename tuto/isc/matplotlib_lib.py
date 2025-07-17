@@ -1,27 +1,25 @@
 import flet as ft
+import matplotlib.pyplot as plt
 import matplotlib
+import numpy as np
 
 # Assure que le backend est TkAgg
 matplotlib.use("TkAgg")
 
-
-import matplotlib.pyplot as plt
-
-plt.rcParams["figure.raise_window"] = False
-# Empêche matplotlib de forcer le focus
-import numpy as np
-import time
-import os
-import subprocess
-
 # Données
+exposant = 3 # CHANGE HERE !
+
 x = np.arange(-10.0, 10, 0.01)
-y = x**2
+y = x**exposant
+
 # Création du graphique
 fig, ax = plt.subplots()
-fig.canvas.manager.set_window_title("Une parabole")
+fig.canvas.manager.set_window_title(
+    "Une " + ("hyperbole" if exposant % 2 else "parabole")
+)
 ax.plot(x, y)
-ax.set(xlabel="x", ylabel="y = x^2", title="y = x^2")
+
+ax.set(xlabel="x", ylabel=f"y = x^{exposant}", title=f"y = x^{exposant}")
 ax.grid()
 
 # Positionnement de la fenêtre
