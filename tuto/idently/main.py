@@ -1,42 +1,33 @@
 import flet as ft
-import unittest
-
-import sys
-
-sys.dont_write_bytecode = True
-
-import div.tests.WebsitesSanityChecks as WebsitesSanityChecks
-import div.tests.Calc as Calc
 
 
-def autologin():
-    user = "User"
-    password = "123456"
+def stopPycs():
+    """Important if flet run -d -r pour les fichiers créés dans__pycache__/"""
+    import sys
 
-    url = "http://www.stealmylogin.com/demo.html"
-
-    driver = webdriver.Chrome
-    # ("C:\\Users\\utilisateur\\Downloads\\chromedriver_win32")
-    # driver.get('https://www.facebook.com/login.php')
-
-    # print("Ok")
+    sys.dont_write_bytecode = True
 
 
-def run_tests():
-    suite1 = unittest.defaultTestLoader.loadTestsFromModule(WebsitesSanityChecks)
-    suite2 = unittest.defaultTestLoader.loadTestsFromModule(Calc)
+def testsLaunch():
+    import div.tests.testsSuite as tests
 
-    combined_suite = unittest.TestSuite([suite1, suite2])
+    stopPycs()
+    tests.run_tests()
 
-    runner = unittest.TextTestRunner()
 
-    # print("Je vais tester les accès à 2 sites...\n")
-    runner.run(combined_suite)
+def autoLogin():
+    stopPycs()
+    import div.selenium_folder.autoLogin as aL
+
+    aL.autoLogin.login()
 
 
 def main():
-    # Lancement de testos..
-    run_tests()
+
+    # Lancement des tests..
+    # testsLaunch()
+    autoLogin()
+
     pass
 
 
