@@ -123,13 +123,36 @@ def tables():
     print(supprimeDoublons(tab + tab2, 0))
 
 
+def variables():
+    s = set((2, 2, 3))
+    s.add(4)
+    print(s, type(s))
+    s2 = {4, 5, 5, 6}  # 5 Can't be twice
+    s2.add(7)
+    print(s2, type(s2))
+    fake_s = frozenset(s)
+    # fake_s.add(8) # ERROR
+    print(fake_s, type(fake_s))
+
+    l = [2, 9]
+    l[1] = 3
+    l.insert(0, "Un")
+    fake_l = frozenset(l)
+    # fake_l.append(4) # ERROR
+    print(l, fake_l, type(fake_l))
+
+
 def main():
-    # tupples()
-    # dicts()
-    tables()
+    variables()
+
+
+# tupples()
+# dicts()
+# tables()
 
 
 if __name__ == "__main__":
 
     # tupples()
+    main()
     print("-" * 119)

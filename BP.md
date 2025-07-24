@@ -11,10 +11,10 @@
 ### 2do Quotidien (Une leçon de chacun)
 
 * [À suivre ISC](https://www.youtube.com/@InformatiqueSansComplexe/videos)
-→ Dernier vu: https://www.youtube.com/watch?v=QItdlkRaCps&ab_channel=InformatiqueSansComplexe%21
+→ Dernier vu: https://www.youtube.com/watch?v=qh3wVnRha9k
 
 * [Identity](https://www.youtube.com/@Indently/videos)
-→ Dernier vu: [-0]
+→ Dernier vu: [<= 4 ans]
 
 * [À lire Algorithmes et programmation](https://www.france-ioi.org/algo/course.php?idChapter=552&idCourse=1801)
 
@@ -95,6 +95,7 @@ https://openclassrooms.com/fr/courses/7160741-ecrivez-du-code-python-maintenable
 * [ ] [2H formation complete](https://www.youtube.com/watch?v=sOAZpHDEdkg&t=5s)
 
 * [ ] Reprendre projet Django-Cotton
+* [ ] [To DO FletX](https://medium.com/@einswilligoeh/tutoriel-cr%C3%A9er-des-listes-r%C3%A9actives-avec-fletx-3ec24a585815)
 
 ## ViteJS
 
