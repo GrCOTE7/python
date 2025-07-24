@@ -6,6 +6,7 @@ import sys
 sys.dont_write_bytecode = True
 
 import div.tests.WebsitesSanityChecks as WebsitesSanityChecks
+import div.tests.Calc as Calc
 
 
 def autologin():
@@ -22,11 +23,15 @@ def autologin():
 
 
 def run_tests():
-    suite = unittest.defaultTestLoader.loadTestsFromModule(WebsitesSanityChecks)
+    suite1 = unittest.defaultTestLoader.loadTestsFromModule(WebsitesSanityChecks)
+    suite2 = unittest.defaultTestLoader.loadTestsFromModule(Calc)
+
+    combined_suite = unittest.TestSuite([suite1, suite2])
+
     runner = unittest.TextTestRunner()
 
-    print("Je vais tester les accès à 2 sites...\n")
-    runner.run(suite)
+    # print("Je vais tester les accès à 2 sites...\n")
+    runner.run(combined_suite)
 
 
 def main():
