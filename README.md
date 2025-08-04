@@ -19,7 +19,6 @@ py -m pip freeze | ForEach-Object { py -m pip uninstall -y $_ }
 
 [ ] [Snake - 1H](https://www.youtube.com/watch?v=1zVlRXd8f7g)
 
-
 * Création PUIS Lancement de l'environnement virtuel :
 
   ```python
@@ -201,3 +200,8 @@ pip freeze > requirements.txt
 
 * Lancer la nouvelle instance:
 * wsl -d Ubuntu
+
+---
+
+* Créer le requirements.txt selon les imports du projet :
+* pipreqs D:\langages\Python\Core\Py --ignore .venv --force --encoding=utf-8

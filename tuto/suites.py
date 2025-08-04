@@ -90,7 +90,7 @@ Fn+Fn-1
     s(4) = 10
     s(5) = 15
     '''
-  res3 = '''
+    res3 = '''
     1: An**2 + Bn + C → A + B + C = 1
     2: 4A + 2B + C = 3
     3: 9A + 3B + C = 6
@@ -99,6 +99,5 @@ Fn+Fn-1
     que A = 1, B = 1 et C = 0.
     La suite est donc definie par Sn = n**2 + n = (n*(n+1))/2.
     '''
-'''
-  
+ 
   

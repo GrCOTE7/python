@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 # https://www.youtube.com/watch?v=euiip1cCna0
 
 # 1. boucle avec condition d'arrêt (while, break, continue)
