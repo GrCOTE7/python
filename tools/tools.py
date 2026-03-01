@@ -36,7 +36,7 @@ if __name__ == "__main__":
     # sleep(SLEEP_DURATION)
 
     print(CLIWR)
-    exit
+    exit()
     cls("pf()")  # 2ar tester aussi dans cas simulatedW
     # cls("un très long titre")
     # cls(0)

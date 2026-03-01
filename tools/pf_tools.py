@@ -258,7 +258,7 @@ def pf2(var: str, style: int = 0, w=CLIWR):
 
     n = 8
     headers = list(string.ascii_uppercase[:n])
-    headers[2] = f"{'\033[1;36mOk': <9}" + eb
+    headers[2] = f"\033[1;36m{'Ok':<9}{eb}"
     print(len(headers[2]))
     print(rawStrLength(headers[2])[0])
     vs = range(1, n + 1)
@@ -526,9 +526,8 @@ def pf(ks: str, style: int = 0, indexes=False, w=CLIWR):
                 headers = [f"\033[1;36m{var_name}\033[0;37;40m"]
                 # tbl(data, headers, indexes=False)
 
-    print(
-        f"\033[1;36;40m{f' pf(\'{kso}\', {style}, {indexes*1}) ':-^{CLIWR}}\033[0;37;40m"
-    )
+    title = f" pf('{kso}', {style}, {indexes*1}) "
+    print(f"\033[1;36;40m{title:-^{CLIWR}}\033[0;37;40m")
     if indexes:
         headers.insert(0, "#")
         colalign.insert(0, "right")
@@ -540,7 +539,8 @@ def pf(ks: str, style: int = 0, indexes=False, w=CLIWR):
         colalign=colalign,
         indexes=indexes,
     )
-    s = f"\033[1;36;40m{f' {caller[1]}'+f' - {caller[0]}:{'\033[1;31;47m'+str(nf(caller[2], 0))}'}{EB} "
+    line_info = f"\033[1;31;47m{nf(caller[2], 0)}"
+    s = f"\033[1;36;40m {caller[1]} - {caller[0]}:{line_info}{EB} "
     print(f"{s:-^{CLIWR+rawStrLength(s)[1]}}")
 
 

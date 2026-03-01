@@ -340,7 +340,7 @@ def showMsg(
 
 # 2do lien clicable comme erreurs
 def ls(color=YELLOW, level=2, **kwargs):
-    """Draw a line with the line number, function and the caller file."""
+    """Line Separator - Draw a line in CLI with the line number, function and the caller file."""
     # print("kwargs = ", kwargs)  # Pour debug
     color = kwargs.get("color", YELLOW) if color is None else color
     toPrint = kwargs.get("toPrint", True)
