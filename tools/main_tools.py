@@ -95,12 +95,60 @@ def cliWAnalysis():
     setMsg(s)
 
 
-def cls(title=None, filename=""):
-    """Réinitialise la console
-    Affiche title sauf si title=0
+def cls(title=None, filename="", page=None):
+    """Réinitialise la console (CLI) ou la page (Flet).
+    Affiche title sauf si title=0.
     """
 
+    if page is None and hasattr(title, "clean") and callable(getattr(title, "clean")):
+        page = title
+        title = None
+
+    if page is not None and hasattr(page, "clean") and callable(getattr(page, "clean")):
+        page.clean()
+
+        if title not in (None, 0) and hasattr(page, "title"):
+            page.title = str(title)
+
+        if hasattr(page, "update") and callable(getattr(page, "update")):
+            page.update()
+        return
+
+    def _force_home_windows():
+        if os.name != "nt":
+            return
+        try:
+            import ctypes
+
+            class COORD(ctypes.Structure):
+                _fields_ = [("X", ctypes.c_short), ("Y", ctypes.c_short)]
+
+            handle = ctypes.windll.kernel32.GetStdHandle(-11)
+            if handle not in (0, -1):
+                ctypes.windll.kernel32.SetConsoleCursorPosition(handle, COORD(0, 0))
+        except Exception:
+            pass
+
+    out = getattr(sys, "__stdout__", None)
+
+    try:
+        if out and hasattr(out, "write"):
+            out.write("\033[3J\033[2J\033[H")
+            out.flush()
+    except Exception:
+        pass
+
+    if os.name == "nt":
+        try:
+            with open("CON", "w", encoding="utf-8", errors="ignore") as con:
+                con.write("\033[3J\033[2J\033[H")
+                con.flush()
+        except Exception:
+            pass
+
+    _force_home_windows()
     os.system("cls" if os.name == "nt" else "clear")
+    _force_home_windows()
 
     cliWAnalysis()
 
