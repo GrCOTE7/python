@@ -491,6 +491,13 @@ def exit():
         pass
         # print(f"\033[1;31mNo pf() !!!{EB}")
 
+    # //2ar Un code à supprimer ( '2 À remove') qd le script est OK...
+    # sl()
+    # print('Exemple si ici je veux voir le contenu d\'une var...'.center(CLIWR))
+    # print('Comme juste une, pas b\'soin de déployer da grosse artillerie, le \x1b[1mDEBUG MODE\x1b[0m...'.center(CLIWR))
+    # print('Provisoire, certes, et donc, je devrai suppr ce code... Mais pour le retrouver + tard...?'.center(CLIWR))
+    # ls()    
+
     sys.exit()
 
 
