@@ -179,6 +179,7 @@ function Start-App {
   Write-Host "Démarrage automatique du script ./main.py... 🚀"
   Write-Host ""
   flet run -d -r --ignore-dirs __pycache__ main.py
+  flet run -d -r --ignore-dirs __pycache__, flet main.py
 }
 
 # --- Aide ---

@@ -17,11 +17,11 @@ def print(*args, **kwargs):
 if __name__ == "__main__":
     cols = CLIWR
 
-    title = "Démo intérêts des fonctions cls(), sl() et ls()"
+    title = "Démo intérêts des fonctions cls(), sl(), ls() et nf()"
 
     cls(f"{title.capitalize()}")
 
-    ls()
+    ls(CYAN)
 
     def nombres_espaces(cols):
         total = 0
@@ -37,7 +37,12 @@ if __name__ == "__main__":
     print(*nombres_espaces(cols))
 
     sl()
-    print(f"{'1 façon de centrer': ^{cols}}")
+    print('\n'+f"{' 1 façon de centrer': ^{cols}}")
     print(" & 1 autre \x1b[3mfaçon\x1b[0m 😉 !".center(cols+4), end='\b')
+    print ()
     # ❌ vidéo démo scratch
+    
+    # Démo nf() (Number Format) : formater les nombres avec des séparateurs de milliers et vraie virgule pour les 2 décimales, bref, à la française ;-) !
+    n = 123456.789
+    print(f'Format rapide d\'un nombre : nf({n}) → {nf(n)}')
     exit()

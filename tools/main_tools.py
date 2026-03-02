@@ -157,7 +157,7 @@ def cls(title=None, filename="", page=None):
 
 
 def nf(f, dec=2):
-    "Number Format 123456789 → 123 456,79"
+    "Number Format 123456.789 → 123 456,79"
     try:
         f = float(f)
         return locale.format_string(f"%.{dec}f", f, grouping=True)
@@ -486,17 +486,17 @@ def exit():
 
     try:
         sleep(SLEEP_DURATION)
-        pf("CLIW, SIMU_CLIW, CLIWR")  # 2ar
+        pf("CLIW, SIMU_CLIW, CLIWR") # 2ar
     except:
         pass
         # print(f"\033[1;31mNo pf() !!!{EB}")
 
     # //2ar Un code à supprimer ( '2 À remove') qd le script est OK...
-    # sl()
-    # print('Exemple si ici je veux voir le contenu d\'une var...'.center(CLIWR))
-    # print('Comme juste une, pas b\'soin de déployer da grosse artillerie, le \x1b[1mDEBUG MODE\x1b[0m...'.center(CLIWR))
-    # print('Provisoire, certes, et donc, je devrai suppr ce code... Mais pour le retrouver + tard...?'.center(CLIWR))
-    # ls()    
+    sl()
+    print('Exemple si ici je veux voir le contenu d\'une var...'.center(CLIWR))
+    print('Comme juste une, pas b\'soin de déployer da grosse artillerie, le \x1b[1mDEBUG MODE\x1b[0m...'.center(CLIWR))
+    print('Provisoire, certes, et donc, je devrai suppr ce code... Mais pour le retrouver + tard...?'.center(CLIWR))
+    ls()    
 
     sys.exit()
 
@@ -517,7 +517,7 @@ if __name__ == "__main__":
 
     print(f"\n{'← Fin script': >{CLIWR}}")
 
-    exit()  # 2ar
+    exit() # 2ar
 
     # colors = [BLUE, WHITE, RED, CYAN, MAGENTA, YELLOW, GREEN, BLACK]
     # print([c for c in colors])
@@ -525,7 +525,7 @@ if __name__ == "__main__":
     # s = sl(CYAN, w=CLIWR // 2, toPrint=0)
     # print(s.center(CLIWR + rawStrLength(s)[1]))
 
-    if 0:  # 2ar Activer aprè_s pf() OK et finir tests dessous
+    if 0:  # 2ar Activer après pf() OK et finir tests dessous
         sleep(SLEEP_DURATION)
 
         cls()
