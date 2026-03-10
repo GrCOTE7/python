@@ -3,6 +3,7 @@ from pathlib import Path
 
 sys.path.append(str(Path(__file__).parent / "tools"))
 from tools.tools import *
+# from pymox_kit import *
 
 # Redéfinir print pour utiliser sys.__stdout__ par défaut
 _builtin_print = print
@@ -36,7 +37,7 @@ if __name__ == "__main__":
     # print(" ".join(nombres_espaces(cols)))
     print(*nombres_espaces(cols))
 
-    sl()
+    # sl()
     print('\n'+f"{' 1 façon de centrer': ^{cols}}")
     print(" & 1 autre \x1b[3mfaçon\x1b[0m 😉 !".center(cols+4), end='\b')
     print ()

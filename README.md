@@ -5,9 +5,6 @@ markmap:
 ---
 
 # Python & Django & Flet (Flutter)
-<!-- Effacer toutes les libs de la racine
-py -m pip freeze | ForEach-Object { py -m pip uninstall -y $_ } 
--->
 
 ## Bases <!-- markmap: fold -->
 

@@ -40,5 +40,5 @@ def example02():
 
 
 if __name__ == "__main__":
-    # example01()
-    example02()
+    example01()
+    # example02()
