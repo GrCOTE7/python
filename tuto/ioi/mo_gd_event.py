@@ -1,4 +1,9 @@
-# Parcourir les 10 colonnes
+import sys
+from pathlib import Path
+
+sys.path.append(str(Path(__file__).parent.parent.parent / "tools"))
+from tools import cls, exit
+
 def haut():
     print("↑", end=" ")
 
@@ -15,7 +20,9 @@ def droite():
     print("→", end=" ")
 
 
-l=4
+cls()
+
+l=4 # Réduis la taille du problème, et quadn ça marchera là, tu emttras 10 ici !
 
 for colonne in range(l):
 
@@ -36,3 +43,5 @@ for colonne in range(l):
     # Retour au point de départ (en haut à droite → aller à gauche)
     for _ in range(l-1):
         gauche()
+
+exit()
