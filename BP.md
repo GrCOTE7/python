@@ -6,12 +6,18 @@
 
 ## Divers
 
-* [x] [Flet Reactive & Routing](https://www.youtube.com/watch?v=yYnd7uFKiYE&ab_channel=SriEdyNurcahyo)
-
 ### 2do Quotidien (Une leçon de chacun)
 
 * [À suivre ISC](https://www.youtube.com/@InformatiqueSansComplexe/videos)
-→ Dernier vu: https://www.youtube.com/watch?v=qh3wVnRha9k
+* [ ] Voir: https://www.youtube.com/watch?v=TJusNVqsfQg
+* [ ] Voir: https://www.youtube.com/watch?v=40thIcfnKpQ
+* [ ] Voir: https://www.youtube.com/watch?v=EORtO6bzjek
+* [ ] Voir: https://www.youtube.com/watch?v=f70nHY7kEQY
+* [ ] Voir: https://www.youtube.com/watch?v=dO_8QS26y1I
+* [ ] Voir: https://www.youtube.com/watch?v=9KB4PQeBQxE
+* [ ] Voir: https://www.youtube.com/watch?v=YHpzNwX3_18
+* [ ] Voir: https://www.youtube.com/watch?v=EORtO6bzjek
+* [ ] Voir: 
 
 * [Identity](https://www.youtube.com/@Indently/videos)
 → Dernier vu: [<= 4 ans]
@@ -313,3 +319,5 @@ Cette structure progressive permet d'aborder Python de manière structurée, en 
 ## Faits
 
 Tutos suivis:
+
+* [x] [Flet Reactive & Routing](https://www.youtube.com/watch?v=yYnd7uFKiYE&ab_channel=SriEdyNurcahyo)

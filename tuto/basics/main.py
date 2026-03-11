@@ -41,7 +41,7 @@ if __name__ == "__main__":
             print(f"Je m'appelle {self.nom} et j'ai {self.age} ans.", end="")
 
     # Création d'un objet
-    p1 = Personne("Lionel", 60)
+    p1 = Personne("Lionel", 36)
     p1.se_presenter()
     print(lg)
 
@@ -70,7 +70,7 @@ if __name__ == "__main__":
     print(lg)
 
     exit()
-    s = "Lionel"
+    s = "Harry"
     print(s[2:4])
     print()
 

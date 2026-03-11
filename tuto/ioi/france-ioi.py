@@ -8,7 +8,7 @@ from pathlib import Path
 
 from cycler import V
 
-sys.path.append(str(Path(__file__).parent.parent / "tools"))
+sys.path.append(str(Path(__file__).parent.parent.parent / "tools"))
 from tools import *
 from tools import cls
 
@@ -61,11 +61,6 @@ if __name__ == "__main__":
 
     # print(nbVilles)
 
-    def uuu():
-        print('Hello world!')
-
-    uuu()
-    exit()
     # x = int(input(()))
     # y = int(input())
 
@@ -106,27 +101,30 @@ if __name__ == "__main__":
     # if abs(fs["Arignon"] - fs["Evaran"]) > 10 :
     #     print ("La famille", max(fs, key=fs.get), "a un champ trop grand")
 
+    #####################################
     # Socles pour statues
     # print(sum(list(i**2 for i in range(int(input()), int(input()) - 1, -1))))
     # print(*range(100, -1, -1), "Décollage !", sep="\n")
     # print("Partie de cache-cache", *range(1, 11), "J'arrive !", sep="\n")
 
+    #####################################
     # kms parcourus en 1j, 2j et 3j pour 3 disciplines
     # print(*list((2 + 34 + 6) * i for i in range(1, 4)))
 
-    # # Parcours une damier lxl une seule fois par case et retour pos de départ
-    # l = 4
-    # h, b, d, g = "haut", "bas", "droite", "gauche"
-    # # Génération des commandes
-    # mvs = [(h, l - 1), (d, l - 1), (b, 1)]
-    # for go_down in range((l - 2) // 2):
-    #     mvs.extend([(g, l - 2), (b, 1), (d, l - 2), (b, 1)])
-    # mvs.append((g, l - 1))
-    # # Exécution des mouvements
-    # for mv in [sens for sens, n in mvs for _ in range(n)]:
-    #     # eval(mv + "()")
-    #     print(mv + "()")
-    # print()
+    #####################################
+    # Parcours une damier lxl une seule fois par case et retour pos de départ
+    l = 10
+    h, b, d, g = "haut", "bas", "droite", "gauche"
+    # Génération des commandes
+    mvs = [(h, l - 1), (d, l - 1), (b, 1)]
+    for go_down in range((l - 2) // 2):
+        mvs.extend([(g, l - 2), (b, 1), (d, l - 2), (b, 1)])
+    mvs.append((g, l - 1))
+    # Exécution des mouvements
+    for mv in [sens for sens, n in mvs for _ in range(n)]:
+        eval(mv + "()")
+        print(mv + "()")
+    print()
 
     # taille = 4
     # tours = taille**2 // 4
@@ -137,6 +135,7 @@ if __name__ == "__main__":
     #         eval(mvt + "()")
     #     print()
 
+    #####################################
     # # 108 tours de 13 kms
     # for _ in range(108):
     #     for mvt in ["haut", "droite", "bas", "gauche"]:

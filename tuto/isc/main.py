@@ -21,4 +21,4 @@ if __name__ == "__main__":
     tutos.main()
     print("←" * 118)
 
-# ft.app(target=main)
+ft.app(target=main)

@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from pymox_kit import *
 
 
 def example01():
@@ -14,8 +15,8 @@ def example01():
         age: int
         adresse: Adresse
 
-    a = Adresse("2 rue Machin", "Dijon", "21000")
-    p = Personne("Lionel", 60, a)
+    a = Adresse("2 rue Machin CHOSE", "Dijon", "21000")
+    p = Personne("Lionel", 36, a)
 
     print(p.adresse.rue)
 
@@ -40,5 +41,8 @@ def example02():
 
 
 if __name__ == "__main__":
+
+    cls()
     example01()
-    # example02()
+    print("─" * CLIW) # ❌ replace avec sl() ou ls() dès que accessible dans Kit
+    example02()
