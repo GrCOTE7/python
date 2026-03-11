@@ -22,7 +22,7 @@ def droite():
 
 cls()
 
-l=4 # Réduis la taille du problème, et quadn ça marchera là, tu emttras 10 ici !
+l=4 # Réduis la taille du problème, et quand ça marchera là, tu mettras 10 ici !
 
 for colonne in range(l):
 
