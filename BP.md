@@ -4,7 +4,7 @@
 
 ## But: → //2do [Monetize Actor](https://www.youtube.com/watch?v=4nxStxC1BJM&list=PLObrtcm1Kw6PEnu5BpeEFb8XEoQXMw0g7)
 
-## Divers
+## Divers 📞
 
 ### 2do Quotidien (Une leçon de chacun)
 
