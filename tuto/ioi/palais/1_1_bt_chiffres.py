@@ -92,6 +92,7 @@ def find_hamiltonian_cycle(
 
 # --- 5. Affichage du résultat ---
 
+cls() 
 if __name__ == "__main__":
     cycle = find_hamiltonian_cycle()
 
@@ -110,3 +111,5 @@ else:
         for c in range(COLS):
             row_nums.append(f"{order[(r,c)]:2d}")
         print(" ".join(row_nums))
+
+end()
