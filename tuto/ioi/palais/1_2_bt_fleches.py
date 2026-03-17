@@ -17,14 +17,15 @@ OFFSETS = [delta for delta, _ in MOVE_DEFINITIONS]
 Pos = Tuple[int, int]
 ARROW_BY_DELTA = dict(MOVE_DEFINITIONS)
 
+
 # --- 1. Voisins orthogonaux ---
 
 
 def neighbors(pos: Pos) -> List[Pos]:
     r, c = pos
     result = []
-    for dr, dc in OFFSETS:
-        nr, nc = r + dr, c + dc
+    for dr, dc in OFFSETS:  # d pour décalage
+        nr, nc = r + dr, c + dc  # n pour nouvelle
         if 0 <= nr < ROWS and 0 <= nc < COLS:
             result.append((nr, nc))
     return result
@@ -54,7 +55,6 @@ def backtrack(
 
             visited.remove(v)
             path.pop()
-
     return False
 
 
