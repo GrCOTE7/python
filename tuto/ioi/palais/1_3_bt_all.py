@@ -1,6 +1,9 @@
 from typing import List, Tuple, Dict, Set
-from pymox_kit import *
+from pymox_kit import cls, end
 
+
+# 4 x 4 :     6 solutions uniques
+# 6 x 6 : 1 072 solutions uniques
 ROWS = 4
 COLS = 4
 START = (0, 0)
@@ -110,16 +113,28 @@ def print_cycle(cycle: Tuple[Pos, ...]) -> None:
     # print()
 
 
+def main(aff=1):
+    """_summary_
+
+    Args:
+        aff (int, optional): affiche - Defaults to 1.
+    """
+    print(
+        f"Nombre de cycles hamiltoniens distincts sur une grille de {ROWS} x {COLS} : {len(all_cycles)}\n"
+    )
+
+    if aff:
+        for i, cyc in enumerate(all_cycles, 1):
+            print("─" * 8, i)
+            print_cycle(cyc)
+
+
 # --- 6. Lancement ---
 
 all_cycles = find_all_cycles()
 
-cls()
+if __name__ == "__main__":
 
-print(f"Nombre de cycles hamiltoniens distincts sur 4x4 : {len(all_cycles)}\n")
-
-for i, cyc in enumerate(all_cycles, 1):
-    print("─" * 8, i)
-    print_cycle(cyc)
-
-end()
+    cls()
+    main()
+    end()
