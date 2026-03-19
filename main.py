@@ -16,6 +16,7 @@ def print(*args, **kwargs):
 
 
 if __name__ == "__main__":
+    
     cols = CLIWR
 
     title = "Démo intérêts des fonctions cls(), sl(), ls() et nf()"

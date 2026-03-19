@@ -129,13 +129,14 @@ BT est la racine de toutes les autres méthodes.
 
 ## 1️⃣ BT — BackTracking “pur” (le plus intuitif)
 
-## Pseudo-code
-
-function explore(case, visited, path):
-    if toutes les cases sont visitées:
-        return case adjacent à A
+### Pseudo-code
 
 ```bash
+
+    function explore(case, visited, path):
+        if toutes les cases sont visitées:
+            return case adjacent à A
+    
     pour chaque voisin v de case:
         si v non visité:
             visited[v] = vrai
@@ -150,7 +151,25 @@ function explore(case, visited, path):
     return faux
 ```
 
-## Diagramm
+\+ Pédagogique
+
+```bash
+def bt(pos, step):
+    if step == TOTAL_CELLS:
+        if pos == START:   # cycle hamiltonien
+            save_solution()
+        return
+
+    for nxt in neighbors(pos):
+        if not visited[nxt]:
+            visited[nxt] = True
+            path[step] = nxt
+            bt(nxt, step + 1)
+            visited[nxt] = False
+
+```
+
+### Diagramm
 
 ```mermaid
 flowchart TD
@@ -209,22 +228,108 @@ flowchart TD
 
 ```
 
-2️⃣ BTH — BackTracking + Heuristiques (la version intelligente)
+## 2️⃣ BTH — BackTracking + Heuristiques (la version intelligente)
+
+On garde le BT, mais on choisit mieux les voisins.
+
+### ⭐ Heuristique de Warnsdorff (adaptée aux grilles)
+
+Pour chaque voisin possible
+
+* on calcule le nombre de mouvements possibles depuis ce voisin
+
+* on trie les voisins du plus contraint au moins contraint.
+
+→ on trie les voisins selon leur “degré” (nombre de sorties possibles).
+
+```python
+# Version Pédagogique (+ simple)
+def degree(pos, visited):
+    """Nombre de voisins libres autour de pos."""
+    count = 0
+    for nxt in neighbors(pos):
+        if not visited[nxt]:
+            count += 1
+    return count
+
+# Version Pythonique (+ typee)
+def degree(pos: Pos, visited: Dict[Pos, bool]) -> int:
+    """Nombre de voisins libres autour de pos."""
+    return sum(1 for v in neighbors(pos) if not visited[v])
+
+
+def bth(pos, step):
+    if step == TOTAL_CELLS:
+        if pos == START:
+            save_solution()
+        return
+
+    # 1) Générer les voisins libres
+    moves = [nxt for nxt in neighbors(pos) if not visited[nxt]]
+
+    # 2) Trier selon l’heuristique (Warnsdorff)
+    moves.sort(key=lambda v: degree(v, visited))
+
+
+    # 3) Explorer dans cet ordre
+    for nxt in moves:
+        visited[nxt] = True
+        path[step] = nxt
+        bth(nxt, step + 1)
+        visited[nxt] = False
+```
+### 🎯 Les méthodes BTH que tu veux intégrer
+
+Voici la liste officielle, propre, et cohérente :
+
+| Méthode        | Nom complet                  | Description                                                                   |
+|----------------|------------------------------|-------------------------------------------------------------------------------|
+| **"BTH"**      | Backtracking + Warnsdorff    | Tri par degré simple                                                          |
+| **"BTH++"**    | BTH + tie‑breaking           | Tri par degré + critère secondaire                                            |
+| **"BTH+++"**   | BTH + tie‑breaking dynamique | Critère secondaire dépendant du step, de la parité, ou de la distance à START |
+| **"parity"**   | BTH + filtre de parité       | On élimine les voisins qui violent la parité du chemin                        |
+| **"frontier"** | BTH + tie‑breaking frontière | On favorise les cases proches de la frontière                                 |
+
+
+### ⭐ BTH++ = BTH + tie‑breaking (critère secondaire) ❌
+
+L’idée est simple :
+
+Quand deux voisins ont le même degré, on applique un deuxième critère pour les départager.
+
+Ce deuxième critère peut être :
+
+* la distance à la fin,
+* la distance au centre,
+* la parité,
+* l’ordre fixe (haut, bas, gauche, droite),
+* la distance à START,
+* la distance à la frontière,
+etc.
+
+→ ✔ Tie‑breaking par distance au centre (+ classique)
+
+On favorise les cases plus centrales, car les bords sont plus contraints.
+
+### BTH++ avec tie‑breaking (ordre secondaire) BTH++ avec parité (encore plus rapide) 
+
+2_2 ❌ Faire simplifier graph pour n'avoir qu'un ligne (sauf départ flèche)
+
+2_3 ❌  version Mojo
+
+
+## 3️⃣ GR — Greedy / Heuristique gloutonne (rapide, mais pas garanti)
 
 ❌
 
-3️⃣ GR — Greedy / Heuristique gloutonne (rapide, mais pas garanti)
+## 4️⃣ CO — Construction directe (méthode mathématique)
 
 ❌
 
-4️⃣ CO — Construction directe (méthode mathématique)
+## 5️⃣ DP — Dynamic Programming (programmation dynamique)
 
 ❌
 
-5️⃣ DP — Dynamic Programming (programmation dynamique)
-
-❌
-
-6️⃣ SAT/ILP — Encodage dans un solveur général
+## 6️⃣ SAT/ILP — Encodage dans un solveur général
 
 ❌
