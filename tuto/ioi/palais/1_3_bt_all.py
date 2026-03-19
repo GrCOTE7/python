@@ -4,8 +4,8 @@ from pymox_kit import cls, end
 
 # 4 x 4 :     6 solutions uniques
 # 6 x 6 : 1 072 solutions uniques
-ROWS = 6
-COLS = 6
+ROWS = 4
+COLS = ROWS
 START = (0, 0)
 
 Pos = Tuple[int, int]
