@@ -237,7 +237,7 @@ def benchmark_methods(methods):
 
 if __name__ == "__main__":
     
-    ROWS = 6
+    ROWS = 4
     COLS = ROWS
 
     import time

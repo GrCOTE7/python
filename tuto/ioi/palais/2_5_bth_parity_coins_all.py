@@ -1,6 +1,6 @@
 from typing import List, Tuple, Set
 from pathlib import Path
-from pymox_kit import cls, end, SB, R, bip_time
+from pymox_kit import cls, end, SB, R, bip_time, nf
 
 START = (0, 0)
 # Convention globale: on fixe le point de depart du cycle ici.
@@ -15,7 +15,7 @@ def neighbors(pos: Pos) -> List[Pos]:
     r, c = pos
     result = []
     # Voisinage 4-connecte (haut, bas, droite, gauche).
-    for dr, dc in [(1, 0), (-1, 0), (0, 1), (0, -1)]: # ↑, ↓, →, ←
+    for dr, dc in [(1, 0), (-1, 0), (0, 1), (0, -1)]:  # ↑, ↓, →, ←
         nr, nc = r + dr, c + dc
         if 0 <= nr < ROWS and 0 <= nc < COLS:
             result.append((nr, nc))
@@ -182,8 +182,7 @@ def cycle_to_lines(cycle: Tuple[Pos, ...]) -> List[str]:
             display[cur_pos] = CONNECTION_GLYPHS.get(frozenset((in_dir, out_dir)), "?")
 
     return [
-        " ".join(display[(r, c)] for c in range(COLS))
-        for r in range(ROWS - 1, -1, -1)
+        " ".join(display[(r, c)] for c in range(COLS)) for r in range(ROWS - 1, -1, -1)
     ]
 
 
@@ -218,7 +217,7 @@ def main(aff: int = 1):
         print(f"Aucun cycle trouvé sur une grille {ROWS} x {COLS}")
         return
     print(
-        f"Nombre de cycles hamiltoniens distincts sur une grille {ROWS} x {COLS} : {len(all_cycles)}\n"
+        f"Nombre de cycles hamiltoniens distincts sur une grille {ROWS} x {COLS} : {SB}{nf(len(all_cycles),0)}{R}\n"
     )
 
     # Evite l'explosion de la console quand il y a beaucoup de solutions (ex: 6x6).
@@ -239,7 +238,7 @@ if __name__ == "__main__":
 
     cls()
 
-    ROWS = 6
+    ROWS = 4
     COLS = ROWS
 
     main(1)
