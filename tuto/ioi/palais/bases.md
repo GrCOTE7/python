@@ -36,7 +36,7 @@ On réduit énormément les essais
 
 👉 Très pédagogique, très utile.
 
-3️⃣ GR — Greedy / Heuristique gloutonne (rapide, mais pas garanti)
+3️⃣ GR — Greedy Rexconstruction (rapide, mais pas garanti)
 
 Greedy = Glouton
 
@@ -278,6 +278,7 @@ def bth(pos, step):
         bth(nxt, step + 1)
         visited[nxt] = False
 ```
+
 ### 🎯 Les méthodes BTH que tu veux intégrer
 
 Voici la liste officielle, propre, et cohérente :
@@ -290,8 +291,7 @@ Voici la liste officielle, propre, et cohérente :
 | **"parity"**   | BTH + filtre de parité       | On élimine les voisins qui violent la parité du chemin                        |
 | **"frontier"** | BTH + tie‑breaking frontière | On favorise les cases proches de la frontière                                 |
 
-
-### ⭐ BTH++ = BTH + tie‑breaking (critère secondaire) ❌
+### ⭐ BTH++ = BTH + tie‑breaking (critère secondaire)
 
 L’idée est simple :
 
@@ -313,15 +313,124 @@ On favorise les cases plus centrales, car les bords sont plus contraints.
 
 ### BTH++ avec tie‑breaking (ordre secondaire) BTH++ avec parité (encore plus rapide) 
 
-2_2 ❌ Faire simplifier graph pour n'avoir qu'un ligne (sauf départ flèche)
+## 3️⃣ GR — Greedy Reconstruction
 
-2_3 ❌  version Mojo
+Imagine que tu dois reconstruire un tableau de bits, mais certains bits sont manquants.
 
+BTH ferait :
 
-## 3️⃣ GR — Greedy / Heuristique gloutonne (rapide, mais pas garanti)
+```python
+def BTH_reconstruct(missing_index):
+    for possible_value in [0, 1]:
+        if constraints_respected(possible_value):
+            result = BTH_reconstruct(next_missing)
+            if result != FAIL:
+                return result
+    return FAIL
+```
 
-❌
+* → il teste toutes les possibilités  
+* → il revient en arrière si ça ne marche pas
+* → fiable mais lent
 
+GR ferait :
+
+```python
+def GR_reconstruct(missing_index):
+    value = guess_best_value(missing_index)  # heuristique
+    if constraints_respected(value):
+        return value
+    else:
+        return FAIL
+```
+
+* → il devine la valeur la plus probable = choisit la meilleure option locale
+* → il ne revient jamais en arrière  
+* → rapide mais peut se tromper
+
+exemple:
+
+1 1 ? 1 1
+
+GR dit :
+“La majorité est 1 → je mets 1.”
+
+BTH dit :
+“J’essaie 0 → ça marche pas → j’essaie 1 → ça marche.”
+
+🧩 Pseudo‑code GR pour une grille 4×4
+pseudo
+
+```python
+function GR_Robot_4x4():
+
+    start = (0, 0)                 # bas gauche
+    current = start
+
+    path = [start]
+    visited = { start }
+
+    for step in 1..15:             # il reste 15 cases à visiter
+
+        # 1. voisins possibles (haut, bas, gauche, droite)
+        neighbors = get_neighbors(current)
+
+        # 2. garder seulement les voisins valides
+        candidates = []
+        for cell in neighbors:
+            if inside_grid(cell) and cell not in visited:
+                candidates.append(cell)
+
+        # 3. si aucun voisin → GR échoue
+        if candidates is empty:
+            return FAIL
+
+        # 4. choisir le meilleur voisin selon une heuristique locale
+        best_cell = NONE
+        best_score = -∞
+
+        for cell in candidates:
+            score = evaluate_local_score(cell, visited)
+            if score > best_score:
+                best_score = score
+                best_cell = cell
+
+        # 5. avancer
+        current = best_cell
+        visited.add(current)
+        path.append(current)
+
+    # 6. vérifier si on peut revenir au départ
+    if start in get_neighbors(current):
+        path.append(start)
+        return path
+    else:
+        return FAIL
+```
+
+🔍 Détail de la fonction de scoring - Heuristique locale (le cœur du “G” de Greedy)
+pseudo
+
+```python
+function evaluate_local_score(cell, visited):
+
+    score = 0
+
+    # 1. On préfère les cases qui ont peu de voisins libres
+    free = count_neighbors_not_visited(cell, visited)
+    score -= free                 # moins il y en a, mieux c'est
+
+    # 2. On évite les coins trop tôt
+    if cell is a corner:
+        score -= 2
+
+    # 3. On favorise les cases qui ne créent pas d'impasse
+    if leads_to_dead_end(cell, visited):
+        score -= 5
+
+    return score
+```
+        
 ## 4️⃣ CO — Construction directe (méthode mathématique)
 
 ❌

@@ -106,6 +106,7 @@ def find_all_cycles_parity(start: Pos = START) -> List[Tuple[Pos, ...]]:
             visited[nxt] = False
 
     dfs_all(start_i, 1)
+    # print(canonical_cycles)
     return [tuple(positions[i] for i in cyc) for cyc in sorted(canonical_cycles)]
 
 
@@ -140,31 +141,6 @@ CONNECTION_GLYPHS: dict[frozenset[str], str] = {
     frozenset(("↑", "←")): "┘",  # ALT + 217
 }
 
-
-def print_cycle(cycle: Tuple[Pos, ...]) -> None:
-    display: dict[Pos, str] = {}
-    for i in range(len(cycle)):
-        # Indices circulaires pour relier premier et dernier sommet.
-        prev_pos = cycle[(i - 1) % len(cycle)]
-        cur_pos = cycle[i]
-        next_pos = cycle[(i + 1) % len(cycle)]
-
-        in_dir = direction(cur_pos, prev_pos)
-        out_dir = direction(cur_pos, next_pos)
-
-        if cur_pos == START:
-            # Convention d'affichage: START montre seulement la direction de sortie.
-            display[cur_pos] = out_dir
-        else:
-            display[cur_pos] = CONNECTION_GLYPHS.get(
-                frozenset((in_dir, out_dir)),
-                "?",
-            )
-    # Impression du haut vers le bas pour respecter la geometrie visuelle.
-    for r in range(ROWS - 1, -1, -1):
-        print(" ".join(display[(r, c)] for c in range(COLS)))
-
-
 def cycle_to_lines(cycle: Tuple[Pos, ...]) -> List[str]:
     """Construit la grille d'une solution sous forme de lignes texte."""
     display: dict[Pos, str] = {}
@@ -180,10 +156,11 @@ def cycle_to_lines(cycle: Tuple[Pos, ...]) -> List[str]:
             display[cur_pos] = out_dir
         else:
             display[cur_pos] = CONNECTION_GLYPHS.get(frozenset((in_dir, out_dir)), "?")
-
-    return [
+    lines = [
         " ".join(display[(r, c)] for c in range(COLS)) for r in range(ROWS - 1, -1, -1)
     ]
+    lines[-1] = " ".join(["x"] + lines[-1].split()[1:])
+    return lines
 
 
 def save_cycles_to_txt(all_cycles: List[Tuple[Pos, ...]]) -> Path:
@@ -221,17 +198,19 @@ def main(aff: int = 1):
     )
 
     # Evite l'explosion de la console quand il y a beaucoup de solutions (ex: 6x6).
-    write_to_file = len(all_cycles) > 100 or ROWS > 4
+    write_to_file = len(all_cycles) > 100 or ROWS > 3
 
     if write_to_file:
         out_path = save_cycles_to_txt(all_cycles)
-        print(f"Solutions ecrites dans: {out_path}")
-        return
+        print(f"Solutions ecrites dans: {out_path}\n")
+        # return # si soit fichier soit affichage
 
     if aff:
         for i, cyc in enumerate(all_cycles, 1):
             print("─" * 8, i)
-            print_cycle(cyc)
+            lines = cycle_to_lines(cyc)
+            for line in lines:
+                print(line)
 
 
 if __name__ == "__main__":

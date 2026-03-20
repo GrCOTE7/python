@@ -58,5 +58,6 @@
   "cSpell.language": "en,fr-FR,fr,lorem",
   "zencoder.enableRepoIndexing": true,
   "git.ignoreLimitWarning": true,
-  "materialkv.pythonFile": "main.py"
+  "materialkv.pythonFile": "main.py",
+  "python-envs.defaultEnvManager": "ms-python.python:system"
 }

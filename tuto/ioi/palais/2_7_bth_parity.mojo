@@ -1,8 +1,8 @@
 # parity-only Hamiltonian cycle on an orthogonal grid
 # Mojo version focused on speed for even grids (e.g. 8x8)
 
-alias ROWS = 8
-alias COLS = 8
+alias ROWS = 4
+alias COLS = 4
 
 # ❌ Faire marcher ce script en Mojo
 
