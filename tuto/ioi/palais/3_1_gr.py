@@ -41,29 +41,33 @@ def evaluate_local_score(cell: Pos, visited: Set[Pos]) -> int:
 def greedy_cycle(start: Pos = START) -> Tuple[Pos, ...] | None:
     visited: Set[Pos] = {start}
     path: List[Pos] = [start]
-    current = start
 
-    for _ in range(ROWS * COLS - 1):
+    def ordered_candidates(current: Pos, seen: Set[Pos]) -> List[Pos]:
+        candidates = [v for v in neighbors(current) if v not in seen]
+        # Tri décroissant: meilleur score d'abord.
+        return sorted(candidates, key=lambda cell: evaluate_local_score(cell, seen), reverse=True)
 
-        # voisins non visités
-        candidates = [v for v in neighbors(current) if v not in visited]
+    def search(current: Pos) -> bool:
+        if len(path) == ROWS * COLS:
+            return start in neighbors(current)
 
-        if not candidates:
-            return None  # GR échoue
+        for nxt in ordered_candidates(current, visited):
+            visited.add(nxt)
+            path.append(nxt)
 
-        # choisir le meilleur voisin selon l’heuristique
-        best = max(candidates, key=lambda cell: evaluate_local_score(cell, visited))
+            if search(nxt):
+                return True
 
-        visited.add(best)
-        path.append(best)
-        current = best
+            path.pop()
+            visited.remove(nxt)
 
-    # vérifier si on peut revenir au départ
-    if START in neighbors(current):
-        path.append(START)
-        return tuple(path)
+        return False
 
-    return None
+    if not search(start):
+        return None
+
+    path.append(start)
+    return tuple(path)
 
 
 # --- 4. Affichage (identique à ton script BTH) ---
@@ -94,17 +98,19 @@ CONNECTION_GLYPHS = {
 
 
 def print_cycle(cycle: Tuple[Pos, ...]) -> None:
+    # Si le cycle est "fermé" (START répété en fin), on n'affiche qu'une seule fois cette case.
+    nodes = cycle[:-1] if len(cycle) > 1 and cycle[0] == cycle[-1] else cycle
     display = {}
-    for i in range(len(cycle)):
-        prev_pos = cycle[(i - 1) % len(cycle)]
-        cur_pos = cycle[i]
-        next_pos = cycle[(i + 1) % len(cycle)]
+    for i in range(len(nodes)):
+        prev_pos = nodes[(i - 1) % len(nodes)]
+        cur_pos = nodes[i]
+        next_pos = nodes[(i + 1) % len(nodes)]
 
         in_dir = direction(cur_pos, prev_pos)
         out_dir = direction(cur_pos, next_pos)
 
         if cur_pos == START:
-            display[cur_pos] = out_dir
+            display[cur_pos] = "x"
         else:
             display[cur_pos] = CONNECTION_GLYPHS.get(frozenset((in_dir, out_dir)), "?")
 
