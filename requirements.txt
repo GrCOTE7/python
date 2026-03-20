@@ -15,6 +15,7 @@ lorem
 matplotlib
 mysql_connector_repackaged
 nltk
+ortools
 pandas
 Pillow
 prettytable
@@ -23,6 +24,7 @@ pymox_kit
 pyparsing
 pyperclip
 PyQt5
+pulp
 reflex
 Requests
 rich

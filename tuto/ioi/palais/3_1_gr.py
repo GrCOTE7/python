@@ -60,7 +60,6 @@ def greedy_cycle(start: Pos = START) -> Tuple[Pos, ...] | None:
 
             path.pop()
             visited.remove(nxt)
-
         return False
 
     if not search(start):
@@ -135,7 +134,7 @@ def main():
 if __name__ == "__main__":
     cls()
     
-    ROWS = 4
+    ROWS = 8
     COLS = ROWS
     
     main()

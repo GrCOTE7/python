@@ -430,15 +430,169 @@ function evaluate_local_score(cell, visited):
 
     return score
 ```
-        
+
 ## 4️⃣ CO — Construction directe (méthode mathématique)
 
-❌
+ On construit directement un cycle à partir d’un motif global, sans exploration exhaustive.
+
+```python
+function CO_cycle():
+
+    path = []
+
+    for row in 0..3:
+
+        if row is even:
+            # serpentin vers la droite
+            for col in 0..3:
+                path.append((row, col))
+        else:
+            # serpentin vers la gauche
+            for col in 3..0:
+                path.append((row, col))
+
+    # on ferme le cycle en revenant à START
+    path.append((0,0))
+
+    return path
+```
 
 ## 5️⃣ DP — Dynamic Programming (programmation dynamique)
 
-❌
+Ici, on mémorise les sous-problèmes pour éviter de recalculer les mêmes branches.
+
+Un état DP représente :
+
+* la position courante `(r, c)`
+* l'ensemble des cases déjà visitées `mask` (bitmask)
+
+Sur une grille 4×4, on numérote les 16 cases de `0` à `15`.
+
+`mask` est un entier binaire où le bit `i` vaut 1 si la case `i` est déjà visitée.
+
+### 🧩 Idée de transition
+
+Depuis un état `(pos, mask)`, on essaie chaque voisin `nxt` non visité :
+
+* `new_mask = mask | (1 << nxt)`
+* on continue vers `(nxt, new_mask)`
+
+Cas terminal :
+
+* si `mask` contient toutes les cases, on valide seulement si `pos` est adjacent à `START` (cycle hamiltonien fermé).
+
+### Pseudo-code (DP top-down + mémoïsation)
+
+```python
+function DP(pos, mask):
+
+    if mask == ALL_VISITED:
+        return START in neighbors(pos)
+
+    if memo[pos][mask] is known:
+        return memo[pos][mask]
+
+    for nxt in neighbors(pos):
+        if bit(nxt) not in mask:
+            if DP(nxt, mask union bit(nxt)):
+                parent[(pos, mask)] = nxt
+                memo[pos][mask] = True
+                return True
+
+    memo[pos][mask] = False
+    return False
+```
+
+### 📈 Complexité
+
+Nombre d'états : `N * 2^N`
+
+Transitions par état : au plus 4 (grille orthogonale)
+
+Complexité temporelle : `O(4 * N * 2^N)`
+
+Complexité mémoire : `O(N * 2^N)`
+
+Pour `N = 16`, c'est faisable. Pour des grilles bien plus grandes, ça devient vite coûteux.
 
 ## 6️⃣ SAT/ILP — Encodage dans un solveur général
 
-❌
+Ici, on ne code plus un algorithme de parcours "a la main".
+
+On transforme le probleme en contraintes logiques (SAT) ou lineaires (ILP),
+puis on laisse un solveur general trouver une solution.
+
+### 🧠 Idee SAT (variables booleennes)
+
+On definit une variable booleenne `x[v, t]` :
+
+* `x[v, t] = True` signifie : la case `v` est visitee au pas `t`.
+
+Ensuite on ajoute des contraintes :
+
+* chaque pas `t` contient exactement une case,
+* chaque case `v` apparait exactement une fois,
+* les pas consecutifs doivent etre adjacents,
+* le dernier pas doit etre adjacent a `START` (fermeture du cycle),
+* on peut fixer `START` au pas 0 pour casser une symetrie.
+
+### 🧱 Idee ILP (variables binaires)
+
+Meme logique, mais avec des variables binaires `x[v, t] in {0,1}` et des equations :
+
+* `sum_v x[v, t] = 1` pour tout `t`
+* `sum_t x[v, t] = 1` pour tout `v`
+* contraintes d'adjacence entre `t` et `t+1`
+
+Un solveur MILP (par ex. CBC, Gurobi, CPLEX) peut alors chercher une solution faisable.
+
+### Pseudo-code SAT/ILP (vue haut niveau)
+
+```python
+function solve_by_solver():
+    model = new_model()
+
+    # Variables: x[v,t]
+    create_binary_variables(x[v,t])
+
+    # 1) Une case par pas
+    for t in steps:
+        add_constraint(sum_v x[v,t] == 1)
+
+    # 2) Une visite par case
+    for v in cells:
+        add_constraint(sum_t x[v,t] == 1)
+
+    # 3) Adjacence
+    for t in steps:
+        forbid_non_adjacent_pairs_between_t_and_t_plus_1()
+
+    # 4) Fixer START au pas 0
+    add_constraint(x[START,0] == 1)
+
+    status = solver.solve(model)
+    if status is feasible:
+        return decode_cycle_from_x()
+    return FAIL
+```
+
+### ✅ Avantages / ⚠ Limites
+
+Avantages :
+
+* formulation tres generale,
+* robuste,
+* facile d'ajouter des contraintes metier.
+
+Limites :
+
+* encodage moins intuitif,
+* cout de modelisation,
+* performances dependantes du solveur et de l'encodage.
+
+### 📈 Complexite (idee)
+
+Le probleme hamiltonien reste NP-complet.
+
+SAT/ILP ne change pas la nature theorique du probleme,
+mais beneficie d'optimisations industrielles tres puissantes en pratique.
