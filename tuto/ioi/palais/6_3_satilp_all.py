@@ -1,4 +1,6 @@
-from typing import Dict, List, Optional, Set, Tuple
+import threading
+import time
+from typing import Callable, Dict, List, Optional, Set, Tuple
 from pymox_kit import cls, end, SB, R, bip_time, nf
 from codetiming import Timer
 
@@ -21,11 +23,16 @@ START = (0, 0)
 Pos = Tuple[int, int]
 
 # Choix solveur: "auto", "cp_sat", "ilp"
-SOLVER_MODE = "auto"
-TIME_LIMIT_SECONDS = 120
+SOLVER_MODE = "ilp"
+TIME_LIMIT_SECONDS = 0  # 0 = sans limite
 MAX_ENUM_CELLS = 100
-MAX_SOLUTIONS = 0 # 0 = sans limite
+MAX_SOLUTIONS = 0  # 0 = sans limite
+BREAK_SYMMETRY = False
 PRINT_EACH_SOLUTION = False
+SHOW_PROGRESS = True
+PROGRESS_EVERY = 25
+HEARTBEAT_SECONDS = 10
+SHOW_SOLVER_LOG = False
 
 
 # --- 1. Voisins orthogonaux ---
@@ -99,6 +106,76 @@ def _canonical_signature(cycle: Tuple[Pos, ...]) -> Tuple[int, ...]:
     return seq if seq <= rev else rev
 
 
+def _register_cycle_if_valid(
+    cyc: Optional[Tuple[Pos, ...]],
+    seen: Set[Tuple[int, ...]],
+    raw_cycles: List[Tuple[Pos, ...]],
+) -> bool:
+    if cyc is None:
+        return False
+
+    sig = _canonical_signature(cyc)
+    if sig in seen:
+        return True
+
+    seen.add(sig)
+    raw_cycles.append(cyc)
+    if PRINT_EACH_SOLUTION:
+        print(f"Solution {len(raw_cycles)}")
+        print_cycle(cyc)
+        print()
+
+    return True
+
+
+def _successor_from_active_arcs(
+    active_arcs: List[Tuple[int, int]],
+) -> Dict[int, int]:
+    successor: Dict[int, int] = {}
+    for i, j in active_arcs:
+        successor[i] = j
+    return successor
+
+
+def _extract_active_arcs_cp_sat(
+    solver: "cp_model.CpSolver",
+    x: Dict[Tuple[int, int], "cp_model.IntVar"],
+    arcs: List[Tuple[int, int]],
+) -> List[Tuple[int, int]]:
+    return [a for a in arcs if solver.Value(x[a]) == 1]
+
+
+def _extract_active_arcs_ilp(
+    x: Dict[Tuple[int, int], "pulp.LpVariable"],
+    arcs: List[Tuple[int, int]],
+) -> List[Tuple[int, int]]:
+    active_arcs: List[Tuple[int, int]] = []
+    for a in arcs:
+        raw_val = pulp.value(x[a])
+        val = float(raw_val) if isinstance(raw_val, (int, float)) else 0.0
+        if val > 0.5:
+            active_arcs.append(a)
+    return active_arcs
+
+
+def _has_reached_solution_limit(raw_cycles: List[Tuple[Pos, ...]]) -> bool:
+    return MAX_SOLUTIONS > 0 and len(raw_cycles) >= MAX_SOLUTIONS
+
+
+def _start_heartbeat(label: str):
+    stop_event = threading.Event()
+    started = time.perf_counter()
+
+    def _run() -> None:
+        while not stop_event.wait(HEARTBEAT_SECONDS):
+            elapsed = time.perf_counter() - started
+            print(f"[ILP] ... {label} en cours ({elapsed:.1f}s)", flush=True)
+
+    thread = threading.Thread(target=_run, daemon=True)
+    thread.start()
+    return stop_event, thread, started
+
+
 # --- 3. Build modèles SAT/ILP ---
 
 
@@ -118,6 +195,14 @@ def _build_cp_sat_model(start_i: int, n: int, arcs: List[Tuple[int, int]]):
     for i in range(n):
         model.Add(sum(x[a] for a in out_arcs[i]) == 1)
         model.Add(sum(x[a] for a in in_arcs[i]) == 1)
+
+    if BREAK_SYMMETRY:
+        # Bris de symetrie: force une orientation fixe au depart.
+        start_out = sorted(j for i, j in arcs if i == start_i)
+        start_in = sorted(i for i, j in arcs if j == start_i)
+        if len(start_out) >= 2 and len(start_in) >= 2:
+            model.Add(x[(start_i, start_out[0])] == 1)
+            model.Add(x[(start_in[-1], start_i)] == 1)
 
     # MTZ pour éliminer les sous-tours.
     u: Dict[int, cp_model.IntVar] = {}
@@ -151,6 +236,14 @@ def _build_ilp_model(start_i: int, n: int, arcs: List[Tuple[int, int]]):
         model += pulp.lpSum(x[a] for a in out_arcs[i]) == 1
         model += pulp.lpSum(x[a] for a in in_arcs[i]) == 1
 
+    if BREAK_SYMMETRY:
+        # Bris de symetrie: force une orientation fixe au depart.
+        start_out = sorted(j for i, j in arcs if i == start_i)
+        start_in = sorted(i for i, j in arcs if j == start_i)
+        if len(start_out) >= 2 and len(start_in) >= 2:
+            model += x[(start_i, start_out[0])] == 1
+            model += x[(start_in[-1], start_i)] == 1
+
     u: Dict[int, pulp.LpVariable] = {}
     for i in range(n):
         if i == start_i:
@@ -176,41 +269,30 @@ def _enumerate_cp_sat(
 ) -> List[Tuple[Pos, ...]]:
     model, x = _build_cp_sat_model(start_i, n, arcs)
     solver = cp_model.CpSolver()
-    solver.parameters.max_time_in_seconds = float(TIME_LIMIT_SECONDS)
+    if TIME_LIMIT_SECONDS > 0:
+        solver.parameters.max_time_in_seconds = float(TIME_LIMIT_SECONDS)
     solver.parameters.num_search_workers = 8
 
     raw_cycles: List[Tuple[Pos, ...]] = []
     seen: Set[Tuple[int, ...]] = set()
 
+    # Même trame que l'ILP pour garder les deux backends faciles à comparer.
     while True:
-        status = solver.Solve(model)
-        if status not in (cp_model.OPTIMAL, cp_model.FEASIBLE):
+        solve_status = solver.Solve(model)
+        if solve_status not in (cp_model.OPTIMAL, cp_model.FEASIBLE):
             break
 
-        successor: Dict[int, int] = {}
-        active_arcs: List[Tuple[int, int]] = []
-        for i, j in arcs:
-            if solver.Value(x[(i, j)]) == 1:
-                successor[i] = j
-                active_arcs.append((i, j))
+        active_arcs = _extract_active_arcs_cp_sat(solver, x, arcs)
+        successor = _successor_from_active_arcs(active_arcs)
 
         cyc = _decode_cycle_from_successor(successor, start_i, n)
-        if cyc is None:
+        if not _register_cycle_if_valid(cyc, seen, raw_cycles):
             break
-
-        sig = _canonical_signature(cyc)
-        if sig not in seen:
-            seen.add(sig)
-            raw_cycles.append(cyc)
-            if PRINT_EACH_SOLUTION:
-                print(f"Solution {len(raw_cycles)}")
-                print_cycle(cyc)
-                print()
 
         # Clause de blocage: on interdit exactement cet ensemble d'arcs.
         model.Add(sum(x[a] for a in active_arcs) <= n - 1)
 
-        if MAX_SOLUTIONS > 0 and len(raw_cycles) >= MAX_SOLUTIONS:
+        if _has_reached_solution_limit(raw_cycles):
             break
 
     return raw_cycles
@@ -224,38 +306,62 @@ def _enumerate_ilp(
     raw_cycles: List[Tuple[Pos, ...]] = []
     seen: Set[Tuple[int, ...]] = set()
 
+    # Même trame que le CP-SAT pour garder les deux backends faciles à comparer.
     while True:
-        solver = pulp.PULP_CBC_CMD(msg=False, timeLimit=TIME_LIMIT_SECONDS)
-        status = model.solve(solver)
+        attempt = len(raw_cycles) + 1
+        if SHOW_PROGRESS:
+            print(f"[ILP] Recherche solution #{attempt}...", flush=True)
 
-        if status != pulp.LpStatusOptimal:
-            break
+        stop_event = None
+        heartbeat_thread = None
+        solve_started = time.perf_counter()
+        if SHOW_PROGRESS and HEARTBEAT_SECONDS > 0:
+            stop_event, heartbeat_thread, solve_started = _start_heartbeat(
+                f"solve #{attempt}"
+            )
 
-        successor: Dict[int, int] = {}
-        active_arcs: List[Tuple[int, int]] = []
-        for a in arcs:
-            val = pulp.value(x[a])
-            if val is not None and val > 0.5:
-                successor[a[0]] = a[1]
-                active_arcs.append(a)
+        if TIME_LIMIT_SECONDS > 0:
+            solver = pulp.PULP_CBC_CMD(
+                msg=SHOW_SOLVER_LOG, timeLimit=TIME_LIMIT_SECONDS
+            )
+        else:
+            solver = pulp.PULP_CBC_CMD(msg=SHOW_SOLVER_LOG)
+        solve_status = model.solve(solver)
+
+        if stop_event is not None:
+            stop_event.set()
+        if heartbeat_thread is not None:
+            heartbeat_thread.join(timeout=0.2)
+
+        solve_elapsed = time.perf_counter() - solve_started
+        if SHOW_PROGRESS:
+            status_name = pulp.LpStatus.get(solve_status, str(solve_status))
+            print(
+                f"[ILP] Fin solve #{attempt}: status={status_name}, t={solve_elapsed:.2f}s",
+                flush=True,
+            )
+
+        active_arcs = _extract_active_arcs_ilp(x, arcs)
+        successor = _successor_from_active_arcs(active_arcs)
 
         cyc = _decode_cycle_from_successor(successor, start_i, n)
-        if cyc is None:
+        found_cycle = _register_cycle_if_valid(cyc, seen, raw_cycles)
+
+        # Si le solveur n'a pas prouve l'optimalite et qu'aucun cycle n'est
+        # decodable, on s'arrete proprement (timeout ou infeasible).
+        if solve_status != pulp.LpStatusOptimal and not found_cycle:
             break
 
-        sig = _canonical_signature(cyc)
-        if sig not in seen:
-            seen.add(sig)
-            raw_cycles.append(cyc)
-            if PRINT_EACH_SOLUTION:
-                print(f"Solution {len(raw_cycles)}")
-                print_cycle(cyc)
-                print()
+        if not found_cycle:
+            break
+
+        if SHOW_PROGRESS and (len(raw_cycles) % PROGRESS_EVERY == 0):
+            print(f"[ILP] Progression: {len(raw_cycles)} solutions", flush=True)
 
         # Coupe d'exclusion ILP.
         model += pulp.lpSum(x[a] for a in active_arcs) <= n - 1
 
-        if MAX_SOLUTIONS > 0 and len(raw_cycles) >= MAX_SOLUTIONS:
+        if _has_reached_solution_limit(raw_cycles):
             break
 
     return raw_cycles
@@ -343,11 +449,53 @@ def print_cycle(cycle: Tuple[Pos, ...]) -> None:
         print(" ".join(display[(r, c)] for c in range(COLS)))
 
 
+def _edge_key(a: Pos, b: Pos) -> Tuple[Pos, Pos]:
+    return (a, b) if a <= b else (b, a)
+
+
+def _cycle_edges(cycle: Tuple[Pos, ...]) -> Set[Tuple[Pos, Pos]]:
+    nodes = cycle[:-1] if len(cycle) > 1 and cycle[0] == cycle[-1] else cycle
+    edges: Set[Tuple[Pos, Pos]] = set()
+    for i in range(len(nodes)):
+        a = nodes[i]
+        b = nodes[(i + 1) % len(nodes)]
+        edges.add(_edge_key(a, b))
+    return edges
+
+
+def _reflect_x(pos: Pos) -> Pos:
+    r, c = pos
+    return (ROWS - 1 - r, c)
+
+
+def _reflect_y(pos: Pos) -> Pos:
+    r, c = pos
+    return (r, COLS - 1 - c)
+
+
+def _transform_edges(
+    edges: Set[Tuple[Pos, Pos]], transform: Callable[[Pos], Pos]
+) -> Set[Tuple[Pos, Pos]]:
+    transformed: Set[Tuple[Pos, Pos]] = set()
+    for a, b in edges:
+        transformed.add(_edge_key(transform(a), transform(b)))
+    return transformed
+
+
+def _is_perfectly_symmetric_xy(cycle: Tuple[Pos, ...]) -> bool:
+    edges = _cycle_edges(cycle)
+    return _transform_edges(edges, _reflect_x) == edges and _transform_edges(
+        edges, _reflect_y
+    ) == edges
+
+
 # --- 6. Lancement ---
 
 
 @Timer(text="⏱️: {seconds:.2f} s")
-def main() -> None:
+def main(aff: int = 0, idx: int = 1, sym: bool = False) -> None:
+    global PRINT_EACH_SOLUTION
+
     n = ROWS * COLS
 
     if ROWS < 2 or COLS < 2:
@@ -364,7 +512,12 @@ def main() -> None:
         print("Aucun solveur disponible. Installer 'ortools' (CP-SAT) ou 'pulp' (ILP).")
         return
 
-    cycles = enumerate_all_cycles_sat_ilp(START, SOLVER_MODE)
+    prev_print_each_solution = PRINT_EACH_SOLUTION
+    PRINT_EACH_SOLUTION = aff >= 2
+    try:
+        cycles = enumerate_all_cycles_sat_ilp(START, SOLVER_MODE)
+    finally:
+        PRINT_EACH_SOLUTION = prev_print_each_solution
 
     if not cycles:
         print(
@@ -373,22 +526,42 @@ def main() -> None:
         return
 
     backend = "CP-SAT" if HAS_CP_SAT and SOLVER_MODE in ("auto", "cp_sat") else "ILP"
-    print(
-        f"{SB}{len(cycles)}{R} solution{'s' if len(cycles)>1 else ''} par SAT/ILP ({backend}) pour {SB}{ROWS * COLS}{R} cases ( {SB}{ROWS}x{COLS}{R} )."
-    )
+    if aff > 0 or not idx:
+        print(
+            f"\n{SB}{len(cycles)}{R} solution{'s' if len(cycles)>1 else ''} par SAT/ILP ({backend}) pour {SB}{ROWS * COLS}{R} cases ( {SB}{ROWS}x{COLS}{R} )\n."
+        )
 
-    # Affiche un exemple pour vérification visuelle.
-    print("\nExemple de solution :\n")
-    print_cycle(cycles[0])
+    if aff == 1:
+        # Affiche un exemple pour vérification visuelle.
+        print("\nExemple de solution :\n")
+        print_cycle(cycles[0])
+    elif aff >= 2:
+        print("\nAffichage en direct des solutions active (dessin a la decouverte).\n")
+
+    if sym:
+        sym_cycles = [c for c in cycles if _is_perfectly_symmetric_xy(c)]
+        print(
+            f"\nSolutions parfaitement symetriques selon x et y: {len(sym_cycles)}/{len(cycles)}\n"
+        )
+        if not sym_cycles:
+            print("Aucune solution parfaitement symetrique trouvee.")
+        else:
+            for k, cycle in enumerate(sym_cycles, start=1):
+                print(f"Solution symetrique {k}/{len(sym_cycles)}")
+                print_cycle(cycle)
+                print()
 
 
 if __name__ == "__main__":
 
     cls()
 
-    ROWS = 8
+    ROWS = 6
     COLS = ROWS
 
-    main()
+    nb = 1
+    for i in range(nb):
+        main(aff=2, idx=i, sym=True)
+        bip_time()
 
     end()

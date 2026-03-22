@@ -1,5 +1,5 @@
 from typing import Dict, List, Optional, Tuple
-from pymox_kit import cls, end, SB, R, bip_time, nf
+from pymox_kit import cls, end, CLIW, SB, R, bip_time, nf
 from codetiming import Timer
 
 
@@ -21,7 +21,8 @@ START = (0, 0)
 Pos = Tuple[int, int]
 
 # Choix solveur: "auto", "cp_sat", "ilp"
-SOLVER_MODE = "auto"
+# SOLVER_MODE = "cp_sat"
+SOLVER_MODE = "ilp"
 TIME_LIMIT_SECONDS = 120
 
 
@@ -278,19 +279,21 @@ def print_cycle(cycle: Tuple[Pos, ...]) -> None:
 
 # --- 6. Lancement ---
 
-cumul = 0
-
 
 # @Timer(text="⏱️: {seconds:.2f} s")
-def main(noAff=False) -> None:
+def main(noAff=False, idx=0) -> None:
     global cumul
 
-    t = Timer(text="⏱️ {seconds:.2f} s")
+    t = Timer(text="⏱️ {seconds:>6.2f} s")
+    # t = Timer(text="", logger=None)
     t.start()
 
     n = ROWS * COLS
+    v = 14
+    f_grille = f"Grille de{SB} {ROWS: >2} x {COLS: >2}{R} ({n: >3} cases)"
+    print(f_grille if not idx else f"{' ' * v}\"{' ' * v}", end=" - ")
 
-    print(f"Grille de{SB}", ROWS, "x", COLS, f"{R}({n} cases)", end=" - ")
+    # print(f"Grille de{SB} {ROWS: >2} x {COLS: >2}{R} ({n: >3} cases)", end=" - ")
 
     if ROWS < 2 or COLS < 2:
         print("Dimensions incompatibles: il faut au moins 2x2.")
@@ -309,9 +312,12 @@ def main(noAff=False) -> None:
     cyc = solve_cycle_sat_ilp(START, SOLVER_MODE)
 
     if cyc is None:
-        print(
-            "Aucune solution trouvee avec le solveur courant (timeout, solver manquant, ou instance trop difficile)."
-        )
+        t.stop()
+        cumul += t.last
+
+        # print(
+        #     "Aucune solution trouvée avec le solveur courant (timeout, solver manquant, ou instance trop difficile)."
+        # )
         return
 
     # backend = "CP-SAT" if HAS_CP_SAT and SOLVER_MODE in ("auto", "cp_sat") else "ILP"
@@ -328,19 +334,56 @@ def main(noAff=False) -> None:
         print_cycle(cyc)
 
 
+def format_duration(seconds):
+    if seconds is None:
+        return "N/A"
+
+    hours = int(seconds // 3600)
+    minutes = int((seconds % 3600) // 60)
+    remaining_seconds = int(seconds % 60)
+
+    if hours == 0:
+        return f"{minutes:02d}:{remaining_seconds:02d}"
+    return f"{hours:02d}:{minutes:02d}:{remaining_seconds:02d}"
+
+
 if __name__ == "__main__":
+
     cls()
 
-    ROWS = 24
+    nb = 100
 
-    nb =100
+    maxSquareSize = 28
 
-    for i in range(nb-1):
+    minSquareSize = 20 # defailt 2
+    print("─" * CLIW)
+    cls()
+
+    print(
+        f"\nTest de {SB}{nb}{R} instances pour différentes tailles de grilles carrées (De {SB}{maxSquareSize}{R} à {minSquareSize}) :\n"
+    )
+    gen_cumul = 0
+    for t in reversed(range(minSquareSize, maxSquareSize + 1, 2)):
+
+        cumul = 0
+
+        ROWS = t
         COLS = ROWS
-        print(f"{i+1: 3}", end=" ")
-        main(True)
-    print(f"{i+2: 3}", end=" ")
-    main(False)
-    print(f"CUMUL ⏱️ {cumul:.2f} s, soit moy. = {(cumul/(i+2)):.3f} s")
+
+        for i in range(nb - 1):
+            print(f"{SB}{i+1: >5}{R} / {nb} :", end=" ")
+            main(True, idx=i)
+        print(f"{SB}{i+2: >5}{R} / {nb} :", end=" ")
+        main(True, idx=i + 1)
+        print(
+            f" {SB: >8}{t: >2}x{t: >2}{R} : CUMUL ⏱️ {'   '+format_duration(cumul) if cumul > 1 else f'{cumul:0>6.2f} s'}, soit moy. = {SB}{cumul/(i+2): >6.3f}{R} s\n"
+        )
+        gen_cumul += cumul
+    
+    print(
+        f"⏱️ CUMUL GENERAL ⏱️{SB}",
+        format_duration(gen_cumul) if gen_cumul > 1 else f"{gen_cumul:0>6.2f} s",
+        f"{R}",
+    )
 
     end()

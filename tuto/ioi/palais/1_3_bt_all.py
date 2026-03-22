@@ -1,11 +1,10 @@
 from typing import List, Tuple, Dict, Set
 from pymox_kit import cls, end
-
+from codetiming import Timer
 
 # 4 x 4 :     6 solutions uniques
 # 6 x 6 : 1 072 solutions uniques
-ROWS = 4
-COLS = ROWS
+
 START = (0, 0)
 
 Pos = Tuple[int, int]
@@ -113,12 +112,15 @@ def print_cycle(cycle: Tuple[Pos, ...]) -> None:
     # print()
 
 
+@Timer(text="\n⏱️: {seconds:.2f} s")
 def main(aff=1):
     """_summary_
 
     Args:
         aff (int, optional): affiche - Defaults to 1.
     """
+    all_cycles = find_all_cycles()
+
     print(
         f"Nombre de cycles hamiltoniens distincts sur une grille de {ROWS} x {COLS} : {len(all_cycles)}\n"
     )
@@ -128,13 +130,11 @@ def main(aff=1):
             print("─" * 8, i)
             print_cycle(cyc)
 
-
-# --- 6. Lancement ---
-
-all_cycles = find_all_cycles()
+ROWS = 6
+COLS = ROWS
 
 if __name__ == "__main__":
 
     cls()
-    main()
+    main(1)
     end()
