@@ -23,7 +23,7 @@ START = (0, 0)
 Pos = Tuple[int, int]
 
 # Choix solveur: "auto", "cp_sat", "ilp"
-SOLVER_MODE = "ilp"
+SOLVER_MODE = "cp_sat"
 TIME_LIMIT_SECONDS = 0  # 0 = sans limite
 MAX_ENUM_CELLS = 100
 MAX_SOLUTIONS = 0  # 0 = sans limite
@@ -556,7 +556,7 @@ if __name__ == "__main__":
 
     cls()
 
-    ROWS = 6
+    ROWS =4
     COLS = ROWS
 
     nb = 1

@@ -106,7 +106,7 @@ def number_gambl(mise, wheel_result, wallet_player) -> float:
             print(f"{YELLOW}Roulette{RESET}: {wheel_result[0]}")
             return wallet_player
 
-# ❌ Comprendre le random vu / SeBL4RD pour qu'il arrive à m'faucher 60% de mon K en 3 tours !!! Grrrr !
+# Comprendre le random vu par SeBL4RD pour qu'il arrive à m'faucher 60% de mon K en 3 tours !!! Grrrr ! Lol
 
 if __name__ == "__main__":
     wallet_player: float = 500
