@@ -4,7 +4,7 @@ import abc  # permet de définir des classes de base
 class Shape(metaclass=abc.ABCMeta):
     @abc.abstractmethod
     def area(self):
-        return 0
+        pass
 
 
 class Square(Shape):

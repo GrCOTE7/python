@@ -15,11 +15,6 @@ from threading import Event
 
 print("Code 2 Execution Started")
 
-
-def display():
-    print("Welcome to Guru99 Tutorials")
-
-
 Event().wait(5)
 display()
 print("-" * 72)
@@ -30,12 +25,12 @@ import asyncio
 print("Code 3 Execution Started")
 
 
-async def display():
+async def as_display():
     await asyncio.sleep(5)
     print("Welcome to Guru99 Tutorials")
 
 
-asyncio.run(display())
+asyncio.run(as_display())
 print("-" * 72)
 
 import time

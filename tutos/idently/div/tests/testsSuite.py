@@ -16,5 +16,5 @@ def run_tests():
 
     runner = unittest.TextTestRunner()
 
-    # print("Je vais tester les accès à 2 sites...\n")
+    print("Je vais tester les accès à 2 sites...\n")
     runner.run(combined_suite)

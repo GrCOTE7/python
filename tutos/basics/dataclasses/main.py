@@ -46,3 +46,4 @@ if __name__ == "__main__":
     example01()
     print("─" * CLIW) # ❌ replace avec sl() ou ls() dès que accessible dans Kit
     example02()
+    end()

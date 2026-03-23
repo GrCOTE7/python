@@ -20,6 +20,7 @@ pandas
 Pillow
 prettytable
 pyautogui
+pygame-ce
 pymox_kit
 pyparsing
 pyperclip
