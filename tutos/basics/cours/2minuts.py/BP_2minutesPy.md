@@ -92,4 +92,4 @@
 * [ ] [30/09/2023 **How to Use *args and **kwargs in 2 Minutes** 5648 **02:11**](https://www.youtube.com/watch?v=QksqEIz09eU)
 * [ ] [24/09/2023 **Python's __getitem__ Method Simplified for Object Element Access in 2 Minutes** 2713 **01:47**](https://www.youtube.com/watch?v=tkZSjGMSFf8)
 * [ ] [15/09/2023 **Python's __init__ Method | 2MinutesPy** 48640 **01:46**](https://www.youtube.com/watch?v=mYKGYr0xaXw)
-* [ ] [10/09/2023 **Python's ABC (Abstract Base Class) in 2 Minutes** 9398 **02:11**](https://www.youtube.com/watch?v=G-w5PvPQl5Q)
+* [x] [10/09/2023 **Python's ABC (Abstract Base Class) in 2 Minutes** 9398 **02:11**](https://www.youtube.com/watch?v=G-w5PvPQl5Q)
