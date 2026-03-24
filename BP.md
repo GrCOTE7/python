@@ -6,7 +6,7 @@
 
 ## Divers
 
-### Quotidien (Une leçon de chacun)
+### BPL Quotidien (Une leçon de chacun)
 
 #### Fr Auteur **[InformatiqueSansComplexe](https://www.youtube.com/@InformatiqueSansComplexe/videos)** ( **285** videos - 1 815 422 vues - 33 heures et 20 minutes )
 
