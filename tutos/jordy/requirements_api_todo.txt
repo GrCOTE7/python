@@ -1,0 +1,12 @@
+fastapi
+flet
+flet-cli
+flet-desktop
+uvicorn
+pydantic
+python-multipart
+
+# tortoise-orm
+
+# tensorflow
+# streamlit
