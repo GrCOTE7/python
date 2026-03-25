@@ -5,7 +5,7 @@ from pathlib import Path
 sys.path.append(str(Path(__file__).parent.parent / "tools"))
 from tools import *
 from tools import cls
-from mvts import *
+from tutos.ioi.mvts import *
 
 # Réf.: https://www.france-ioi.org/
 # Code Démo Algorea: m5iycsiw

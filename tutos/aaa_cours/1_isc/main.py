@@ -1,11 +1,24 @@
-import sys
-from pathlib import Path
+import flet as ft
+import tools.gc7_positioned as gc7
+import tutos as tutos
 
-tools_path = Path(__file__).parent.parent.parent.parent / "tools"
-sys.path.append(str(tools_path))
-from tools import cls, exit
+def main(page: ft.Page):
+
+    gc7.position(page)
+
+    txt = "Ready."
+    t = ft.Text(txt, size=24, color=ft.Colors.ORANGE_500)
+    page.add(t)
+
+# def tutos():
+#     # tuto_tupple.tupples_tuto()
+#     pass
+
 
 if __name__ == "__main__":
-    cls("ISC - APPRENDRE L'INFORMATIQUE")
-    exit()
-    pass
+
+    print("→" * 102, 'MAIN SCRIPT', '→'*3)
+    tutos.main()
+    print("←" * 118)
+
+ft.app(target=main)

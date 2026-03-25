@@ -8,7 +8,7 @@ from tools import *
 from tools import cls, ls
 
 sys.path.append(str(Path(__file__).resolve().parent.parent))
-from mvts import *
+from tutos.ioi.mvts import *
 from datetime import datetime as dt
 
 # import o1_grands_plateaux as gp

@@ -1,5 +1,4 @@
 import locale, os, shutil, sys
-from flask import cli
 
 alertMsg = infoMsg = cliWMsg = SIMU_CLIW = None
 locale.setlocale(locale.LC_ALL, "fr_FR")

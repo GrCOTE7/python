@@ -20,10 +20,10 @@ if __name__ == "__main__":
     s = ""
     for _ in range(3):
         s += "* "
-    print(s.center(w), *(range(1, 10)), s.center(w), end="\b\n")
+    print(s.center(w), *(range(1, 10)), s.center(w), end="\b")
 
     sl(FRENCH)
     print(f"{'Écrit /': <{CLIWR-27}}", end="")
     print("Lionel alias ", *"GrCOTE7", end="")
-    print("\n", end="\r")
+    # print("\n", end="\r")
     exit()

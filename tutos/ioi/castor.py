@@ -6,12 +6,9 @@ import sys
 # from tools import cls
 from pathlib import Path
 
-from cycler import V
-from flask.cli import F
 
-sys.path.append(str(Path(__file__).parent.parent / "tools"))
+sys.path.append(str(Path(__file__).parent.parent.parent / "tools"))
 from tools import *
-from tools import cls
 from mvts import *
 
 

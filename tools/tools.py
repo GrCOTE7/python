@@ -1,11 +1,6 @@
-from calendar import c
-from stat import SF_IMMUTABLE
 import os, sys, inspect, locale, shutil
-from matplotlib import lines
-from pyparsing import line
 from time import sleep, time
 
-# from main_tools import cls
 from main_tools import *
 
 from width_tests import auto_partition
@@ -36,7 +31,7 @@ if __name__ == "__main__":
     # sleep(SLEEP_DURATION)
 
     print(CLIWR)
-    exit()
+    # exit()
     cls("pf()")  # 2ar tester aussi dans cas simulatedW
     # cls("un très long titre")
     # cls(0)

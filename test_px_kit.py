@@ -1,6 +1,7 @@
-from pymox_kit import greetings as gt
-from pymox_kit import tokens as tk
+from pymox_kit import *
 
 if __name__ == "__main__":
-    tk.tokens()
-    print(gt.hello(), "\n" + gt.bye())
+    cls()
+    tokens()
+    print(hello(), "\n" + bye())
+    end()

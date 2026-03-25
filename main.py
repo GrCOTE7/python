@@ -41,10 +41,9 @@ if __name__ == "__main__":
     # sl()
     print('\n'+f"{' 1 façon de centrer': ^{cols}}")
     print(" & 1 autre \x1b[3mfaçon\x1b[0m 😉 !".center(cols+4), end='\b')
-    print ()
-    # ❌ vidéo démo scratch
     
-    # Démo nf() (Number Format) : formater les nombres avec des séparateurs de milliers et vraie virgule pour les 2 décimales, bref, à la française ;-) !
+    sl(FRENCH)
+    
     n = 123456.789
     print(f'Format rapide d\'un nombre : nf({n}) → {nf(n)}')
     exit()
