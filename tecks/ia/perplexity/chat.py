@@ -1,20 +1,38 @@
-import os, dotenv
-from perplexity import Perplexity
+import os
 
-# print(dir(Perplexity))
-# exit()
-# exit()
+from dotenv import load_dotenv
+from pplx import PerplexityAPI
 
-dotenv.load_dotenv()
 
-key = os.environ.get("PERPLEXITY_API_KEY")
-print("API Key:", os.environ.get("PERPLEXITY_API_KEY"))
-exit()
+def extract_text_or_error(payload: dict) -> str:
+    choices = payload.get("choices")
+    if choices:
+        return choices[0]["message"]["content"]
 
-client = Perplexity(api_key=key)
-resp = client.chat.completions.create(
-    model="sonar-small-chat",
-    messages=[{"role": "user", "content": "Qu'est-ce que GPT-5 ?"}],
-)
+    error = payload.get("error", {})
+    if error:
+        code = error.get("code", "unknown")
+        message = error.get("message", "Erreur API inconnue")
+        return f"Erreur API ({code}): {message}"
 
-print(resp.choices[0].message["content"])
+    return f"Reponse inattendue: {payload}"
+
+
+def main() -> None:
+    load_dotenv()
+
+    api_key = os.environ.get("PERPLEXITY_API_KEY")
+    if not api_key:
+        print("PERPLEXITY_API_KEY introuvable. Definis-la dans .env ou dans l'environnement.")
+        return
+
+    client = PerplexityAPI(api_key=api_key)
+    response = client.send_request(
+        model="sonar",
+        messages=[{"role": "user", "content": "Qu'est-ce que GPT-5 ?"}],
+    )
+    print(extract_text_or_error(response))
+
+
+if __name__ == "__main__":
+    main()

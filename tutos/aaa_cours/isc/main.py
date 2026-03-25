@@ -9,4 +9,3 @@ if __name__ == "__main__":
     cls("ISC - APPRENDRE L'INFORMATIQUE")
     exit()
     pass
-

@@ -2,6 +2,7 @@ attr
 beautifulsoup4
 cryptography
 cycler
+dotenv
 Flask
 FleetingViews
 flet
@@ -13,6 +14,7 @@ langchain_ollama
 langgraph
 lorem
 matplotlib
+mistralai
 mysql_connector_repackaged
 nltk
 ortools

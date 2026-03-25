@@ -1,8 +1,14 @@
 # API Perplexity
 
-## pip install git+https://github.com/perplexity-ai/pplx-python
+## Installation
 
-## Avoir clé API pour crédit API (Payant)
+```powershell
+pip install -r requirements.txt
+```
+
+Le package PyPI a utiliser est `pplx` (pas `perplexity`).
+
+## Avoir clé API pour crédit API (Payant - Très chère)
 
 puis:
 

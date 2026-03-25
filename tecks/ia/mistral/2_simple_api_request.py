@@ -1,5 +1,5 @@
 import os, dotenv, time
-from mistralai import Mistral
+from mistralai.client import Mistral
 import httpx
 import logging
 
@@ -10,7 +10,8 @@ logger = logging.getLogger(__name__)
 # Charger les variables d'environnement
 dotenv.load_dotenv()
 MISTRAL_API_KEY = os.getenv("MISTRAL_API_KEY")
-
+print (MISTRAL_API_KEY)
+# exit()
 if not MISTRAL_API_KEY:
     raise ValueError("MISTRAL_API_KEY non trouvée dans .env")
 
