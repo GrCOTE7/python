@@ -8,8 +8,6 @@ markmap:
 
 ## Bases <!-- markmap: fold -->
 
-* [ ] Ajout fooxpy BPL as Loisir
-
 [ ] ∃ [Super outil pour debug](https://pythontutor.com)
 
 [ ] [Snake - 1H](https://www.youtube.com/watch?v=1zVlRXd8f7g)

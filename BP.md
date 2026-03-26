@@ -6,9 +6,9 @@
 
 ## Divers
 
-### BPL Quotidien (Une leçon - ISC - 2mnPy - BdC - Graven - Jordy)
+### BPL Quotidien (Une leçon - ISC - 2mnPy - BdC - Graven - Jordy + Indently - Fooxpy)
 
-#### Fr Auteur **[InformatiqueSansComplexe](https://www.youtube.com/@InformatiqueSansComplexe/videos)** ( **285** videos - 1 815 422 vues - 33 heures et 20 minutes )
+#### FR Auteur **[InformatiqueSansComplexe](https://www.youtube.com/@InformatiqueSansComplexe/videos)** ( **285** videos - 1 815 422 vues - 33 heures et 20 minutes )
 
 * [x] [23/03/2026 **J'ai demandé à l'IA de m'apprendre les conditions Python — voilà ce qui s'est passé** 283 **12:07**](https://www.youtube.com/watch?v=QmeQn4-yHFo)
 * [x] [16/03/2026 **J'ai demandé à l'IA de m'apprendre les variables Python — voilà ce qui s'est passé** 496 **12:35**](https://www.youtube.com/watch?v=4u0imOeh3WQ)
@@ -299,7 +299,7 @@
 
 ---
 
-#### Fr Auteur **[2minutesPy](https://www.youtube.com/@2minutesPy/videos)** ( **91** videos - 1 076 191 vues - 3 heures et 46 minutes )
+#### FR/GB Auteur **[2minutesPy](https://www.youtube.com/@2minutesPy/videos)** ( **91** videos - 1 076 191 vues - 3 heures et 46 minutes )
 
 * [ ] [11/03/2026 **Why Deferring Now… Not Earlier!** 766 **02:48**](https://www.youtube.com/watch?v=45yD9UvuUmU)
 * [ ] [07/03/2026 **Challenge: Prompts ONLY and Full-stack App is READY 🚀** 509 **02:51**](https://www.youtube.com/watch?v=HywYRduZayQ)
@@ -390,12 +390,12 @@
 * [ ] [10/10/2023 **Python's super() Function in 2 Minutes | 2MinutesPy** 4171 **02:00**](https://www.youtube.com/watch?v=giOT0dBkIaQ)
 * [ ] [30/09/2023 **How to Use *args and **kwargs in 2 Minutes** 5648 **02:11**](https://www.youtube.com/watch?v=QksqEIz09eU)
 * [ ] [24/09/2023 **Python's __getitem__ Method Simplified for Object Element Access in 2 Minutes** 2713 **01:47**](https://www.youtube.com/watch?v=tkZSjGMSFf8)
-* [ ] [15/09/2023 **Python's __init__ Method | 2MinutesPy** 48640 **01:46**](https://www.youtube.com/watch?v=mYKGYr0xaXw)
+* [x] [15/09/2023 **Python's __init__ Method | 2MinutesPy** 48640 **01:46**](https://www.youtube.com/watch?v=mYKGYr0xaXw)
 * [x] [10/09/2023 **Python's ABC (Abstract Base Class) in 2 Minutes** 9398 **02:11**](https://www.youtube.com/watch?v=G-w5PvPQl5Q)
 
 ---
 
-#### Auteur **[bandedecodeurs](https://www.youtube.com/@bandedecodeurs/videos)** ( **50** videos - 743 739 vues - 21 heures et 16 minutes )
+#### FR Auteur **[bandedecodeurs](https://www.youtube.com/@bandedecodeurs/videos)** ( **50** videos - 743 739 vues - 21 heures et 16 minutes )
 
 * [ ] [01/02/2026 **Mon nouveau projet : Ballads of the Unsung. J'ai besoin votre aide !** 524 **02:16**](https://www.youtube.com/watch?v=NCpXtgrX1Xo)
 * [ ] [21/05/2025 **Utiliser n8n pour gérer ses notes de frais automatiquement avec un bot Telegram et de l'IA** 2403 **38:58**](https://www.youtube.com/watch?v=SDxj9S_xv5Y)
@@ -448,7 +448,7 @@
 * [ ] [23/02/2022 **Comment générer un nuage de mots en Python avec WordCloud** 1325 **40:27**](https://www.youtube.com/watch?v=l7w7unBNAeU)
 * [ ] [17/02/2022 **Comment interroger une base de données en SQL** 3310 **22:11**](https://www.youtube.com/watch?v=pBPaPwyjLiQ)
 
-#### Fr Auteur **[Gravenilvectuto](https://www.youtube.com/@Gravenilvectuto/videos)** ( **120** videos - 26 864 001 vues - 49 heures et 44 minutes )
+#### FR Auteur **[Gravenilvectuto](https://www.youtube.com/@Gravenilvectuto/videos)** ( **120** videos - 26 864 001 vues - 49 heures et 44 minutes )
 
 * [/] [23/03/2026 **Apprendre à coder à l’ère de l’IA (le vrai problème)** 5001 **07:57**](https://www.youtube.com/watch?v=cGxZR0hnNhc)
 * [ ] [17/03/2026 **NE RATE PAS CET EVENEMENT !! (places limités)** 569 **04:57**](https://www.youtube.com/watch?v=xP47FjwMYn4)
@@ -535,7 +535,7 @@
 * [ ] [14/05/2018 **APPRENDRE LE PYTHON #4 ? LES LISTES** 719532 **14:18**](https://www.youtube.com/watch?v=kyxF5eH3Kic)
 * [ ] [14/05/2018 **APPRENDRE LE PYTHON #3 ? LES CONDITIONS** 716763 **12:51**](https://www.youtube.com/watch?v=_AgUOsvMt8s)
 * [ ] [07/05/2018 **APPRENDRE LE PYTHON #2 ? LES VARIABLES** 1057322 **10:50**](https://www.youtube.com/watch?v=nvyX8JfoOWY)
-* [ ] [07/05/2018 **APPRENDRE LE PYTHON #1 ? LES BASES & PREREQUIS** 2956835 **09:27**](https://www.youtube.com/watch?v=psaDHhZ0cPs)
+* [x] [07/05/2018 **APPRENDRE LE PYTHON #1 ? LES BASES & PREREQUIS** 2956835 **09:27**](https://www.youtube.com/watch?v=psaDHhZ0cPs)
 
 ---
 
