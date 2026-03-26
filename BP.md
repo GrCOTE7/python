@@ -660,12 +660,14 @@
 * [ ] [25/08/2019 **ma premiere application mobile fait python kivy + opencv4 + deepleaning** 585 **00:53**](https://www.youtube.com/watch?v=aLL_7aSk6Jw)
 * [ ] [04/08/2019 **Calculatrice scientifique python et C avec interface graphique** 981 **05:55**](https://www.youtube.com/watch?v=j0m_TwnNCQc)
 
-#### Autres GB
+#### Autres à voir
 
-* [Identity](https://www.youtube.com/@Indently/videos)
+* [ ] GB Astuces poussées [Indently](https://www.youtube.com/@Indently/videos)
 → Dernier vu: [<= 4 ans]
 
-----
+* [ ] [CheatSheet Androïd-Flet](https://www.cheatsheet.fr/2024/06/05/creer-une-application-android-avec-flet)
+
+---
 
 * [À lire Algorithmes et programmation](https://www.france-ioi.org/algo/course.php?idChapter=552&idCourse=1801)
 
@@ -705,7 +707,7 @@ https://docs.modular.com/max/tutorials
   
 * [/] [Tutos en français](https://www.youtube.com/results?search_query=tuto+python+en+fran%C3%A7ais)
 
-https://openclassrooms.com/fr/courses/7771531-decouvrez-les-librairies-python-pour-la-data-science
+* [ ] [Les Libs](https://openclassrooms.com/fr/courses/7771531-decouvrez-les-librairies-python-pour-la-data-science)
 
 
 ## 2do Zen Python
@@ -773,49 +775,25 @@ https://openclassrooms.com/fr/courses/7160741-ecrivez-du-code-python-maintenable
   * [ ] Selenium
   * [ ] PyAutoGUI
 * Dév WEB
-  * [ ] Django
+  * [x] Django
   * [ ] Flask
-  * [ ] FastAPI
+  * [x] FastAPI
 * DataScience
   * [ ] PyTorch
   * [ ] Pandas
-  * [ ] NumPY
+  * [x] NumPY
 * Jeux vidéos
-  * [ ] PyGame
+  * [x] PyGame
   * [ ] Keras
   * [ ] Kivy
-* I.A.
 * Réseaux
 * Cybersecurité
+* I.A.
 * Machine Learning
 * Big Data
 
-#### Installer des packages
+---
 
-[Source](https://pypi.org)
-
-```bash
-pip install nom_package
-
-pip install jupyter
-
-pip uninstall nom_package
-
-pip freeze --local | xargs pip uninstall -y
-
-pip freeze (List installed packages)
-pip list
-
-```
-
-#### venv
-
-```
- py -m venv env
- 
- .\env\Scripts\activate.bat
-deactivate
-```
 NB: Dans Cmder pas besoin du .bat + indique l'environment
 
 ```
@@ -850,68 +828,73 @@ Outils: https://markmap.js.org/repl
 
 2do: Tester ceci avec codium: https://www.youtube.com/watch?v=2TAEcYCQtuY
 
-## Faits
+---
 
-* [x] [Fletx - Dépôt du gars de Discord PyPRO](https://github.com/GrCOTE7/fletx-routing-sample-app) → Super Mini App avec routing et MVC
-[ ] Suivre PR car ne marche pas sous windows (→WS)
-
-## LEARNING PLAN
-
-## Base progressive pour l'apprentissage du Python
+## LEARNING PLAN - Base progressive d'apprentissage du Python
 
 ### 1. Les fondamentaux
 
 #### 1.1 Introduction à Python
+
 * Qu'est-ce que Python ?
 * Installation de Python et d'un environnement de développement
 
 #### 1.2 Syntaxe de base
-- Variables et types de données
-- Opérateurs
-- Commentaires
+
+* Variables et types de données
+* Opérateurs
+* Commentaires
 
 #### 1.3 Structures de contrôle
-- Conditions (if, elif, else)
-- Boucles (for, while)
+
+* Conditions (if, elif, else)
+* Boucles (for, while)
 
 #### 1.4 Structures de données
-- Listes
-- Tuples
-- Dictionnaires
-- Ensembles
+
+* Listes
+* Tuples
+* Dictionnaires
+* Ensembles
 
 ### 2. Fonctions et modules
 
 #### 2.1 Fonctions
-- Définition et appel de fonctions
-- Arguments et valeurs de retour
-- Portée des variables
+
+* Définition et appel de fonctions
+* Arguments et valeurs de retour
+* Portée des variables
 
 #### 2.2 Modules
-- Import de modules
-- Création de modules personnalisés
-- Utilisation de bibliothèques standard
+
+* Import de modules
+* Création de modules personnalisés
+* Utilisation de bibliothèques standard
 
 ### 3. Programmation orientée objet
 
 #### 3.1 Classes et objets
-- Définition de classes
-- Création d'instances
-- Attributs et méthodes
+
+* Définition de classes
+* Création d'instances
+* Attributs et méthodes
 
 #### 3.2 Héritage et polymorphisme
-- Héritage simple et multiple
-- Surcharge de méthodes
+
+* Héritage simple et multiple
+* Surcharge de méthodes
 
 ### 4. Gestion des erreurs et exceptions
 
 #### 4.1 Try/Except
-- Gestion des exceptions
-- Création d'exceptions personnalisées
+
+* Gestion des exceptions
+* Création d'exceptions personnalisées
 
 ### 5. Manipulation de fichiers
 
 #### 5.1 Lecture et écriture de fichiers
+
 * Ouverture et fermeture de fichiers
 * Lecture et écriture de données
 
@@ -919,19 +902,19 @@ Outils: https://markmap.js.org/repl
 
 #### 6.1 Data Science
 
-    * NumPy
-    * Pandas
-    * Matplotlib
+* NumPy
+* Pandas
+* Matplotlib
 
 #### 6.2 Web Development
 
-    * Django
-    * Flask
+* Django
+* Flask
 
 #### 6.3 Machine Learning
 
-    * Scikit-learn
-    * TensorFlow
+* Scikit-learn
+* TensorFlow
 
 ### 7. Concepts avancés
 
@@ -962,9 +945,3 @@ Outils: https://markmap.js.org/repl
 #### 9.4 Création d'un bot Discord ou Telegram
 
 Cette structure progressive permet d'aborder Python de manière structurée, en commençant par les bases et en progressant vers des concepts plus avancés et des applications pratiques.
-
-## Faits
-
-Tutos suivis:
-
-* [x] [Flet Reactive & Routing](https://www.youtube.com/watch?v=yYnd7uFKiYE&ab_channel=SriEdyNurcahyo)

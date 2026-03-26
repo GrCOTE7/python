@@ -1,0 +1,266 @@
+écrit l'installation de django avec vite très détaillée: toutes les étapes depuis la création d'un dossier vide, et précision du dossier dans lequel taper les commandes en CLI que tu proposes
+
+Si vous souhaitez utiliser Vite avec Django sans React, vous pouvez suivre les étapes ci-dessous pour configurer un projet Django avec Vite comme outil de bundling pour vos fichiers JavaScript et CSS.
+
+## 1. Création du projet
+
+Commencez par créer un nouveau dossier pour votre projet et naviguez dedans :
+
+```bash
+mkdir mon_projet_django_vite
+cd mon_projet_django_vite
+```
+
+## 2. Mise en place de l'environnement virtuel
+
+```bash
+python -m venv venv
+```
+
+Activez l'environnement virtuel :
+
+- Sur Windows :
+  ```bash
+  venv\Scripts\activate
+  ```
+- Sur macOS et Linux :
+  ```bash
+  source venv/bin/activate
+  ```
+
+## 3. Installation de Django
+
+```bash
+pip install django
+```
+
+## 4. Création du projet Django
+
+```bash
+django-admin startproject config .
+```
+
+## 5. Création d'une application Django
+
+```bash
+python manage.py startapp frontend
+```
+
+## 6. Configuration de Django
+
+Ouvrez le fichier `config/settings.py` et ajoutez 'frontend' à `INSTALLED_APPS` :
+
+```python
+INSTALLED_APPS = [
+    # ...
+    'frontend',
+]
+```
+
+## 7. Installation de Node.js et npm
+
+Assurez-vous d'avoir Node.js et npm installés sur votre système. Si ce n'est pas le cas, téléchargez-les et installez-les depuis le site officiel de Node.js.
+
+## 8. Initialisation du projet Node.js
+
+Dans le dossier racine de votre projet, initialisez un projet Node.js :
+
+```bash
+npm init -y
+```
+
+## 9. Installation de Vite
+
+Installez Vite en tant que dépendance de développement :
+
+```bash
+npm install vite --save-dev
+```
+
+## 10. Configuration de Vite
+
+Créez un fichier `vite.config.js` à la racine du projet :
+
+```bash
+touch vite.config.js
+```
+
+Ajoutez le contenu suivant dans `vite.config.js` :
+
+```javascript
+import { defineConfig } from 'vite'
+
+export default defineConfig({
+  root: './frontend/src',
+  build: {
+    outDir: '../../static/dist',
+    emptyOutDir: true,
+    manifest: true,
+  },
+  server: {
+    port: 3000,
+  },
+})
+```
+
+## 11. Création des dossiers pour les fichiers sources
+
+Créez les dossiers nécessaires pour le frontend :
+
+```bash
+mkdir -p frontend/src
+mkdir -p static/dist
+```
+
+## 12. Création des fichiers JavaScript et CSS de base
+
+Dans le dossier `frontend/src`, créez un fichier JavaScript et un fichier CSS :
+
+```bash
+touch frontend/src/main.js
+touch frontend/src/style.css
+```
+
+Ajoutez du contenu de base à ces fichiers :
+
+`frontend/src/main.js` :
+```javascript
+import './style.css';
+
+console.log('Hello, Django + Vite!');
+```
+
+`frontend/src/style.css` :
+```css
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+```
+
+## 13. Mise à jour du fichier package.json
+
+Ajoutez les scripts suivants dans votre `package.json` :
+
+```json
+"scripts": {
+  "dev": "vite",
+  "build": "vite build"
+}
+```
+
+## 14. Configuration de Django pour utiliser Vite
+
+Créez un fichier `frontend/templatetags/vite.py` :
+
+```bash
+mkdir -p frontend/templatetags
+touch frontend/templatetags/__init__.py
+touch frontend/templatetags/vite.py
+```
+
+Ajoutez le contenu suivant dans `frontend/templatetags/vite.py` :
+
+```python
+import json
+from django import template
+from django.conf import settings
+from django.utils.safestring import mark_safe
+
+register = template.Library()
+
+@register.simple_tag
+def vite_asset(filename):
+    if settings.DEBUG:
+        return f"http://localhost:3000/{filename}"
+    
+    manifest_path = settings.BASE_DIR / 'static' / 'dist' / 'manifest.json'
+    try:
+        with open(manifest_path, 'r') as manifest_file:
+            manifest = json.load(manifest_file)
+    except:
+        raise Exception(f"Vite manifest file not found at {manifest_path}")
+    
+    if filename not in manifest:
+        raise Exception(f"File {filename} not found in Vite manifest")
+    
+    return f"/static/dist/{manifest[filename]['file']}"
+
+@register.simple_tag
+def vite_hmr_client():
+    if settings.DEBUG:
+        return mark_safe(f'<script type="module" src="http://localhost:3000/@vite/client"></script>')
+    return ''
+```
+
+## 15. Création d'un template Django
+
+Créez un fichier `frontend/templates/index.html` :
+
+```bash
+mkdir -p frontend/templates
+touch frontend/templates/index.html
+```
+
+Ajoutez le contenu suivant dans `frontend/templates/index.html` :
+
+```html
+{% load vite %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django + Vite</title>
+    {% vite_hmr_client %}
+</head>
+<body>
+    <h1>Hello, Django + Vite!</h1>
+    <script type="module" src="{% vite_asset 'main.js' %}"></script>
+</body>
+</html>
+```
+
+## 16. Mise à jour des vues Django
+
+Dans `frontend/views.py`, ajoutez :
+
+```python
+from django.shortcuts import render
+
+def index(request):
+    return render(request, 'index.html')
+```
+
+## 17. Configuration des URLs
+
+Dans `config/urls.py`, ajoutez :
+
+```python
+from django.contrib import admin
+from django.urls import path
+from frontend.views import index
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', index, name='index'),
+]
+```
+
+## 18. Lancement du serveur de développement
+
+Dans un terminal, lancez le serveur Django :
+
+```bash
+python manage.py runserver
+```
+
+Dans un autre terminal, lancez Vite :
+
+```bash
+npm run dev
+```
+
+Votre application Django avec Vite devrait maintenant être accessible à l'adresse `http://localhost:8000`.
+
+Pour la production, n'oubliez pas de construire les assets avec `npm run build` avant de déployer votre application Django.

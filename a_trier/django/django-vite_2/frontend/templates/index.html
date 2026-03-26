@@ -1,0 +1,14 @@
+{% load vite %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Django + Vite</title>
+    {% if debug %} {% vite_hmr_client %} {% endif %}
+  </head>
+  <body>
+    <h1>Hello, Django + Vite !</h1>
+    <script type="module" src="{% vite_asset 'main.js' %}"></script>
+  </body>
+</html>
