@@ -526,7 +526,7 @@
 * [ ] [23/06/2018 **APPRENDRE LE PYTHON #5 ? LES BOUCLES** 526513 **14:40**](https://www.youtube.com/watch?v=BrknhzrHm8w)
 * [ ] [14/05/2018 **APPRENDRE LE PYTHON #4 ? LES LISTES** 719532 **14:18**](https://www.youtube.com/watch?v=kyxF5eH3Kic)
 * [ ] [14/05/2018 **APPRENDRE LE PYTHON #3 ? LES CONDITIONS** 716763 **12:51**](https://www.youtube.com/watch?v=_AgUOsvMt8s)
-* [ ] [07/05/2018 **APPRENDRE LE PYTHON #2 ? LES VARIABLES** 1057322 **10:50**](https://www.youtube.com/watch?v=nvyX8JfoOWY)
+* [x] [07/05/2018 **APPRENDRE LE PYTHON #2 ? LES VARIABLES** 1057322 **10:50**](https://www.youtube.com/watch?v=nvyX8JfoOWY)
 * [x] [07/05/2018 **APPRENDRE LE PYTHON #1 ? LES BASES & PREREQUIS** 2956835 **09:27**](https://www.youtube.com/watch?v=psaDHhZ0cPs)
 
 ---

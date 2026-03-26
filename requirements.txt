@@ -22,6 +22,8 @@ pandas
 Pillow
 prettytable
 pyautogui
+pydantic
+pydantic_core
 pygame-ce
 pymox_kit
 pyparsing

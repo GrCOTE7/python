@@ -12,4 +12,4 @@ def modifie_utlisateur(user):
 
 u = Utilisateur(nom="Alice", email="alice@test.com")
 
-print(u, ' => ', modifie_utlisateur(u))
+print(u, '\n=> ', modifie_utlisateur(u))

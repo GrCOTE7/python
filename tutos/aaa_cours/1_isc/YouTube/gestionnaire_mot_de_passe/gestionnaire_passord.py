@@ -1,12 +1,10 @@
-import os
+import os, sqlite3, string, secrets, pyperclip
+from pathlib import Path
 from cryptography.fernet import Fernet
-import sqlite3
-import string
-import secrets
-import pyperclip
 
-KEY_FILE = "passwords.key"
-DB_FILE = "passwords.db"
+root_path = Path(__file__).resolve().parent
+KEY_FILE = root_path / "passwords.key"
+DB_FILE = root_path / "passwords.db"
 
 
 def generer_cle():
@@ -24,26 +22,32 @@ def charger_cle():
 def initialise_base():
     conn = sqlite3.connect(DB_FILE)
     cur = conn.cursor()
-    cur.execute("""
+    cur.execute(
+        """
                 CREATE TABLE IF NOT EXISTS passwords (
                      id INTEGER PRIMARY KEY AUTOINCREMENT, 
                      site TEXT NOT NULL, 
                      login TEXT NOT NULL, 
                      password TEXT NOT NULL)
-                """)
+                """
+    )
     conn.commit()
     conn.close()
 
 
 def generer_mot_de_passe(longueur=16):
     alphabet = string.ascii_letters + string.digits + string.punctuation
-    return ''.join(secrets.choice(alphabet) for i in range(longueur))
+    return "".join(secrets.choice(alphabet) for i in range(longueur))
+
 
 def ajouter_password(site, login, password, fernet):
     encrypted = fernet.encrypt(password.encode()).decode()
     conn = sqlite3.connect(DB_FILE)
     cur = conn.cursor()
-    cur.execute("INSERT INTO passwords (site, login, password) VALUES (?, ?, ?)", (site, login, encrypted))
+    cur.execute(
+        "INSERT INTO passwords (site, login, password) VALUES (?, ?, ?)",
+        (site, login, encrypted),
+    )
     conn.commit()
     pyperclip.copy(password)
     print(f"Mot de passe pour le site {site} copié dans le presse-papier")
@@ -67,17 +71,21 @@ def liste_passwords():
 def recherche_password(requete, fernet):
     conn = sqlite3.connect(DB_FILE)
     cur = conn.cursor()
-    cur.execute("SELECT site, login, password FROM passwords WHERE site LIKE ?", (f"%{requete}%",))
+    cur.execute(
+        "SELECT site, login, password FROM passwords WHERE site LIKE ?",
+        (f"%{requete}%",),
+    )
     row = cur.fetchone()
     conn.close()
 
     if not row:
-        print('Aucun résultat')
+        print("Aucun résultat")
     else:
         site, login, password = row
         mot_de_passe = fernet.decrypt(password.encode()).decode()
         pyperclip.copy(mot_de_passe)
         print(f"Mot de passe pour le site {site} copié dans le presse-papier")
+
 
 generer_cle()
 fernet = Fernet(charger_cle())
@@ -98,7 +106,7 @@ while True:
         requete = input("Mot-clé : ")
         recherche_password(requete, fernet)
     elif choix == "q":
-        print('Au revoir !')
+        print("Au revoir !")
         break
     else:
         print("Option invalide !")

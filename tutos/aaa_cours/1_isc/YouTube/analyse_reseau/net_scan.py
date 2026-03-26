@@ -47,3 +47,17 @@ for port in ports:
 """paquet = IP(dst="8.8.8.8")/ICMP()/b"Bonjour de Thierry !"
 reponse = sr1(paquet, timeout=2)
 reponse.show()"""
+
+# Écoute les paquets réseau avec sniff(...) à la fin du fichier, voir net_scan.py:31.
+# Pour chaque paquet capturé, il appelle colorise(paquet), voir net_scan.py:16.
+# colorise prend le résumé du paquet (paquet.summary()), puis affiche ce résumé en couleur selon le protocole détecté :
+# ARP en magenta
+# ICMP en cyan
+# TCP en vert
+# UDP en jaune
+# sinon blanc atténué (dim)
+# Les blocs en bas du fichier sont commentés, donc non exécutés :
+
+# un exemple de scan de ports SYN
+# un exemple d’envoi ICMP (ping) avec payload
+# Donc oui, “l’intention” est bien d’analyser le trafic en live et d’afficher chaque paquet de façon lisible/couleur par protocole.

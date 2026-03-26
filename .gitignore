@@ -1,6 +1,7 @@
 **/*/__pycache__/
 *.pyc
 .venv/
+.venv313/
 .env
 */**/cache/*.json
 # divers/yt_videos/cache

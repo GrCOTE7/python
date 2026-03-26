@@ -2,7 +2,7 @@
 
 (Voir Learning Plan en fin de BP)
 
-## Buts: → //2do [Monetize Actor](https://www.youtube.com/watch?v=4nxStxC1BJM&list=PLObrtcm1Kw6PEnu5BpeEFb8XEoQXMw0g7) OU [MVP]()
+## Buts: → 🎯 [Monetize Actor](https://www.youtube.com/watch?v=4nxStxC1BJM&list=PLObrtcm1Kw6PEnu5BpeEFb8XEoQXMw0g7) OU [MVP]()
 
 ## Divers
 
@@ -10,16 +10,22 @@
 
 * Rendre opé tous les scripts de :
 
-* [ ] YT → YT_Scrap : Opé, puis 'modulariser', extraire 'done', etc... → Gérer les done et reposer / générer dans BPL
+* [ ] BPL 1_isc
+* [ ] BPL 2_2mn
 * [ ] BPL 3_BandedeCodeurs
-* [ ] BPL_5_Jordy
-* [ ] KD
-* [ ] McLearnia
-
-* Nett yt_videos
+* [ ] BPL_4_Jordy
+* [ ] BPL_5_graven
+* [ ] BPL_6_
+* [ ] BPL_7_guru99
+* [ ] YT → YT_Scrap : Opé, puis 'modulariser', extraire 'done', etc... → Gérer les done et reposer / générer dans BPL
+* [ ] Nett yt_videos
+* [ ] tutos/*
+* [ ] tecks/*
+* [ ] a_trier/*
 * 🎯 ↑ Kit
+* 🎯 MVP -CG - CDA
 
-### BPL Quotidien (Une leçon - ISC - 2mnPy - BdC - Graven - Jordy + Indently - Fooxpy)
+### [BPL Quotidien (Une leçon - ISC - 2mnPy - BdC - Graven - Jordy + Indently - Fooxpy)](.\BPL.md)
 
 #### Autres à voir
 
