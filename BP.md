@@ -10,8 +10,8 @@
 
 #### Fr Auteur **[InformatiqueSansComplexe](https://www.youtube.com/@InformatiqueSansComplexe/videos)** ( **285** videos - 1 815 422 vues - 33 heures et 20 minutes )
 
-* [/] [23/03/2026 **J'ai demandé à l'IA de m'apprendre les conditions Python — voilà ce qui s'est passé** 283 **12:07**](https://www.youtube.com/watch?v=QmeQn4-yHFo)
-* [/] [16/03/2026 **J'ai demandé à l'IA de m'apprendre les variables Python — voilà ce qui s'est passé** 496 **12:35**](https://www.youtube.com/watch?v=4u0imOeh3WQ)
+* [x] [23/03/2026 **J'ai demandé à l'IA de m'apprendre les conditions Python — voilà ce qui s'est passé** 283 **12:07**](https://www.youtube.com/watch?v=QmeQn4-yHFo)
+* [x] [16/03/2026 **J'ai demandé à l'IA de m'apprendre les variables Python — voilà ce qui s'est passé** 496 **12:35**](https://www.youtube.com/watch?v=4u0imOeh3WQ)
 * [ ] [12/03/2026 **La fin des développeurs Odoo** 341 **11:24**](https://www.youtube.com/watch?v=UFo9wySvXqw)
 * [ ] [02/03/2026 **J'ai demandé à l'IA de coder un module Odoo... grosse erreur** 440 **03:27**](https://www.youtube.com/watch?v=2eg8jTvd7jM)
 * [ ] [24/02/2026 **Ton module Odoo est dangereux !** 294 **06:45**](https://www.youtube.com/watch?v=VGSJOv5oK-M)
@@ -274,7 +274,7 @@
 * [ ] [25/01/2021 **AdresseIP** 1730 **02:57**](https://www.youtube.com/watch?v=kR9mCvMHWjk)
 * [ ] [18/01/2021 **Bluetooth** 786 **02:47**](https://www.youtube.com/watch?v=iw5PhXYvfgo)
 * [ ] [11/01/2021 **Le Serverless, c'est quoi ?** 1282 **03:05**](https://www.youtube.com/watch?v=90kLT1YGFmI)
-* [/] [04/01/2021 **La 5G, ça change quoi ?** 306 **03:32**](https://www.youtube.com/watch?v=QPZMcRIQO3k)
+* [x] [04/01/2021 **La 5G, ça change quoi ?** 306 **03:32**](https://www.youtube.com/watch?v=QPZMcRIQO3k)
 * [x] [21/12/2020 **Un Firewall, à quoi ça sert ?** 10620 **03:00**](https://www.youtube.com/watch?v=4lV-QlLAav0)
 * [x] [07/12/2020 **SQL ou NoSQL ?** 13975 **04:40**](https://www.youtube.com/watch?v=BW3cdr5MjEE)
 * [x] [30/11/2020 **Firebase, c'est quoi ?** 15567 **02:44**](https://www.youtube.com/watch?v=Xh7UcPYBOGw)

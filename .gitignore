@@ -1,11 +1,8 @@
 **/*/__pycache__/
 *.pyc
 .venv/
-.venv313/
-.venv312/
-.venv311/
 .env
-kevindegila/cache/*.json
-pymox_shadow.png
+*/**/cache/*.json
 # divers/yt_videos/cache
+pymox_shadow.png
 */**/cache/**
