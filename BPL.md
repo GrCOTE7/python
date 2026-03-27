@@ -656,8 +656,8 @@
 
 #### 6 GB Indently
 
-❌  Mettre ici BPL
+❌  Mettre ici BPL Indently dès que YT_Scrap opé in Py/
 
 #### 7 FR Guru99
 
-❌  Mettre ici BPL
+❌  Mettre ici BPL Guru99 dès que YT_Scrap opé in Py/

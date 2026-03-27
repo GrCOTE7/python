@@ -12,10 +12,7 @@
 
 ---
 
-* [/] BPL_4_Jordy
-* [ ] BPL_5_graven
-* [ ] BPL_6_
-* [ ] BPL_7_guru99
+* [/] BPL_7_guru99
 * [ ] YT → YT_Scrap : Opé, puis 'modulariser', extraire 'done', etc... → Gérer les done et reposer / générer dans BPL
 * [ ] Nett yt_videos
 * [ ] tutos/*
@@ -26,6 +23,9 @@
 
 ---
 
+* [x] BPL_6_Indently
+* [x] BPL_5_Jordy
+* [x] BPL_4_graven
 * [x] BPL 3_BandedeCodeurs
 * [x] BPL 2_2mn
 * [x] BPL 1_isc

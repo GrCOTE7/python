@@ -9,7 +9,7 @@ def run_tests():
 
     tests = [
         simpleCalc,
-        # webAccess,
+        webAccess,
     ]
 
     combined_suite = unittest.TestSuite(tests)

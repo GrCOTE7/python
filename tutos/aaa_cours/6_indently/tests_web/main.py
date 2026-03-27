@@ -1,6 +1,6 @@
 import flet as ft
 
-# Lancer avec : py -m tutos.idently.main
+# Lancer avec : py -m main
 
 def stopPycs():
     """Important if flet run -d -r pour les fichiers créés dans__pycache__/"""
@@ -10,7 +10,7 @@ def stopPycs():
 
 
 def testsLaunch():
-    import tutos.idently.div.tests.testsSuite as tests
+    import div.tests.testsSuite as tests
 
     stopPycs()
     tests.run_tests()
