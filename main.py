@@ -11,11 +11,11 @@ if __name__ == "__main__":
 
     title = "ReaDy."
 
-    cls(f"{title.capitalize()}")
+    # cls(f"{title.capitalize()}")
 
     ls(CYAN)
 
-    print("Ready.".center(CLIW))
+    print(f"{title.capitalize()}".center(CLIW))
 
     sl(FRENCH)
 

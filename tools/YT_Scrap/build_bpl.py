@@ -1,5 +1,6 @@
 import argparse
 import re
+from datetime import datetime
 from pathlib import Path
 
 import inc.authors as auth
@@ -148,13 +149,43 @@ def _read_existing_title(markdown_path):
     return DEFAULT_BPL_TITLE
 
 
+def _format_published_date_fr(raw_published):
+    if raw_published is None:
+        return "N/A"
+
+    text = str(raw_published).strip()
+    if not text:
+        return "N/A"
+
+    # Deja au format JJ/MM/AAAA.
+    if re.fullmatch(r"\d{2}/\d{2}/\d{4}", text):
+        return text
+
+    # Cas principal du pipeline actuel: YYYYMMDD.
+    if re.fullmatch(r"\d{8}", text):
+        try:
+            return datetime.strptime(text, "%Y%m%d").strftime("%d/%m/%Y")
+        except ValueError:
+            return text
+
+    # Accepte aussi YYYY-MM-DD et YYYY/MM/DD.
+    normalized = text.replace("-", "/")
+    if re.fullmatch(r"\d{4}/\d{2}/\d{2}", normalized):
+        try:
+            return datetime.strptime(normalized, "%Y/%m/%d").strftime("%d/%m/%Y")
+        except ValueError:
+            return text
+
+    return text
+
+
 def _video_line(video, checked=False):
     url = video.get("video_url")
     if not isinstance(url, str) or not url:
         return None
 
     title = video.get("title") or "N/A"
-    published = video.get("published_at") or "N/A"
+    published = _format_published_date_fr(video.get("published_at"))
     duration = video.get("duration_text") or "N/A"
     views = _format_views(_coerce_int(video.get("views"), 0))
     checkbox = "x" if checked else " "
@@ -247,10 +278,32 @@ def build_bpl(db_path, bpl_path, targets):
             )
             lines.append("")
 
+            has_both_groups = bool(not_seen) and bool(seen)
+            if has_both_groups:
+                not_seen_seconds = sum(
+                    _coerce_int(video.get("duration_seconds"), 0)
+                    for video in not_seen
+                )
+                lines.append(
+                    f"### Pas vus ({len(not_seen)} - {_format_duration_minutes_fr(not_seen_seconds)})"
+                )
+                lines.append("")
+
             for video in not_seen:
                 rendered = _video_line(video, checked=False)
                 if rendered:
                     lines.append(rendered)
+
+            if has_both_groups and seen:
+                if lines and lines[-1] != "":
+                    lines.append("")
+                seen_seconds = sum(
+                    _coerce_int(video.get("duration_seconds"), 0) for video in seen
+                )
+                lines.append(
+                    f"### Vus ({len(seen)} - {_format_duration_minutes_fr(seen_seconds)})"
+                )
+                lines.append("")
 
             for video in seen:
                 rendered = _video_line(video, checked=True)

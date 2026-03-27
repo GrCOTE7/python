@@ -1,6 +1,6 @@
 # Organigramme actuel du scraper
 
-Ce document décrit le flux réel en production, après refactor modulaire.
+Ce document décrit le flux reel en production (scrap + tracking + regeneration BPL).
 
 ## Vue d'ensemble
 
@@ -16,11 +16,11 @@ flowchart TD
 
     G --> H[ttl_ops.try_return_valid_ttl_cache<br/>TtlOpsContext]
     H --> I{Cache TTL valide + complet ?}
-    I -- Oui --> Z[Résumé + fin auteur]
-    I -- Non --> J[Charger état local<br/>videos/excluded/counts]
+    I -- Oui --> Z[Resume auteur + sync tracking]
+    I -- Non --> J[Charger etat local<br/>videos/excluded/counts]
 
     J --> K[ttl_ops.decide_post_ttl_strategy<br/>TtlOpsContext]
-    K --> L{Sortie anticipée après probe ID ?}
+    K --> L{Sortie anticipee apres probe ID ?}
     L -- Oui --> Z
     L -- Non --> M[Boucle de scraping]
 
@@ -33,23 +33,28 @@ flowchart TD
     R -- Non --> S[flow_ops.handle_no_missing_ids_case]
     R -- Oui --> T[detail_ops.process_missing_entries_detailed<br/>DetailOpsContext]
 
-    S --> U[Décision retry/stall/pause]
+    S --> U[Decision retry/stall/pause]
     T --> U
     U --> V{Pause rate-limit ?}
     V -- Oui --> W[persist_ops.persist_intermediate_state<br/>PersistOpsContext]
     W --> M
     V -- Non --> M
 
-    M --> X{Terminé ?}
+    M --> X{Termine ?}
     X -- Oui --> Y[persist_ops.finalize_scrap_state<br/>PersistOpsContext]
     Y --> Z
+
+    Z --> AA[main.py<br/>import_states_into_tracking]
+    AA --> AB[main.py<br/>build_bpl]
 ```
 
-## Modules et responsabilités
+## Modules et responsabilites
 
 1. `main.py`
 
-- Parse l'argument `--selection` (`default`, `all`, `N`, `a,b,c`, `range:N`).
+- Parse `--selection` (`default`, `all`, `N`, `a,b,c`, `range:N`).
+- Applique la selection par defaut BPL (`get_default_target_scrape_ids`).
+- Lance le scrap puis synchronise `BPL.md` via `import_states_into_tracking` + `build_bpl`.
 
 1. `inc/runner.py`
 
@@ -57,58 +62,63 @@ flowchart TD
 
 1. `inc/manager.py`
 
-- Orchestrateur global.
-- Initialise le contexte runtime par auteur.
-- Construit les contextes dataclass pour les modules ops.
-- Pilote la boucle de collecte et la stratégie de reprise.
+- Orchestrateur global par auteur.
+- Initialise le contexte runtime.
+- Construit `TtlOpsContext`, `DetailOpsContext`, `PersistOpsContext`.
+- Pilote la boucle de collecte, la gestion des erreurs et le stall control.
+- Synchronise le tracking sqlite en fin de flux (TTL/early/final).
 
 1. `inc/init_ops.py`
 
-- Construit le contexte d'initialisation (auteur, chemins, paramètres runtime, loader cache TTL).
+- Construit le contexte d'initialisation (auteur, chemins, seuils runtime, loader cache TTL).
 
 1. `inc/cache.py`
 
-- Lecture/écriture JSON de cache.
+- Lecture/ecriture JSON de cache.
 - Compat legacy (`adults`, `adult_count`, `adult_videos`).
-- Auto-heal d'invariants.
-- Bootstrap depuis anciens fichiers JSON.
-
-1. `inc/flow_ops.py`
-
-- Utilitaires de flux playlist (timeouts, batch, résolution total, scan incrémental, nettoyage IDs exclus).
+- Auto-heal d'invariants et bootstrap depuis anciens JSON.
 
 1. `inc/ttl_ops.py`
 
-- Politique TTL et sortie anticipée.
-- Contexte unique: `TtlOpsContext`.
+- Politique TTL et sortie anticipee.
+- Probe ultra-legere du dernier ID publie.
+
+1. `inc/flow_ops.py`
+
+- Recuperation playlist (timeouts, incremental/full fallback).
+- Resolution `total_playlist` avec garde-fou de baisse.
+- Extraction IDs, nettoyage `excluded_ids`, gestion du cas sans IDs manquants.
 
 1. `inc/detail_ops.py`
 
-- Traitement détaillé des vidéos manquantes.
-- Gestion indisponible/adult/rate-limit.
-- Contexte unique: `DetailOpsContext`.
+- Traitement detaille des videos manquantes.
+- Gestion age-restricted, indisponible/private, fallback Android, rate-limit.
 
 1. `inc/persist_ops.py`
 
-- Sauvegarde intermédiaire (pause/reprise).
-- Finalisation JSON + Markdown + résumé.
-- Contexte unique: `PersistOpsContext`.
+- Persistance intermediaire en pause (`persist_intermediate_state`).
+- Finalisation JSON + Markdown + resume (`finalize_scrap_state`).
+
+1. `build_bpl.py` et `suivi/tracking_store.py`
+
+- Consolidation des etats vus/non vus dans `tracking.sqlite3`.
+- Regeneration de `BPL.md` apres le run principal.
 
 1. `inc/video.py`, `inc/helpers.py`, `inc/render.py`, `inc/constants.py`
 
-- Briques utilitaires spécialisées (métadonnées vidéo, classification erreurs, rendu, constantes yt-dlp).
+- Briques utilitaires (normalisation metadonnees, classification erreurs, rendu Markdown, constantes yt-dlp).
 
-## Invariants métier
+## Invariants metier
 
-1. Un cache TTL n'est accepté que s'il est valide et complet.
-1. Les vidéos indisponibles/private ne sont pas classées adult.
-1. `excluded_count` et `excluded_ids` restent cohérents à chaque persistance.
-1. Le markdown est régénéré uniquement si nécessaire (fichier absent ou état modifié).
-1. Le mode incrémental fallback automatiquement vers scan complet si signal insuffisant.
+1. Un cache TTL n'est accepte que s'il est valide (`cache_valid`) et complet.
+1. Les videos indisponibles/private ne sont pas classees adult.
+1. `excluded_count` et `excluded_ids` restent coherents a chaque persistance.
+1. Le Markdown est regenere uniquement si necessaire (fichier absent ou etat final modifie).
+1. Le mode incremental fallback automatiquement vers scan complet si signal insuffisant.
 
 ## Points de robustesse
 
 1. Fallback locale non bloquant (`locale.setlocale`).
-1. Garde-fous timeout réseau et timeout global playlist.
-1. Détection de stall avec abandon contrôlé après plusieurs passes sans progression.
-1. Journalisation explicite des bascules de stratégie (TTL, incrémental, fallback, pause).
+1. Timeout reseau par inactivite + garde-fou global playlist.
+1. Detection de stall avec abandon controle apres plusieurs passes sans progression.
+1. Journalisation explicite des bascules de strategie (TTL, probe, incremental, fallback, pause).

@@ -205,6 +205,20 @@ function Start-App {
   Write-Host "  Lancement de ./main.py"
   Write-Host "========================================"
   Write-Host ""
+  $preScrapScript = "tools/YT_Scrap/main.py"
+  if (Test-Path $preScrapScript) {
+    Write-Host "Pré-exécution : ./$preScrapScript"
+    python $preScrapScript
+    if ($LASTEXITCODE -ne 0) {
+      Write-Host "[AVERTISSEMENT] Le pré-scrap YT a échoué (code=$LASTEXITCODE). Lancement de l'app principale quand même."
+    }
+    Write-Host ""
+  }
+  else {
+    Write-Host "[AVERTISSEMENT] Script introuvable : ./$preScrapScript"
+    Write-Host ""
+  }
+
   Write-Host "Démarrage automatique du script ./main.py... 🚀"
   Write-Host ""
   # Flet CLI supports --ignore-dirs (no --ignore-files in this version).
