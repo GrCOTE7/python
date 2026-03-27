@@ -193,8 +193,8 @@ def get_all_pokemons(page: int = 1, items: int = 10) -> list[Pokemon]:
 
 if __name__ == "__main__":
     poks = get_all_pokemons()
-
-    print("─" * 9, "\b→", len(poks))
+    
+    print("─" * 9, "\b→", len(poks), 'pokemons')
 
     for i in range(150, 150):
         print(i, (poks[i].attack_special, poks[i].defense_special))

@@ -10,9 +10,9 @@
 
 * Rendre opé tous les scripts de :
 
-* [/] BPL 2_2mn
-* [ ] BPL 3_BandedeCodeurs
-* [ ] BPL_4_Jordy
+---
+
+* [/] BPL_4_Jordy
 * [ ] BPL_5_graven
 * [ ] BPL_6_
 * [ ] BPL_7_guru99
@@ -23,6 +23,11 @@
 * [ ] a_trier/*
 * 🎯 ↑ Kit
 * 🎯 MVP -CG - CDA
+
+---
+
+* [x] BPL 3_BandedeCodeurs
+* [x] BPL 2_2mn
 * [x] BPL 1_isc
 
 ### [BPL Quotidien (Une leçon - ISC - 2mnPy - BdC - Graven - Jordy + Indently - Fooxpy)](.\BPL.md)

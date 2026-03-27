@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from flet import app as flet_app, Text, Page
+from flet import run as flet_run, Text, Page
 
 # FastAPI app
 api = FastAPI()
@@ -20,7 +20,7 @@ def main(page: Page):
 # Lancer Flet uniquement si exécuté via `flet run`
 def run_flet():
     print ('Lancé !')
-    flet_app(target=main)
+    flet_run(main)
 
 
 # Point d’entrée pour Flet
