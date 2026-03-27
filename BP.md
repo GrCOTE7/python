@@ -20,7 +20,7 @@
 ---
 
 * [x] YT → YT_Scrap : Opé, puis 'modulariser', extraire 'done', etc...
-* [x] BPL_7_guru99
+* [ ] BPL_7_foxxpy
 * [x] BPL_6_Indently
 * [x] BPL_5_Jordy
 * [x] BPL_4_graven
@@ -36,6 +36,7 @@
 
 ---
 
+* [ ] [Lecture - Tutos Guru99](https://www.guru99.com/fr/python-tutorials.html)
 * [À lire Algorithmes et programmation](https://www.france-ioi.org/algo/course.php?idChapter=552&idCourse=1801)
 
 * [/] [ZesteDeSavoir](https://zestedesavoir.com/tutoriels/2514/un-zeste-de-python/)

@@ -24,7 +24,7 @@ TARGET_AUTHORS = [
     {"author": "Gravenilvectuto", "label": "FR Auteur", "scrap_id": 7},
     {"author": "JordyBayo", "label": "FR Auteur", "scrap_id": 18},
     {"author": "Indently", "label": "GB Auteur", "scrap_id": 20},
-    {"author": "Fooxpy", "label": "FR Auteur", "scrap_id": 21},
+    {"author": "foxxpy", "label": "FR Maths Auteur", "scrap_id": 21},
 ]
 
 TARGET_BY_AUTHOR = {item["author"]: item for item in TARGET_AUTHORS}

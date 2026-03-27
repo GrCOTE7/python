@@ -24,7 +24,7 @@ AUTHORS = {
         18: "JordyBayo",
         19: "Faireaimerlesmathématiques-h4w",
         20: "Indently",
-        21: "Guru99"
+        21: "foxxpy"
     }
 
 # Pour mise au point du script ❌ toutes en partant du bas saud tseries et alphorn
