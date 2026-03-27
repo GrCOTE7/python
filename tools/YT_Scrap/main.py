@@ -34,5 +34,6 @@ if __name__ == "__main__":
         selection = parse_selection(args.selection)
     except Exception as exc:
         parser.error(f"selection invalide: {exc}")
-
+        
+    selection = 0,2,1
     run_scrap(selection)
