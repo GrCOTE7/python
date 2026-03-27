@@ -1,3 +1,9 @@
+import flet
+from pymox_kit import *
+
+# flet run -d -r .\tutos\aaa_cours\1_isc\tutos.py
+
+
 def division(a, b):
     reste = a
     quotient = 0
@@ -31,7 +37,7 @@ def dicts():
         d.get(18, "18: Trouvé"),
         "-",
         d.get(55, "55: Pas trouvé"),
-        "\n" + "-" * 120,
+        "\n" + "-" * CLIW,
     )
     d2 = {"un": 1, "deux": 2, "trois": 3}
     print(f"{d2=}")
@@ -114,9 +120,9 @@ def tablesV2():
 
 
 def tables():
-
-    champs, tab = getTable("restaurants.csv")
-    champs2, tab2 = getTable("restaurants2.csv")
+    path = "./tutos/aaa_cours/1_isc/"
+    champs, tab = getTable(path + "/restaurants.csv")
+    champs2, tab2 = getTable(path + "/restaurants2.csv")
     print("", champs, "\n", *tab)
     print("", champs2, "\n", *tab2)
     print(tab + tab2)
@@ -144,15 +150,16 @@ def variables():
 
 def main():
     variables()
-
-
-# tupples()
-# dicts()
-# tables()
+    print("─" * CLIW)
+    tupples()
+    print("─" * CLIW)
+    dicts()
+    print("─" * CLIW)
+    tables()
 
 
 if __name__ == "__main__":
 
-    # tupples()
+    cls()
     main()
-    print("-" * 119)
+    end()
