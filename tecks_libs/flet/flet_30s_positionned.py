@@ -3,12 +3,12 @@ import asyncio
 
 
 async def countdown_task(countdown: ft.Text, page: ft.Page):
-    for i in range(300, 0, -1):
+    for i in range(300, 0, -1): # 300 secondes = 5 minutes
         countdown.value = f"{i} seconde{'s' if i > 1 else ''}"
         countdown.color = ft.Colors.RED if i > 15 or i % 2 == 0 else ft.Colors.WHITE
         page.update()
         await asyncio.sleep(1)
-    page.window.destroy()
+    await page.window.destroy()
 
 
 async def main(page: ft.Page):
@@ -22,13 +22,13 @@ async def main(page: ft.Page):
     page.window.resizable = False
 
     title = ft.Text("Fermeture automatique dans :", size=12)
-    countdown = ft.Text(size=12, weight="bold", color=ft.Colors.RED)
+    countdown = ft.Text(size=12, weight=ft.FontWeight.BOLD, color=ft.Colors.RED)
 
     header_row = ft.Row(
         controls=[
             title,
             ft.Container(
-                content=countdown, expand=True, alignment=ft.alignment.center_right
+                content=countdown, expand=True, alignment=ft.Alignment(1, 0)
             ),
         ],
         alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
@@ -59,7 +59,7 @@ async def main(page: ft.Page):
             height=20,
             bgcolor=getattr(ft.Colors, name),
             border_radius=4,
-            alignment=ft.alignment.center_right,
+            alignment=ft.Alignment(1, 0),
         )
         row = ft.Row(
             controls=[
@@ -82,14 +82,14 @@ async def main(page: ft.Page):
     # Centrer les colonne dans la page
     page.add(
         ft.Container(
-            alignment=ft.alignment.center,
+            alignment=ft.Alignment(0, 0),
             content=scrollable_column,
             expand=True,
             # margin=ft.margin.only(top=80),
             padding=ft.padding.only(left=60, right=60),
         )
     )
-# print(dir(ft.Colors))
+print(dir(ft.Colors))
 
 
-ft.app(target=main)
+ft.run(main)

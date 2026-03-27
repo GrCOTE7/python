@@ -1,4 +1,5 @@
 import flet as ft
+# from tools.gc7_positioned import caller_info
 
 def position(page):
     screen_width = 1920

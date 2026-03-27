@@ -2,26 +2,37 @@ import flet as ft
 import matplotlib.pyplot as plt
 import matplotlib
 import numpy as np
+from typing import Any, cast
+
+from utils.posit import place_figure_on_monitor
+
+# flet run -d -r .\tecks_libs\matplotlib\matplotlib_lib.py
 
 # Assure que le backend est TkAgg
 matplotlib.use("TkAgg")
 
 
-def voitures(titre=""):
-
+def voitures(title="Voitures"):
     fig, ax = plt.subplots()
 
-    types = ["Essance", "Diesel", "Hybride", "Electrique", "Autres"]
+    types = ["Essence", "Diesel", "Hybride", "Electrique", "Autres"]
     counts = [46, 30, 12, 5, 7]
+    year = 2024
 
-    ax.set_title("Répartition Parc Auto")
+    title += f" en {year}"
+
+    if fig.canvas.manager is not None:
+        fig.canvas.manager.set_window_title(title)
+    ax.set_title(f"{title}")
     ax.pie(counts, labels=types, shadow=True)
     ax.axis("equal")
+
+    place_figure_on_monitor(fig, monitor_index=1, window_width=800, window_height=500)
 
     plt.show()
 
 
-def graphs():
+def graphs(titre="Sinusoide"):
     def carre_cube(exposant=2, titre=""):
         global x, y, label
 
@@ -47,32 +58,24 @@ def graphs():
         label = "sin(x)"
         return label, x, y
 
+    label, x, y = sinus(titre=titre)
+    print(titre)
     if titre not in ["Voitures"]:
         # label,  x, y = carre_cube(exposant:=2, titre := "Une " + ("hyperbole" if exposant % 2 else "parabole"))
         # label, x, y = autre(titre := "3 points")
         # label, x, y = sinus(titre := "Sinusoïde")
 
         fig, ax = plt.subplots()
-        fig.canvas.manager.set_window_title(titre)
+        if fig.canvas.manager is not None:
+            fig.canvas.manager.set_window_title(titre)
 
         ax.set(xlabel="x", ylabel=label, title=titre)
         ax.grid()
         ax.plot(x, y)
 
-        # Positionnement de la fenêtre
-        manager = plt.get_current_fig_manager()
-        window = manager.window
-        # Récupère la taille de l'écran
-        screen_width = window.winfo_screenwidth()
-        screen_height = window.winfo_screenheight()
-        # Taille de la fenêtre
-        window_width = 500
-        window_height = 800
-        # Position à droite
-        x_pos = screen_width - window_width
-        y_pos = (screen_height - window_height) // 2
-        # Applique la position
-        window.geometry(f"{window_width}x{window_height}+{x_pos}+{y_pos}")
+        place_figure_on_monitor(
+            fig, monitor_index=1, window_width=500, window_height=800
+        )
 
         # Affiche la fenêtre
         # plt.show(block=False)
@@ -81,15 +84,20 @@ def graphs():
         # time.sleep(0.1)
 
         # Empêche la fenêtre de voler le focus
-        window.attributes("-topmost", False)
-        # Met la fenêtre en arrière-plan
-        window.lower()
+        manager = plt.get_current_fig_manager()
+        if manager is not None and hasattr(manager, "window"):
+            window = cast(Any, manager).window
+            window.attributes("-topmost", False)
+            # Met la fenêtre en arrière-plan
+            window.lower()
 
         plt.show()
 
 
 if __name__ == "__main__":
+
     print("Ok")
 
-    voitures(titre := "Voitures")
+    # voitures(title="Voitures")
+    voitures(title="Répartition des types de voitures")
     graphs()
