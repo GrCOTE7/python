@@ -1,6 +1,6 @@
 # BPL Quotidien (Une leçon - ISC - 2mnPy - BdC - Graven - Jordy + Indently - Fooxpy)
 
-#### 1 FR Auteur **[InformatiqueSansComplexe](https://www.youtube.com/@InformatiqueSansComplexe/videos)** ( **285** videos - 1 815 422 vues - 33 heures et 20 minutes )
+## 1 FR Auteur **[InformatiqueSansComplexe](https://www.youtube.com/@InformatiqueSansComplexe/videos)** ( **285** videos - 1 815 422 vues - 33 heures et 20 minutes )
 
 * [x] [23/03/2026 **J'ai demandé à l'IA de m'apprendre les conditions Python — voilà ce qui s'est passé** 283 **12:07**](https://www.youtube.com/watch?v=QmeQn4-yHFo)
 * [x] [16/03/2026 **J'ai demandé à l'IA de m'apprendre les variables Python — voilà ce qui s'est passé** 496 **12:35**](https://www.youtube.com/watch?v=4u0imOeh3WQ)
@@ -243,9 +243,9 @@
 * [ ] [05/07/2021 **L'informatique sans contact !** 290 **04:24**](https://www.youtube.com/watch?v=EORtO6bzjek)
 * [ ] [28/06/2021 **La révolution tactile !** 207 **04:46**](https://www.youtube.com/watch?v=40thIcfnKpQ)
 * [ ] [21/06/2021 **Alexa, c'est quoi ?** 9888 **03:55**](https://www.youtube.com/watch?v=TJusNVqsfQg)
-* [ ] [14/06/2021 **Une ampoule connectée, c'est quoi ?** 6143 **03:57**](https://www.youtube.com/watch?v=Sv26NkwFzpw)
+* [x] [14/06/2021 **Une ampoule connectée, c'est quoi ?** 6143 **03:57**](https://www.youtube.com/watch?v=Sv26NkwFzpw)
 * [x] [07/06/2021 **Wordpress®, c'est quoi ?** 8480 **03:11**](https://www.youtube.com/watch?v=-ACYvMaJCVY)
-* [ ] [31/05/2021 **IONIC®, c'est quoi ?** 3864 **04:00**](https://www.youtube.com/watch?v=CVSlApLJNdo)
+* [x] [31/05/2021 **IONIC®, c'est quoi ?** 3864 **04:00**](https://www.youtube.com/watch?v=CVSlApLJNdo)
 * [x] [24/05/2021 **AWS : Comment ne pas se ruiner ?** 462 **03:32**](https://www.youtube.com/watch?v=qh3wVnRha9k)
 * [x] [17/05/2021 **AWS® : Qui est responsable de quoi ?** 220 **03:44**](https://www.youtube.com/watch?v=UnFFAIF6D_o)
 * [x] [10/05/2021 **L'infrastructure AWS® dans le monde !** 358 **03:25**](https://www.youtube.com/watch?v=y-QArZMx6Ho)
@@ -254,7 +254,7 @@
 * [x] [19/04/2021 **IaaS, Paas & SaaS, c'est quoi ?** 8286 **03:27**](https://www.youtube.com/watch?v=oNgVqZYdDBI)
 * [x] [12/04/2021 **Kubernetes, c'est quoi ?** 12637 **03:57**](https://www.youtube.com/watch?v=dHPBVjxIIsM)
 * [x] [05/04/2021 **Docker-compose, c'est quoi ?** 12654 **05:16**](https://www.youtube.com/watch?v=MfxKDC3RR-U)
-* [ ] [29/03/2021 **Docker - Utiliser efficacement un container** 7435 **04:41**](https://www.youtube.com/watch?v=mzJ2yWXmbkI)
+* [x] [29/03/2021 **Docker - Utiliser efficacement un container** 7435 **04:41**](https://www.youtube.com/watch?v=mzJ2yWXmbkI)
 * [x] [22/03/2021 **Lancer son premier container sur Docker !** 27903 **05:30**](https://www.youtube.com/watch?v=1073xKuYNaY)
 * [x] [15/03/2021 **Installer Docker sur Windows** 35577 **03:35**](https://www.youtube.com/watch?v=SYMPIdMC2qo)
 * [x] [08/03/2021 **Le CPL, c'est quoi ?** 8212 **02:33**](https://www.youtube.com/watch?v=blRw-0iaGnk)
@@ -291,7 +291,7 @@
 
 ---
 
-#### 2 FR/GB Auteur **[2minutesPy](https://www.youtube.com/@2minutesPy/videos)** ( **91** videos - 1 076 191 vues - 3 heures et 46 minutes )
+## 2 FR/GB Auteur **[2minutesPy](https://www.youtube.com/@2minutesPy/videos)** ( **91** videos - 1 076 191 vues - 3 heures et 46 minutes )
 
 * [ ] [11/03/2026 **Why Deferring Now… Not Earlier!** 766 **02:48**](https://www.youtube.com/watch?v=45yD9UvuUmU)
 * [ ] [07/03/2026 **Challenge: Prompts ONLY and Full-stack App is READY 🚀** 509 **02:51**](https://www.youtube.com/watch?v=HywYRduZayQ)
@@ -387,7 +387,7 @@
 
 ---
 
-#### 3 FR Auteur **[bandedecodeurs](https://www.youtube.com/@bandedecodeurs/videos)** ( **50** videos - 743 739 vues - 21 heures et 16 minutes )
+## 3 FR Auteur **[bandedecodeurs](https://www.youtube.com/@bandedecodeurs/videos)** ( **50** videos - 743 739 vues - 21 heures et 16 minutes )
 
 * [ ] [01/02/2026 **Mon nouveau projet : Ballads of the Unsung. J'ai besoin votre aide !** 524 **02:16**](https://www.youtube.com/watch?v=NCpXtgrX1Xo)
 * [ ] [21/05/2025 **Utiliser n8n pour gérer ses notes de frais automatiquement avec un bot Telegram et de l'IA** 2403 **38:58**](https://www.youtube.com/watch?v=SDxj9S_xv5Y)
@@ -440,7 +440,7 @@
 * [ ] [23/02/2022 **Comment générer un nuage de mots en Python avec WordCloud** 1325 **40:27**](https://www.youtube.com/watch?v=l7w7unBNAeU)
 * [ ] [17/02/2022 **Comment interroger une base de données en SQL** 3310 **22:11**](https://www.youtube.com/watch?v=pBPaPwyjLiQ)
 
-#### 4 FR Auteur **[Gravenilvectuto](https://www.youtube.com/@Gravenilvectuto/videos)** ( **120** videos - 26 864 001 vues - 49 heures et 44 minutes )
+## 4 FR Auteur **[Gravenilvectuto](https://www.youtube.com/@Gravenilvectuto/videos)** ( **120** videos - 26 864 001 vues - 49 heures et 44 minutes )
 
 * [/] [23/03/2026 **Apprendre à coder à l’ère de l’IA (le vrai problème)** 5001 **07:57**](https://www.youtube.com/watch?v=cGxZR0hnNhc)
 * [ ] [17/03/2026 **NE RATE PAS CET EVENEMENT !! (places limités)** 569 **04:57**](https://www.youtube.com/watch?v=xP47FjwMYn4)
@@ -524,14 +524,14 @@
 * [ ] [24/11/2018 **APPRENDRE LE PYTHON #7 ? LES OBJETS** 384337 **19:57**](https://www.youtube.com/watch?v=dfUM_9xibf8)
 * [ ] [13/09/2018 **APPRENDRE LE PYTHON #6 ? LES FONCTIONS** 542848 **18:25**](https://www.youtube.com/watch?v=sgJt64iTOYM)
 * [ ] [23/06/2018 **APPRENDRE LE PYTHON #5 ? LES BOUCLES** 526513 **14:40**](https://www.youtube.com/watch?v=BrknhzrHm8w)
-* [ ] [14/05/2018 **APPRENDRE LE PYTHON #4 ? LES LISTES** 719532 **14:18**](https://www.youtube.com/watch?v=kyxF5eH3Kic)
-* [ ] [14/05/2018 **APPRENDRE LE PYTHON #3 ? LES CONDITIONS** 716763 **12:51**](https://www.youtube.com/watch?v=_AgUOsvMt8s)
+* [x] [14/05/2018 **APPRENDRE LE PYTHON #4 ? LES LISTES** 719532 **14:18**](https://www.youtube.com/watch?v=kyxF5eH3Kic)
+* [x] [14/05/2018 **APPRENDRE LE PYTHON #3 ? LES CONDITIONS** 716763 **12:51**](https://www.youtube.com/watch?v=_AgUOsvMt8s)
 * [x] [07/05/2018 **APPRENDRE LE PYTHON #2 ? LES VARIABLES** 1057322 **10:50**](https://www.youtube.com/watch?v=nvyX8JfoOWY)
 * [x] [07/05/2018 **APPRENDRE LE PYTHON #1 ? LES BASES & PREREQUIS** 2956835 **09:27**](https://www.youtube.com/watch?v=psaDHhZ0cPs)
 
 ---
 
-#### 5 FR Auteur **[JordyBayo](https://www.youtube.com/@JordyBayo/videos)** ( **201** videos - 364 785 vues - 80 heures et 23 minutes ) - Sélection
+## 5 FR Auteur **[JordyBayo](https://www.youtube.com/@JordyBayo/videos)** ( **201** videos - 364 785 vues - 80 heures et 23 minutes ) - Sélection
   
 * [ ] [22/03/2026 **Ne code plus : "Manifeste" ta pensée.** 63 **15:43**](https://www.youtube.com/watch?v=55mzD2skSo0)
 * [ ] [10/03/2026 **Tutoriel complet OpenClaw pour débutants : Installation et utilisation d'OpenClaw 🔥** 988 **01:00:53**](https://www.youtube.com/watch?v=o85x8zyUi-s)
@@ -654,10 +654,10 @@
 
 ---
 
-#### 6 GB Indently
+## 6 GB Indently
 
 ❌  Mettre ici BPL Indently dès que YT_Scrap opé in Py/
 
-#### 7 FR Guru99
+## 7 FR Guru99
 
 ❌  Mettre ici BPL Guru99 dès que YT_Scrap opé in Py/

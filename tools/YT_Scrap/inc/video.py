@@ -14,6 +14,53 @@ if TYPE_CHECKING:
 _RSS_PUBLISHED_DATES_CACHE = {}
 
 
+def _parse_yyyymmdd(value):
+    if not isinstance(value, str):
+        return None
+    text = value.strip()
+    if len(text) != 8 or not text.isdigit():
+        return None
+    try:
+        return datetime.strptime(text, "%Y%m%d")
+    except Exception:
+        return None
+
+
+def _datetime_to_yyyymmdd(dt):
+    if not isinstance(dt, datetime):
+        return None
+    return dt.strftime("%Y%m%d")
+
+
+def _extract_date_from_rss(video_id, channel_id):
+    if not isinstance(video_id, str) or not video_id:
+        return None
+    if not isinstance(channel_id, str) or not channel_id:
+        return None
+
+    rss_dates = fetch_channel_rss_published_dates(channel_id)
+    rss_date = rss_dates.get(video_id)
+    return _parse_yyyymmdd(rss_date)
+
+
+def _parse_timestamp_safely(raw_ts):
+    if not isinstance(raw_ts, (int, float)):
+        return None
+    if raw_ts <= 0:
+        return None
+    try:
+        dt = datetime.fromtimestamp(raw_ts)
+    except Exception:
+        return None
+
+    # Garde-fou: ignorer les dates manifestement invalides/futures.
+    if dt.year < 2005:
+        return None
+    if dt > datetime.now() and (dt - datetime.now()).total_seconds() > 86400:
+        return None
+    return dt
+
+
 def timestamp2fr(ts: float) -> str:
     dt = datetime.fromtimestamp(ts)
     return dt.strftime("%d/%m/%Y %H:%M:%S")
@@ -52,20 +99,25 @@ def format_date(date):
 
 
 def extract_video_datetime(video):
-    upload_date = video.get("upload_date")
-    if upload_date:
-        try:
-            return datetime.strptime(upload_date, "%Y%m%d")
-        except (ValueError, TypeError):
-            pass
+    if not isinstance(video, dict):
+        return None
+
+    upload_dt = _parse_yyyymmdd(video.get("upload_date"))
+    if upload_dt is not None:
+        return upload_dt
+
+    release_dt = _parse_yyyymmdd(video.get("release_date"))
+    if release_dt is not None:
+        return release_dt
+
+    rss_dt = _extract_date_from_rss(video.get("id"), video.get("channel_id"))
+    if rss_dt is not None:
+        return rss_dt
 
     for key in ("timestamp", "release_timestamp", "available_at"):
-        ts = video.get(key)
-        if ts:
-            try:
-                return datetime.fromtimestamp(ts)
-            except (ValueError, OSError, TypeError):
-                continue
+        dt = _parse_timestamp_safely(video.get(key))
+        if dt is not None:
+            return dt
 
     return None
 
@@ -128,20 +180,16 @@ def resolve_unavailable_upload_date(entry, video_id):
         if isinstance(upload_date, str) and upload_date:
             return upload_date
 
-        for ts_key in ("timestamp", "release_timestamp"):
-            raw_ts = entry.get(ts_key)
-            if isinstance(raw_ts, (int, float)):
-                try:
-                    return datetime.fromtimestamp(raw_ts).strftime("%Y%m%d")
-                except Exception:
-                    continue
+        rss_dt = _extract_date_from_rss(video_id, entry.get("channel_id"))
+        rss_yyyymmdd = _datetime_to_yyyymmdd(rss_dt)
+        if isinstance(rss_yyyymmdd, str):
+            return rss_yyyymmdd
 
-        channel_id = entry.get("channel_id")
-        if isinstance(channel_id, str) and channel_id:
-            rss_dates = fetch_channel_rss_published_dates(channel_id)
-            rss_date = rss_dates.get(video_id)
-            if isinstance(rss_date, str) and rss_date:
-                return rss_date
+        for ts_key in ("timestamp", "release_timestamp"):
+            dt = _parse_timestamp_safely(entry.get(ts_key))
+            yyyymmdd = _datetime_to_yyyymmdd(dt)
+            if isinstance(yyyymmdd, str):
+                return yyyymmdd
 
     return None
 

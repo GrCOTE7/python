@@ -322,3 +322,7 @@ Outils: https://markmap.js.org/repl
 #### 9.4 Création d'un bot Discord ou Telegram
 
 Cette structure progressive permet d'aborder Python de manière structurée, en commençant par les bases et en progressant vers des concepts plus avancés et des applications pratiques.
+
+Note:
+
+Dev IPhone/IOS: IONIC

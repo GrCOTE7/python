@@ -38,9 +38,20 @@ def is_skippable_unavailable_error(exc):
         or "this video is private" in msg
         or "video unavailable" in msg
         or "this video is unavailable" in msg
+        or "this video is not available" in msg
+        or "not available" in msg
         or "has been removed" in msg
         or "members-only" in msg
         or "members only" in msg
+    )
+
+
+def is_bot_challenge_error(exc):
+    msg = str(exc).lower()
+    return (
+        "sign in to confirm you\u2019re not a bot" in msg
+        or "sign in to confirm you're not a bot" in msg
+        or "not a bot" in msg and "cookies" in msg
     )
 
 
@@ -151,6 +162,33 @@ class YtDlpCountedErrorLogger:
 
     def _handle(self, msg, level):
         text = str(msg)
+
+        # Certains "ERROR" yt-dlp sur YouTube sont non bloquants dans notre flux:
+        # on bascule ensuite vers un fallback Android qui peut réussir.
+        if level == "error" and is_skippable_unavailable_error(text):
+            video_id = self._extract_video_id_from_log(text)
+            if isinstance(video_id, str) and video_id:
+                print(
+                    f"{YELLOW}yt-dlp: video signalee indisponible (fallback Android tente): {video_id}{R}"
+                )
+            else:
+                print(
+                    f"{YELLOW}yt-dlp: video signalee indisponible (fallback Android tente).{R}"
+                )
+            return
+
+        if level == "error" and is_bot_challenge_error(text):
+            video_id = self._extract_video_id_from_log(text)
+            if isinstance(video_id, str) and video_id:
+                print(
+                    f"{YELLOW}yt-dlp: challenge anti-bot detecte (fallback/filtres en cours): {video_id}{R}"
+                )
+            else:
+                print(
+                    f"{YELLOW}yt-dlp: challenge anti-bot detecte (fallback/filtres en cours).{R}"
+                )
+            return
+
         print(text)
         if is_adult_restricted_error(text):
             detected_id = self._extract_video_id_from_log(text)

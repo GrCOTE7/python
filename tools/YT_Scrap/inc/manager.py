@@ -1,4 +1,5 @@
 import locale, os
+import re
 from typing import Optional
 import inc.authors as auth
 from inc import constants as cst
@@ -90,6 +91,15 @@ except Exception:
 
 from pymox_kit import cls, end, SB, R, YELLOW, GREEN, RED, CYAN
 
+try:
+    from suivi.tracking_store import export_markdown as tracking_export_markdown
+    from suivi.tracking_store import merge_scrape as tracking_merge_scrape
+    from suivi.tracking_store import set_video_state as tracking_set_video_state
+
+    TRACKING_ENABLED = True
+except Exception:
+    TRACKING_ENABLED = False
+
 # ❌ Looker ce qui n'a pas été refait ici par rapport à to_see.py et del to_see
 
 
@@ -100,6 +110,72 @@ def ini(ida):
         get_author_name_fn=auth.get_author_name,
     )
     globals().update(init_ctx)
+
+
+def _extract_markdown_states(md_file_path):
+    if not isinstance(md_file_path, str) or not os.path.isfile(md_file_path):
+        return [], []
+
+    seen_ids = []
+    unseen_ids = []
+
+    with open(md_file_path, "r", encoding="utf-8") as file:
+        for line in file:
+            stripped = line.strip()
+            if not (stripped.startswith("* [x]") or stripped.startswith("* [ ]")):
+                continue
+
+            match = re.search(r"(?:[?&]v=|youtu\.be/)([A-Za-z0-9_-]+)", stripped)
+            if not match:
+                continue
+
+            video_id = match.group(1)
+            if stripped.startswith("* [x]"):
+                seen_ids.append(video_id)
+            else:
+                unseen_ids.append(video_id)
+
+    return seen_ids, unseen_ids
+
+
+def _sync_tracking_after_scrap(*, author, author_url, storage_dir, source_file, videos, seen_ids, unseen_ids):
+    if not TRACKING_ENABLED:
+        return None
+
+    db_path = os.path.join(storage_dir, "tracking.sqlite3")
+    output_tracking_md = os.path.join(storage_dir, f"{author}_YT.md")
+
+    merge_result = tracking_merge_scrape(
+        db_path=db_path,
+        author=author,
+        run_items=videos,
+        source_file=source_file,
+    )
+
+    if seen_ids:
+        tracking_set_video_state(
+            db_path=db_path,
+            video_ids=seen_ids,
+            state="seen",
+            source="md_import",
+        )
+
+    if unseen_ids:
+        tracking_set_video_state(
+            db_path=db_path,
+            video_ids=unseen_ids,
+            state="unseen",
+            source="md_import",
+        )
+
+    summary = tracking_export_markdown(
+        db_path=db_path,
+        author=author,
+        output_md_file=output_tracking_md,
+        author_url=author_url,
+    )
+
+    return merge_result, summary
 
 
 def probe_latest_playlist_video_id(url: str) -> Optional[str]:
@@ -134,6 +210,7 @@ def probe_latest_playlist_video_id(url: str) -> Optional[str]:
 def scrap_some(ida):
     ini(ida)
     print(f"SCRAP des vidéos de {SB}{AUTHOR}{R}\n→ {URL}")
+    pre_seen_ids, pre_unseen_ids = _extract_markdown_states(OUTPUT_MD_FILE)
 
     def write_result_runtime(
         videos, total_playlist, excluded_ids=None, excluded_count=None, cache_valid=True
@@ -293,6 +370,21 @@ def scrap_some(ida):
 
     ttl_summary = ttl_ops.try_return_valid_ttl_cache(ida=ida, ctx=ttl_ctx)
     if ttl_summary is not None:
+        ttl_videos = cache_ops.read_previous_state(OUTPUT_FILE)
+        tracking_result = _sync_tracking_after_scrap(
+            author=AUTHOR,
+            author_url=URL,
+            storage_dir=STORAGE_DIR,
+            source_file=OUTPUT_FILE,
+            videos=ttl_videos,
+            seen_ids=pre_seen_ids,
+            unseen_ids=pre_unseen_ids,
+        )
+        if tracking_result is not None:
+            merge_result, tracking_summary = tracking_result
+            print(
+                f"{CYAN}Tracking sync (TTL): run_id={merge_result.run_id} | seen={tracking_summary['seen_count']} | not_seen={tracking_summary['not_seen_count']} | md={tracking_summary['output']}{R}"
+            )
         return ttl_summary
 
     videos = cache_ops.read_previous_state(OUTPUT_FILE)
@@ -318,6 +410,20 @@ def scrap_some(ida):
         ctx=ttl_ctx,
     )
     if post_ttl_strategy["early_summary"] is not None:
+        tracking_result = _sync_tracking_after_scrap(
+            author=AUTHOR,
+            author_url=URL,
+            storage_dir=STORAGE_DIR,
+            source_file=OUTPUT_FILE,
+            videos=videos,
+            seen_ids=pre_seen_ids,
+            unseen_ids=pre_unseen_ids,
+        )
+        if tracking_result is not None:
+            merge_result, tracking_summary = tracking_result
+            print(
+                f"{CYAN}Tracking sync (early): run_id={merge_result.run_id} | seen={tracking_summary['seen_count']} | not_seen={tracking_summary['not_seen_count']} | md={tracking_summary['output']}{R}"
+            )
         return post_ttl_strategy["early_summary"]
     use_recent_incremental_scan = post_ttl_strategy["use_recent_incremental_scan"]
     previous_total_playlist = post_ttl_strategy["previous_total_playlist"]
@@ -518,7 +624,7 @@ def scrap_some(ida):
             ctx=persist_ctx,
         )
 
-    return persist_ops.finalize_scrap_state(
+    summary_row = persist_ops.finalize_scrap_state(
         ida=ida,
         author=AUTHOR,
         videos=videos,
@@ -530,6 +636,23 @@ def scrap_some(ida):
         error_total=error_tracker.total_count,
         ctx=persist_ctx,
     )
+
+    tracking_result = _sync_tracking_after_scrap(
+        author=AUTHOR,
+        author_url=URL,
+        storage_dir=STORAGE_DIR,
+        source_file=OUTPUT_FILE,
+        videos=videos,
+        seen_ids=pre_seen_ids,
+        unseen_ids=pre_unseen_ids,
+    )
+    if tracking_result is not None:
+        merge_result, tracking_summary = tracking_result
+        print(
+            f"{CYAN}Tracking sync: run_id={merge_result.run_id} | seen={tracking_summary['seen_count']} | not_seen={tracking_summary['not_seen_count']} | md={tracking_summary['output']}{R}"
+        )
+
+    return summary_row
 
 
 def run_selected_authors(selected_ids):
