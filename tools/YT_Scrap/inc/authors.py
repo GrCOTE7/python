@@ -3,15 +3,6 @@ from pymox_kit import *
 
 AUTHORS = {
         
-        # 0: "doro2255",
-        # 1: "LionelCOTE",
-        # 2: "c57-u5s",
-        # 3: "CodeAvecJonathan",
-        # 4: "DataAvecJB",
-        # 5: "MasteringAI-q9g",
-        # 6: "CodeGoat-s2y",
-        # 7: "tseries",
-        
         0: "doro2255",
         1: "LionelCOTE",
         2: "c57-u5s",
