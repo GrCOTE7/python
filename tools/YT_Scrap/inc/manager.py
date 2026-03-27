@@ -1,4 +1,3 @@
-from importlib import import_module
 import locale, os
 from typing import Optional
 import inc.authors as auth
@@ -99,7 +98,6 @@ def ini(ida):
         ida=ida,
         manager_file=__file__,
         get_author_name_fn=auth.get_author_name,
-        import_module_fn=import_module,
     )
     globals().update(init_ctx)
 
@@ -210,6 +208,68 @@ def scrap_some(ida):
             extract_playlist_ids_fn=extract_playlist_ids_runtime,
         )
 
+    ttl_ctx = ttl_ops.TtlOpsContext(
+        output_file=OUTPUT_FILE,
+        output_md_file=OUTPUT_MD_FILE,
+        cache_ttl=CACHE_TTL,
+        author=AUTHOR,
+        url=URL,
+        cyan=CYAN,
+        yellow=YELLOW,
+        green=GREEN,
+        reset=R,
+        get_valid_cache_entry_fn=get_valid_cache_entry,
+        read_previous_counts_fn=read_previous_counts_runtime,
+        compute_cache_completion_fn=compute_cache_completion_runtime,
+        video_sort_key_fn=video_sort_key,
+        format_remaining_time_fr_fn=format_remaining_time_fr,
+        write_markdown_fn=write_markdown,
+        build_scrap_summary_row_fn=build_scrap_summary_row,
+        compute_effective_total_fn=compute_effective_total,
+        is_scrap_complete_fn=is_scrap_complete,
+        probe_latest_playlist_video_id_fn=probe_latest_playlist_video_id,
+        write_result_fn=write_result_runtime,
+        merged_excluded_count_fn=flow_ops.merged_excluded_count,
+        has_markdown_state_changed_fn=has_markdown_state_changed_runtime,
+    )
+
+    detail_ctx = detail_ops.DetailOpsContext(
+        ydl_opts_detail=YDL_OPTS_DETAIL,
+        yt_dlp_counted_error_logger_cls=YtDlpCountedErrorLogger,
+        extract_entry_video_id_fn=extract_entry_video_id,
+        extract_youtube_id_fn=extract_youtube_id,
+        remember_excluded_id_fn=remember_excluded_id,
+        is_adult_restricted_error_fn=is_adult_restricted_error,
+        is_skippable_unavailable_error_fn=is_skippable_unavailable_error,
+        try_extract_video_detail_android_fn=try_extract_video_detail_android,
+        build_video_payload_fn=build_video_payload,
+        build_unavailable_video_payload_fn=build_unavailable_video_payload,
+        author=AUTHOR,
+        cyan=CYAN,
+        yellow=YELLOW,
+        green=GREEN,
+        reset=R,
+        strong=SB,
+    )
+
+    persist_ctx = persist_ops.PersistOpsContext(
+        pause_on_rate_limit=PAUSE_ON_RATE_LIMIT,
+        output_md_file=OUTPUT_MD_FILE,
+        output_file=OUTPUT_FILE,
+        write_result_fn=write_result_runtime,
+        write_markdown_fn=write_markdown,
+        merged_excluded_count_fn=flow_ops.merged_excluded_count,
+        compute_effective_total_fn=compute_effective_total,
+        has_markdown_state_changed_fn=has_markdown_state_changed_runtime,
+        read_previous_counts_fn=read_previous_counts_runtime,
+        build_scrap_summary_row_fn=build_scrap_summary_row,
+        video_sort_key_fn=video_sort_key,
+        strong=SB,
+        green=GREEN,
+        yellow=YELLOW,
+        reset=R,
+    )
+
     restored_from = cache_ops.bootstrap_missing_cache_from_legacy(
         output_file=OUTPUT_FILE,
         storage_dir=STORAGE_DIR,
@@ -231,23 +291,7 @@ def scrap_some(ida):
             f"{YELLOW}Auto-heal cache appliqué (invariants): {', '.join(healed_fields)}{R}"
         )
 
-    ttl_summary = ttl_ops.try_return_valid_ttl_cache(
-        ida=ida,
-        output_file=OUTPUT_FILE,
-        output_md_file=OUTPUT_MD_FILE,
-        cache_ttl=CACHE_TTL,
-        author=AUTHOR,
-        cyan=CYAN,
-        yellow=YELLOW,
-        reset=R,
-        get_valid_cache_entry_fn=get_valid_cache_entry,
-        read_previous_counts_fn=read_previous_counts_runtime,
-        compute_cache_completion_fn=compute_cache_completion_runtime,
-        video_sort_key_fn=video_sort_key,
-        format_remaining_time_fr_fn=format_remaining_time_fr,
-        write_markdown_fn=write_markdown,
-        build_scrap_summary_row_fn=build_scrap_summary_row,
-    )
+    ttl_summary = ttl_ops.try_return_valid_ttl_cache(ida=ida, ctx=ttl_ctx)
     if ttl_summary is not None:
         return ttl_summary
 
@@ -271,22 +315,7 @@ def scrap_some(ida):
         excluded_ids=excluded_ids,
         total_playlist=total_playlist,
         persisted_excluded_count=persisted_excluded_count,
-        url=URL,
-        author=AUTHOR,
-        output_md_file=OUTPUT_MD_FILE,
-        cyan=CYAN,
-        green=GREEN,
-        yellow=YELLOW,
-        reset=R,
-        compute_effective_total_fn=compute_effective_total,
-        is_scrap_complete_fn=is_scrap_complete,
-        probe_latest_playlist_video_id_fn=probe_latest_playlist_video_id,
-        write_result_fn=write_result_runtime,
-        merged_excluded_count_fn=flow_ops.merged_excluded_count,
-        has_markdown_state_changed_fn=has_markdown_state_changed_runtime,
-        write_markdown_fn=write_markdown,
-        build_scrap_summary_row_fn=build_scrap_summary_row,
-        video_sort_key_fn=video_sort_key,
+        ctx=ttl_ctx,
     )
     if post_ttl_strategy["early_summary"] is not None:
         return post_ttl_strategy["early_summary"]
@@ -428,22 +457,7 @@ def scrap_some(ida):
                 error_tracker=error_tracker,
                 on_threshold_pause=log_threshold_pause_message,
                 handle_exception=handle_detail_exception,
-                ydl_opts_detail=YDL_OPTS_DETAIL,
-                yt_dlp_counted_error_logger_cls=YtDlpCountedErrorLogger,
-                extract_entry_video_id_fn=extract_entry_video_id,
-                extract_youtube_id_fn=extract_youtube_id,
-                remember_excluded_id_fn=remember_excluded_id,
-                is_adult_restricted_error_fn=is_adult_restricted_error,
-                is_skippable_unavailable_error_fn=is_skippable_unavailable_error,
-                try_extract_video_detail_android_fn=try_extract_video_detail_android,
-                build_video_payload_fn=build_video_payload,
-                build_unavailable_video_payload_fn=build_unavailable_video_payload,
-                author=AUTHOR,
-                cyan=CYAN,
-                yellow=YELLOW,
-                green=GREEN,
-                reset=R,
-                strong=SB,
+                ctx=detail_ctx,
             )
 
         except Exception as e:
@@ -500,16 +514,8 @@ def scrap_some(ida):
             persisted_excluded_count=persisted_excluded_count,
             excluded_ids=excluded_ids,
             has_fetched_playlist_this_run=has_fetched_playlist_this_run,
-            pause_on_rate_limit=PAUSE_ON_RATE_LIMIT,
-            write_result_fn=write_result_runtime,
-            write_markdown_fn=write_markdown,
-            merged_excluded_count_fn=flow_ops.merged_excluded_count,
-            compute_effective_total_fn=compute_effective_total,
-            video_sort_key_fn=video_sort_key,
             scraped_now=scraped_now,
-            green=GREEN,
-            yellow=YELLOW,
-            reset=R,
+            ctx=persist_ctx,
         )
 
     return persist_ops.finalize_scrap_state(
@@ -521,21 +527,8 @@ def scrap_some(ida):
         excluded_ids=excluded_ids,
         total_playlist=total_playlist,
         has_fetched_playlist_this_run=has_fetched_playlist_this_run,
-        output_md_file=OUTPUT_MD_FILE,
-        output_file=OUTPUT_FILE,
-        read_previous_counts_fn=read_previous_counts_runtime,
-        write_result_fn=write_result_runtime,
-        merged_excluded_count_fn=flow_ops.merged_excluded_count,
-        compute_effective_total_fn=compute_effective_total,
-        has_markdown_state_changed_fn=has_markdown_state_changed_runtime,
-        write_markdown_fn=write_markdown,
-        build_scrap_summary_row_fn=build_scrap_summary_row,
-        video_sort_key_fn=video_sort_key,
         error_total=error_tracker.total_count,
-        strong=SB,
-        green=GREEN,
-        yellow=YELLOW,
-        reset=R,
+        ctx=persist_ctx,
     )
 
 

@@ -30,5 +30,9 @@ if __name__ == "__main__":
     )
     args = parser.parse_args()
 
-    selection = parse_selection(args.selection)
+    try:
+        selection = parse_selection(args.selection)
+    except Exception as exc:
+        parser.error(f"selection invalide: {exc}")
+
     run_scrap(selection)

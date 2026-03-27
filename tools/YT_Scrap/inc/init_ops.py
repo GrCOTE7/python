@@ -1,4 +1,5 @@
 import os
+from inc import cache as cache_ops
 
 
 def build_init_context(
@@ -6,7 +7,6 @@ def build_init_context(
     ida,
     manager_file,
     get_author_name_fn,
-    import_module_fn,
 ):
     """Construit le contexte d'initialisation runtime pour une chaine cible."""
     author = get_author_name_fn(ida)
@@ -26,8 +26,6 @@ def build_init_context(
     playlist_fetch_timeout_seconds = 45
     playlist_fetch_max_total_seconds = 900
 
-    cache_utils_module = import_module_fn("cache_utils")
-
     return {
         "AUTHOR": author,
         "URL": url,
@@ -42,5 +40,5 @@ def build_init_context(
         "TOTAL_PLAYLIST_DROP_GUARD_RATIO": total_playlist_drop_guard_ratio,
         "PLAYLIST_FETCH_TIMEOUT_SECONDS": playlist_fetch_timeout_seconds,
         "PLAYLIST_FETCH_MAX_TOTAL_SECONDS": playlist_fetch_max_total_seconds,
-        "get_valid_cache_entry": cache_utils_module.get_valid_cache_entry,
+        "get_valid_cache_entry": cache_ops.get_valid_cache_entry,
     }

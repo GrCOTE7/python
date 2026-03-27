@@ -1,5 +1,26 @@
 import os
 import time
+from dataclasses import dataclass
+from typing import Any, Callable
+
+
+@dataclass
+class PersistOpsContext:
+    pause_on_rate_limit: int
+    output_md_file: str
+    output_file: str
+    write_result_fn: Callable[..., Any]
+    write_markdown_fn: Callable[..., Any]
+    merged_excluded_count_fn: Callable[..., Any]
+    compute_effective_total_fn: Callable[..., Any]
+    has_markdown_state_changed_fn: Callable[..., Any]
+    read_previous_counts_fn: Callable[..., Any]
+    build_scrap_summary_row_fn: Callable[..., Any]
+    video_sort_key_fn: Callable[..., Any]
+    strong: str
+    green: str
+    yellow: str
+    reset: str
 
 
 def persist_intermediate_state(
@@ -9,39 +30,33 @@ def persist_intermediate_state(
     persisted_excluded_count,
     excluded_ids,
     has_fetched_playlist_this_run,
-    pause_on_rate_limit,
-    write_result_fn,
-    write_markdown_fn,
-    merged_excluded_count_fn,
-    compute_effective_total_fn,
-    video_sort_key_fn,
     scraped_now,
-    green,
-    yellow,
-    reset,
+    ctx: PersistOpsContext,
 ):
     """Persiste l'etat intermediaire avant pause et retourne le compteur exclu mis a jour."""
-    persisted_excluded_count = write_result_fn(
-        videos=sorted(videos, key=video_sort_key_fn, reverse=True),
+    persisted_excluded_count = ctx.write_result_fn(
+        videos=sorted(videos, key=ctx.video_sort_key_fn, reverse=True),
         total_playlist=total_playlist,
         excluded_ids=excluded_ids,
-        excluded_count=merged_excluded_count_fn(persisted_excluded_count, excluded_ids),
+        excluded_count=ctx.merged_excluded_count_fn(
+            persisted_excluded_count, excluded_ids
+        ),
         cache_valid=has_fetched_playlist_this_run,
     )
 
-    write_markdown_fn(
-        sorted(videos, key=video_sort_key_fn, reverse=True),
-        total_playlist=compute_effective_total_fn(
+    ctx.write_markdown_fn(
+        sorted(videos, key=ctx.video_sort_key_fn, reverse=True),
+        total_playlist=ctx.compute_effective_total_fn(
             total_playlist,
-            merged_excluded_count_fn(persisted_excluded_count, excluded_ids),
+            ctx.merged_excluded_count_fn(persisted_excluded_count, excluded_ids),
         ),
     )
 
-    print(f"{green}JSON intermediaire ecrit ({scraped_now} videos).{reset}")
+    print(f"{ctx.green}JSON intermediaire ecrit ({scraped_now} videos).{ctx.reset}")
     print(
-        f"{yellow}Pause {pause_on_rate_limit}s avant reprise (scraped={scraped_now}, total={total_playlist})...{reset}"
+        f"{ctx.yellow}Pause {ctx.pause_on_rate_limit}s avant reprise (scraped={scraped_now}, total={total_playlist})...{ctx.reset}"
     )
-    time.sleep(pause_on_rate_limit)
+    time.sleep(ctx.pause_on_rate_limit)
     return persisted_excluded_count
 
 
@@ -55,34 +70,21 @@ def finalize_scrap_state(
     excluded_ids,
     total_playlist,
     has_fetched_playlist_this_run,
-    output_md_file,
-    output_file,
-    read_previous_counts_fn,
-    write_result_fn,
-    merged_excluded_count_fn,
-    compute_effective_total_fn,
-    has_markdown_state_changed_fn,
-    write_markdown_fn,
-    build_scrap_summary_row_fn,
-    video_sort_key_fn,
     error_total,
-    strong,
-    green,
-    yellow,
-    reset,
+    ctx: PersistOpsContext,
 ):
     """Finalise JSON/Markdown, affiche le bilan, et retourne la ligne resume."""
-    videos = sorted(videos, key=video_sort_key_fn, reverse=True)
+    videos = sorted(videos, key=ctx.video_sort_key_fn, reverse=True)
     scraped = len(videos)
-    current_excluded_count = merged_excluded_count_fn(
+    current_excluded_count = ctx.merged_excluded_count_fn(
         persisted_excluded_count, excluded_ids
     )
 
     previous_scraped, previous_total_playlist, previous_excluded_count = (
-        read_previous_counts_fn()
+        ctx.read_previous_counts_fn()
     )
 
-    current_excluded_count = write_result_fn(
+    current_excluded_count = ctx.write_result_fn(
         videos=videos,
         total_playlist=total_playlist,
         excluded_ids=excluded_ids,
@@ -90,18 +92,18 @@ def finalize_scrap_state(
         cache_valid=has_fetched_playlist_this_run,
     )
     if not isinstance(current_excluded_count, int):
-        current_excluded_count = merged_excluded_count_fn(
+        current_excluded_count = ctx.merged_excluded_count_fn(
             persisted_excluded_count, excluded_ids
         )
 
-    markdown_missing = not os.path.isfile(output_md_file)
-    previous_effective_total = compute_effective_total_fn(
+    markdown_missing = not os.path.isfile(ctx.output_md_file)
+    previous_effective_total = ctx.compute_effective_total_fn(
         previous_total_playlist, previous_excluded_count
     )
-    current_effective_total = compute_effective_total_fn(
+    current_effective_total = ctx.compute_effective_total_fn(
         total_playlist, current_excluded_count
     )
-    markdown_state_changed = has_markdown_state_changed_fn(
+    markdown_state_changed = ctx.has_markdown_state_changed_fn(
         previous_scraped=previous_scraped,
         previous_effective_total=previous_effective_total,
         current_scraped=scraped,
@@ -109,12 +111,12 @@ def finalize_scrap_state(
     )
 
     if len(videos) != initial_video_count or markdown_missing or markdown_state_changed:
-        bilan = write_markdown_fn(videos, total_playlist=current_effective_total)
+        bilan = ctx.write_markdown_fn(videos, total_playlist=current_effective_total)
         if markdown_missing and len(videos) == initial_video_count:
-            print(f"{yellow}Markdown regenere car fichier absent.{reset}")
+            print(f"{ctx.yellow}Markdown regenere car fichier absent.{ctx.reset}")
         elif markdown_state_changed and len(videos) == initial_video_count:
             print(
-                f"{yellow}Markdown regenere car les compteurs finaux ont change (etat partiel/complet).{reset}"
+                f"{ctx.yellow}Markdown regenere car les compteurs finaux ont change (etat partiel/complet).{ctx.reset}"
             )
     else:
         bilan = "Markdown non regenere (aucun changement detecte)"
@@ -129,11 +131,11 @@ def finalize_scrap_state(
         else "partial"
     )
 
-    print(f"{green}Fichier JSON ecrit: {output_file}{reset}")
+    print(f"{ctx.green}Fichier JSON ecrit: {ctx.output_file}{ctx.reset}")
     print(
         f"scraped={scraped}, total_playlist={total_playlist}, excluded={current_excluded_count}, effective_total={effective_total}, status={status}"
     )
     print(f"Erreurs cumulees (403/rate-limit) total toutes passes: {error_total}")
-    print(f"Fin du scrap des videos de {strong}{author}{reset}\n{bilan}.")
+    print(f"Fin du scrap des videos de {ctx.strong}{author}{ctx.reset}\n{bilan}.")
 
-    return build_scrap_summary_row_fn(ida, author, videos)
+    return ctx.build_scrap_summary_row_fn(ida, author, videos)
