@@ -3,11 +3,11 @@ import lorem, random
 from globals import *
 from tools import *
 
-cls(f"Test pour {sb}mes tools{eb}")
+cls(f"Test pour {SB}mes tools{EB}")
 
 if __name__ == "__main__":
 
-    def lineWrap(items, w=cliW, prt=0) -> list:
+    def lineWrap(items, w=CLIW, prt=0) -> list:
         res = []
         indexLast = 0
         lineSum = 0
@@ -29,7 +29,7 @@ if __name__ == "__main__":
     print(text)
     ls()
 
-    res = lineWrap(text, cliW, 1)
+    res = lineWrap(text, CLIW, 1)
     import pprint
 
     # pprint.pprint(res)
@@ -45,9 +45,9 @@ if __name__ == "__main__":
         else:
             print(*tup, sep=" ", end="\n")
 
-    print("-" * cliW)
-    print(str(cliW).center(cliW))
-    print("-" * cliW)
+    print("-" * CLIW)
+    print(str(CLIW).center(CLIW))
+    print("-" * CLIW)
 
     exit()
 
