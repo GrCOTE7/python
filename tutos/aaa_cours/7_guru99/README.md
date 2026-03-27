@@ -1,1 +1,3 @@
-# https://www.guru99.com/fr/python-tutorials.html
+# Guru99
+
+❌ Numéroter les script selon l'avancée dans les vidéos à reculons

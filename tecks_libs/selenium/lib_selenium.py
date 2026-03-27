@@ -27,14 +27,14 @@ def facebook():
     elem = driver.find_element(By.NAME, "pass")
     elem.send_keys("password")
     elem.send_keys(Keys.RETURN)
-    time.sleep(10)
+    time.sleep(7)
     driver.close()
     print("Request finish")
 
 
 if __name__ == "__main__":
-    extract01()
-    # unittest.main(module="test_python_org_search", argv=["ignored"], exit=False)
-    # facebook()
+    # extract01()
+    unittest.main(module="test_python_org_search", argv=["ignored"], exit=False)
+    facebook()
     # pass
 

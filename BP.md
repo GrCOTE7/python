@@ -8,13 +8,9 @@
 
 ### Urgences
 
-* Rendre opé tous les scripts de :
-
----
-
-* [/] BPL_7_guru99
 * [ ] YT → YT_Scrap : Opé, puis 'modulariser', extraire 'done', etc... → Gérer les done et reposer / générer dans BPL
 * [ ] Nett yt_videos
+* Rendre opé tous les scripts de :
 * [ ] tutos/*
 * [ ] tecks/*
 * [ ] a_trier/*
@@ -23,6 +19,7 @@
 
 ---
 
+* [x] BPL_7_guru99
 * [x] BPL_6_Indently
 * [x] BPL_5_Jordy
 * [x] BPL_4_graven
