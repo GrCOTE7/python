@@ -1,7 +1,7 @@
 import json
 import os
 import time
-from typing import Any, Callable, Optional, TypedDict
+from typing import Any, Optional, TypedDict
 
 
 class ValidCacheEntry(TypedDict):
@@ -76,32 +76,3 @@ def get_valid_cache_entry(cache_file: str, cache_ttl: int) -> Optional[ValidCach
         "remaining_minutes": remaining_minutes,
     }
 
-
-def write_videos_cache(
-    cache_file: str,
-    videos: list[Any],
-    timestamp_formatter: Optional[Callable[[float], str]] = None,
-) -> bool:
-    """Ecrit un cache videos avec timestamp brut et timestamp formate optionnel."""
-    try:
-        now_ts = time.time()
-        payload: dict[str, Any] = {
-            "videos": videos,
-            "timestamp": now_ts,
-        }
-
-        if timestamp_formatter is not None:
-            payload["timestamp_fr"] = timestamp_formatter(now_ts)
-        
-        payload['nb_videos'] = len(videos)
-        
-        cache_dir = os.path.dirname(cache_file)
-        if cache_dir:
-            os.makedirs(cache_dir, exist_ok=True)
-
-        with open(cache_file, "w", encoding="utf-8") as f:
-            json.dump(payload, f, ensure_ascii=False, indent=2)
-
-        return True
-    except Exception:
-        return False

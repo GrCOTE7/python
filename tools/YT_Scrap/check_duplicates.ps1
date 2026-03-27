@@ -1,4 +1,4 @@
-$json = Get-Content "D:\c2\fastapi\divers\yt_videos\cache\.tseries_videos_scrap_some.json" -Raw | ConvertFrom-Json
+$json = Get-Content "D:\langages\Py\\tools\YT_Scrap\cache\LionelCOTE_videos.json" -Raw | ConvertFrom-Json
 $videos = $json.videos
 $total = $videos.Count
 $ids = $videos | Where-Object { $_.id } | Select-Object -ExpandProperty id

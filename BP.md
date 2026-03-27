@@ -8,7 +8,8 @@
 
 ### Urgences
 
-* [ ] YT → YT_Scrap : Opé, puis 'modulariser', extraire 'done', etc... → Gérer les done et reposer / générer dans BPL
+* [/] YT → YT_Scrap : Opé, puis 'modulariser', extraire 'done', etc...
+* [ ] YT → YT_Scrap : Gérer les done et reposer / générer dans BPL
 * [ ] Nett yt_videos
 * Rendre opé tous les scripts de :
 * [ ] tutos/*

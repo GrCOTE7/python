@@ -4,6 +4,7 @@
 .venv313/
 .env
 */**/cache/*.json
+*/**/cache/*.md
 # divers/yt_videos/cache
 pymox_shadow.png
 */**/cache/**

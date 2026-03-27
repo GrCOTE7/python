@@ -265,7 +265,7 @@
 * [ ] [01/02/2021 **Cookies** 353 **02:57**](https://www.youtube.com/watch?v=P2ytN18WCsA)
 * [ ] [25/01/2021 **AdresseIP** 1730 **02:57**](https://www.youtube.com/watch?v=kR9mCvMHWjk)
 * [ ] [18/01/2021 **Bluetooth** 786 **02:47**](https://www.youtube.com/watch?v=iw5PhXYvfgo)
-* [ ] [11/01/2021 **Le Serverless, c'est quoi ?** 1282 **03:05**](https://www.youtube.com/watch?v=90kLT1YGFmI)
+* [x] [11/01/2021 **Le Serverless, c'est quoi ?** 1282 **03:05**](https://www.youtube.com/watch?v=90kLT1YGFmI)
 * [x] [04/01/2021 **La 5G, ça change quoi ?** 306 **03:32**](https://www.youtube.com/watch?v=QPZMcRIQO3k)
 * [x] [21/12/2020 **Un Firewall, à quoi ça sert ?** 10620 **03:00**](https://www.youtube.com/watch?v=4lV-QlLAav0)
 * [x] [07/12/2020 **SQL ou NoSQL ?** 13975 **04:40**](https://www.youtube.com/watch?v=BW3cdr5MjEE)
