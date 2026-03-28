@@ -8,14 +8,14 @@
 
 ### Urgences
 
-* [/] YT → YT_Scrap : Gérer les done et reposer / générer dans BPL
-* [ ] Nett yt_videos
+* [/] YT → YT_Scrap : Gérer les done et reposer / générer dans ./BPL
+* [ ] Nett yt_videos (Voir si toutes idées utilisées→ jeter)
 * Rendre opé tous les scripts de :
 * [ ] tutos/*
 * [ ] tecks/*
 * [ ] a_trier/*
 * 🎯 ↑ Kit
-* 🎯 MVP -CG - CDA
+* 🎯 MVP - CG - CDA ou Boosteur
 
 ---
 

@@ -122,6 +122,7 @@ def _minutes_to_hhmm(total_minutes):
 
 def _author_alias(author):
     aliases = {
+        "LionelCOTE": "Lionel",
         "InformatiqueSansComplexe": "ISC",
         "2minutesPy": "2mn",
         "bandedecodeurs": "BdC",

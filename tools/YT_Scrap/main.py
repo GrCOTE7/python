@@ -11,6 +11,11 @@ from build_bpl import (
 )
 
 
+# Override local de dev (None = desactive, ex: 0, "1", [14, 17, 11], "range:5", "all").
+DEV_SELECTION = 14, 17, 11
+# DEV_SELECTION = 0, 1
+
+
 def parse_selection(raw_selection):
     if raw_selection is None or raw_selection.lower() == "default":
         return None
@@ -28,6 +33,63 @@ def parse_selection(raw_selection):
     return int(raw_selection)
 
 
+def resolve_selection(raw_selection):
+    if raw_selection is None:
+        return None
+
+    if isinstance(raw_selection, (int, range, list, tuple, set)):
+        return raw_selection
+
+    if isinstance(raw_selection, str):
+        return parse_selection(raw_selection)
+
+    raise ValueError(f"type de selection non supporte: {type(raw_selection).__name__}")
+
+
+def _normalize_selection_ids(selection):
+    if isinstance(selection, range):
+        return list(selection)
+    if isinstance(selection, int):
+        return [selection]
+    if isinstance(selection, (list, tuple, set)):
+        return [item for item in selection if isinstance(item, int)]
+    return []
+
+
+def _build_targets_for_explicit_selection(selection):
+    selected_ids = _normalize_selection_ids(selection)
+    if not selected_ids:
+        return TARGET_AUTHORS
+
+    core_by_id = {
+        item["scrap_id"]: item
+        for item in TARGET_AUTHORS
+        if isinstance(item.get("scrap_id"), int)
+    }
+
+    targets = []
+    seen = set()
+    for scrap_id in selected_ids:
+        if scrap_id in seen:
+            continue
+        seen.add(scrap_id)
+
+        if scrap_id in core_by_id:
+            targets.append(core_by_id[scrap_id])
+            continue
+
+        author_name = auth.get_author_name(scrap_id)
+        targets.append(
+            {
+                "author": author_name,
+                "label": "Auteur",
+                "scrap_id": scrap_id,
+            }
+        )
+
+    return targets if targets else TARGET_AUTHORS
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Lance le scraper YouTube.")
     parser.add_argument(
@@ -38,14 +100,20 @@ if __name__ == "__main__":
     )
     args = parser.parse_args()
 
+    raw_selection = DEV_SELECTION if DEV_SELECTION is not None else args.selection
+
     try:
-        selection = parse_selection(args.selection)
+        user_selection = resolve_selection(raw_selection)
     except Exception as exc:
         parser.error(f"selection invalide: {exc}")
 
-    if selection is None:
-        # Par defaut, on scrape la selection BPL (les chaines suivies), pas la selection historique.
-        selection = get_default_target_scrape_ids()
+    if user_selection is None:
+        # Par defaut, on scrape la liste coeur (7 IDs).
+        effective_selection = get_default_target_scrape_ids()
+        bpl_targets = TARGET_AUTHORS
+    else:
+        effective_selection = user_selection
+        bpl_targets = _build_targets_for_explicit_selection(effective_selection)
 
     script_dir = Path(__file__).resolve().parent
     db_path = script_dir / "cache" / "tracking.sqlite3"
@@ -58,15 +126,13 @@ if __name__ == "__main__":
         bpl_path=bpl_path,
     )
 
-    selection = 14,17,11
-
-    run_scrap(selection)
+    run_scrap(effective_selection)
 
     updated_seen, updated_unseen, ignored_not_found = import_states_into_tracking(
         db_path=db_path,
         bpl_path=bpl_path,
     )
-    write_info = build_bpl(db_path=db_path, bpl_path=bpl_path, targets=TARGET_AUTHORS)
+    write_info = build_bpl(db_path=db_path, bpl_path=bpl_path, targets=bpl_targets)
     print(
         "BPL genere "
         f"(pre_sync seen={pre_seen}, unseen={pre_unseen}, ids_hors_db={pre_ignored}) "
