@@ -209,6 +209,7 @@ function Start-App {
   if (Test-Path $preScrapScript) {
     Write-Host "Pré-exécution : ./$preScrapScript"
     python $preScrapScript
+    # flet run -d -r --ignore-dirs ".git,.venv,__pycache__" $preScrapScript
     if ($LASTEXITCODE -ne 0) {
       Write-Host "[AVERTISSEMENT] Le pré-scrap YT a échoué (code=$LASTEXITCODE). Lancement de l'app principale quand même."
     }
