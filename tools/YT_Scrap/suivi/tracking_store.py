@@ -1,5 +1,6 @@
 import re
 import sqlite3
+from datetime import datetime
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Iterable, Optional
@@ -88,7 +89,7 @@ def _normalize_run_item(item: dict, position: int) -> Optional[dict]:
     title = item.get("titre") or item.get("title") or "N/A"
     url = item.get("url") or item.get("webpage_url") or f"https://www.youtube.com/watch?v={video_id}"
 
-    published = item.get("date") or item.get("date_fr") or ""
+    published = _format_published_date_fr(item.get("date") or item.get("date_fr") or "")
     duration_seconds = _coerce_int(item.get("duration"), 0)
     duration_text = item.get("duree") or "N/A"
     views = _coerce_int(item.get("vues") if item.get("vues") is not None else item.get("view_count"), 0)
@@ -111,6 +112,33 @@ def _normalize_run_item(item: dict, position: int) -> Optional[dict]:
         "position": position,
         "unavailable": unavailable,
     }
+
+
+def _format_published_date_fr(raw_published) -> str:
+    if raw_published is None:
+        return "N/A"
+
+    text = str(raw_published).strip()
+    if not text:
+        return "N/A"
+
+    if re.fullmatch(r"\d{2}/\d{2}/\d{4}", text):
+        return text
+
+    if re.fullmatch(r"\d{8}", text):
+        try:
+            return datetime.strptime(text, "%Y%m%d").strftime("%d/%m/%Y")
+        except ValueError:
+            return text
+
+    normalized = text.replace("-", "/")
+    if re.fullmatch(r"\d{4}/\d{2}/\d{2}", normalized):
+        try:
+            return datetime.strptime(normalized, "%Y/%m/%d").strftime("%d/%m/%Y")
+        except ValueError:
+            return text
+
+    return text
 
 
 def _row_factory(cursor, row):
@@ -406,7 +434,7 @@ def _render_md_line(video: dict, checkbox: str) -> Optional[str]:
         return None
 
     title = video.get("title") or "N/A"
-    published = video.get("published_at") or "N/A"
+    published = _format_published_date_fr(video.get("published_at"))
     duration = video.get("duration_text") or "N/A"
     views = _format_views(_coerce_int(video.get("views"), 0))
 

@@ -1,4 +1,5 @@
 import json, os, shutil, time
+from datetime import datetime
 from typing import Any, Optional, TypedDict
 
 
@@ -7,6 +8,63 @@ class ValidCacheEntry(TypedDict):
     timestamp: float
     timestamp_fr: Optional[str]
     remaining_minutes: int
+
+
+def _parse_known_video_date(value):
+    if isinstance(value, datetime):
+        return value
+    if not isinstance(value, str):
+        return None
+
+    text = value.strip()
+    if not text:
+        return None
+
+    if len(text) == 8 and text.isdigit():
+        try:
+            return datetime.strptime(text, "%Y%m%d")
+        except Exception:
+            return None
+
+    for fmt in ("%d/%m/%Y", "%Y-%m-%d", "%Y/%m/%d"):
+        try:
+            return datetime.strptime(text, fmt)
+        except Exception:
+            continue
+
+    return None
+
+
+def _normalize_video_date_fields(video):
+    if not isinstance(video, dict):
+        return False
+
+    dt = _parse_known_video_date(video.get("date"))
+    if dt is None:
+        dt = _parse_known_video_date(video.get("date_fr"))
+
+    changed = False
+    if dt is None:
+        if video.get("date") is not None:
+            video["date"] = None
+            changed = True
+        if video.get("date_fr") != "N/A":
+            video["date_fr"] = "N/A"
+            changed = True
+        return changed
+
+    normalized_date = dt.strftime("%Y%m%d")
+    normalized_date_fr = dt.strftime("%d/%m/%Y")
+
+    if video.get("date") != normalized_date:
+        video["date"] = normalized_date
+        changed = True
+
+    if video.get("date_fr") != normalized_date_fr:
+        video["date_fr"] = normalized_date_fr
+        changed = True
+
+    return changed
 
 
 def read_cache_payload(cache_file: str) -> Optional[dict[str, Any]]:
@@ -114,6 +172,10 @@ def write_result(
         max_excluded_for_consistency = max(0, total_playlist - scraped)
         if normalized_excluded_count > max_excluded_for_consistency:
             normalized_excluded_count = max_excluded_for_consistency
+
+    if isinstance(videos, list):
+        for video in videos:
+            _normalize_video_date_fields(video)
 
     payload = {
         "url": url,
@@ -320,6 +382,13 @@ def auto_heal_cache_invariants(cache_file, *, url, timestamp2fr, timestamp_fr_to
         if data.get("scraped") != expected_scraped:
             data["scraped"] = expected_scraped
             changed_fields.append("scraped")
+
+        dates_changed = False
+        for video in videos:
+            if _normalize_video_date_fields(video):
+                dates_changed = True
+        if dates_changed:
+            changed_fields.append("videos.date_fields")
 
     excluded_count = data.get("excluded_count")
     if not isinstance(excluded_count, int):

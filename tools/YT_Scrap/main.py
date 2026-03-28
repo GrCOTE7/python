@@ -47,11 +47,20 @@ if __name__ == "__main__":
         # Par defaut, on scrape la selection BPL (les chaines suivies), pas la selection historique.
         selection = get_default_target_scrape_ids()
 
-    run_scrap(selection)
-
     script_dir = Path(__file__).resolve().parent
     db_path = script_dir / "cache" / "tracking.sqlite3"
     bpl_path = script_dir.parent.parent / "BPL.md"
+
+    # Synchronise d'abord les coches BPL vers le tracking.
+    # Ainsi, le tableau CLI de run_scrap utilise l'etat le plus recent.
+    pre_seen, pre_unseen, pre_ignored = import_states_into_tracking(
+        db_path=db_path,
+        bpl_path=bpl_path,
+    )
+
+    selection = 14,17,11
+
+    run_scrap(selection)
 
     updated_seen, updated_unseen, ignored_not_found = import_states_into_tracking(
         db_path=db_path,
@@ -60,6 +69,7 @@ if __name__ == "__main__":
     write_info = build_bpl(db_path=db_path, bpl_path=bpl_path, targets=TARGET_AUTHORS)
     print(
         "BPL genere "
+        f"(pre_sync seen={pre_seen}, unseen={pre_unseen}, ids_hors_db={pre_ignored}) "
         f"(seen_sync={updated_seen}, unseen_sync={updated_unseen}, ids_hors_db={ignored_not_found}) "
         f"-> {bpl_path} | write={write_info.get('written')} | reason={write_info.get('reason')}"
     )

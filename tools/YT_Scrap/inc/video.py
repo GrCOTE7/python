@@ -61,6 +61,14 @@ def _parse_timestamp_safely(raw_ts):
     return dt
 
 
+def _is_probably_extraction_time(dt):
+    if not isinstance(dt, datetime):
+        return False
+    # Certains retours yt-dlp exposent la date d'extraction (maintenant)
+    # a la place de la date de publication.
+    return abs((datetime.now() - dt).total_seconds()) <= 36 * 3600
+
+
 def timestamp2fr(ts: float) -> str:
     dt = datetime.fromtimestamp(ts)
     return dt.strftime("%d/%m/%Y %H:%M:%S")
@@ -98,6 +106,44 @@ def format_date(date):
         return "N/A"
 
 
+def _coerce_known_date(value):
+    if isinstance(value, datetime):
+        return value
+
+    if isinstance(value, str):
+        text = value.strip()
+        if not text:
+            return None
+
+        if len(text) == 8 and text.isdigit():
+            try:
+                return datetime.strptime(text, "%Y%m%d")
+            except Exception:
+                return None
+
+        for fmt in ("%d/%m/%Y", "%Y-%m-%d", "%Y/%m/%d"):
+            try:
+                return datetime.strptime(text, fmt)
+            except Exception:
+                continue
+
+    return None
+
+
+def normalize_video_dates(raw_date=None, raw_date_fr=None, raw_datetime=None):
+    """Retourne un tuple (date_yyyymmdd|None, date_fr)."""
+    dt = _coerce_known_date(raw_datetime)
+    if dt is None:
+        dt = _coerce_known_date(raw_date)
+    if dt is None:
+        dt = _coerce_known_date(raw_date_fr)
+
+    if dt is None:
+        return None, "N/A"
+
+    return dt.strftime("%Y%m%d"), dt.strftime("%d/%m/%Y")
+
+
 def extract_video_datetime(video):
     if not isinstance(video, dict):
         return None
@@ -114,21 +160,30 @@ def extract_video_datetime(video):
     if rss_dt is not None:
         return rss_dt
 
-    for key in ("timestamp", "release_timestamp", "available_at"):
+    for key in ("release_timestamp", "available_at"):
         dt = _parse_timestamp_safely(video.get(key))
         if dt is not None:
             return dt
+
+    ts_dt = _parse_timestamp_safely(video.get("timestamp"))
+    if ts_dt is not None and not _is_probably_extraction_time(ts_dt):
+        return ts_dt
 
     return None
 
 
 def build_video_payload(v):
     date = extract_video_datetime(v)
+    date_yyyymmdd, date_fr = normalize_video_dates(
+        raw_date=v.get("upload_date") or v.get("release_date"),
+        raw_date_fr=v.get("date_fr"),
+        raw_datetime=date,
+    )
     return {
         "id": v.get("id"),
         "titre": v.get("title"),
-        "date": v.get("upload_date"),
-        "date_fr": format_date(date),
+        "date": date_yyyymmdd,
+        "date_fr": date_fr,
         "duration": v.get("duration"),
         "duree": format_duration(v.get("duration")),
         "url": v.get("webpage_url"),
@@ -214,13 +269,16 @@ def build_unavailable_video_payload(entry, video_id, video_url=None):
     safe_views = int(view_count) if isinstance(view_count, (int, float)) else 0
     url = video_url or f"https://www.youtube.com/watch?v={video_id}"
 
+    date_yyyymmdd, date_fr = normalize_video_dates(
+        raw_date=safe_date,
+        raw_date_fr=entry.get("date_fr") if isinstance(entry, dict) else None,
+    )
+
     return {
         "id": video_id,
         "titre": safe_title,
-        "date": safe_date,
-        "date_fr": format_date(
-            datetime.strptime(safe_date, "%Y%m%d") if isinstance(safe_date, str) else None
-        ),
+        "date": date_yyyymmdd,
+        "date_fr": date_fr,
         "duration": safe_duration,
         "duree": format_duration(safe_duration),
         "url": url,

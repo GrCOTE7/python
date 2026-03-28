@@ -152,21 +152,9 @@ def _sync_tracking_after_scrap(*, author, author_url, storage_dir, source_file, 
         source_file=source_file,
     )
 
-    if seen_ids:
-        tracking_set_video_state(
-            db_path=db_path,
-            video_ids=seen_ids,
-            state="seen",
-            source="md_import",
-        )
-
-    if unseen_ids:
-        tracking_set_video_state(
-            db_path=db_path,
-            video_ids=unseen_ids,
-            state="unseen",
-            source="md_import",
-        )
+    # Ne pas importer les etats depuis les markdowns auteurs locaux (souvent stale).
+    # Source d'autorite: tracking.sqlite3 synchronise depuis BPL.md.
+    # Cela evite des ecarts CLI vs BPL quand un ancien cache auteur contient des [x].
 
     summary = tracking_export_markdown(
         db_path=db_path,
@@ -371,6 +359,7 @@ def scrap_some(ida):
     ttl_summary = ttl_ops.try_return_valid_ttl_cache(ida=ida, ctx=ttl_ctx)
     if ttl_summary is not None:
         ttl_videos = cache_ops.read_previous_state(OUTPUT_FILE)
+        summary_md_file = OUTPUT_MD_FILE
         tracking_result = _sync_tracking_after_scrap(
             author=AUTHOR,
             author_url=URL,
@@ -382,10 +371,18 @@ def scrap_some(ida):
         )
         if tracking_result is not None:
             merge_result, tracking_summary = tracking_result
+            tracking_md_output = tracking_summary.get("output") if isinstance(tracking_summary, dict) else None
+            if isinstance(tracking_md_output, str) and tracking_md_output:
+                summary_md_file = tracking_md_output
             print(
                 f"{CYAN}Tracking sync (TTL): run_id={merge_result.run_id} | seen={tracking_summary['seen_count']} | not_seen={tracking_summary['not_seen_count']} | md={tracking_summary['output']}{R}"
             )
-        return ttl_summary
+        return build_scrap_summary_row(
+            ida,
+            AUTHOR,
+            ttl_videos,
+            md_file_path=summary_md_file,
+        )
 
     videos = cache_ops.read_previous_state(OUTPUT_FILE)
     initial_video_count = len(videos)
@@ -410,6 +407,7 @@ def scrap_some(ida):
         ctx=ttl_ctx,
     )
     if post_ttl_strategy["early_summary"] is not None:
+        summary_md_file = OUTPUT_MD_FILE
         tracking_result = _sync_tracking_after_scrap(
             author=AUTHOR,
             author_url=URL,
@@ -421,10 +419,18 @@ def scrap_some(ida):
         )
         if tracking_result is not None:
             merge_result, tracking_summary = tracking_result
+            tracking_md_output = tracking_summary.get("output") if isinstance(tracking_summary, dict) else None
+            if isinstance(tracking_md_output, str) and tracking_md_output:
+                summary_md_file = tracking_md_output
             print(
                 f"{CYAN}Tracking sync (early): run_id={merge_result.run_id} | seen={tracking_summary['seen_count']} | not_seen={tracking_summary['not_seen_count']} | md={tracking_summary['output']}{R}"
             )
-        return post_ttl_strategy["early_summary"]
+        return build_scrap_summary_row(
+            ida,
+            AUTHOR,
+            videos,
+            md_file_path=summary_md_file,
+        )
     use_recent_incremental_scan = post_ttl_strategy["use_recent_incremental_scan"]
     previous_total_playlist = post_ttl_strategy["previous_total_playlist"]
 
@@ -637,6 +643,8 @@ def scrap_some(ida):
         ctx=persist_ctx,
     )
 
+    summary_md_file = OUTPUT_MD_FILE
+
     tracking_result = _sync_tracking_after_scrap(
         author=AUTHOR,
         author_url=URL,
@@ -648,11 +656,19 @@ def scrap_some(ida):
     )
     if tracking_result is not None:
         merge_result, tracking_summary = tracking_result
+        tracking_md_output = tracking_summary.get("output") if isinstance(tracking_summary, dict) else None
+        if isinstance(tracking_md_output, str) and tracking_md_output:
+            summary_md_file = tracking_md_output
         print(
             f"{CYAN}Tracking sync: run_id={merge_result.run_id} | seen={tracking_summary['seen_count']} | not_seen={tracking_summary['not_seen_count']} | md={tracking_summary['output']}{R}"
         )
 
-    return summary_row
+    return build_scrap_summary_row(
+        ida,
+        AUTHOR,
+        videos,
+        md_file_path=summary_md_file,
+    )
 
 
 def run_selected_authors(selected_ids):

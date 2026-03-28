@@ -113,6 +113,92 @@ def _format_duration_minutes_fr(total_seconds):
     return " et ".join(parts)
 
 
+def _minutes_to_hhmm(total_minutes):
+    safe_minutes = max(0, _coerce_int(total_minutes, 0))
+    hours = safe_minutes // 60
+    minutes = safe_minutes % 60
+    return f"{hours:02d}:{minutes:02d}"
+
+
+def _author_alias(author):
+    aliases = {
+        "InformatiqueSansComplexe": "ISC",
+        "2minutesPy": "2mn",
+        "bandedecodeurs": "BdC",
+        "Gravenilvectuto": "Gravn",
+        "JordyBayo": "Jordy",
+        "Indently": "Indent",
+        "foxxpy": "Foxxy",
+    }
+    return aliases.get(author, author)
+
+
+def _build_compact_summary_table_md(rows):
+    headers = ["Id", "Auteur", "Vues", "2c", "N & Tps", "Vus", "Reste (%)"]
+
+    lines = [
+        "| " + " | ".join(headers) + " |",
+        "|" + "|".join(["---"] * len(headers)) + "|",
+    ]
+
+    total_videos = sum(row["videos"] for row in rows)
+    total_views = sum(row["views"] for row in rows)
+    total_minutes = sum(row["total_minutes"] for row in rows)
+    total_not_seen = sum(row["not_seen"] for row in rows)
+    total_not_seen_minutes = sum(row["not_seen_minutes"] for row in rows)
+    total_seen = sum(row["seen"] for row in rows)
+    total_seen_minutes = sum(row["seen_minutes"] for row in rows)
+
+    for row in rows:
+        pct_n = f"{(100.0 * row['not_seen'] / row['videos']):.1f}%" if row["videos"] > 0 else "0.0%"
+        pct_t = (
+            f"{(100.0 * row['not_seen_minutes'] / row['total_minutes']):.1f}%"
+            if row["total_minutes"] > 0
+            else "0.0%"
+        )
+
+        lines.append(
+            "| "
+            + " | ".join(
+                [
+                    str(row["id"]),
+                    _author_alias(row["author"]),
+                    _format_views(row["views"]),
+                    f"{row['not_seen']}<br>{_minutes_to_hhmm(row['not_seen_minutes'])}",
+                    f"{row['videos']}<br>{_minutes_to_hhmm(row['total_minutes'])}",
+                    f"{row['seen']}<br>{_minutes_to_hhmm(row['seen_minutes'])}",
+                    f"{pct_n}<br>{pct_t}",
+                ]
+            )
+            + " |"
+        )
+
+    total_pct_n = f"{(100.0 * total_not_seen / total_videos):.1f}%" if total_videos > 0 else "0.0%"
+    total_pct_t = (
+        f"{(100.0 * total_not_seen_minutes / total_minutes):.1f}%"
+        if total_minutes > 0
+        else "0.0%"
+    )
+
+    lines.append(
+        "| "
+        + " | ".join(
+            [
+                str(len(rows)),
+                "TOTAL",
+                _format_views(total_views),
+                f"{total_not_seen}<br>{_minutes_to_hhmm(total_not_seen_minutes)}",
+                f"{total_videos}<br>{_minutes_to_hhmm(total_minutes)}",
+                f"{total_seen}<br>{_minutes_to_hhmm(total_seen_minutes)}",
+                f"{total_pct_n}<br>{total_pct_t}",
+            ]
+        )
+        + " |"
+    )
+
+    return lines
+
+
 def _extract_video_id_from_line(line):
     match = re.search(r"(?:[?&]v=|youtu\.be/)([A-Za-z0-9_-]+)", line)
     return match.group(1) if match else None
@@ -250,6 +336,7 @@ def build_bpl(db_path, bpl_path, targets):
                 }
 
         lines = [title, ""]
+        summary_rows = []
 
         for index, target in enumerate(targets, start=1):
             author = target["author"]
@@ -258,6 +345,19 @@ def build_bpl(db_path, bpl_path, targets):
             run_id = get_latest_run_id(conn, author)
 
             if not isinstance(run_id, int):
+                summary_rows.append(
+                    {
+                        "id": target.get("scrap_id") if isinstance(target.get("scrap_id"), int) else index,
+                        "author": author,
+                        "views": 0,
+                        "videos": 0,
+                        "total_minutes": 0,
+                        "not_seen": 0,
+                        "not_seen_minutes": 0,
+                        "seen": 0,
+                        "seen_minutes": 0,
+                    }
+                )
                 lines.append(f"## {index} {label} **[{author}]({author_url})**")
                 lines.append("")
                 lines.append("* [ ] Aucune donnee disponible dans tracking.sqlite3 pour cette chaine.")
@@ -271,6 +371,26 @@ def build_bpl(db_path, bpl_path, targets):
             total_count = len(all_videos)
             total_views = sum(_coerce_int(video.get("views"), 0) for video in all_videos)
             total_seconds = sum(_coerce_int(video.get("duration_seconds"), 0) for video in all_videos)
+            not_seen_seconds = sum(
+                _coerce_int(video.get("duration_seconds"), 0) for video in not_seen
+            )
+            seen_seconds = sum(
+                _coerce_int(video.get("duration_seconds"), 0) for video in seen
+            )
+
+            summary_rows.append(
+                {
+                    "id": target.get("scrap_id") if isinstance(target.get("scrap_id"), int) else index,
+                    "author": author,
+                    "views": total_views,
+                    "videos": total_count,
+                    "total_minutes": max(0, total_seconds // 60),
+                    "not_seen": len(not_seen),
+                    "not_seen_minutes": max(0, not_seen_seconds // 60),
+                    "seen": len(seen),
+                    "seen_minutes": max(0, seen_seconds // 60),
+                }
+            )
             video_word = "video" if total_count == 1 else "videos"
 
             lines.append(
@@ -280,10 +400,6 @@ def build_bpl(db_path, bpl_path, targets):
 
             has_both_groups = bool(not_seen) and bool(seen)
             if has_both_groups:
-                not_seen_seconds = sum(
-                    _coerce_int(video.get("duration_seconds"), 0)
-                    for video in not_seen
-                )
                 lines.append(
                     f"### Pas vus ({len(not_seen)} - {_format_duration_minutes_fr(not_seen_seconds)})"
                 )
@@ -297,9 +413,6 @@ def build_bpl(db_path, bpl_path, targets):
             if has_both_groups and seen:
                 if lines and lines[-1] != "":
                     lines.append("")
-                seen_seconds = sum(
-                    _coerce_int(video.get("duration_seconds"), 0) for video in seen
-                )
                 lines.append(
                     f"### Vus ({len(seen)} - {_format_duration_minutes_fr(seen_seconds)})"
                 )
@@ -311,6 +424,10 @@ def build_bpl(db_path, bpl_path, targets):
                     lines.append(rendered)
 
             lines.append("")
+
+        if summary_rows:
+            summary_block = _build_compact_summary_table_md(summary_rows)
+            lines = lines[:2] + summary_block + [""] + lines[2:]
 
         bpl_path.write_text("\n".join(lines).rstrip() + "\n", encoding="utf-8")
         return {
