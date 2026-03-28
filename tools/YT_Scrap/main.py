@@ -12,8 +12,9 @@ from build_bpl import (
 
 
 # Override local de dev (None = desactive, ex: 0, "1", [14, 17, 11], "range:5", "all").
-DEV_SELECTION = 14, 17, 11
 # DEV_SELECTION = 0, 1
+# DEV_SELECTION = 14, 17, 11, 1 ,2
+DEV_SELECTION = None # To obtain heart list
 
 
 def parse_selection(raw_selection):

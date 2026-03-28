@@ -135,7 +135,7 @@ def _author_alias(author):
 
 
 def _build_compact_summary_table_md(rows):
-    headers = ["Id", "Auteur", "Vues", "2c", "N & Tps", "Vus", "Reste (%)"]
+    headers = ["Id", "Auteur", "Vues", "2c", "N & Tps", "Vus", "Suivis (%)"]
 
     lines = [
         "| " + " | ".join(headers) + " |",
@@ -151,9 +151,9 @@ def _build_compact_summary_table_md(rows):
     total_seen_minutes = sum(row["seen_minutes"] for row in rows)
 
     for row in rows:
-        pct_n = f"{(100.0 * row['not_seen'] / row['videos']):.1f}%" if row["videos"] > 0 else "0.0%"
+        pct_n = f"{(100.0 * row['seen'] / row['videos']):.1f}%" if row["videos"] > 0 else "0.0%"
         pct_t = (
-            f"{(100.0 * row['not_seen_minutes'] / row['total_minutes']):.1f}%"
+            f"{(100.0 * row['seen_minutes'] / row['total_minutes']):.1f}%"
             if row["total_minutes"] > 0
             else "0.0%"
         )
@@ -174,9 +174,9 @@ def _build_compact_summary_table_md(rows):
             + " |"
         )
 
-    total_pct_n = f"{(100.0 * total_not_seen / total_videos):.1f}%" if total_videos > 0 else "0.0%"
+    total_pct_n = f"{(100.0 * total_seen / total_videos):.1f}%" if total_videos > 0 else "0.0%"
     total_pct_t = (
-        f"{(100.0 * total_not_seen_minutes / total_minutes):.1f}%"
+        f"{(100.0 * total_seen_minutes / total_minutes):.1f}%"
         if total_minutes > 0
         else "0.0%"
     )

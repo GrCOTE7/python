@@ -153,8 +153,8 @@ def build_scrap_summary_row(ida, author, videos, md_file_path=None):
 
     seen_duration_txt = format_remaining_time_fr(seen_seconds // 60)
     not_seen_duration_txt = format_remaining_time_fr(not_seen_seconds // 60)
-    not_seen_pct_count_txt = _format_ratio_percent(not_seen_count, videos_count)
-    not_seen_pct_duration_txt = _format_ratio_percent(not_seen_seconds, total_duration_seconds)
+    seen_pct_count_txt = _format_ratio_percent(seen_count, videos_count)
+    seen_pct_duration_txt = _format_ratio_percent(seen_seconds, total_duration_seconds)
 
     return [
         ida,
@@ -166,8 +166,8 @@ def build_scrap_summary_row(ida, author, videos, md_file_path=None):
         not_seen_duration_txt,
         seen_count,
         seen_duration_txt,
-        not_seen_pct_count_txt,
-        not_seen_pct_duration_txt,
+        seen_pct_count_txt,
+        seen_pct_duration_txt,
     ]
 
 
@@ -260,13 +260,13 @@ def print_scrap_summary_table(rows):
     total_seen = sum(seen_values)
     total_seen_minutes = sum(seen_minutes_values)
 
-    total_not_seen_pct_count = (
-        f"{(100.0 * total_not_seen / total_videos):.1f}%"
+    total_seen_pct_count = (
+        f"{(100.0 * total_seen / total_videos):.1f}%"
         if total_videos > 0
         else "0.0%"
     )
-    total_not_seen_pct_duration = (
-        f"{(100.0 * total_not_seen_minutes / total_duration_minutes):.1f}%"
+    total_seen_pct_duration = (
+        f"{(100.0 * total_seen_minutes / total_duration_minutes):.1f}%"
         if total_duration_minutes > 0
         else "0.0%"
     )
@@ -300,7 +300,7 @@ def print_scrap_summary_table(rows):
         bold(f"{nf(total_not_seen, 0)}\n{minutes_to_hhmm(total_not_seen_minutes)}"),
         bold(f"{nf(total_videos, 0)}\n{minutes_to_hhmm(total_duration_minutes)}"),
         bold(f"{nf(total_seen, 0)}\n{minutes_to_hhmm(total_seen_minutes)}"),
-        bold(f"{total_not_seen_pct_count}\n{total_not_seen_pct_duration}"),
+        bold(f"{total_seen_pct_count}\n{total_seen_pct_duration}"),
     ]
 
     table_rows = display_rows + [total_row]
@@ -312,7 +312,7 @@ def print_scrap_summary_table(rows):
         bold("2c"),
         bold("N & Tps"),
         bold("Vus"),
-        bold("Reste (%)"),
+        bold("Suivis (%)"),
     ]
     print(
         tabulate(
