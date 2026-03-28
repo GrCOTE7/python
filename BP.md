@@ -8,8 +8,7 @@
 
 ### Urgences
 
-* [/] YT → YT_Scrap : Gérer les done et reposer / générer dans ./BPL
-* [ ] Nett yt_videos (Voir si toutes idées utilisées→ jeter)
+* [/] Nett yt_videos (Voir si toutes idées utilisées → jeter)
 * Rendre opé tous les scripts de :
 * [ ] tutos/*
 * [ ] tecks/*
@@ -19,8 +18,9 @@
 
 ---
 
+* [x] YT → YT_Scrap : Gérer les done et reposer / générer dans ./BPL
 * [x] YT → YT_Scrap : Opé, puis 'modulariser', extraire 'done', etc...
-* [ ] BPL_7_foxxpy
+* [x] BPL_7_foxxpy
 * [x] BPL_6_Indently
 * [x] BPL_5_Jordy
 * [x] BPL_4_graven
