@@ -4,8 +4,6 @@ from pathlib import Path
 sys.path.append(str(Path(__file__).parent / "tools"))
 from tools.tools import *
 
-# from pymox_kit import *
-
 
 def template():
     title = "ReaDy.".capitalize()
@@ -13,7 +11,6 @@ def template():
     ls(CYAN)
     print(f"{title}".center(CLIW))
     sl(FRENCH)
-
 
 
 if __name__ == "__main__":
