@@ -35,6 +35,8 @@ TARGET_AUTHORS = [
 
 TARGET_BY_AUTHOR = {item["author"]: item for item in TARGET_AUTHORS}
 
+THIN_NBSP = "\u202f"
+
 
 def parse_selection(raw_selection):
     if raw_selection is None or raw_selection.lower() == "default":
@@ -86,7 +88,7 @@ def _build_targets(raw_authors):
 
 
 def _format_views(views):
-    return f"{int(views):,}".replace(",", " ")
+    return f"{int(views):,}".replace(",", THIN_NBSP)
 
 
 def _coerce_int(value, default=0):
@@ -127,7 +129,7 @@ def _minutes_to_hhmm(total_minutes):
 
 def _author_alias(author):
     aliases = {
-        "LionelCOTE": "Lionel",
+        "LionelCOTE": "GrCOTE7",
         "InformatiqueSansComplexe": "ISC",
         "2minutesPy": "2mn",
         "bandedecodeurs": "BdC",
@@ -212,26 +214,40 @@ def _build_compact_summary_table_md(rows):
         ]
     )
 
-    widths = [2, 6, 11, 8, 8, 8, 6]
+    widths = [5, 6, 11, 8, 8, 8, 6]
 
     def _pad(text, width, align):
+        # U+202F est demi-largeur visuellement dans de nombreuses polices monospace.
+        # On compense au padding pour conserver des colonnes alignees en source.
+        narrow_count = text.count(THIN_NBSP)
+        compensation_full = narrow_count // 2
+        compensation_half = narrow_count % 2
+
         if align == "right":
-            return text.rjust(width)
+            base = text.rjust(width + compensation_full)
+            if compensation_half:
+                # +0.5 de largeur visuelle pour les cas avec un seul U+202F.
+                return f"{THIN_NBSP}{base}"
+            return base
         if align == "center":
             return text.center(width)
         return text.ljust(width)
 
     lines = [
-        "| Id | Auteur |   Vues     |     2c    |  N & Tps  |    Vus    |    %    |",
-        "|---:|:------:|-----------:|----------:|----------:|----------:|--------:|",
+        "|   Id  | Auteur |     Vues    |    2c    | N & Tps  |   Vus    |    %   |",
+        "|------:|:------:|------------:|---------:|---------:|---------:|-------:|",
     ]
 
-    for table_row in table_rows:
+    sepa = "|       |        |             |          |          |          |        |"
+    
+    for index, table_row in enumerate(table_rows):
         lines.append(
             "| "
-            + " | ".join(_pad(table_row[index], widths[index], aligns[index]) for index in range(len(headers)))
+            + " | ".join(_pad(table_row[col], widths[col], aligns[col]) for col in range(len(headers)))
             + " |"
         )
+        if index < len(table_rows) - 1:
+            lines.append(sepa)
 
     return lines
 

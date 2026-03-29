@@ -1,4 +1,5 @@
 import os
+from pathlib import Path
 from inc.storage import cache as cache_ops
 
 
@@ -12,7 +13,8 @@ def build_init_context(
     author = get_author_name_fn(ida)
     url = f"https://www.youtube.com/@{author}/videos"
 
-    script_dir = os.path.dirname(os.path.dirname(os.path.abspath(manager_file)))
+    # manager_file est maintenant dans inc/pipeline: remonter jusqu'a tools/YT_Scrap.
+    script_dir = str(Path(manager_file).resolve().parents[2])
     storage_dir = os.path.join(script_dir, "cache")
 
     output_file = os.path.join(storage_dir, f"{author}_videos.json")

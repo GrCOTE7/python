@@ -67,18 +67,18 @@ def try_return_valid_ttl_cache(
 
     ttl_minutes = max(1, (ctx.cache_ttl + 59) // 60)
     ttl_txt = ctx.format_remaining_time_fr_fn(ttl_minutes)
-    print(f"Donnees chargees depuis le cache JSON (valide {ttl_txt}).")
+    print(f"Données chargées depuis le cache JSON (valide {ttl_txt}).")
     if cache_date and isinstance(remaining_minutes, int):
         remaining_txt = ctx.format_remaining_time_fr_fn(remaining_minutes)
         print(
-            f"Derniere mise a jour: {cache_date} (prochaine actualisation dans environ {ctx.cyan}{remaining_txt}{ctx.reset})."
+            f"Dernière mise à jour: {cache_date} (prochaine actualisation dans environ {ctx.cyan}{remaining_txt}{ctx.reset})."
         )
     if os.path.isfile(ctx.output_md_file):
-        print("Markdown non regenere (cache TTL valide).")
+        print("Markdown non regénéré (cache TTL valide).")
     else:
         ctx.write_markdown_fn(cached_videos, total_playlist=effective_total)
         print(
-            f"{ctx.yellow}Markdown regenere car fichier absent (cache TTL valide).{ctx.reset}"
+            f"{ctx.yellow}Markdown regénéré car fichier absent (cache TTL valide).{ctx.reset}"
         )
 
     return ctx.build_scrap_summary_row_fn(ida, ctx.author, cached_videos)
@@ -114,7 +114,7 @@ def decide_post_ttl_strategy(
     use_recent_incremental_scan = False
     if previous_cache_is_complete:
         print(
-            f"{ctx.cyan}Cache TTL expire: verification ultra-legere du dernier ID publie...{ctx.reset}"
+            f"{ctx.cyan}Cache TTL expiré: vérification ultra-légère du dernier ID publié...{ctx.reset}"
         )
         probed_latest_video_id = ctx.probe_latest_playlist_video_id_fn(ctx.url)
         if (
@@ -123,7 +123,7 @@ def decide_post_ttl_strategy(
             and probed_latest_video_id == latest_cached_video_id
         ):
             print(
-                f"{ctx.green}Dernier ID inchange ({probed_latest_video_id}) : cache conserve, scraping detaille ignore.{ctx.reset}"
+                f"{ctx.green}Dernier ID inchangé ({probed_latest_video_id}) : cache conservé, scraping détaillé ignoré.{ctx.reset}"
             )
             sorted_videos = sorted(videos, key=ctx.video_sort_key_fn, reverse=True)
             current_excluded_count = ctx.write_result_fn(
@@ -151,13 +151,13 @@ def decide_post_ttl_strategy(
             )
 
             if os.path.isfile(ctx.output_md_file) and not markdown_should_refresh:
-                print("Markdown non regenere (cache prolonge apres verification du total).")
+                print("Markdown non regénéré (cache prolongé après vérification du total).")
             else:
                 ctx.write_markdown_fn(
                     sorted_videos, total_playlist=current_effective_total
                 )
                 print(
-                    f"{ctx.yellow}Markdown regenere (cache prolonge, fichier absent ou compteurs modifies).{ctx.reset}"
+                    f"{ctx.yellow}Markdown regénéré (cache prolongé, fichier absent ou compteurs modifiés).{ctx.reset}"
                 )
             return {
                 "early_summary": ctx.build_scrap_summary_row_fn(
