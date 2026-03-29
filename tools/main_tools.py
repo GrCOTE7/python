@@ -2,7 +2,10 @@ import os, sys, inspect, locale, shutil
 from time import sleep, time
 from tabulate import tabulate
 
-from globals import *
+try:
+    from .globals import *
+except ImportError:
+    from globals import *
 
 # 2ar pour tests ponctuels
 # SIMU_CLIW = 40
@@ -242,9 +245,7 @@ def sl(
         lineCode = frenchLine(trait=trait)
     else:
         lineColor = color if color else GREEN if CLIWR in IDEAL_CLIWS else RED
-        lineCode = (
-            f"\033[0;3{lineColor};40m" + f"{trait}{finTrait}" * w + "\033[0;37;40m"
-        )
+        lineCode = f"\033[0;3{lineColor}m" + f"{trait}{finTrait}" * w + EB
 
     if toPrint:
         print(lineCode)
@@ -320,10 +321,10 @@ def frenchLine(
 def setTitle(title=None, filename=""):
 
     title = title or "Script Python"
-    formatted_title = f"\033[0;33m{title[0].upper()}{title[1:]}\033[0;37m"
+    formatted_title = f"\033[0;33m{title[0].upper()}{title[1:]}{EB}"
 
     filename = filename or caller_info(1, level=3)
-    formatted_filename = f"(\033[3;4;37m{filename}\033[23;24;37m)"
+    formatted_filename = f"(\033[3;4;37m{filename}\033[23;24m)"
 
     title_lengths = [
         rawStrLength(part) for part in (formatted_title, formatted_filename)
@@ -391,7 +392,7 @@ def ls(color=YELLOW, level=2, **kwargs):
     (callerFile, context, lineNumber) = caller_info(level=level)
     # context = "ABCDEFGHIJKL"
     # callerFile = "ahcestmontoolsunpeulong\main_tools.py"
-    s = f"\033[0;3{color}m{context}𐍈𐍈𐍈F.: {callerFile}:\033[1;31;47m{lineNumber}{EB}"
+    s = f"\033[0;3{color}m{context}𐍈𐍈𐍈F.: {callerFile}:\033[1;31m{lineNumber}{EB}"
     textLength = rawStrLength(s)
     traitL = CLIWR - textLength[0] - 1
 
@@ -464,7 +465,7 @@ def exit():
     (callerFile, context, lineNumber) = caller_info(level=2)
 
     s1 = f"EXIT{complExitMsg}\033[0;32m:"
-    s2 = f"{context} - F.: {callerFile}:\033[1;31;47m{lineNumber}{EB}"
+    s2 = f"{context} - F.: {callerFile}:\033[1;31m{lineNumber}{EB}"
 
     n = CLIWR - rawStrLength(s1)[0] - rawStrLength(s2)[0] - 3
     trait = f"\n\033[0;3{GREEN}m" + "=" * abs(n) + ">"

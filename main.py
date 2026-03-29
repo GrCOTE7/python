@@ -16,5 +16,5 @@ def template():
 if __name__ == "__main__":
 
     template()
-    print("ok")
+    print("Ok")
     exit()

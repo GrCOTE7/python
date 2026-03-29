@@ -1,11 +1,15 @@
 import os, sys, inspect, locale, shutil
 from time import sleep, time
 
-from main_tools import *
-
-from width_tests import auto_partition
-
-from pf_tools import pf
+try:
+    from .main_tools import *
+    from .width_tests import auto_partition
+    from .pf_tools import pf
+except ImportError:
+    # Backward compatibility when running this file directly.
+    from main_tools import *
+    from width_tests import auto_partition
+    from pf_tools import pf
 
 # Initalisation des variables globales dans globals.py
 

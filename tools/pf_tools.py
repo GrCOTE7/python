@@ -1,7 +1,11 @@
 from tabulate import tabulate
 
-from globals import *
-from main_tools import *
+try:
+    from .globals import *
+    from .main_tools import *
+except ImportError:
+    from globals import *
+    from main_tools import *
 
 
 def format_string(text, w=55):
