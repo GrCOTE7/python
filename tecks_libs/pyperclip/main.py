@@ -1,4 +1,4 @@
-# from pymox_kit import cls, end
+from pymox_kit import cls, end
 import pyperclip
 
 import sys
@@ -15,10 +15,11 @@ def main():
 
     str_to_clip = "A string in the clipboard"
     pyperclip.copy(str_to_clip)
-    print(" Ok, fait !\n → Do CTRL + V to paste the string in the clipboard")
+    print(" Ok, fait !\n → Do CTRL + V to paste the string in the clipboard wherever you want.")
 
 
 if __name__ == "__main__":
     cls("Pyperclip")
     main()
+    end()
     exit()
