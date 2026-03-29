@@ -5,7 +5,7 @@ from urllib.request import urlopen
 import yt_dlp
 from typing import TYPE_CHECKING, cast
 
-from inc.constants import YDL_OPTS_DETAIL_ANDROID
+from inc.config.constants import YDL_OPTS_DETAIL_ANDROID
 
 if TYPE_CHECKING:
     from yt_dlp.YoutubeDL import _Params

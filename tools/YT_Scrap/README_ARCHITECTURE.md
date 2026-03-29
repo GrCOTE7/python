@@ -12,8 +12,8 @@ Le pipeline privilegie les chemins rapides (TTL/probe), puis degrade proprement 
 - Le flux lance `run_scrap(selection)`.
 
 2. Orchestration par auteur
-- `inc/runner.py` valide les IDs puis appelle `run_selected_authors`.
-- `inc/manager.py:scrap_some` pilote tout le cycle auteur.
+- `inc/pipeline/runner.py` valide les IDs puis appelle `run_selected_authors`.
+- `inc/pipeline/manager.py:scrap_some` pilote tout le cycle auteur.
 
 3. Initialisation et hygiene cache
 - `init_ops.build_init_context` charge chemins + constantes runtime.
@@ -44,7 +44,7 @@ Le pipeline privilegie les chemins rapides (TTL/probe), puis degrade proprement 
 
 8. Finalisation auteur
 - `persist_ops.finalize_scrap_state` ecrit JSON final + Markdown conditionnel + resume.
-- Sync tracking sqlite via `_sync_tracking_after_scrap` (si module `suivi` disponible).
+- Sync tracking sqlite via `_sync_tracking_after_scrap` (si module `inc/tracking` disponible).
 
 9. Post-run global
 - `main.py` importe les etats de `BPL.md` vers tracking (`import_states_into_tracking`).

@@ -3,7 +3,7 @@ import os, re
 from tabulate import tabulate
 from pymox_kit import SB, R, GREEN, nf
 
-from inc.video import format_remaining_time_fr
+from inc.utils.video import format_remaining_time_fr
 
 
 def write_markdown_file(videos, total_playlist, author, url, storage_dir, output_md_file):

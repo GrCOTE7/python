@@ -1,17 +1,17 @@
 import locale, os
 import re
 from typing import Optional
-import inc.authors as auth
-from inc import constants as cst
-from inc import cache as cache_ops
-from inc import flow_ops
-from inc import init_ops
-from inc import ttl_ops
-from inc import detail_ops
-from inc import persist_ops
-from inc import helpers as hlp
-from inc import video as vid
-from inc import render as rnd
+import inc.catalog.authors as auth
+from inc.config import constants as cst
+from inc.storage import cache as cache_ops
+from inc.pipeline import flow_ops
+from inc.pipeline import init_ops
+from inc.pipeline import ttl_ops
+from inc.pipeline import detail_ops
+from inc.pipeline import persist_ops
+from inc.utils import helpers as hlp
+from inc.utils import video as vid
+from inc.reporting import render as rnd
 
 # Delegation vers sous-modules: simplifie la maintenance.
 YDL_OPTS_LIST = cst.YDL_OPTS_LIST
@@ -92,9 +92,9 @@ except Exception:
 from pymox_kit import cls, end, SB, R, YELLOW, GREEN, RED, CYAN
 
 try:
-    from suivi.tracking_store import export_markdown as tracking_export_markdown
-    from suivi.tracking_store import merge_scrape as tracking_merge_scrape
-    from suivi.tracking_store import set_video_state as tracking_set_video_state
+    from inc.tracking.tracking_store import export_markdown as tracking_export_markdown
+    from inc.tracking.tracking_store import merge_scrape as tracking_merge_scrape
+    from inc.tracking.tracking_store import set_video_state as tracking_set_video_state
 
     TRACKING_ENABLED = True
 except Exception:

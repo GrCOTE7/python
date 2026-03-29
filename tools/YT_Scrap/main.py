@@ -1,9 +1,9 @@
-from inc.runner import run_scrap
-import inc.authors as auth
+from inc.pipeline.runner import run_scrap
+import inc.catalog.authors as auth
 import argparse
 from pathlib import Path
 
-from build_bpl import (
+from inc.reporting.build_bpl import (
     TARGET_AUTHORS,
     build_bpl,
     get_default_target_scrape_ids,

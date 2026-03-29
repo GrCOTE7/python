@@ -1,11 +1,16 @@
 import argparse
 import re
+import sys
 from datetime import datetime
 from pathlib import Path
 
-import inc.authors as auth
-from inc.runner import run_scrap
-from suivi.tracking_store import (
+if __package__ in (None, ""):
+    # Permet l'execution directe du script depuis son chemin fichier.
+    sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+
+import inc.catalog.authors as auth
+from inc.pipeline.runner import run_scrap
+from inc.tracking.tracking_store import (
     connect_db,
     get_latest_run_id,
     get_not_seen_yet_videos,
@@ -135,12 +140,8 @@ def _author_alias(author):
 
 
 def _build_compact_summary_table_md(rows):
-    headers = ["Id", "Auteur", "Vues", "2c", "N & Tps", "Vus", "Suivis (%)"]
-
-    lines = [
-        "| " + " | ".join(headers) + " |",
-        "|" + "|".join(["---"] * len(headers)) + "|",
-    ]
+    headers = ["Id", "Auteur", "Vues", "2c", "N & Tps", "Vus", "%"]
+    aligns = ["right", "center", "right", "right", "right", "right", "right"]
 
     total_videos = sum(row["videos"] for row in rows)
     total_views = sum(row["views"] for row in rows)
@@ -150,6 +151,7 @@ def _build_compact_summary_table_md(rows):
     total_seen = sum(row["seen"] for row in rows)
     total_seen_minutes = sum(row["seen_minutes"] for row in rows)
 
+    table_rows = []
     for row in rows:
         pct_n = f"{(100.0 * row['seen'] / row['videos']):.1f}%" if row["videos"] > 0 else "0.0%"
         pct_t = (
@@ -157,21 +159,27 @@ def _build_compact_summary_table_md(rows):
             if row["total_minutes"] > 0
             else "0.0%"
         )
-
-        lines.append(
-            "| "
-            + " | ".join(
-                [
-                    str(row["id"]),
-                    _author_alias(row["author"]),
-                    _format_views(row["views"]),
-                    f"{row['not_seen']}<br>{_minutes_to_hhmm(row['not_seen_minutes'])}",
-                    f"{row['videos']}<br>{_minutes_to_hhmm(row['total_minutes'])}",
-                    f"{row['seen']}<br>{_minutes_to_hhmm(row['seen_minutes'])}",
-                    f"{pct_n}<br>{pct_t}",
-                ]
-            )
-            + " |"
+        table_rows.append(
+            [
+                str(row["id"]),
+                _author_alias(row["author"]),
+                _format_views(row["views"]),
+                _format_views(row["not_seen"]),
+                _format_views(row["videos"]),
+                _format_views(row["seen"]),
+                pct_n,
+            ]
+        )
+        table_rows.append(
+            [
+                "",
+                "",
+                "",
+                _minutes_to_hhmm(row["not_seen_minutes"]),
+                _minutes_to_hhmm(row["total_minutes"]),
+                _minutes_to_hhmm(row["seen_minutes"]),
+                pct_t,
+            ]
         )
 
     total_pct_n = f"{(100.0 * total_seen / total_videos):.1f}%" if total_videos > 0 else "0.0%"
@@ -181,21 +189,49 @@ def _build_compact_summary_table_md(rows):
         else "0.0%"
     )
 
-    lines.append(
-        "| "
-        + " | ".join(
-            [
-                str(len(rows)),
-                "TOTAL",
-                _format_views(total_views),
-                f"{total_not_seen}<br>{_minutes_to_hhmm(total_not_seen_minutes)}",
-                f"{total_videos}<br>{_minutes_to_hhmm(total_minutes)}",
-                f"{total_seen}<br>{_minutes_to_hhmm(total_seen_minutes)}",
-                f"{total_pct_n}<br>{total_pct_t}",
-            ]
-        )
-        + " |"
+    table_rows.append(
+        [
+            str(len(rows)),
+            "TOTAL",
+            _format_views(total_views),
+            _format_views(total_not_seen),
+            _format_views(total_videos),
+            _format_views(total_seen),
+            total_pct_n,
+        ]
     )
+    table_rows.append(
+        [
+            "",
+            "",
+            "",
+            _minutes_to_hhmm(total_not_seen_minutes),
+            _minutes_to_hhmm(total_minutes),
+            _minutes_to_hhmm(total_seen_minutes),
+            total_pct_t,
+        ]
+    )
+
+    widths = [2, 6, 11, 8, 8, 8, 6]
+
+    def _pad(text, width, align):
+        if align == "right":
+            return text.rjust(width)
+        if align == "center":
+            return text.center(width)
+        return text.ljust(width)
+
+    lines = [
+        "| Id | Auteur |   Vues     |     2c    |  N & Tps  |    Vus    |    %    |",
+        "|---:|:------:|-----------:|----------:|----------:|----------:|--------:|",
+    ]
+
+    for table_row in table_rows:
+        lines.append(
+            "| "
+            + " | ".join(_pad(table_row[index], widths[index], aligns[index]) for index in range(len(headers)))
+            + " |"
+        )
 
     return lines
 
@@ -453,6 +489,27 @@ def run_optional_scrap(selection, targets):
     run_scrap(selection)
 
 
+def _selected_targets_for_bpl(targets, selection):
+    if selection is None or selection == "all":
+        return targets
+
+    selected_ids = set()
+    if isinstance(selection, int):
+        selected_ids.add(selection)
+    elif isinstance(selection, list):
+        selected_ids = {value for value in selection if isinstance(value, int)}
+
+    if not selected_ids:
+        return targets
+
+    filtered = [
+        target
+        for target in targets
+        if isinstance(target.get("scrap_id"), int) and target["scrap_id"] in selected_ids
+    ]
+    return filtered if filtered else targets
+
+
 def main():
     parser = argparse.ArgumentParser(
         description="Alimente BPL.md a partir de tools/YT_Scrap/cache/tracking.sqlite3"
@@ -484,16 +541,19 @@ def main():
     args = parser.parse_args()
 
     script_dir = Path(__file__).resolve().parent
-    db_path = script_dir / "cache" / "tracking.sqlite3"
-    bpl_path = Path(args.bpl).resolve() if args.bpl else script_dir.parent.parent / "BPL.md"
+    db_path = script_dir.parent.parent / "cache" / "tracking.sqlite3"
+    bpl_path = Path(args.bpl).resolve() if args.bpl else script_dir.parent.parent.parent / "BPL.md"
     targets = _build_targets(args.authors)
 
+    selection = parse_selection(args.selection)
+
     if args.refresh:
-        selection = parse_selection(args.selection)
         run_optional_scrap(selection, targets)
 
+    targets_for_bpl = _selected_targets_for_bpl(targets, selection)
+
     updated_seen, updated_unseen, ignored_not_found = import_states_into_tracking(db_path, bpl_path)
-    write_info = build_bpl(db_path, bpl_path, targets)
+    write_info = build_bpl(db_path, bpl_path, targets_for_bpl)
 
     print(
         "BPL genere "

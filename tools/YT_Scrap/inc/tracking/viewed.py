@@ -1,9 +1,14 @@
 import json
 import re
+import sys
 from pathlib import Path
 from datetime import timedelta
 
-from tracking_store import export_markdown, merge_scrape, set_video_state
+if __package__ in (None, ""):
+    # Permet l'execution directe du script depuis son chemin fichier.
+    sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+
+from inc.tracking.tracking_store import export_markdown, merge_scrape, set_video_state
 
 
 def parse_duration(text):
@@ -64,7 +69,7 @@ def _build_run_items_from_cache_json(cache_json_file):
 
 if __name__ == "__main__":
 
-    BASE_DIR = Path(__file__).resolve().parent.parent
+    BASE_DIR = Path(__file__).resolve().parent.parent.parent
     cache_dir = BASE_DIR / "cache"
     db_path = cache_dir / "tracking.sqlite3"
 

@@ -1,5 +1,5 @@
-import inc.authors as auth
-from inc.manager import run_selected_authors
+import inc.catalog.authors as auth
+from inc.pipeline.manager import run_selected_authors
 
 
 def default_selected_ids():
