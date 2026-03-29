@@ -7,16 +7,17 @@ from tools.tools import *
 # from pymox_kit import *
 
 
-if __name__ == "__main__":
-
-    title = "ReaDy."
-
-    # cls(f"{title.capitalize()}")
-
+def template():
+    title = "ReaDy.".capitalize()
+    # cls(f"{title}")
     ls(CYAN)
-
-    print(f"{title.capitalize()}".center(CLIW))
-
+    print(f"{title}".center(CLIW))
     sl(FRENCH)
 
+
+
+if __name__ == "__main__":
+
+    template()
+    print("ok")
     exit()
