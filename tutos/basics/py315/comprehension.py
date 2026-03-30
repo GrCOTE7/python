@@ -33,9 +33,8 @@ def lists_sample() -> None:
 
 def main() -> None:
 
-    print("Liste avec comprehension")
+    print("Liste avec comprehension avec Py 315")
     lists_sample()
-    pass
 
 
 if __name__ == "__main__":

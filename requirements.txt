@@ -38,4 +38,5 @@ scipy
 selenium
 tabulate
 yt_dlp
+watchdog
 weasyprint

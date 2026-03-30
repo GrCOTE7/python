@@ -4,7 +4,7 @@ from pymox_kit import cls, end
 
 def main():
 
-    print("Tips 1234567890")
+    print("Tips en 2026")
 
 
 if __name__ == "__main__":
