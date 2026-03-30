@@ -1,3 +1,5 @@
+import re
+
 import flet
 from pymox_kit import cls, end
 
@@ -67,8 +69,36 @@ def ensure_positive(n: int) -> Result[int, str]:
     return Ok(n)
 
 
-def main() -> None:
+def parse_config_line(line: str) -> Result[tuple[str, int], str]:
 
+    line = line.strip()
+    if ":" not in line:
+        return Err('config line must contain ":"')
+
+    key, _, rest = line.partition(":")
+    key = key.strip()
+    if not key:
+        return Err("config key cannot be empty")
+
+    try:
+        value = int(rest.strip())
+    except ValueError:
+        return Err(f"value must be an integer, got {rest!r}")
+
+    return Ok((key, value))
+
+
+def validate_port(pair: tuple[str, int]) -> Result[tuple[str, int], str]:
+    key, port = pair
+    if key != "port":
+        return Err(f"unknown key {key!r}")
+    if not (1 <= port <= 65535):
+        return Err(f"port number must be between 1 and 65535, got {port}")
+
+    return Ok(pair)
+
+
+def main() -> None:
     cls()
     print("Monadic")
     # parse_int = monadic()
@@ -94,8 +124,14 @@ def main() -> None:
     r6: Result[int, str] = parse_int("-5").bind(ensure_positive)
     print("r6 bind (err):", r6)
     r7: Result[int, str] = parse_int("7").bind(ensure_positive)
-    print("r7 bind (ok) :", r7)
+    print("r7 bind (ok) :", r7, end="\n" * 2)
 
+    raw: str = 'port: 808000' # ← ICI changer pour tester différents cas
+    r8: Result[tuple[str, int], str] = parse_config_line(raw).bind(validate_port)
+    print("r8 parse_config_line + validate_port:", r8)
+
+    r9: tuple[str, int] | str = r8.unwrap_or(('port', 80))
+    print("r9 unwrap_or with default port:", r9)
 
 if __name__ == "__main__":
 
