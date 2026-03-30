@@ -1,5 +1,6 @@
 attr
 beautifulsoup4
+black
 cryptography
 cycler
 dotenv
