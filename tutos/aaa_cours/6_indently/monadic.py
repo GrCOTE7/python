@@ -4,6 +4,7 @@ from pymox_kit import cls, end, CLIW
 from dataclasses import dataclass
 from typing import Callable, Protocol, cast
 
+# ❌ → 6:43
 
 def monadic(): # OOP Monadic approach
 
@@ -14,7 +15,7 @@ def monadic(): # OOP Monadic approach
         def unwrap_or[U](self, default: U) -> T | U: ...
 
     @dataclass(slots=True)
-    class OK[T, E=str]:
+    class Ok[T, E=str]:
         value: T
 
         # def __init__(self, value: T):
@@ -47,7 +48,7 @@ def monadic(): # OOP Monadic approach
 
     def parse_int(s: str) -> Result[int, str]:
         try:
-            return OK(int(s))
+            return Ok(int(s))
         except ValueError:
             return Err[int, str](f"not an integer {s!r}")
     
@@ -55,6 +56,7 @@ def monadic(): # OOP Monadic approach
     print("Ready.")
     return parse_int
 
+# ❌ Explain complète des 3 classes (Result(), Ok() et Err()) et de leur utilité dans le style monadique.
 
 def main()-> None:
     
@@ -62,6 +64,7 @@ def main()-> None:
     print("Monadic")
     parse_int = monadic()
     print("parse_int('42'):", parse_int('42'))
+    print("parse_int('a'):", parse_int('a'))
     pass
 
 
