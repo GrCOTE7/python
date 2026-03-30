@@ -35,7 +35,7 @@ def monadic():  # OOP Monadic approach
             return f"value = {self.value}"
 
         def map[U](self, f: Callable[[T], U]) -> "Result[U, E]":
-            return OK(f(self.value))
+            return Ok(f(self.value))
 
         def bind[U](self, f: Callable[[T], "Result[U, E]"]) -> "Result[U, E]":
             return f(self.value)
