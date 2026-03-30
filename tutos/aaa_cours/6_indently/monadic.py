@@ -1,12 +1,25 @@
-import flet as ft
-from pymox_kit import cls, end, CLIW
+import flet
+from pymox_kit import cls, end
 
 from dataclasses import dataclass
 from typing import Callable, Protocol, cast
 
 # ❌ → 6:43
 
-def monadic(): # OOP Monadic approach
+
+def monadic():  # OOP Monadic approach
+    """_summary_
+        Le nom monadic vient de “monade” en programmation fonctionnelle :
+
+    - Ok et Err encapsulent une valeur dans un contexte (succès ou erreur).
+    - map transforme la valeur seulement si on est en succès.
+    - bind enchaîne des opérations qui renvoient elles-mêmes un résultat du même type.
+    - En cas de Err, la chaîne se coupe automatiquement sans planter.
+    Donc ici, “monadic” veut dire : “on suit un style monadique pour propager les erreurs proprement”.
+
+    Returns:
+            _type_: _description_
+    """
 
     class Result[T, E](Protocol):
 
@@ -15,11 +28,11 @@ def monadic(): # OOP Monadic approach
         def unwrap_or[U](self, default: U) -> T | U: ...
 
     @dataclass(slots=True)
-    class Ok[T, E=str]:
+    class Ok[T, E = str]:
         value: T
 
-        # def __init__(self, value: T):
-        #     self.value = value
+        def __str__(self) -> str:
+            return f"value = {self.value}"
 
         def map[U](self, f: Callable[[T], U]) -> "Result[U, E]":
             return OK(f(self.value))
@@ -30,12 +43,9 @@ def monadic(): # OOP Monadic approach
         def unwrap_or[U](self, default: U) -> T | U:
             return self.value
 
-
     @dataclass(slots=True)
     class Err[T, E](Exception):
         error: E
-        # def __init__(self, error: E):
-        #     self.error = error
 
         def map[U](self, f: Callable[[T], U]) -> "Result[U, E]":
             return cast("Result[U, E]", self)
@@ -51,20 +61,17 @@ def monadic(): # OOP Monadic approach
             return Ok(int(s))
         except ValueError:
             return Err[int, str](f"not an integer {s!r}")
-    
-    
-    print("Ready.")
+
     return parse_int
 
-# ❌ Explain complète des 3 classes (Result(), Ok() et Err()) et de leur utilité dans le style monadique.
 
-def main()-> None:
-    
+def main() -> None:
+
     cls()
     print("Monadic")
     parse_int = monadic()
-    print("parse_int('42'):", parse_int('42'))
-    print("parse_int('a'):", parse_int('a'))
+    print("parse_int('42'):", parse_int("42"))
+    print("parse_int('a'):", parse_int("a"))
     pass
 
 
