@@ -36,4 +36,5 @@ scapy
 scipy
 selenium
 tabulate
+yt_dlp
 weasyprint

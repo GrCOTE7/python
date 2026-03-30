@@ -10,7 +10,7 @@
 |       |        |             |          |          |          |        |
 |       |        |             |    03:42 |    03:46 |    00:03 |   1.3% |
 |       |        |             |          |          |          |        |
-|    11 |  BdC   |      750 692 |       50 |       50 |        0 |   0.0% |
+|    11 |  BdC   |      750 692 |       50 |       50 |        0 |   0.0% |
 |       |        |             |          |          |          |        |
 |       |        |             |    21:16 |    21:16 |    00:00 |   0.0% |
 |       |        |             |          |          |          |        |
@@ -18,21 +18,21 @@
 |       |        |             |          |          |          |        |
 |       |        |             |    49:38 |    49:46 |    00:07 |   0.2% |
 |       |        |             |          |          |          |        |
-|    18 | Jordy  |     365 211 |      201 |      201 |        0 |   0.0% |
+|    18 | Jordy  |      365 211 |      201 |      201 |        0 |   0.0% |
 |       |        |             |          |          |          |        |
 |       |        |             |    80:23 |    80:23 |    00:00 |   0.0% |
 |       |        |             |          |          |          |        |
-|    20 | Indent |   25 511 055 |      624 |      787 |      163 |  20.7% |
+|    20 | Indent |   25 511 055 |      619 |      787 |      168 |  21.3% |
 |       |        |             |          |          |          |        |
-|       |        |             |    91:52 |   113:02 |    21:10 |  18.7% |
+|       |        |             |    91:15 |   113:02 |    21:46 |  19.3% |
 |       |        |             |          |          |          |        |
-|    21 | Foxxy  |      806 361 |      316 |      319 |        3 |   0.9% |
+|    21 | Foxxy  |      806 361 |      316 |      319 |        3 |   0.9% |
 |       |        |             |          |          |          |        |
 |       |        |             |    66:21 |    66:49 |    00:27 |   0.7% |
 |       |        |             |          |          |          |        |
-|     7 | TOTAL  |   57 259 414 |    1 697 |    1 909 |      212 |  11.1% |
+|     7 | TOTAL  |   57 259 414 |     1 692 |     1 909 |      217 |  11.4% |
 |       |        |             |          |          |          |        |
-|       |        |             |   344:04 |   368:35 |    24:27 |   6.6% |
+|       |        |             |   343:27 |   368:35 |    25:03 |   6.8% |
 
 ## 1 FR Auteur **[InformatiqueSansComplexe](https://www.youtube.com/@InformatiqueSansComplexe/videos)** ( **286** videos - 1 828 804 vues - 33 heures et 33 minutes )
 
@@ -120,7 +120,7 @@
 * [ ] [08/07/2024 **Web Scraping avec Python®** 5 821 **09:13**](https://www.youtube.com/watch?v=A8CkTNijhvs)
 * [ ] [01/07/2024 **Applications mobiles en Python®, le match !** 2 515 **15:27**](https://www.youtube.com/watch?v=rYpSB0dqlNA)
 * [ ] [24/06/2024 **5 librairies essentielles pour développer en Python®** 4 182 **17:57**](https://www.youtube.com/watch?v=N8eFgrBp-mw)
-* [ ] [17/06/2024 **ffdzcore un autre moyen de faire des applications mobiles avec Python® !** 134 171 **11:04**](https://www.youtube.com/watch?v=wtkax34EAL8)
+* [ ] [17/06/2024 **Encore un autre moyen de faire des applications mobiles avec Python® !** 13 171 **11:04**](https://www.youtube.com/watch?v=wtkax34EAL8)
 * [ ] [10/06/2024 **Une autre application mobile avec Python® ?** 2 381 **16:07**](https://www.youtube.com/watch?v=5V59VPTJ3W8)
 * [ ] [03/06/2024 **Une application mobile avec Flutter®** 1 569 **11:38**](https://www.youtube.com/watch?v=A7wqqxIhn-M)
 * [ ] [27/05/2024 **Créer des fichiers Word® avec Python®** 5 651 **13:46**](https://www.youtube.com/watch?v=FtMR4EfpVvY)
@@ -869,13 +869,8 @@
 
 ## 6 GB Auteur **[Indently](https://www.youtube.com/@Indently/videos)** ( **787** videos - 25 511 055 vues - 113 heures et 2 minutes )
 
-### Pas vus (624 - 91 heures et 52 minutes)
+### Pas vus (619 - 91 heures et 15 minutes)
 
-* [ ] [18/03/2026 **Coming in Python 3.15: New Set Syntax?** 10 647 **07:12**](https://www.youtube.com/watch?v=50dTOFILNuc)
-* [ ] [14/03/2026 **NEW in Python 3.15: Frozendict** 10 402 **04:29**](https://www.youtube.com/watch?v=NgcdCW2Gto4)
-* [ ] [10/03/2026 **NEW in Python 3.15: Explicit Lazy Imports** 19 270 **09:29**](https://www.youtube.com/watch?v=VoKE14Nf_oY)
-* [ ] [05/03/2026 **Metaclasses in Python are Awesome** 14 514 **09:06**](https://www.youtube.com/watch?v=gu8WI3Xs5iU)
-* [ ] [28/02/2026 **NEW in Python 3.15: Unpacking in Comprehensions** 27 140 **05:57**](https://www.youtube.com/watch?v=vaKozOH_B4A)
 * [ ] [21/02/2026 **Descriptors in Python are Awesome** 12 118 **10:38**](https://www.youtube.com/watch?v=p7a5UCl7Tds)
 * [ ] [18/02/2026 **It's 2026 - Time to switch to Linux** 13 749 **04:38**](https://www.youtube.com/watch?v=T_LNtZkaiaI)
 * [ ] [12/02/2026 **Python with UV is ULTRA Fast** 12 601 **08:19**](https://www.youtube.com/watch?v=5nw_H7oqrIk)
@@ -1496,10 +1491,15 @@
 * [ ] [22/01/2021 **Easy QR Code Generator in Python Tutorial (2021)** 3 263 **05:42**](https://www.youtube.com/watch?v=XvUFTFvdYeU)
 * [ ] [20/01/2021 **Creating an Interactive SQLite Database in Python Tutorial for Beginners (2021)** 5 872 **16:33**](https://www.youtube.com/watch?v=ho1hmfBipvI)
 
-### Vus (163 - 21 heures et 10 minutes)
+### Vus (168 - 21 heures et 46 minutes)
 
 * [x] [28/03/2026 **25 Cool Tips & Tricks in Python** 4 647 **23:17**](https://www.youtube.com/watch?v=s_oXtdhqXR8)
 * [x] [23/03/2026 **Monadic Error Handling in Python is Awesome** 14 551 **12:51**](https://www.youtube.com/watch?v=pcdeKCuCRIc)
+* [x] [18/03/2026 **Coming in Python 3.15: New Set Syntax?** 10 647 **07:12**](https://www.youtube.com/watch?v=50dTOFILNuc)
+* [x] [14/03/2026 **NEW in Python 3.15: Frozendict** 10 402 **04:29**](https://www.youtube.com/watch?v=NgcdCW2Gto4)
+* [x] [10/03/2026 **NEW in Python 3.15: Explicit Lazy Imports** 19 270 **09:29**](https://www.youtube.com/watch?v=VoKE14Nf_oY)
+* [x] [05/03/2026 **Metaclasses in Python are Awesome** 14 514 **09:06**](https://www.youtube.com/watch?v=gu8WI3Xs5iU)
+* [x] [28/02/2026 **NEW in Python 3.15: Unpacking in Comprehensions** 27 140 **05:57**](https://www.youtube.com/watch?v=vaKozOH_B4A)
 * [x] [18/01/2021 **Light Sensor Tutorial in Android Studio (Kotlin 2021)** 6 902 **07:13**](https://www.youtube.com/watch?v=DlQvhjV9Jds)
 * [x] [13/01/2021 **Accelerometer Sensor Tutorial in Android Studio (Kotlin 2021)** 21 629 **09:20**](https://www.youtube.com/watch?v=xcsuDDQHrLo)
 * [x] [11/01/2021 **Retrofit2 Sample App Tutorial in Android Studio (Kotlin 2021)** 7 948 **15:40**](https://www.youtube.com/watch?v=Da0upNOmoQ0)
