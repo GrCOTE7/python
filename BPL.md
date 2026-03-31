@@ -2,41 +2,41 @@
 
 |   Id  | Auteur |     Vues    |    2c    | N & Tps  |   Vus    |    %   |
 |------:|:------:|------------:|---------:|---------:|---------:|-------:|
-|    14 |  ISC   |    1 828 804 |      243 |      286 |       43 |  15.0% |
+|    14 |  ISC   |    1 828 918 |      244 |      287 |       43 |  15.0% |
 |       |        |             |          |          |          |        |
-|       |        |             |    30:52 |    33:33 |    02:40 |   7.9% |
+|       |        |             |    31:02 |    33:43 |    02:40 |   7.9% |
 |       |        |             |          |          |          |        |
-|    17 |  2mn   |    1 080 208 |       89 |       91 |        2 |   2.2% |
+|    17 |  2mn   |    1 080 208 |       86 |       91 |        5 |   5.5% |
 |       |        |             |          |          |          |        |
-|       |        |             |    03:42 |    03:46 |    00:03 |   1.3% |
+|       |        |             |    03:36 |    03:46 |    00:09 |   4.0% |
 |       |        |             |          |          |          |        |
-|    11 |  BdC   |      750 692 |       50 |       50 |        0 |   0.0% |
+|    11 |  BdC   |      750 692 |       49 |       50 |        1 |   2.0% |
 |       |        |             |          |          |          |        |
-|       |        |             |    21:16 |    21:16 |    00:00 |   0.0% |
+|       |        |             |    20:54 |    21:16 |    00:22 |   1.7% |
 |       |        |             |          |          |          |        |
-|     7 | Gravn  |   26 917 083 |      174 |      175 |        1 |   0.6% |
+|     7 | Gravn  |   26 917 083 |      157 |      175 |       18 |  10.3% |
 |       |        |             |          |          |          |        |
-|       |        |             |    49:38 |    49:46 |    00:07 |   0.2% |
+|       |        |             |    45:32 |    49:46 |    04:14 |   8.5% |
 |       |        |             |          |          |          |        |
-|    18 | Jordy  |      365 211 |      199 |      201 |        2 |   1.0% |
+|    18 | Jordy  |      365 211 |      197 |      201 |        4 |   2.0% |
 |       |        |             |          |          |          |        |
-|       |        |             |    80:04 |    80:23 |    00:19 |   0.4% |
+|       |        |             |    71:28 |    80:23 |    08:55 |  11.1% |
 |       |        |             |          |          |          |        |
-|    20 | Indent |   25 511 055 |      619 |      787 |      168 |  21.3% |
+|    20 | Indent |   25 511 055 |      618 |      787 |      169 |  21.5% |
 |       |        |             |          |          |          |        |
-|       |        |             |    91:15 |   113:02 |    21:46 |  19.3% |
+|       |        |             |    90:59 |   113:02 |    22:03 |  19.5% |
 |       |        |             |          |          |          |        |
-|    21 | Foxxy  |      806 361 |      314 |      319 |        5 |   1.6% |
+|    21 | Foxxy  |      806 361 |      313 |      319 |        6 |   1.9% |
 |       |        |             |          |          |          |        |
-|       |        |             |    65:54 |    66:49 |    00:54 |   1.3% |
+|       |        |             |    65:44 |    66:49 |    01:05 |   1.6% |
 |       |        |             |          |          |          |        |
-|     7 | TOTAL  |   57 259 414 |     1 688 |     1 909 |      221 |  11.6% |
+|     7 | TOTAL  |   57 259 528 |     1 664 |     1 910 |      246 |  12.9% |
 |       |        |             |          |          |          |        |
-|       |        |             |   342:41 |   368:35 |    25:49 |   7.0% |
+|       |        |             |   329:15 |   368:45 |    39:28 |  10.7% |
 
-## 1 FR Auteur **[InformatiqueSansComplexe](https://www.youtube.com/@InformatiqueSansComplexe/videos)** ( **286** videos - 1 828 804 vues - 33 heures et 33 minutes )
+## 1 FR Auteur **[InformatiqueSansComplexe](https://www.youtube.com/@InformatiqueSansComplexe/videos)** ( **287** videos - 1 828 918 vues - 33 heures et 43 minutes )
 
-### Pas vus (243 - 30 heures et 52 minutes)
+### Pas vus (244 - 31 heures et 2 minutes)
 
 * [ ] [12/03/2026 **La fin des développeurs Odoo** 429 **11:24**](https://www.youtube.com/watch?v=UFo9wySvXqw)
 * [ ] [02/03/2026 **J'ai demandé à l'IA de coder un module Odoo... grosse erreur** 474 **03:27**](https://www.youtube.com/watch?v=2eg8jTvd7jM)
@@ -281,6 +281,7 @@
 * [ ] [07/06/2021 **Wordpress®, c'est quoi ?** 8 510 **03:11**](https://www.youtube.com/watch?v=-ACYvMaJCVY)
 * [ ] [12/04/2021 **Kubernetes, c'est quoi ?** 12 665 **03:57**](https://www.youtube.com/watch?v=dHPBVjxIIsM)
 * [ ] [22/02/2021 **7 menaces courantes sur Internet** 933 **04:07**](https://www.youtube.com/watch?v=WwjeE4o-5hU)
+* [ ] [30/03/2026 **L'IA m'a appris and, or, not en Python — je ne code plus jamais mes conditions comme avant** 114 **10:21**](https://www.youtube.com/watch?v=X-9uZA-_6zM)
 
 ### Vus (43 - 2 heures et 40 minutes)
 
@@ -330,7 +331,7 @@
 
 ## 2 FR/GB Auteur **[2minutesPy](https://www.youtube.com/@2minutesPy/videos)** ( **91** videos - 1 080 208 vues - 3 heures et 46 minutes )
 
-### Pas vus (89 - 3 heures et 42 minutes)
+### Pas vus (86 - 3 heures et 36 minutes)
 
 * [ ] [11/03/2026 **Why Deferring Now… Not Earlier!** 797 **02:48**](https://www.youtube.com/watch?v=45yD9UvuUmU)
 * [ ] [07/03/2026 **Challenge: Prompts ONLY and Full-stack App is READY 🚀** 519 **02:51**](https://www.youtube.com/watch?v=HywYRduZayQ)
@@ -418,16 +419,18 @@
 * [ ] [08/11/2023 **What if __name__ == '__main__' does in Python | 2MinutesPy** 12 393 **02:11**](https://www.youtube.com/watch?v=WfPwvUjIZtE)
 * [ ] [30/10/2023 **Understanding Python's seek() and tell() Functions for Navigating Files in Python | 2MinutesPy** 7 571 **02:07**](https://www.youtube.com/watch?v=7TQQJSfcrEQ)
 * [ ] [22/10/2023 **Python Threading in 2 Minutes: Run Multiple Tasks Concurrently | 2MinutesPy** 6 927 **02:02**](https://www.youtube.com/watch?v=KbrUfPEwt78)
+
+### Vus (5 - 9 minutes)
+
 * [x] [10/10/2023 **Python's super() Function in 2 Minutes | 2MinutesPy** 4 196 **02:00**](https://www.youtube.com/watch?v=giOT0dBkIaQ)
 * [x] [30/09/2023 **How to Use *args and **kwargs in 2 Minutes** 5 665 **02:11**](https://www.youtube.com/watch?v=QksqEIz09eU)
 * [x] [24/09/2023 **Python's __getitem__ Method Simplified for Object Element Access in 2 Minutes** 2 724 **01:47**](https://www.youtube.com/watch?v=tkZSjGMSFf8)
-
-### Vus (2 - 3 minutes)
-
 * [x] [15/09/2023 **Python's __init__ Method | 2MinutesPy** 48 833 **01:46**](https://www.youtube.com/watch?v=mYKGYr0xaXw)
 * [x] [10/09/2023 **Python's ABC (Abstract Base Class) in 2 Minutes** 9 456 **02:11**](https://www.youtube.com/watch?v=G-w5PvPQl5Q)
 
 ## 3 FR Auteur **[bandedecodeurs](https://www.youtube.com/@bandedecodeurs/videos)** ( **50** videos - 750 692 vues - 21 heures et 16 minutes )
+
+### Pas vus (49 - 20 heures et 54 minutes)
 
 * [ ] [01/02/2026 **Mon nouveau projet : Ballads of the Unsung. J'ai besoin votre aide !** 592 **02:16**](https://www.youtube.com/watch?v=NCpXtgrX1Xo)
 * [ ] [21/05/2025 **Utiliser n8n pour gérer ses notes de frais automatiquement avec un bot Telegram et de l'IA** 2 426 **38:58**](https://www.youtube.com/watch?v=SDxj9S_xv5Y)
@@ -478,11 +481,14 @@
 * [ ] [13/03/2022 **Comment j'ai hacké mon prof** 710 **11:00**](https://www.youtube.com/watch?v=cvVml5jje_g)
 * [ ] [02/03/2022 **Comment apprendre à programmer en Python - #1 Les variables** 1 914 **20:41**](https://www.youtube.com/watch?v=YRdCl7OR2cI)
 * [ ] [23/02/2022 **Comment générer un nuage de mots en Python avec WordCloud** 1 332 **40:27**](https://www.youtube.com/watch?v=l7w7unBNAeU)
+
+### Vus (1 - 22 minutes)
+
 * [x] [17/02/2022 **Comment interroger une base de données en SQL** 3 338 **22:11**](https://www.youtube.com/watch?v=pBPaPwyjLiQ)
 
 ## 4 FR Auteur **[Gravenilvectuto](https://www.youtube.com/@Gravenilvectuto/videos)** ( **175** videos - 26 917 083 vues - 49 heures et 46 minutes )
 
-### Pas vus (174 - 49 heures et 38 minutes)
+### Pas vus (157 - 45 heures et 32 minutes)
 
 * [ ] [17/03/2026 **J'organise mon salon à Paris la defense - Asynconf 2026** 1 108 **04:57**](https://www.youtube.com/watch?v=xP47FjwMYn4)
 * [ ] [17/02/2026 **Créer son site en Python avec Django - Initiation** 11 361 **01:15:30**](https://www.youtube.com/watch?v=hrdZ-lT_i3A)
@@ -543,7 +549,7 @@
 * [ ] [21/03/2022 **Si les développeurs faisaient de la Drill/Rap | prod by @Lewnwv** 21 581 **01:34**](https://www.youtube.com/watch?v=GLcAJ-DsIWg)
 * [ ] [18/03/2022 **Apprendre le Python #11 - Les Dictionnaires** 161 914 **14:54**](https://www.youtube.com/watch?v=0pgYBjW1OVM)
 * [ ] [05/03/2022 **ThreeJS expliqué en 3 minutes (Javascript 3D✨)** 45 533 **03:00**](https://www.youtube.com/watch?v=4IvhajhllFo)
-* [ ] [26/02/2022 **Sécuriser son site avec HTTPS 🔒** 56 855 **03:15**](https://www.youtube.com/watch?v=R1SFiuREJuw)
+* [x] [26/02/2022 **Sécuriser son site avec HTTPS 🔒** 56 855 **03:15**](https://www.youtube.com/watch?v=R1SFiuREJuw)
 * [ ] [21/02/2022 **5 Erreurs à éviter lorsqu'on commence en programmation⚠️** 102 922 **04:48**](https://www.youtube.com/watch?v=rxa53OhZLN0)
 * [ ] [19/02/2022 **Transformer une image en ASCII ART !** 20 019 **02:40**](https://www.youtube.com/watch?v=2U11986Ro9o)
 * [ ] [14/02/2022 **Django expliqué en 3 minutes (Python Web)** 167 292 **03:23**](https://www.youtube.com/watch?v=sF_I5HETAfQ)
@@ -606,7 +612,6 @@
 * [ ] [02/01/2018 **CREER UNE APPLICATION ANDROID #7 ? LES POPUPS (DIALOG)** 94 031 **17:16**](https://www.youtube.com/watch?v=eBhgbhyyE_g)
 * [ ] [10/12/2017 **LES BASES DE LA PROGRAMMATION INFORMATIQUE** 537 462 **09:42**](https://www.youtube.com/watch?v=t8b9f5M9yoY)
 * [ ] [26/11/2017 **CREER UNE APPLICATION ANDROID #6 ? LES LAYOUTS (DYNAMIQUE)** 99 981 **10:29**](https://www.youtube.com/watch?v=PoPJ-OoBONM)
-* [ ] [22/11/2017 **CREER UN SITE WEB ? #15 - HEBERGEMENT DU SITE** 82 645 **18:10**](https://www.youtube.com/watch?v=Uq2qaa4vGh0)
 * [ ] [10/11/2017 **APPRENDRE LE JAVA #14 - LES CHRONOMETRES** 67 350 **08:48**](https://www.youtube.com/watch?v=He1Pvyewr_M)
 * [ ] [05/11/2017 **CREER UNE APPLICATION ANDROID #5 ? LES LAYOUTS (XML)** 144 407 **09:52**](https://www.youtube.com/watch?v=4lZWkir5TG0)
 * [ ] [27/10/2017 **CREER UN PLUGIN #14 ? LES ARMORSTANDS** 12 220 **16:15**](https://www.youtube.com/watch?v=DdWudhdBFUU)
@@ -614,23 +619,19 @@
 * [ ] [23/09/2017 **APPRENDRE LE JAVA #13 - LES EXCEPTIONS** 115 572 **08:20**](https://www.youtube.com/watch?v=1gOb77oouUQ)
 * [ ] [12/09/2017 **CREER UN PLUGIN #13 ? COFFRES ALEATOIRE** 14 321 **14:21**](https://www.youtube.com/watch?v=48jzZP3sulo)
 * [ ] [23/08/2017 **CREER UNE APPLICATION ANDROID #4 ? EXPORTER SON APPLICATION EN .APK** 181 641 **03:44**](https://www.youtube.com/watch?v=FV-DM-1o50M)
-* [ ] [18/08/2017 **CREER UN SITE WEB ? #14 - LES COOKIES EN PHP** 38 746 **08:20**](https://www.youtube.com/watch?v=28RnzAr1aWg)
 * [ ] [16/08/2017 **CREER UNE APPLICATION ANDROID #3 ? ONCLICK & NOUVELLE ACTIVITE** 275 002 **11:09**](https://www.youtube.com/watch?v=tzz-aVckbkQ)
 * [ ] [12/08/2017 **APPRENDRE LE JAVA #12 - LES HASHMAPS** 96 231 **09:26**](https://www.youtube.com/watch?v=FGU-imprdKs)
 * [ ] [07/08/2017 **CREER UN PLUGIN #12 ? LUCKYBLOCKS** 11 885 **11:20**](https://www.youtube.com/watch?v=xlARAsYEp_g)
 * [ ] [03/08/2017 **CREER UNE APPLICATION ANDROID #2 ? VOTRE PREMIERE APPLICATION** 592 138 **15:39**](https://www.youtube.com/watch?v=IvVhGmWxXvg)
 * [ ] [30/07/2017 **CREER UNE APPLICATION ANDROID #1 ? LES BASES & PREREQUIS** 1 046 242 **06:28**](https://www.youtube.com/watch?v=8CR40Dp1srw)
-* [ ] [24/07/2017 **CREER UN SITE WEB ? #13 - CONNEXION DE L'UTILISATEUR** 69 809 **15:17**](https://www.youtube.com/watch?v=AyaRbEM69m8)
 * [ ] [22/07/2017 **CREER UN PLUGIN #11 ? LES BORDURES DE MAP** 10 874 **08:35**](https://www.youtube.com/watch?v=W3rcW1ucqWE)
 * [ ] [19/07/2017 **CREER UN PLUGIN #10 ? VOTRE PREMIER MINIJEU** 42 305 **41:33**](https://www.youtube.com/watch?v=IU4ympVTbjc)
 * [ ] [14/07/2017 **APPRENDRE LE JAVA #11 - LES ARRAYLISTS** 115 022 **05:58**](https://www.youtube.com/watch?v=w56ZbRlnyDg)
 * [ ] [03/07/2017 **CREER UN PLUGIN ? #9 | PANNEAUX & TELEPORTATION BUNGEE** 20 590 **12:34**](https://www.youtube.com/watch?v=66oSfNqTFt8)
-* [ ] [29/06/2017 **CREER UN SITE WEB ? #12 - SESSIONS EN PHP** 39 267 **08:46**](https://www.youtube.com/watch?v=a5mTuYE-JZo)
 * [ ] [12/06/2017 **CREER UN PLUGIN ? #8 | CHRONOMETRE** 24 688 **09:38**](https://www.youtube.com/watch?v=DxXcxGS0AiM)
 * [ ] [10/06/2017 **CREER UN PLUGIN ? #7 | LES CONFIGS** 38 839 **13:35**](https://www.youtube.com/watch?v=EFp6oCS_Mns)
 * [ ] [08/06/2017 **PREPARER SA CALCULETTE POUR LE BAC DE MATHS ? EN - DE 10 MIN ?** 124 878 **09:27**](https://www.youtube.com/watch?v=8LKJGE2zPS0)
 * [ ] [08/06/2017 **CREER UN PLUGIN ? #6 | MENUS / GUI'S** 67 045 **18:00**](https://www.youtube.com/watch?v=io_Ak8bbZmA)
-* [ ] [01/06/2017 **CREER UN SITE WEB ? #11 - INSCRIPTION EN PHP #2** 36 333 **04:52**](https://www.youtube.com/watch?v=PWkwjUqk4y4)
 * [ ] [26/05/2017 **CREER UN PLUGIN ? #5 | L'INTERACTION** 48 498 **08:38**](https://www.youtube.com/watch?v=pxjuelgs_uE)
 * [ ] [22/05/2017 **APPRENDRE LE JAVA #10 - LES ENUMERATIONS** 106 167 **08:55**](https://www.youtube.com/watch?v=pbAkJiz-DNU)
 * [ ] [18/05/2017 **CREER UN PLUGIN ? #4 | TELEPORTATION !!** 46 840 **08:46**](https://www.youtube.com/watch?v=0nMi1EogaFM)
@@ -638,34 +639,39 @@
 * [ ] [10/05/2017 **CREER UN PLUGIN ? #2 | COMMANDES & BROADCASTS** 134 285 **12:51**](https://www.youtube.com/watch?v=ZYVv1FvseFE)
 * [ ] [10/05/2017 **CREER UN PLUGIN ? #1 | BASE & PREREQUIS** 346 770 **12:18**](https://www.youtube.com/watch?v=FPu3A99jvbg)
 * [ ] [07/05/2017 **APPRENDRE LE JAVA #9 - LES INTERFACES - L'HERITAGE 2/2** 153 362 **07:02**](https://www.youtube.com/watch?v=ymRGWkyrFnI)
-* [ ] [30/04/2017 **CREER UN SITE WEB ? #10 - INSCRIPTION EN PHP #1** 69 685 **08:59**](https://www.youtube.com/watch?v=eTxseifRp1g)
 * [ ] [17/04/2017 **APPRENDRE LE JAVA #8 - L'HERITAGE 1/2** 184 994 **08:47**](https://www.youtube.com/watch?v=gdHOsaGBbPA)
 * [ ] [03/04/2017 **APPRENDRE LE JAVA #7 - LES OBJETS** 215 183 **09:40**](https://www.youtube.com/watch?v=IvHUljLP3NY)
-* [ ] [17/03/2017 **CREER UN SITE WEB ? #9 - LES MOTS DE PASSE** 55 217 **07:55**](https://www.youtube.com/watch?v=rGcZkgjIOvg)
 * [ ] [13/03/2017 **APPRENDRE LE JAVA #6 - LES FONCTIONS** 195 556 **07:21**](https://www.youtube.com/watch?v=rJx9Q-aYuAA)
 * [ ] [26/02/2017 **APPRENDRE LE JAVA #5 - LES BOUCLES (FOR, FOREACH, WHILE..)** 215 469 **09:41**](https://www.youtube.com/watch?v=oHOXE9h3t_A)
 * [ ] [10/02/2017 **APPRENDRE LE JAVA #4 - LES TABLEAUX** 305 036 **09:42**](https://www.youtube.com/watch?v=rvjAPI89QnE)
-* [ ] [04/02/2017 **AFFICHER & AJOUTER DES UTILISATEURS - CREER UN SITE WEB ? #8** 90 190 **17:27**](https://www.youtube.com/watch?v=8vIBeDVfOrs)
 * [ ] [27/01/2017 **5 ASTUCES POUR DEVENIR MEILLEUR EN PROGRAMMATION** 77 316 **02:27**](https://www.youtube.com/watch?v=_QNGRrCR274)
 * [ ] [23/01/2017 **APPRENDRE LE JAVA #3 - LES CONDITIONS** 334 692 **12:53**](https://www.youtube.com/watch?v=BMpLLJtt2ys)
 * [ ] [07/01/2017 **APPRENDRE LE JAVA #2 - LES VARIABLES** 458 968 **07:38**](https://www.youtube.com/watch?v=SvPGiy5UXRI)
-* [ ] [31/12/2016 **APPRENDRE LE JAVA #1 - LES BASES & PREREQUIS** 1 445 106 **13:31**](https://www.youtube.com/watch?v=XgVADKKb4jI)
-* [ ] [29/12/2016 **LA BASE DE DONNEES - CREER UN SITE WEB ? #7** 216 736 **14:11**](https://www.youtube.com/watch?v=OZ2yDVcDjpc)
-* [ ] [10/12/2016 **COMMENT FAIRE UN FORMULAIRE ? -  CREER UN SITE WEB ? #6** 131 175 **19:08**](https://www.youtube.com/watch?v=yygwcEe103c)
-* [ ] [06/12/2016 **VOTRE PREMIER JEU JAVA !!** 102 890 **13:24**](https://www.youtube.com/watch?v=8ibxigMdoaY)
-* [ ] [13/11/2016 **LES BASES DU PHP - CREER UN SITE ? #5** 200 245 **13:06**](https://www.youtube.com/watch?v=BtYgvROKp80)
-* [ ] [23/10/2016 **COMMENT STRUCTURER LA PAGE ? CREER UN SITE ? HTML/CSS #4** 280 166 **21:26**](https://www.youtube.com/watch?v=j3khZiP4KFk)
-* [ ] [11/10/2016 **LE MENU DE NAVIGATION - CREER UN SITE ? HTML/CSS #3** 357 212 **20:47**](https://www.youtube.com/watch?v=5awFFO-T8zs)
-* [ ] [05/10/2016 **LES BASES DU CSS - CREER UN SITE ? HTML/CSS #2** 400 243 **22:09**](https://www.youtube.com/watch?v=CadRnbEVjiQ)
-* [x] [01/10/2016 **CREER UN SITE ? HTML/CSS #1 - LES BASES** 1 273 957 **19:21**](https://www.youtube.com/watch?v=J9w-cir5a6U)
 
-### Vus (1 - 7 minutes)
+### Vus (18 - 4 heures et 14 minutes)
 
 * [x] [23/03/2026 **Apprendre à coder à l’ère de l’IA (le vrai problème)** 8 979 **07:57**](https://www.youtube.com/watch?v=cGxZR0hnNhc)
+* [x] [22/11/2017 **CREER UN SITE WEB ? #15 - HEBERGEMENT DU SITE** 82 645 **18:10**](https://www.youtube.com/watch?v=Uq2qaa4vGh0)
+* [x] [18/08/2017 **CREER UN SITE WEB ? #14 - LES COOKIES EN PHP** 38 746 **08:20**](https://www.youtube.com/watch?v=28RnzAr1aWg)
+* [x] [24/07/2017 **CREER UN SITE WEB ? #13 - CONNEXION DE L'UTILISATEUR** 69 809 **15:17**](https://www.youtube.com/watch?v=AyaRbEM69m8)
+* [x] [29/06/2017 **CREER UN SITE WEB ? #12 - SESSIONS EN PHP** 39 267 **08:46**](https://www.youtube.com/watch?v=a5mTuYE-JZo)
+* [x] [01/06/2017 **CREER UN SITE WEB ? #11 - INSCRIPTION EN PHP #2** 36 333 **04:52**](https://www.youtube.com/watch?v=PWkwjUqk4y4)
+* [x] [30/04/2017 **CREER UN SITE WEB ? #10 - INSCRIPTION EN PHP #1** 69 685 **08:59**](https://www.youtube.com/watch?v=eTxseifRp1g)
+* [x] [17/03/2017 **CREER UN SITE WEB ? #9 - LES MOTS DE PASSE** 55 217 **07:55**](https://www.youtube.com/watch?v=rGcZkgjIOvg)
+* [x] [04/02/2017 **AFFICHER & AJOUTER DES UTILISATEURS - CREER UN SITE WEB ? #8** 90 190 **17:27**](https://www.youtube.com/watch?v=8vIBeDVfOrs)
+* [x] [31/12/2016 **APPRENDRE LE JAVA #1 - LES BASES & PREREQUIS** 1 445 106 **13:31**](https://www.youtube.com/watch?v=XgVADKKb4jI)
+* [x] [29/12/2016 **LA BASE DE DONNEES - CREER UN SITE WEB ? #7** 216 736 **14:11**](https://www.youtube.com/watch?v=OZ2yDVcDjpc)
+* [x] [10/12/2016 **COMMENT FAIRE UN FORMULAIRE ? -  CREER UN SITE WEB ? #6** 131 175 **19:08**](https://www.youtube.com/watch?v=yygwcEe103c)
+* [x] [06/12/2016 **VOTRE PREMIER JEU JAVA !!** 102 890 **13:24**](https://www.youtube.com/watch?v=8ibxigMdoaY)
+* [x] [13/11/2016 **LES BASES DU PHP - CREER UN SITE ? #5** 200 245 **13:06**](https://www.youtube.com/watch?v=BtYgvROKp80)
+* [x] [23/10/2016 **COMMENT STRUCTURER LA PAGE ? CREER UN SITE ? HTML/CSS #4** 280 166 **21:26**](https://www.youtube.com/watch?v=j3khZiP4KFk)
+* [x] [11/10/2016 **LE MENU DE NAVIGATION - CREER UN SITE ? HTML/CSS #3** 357 212 **20:47**](https://www.youtube.com/watch?v=5awFFO-T8zs)
+* [x] [05/10/2016 **LES BASES DU CSS - CREER UN SITE ? HTML/CSS #2** 400 243 **22:09**](https://www.youtube.com/watch?v=CadRnbEVjiQ)
+* [x] [01/10/2016 **CREER UN SITE ? HTML/CSS #1 - LES BASES** 1 273 957 **19:21**](https://www.youtube.com/watch?v=J9w-cir5a6U)
 
 ## 5 FR Auteur **[JordyBayo](https://www.youtube.com/@JordyBayo/videos)** ( **201** videos - 365 211 vues - 80 heures et 23 minutes )
 
-### Pas vus (199 - 80 heures et 4 minutes)
+### Pas vus (197 - 71 heures et 28 minutes)
 
 * [ ] [22/03/2026 **Ne code plus : "Manifeste" ta pensée.** 73 **15:43**](https://www.youtube.com/watch?v=55mzD2skSo0)
 * [ ] [10/03/2026 **Tutoriel complet OpenClaw pour débutants : Installation et utilisation d'OpenClaw 🔥** 1 089 **01:00:53**](https://www.youtube.com/watch?v=o85x8zyUi-s)
@@ -857,7 +863,6 @@
 * [ ] [10/01/2020 **computerVision part3.3 - Dessiner sur des Frames ~ analyse video et d'image** 420 **22:54**](https://www.youtube.com/watch?v=tsmaPazj04w)
 * [ ] [10/01/2020 **computerVision part3.2 - lecture des sources(cameras) ~ analyse video et d'image** 662 **09:41**](https://www.youtube.com/watch?v=kNYN_cgGjag)
 * [ ] [06/01/2020 **ComputerVision part3.1 - intaller les outils(opencv, numpy, plt) #computerVision** 650 **08:21**](https://www.youtube.com/watch?v=AwEV8u04pKA)
-* [x] [20/12/2019 **ApprendreFlutter part0 - Introduction et Initiation a la Formation Flutter** 477 **20:23**](https://www.youtube.com/watch?v=Y7RibyF26KA)
 * [ ] [18/12/2019 **ComputerVision part2 - Base de la Computarisation des Images (PIL, Numpy)** 979 **27:34**](https://www.youtube.com/watch?v=FKI16pC2AqI)
 * [ ] [30/11/2019 **Computer Vision part1 - Debuter en computer vision. Traitement d'image et Intelligence artificielle** 2 347 **07:35**](https://www.youtube.com/watch?v=qJsronmbPVI)
 * [ ] [01/10/2019 **Reguarde Me launch an educational startup** 55 **01:21**](https://www.youtube.com/watch?v=mz8HhKotbfQ)
@@ -865,16 +870,17 @@
 * [ ] [25/08/2019 **Quant j'ai achete mon premier clavier Incadescant** 54 **01:00**](https://www.youtube.com/watch?v=GnNdMVQgpcQ)
 * [ ] [25/08/2019 **Mes debut en Logiciel et Intelligence Artificielle [Demeure non Meuble]** 107 **01:32**](https://www.youtube.com/watch?v=1oPw73Cuu_k)
 * [ ] [25/08/2019 **ma premiere application mobile fait python kivy + opencv4 + deepleaning** 586 **00:53**](https://www.youtube.com/watch?v=aLL_7aSk6Jw)
+
+### Vus (4 - 8 heures et 55 minutes)
+
+* [x] [20/12/2019 **ApprendreFlutter part0 - Introduction et Initiation a la Formation Flutter** 477 **20:23**](https://www.youtube.com/watch?v=Y7RibyF26KA)
 * [x] [12/08/2019 **Artificial Intelligence course from A to Z __ Beginner to advanced in ML __ Machine learning** 1 434 **08:15:58**](https://www.youtube.com/watch?v=fGUrEFJcriU)
-
-### Vus (2 - 19 minutes)
-
 * [x] [04/08/2019 **Calculatrice scientifique python et C avec interface graphique** 984 **05:55**](https://www.youtube.com/watch?v=j0m_TwnNCQc)
 * [x] [04/08/2019 **Calculatrice JAVA-RMI client server** 1 040 **13:24**](https://www.youtube.com/watch?v=ggSAnfoQUFU)
 
 ## 6 GB Auteur **[Indently](https://www.youtube.com/@Indently/videos)** ( **787** videos - 25 511 055 vues - 113 heures et 2 minutes )
 
-### Pas vus (619 - 91 heures et 15 minutes)
+### Pas vus (618 - 90 heures et 59 minutes)
 
 * [ ] [21/02/2026 **Descriptors in Python are Awesome** 12 118 **10:38**](https://www.youtube.com/watch?v=p7a5UCl7Tds)
 * [ ] [18/02/2026 **It's 2026 - Time to switch to Linux** 13 749 **04:38**](https://www.youtube.com/watch?v=T_LNtZkaiaI)
@@ -1494,9 +1500,8 @@
 * [ ] [27/01/2021 **Create your own Public API in Python Tutorial** 190 984 **08:36**](https://www.youtube.com/watch?v=5ZMpbdK0uqU)
 * [ ] [25/01/2021 **Creating a Telegram Bot in Python 3.9 Tutorial (Fast & Easy)** 245 034 **13:07**](https://www.youtube.com/watch?v=PTAkiukJK7E)
 * [ ] [22/01/2021 **Easy QR Code Generator in Python Tutorial (2021)** 3 263 **05:42**](https://www.youtube.com/watch?v=XvUFTFvdYeU)
-* [x] [20/01/2021 **Creating an Interactive SQLite Database in Python Tutorial for Beginners (2021)** 5 872 **16:33**](https://www.youtube.com/watch?v=ho1hmfBipvI)
 
-### Vus (168 - 21 heures et 46 minutes)
+### Vus (169 - 22 heures et 3 minutes)
 
 * [x] [28/03/2026 **25 Cool Tips & Tricks in Python** 4 647 **23:17**](https://www.youtube.com/watch?v=s_oXtdhqXR8)
 * [x] [23/03/2026 **Monadic Error Handling in Python is Awesome** 14 551 **12:51**](https://www.youtube.com/watch?v=pcdeKCuCRIc)
@@ -1505,6 +1510,7 @@
 * [x] [10/03/2026 **NEW in Python 3.15: Explicit Lazy Imports** 19 270 **09:29**](https://www.youtube.com/watch?v=VoKE14Nf_oY)
 * [x] [05/03/2026 **Metaclasses in Python are Awesome** 14 514 **09:06**](https://www.youtube.com/watch?v=gu8WI3Xs5iU)
 * [x] [28/02/2026 **NEW in Python 3.15: Unpacking in Comprehensions** 27 140 **05:57**](https://www.youtube.com/watch?v=vaKozOH_B4A)
+* [x] [20/01/2021 **Creating an Interactive SQLite Database in Python Tutorial for Beginners (2021)** 5 872 **16:33**](https://www.youtube.com/watch?v=ho1hmfBipvI)
 * [x] [18/01/2021 **Light Sensor Tutorial in Android Studio (Kotlin 2021)** 6 902 **07:13**](https://www.youtube.com/watch?v=DlQvhjV9Jds)
 * [x] [13/01/2021 **Accelerometer Sensor Tutorial in Android Studio (Kotlin 2021)** 21 629 **09:20**](https://www.youtube.com/watch?v=xcsuDDQHrLo)
 * [x] [11/01/2021 **Retrofit2 Sample App Tutorial in Android Studio (Kotlin 2021)** 7 948 **15:40**](https://www.youtube.com/watch?v=Da0upNOmoQ0)
@@ -1669,7 +1675,7 @@
 
 ## 7 FR Maths Auteur **[foxxpy](https://www.youtube.com/@foxxpy/videos)** ( **319** videos - 806 361 vues - 66 heures et 49 minutes )
 
-### Pas vus (314 - 65 heures et 54 minutes)
+### Pas vus (313 - 65 heures et 44 minutes)
 
 * [ ] [03/11/2022 **[Maths - 6ème] - Critères de divisibilité par 9 - 25 exercices corrigés** 753 **07:32**](https://www.youtube.com/watch?v=5FspXw3J_Es)
 * [ ] [20/10/2022 **[Maths - 6ème] - Critères de divisibilité par 7 - 25 exercices corrigés** 552 **10:19**](https://www.youtube.com/watch?v=E4Bqa_NVayE)
@@ -1984,10 +1990,10 @@
 * [ ] [10/11/2019 **[Codingame - Puzzle facile] - 7. Ascii Art [Python3]** 6 022 **15:15**](https://www.youtube.com/watch?v=4dFZRQKRCVQ)
 * [ ] [09/11/2019 **[Algorithme] - 14. Tri à bulles [Python3]** 12 441 **07:34**](https://www.youtube.com/watch?v=48KD2VnKeg4)
 * [ ] [04/11/2019 **[Algorithme] - 13. Échanger les valeurs de 2 variables [Python]** 4 332 **03:02**](https://www.youtube.com/watch?v=pY9w0CEx65I)
+
+### Vus (6 - 1 heure et 5 minutes)
+
 * [x] [03/11/2019 **[Codingame - Puzzle facile] - 6. Chevaux de course [Python3]** 2 640 **10:16**](https://www.youtube.com/watch?v=B4v9s5Fu2eI)
-
-### Vus (5 - 54 minutes)
-
 * [x] [30/10/2019 **[Codingame - Puzzle facile] - 5. Défibrillateurs [Python3]** 1 282 **08:24**](https://www.youtube.com/watch?v=UkTuIft8Uuw)
 * [x] [30/10/2019 **[Codingame - Puzzle facile] - 4. Chuck Norris [Python3]** 3 083 **18:35**](https://www.youtube.com/watch?v=-m-HRc7bmY0)
 * [x] [30/10/2019 **[Codingame - Puzzle facile] - 3. Températures [Python3]** 4 569 **11:23**](https://www.youtube.com/watch?v=Hcpk7J3Eiho)
