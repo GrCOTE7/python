@@ -5,6 +5,13 @@ sys.path.append(str(Path(__file__).parent / "tools"))
 from tools.tools import *
 
 
+def test():
+    sum = 0
+    for i in range(1, int(1e5)):
+        sum += i
+    print(f"{sum = }")
+
+
 def template():
     title = "ReaDy".capitalize()
     # cls(f"{title}")
@@ -16,9 +23,6 @@ def template():
 if __name__ == "__main__":
 
     template()
-    print("Ok")
+    # print("Ok")
+    test()
     exit()
-
-
-# ❌ Rendre le terminal caché (watcher silencieux)
-# ❌ transformer ton watcher en service Windows (il tourne même sans VS Code)

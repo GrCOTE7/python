@@ -11,6 +11,8 @@ from typing import Dict, List, Tuple
 from watchdog.events import FileSystemEvent, FileSystemEventHandler
 from watchdog.observers import Observer
 
+# ❌ Rendre le terminal caché (watcher silencieux)
+# ❌ transformer le watcher en service Windows (il tourne même sans VS Code)
 
 IGNORED_DIR_PARTS = {
     ".git",

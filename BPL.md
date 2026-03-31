@@ -418,7 +418,7 @@
 * [ ] [08/11/2023 **What if __name__ == '__main__' does in Python | 2MinutesPy** 12 393 **02:11**](https://www.youtube.com/watch?v=WfPwvUjIZtE)
 * [ ] [30/10/2023 **Understanding Python's seek() and tell() Functions for Navigating Files in Python | 2MinutesPy** 7 571 **02:07**](https://www.youtube.com/watch?v=7TQQJSfcrEQ)
 * [ ] [22/10/2023 **Python Threading in 2 Minutes: Run Multiple Tasks Concurrently | 2MinutesPy** 6 927 **02:02**](https://www.youtube.com/watch?v=KbrUfPEwt78)
-* [ ] [10/10/2023 **Python's super() Function in 2 Minutes | 2MinutesPy** 4 196 **02:00**](https://www.youtube.com/watch?v=giOT0dBkIaQ)
+* [x] [10/10/2023 **Python's super() Function in 2 Minutes | 2MinutesPy** 4 196 **02:00**](https://www.youtube.com/watch?v=giOT0dBkIaQ)
 * [x] [30/09/2023 **How to Use *args and **kwargs in 2 Minutes** 5 665 **02:11**](https://www.youtube.com/watch?v=QksqEIz09eU)
 * [x] [24/09/2023 **Python's __getitem__ Method Simplified for Object Element Access in 2 Minutes** 2 724 **01:47**](https://www.youtube.com/watch?v=tkZSjGMSFf8)
 
@@ -478,7 +478,7 @@
 * [ ] [13/03/2022 **Comment j'ai hacké mon prof** 710 **11:00**](https://www.youtube.com/watch?v=cvVml5jje_g)
 * [ ] [02/03/2022 **Comment apprendre à programmer en Python - #1 Les variables** 1 914 **20:41**](https://www.youtube.com/watch?v=YRdCl7OR2cI)
 * [ ] [23/02/2022 **Comment générer un nuage de mots en Python avec WordCloud** 1 332 **40:27**](https://www.youtube.com/watch?v=l7w7unBNAeU)
-* [ ] [17/02/2022 **Comment interroger une base de données en SQL** 3 338 **22:11**](https://www.youtube.com/watch?v=pBPaPwyjLiQ)
+* [x] [17/02/2022 **Comment interroger une base de données en SQL** 3 338 **22:11**](https://www.youtube.com/watch?v=pBPaPwyjLiQ)
 
 ## 4 FR Auteur **[Gravenilvectuto](https://www.youtube.com/@Gravenilvectuto/videos)** ( **175** videos - 26 917 083 vues - 49 heures et 46 minutes )
 
@@ -657,7 +657,7 @@
 * [ ] [23/10/2016 **COMMENT STRUCTURER LA PAGE ? CREER UN SITE ? HTML/CSS #4** 280 166 **21:26**](https://www.youtube.com/watch?v=j3khZiP4KFk)
 * [ ] [11/10/2016 **LE MENU DE NAVIGATION - CREER UN SITE ? HTML/CSS #3** 357 212 **20:47**](https://www.youtube.com/watch?v=5awFFO-T8zs)
 * [ ] [05/10/2016 **LES BASES DU CSS - CREER UN SITE ? HTML/CSS #2** 400 243 **22:09**](https://www.youtube.com/watch?v=CadRnbEVjiQ)
-* [ ] [01/10/2016 **CREER UN SITE ? HTML/CSS #1 - LES BASES** 1 273 957 **19:21**](https://www.youtube.com/watch?v=J9w-cir5a6U)
+* [x] [01/10/2016 **CREER UN SITE ? HTML/CSS #1 - LES BASES** 1 273 957 **19:21**](https://www.youtube.com/watch?v=J9w-cir5a6U)
 
 ### Vus (1 - 7 minutes)
 
@@ -857,7 +857,7 @@
 * [ ] [10/01/2020 **computerVision part3.3 - Dessiner sur des Frames ~ analyse video et d'image** 420 **22:54**](https://www.youtube.com/watch?v=tsmaPazj04w)
 * [ ] [10/01/2020 **computerVision part3.2 - lecture des sources(cameras) ~ analyse video et d'image** 662 **09:41**](https://www.youtube.com/watch?v=kNYN_cgGjag)
 * [ ] [06/01/2020 **ComputerVision part3.1 - intaller les outils(opencv, numpy, plt) #computerVision** 650 **08:21**](https://www.youtube.com/watch?v=AwEV8u04pKA)
-* [ ] [20/12/2019 **ApprendreFlutter part0 - Introduction et Initiation a la Formation Flutter** 477 **20:23**](https://www.youtube.com/watch?v=Y7RibyF26KA)
+* [x] [20/12/2019 **ApprendreFlutter part0 - Introduction et Initiation a la Formation Flutter** 477 **20:23**](https://www.youtube.com/watch?v=Y7RibyF26KA)
 * [ ] [18/12/2019 **ComputerVision part2 - Base de la Computarisation des Images (PIL, Numpy)** 979 **27:34**](https://www.youtube.com/watch?v=FKI16pC2AqI)
 * [ ] [30/11/2019 **Computer Vision part1 - Debuter en computer vision. Traitement d'image et Intelligence artificielle** 2 347 **07:35**](https://www.youtube.com/watch?v=qJsronmbPVI)
 * [ ] [01/10/2019 **Reguarde Me launch an educational startup** 55 **01:21**](https://www.youtube.com/watch?v=mz8HhKotbfQ)
@@ -865,7 +865,7 @@
 * [ ] [25/08/2019 **Quant j'ai achete mon premier clavier Incadescant** 54 **01:00**](https://www.youtube.com/watch?v=GnNdMVQgpcQ)
 * [ ] [25/08/2019 **Mes debut en Logiciel et Intelligence Artificielle [Demeure non Meuble]** 107 **01:32**](https://www.youtube.com/watch?v=1oPw73Cuu_k)
 * [ ] [25/08/2019 **ma premiere application mobile fait python kivy + opencv4 + deepleaning** 586 **00:53**](https://www.youtube.com/watch?v=aLL_7aSk6Jw)
-* [ ] [12/08/2019 **Artificial Intelligence course from A to Z __ Beginner to advanced in ML __ Machine learning** 1 434 **08:15:58**](https://www.youtube.com/watch?v=fGUrEFJcriU)
+* [x] [12/08/2019 **Artificial Intelligence course from A to Z __ Beginner to advanced in ML __ Machine learning** 1 434 **08:15:58**](https://www.youtube.com/watch?v=fGUrEFJcriU)
 
 ### Vus (2 - 19 minutes)
 
@@ -1494,7 +1494,7 @@
 * [ ] [27/01/2021 **Create your own Public API in Python Tutorial** 190 984 **08:36**](https://www.youtube.com/watch?v=5ZMpbdK0uqU)
 * [ ] [25/01/2021 **Creating a Telegram Bot in Python 3.9 Tutorial (Fast & Easy)** 245 034 **13:07**](https://www.youtube.com/watch?v=PTAkiukJK7E)
 * [ ] [22/01/2021 **Easy QR Code Generator in Python Tutorial (2021)** 3 263 **05:42**](https://www.youtube.com/watch?v=XvUFTFvdYeU)
-* [ ] [20/01/2021 **Creating an Interactive SQLite Database in Python Tutorial for Beginners (2021)** 5 872 **16:33**](https://www.youtube.com/watch?v=ho1hmfBipvI)
+* [x] [20/01/2021 **Creating an Interactive SQLite Database in Python Tutorial for Beginners (2021)** 5 872 **16:33**](https://www.youtube.com/watch?v=ho1hmfBipvI)
 
 ### Vus (168 - 21 heures et 46 minutes)
 
@@ -1984,7 +1984,7 @@
 * [ ] [10/11/2019 **[Codingame - Puzzle facile] - 7. Ascii Art [Python3]** 6 022 **15:15**](https://www.youtube.com/watch?v=4dFZRQKRCVQ)
 * [ ] [09/11/2019 **[Algorithme] - 14. Tri à bulles [Python3]** 12 441 **07:34**](https://www.youtube.com/watch?v=48KD2VnKeg4)
 * [ ] [04/11/2019 **[Algorithme] - 13. Échanger les valeurs de 2 variables [Python]** 4 332 **03:02**](https://www.youtube.com/watch?v=pY9w0CEx65I)
-* [ ] [03/11/2019 **[Codingame - Puzzle facile] - 6. Chevaux de course [Python3]** 2 640 **10:16**](https://www.youtube.com/watch?v=B4v9s5Fu2eI)
+* [x] [03/11/2019 **[Codingame - Puzzle facile] - 6. Chevaux de course [Python3]** 2 640 **10:16**](https://www.youtube.com/watch?v=B4v9s5Fu2eI)
 
 ### Vus (5 - 54 minutes)
 
