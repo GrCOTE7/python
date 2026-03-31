@@ -26,13 +26,13 @@
 |       |        |             |          |          |          |        |
 |       |        |             |    91:15 |   113:02 |    21:46 |  19.3% |
 |       |        |             |          |          |          |        |
-|    21 | Foxxy  |      806 361 |      316 |      319 |        3 |   0.9% |
+|    21 | Foxxy  |      806 361 |      314 |      319 |        5 |   1.6% |
 |       |        |             |          |          |          |        |
-|       |        |             |    66:21 |    66:49 |    00:27 |   0.7% |
+|       |        |             |    65:54 |    66:49 |    00:54 |   1.3% |
 |       |        |             |          |          |          |        |
-|     7 | TOTAL  |   57 259 414 |     1 692 |     1 909 |      217 |  11.4% |
+|     7 | TOTAL  |   57 259 414 |     1 690 |     1 909 |      219 |  11.5% |
 |       |        |             |          |          |          |        |
-|       |        |             |   343:27 |   368:35 |    25:03 |   6.8% |
+|       |        |             |   343:00 |   368:35 |    25:30 |   6.9% |
 
 ## 1 FR Auteur **[InformatiqueSansComplexe](https://www.youtube.com/@InformatiqueSansComplexe/videos)** ( **286** videos - 1 828 804 vues - 33 heures et 33 minutes )
 
@@ -1664,7 +1664,7 @@
 
 ## 7 FR Maths Auteur **[foxxpy](https://www.youtube.com/@foxxpy/videos)** ( **319** videos - 806 361 vues - 66 heures et 49 minutes )
 
-### Pas vus (316 - 66 heures et 21 minutes)
+### Pas vus (314 - 65 heures et 54 minutes)
 
 * [ ] [03/11/2022 **[Maths - 6ème] - Critères de divisibilité par 9 - 25 exercices corrigés** 753 **07:32**](https://www.youtube.com/watch?v=5FspXw3J_Es)
 * [ ] [20/10/2022 **[Maths - 6ème] - Critères de divisibilité par 7 - 25 exercices corrigés** 552 **10:19**](https://www.youtube.com/watch?v=E4Bqa_NVayE)
@@ -1980,11 +1980,11 @@
 * [ ] [09/11/2019 **[Algorithme] - 14. Tri à bulles [Python3]** 12 441 **07:34**](https://www.youtube.com/watch?v=48KD2VnKeg4)
 * [ ] [04/11/2019 **[Algorithme] - 13. Échanger les valeurs de 2 variables [Python]** 4 332 **03:02**](https://www.youtube.com/watch?v=pY9w0CEx65I)
 * [ ] [03/11/2019 **[Codingame - Puzzle facile] - 6. Chevaux de course [Python3]** 2 640 **10:16**](https://www.youtube.com/watch?v=B4v9s5Fu2eI)
-* [ ] [30/10/2019 **[Codingame - Puzzle facile] - 5. Défibrillateurs [Python3]** 1 282 **08:24**](https://www.youtube.com/watch?v=UkTuIft8Uuw)
-* [ ] [30/10/2019 **[Codingame - Puzzle facile] - 4. Chuck Norris [Python3]** 3 083 **18:35**](https://www.youtube.com/watch?v=-m-HRc7bmY0)
 
-### Vus (3 - 27 minutes)
+### Vus (5 - 54 minutes)
 
+* [x] [30/10/2019 **[Codingame - Puzzle facile] - 5. Défibrillateurs [Python3]** 1 282 **08:24**](https://www.youtube.com/watch?v=UkTuIft8Uuw)
+* [x] [30/10/2019 **[Codingame - Puzzle facile] - 4. Chuck Norris [Python3]** 3 083 **18:35**](https://www.youtube.com/watch?v=-m-HRc7bmY0)
 * [x] [30/10/2019 **[Codingame - Puzzle facile] - 3. Températures [Python3]** 4 569 **11:23**](https://www.youtube.com/watch?v=Hcpk7J3Eiho)
 * [x] [30/10/2019 **[Codingame - Puzzle facile] - 2. Power of Thor [Python3]** 4 999 **09:17**](https://www.youtube.com/watch?v=I8DnaSnZEuY)
 * [x] [30/10/2019 **[Codingame - Puzzle facile] - 1. La Descente [Python3]** 26 328 **07:19**](https://www.youtube.com/watch?v=Oa4Ups106jA)
