@@ -18,9 +18,9 @@
 |       |        |             |          |          |          |        |
 |       |        |             |    49:38 |    49:46 |    00:07 |   0.2% |
 |       |        |             |          |          |          |        |
-|    18 | Jordy  |      365 211 |      201 |      201 |        0 |   0.0% |
+|    18 | Jordy  |      365 211 |      199 |      201 |        2 |   1.0% |
 |       |        |             |          |          |          |        |
-|       |        |             |    80:23 |    80:23 |    00:00 |   0.0% |
+|       |        |             |    80:04 |    80:23 |    00:19 |   0.4% |
 |       |        |             |          |          |          |        |
 |    20 | Indent |   25 511 055 |      619 |      787 |      168 |  21.3% |
 |       |        |             |          |          |          |        |
@@ -30,9 +30,9 @@
 |       |        |             |          |          |          |        |
 |       |        |             |    65:54 |    66:49 |    00:54 |   1.3% |
 |       |        |             |          |          |          |        |
-|     7 | TOTAL  |   57 259 414 |     1 690 |     1 909 |      219 |  11.5% |
+|     7 | TOTAL  |   57 259 414 |     1 688 |     1 909 |      221 |  11.6% |
 |       |        |             |          |          |          |        |
-|       |        |             |   343:00 |   368:35 |    25:30 |   6.9% |
+|       |        |             |   342:41 |   368:35 |    25:49 |   7.0% |
 
 ## 1 FR Auteur **[InformatiqueSansComplexe](https://www.youtube.com/@InformatiqueSansComplexe/videos)** ( **286** videos - 1 828 804 vues - 33 heures et 33 minutes )
 
@@ -419,8 +419,8 @@
 * [ ] [30/10/2023 **Understanding Python's seek() and tell() Functions for Navigating Files in Python | 2MinutesPy** 7 571 **02:07**](https://www.youtube.com/watch?v=7TQQJSfcrEQ)
 * [ ] [22/10/2023 **Python Threading in 2 Minutes: Run Multiple Tasks Concurrently | 2MinutesPy** 6 927 **02:02**](https://www.youtube.com/watch?v=KbrUfPEwt78)
 * [ ] [10/10/2023 **Python's super() Function in 2 Minutes | 2MinutesPy** 4 196 **02:00**](https://www.youtube.com/watch?v=giOT0dBkIaQ)
-* [ ] [30/09/2023 **How to Use *args and **kwargs in 2 Minutes** 5 665 **02:11**](https://www.youtube.com/watch?v=QksqEIz09eU)
-* [ ] [24/09/2023 **Python's __getitem__ Method Simplified for Object Element Access in 2 Minutes** 2 724 **01:47**](https://www.youtube.com/watch?v=tkZSjGMSFf8)
+* [x] [30/09/2023 **How to Use *args and **kwargs in 2 Minutes** 5 665 **02:11**](https://www.youtube.com/watch?v=QksqEIz09eU)
+* [x] [24/09/2023 **Python's __getitem__ Method Simplified for Object Element Access in 2 Minutes** 2 724 **01:47**](https://www.youtube.com/watch?v=tkZSjGMSFf8)
 
 ### Vus (2 - 3 minutes)
 
@@ -665,6 +665,8 @@
 
 ## 5 FR Auteur **[JordyBayo](https://www.youtube.com/@JordyBayo/videos)** ( **201** videos - 365 211 vues - 80 heures et 23 minutes )
 
+### Pas vus (199 - 80 heures et 4 minutes)
+
 * [ ] [22/03/2026 **Ne code plus : "Manifeste" ta pensée.** 73 **15:43**](https://www.youtube.com/watch?v=55mzD2skSo0)
 * [ ] [10/03/2026 **Tutoriel complet OpenClaw pour débutants : Installation et utilisation d'OpenClaw 🔥** 1 089 **01:00:53**](https://www.youtube.com/watch?v=o85x8zyUi-s)
 * [ ] [03/03/2026 **Ma Réponse à Dirane Tafen de EazyTraining sur l'intelligence Artificielle** 103 **01:32:50**](https://www.youtube.com/watch?v=OVMryx9B6M4)
@@ -864,8 +866,11 @@
 * [ ] [25/08/2019 **Mes debut en Logiciel et Intelligence Artificielle [Demeure non Meuble]** 107 **01:32**](https://www.youtube.com/watch?v=1oPw73Cuu_k)
 * [ ] [25/08/2019 **ma premiere application mobile fait python kivy + opencv4 + deepleaning** 586 **00:53**](https://www.youtube.com/watch?v=aLL_7aSk6Jw)
 * [ ] [12/08/2019 **Artificial Intelligence course from A to Z __ Beginner to advanced in ML __ Machine learning** 1 434 **08:15:58**](https://www.youtube.com/watch?v=fGUrEFJcriU)
-* [ ] [04/08/2019 **Calculatrice scientifique python et C avec interface graphique** 984 **05:55**](https://www.youtube.com/watch?v=j0m_TwnNCQc)
-* [ ] [04/08/2019 **Calculatrice JAVA-RMI client server** 1 040 **13:24**](https://www.youtube.com/watch?v=ggSAnfoQUFU)
+
+### Vus (2 - 19 minutes)
+
+* [x] [04/08/2019 **Calculatrice scientifique python et C avec interface graphique** 984 **05:55**](https://www.youtube.com/watch?v=j0m_TwnNCQc)
+* [x] [04/08/2019 **Calculatrice JAVA-RMI client server** 1 040 **13:24**](https://www.youtube.com/watch?v=ggSAnfoQUFU)
 
 ## 6 GB Auteur **[Indently](https://www.youtube.com/@Indently/videos)** ( **787** videos - 25 511 055 vues - 113 heures et 2 minutes )
 

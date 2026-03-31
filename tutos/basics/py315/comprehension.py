@@ -31,6 +31,9 @@ def lists_sample() -> None:
     # Aussi avec generator
 
 
+
+
+
 def main() -> None:
 
     print("Liste avec comprehension avec Py 315")

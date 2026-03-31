@@ -6,7 +6,7 @@ from tools.tools import *
 
 
 def template():
-    title = "ReaDy.".capitalize()
+    title = "ReaDy".capitalize()
     # cls(f"{title}")
     ls(CYAN)
     print(f"{title}".center(CLIW))
@@ -16,5 +16,9 @@ def template():
 if __name__ == "__main__":
 
     template()
-    print("Ok21")
+    print("Ok")
     exit()
+
+
+# ❌ Rendre le terminal caché (watcher silencieux)
+# ❌ transformer ton watcher en service Windows (il tourne même sans VS Code)
