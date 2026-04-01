@@ -1,5 +1,6 @@
 import flet as ft
 from datetime import datetime as dt
+from pymox_kit import cls, end
 
 import gc7
 
@@ -15,7 +16,7 @@ import gc7
 
 # version = config.get("project", {}).get("version", "Version non définie")
 # print(f"Version du projet : {version}")
-APP_NAME = "Boosteur 2026"
+APP_NAME = "Salam,\nMo 🌞 !"
 BOOSTER_VERSION = "0.00.002"
 
 
@@ -103,4 +104,5 @@ def main(page: ft.Page):
     print(theTime, page.route, page.theme_mode)
 
 
-ft.app(target=main)
+end()
+ft.run(main)

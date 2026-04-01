@@ -8,6 +8,8 @@
 
 ### Urgences
 
+* [ ] [Descriptors](https://www.youtube.com/watch?v=p7a5UCl7Tds)
+* [ ] [Dicts](https://www.youtube.com/watch?v=MZsUalDCQpw)
 * [/] Nett yt_videos (Voir si toutes idées utilisées → jeter)
 * Rendre opé tous les scripts de :
 * [ ] tutos/*
