@@ -22,17 +22,17 @@
 |       |        |             |          |          |          |        |
 |       |        |             |    71:28 |    80:23 |    08:55 |  11.1% |
 |       |        |             |          |          |          |        |
-|    20 | Indent |   25 511 055 |      618 |      787 |      169 |  21.5% |
+|    20 | Indent |   25 512 646 |      617 |      788 |      171 |  21.7% |
 |       |        |             |          |          |          |        |
-|       |        |             |    90:59 |   113:02 |    22:03 |  19.5% |
+|       |        |             |    90:48 |   113:08 |    22:19 |  19.7% |
 |       |        |             |          |          |          |        |
 |    21 | Foxxy  |      806 361 |      313 |      319 |        6 |   1.9% |
 |       |        |             |          |          |          |        |
 |       |        |             |    65:44 |    66:49 |    01:05 |   1.6% |
 |       |        |             |          |          |          |        |
-|     7 | TOTAL  |   57 259 528 |     1 601 |     1 910 |      309 |  16.2% |
+|     7 | TOTAL  |   57 261 119 |     1 600 |     1 911 |      311 |  16.3% |
 |       |        |             |          |          |          |        |
-|       |        |             |   310:29 |   368:45 |    58:14 |  15.8% |
+|       |        |             |   310:18 |   368:51 |    58:30 |  15.9% |
 
 ## 1 FR Auteur **[InformatiqueSansComplexe](https://www.youtube.com/@InformatiqueSansComplexe/videos)** ( **287** videos - 1 828 918 vues - 33 heures et 43 minutes )
 
@@ -878,11 +878,10 @@
 * [x] [04/08/2019 **Calculatrice scientifique python et C avec interface graphique** 984 **05:55**](https://www.youtube.com/watch?v=j0m_TwnNCQc)
 * [x] [04/08/2019 **Calculatrice JAVA-RMI client server** 1 040 **13:24**](https://www.youtube.com/watch?v=ggSAnfoQUFU)
 
-## 6 GB Auteur **[Indently](https://www.youtube.com/@Indently/videos)** ( **787** videos - 25 511 055 vues - 113 heures et 2 minutes )
+## 6 GB Auteur **[Indently](https://www.youtube.com/@Indently/videos)** ( **788** videos - 25 512 646 vues - 113 heures et 8 minutes )
 
-### Pas vus (618 - 90 heures et 59 minutes)
+### Pas vus (617 - 90 heures et 48 minutes)
 
-* [ ] [21/02/2026 **Descriptors in Python are Awesome** 12 118 **10:38**](https://www.youtube.com/watch?v=p7a5UCl7Tds)
 * [ ] [18/02/2026 **It's 2026 - Time to switch to Linux** 13 749 **04:38**](https://www.youtube.com/watch?v=T_LNtZkaiaI)
 * [ ] [12/02/2026 **Python with UV is ULTRA Fast** 12 601 **08:19**](https://www.youtube.com/watch?v=5nw_H7oqrIk)
 * [ ] [06/02/2026 **UV in Python is Awesome** 26 639 **11:04**](https://www.youtube.com/watch?v=8zggSBvTQbM)
@@ -1501,8 +1500,9 @@
 * [ ] [25/01/2021 **Creating a Telegram Bot in Python 3.9 Tutorial (Fast & Easy)** 245 034 **13:07**](https://www.youtube.com/watch?v=PTAkiukJK7E)
 * [ ] [22/01/2021 **Easy QR Code Generator in Python Tutorial (2021)** 3 263 **05:42**](https://www.youtube.com/watch?v=XvUFTFvdYeU)
 
-### Vus (169 - 22 heures et 3 minutes)
+### Vus (171 - 22 heures et 19 minutes)
 
+* [x] [01/04/2026 **Dictionary Views are Awesome in Python** 1 591 **05:28**](https://www.youtube.com/watch?v=MZsUalDCQpw)
 * [x] [28/03/2026 **25 Cool Tips & Tricks in Python** 4 647 **23:17**](https://www.youtube.com/watch?v=s_oXtdhqXR8)
 * [x] [23/03/2026 **Monadic Error Handling in Python is Awesome** 14 551 **12:51**](https://www.youtube.com/watch?v=pcdeKCuCRIc)
 * [x] [18/03/2026 **Coming in Python 3.15: New Set Syntax?** 10 647 **07:12**](https://www.youtube.com/watch?v=50dTOFILNuc)
@@ -1510,6 +1510,7 @@
 * [x] [10/03/2026 **NEW in Python 3.15: Explicit Lazy Imports** 19 270 **09:29**](https://www.youtube.com/watch?v=VoKE14Nf_oY)
 * [x] [05/03/2026 **Metaclasses in Python are Awesome** 14 514 **09:06**](https://www.youtube.com/watch?v=gu8WI3Xs5iU)
 * [x] [28/02/2026 **NEW in Python 3.15: Unpacking in Comprehensions** 27 140 **05:57**](https://www.youtube.com/watch?v=vaKozOH_B4A)
+* [x] [21/02/2026 **Descriptors in Python are Awesome** 12 118 **10:38**](https://www.youtube.com/watch?v=p7a5UCl7Tds)
 * [x] [20/01/2021 **Creating an Interactive SQLite Database in Python Tutorial for Beginners (2021)** 5 872 **16:33**](https://www.youtube.com/watch?v=ho1hmfBipvI)
 * [x] [18/01/2021 **Light Sensor Tutorial in Android Studio (Kotlin 2021)** 6 902 **07:13**](https://www.youtube.com/watch?v=DlQvhjV9Jds)
 * [x] [13/01/2021 **Accelerometer Sensor Tutorial in Android Studio (Kotlin 2021)** 21 629 **09:20**](https://www.youtube.com/watch?v=xcsuDDQHrLo)
