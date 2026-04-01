@@ -15,7 +15,7 @@ import gc7
 
 # version = config.get("project", {}).get("version", "Version non définie")
 # print(f"Version du projet : {version}")
-APP_NAME = "Boosteur"
+APP_NAME = "Boosteur 2026"
 BOOSTER_VERSION = "0.00.002"
 
 

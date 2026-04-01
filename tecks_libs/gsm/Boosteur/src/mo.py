@@ -103,4 +103,4 @@ def main(page: ft.Page):
     print(theTime, page.route, page.theme_mode)
 
 
-ft.app(target=main)
+ft.run(main)
