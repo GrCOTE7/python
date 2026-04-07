@@ -22,17 +22,17 @@
 |       |        |             |          |          |          |        |
 |       |        |             |    71:28 |    80:23 |    08:55 |  11.1% |
 |       |        |             |          |          |          |        |
-|    20 | Indent |   25 512 646 |      617 |      788 |      171 |  21.7% |
+|    20 | Indent |   25 515 851 |      618 |      789 |      171 |  21.7% |
 |       |        |             |          |          |          |        |
-|       |        |             |    90:48 |   113:08 |    22:19 |  19.7% |
+|       |        |             |    90:55 |   113:14 |    22:19 |  19.7% |
 |       |        |             |          |          |          |        |
 |    21 | Foxxy  |      806 361 |      313 |      319 |        6 |   1.9% |
 |       |        |             |          |          |          |        |
 |       |        |             |    65:44 |    66:49 |    01:05 |   1.6% |
 |       |        |             |          |          |          |        |
-|     7 | TOTAL  |   57 261 119 |     1 600 |     1 911 |      311 |  16.3% |
+|     7 | TOTAL  |   57 264 324 |     1 601 |     1 912 |      311 |  16.3% |
 |       |        |             |          |          |          |        |
-|       |        |             |   310:18 |   368:51 |    58:30 |  15.9% |
+|       |        |             |   310:25 |   368:57 |    58:30 |  15.9% |
 
 ## 1 FR Auteur **[InformatiqueSansComplexe](https://www.youtube.com/@InformatiqueSansComplexe/videos)** ( **287** videos - 1 828 918 vues - 33 heures et 43 minutes )
 
@@ -878,9 +878,9 @@
 * [x] [04/08/2019 **Calculatrice scientifique python et C avec interface graphique** 984 **05:55**](https://www.youtube.com/watch?v=j0m_TwnNCQc)
 * [x] [04/08/2019 **Calculatrice JAVA-RMI client server** 1 040 **13:24**](https://www.youtube.com/watch?v=ggSAnfoQUFU)
 
-## 6 GB Auteur **[Indently](https://www.youtube.com/@Indently/videos)** ( **788** videos - 25 512 646 vues - 113 heures et 8 minutes )
+## 6 GB Auteur **[Indently](https://www.youtube.com/@Indently/videos)** ( **789** videos - 25 515 851 vues - 113 heures et 14 minutes )
 
-### Pas vus (617 - 90 heures et 48 minutes)
+### Pas vus (618 - 90 heures et 55 minutes)
 
 * [ ] [18/02/2026 **It's 2026 - Time to switch to Linux** 13 749 **04:38**](https://www.youtube.com/watch?v=T_LNtZkaiaI)
 * [ ] [12/02/2026 **Python with UV is ULTRA Fast** 12 601 **08:19**](https://www.youtube.com/watch?v=5nw_H7oqrIk)
@@ -1499,6 +1499,7 @@
 * [ ] [27/01/2021 **Create your own Public API in Python Tutorial** 190 984 **08:36**](https://www.youtube.com/watch?v=5ZMpbdK0uqU)
 * [ ] [25/01/2021 **Creating a Telegram Bot in Python 3.9 Tutorial (Fast & Easy)** 245 034 **13:07**](https://www.youtube.com/watch?v=PTAkiukJK7E)
 * [ ] [22/01/2021 **Easy QR Code Generator in Python Tutorial (2021)** 3 263 **05:42**](https://www.youtube.com/watch?v=XvUFTFvdYeU)
+* [ ] [07/04/2026 **COMING SOON: D-strings in Python** 3 205 **06:38**](https://www.youtube.com/watch?v=Bgdc_6JsKsE)
 
 ### Vus (171 - 22 heures et 19 minutes)
 
