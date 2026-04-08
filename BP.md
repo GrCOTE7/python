@@ -81,6 +81,7 @@ https://docs.modular.com/max/tutorials
 * [/] [Tutos en français](https://www.youtube.com/results?search_query=tuto+python+en+fran%C3%A7ais)
 
 * [ ] [Les Libs](https://openclassrooms.com/fr/courses/7771531-decouvrez-les-librairies-python-pour-la-data-science)
+* [ ] [À lire - Ryx - SQL for APK](https://medium.com/@einswilligoeh/story-time-how-i-finally-unblocked-my-fastapis-database-layer-9d5879e1fad4)
 
 ### IA
 
