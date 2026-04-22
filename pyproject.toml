@@ -28,7 +28,8 @@ build_number = 1
 [tool.flet.app]
 # path = "."
 # path = "tools"
-path = "tutos/flet"
+# path = "tutos/flet"
+path = "src" # Mes essais Flets
 assets_dir = "assets"
 
 

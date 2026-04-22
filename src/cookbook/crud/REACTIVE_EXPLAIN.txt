@@ -1,0 +1,65 @@
+┌──────────────────────────────────────────────────────────────┐
+│                        Composant Flet                        │
+└──────────────────────────────────────────────────────────────┘
+                │
+                │ 1) Initialisation du hook
+                │ new_first_name, set_new_first_name = ft.use_state(user.first_name)
+                ▼
+        ┌──────────────────────────────────────────┐
+        │ ft.use_state(user.first_name)            │
+        ├──────────────────────────────────────────┤
+        │  new_first_name  = valeur locale         │
+        │  set_new_first_name = setter réactif     │
+        └──────────────────────────────────────────┘
+                │
+                │ copie la valeur du modèle
+                ▼
+        ┌──────────────────────────────────────────┐
+        │   new_first_name = user.first_name       │
+        └──────────────────────────────────────────┘
+
+                │
+                │ 2) L’utilisateur tape dans le champ
+                ▼
+        ┌──────────────────────────────────────────┐
+        │ TextField(on_change = set_new_first_name)│
+        └──────────────────────────────────────────┘
+                │
+                │ appelle
+                ▼
+        ┌──────────────────────────────────────────┐
+        │ set_new_first_name("Ada")                │
+        └──────────────────────────────────────────┘
+                │
+                │ met à jour l’état local
+                ▼
+        ┌──────────────────────────────────────────┐
+        │   new_first_name = "Ada"                 │
+        └──────────────────────────────────────────┘
+                │
+                │ déclenche un re-render automatique
+                ▼
+┌──────────────────────────────────────────────────────────────┐
+│                Flet ré-exécute le composant                  │
+│         (UI = f(state) → pas de page.update())               │
+└──────────────────────────────────────────────────────────────┘
+
+                │
+                │ 3) L’utilisateur clique “Save”
+                ▼
+        ┌──────────────────────────────────────────┐
+        │ user.update(first_name = new_first_name) │
+        └──────────────────────────────────────────┘
+                │
+                │ met à jour le modèle durable
+                ▼
+        ┌──────────────────────────────────────────┐
+        │   user.first_name = "Ada"                │
+        └──────────────────────────────────────────┘
+                │
+                │ observable → re-render ciblé
+                ▼
+┌──────────────────────────────────────────────────────────────┐
+│     Flet met à jour uniquement les composants qui lisent      │
+│                 user.first_name (réactivité)                  │
+└──────────────────────────────────────────────────────────────┘
