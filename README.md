@@ -15,7 +15,14 @@ markmap:
 * Création PUIS Lancement de l'environnement virtuel :
 
   ```python
+  uv run --active flet run -r
+  ```
+  
+  → Utilise le Py du venv activé
+  
+  ```python
   py -m venv env
+  py -m -3.13 venv env
   PUIS
   .\env\Scripts\activate
     ```

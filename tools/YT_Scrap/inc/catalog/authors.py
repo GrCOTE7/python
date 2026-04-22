@@ -7,7 +7,7 @@ AUTHORS = {
         1: "LionelCOTE",
         2: "c57-u5s",
         3: "Alphorm",
-        4: "tseries",
+        4: "sriedynurcahyo3894",
         5: "coach-exam",
         6: "CodeAvecJonathan",
         7: "Gravenilvectuto",
@@ -27,7 +27,7 @@ AUTHORS = {
         21: "foxxpy"
     }
 
-# Pour mise au point du script ❌ toutes en partant du bas saud tseries et alphorn
+# Pour mise au point du script ❌ toutes en partant du bas sauf tseries et alphorn
 #  0 AUTHOR = "doro2255"                 #      1 video  -              29 vues -               7 minutes
 
 #  1 AUTHOR= "LionelCOTE"                #     12 videos -           3 955 vues -   1 heure et 27 minutes - Aide pour mise au point car peu de vidéos

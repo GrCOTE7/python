@@ -36,6 +36,9 @@
 #### Autres à voir
 
 * [ ] [CheatSheet Androïd-Flet](https://www.cheatsheet.fr/2024/06/05/creer-une-application-android-avec-flet)
+* [ ] [Classification par arbre de décision dans le tutoriel Python
+Dans ce tutoriel, vous apprendrez la classification par arbre de décision, les mesures de sélection d'attributs et comment créer et optimiser un classificateur par arbre de décision à l'aide du package Python Scikit-learn. - 15 janv. 2026
+ · 12 min lire](https://www.datacamp.com/fr/tutorial/decision-tree-classification-python)
 
 ---
 
