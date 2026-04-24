@@ -4,7 +4,6 @@ import flet as ft
 import datetime, time
 from typing import cast
 
-from wcwidth import wrap
 from tools.screen_utils import gc7_rules as gc7
 
 

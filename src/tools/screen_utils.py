@@ -79,7 +79,7 @@ class ZoomController:
             self.target.scale = ft.Scale(self.current_zoom, self.current_zoom)
             self.page.update()
 
-    def on_double_tap(self, e: ft.Event[ft.GestureDetector]) -> None:
+    def on_double_tap(self, e: ft.TapEvent) -> None:
         self.reset()
 
     def reset(self) -> None:
@@ -107,21 +107,36 @@ def make_zoomable_view(
     return controller.view
 
 
+def _is_mobile_platform(page: ft.Page) -> bool:
+    platform = page.platform
+    if platform is None:
+        return False
+
+    is_mobile = getattr(platform, "is_mobile", None)
+    if callable(is_mobile):
+        return bool(is_mobile())
+
+    platform_name = getattr(platform, "name", str(platform)).lower()
+    return platform_name in {"android", "ios"}
+
+
 def gc7_rules(
     page: ft.Page,
     mode: str = "DARK",
     name: str = "Ready",
+    left: int = 1912,
+    # left: int = 1520,  # 1912 - 392
     width: int = 392,
     height: int = 1088,
     defaultColors: bool = True,
 ) -> None:
-    configure_window(page, width=width, height=height)
+    configure_window(page, left=left, width=width, height=height)
     page.theme_mode = ft.ThemeMode.LIGHT if mode == "LIGHT" else ft.ThemeMode.DARK
     page.title = f"GC7 - {name}"
     if defaultColors:
         page.bgcolor = "#303030" if mode == "DARK" else "#EEEEEE"
 
-    if page.platform is not None and page.platform.is_mobile():
+    if _is_mobile_platform(page):
         # Respecte la safe area : status bar, encoche, barre de navigation système
         m = page.media
         page.padding = ft.Padding(

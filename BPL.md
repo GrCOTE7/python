@@ -1,46 +1,46 @@
 # BPL Quotidien (Une lecon - ISC - 2mnPy - BdC - Graven - Jordy + Indently - Fooxpy)
 
-| Id | Auteur |       Vues |     2c | N & Tps |    Vus |     % |
-|---:|:------:|-----------:|-------:|--------:|-------:|------:|
-|  4 | SriEdy |  1 197 386 |    256 |     598 |    342 | 57.2% |
-|    |        |            |        |         |        |       |
-|    |        |            |  53:30 |  116:42 |  63:12 | 54.2% |
-|    |        |            |        |         |        |       |
-| 14 |  ISC   |  1 829 557 |    246 |     290 |     44 | 15.2% |
-|    |        |            |        |         |        |       |
-|    |        |            |  31:10 |   34:01 |  02:50 |  8.3% |
-|    |        |            |        |         |        |       |
-| 17 |  2mn   |  1 083 548 |     88 |      93 |      5 |  5.4% |
-|    |        |            |        |         |        |       |
-|    |        |            |  03:42 |   03:52 |  00:09 |  3.9% |
-|    |        |            |        |         |        |       |
-| 11 |  BdC   |    750 692 |     49 |      50 |      1 |  2.0% |
-|    |        |            |        |         |        |       |
-|    |        |            |  20:54 |   21:16 |  00:22 |  1.7% |
-|    |        |            |        |         |        |       |
-|  7 | Gravn  | 26 919 287 |     97 |     177 |     80 | 45.2% |
-|    |        |            |        |         |        |       |
-|    |        |            |  27:04 |   49:54 |  22:50 | 45.8% |
-|    |        |            |        |         |        |       |
-| 18 | Jordy  |    365 211 |    197 |     201 |      4 |  2.0% |
-|    |        |            |        |         |        |       |
-|    |        |            |  71:28 |   80:23 |  08:55 | 11.1% |
-|    |        |            |        |         |        |       |
-| 20 | Indent | 25 536 732 |    622 |     793 |    171 | 21.6% |
-|    |        |            |        |         |        |       |
-|    |        |            |  91:45 |  114:04 |  22:19 | 19.6% |
-|    |        |            |        |         |        |       |
-| 21 | Foxxy  |    806 361 |    313 |     319 |      6 |  1.9% |
-|    |        |            |        |         |        |       |
-|    |        |            |  65:44 |   66:49 |  01:05 |  1.6% |
-|    |        |            |        |         |        |       |
-|  8 | TOTAL  | 58 488 774 |  1 868 |   2 521 |    653 | 25.9% |
-|    |        |            |        |         |        |       |
-|    |        |            | 365:17 |  487:01 | 121:42 | 25.0% |
+|   Id  | Auteur |     Vues    |    2c    | N & Tps  |   Vus    |    %   |
+|------:|:------:|------------:|---------:|---------:|---------:|-------:|
+|     4 | SriEdy |    1 197 386 |      254 |      598 |      344 |  57.5% |
+|       |        |             |          |          |          |        |
+|       |        |             |    52:59 |   116:42 |    63:43 |  54.6% |
+|       |        |             |          |          |          |        |
+|    14 |  ISC   |    1 829 557 |      243 |      290 |       47 |  16.2% |
+|       |        |             |          |          |          |        |
+|       |        |             |    30:52 |    34:01 |    03:09 |   9.3% |
+|       |        |             |          |          |          |        |
+|    17 |  2mn   |    1 083 548 |       86 |       93 |        7 |   7.5% |
+|       |        |             |          |          |          |        |
+|       |        |             |    03:36 |    03:52 |    00:15 |   6.5% |
+|       |        |             |          |          |          |        |
+|    11 |  BdC   |      750 692 |       49 |       50 |        1 |   2.0% |
+|       |        |             |          |          |          |        |
+|       |        |             |    20:54 |    21:16 |    00:22 |   1.7% |
+|       |        |             |          |          |          |        |
+|     7 | Gravn  |   26 919 287 |       95 |      177 |       82 |  46.3% |
+|       |        |             |          |          |          |        |
+|       |        |             |    26:56 |    49:54 |    22:58 |  46.0% |
+|       |        |             |          |          |          |        |
+|    18 | Jordy  |      365 211 |      193 |      201 |        8 |   4.0% |
+|       |        |             |          |          |          |        |
+|       |        |             |    70:09 |    80:23 |    10:14 |  12.7% |
+|       |        |             |          |          |          |        |
+|    20 | Indent |   25 536 732 |      618 |      794 |      176 |  22.2% |
+|       |        |             |          |          |          |        |
+|       |        |             |    90:55 |   114:12 |    23:16 |  20.4% |
+|       |        |             |          |          |          |        |
+|    21 | Foxxy  |      806 361 |      312 |      319 |        7 |   2.2% |
+|       |        |             |          |          |          |        |
+|       |        |             |    65:41 |    66:49 |    01:08 |   1.7% |
+|       |        |             |          |          |          |        |
+|     8 | TOTAL  |   58 488 774 |     1 850 |     2 522 |      672 |  26.6% |
+|       |        |             |          |          |          |        |
+|       |        |             |   362:02 |   487:09 |   125:05 |  25.7% |
 
 ## 1 IN Auteur **[sriedynurcahyo3894](https://www.youtube.com/@sriedynurcahyo3894/videos)** ( **598** videos - 1 197 386 vues - 116 heures et 42 minutes )
 
-### Pas vus (256 - 53 heures et 30 minutes)
+### Pas vus (254 - 52 heures et 59 minutes)
 
 * [ ] [01/07/2025 **Flet Tutorial - FleetingViews Framework and shared data** 431 **12:09**](https://www.youtube.com/watch?v=Q9srpWaTP68)
 * [ ] [22/06/2025 **Flet Tutorial - FletX (GetX) simple Reactive and Routing** 775 **11:11**](https://www.youtube.com/watch?v=yYnd7uFKiYE)
@@ -296,10 +296,8 @@
 * [ ] [19/11/2022 **Flet tutorial design - Movie App Design** 7 302 **18:48**](https://www.youtube.com/watch?v=vsMBD_QXuDg)
 * [ ] [17/11/2022 **Flet Tutorial Design - Cleaner App** 4 800 **33:59**](https://www.youtube.com/watch?v=xKgFiDSDtXk)
 * [ ] [09/11/2022 **Flet Tutorial - Navigation Between Pages** 12 835 **12:45**](https://www.youtube.com/watch?v=BAAqg2qd6OI)
-* [ ] [08/11/2022 **Flet tutorial Supabase - Integration Supabase Database** 2 996 **12:28**](https://www.youtube.com/watch?v=yep2FdchtM4)
-* [ ] [08/11/2022 **Flet Tutorial Firebase - Integration Firestore with Flet | Part1** 2 827 **18:39**](https://www.youtube.com/watch?v=EjiTwMChSzs)
 
-### Vus (342 - 63 heures et 12 minutes)
+### Vus (344 - 63 heures et 43 minutes)
 
 * [x] [10/02/2024 **KivyMD Tutorial - add Webview Google Maps** 1 123 **11:21**](https://www.youtube.com/watch?v=5GJg4IV92vM)
 * [x] [24/10/2023 **SOLVED - CORS ERROR WITHOUT SERVER in 5 Minutes** 1 349 **05:55**](https://www.youtube.com/watch?v=l1lVD3hb3aE)
@@ -467,6 +465,8 @@
 * [x] [09/12/2022 **Express Js Deploy Free and Instant in 3 minutes | CYCLIC** 1 149 **04:02**](https://www.youtube.com/watch?v=rW82E4WV_9Y)
 * [x] [16/11/2022 **QuasarJS Tutorial - Design App Salary** 607 **28:08**](https://www.youtube.com/watch?v=-GJrv2E7d30)
 * [x] [12/11/2022 **Deno Socket.io Tutorial  -  Create Simple Chat** 773 **13:12**](https://www.youtube.com/watch?v=znbQ2KHxcEk)
+* [x] [08/11/2022 **Flet tutorial Supabase - Integration Supabase Database** 2 996 **12:28**](https://www.youtube.com/watch?v=yep2FdchtM4)
+* [x] [08/11/2022 **Flet Tutorial Firebase - Integration Firestore with Flet | Part1** 2 827 **18:39**](https://www.youtube.com/watch?v=EjiTwMChSzs)
 * [x] [06/11/2022 **Flet Tutorial 3 - CRUD TODO** 2 654 **19:47**](https://www.youtube.com/watch?v=SGmXf_abbiY)
 * [x] [05/11/2022 **Flet Tutorial 2  - Create Todo Basic** 1 742 **06:23**](https://www.youtube.com/watch?v=vqLiKzDOa68)
 * [x] [05/11/2022 **Flet Tutorial 1 - Create Simple App** 3 752 **10:05**](https://www.youtube.com/watch?v=-EtJUfshgU8)
@@ -646,11 +646,8 @@
 
 ## 2 FR Auteur **[InformatiqueSansComplexe](https://www.youtube.com/@InformatiqueSansComplexe/videos)** ( **290** videos - 1 829 557 vues - 34 heures et 1 minute )
 
-### Pas vus (246 - 31 heures et 10 minutes)
+### Pas vus (243 - 30 heures et 52 minutes)
 
-* [ ] [20/04/2026 **Le Vibe Coding, c'est quoi ? (et c'est vraiment utile ?)** 121 **02:40**](https://www.youtube.com/watch?v=CX2qNV_n2Wc)
-* [x] [13/04/2026 **Python datetime : arrête de galérer avec les dates** 247 **07:43**](https://www.youtube.com/watch?v=wSzt-wie4uw)
-* [x] [06/04/2026 **J'ai demandé à l'IA de me générer des exercices sur les boucles Python** 271 **07:56**](https://www.youtube.com/watch?v=uQxhhyKsaRU)
 * [ ] [12/03/2026 **La fin des développeurs Odoo** 429 **11:24**](https://www.youtube.com/watch?v=UFo9wySvXqw)
 * [ ] [02/03/2026 **J'ai demandé à l'IA de coder un module Odoo... grosse erreur** 474 **03:27**](https://www.youtube.com/watch?v=2eg8jTvd7jM)
 * [ ] [24/02/2026 **Ton module Odoo est dangereux !** 301 **06:45**](https://www.youtube.com/watch?v=VGSJOv5oK-M)
@@ -895,8 +892,11 @@
 * [ ] [12/04/2021 **Kubernetes, c'est quoi ?** 12 665 **03:57**](https://www.youtube.com/watch?v=dHPBVjxIIsM)
 * [ ] [22/02/2021 **7 menaces courantes sur Internet** 933 **04:07**](https://www.youtube.com/watch?v=WwjeE4o-5hU)
 
-### Vus (44 - 2 heures et 50 minutes)
+### Vus (47 - 3 heures et 9 minutes)
 
+* [x] [20/04/2026 **Le Vibe Coding, c'est quoi ? (et c'est vraiment utile ?)** 121 **02:40**](https://www.youtube.com/watch?v=CX2qNV_n2Wc)
+* [x] [13/04/2026 **Python datetime : arrête de galérer avec les dates** 247 **07:43**](https://www.youtube.com/watch?v=wSzt-wie4uw)
+* [x] [06/04/2026 **J'ai demandé à l'IA de me générer des exercices sur les boucles Python** 271 **07:56**](https://www.youtube.com/watch?v=uQxhhyKsaRU)
 * [x] [30/03/2026 **L'IA m'a appris and, or, not en Python — je ne code plus jamais mes conditions comme avant** 114 **10:21**](https://www.youtube.com/watch?v=X-9uZA-_6zM)
 * [x] [23/03/2026 **J'ai demandé à l'IA de m'apprendre les conditions Python — voilà ce qui s'est passé** 374 **12:07**](https://www.youtube.com/watch?v=QmeQn4-yHFo)
 * [x] [16/03/2026 **J'ai demandé à l'IA de m'apprendre les variables Python — voilà ce qui s'est passé** 990 **12:35**](https://www.youtube.com/watch?v=4u0imOeh3WQ)
@@ -944,10 +944,8 @@
 
 ## 3 FR/GB Auteur **[2minutesPy](https://www.youtube.com/@2minutesPy/videos)** ( **93** videos - 1 083 548 vues - 3 heures et 52 minutes )
 
-### Pas vus (88 - 3 heures et 42 minutes)
+### Pas vus (86 - 3 heures et 36 minutes)
 
-* [x] [12/04/2026 **Where Can You Use t-Strings in Python | 2MinutesPy** 2 144 **02:10**](https://www.youtube.com/watch?v=JkLCGpKPeT0)
-* [x] [07/04/2026 **Deploying an app on VPS in 2 minutes...** 1 196 **03:50**](https://www.youtube.com/watch?v=wBEsGvXRRrM)
 * [ ] [11/03/2026 **Why Deferring Now… Not Earlier!** 797 **02:48**](https://www.youtube.com/watch?v=45yD9UvuUmU)
 * [ ] [07/03/2026 **Challenge: Prompts ONLY and Full-stack App is READY 🚀** 519 **02:51**](https://www.youtube.com/watch?v=HywYRduZayQ)
 * [ ] [16/01/2026 **Your Auth Works… Until You Add Organizations** 700 **03:43**](https://www.youtube.com/watch?v=YIAxblbM4Sc)
@@ -1035,8 +1033,10 @@
 * [ ] [30/10/2023 **Understanding Python's seek() and tell() Functions for Navigating Files in Python | 2MinutesPy** 7 571 **02:07**](https://www.youtube.com/watch?v=7TQQJSfcrEQ)
 * [ ] [22/10/2023 **Python Threading in 2 Minutes: Run Multiple Tasks Concurrently | 2MinutesPy** 6 927 **02:02**](https://www.youtube.com/watch?v=KbrUfPEwt78)
 
-### Vus (5 - 9 minutes)
+### Vus (7 - 15 minutes)
 
+* [x] [12/04/2026 **Where Can You Use t-Strings in Python | 2MinutesPy** 2 144 **02:10**](https://www.youtube.com/watch?v=JkLCGpKPeT0)
+* [x] [07/04/2026 **Deploying an app on VPS in 2 minutes...** 1 196 **03:50**](https://www.youtube.com/watch?v=wBEsGvXRRrM)
 * [x] [10/10/2023 **Python's super() Function in 2 Minutes | 2MinutesPy** 4 196 **02:00**](https://www.youtube.com/watch?v=giOT0dBkIaQ)
 * [x] [30/09/2023 **How to Use *args and **kwargs in 2 Minutes** 5 665 **02:11**](https://www.youtube.com/watch?v=QksqEIz09eU)
 * [x] [24/09/2023 **Python's __getitem__ Method Simplified for Object Element Access in 2 Minutes** 2 724 **01:47**](https://www.youtube.com/watch?v=tkZSjGMSFf8)
@@ -1103,10 +1103,8 @@
 
 ## 5 FR Auteur **[Gravenilvectuto](https://www.youtube.com/@Gravenilvectuto/videos)** ( **177** videos - 26 919 287 vues - 49 heures et 54 minutes )
 
-### Pas vus (97 - 27 heures et 4 minutes)
+### Pas vus (95 - 26 heures et 56 minutes)
 
-* [x] [20/04/2026 **MON Plus GROS evenement tech de 2026 ! Bande annonce** 1 062 **00:24**](https://www.youtube.com/watch?v=m_IMRjlrcPI)
-* [x] [17/04/2026 **J’ouvre une arène de code INFINIE 😳 (Viens affronter les autres !)** 1 142 **07:29**](https://www.youtube.com/watch?v=97MSV1ciMZs)
 * [ ] [17/03/2026 **J'organise mon salon à Paris la defense - Asynconf 2026** 1 108 **04:57**](https://www.youtube.com/watch?v=xP47FjwMYn4)
 * [ ] [17/02/2026 **Créer son site en Python avec Django - Initiation** 11 361 **01:15:30**](https://www.youtube.com/watch?v=hrdZ-lT_i3A)
 * [ ] [06/02/2026 **J’ai créé une extension VS Code (et tu vas l’adorer)** 6 391 **05:27**](https://www.youtube.com/watch?v=eqhXSvV2QYc)
@@ -1203,8 +1201,10 @@
 * [ ] [07/05/2018 **APPRENDRE LE PYTHON #1 ? LES BASES & PREREQUIS** 2 962 579 **09:27**](https://www.youtube.com/watch?v=psaDHhZ0cPs)
 * [ ] [10/02/2018 **COMMENT DEVENIR DEVELOPPEUR ENTREPRENEUR ? (Salon des Entrepreneurs 2018)** 13 084 **06:39**](https://www.youtube.com/watch?v=9kroKtvqB8Y)
 
-### Vus (80 - 22 heures et 50 minutes)
+### Vus (82 - 22 heures et 58 minutes)
 
+* [x] [20/04/2026 **MON Plus GROS evenement tech de 2026 ! Bande annonce** 1 062 **00:24**](https://www.youtube.com/watch?v=m_IMRjlrcPI)
+* [x] [17/04/2026 **J’ouvre une arène de code INFINIE 😳 (Viens affronter les autres !)** 1 142 **07:29**](https://www.youtube.com/watch?v=97MSV1ciMZs)
 * [x] [23/03/2026 **Apprendre à coder à l’ère de l’IA (le vrai problème)** 8 979 **07:57**](https://www.youtube.com/watch?v=cGxZR0hnNhc)
 * [x] [26/02/2022 **Sécuriser son site avec HTTPS 🔒** 56 855 **03:15**](https://www.youtube.com/watch?v=R1SFiuREJuw)
 * [x] [10/09/2021 **Apprendre le Java #20 Design Pattern - Fluent Pattern Builder** 35 028 **11:16**](https://www.youtube.com/watch?v=_vKn4ntUzWM)
@@ -1288,10 +1288,8 @@
 
 ## 6 FR Auteur **[JordyBayo](https://www.youtube.com/@JordyBayo/videos)** ( **201** videos - 365 211 vues - 80 heures et 23 minutes )
 
-### Pas vus (197 - 71 heures et 28 minutes)
+### Pas vus (193 - 70 heures et 9 minutes)
 
-* [ ] [22/03/2026 **Ne code plus : "Manifeste" ta pensée.** 73 **15:43**](https://www.youtube.com/watch?v=55mzD2skSo0)
-* [ ] [10/03/2026 **Tutoriel complet OpenClaw pour débutants : Installation et utilisation d'OpenClaw 🔥** 1 089 **01:00:53**](https://www.youtube.com/watch?v=o85x8zyUi-s)
 * [ ] [03/03/2026 **Ma Réponse à Dirane Tafen de EazyTraining sur l'intelligence Artificielle** 103 **01:32:50**](https://www.youtube.com/watch?v=OVMryx9B6M4)
 * [ ] [22/02/2026 **C'est terminé pour nous - le robot humain qu'on craignait est là** 45 **28:10**](https://www.youtube.com/watch?v=6eZMaIK0zpQ)
 * [ ] [09/02/2026 **Le meilleur setup pour vlogging (en 2026)** 112 **17:33**](https://www.youtube.com/watch?v=BVPEnmeIcPI)
@@ -1485,25 +1483,22 @@
 * [ ] [01/10/2019 **Reguarde Me launch an educational startup** 55 **01:21**](https://www.youtube.com/watch?v=mz8HhKotbfQ)
 * [ ] [25/08/2019 **Mon Crew Developpeur tout talent [ Life at IUT ]** 162 **00:58**](https://www.youtube.com/watch?v=Y3stsGVFW0c)
 * [ ] [25/08/2019 **Quant j'ai achete mon premier clavier Incadescant** 54 **01:00**](https://www.youtube.com/watch?v=GnNdMVQgpcQ)
+
+### Vus (8 - 10 heures et 14 minutes)
+
+* [x] [22/03/2026 **Ne code plus : "Manifeste" ta pensée.** 73 **15:43**](https://www.youtube.com/watch?v=55mzD2skSo0)
+* [x] [10/03/2026 **Tutoriel complet OpenClaw pour débutants : Installation et utilisation d'OpenClaw 🔥** 1 089 **01:00:53**](https://www.youtube.com/watch?v=o85x8zyUi-s)
+* [x] [20/12/2019 **ApprendreFlutter part0 - Introduction et Initiation a la Formation Flutter** 477 **20:23**](https://www.youtube.com/watch?v=Y7RibyF26KA)
 * [x] [25/08/2019 **Mes debut en Logiciel et Intelligence Artificielle [Demeure non Meuble]** 107 **01:32**](https://www.youtube.com/watch?v=1oPw73Cuu_k)
 * [x] [25/08/2019 **ma premiere application mobile fait python kivy + opencv4 + deepleaning** 586 **00:53**](https://www.youtube.com/watch?v=aLL_7aSk6Jw)
-
-### Vus (4 - 8 heures et 55 minutes)
-
-* [x] [20/12/2019 **ApprendreFlutter part0 - Introduction et Initiation a la Formation Flutter** 477 **20:23**](https://www.youtube.com/watch?v=Y7RibyF26KA)
 * [x] [12/08/2019 **Artificial Intelligence course from A to Z __ Beginner to advanced in ML __ Machine learning** 1 434 **08:15:58**](https://www.youtube.com/watch?v=fGUrEFJcriU)
 * [x] [04/08/2019 **Calculatrice scientifique python et C avec interface graphique** 984 **05:55**](https://www.youtube.com/watch?v=j0m_TwnNCQc)
 * [x] [04/08/2019 **Calculatrice JAVA-RMI client server** 1 040 **13:24**](https://www.youtube.com/watch?v=ggSAnfoQUFU)
 
-## 7 GB Auteur **[Indently](https://www.youtube.com/@Indently/videos)** ( **793** videos - 25 536 732 vues - 114 heures et 4 minutes )
+## 7 GB Auteur **[Indently](https://www.youtube.com/@Indently/videos)** ( **794** videos - 25 536 732 vues - 114 heures et 12 minutes )
 
-### Pas vus (622 - 91 heures et 45 minutes)
+### Pas vus (618 - 90 heures et 55 minutes)
 
-* [x] [21/04/2026 **Build a Local AI Agent in Python with Tools (Part 3)** 506 **17:34**](https://www.youtube.com/watch?v=zV4i7Re1obA)
-* [x] [16/04/2026 **Build a Local AI Agent in Python with Context (Part 2)** 2 712 **11:54**](https://www.youtube.com/watch?v=ILKQftdngaE)
-* [x] [13/04/2026 **Build a Local AI Agent in Python in only 15 Minutes** 12 575 **15:00**](https://www.youtube.com/watch?v=LykXu60aKoY)
-* [x] [09/04/2026 **"ReadOnly" for Classes in Python 3.15?** 5 088 **05:31**](https://www.youtube.com/watch?v=d671jbgt_lU)
-* [x] [07/04/2026 **COMING SOON: D-strings in Python** 3 205 **06:38**](https://www.youtube.com/watch?v=Bgdc_6JsKsE)
 * [ ] [18/02/2026 **It's 2026 - Time to switch to Linux** 13 749 **04:38**](https://www.youtube.com/watch?v=T_LNtZkaiaI)
 * [ ] [12/02/2026 **Python with UV is ULTRA Fast** 12 601 **08:19**](https://www.youtube.com/watch?v=5nw_H7oqrIk)
 * [ ] [06/02/2026 **UV in Python is Awesome** 26 639 **11:04**](https://www.youtube.com/watch?v=8zggSBvTQbM)
@@ -2121,9 +2116,15 @@
 * [ ] [27/01/2021 **Create your own Public API in Python Tutorial** 190 984 **08:36**](https://www.youtube.com/watch?v=5ZMpbdK0uqU)
 * [ ] [25/01/2021 **Creating a Telegram Bot in Python 3.9 Tutorial (Fast & Easy)** 245 034 **13:07**](https://www.youtube.com/watch?v=PTAkiukJK7E)
 * [ ] [22/01/2021 **Easy QR Code Generator in Python Tutorial (2021)** 3 263 **05:42**](https://www.youtube.com/watch?v=XvUFTFvdYeU)
+* [ ] [N/A **Zed + Local AI = Awesome (Free AI Tutorial)** 0 **07:09**](https://www.youtube.com/watch?v=_cDUB0b1p3w)
 
-### Vus (171 - 22 heures et 19 minutes)
+### Vus (176 - 23 heures et 16 minutes)
 
+* [x] [21/04/2026 **Build a Local AI Agent in Python with Tools (Part 3)** 506 **17:34**](https://www.youtube.com/watch?v=zV4i7Re1obA)
+* [x] [16/04/2026 **Build a Local AI Agent in Python with Context (Part 2)** 2 712 **11:54**](https://www.youtube.com/watch?v=ILKQftdngaE)
+* [x] [13/04/2026 **Build a Local AI Agent in Python in only 15 Minutes** 12 575 **15:00**](https://www.youtube.com/watch?v=LykXu60aKoY)
+* [x] [09/04/2026 **"ReadOnly" for Classes in Python 3.15?** 5 088 **05:31**](https://www.youtube.com/watch?v=d671jbgt_lU)
+* [x] [07/04/2026 **COMING SOON: D-strings in Python** 3 205 **06:38**](https://www.youtube.com/watch?v=Bgdc_6JsKsE)
 * [x] [01/04/2026 **Dictionary Views are Awesome in Python** 1 591 **05:28**](https://www.youtube.com/watch?v=MZsUalDCQpw)
 * [x] [28/03/2026 **25 Cool Tips & Tricks in Python** 4 647 **23:17**](https://www.youtube.com/watch?v=s_oXtdhqXR8)
 * [x] [23/03/2026 **Monadic Error Handling in Python is Awesome** 14 551 **12:51**](https://www.youtube.com/watch?v=pcdeKCuCRIc)
@@ -2298,7 +2299,7 @@
 
 ## 8 FR Maths Auteur **[foxxpy](https://www.youtube.com/@foxxpy/videos)** ( **319** videos - 806 361 vues - 66 heures et 49 minutes )
 
-### Pas vus (313 - 65 heures et 44 minutes)
+### Pas vus (312 - 65 heures et 41 minutes)
 
 * [ ] [03/11/2022 **[Maths - 6ème] - Critères de divisibilité par 9 - 25 exercices corrigés** 753 **07:32**](https://www.youtube.com/watch?v=5FspXw3J_Es)
 * [ ] [20/10/2022 **[Maths - 6ème] - Critères de divisibilité par 7 - 25 exercices corrigés** 552 **10:19**](https://www.youtube.com/watch?v=E4Bqa_NVayE)
@@ -2612,10 +2613,10 @@
 * [ ] [11/11/2019 **[Python] - Résoudre 'pip' n'est pas reconnu en tant que commande interne sur Windows 10** 51 040 **01:31**](https://www.youtube.com/watch?v=pjCWtppLN3k)
 * [ ] [10/11/2019 **[Codingame - Puzzle facile] - 7. Ascii Art [Python3]** 6 022 **15:15**](https://www.youtube.com/watch?v=4dFZRQKRCVQ)
 * [ ] [09/11/2019 **[Algorithme] - 14. Tri à bulles [Python3]** 12 441 **07:34**](https://www.youtube.com/watch?v=48KD2VnKeg4)
+
+### Vus (7 - 1 heure et 8 minutes)
+
 * [x] [04/11/2019 **[Algorithme] - 13. Échanger les valeurs de 2 variables [Python]** 4 332 **03:02**](https://www.youtube.com/watch?v=pY9w0CEx65I)
-
-### Vus (6 - 1 heure et 5 minutes)
-
 * [x] [03/11/2019 **[Codingame - Puzzle facile] - 6. Chevaux de course [Python3]** 2 640 **10:16**](https://www.youtube.com/watch?v=B4v9s5Fu2eI)
 * [x] [30/10/2019 **[Codingame - Puzzle facile] - 5. Défibrillateurs [Python3]** 1 282 **08:24**](https://www.youtube.com/watch?v=UkTuIft8Uuw)
 * [x] [30/10/2019 **[Codingame - Puzzle facile] - 4. Chuck Norris [Python3]** 3 083 **18:35**](https://www.youtube.com/watch?v=-m-HRc7bmY0)

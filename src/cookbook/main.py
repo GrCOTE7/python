@@ -31,8 +31,10 @@ def main(page: ft.Page):
     lvs = []
     renderers: list[Callable[[], object]] = []
 
+
     # lvs.append(Lv00("Salut !"))  # Simple class with a custom text
-    # lvs.append(Lv00())  # Simple class with a custom text
+    # ❌ Vérif les cookbooks en les réactivant 1 à 1
+    lvs.append(Lv00())  # Simple class with a custom text
     #
     # lvs.append(Lv01())  # Form with a text field and a button
     # lvs.append(Lv02())  # 3 blocs in a row with different expand values and colors
@@ -79,7 +81,7 @@ def main(page: ft.Page):
     page.adaptive = True  # Optimize iOS et Android platforms
     # lvs.append(Lv31(page))  # Adaptive apps
     #
-    lvs.append(Lv32())  # DataTable sortable
+    # lvs.append(Lv32())  # DataTable sortable
 
     # gc7(page, mode='LIGHT')
     # gc7(page, width=500)

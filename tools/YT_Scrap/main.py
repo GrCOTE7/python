@@ -15,8 +15,6 @@ from inc.reporting.build_bpl import (
 # DEV_SELECTION = 14, 17, 11, 1 ,2
 DEV_SELECTION = None  # To obtain heart list
 
-# ❌ Ajouter sriedynurcahyo3894
-
 def parse_selection(raw_selection):
     if raw_selection is None or raw_selection.lower() == "default":
         return None
