@@ -184,7 +184,6 @@ async def main(page: ft.Page, width: int = 392):
     #################################### Dev ###################################
 
     from devs.lv00_dev import dev as main
-
     # main(page)
 
     if not page.controls and not page.views:

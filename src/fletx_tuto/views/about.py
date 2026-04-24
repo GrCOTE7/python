@@ -1,6 +1,8 @@
+import asyncio
+
 import flet as ft
 from fletx.core import FletXPage
-from fletx.navigation import navigate
+from fletx.core.routing.router import FletXRouter
 from views.footer import Footer
 
 
@@ -43,7 +45,9 @@ class AboutPage(FletXPage):
                 ft.Button(
                     "← Back to Home",
                     icon=ft.Icons.ARROW_BACK_IOS,
-                    on_click=lambda e: navigate("/"),
+                    on_click=lambda e: asyncio.create_task(
+                        FletXRouter.get_instance().navigate("/")
+                    ),
                     style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=7)),
                 ),
                 ft.Container(height=20),

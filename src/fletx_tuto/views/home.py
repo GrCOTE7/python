@@ -1,6 +1,8 @@
+import asyncio
+
 import flet as ft
 from fletx.core import FletXPage
-from fletx.navigation import navigate
+from fletx.core.routing.router import FletXRouter
 from views.footer import Footer
 
 
@@ -46,9 +48,11 @@ class HomePage(FletXPage):
                             ft.Button(
                                 "Go to About",
                                 icon=ft.Icons.INFO_OUTLINE,
-                                on_click=lambda e: navigate(
-                                    "/about",
-                                    data={"name": self._name or ""},
+                                on_click=lambda e: asyncio.create_task(
+                                    FletXRouter.get_instance().navigate(
+                                        "/about",
+                                        data={"name": self._name or ""},
+                                    )
                                 ),
                                 style=ft.ButtonStyle(
                                     shape=ft.RoundedRectangleBorder(radius=7)
