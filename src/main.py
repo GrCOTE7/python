@@ -158,12 +158,7 @@ async def main(page: ft.Page, width: int = 392):
 
     # ❌ Cf. fin de tuto + Étudier le seul qui corrige le pb de double clic → Le comprendre complètement à la fin - D:\flet_doc\sdk\python\examples\tutorials\solitaire_declarative\solitaire-final\main.py
 
-    from devs.lv00_dev import dev as main
-    main(page)
-
-    # * [ ]
-    # main(page)
-
+    ################################### FLETX ##################################
     ################################### FLETX ##################################
 
     # Pour tester rapidement:
@@ -176,11 +171,21 @@ async def main(page: ft.Page, width: int = 392):
 
     # Ensuite, pour tester, juste déplacer le: main(page) → Affichera l'import juste avant
 
-    from fletx_tuto.lv00 import main  # Simple counter Flet sans réactivité → OK
-    # main(page)
-    from fletx_tuto.lv01 import main  # Counter avec RxInt + obx (réactivité auto) → OK
+    # from fletx_tuto.lv00 import main  # Simple counter Flet sans réactivité
+    # from fletx_tuto.lv01 import main  # Counter avec RxInt + obx (réactivité auto)
 
-    from fletx_tuto.lv02 import main  # Usage du 'vrai' FletX 'la lib...) → Snif
+    # lv02 dépend d'une API legacy (Xapp) absente selon la version de fletx installée.
+    # ❌ 2fix from fletx_tuto.lv02 import main  # type: ignore[assignment]
+
+    # lv03 peut ne pas exposer un symbole `main` suivant la variante du tuto.
+    from fletx_tuto.lv03_routing import run_app as main  # Routing avec ModuleRouter + @register_router
+    main()
+
+    #################################### Dev ###################################
+
+    from devs.lv00_dev import dev as main
+
+    # main(page)
 
     if not page.controls:
         page.add(

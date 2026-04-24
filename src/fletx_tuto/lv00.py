@@ -6,12 +6,12 @@ def main(page: ft.Page) -> None:
     page.title = "#00 | FletX Tuto"
 
     count = 0
-    txt = ft.Text(value=f"LV00 \n\nCount: {count}", size=24, weight=ft.FontWeight.BOLD)
+    txt = ft.Text(value=f"LV00\n\nCount: {count}", size=24, weight=ft.FontWeight.BOLD)
 
     def increment(_: ft.Event[ft.Button]) -> None:
         nonlocal count
         count += 1
-        txt.value = f"LV00 \n\nCount: {count}"
+        txt.value = f"LV00\n\nCount: {count}"
         page.update()
 
     page.add(

@@ -17,11 +17,8 @@ dependencies = [
     "flet==0.84.0",
     "pymox_kit",
     "tabulate",
-    "yt-dlp",
+    "yt_dlp",
 ]
-
-# [project.optional-dependencies]
-# dev = ["flet[all]"]
 
 # Optional deps
 [project.optional-dependencies]

@@ -13,12 +13,12 @@ from fletx_mini_local.decorators import obx
 
 
 def main(page: ft.Page) -> None:
-    page.title = "#01 | FletX7 Tuto"
+    page.title = "#01 | FletX Tuto"
 
     count = RxInt(0)
     counter_text = obx(
         lambda: ft.Text(
-            value=f"LV01a \n\nCounto: {count.value}",
+            value=f"LV01\n\nCount: {count.value}",
             size=24,
             weight=ft.FontWeight.BOLD,
         )
