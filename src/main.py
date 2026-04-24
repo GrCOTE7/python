@@ -13,7 +13,7 @@ async def main(page: ft.Page, width: int = 392):
     # gc7(page, mode="LIGHT", width=width)
     # 1520 → à droite écran 1 si défini - 1912 à gche écran 2 si indéfini
 
-    # left = 1520
+    # left = 1520 # Ligne à commenter pour avoir l'app sur écran #2
 
     gc7(page, left=1520 if "left" in locals() else 1912)
 
@@ -120,42 +120,67 @@ async def main(page: ft.Page, width: int = 392):
     from examples.lv30_solitaire import main  # GestureDetector (on_tap)
     from examples.lv31_solitaire import main  # drag a card
     from examples.lv32_solitaire import main  # drag to slot
+
     # gc7(page, mode="LIGHT", width=976)  # 976 pour // 2 l'écran de droite
-    from examples.lv33_solitaire import main  # drag a card on a slot else return back position
+    from examples.lv33_solitaire import (
+        main,
+    )  # drag a card on a slot else return back position
+
     # drag 2 cards with pans
     from examples.lv34_solitaire import main
+
     # drop in 3 slots
     from examples.lv35_solitaire import main
+
     # Classes for better code structure (POO)
     from examples.lv36_main import main
+
     # Fanned cards piles (Piles en éventail)
     from examples.lv37_main import main
+
     # Solitaire setup
     from examples.lv38_main import main
+
     # * [/] Solitaire general rules
     from examples.lv39_main import main
+
     # main(page)
     #
-    
+
     ################################## CookBook ################################
-    from cookbook.main import main # Une série ~30 exemples classés par thème
+    from cookbook.main import main  # Une série ~30 exemples classés par thème
+
     # (CRUD, Async, PubSub, Routing, etc.)
     # gc7(page, "LIGHT", width=976)
-    main(page)
+    # ❌ Finir de Vérif les cookbooks en les réactivant 1 à 1
+    # main(page)
     #
 
     # ❌ Cf. fin de tuto + Étudier le seul qui corrige le pb de double clic → Le comprendre complètement à la fin - D:\flet_doc\sdk\python\examples\tutorials\solitaire_declarative\solitaire-final\main.py
 
     from devs.lv00_dev import dev as main
+    main(page)
+
     # * [ ]
     # main(page)
 
     ################################### FLETX ##################################
 
-    # from fletx_tuto.lv00 import main
+    # Pour tester rapidement:
+    # À considérer : PY3.13.13 - Flet 0.84.0 - FletX 0.2.0
+    # Fork du GH (Git clone https://github.com/GrCOTE7/python Py)
+    # → Clone en local de VOTRE repo → Un dossier Py/ (Là où vous avez lancé)
+    # À la racine (Py/) : Si vous êtes sous Win: ./go + enter
+    # Et sinon: uv run --active run flet -r
+    # Régler la ligne 16 si la résolution de votre écran n'est pas 1920x1080 (ex: 2560x1440 → left=2000) pour que la fenêtre s'ouvre sur le bon écran, et si pas 2 écrans, la commenter pour avoir le rendu de la fenêtre de l'app à droite de votre écran principal
+
+    # Ensuite, pour tester, juste déplacer le: main(page) → Affichera l'import juste avant
+
+    from fletx_tuto.lv00 import main  # Simple counter Flet sans réactivité → OK
     # main(page)
-    # from fletx_tuto.lv01 import main
-    # from fletx_tuto.lv02 import main
+    from fletx_tuto.lv01 import main  # Counter avec RxInt + obx (réactivité auto) → OK
+
+    from fletx_tuto.lv02 import main  # Usage du 'vrai' FletX 'la lib...) → Snif
 
     if not page.controls:
         page.add(

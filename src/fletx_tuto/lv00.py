@@ -1,24 +1,32 @@
 import flet as ft
+from typing import cast
 
 
 def main(page: ft.Page) -> None:
-    page.title = "FletX Tuto - lv01"
+    page.title = "#00 | FletX Tuto"
 
     count = 0
-    txt = ft.Text(value=f"Count: {count}", size=24, weight=ft.FontWeight.BOLD)
+    txt = ft.Text(value=f"LV00 \n\nCount: {count}", size=24, weight=ft.FontWeight.BOLD)
 
-    def increment(_: ft.ControlEvent) -> None:
+    def increment(_: ft.Event[ft.Button]) -> None:
         nonlocal count
         count += 1
-        txt.value = f"Count: {count}"
+        txt.value = f"LV00 \n\nCount: {count}"
         page.update()
 
     page.add(
         ft.Column(
-            controls=[
-                txt,
-                ft.ElevatedButton("Increment", on_click=increment),
-            ],
+            controls=cast(
+                list[ft.Control],
+                [
+                    txt,
+                    ft.Button("Increment", on_click=increment),
+                ],
+            ),
             tight=True,
         )
     )
+
+
+if __name__ == "__main__":
+    ft.run(main, view=ft.AppView.WEB_BROWSER, host="127.0.0.1", port=8550)
