@@ -177,9 +177,9 @@ async def main(page: ft.Page, width: int = 392):
     # lv02 dépend d'une API legacy (Xapp) absente selon la version de fletx installée.
     # ❌ 2fix from fletx_tuto.lv02 import main  # type: ignore[assignment]
 
-    # lv03 peut ne pas exposer un symbole `main` suivant la variante du tuto.
-    from fletx_tuto.lv03_routing import run_app as main  # Routing avec ModuleRouter + @register_router
-    main()
+    # lv03 routing initialise des vues (page.views), pas forcement page.controls.
+    from fletx_tuto.lv03_routing import main  # Routing
+    await main(page)
 
     #################################### Dev ###################################
 
@@ -187,7 +187,7 @@ async def main(page: ft.Page, width: int = 392):
 
     # main(page)
 
-    if not page.controls:
+    if not page.controls and not page.views:
         page.add(
             ft.Row(
                 alignment=ft.MainAxisAlignment.CENTER,
