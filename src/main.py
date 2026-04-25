@@ -179,6 +179,10 @@ async def main(page: ft.Page, width: int = 392):
 
     # lv03 routing initialise des vues (page.views), pas forcement page.controls.
     from fletx_tuto.lv03_routing import main  # Routing
+    #
+    from fletx_tuto.my_project.main import main  # fletx new my_project           # Create a new project
+        # fletx generate controller Home # Add a controller
+        #fletx run --web --watch        # Run with hot reload
     await main(page)
 
     #################################### Dev ###################################

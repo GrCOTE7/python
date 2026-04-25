@@ -1,0 +1,13 @@
+[project]
+name = "my_project"
+version = "0.1.0"
+description = "None"
+readme = "README.md"
+authors = [{ name = "Developer", email = "" }]
+requires-python = ">=3.12"
+
+# Dependencies
+dependencies = [
+    "fletxr==0.1.4",
+    "flet==0.28.3",
+]
