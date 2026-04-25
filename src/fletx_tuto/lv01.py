@@ -33,7 +33,7 @@ def main(page: ft.Page) -> None:
                 list[ft.Control],
                 [
                     counter_text(),
-                    ft.Button("Incarement", on_click=increment),
+                    ft.Button("Increment", on_click=increment),
                 ],
             ),
             tight=True,

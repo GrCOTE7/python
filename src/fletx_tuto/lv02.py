@@ -1,74 +1,85 @@
 """
-lv02 — fletx 0.2.0 (vrai package)
-Paradigme: Xstate (état partagé) + Xview (vue/page) + Xapp (routeur).
-Différence vs lv01: plus de RxInt/obx; la réactivité est manuelle
-(on stocke la ref du contrôle et on appelle state.update()).
+lv02 — fletx 0.1.4+ compatible (avec flet 0.84.0)
+Paradigme: FletXController + RxInt + listen (UI pilotee par l'etat).
 """
 
 import flet as ft
-from typing import cast
-from fletx import Xapp, Xstate, Xview, route
+
+from fletx.core import FletXController, RxInt
 
 
-# ── État ──────────────────────────────────────────────────────────────────────
-class CounterState(Xstate):
-    def __init__(self, page: ft.Page) -> None:
-        super().__init__(page)
-        self.count: int = 0
+class CounterController(FletXController):
+    """Etat reactif du compteur."""
+
+    count = RxInt(0)
+
+    def increment(self) -> None:
+        self.count.increment()
+
+    def decrement(self) -> None:
+        self.count.decrement()
+
+    def reset(self) -> None:
+        self.count.set(0)
 
 
-# ── Vue ───────────────────────────────────────────────────────────────────────
-class CounterView(Xview):
-    @property
-    def _cstate(self) -> CounterState:
-        return cast(CounterState, self.state)
-
-    def init(self) -> None:
-        # init() est appelé par Xview.__init__ — on prépare les contrôles ici
-        self._txt = ft.Text(
-            value=f"Count: {self._cstate.count}",
-            size=24,
-            weight=ft.FontWeight.BOLD,
-        )
-
-    def _increment(self, _: ft.Event[ft.Button]) -> None:
-        self._cstate.count += 1
-        self._txt.value = f"Count: {self._cstate.count}"
-        self._cstate.update()
-
-    def build(self) -> ft.View:
-        return ft.View(
-            route="/",
-            controls=cast(
-                list[ft.BaseControl],
-                [
-                    ft.Column(
-                        controls=cast(
-                            list[ft.Control],
-                            [
-                                self._txt,
-                                ft.ElevatedButton(
-                                    "Increment",
-                                    on_click=self._increment,
-                                ),
-                            ],
-                        ),
-                        tight=True,
-                    )
-                ],
-            ),
-        )
-
-
-# ── Point d'entrée ────────────────────────────────────────────────────────────
 def main(page: ft.Page) -> None:
     page.title = "#02 | FletX Tuto"
-    Xapp(
-        page=page,
-        routes=cast(list, [route("/", cast(Xview, CounterView))]),  # type: ignore[arg-type]
-        state=cast(Xstate, CounterState),
-        init_route="/",
+
+    ctrl = CounterController()
+    counter_text = ft.Text(
+        value="LV02\n\nCount: 0",
+        size=24,
+        weight=ft.FontWeight.BOLD,
     )
+    status_text = ft.Text(value="Etat: neutre", color=ft.Colors.GREY_700)
+
+    def sync_from_state() -> None:
+        value = ctrl.count.value
+        counter_text.value = f"LV02\n\nCount: {value}"
+        if value > 0:
+            status_text.value = "Etat: positif"
+            status_text.color = ft.Colors.GREEN_700
+        elif value < 0:
+            status_text.value = "Etat: negatif"
+            status_text.color = ft.Colors.RED_700
+        else:
+            status_text.value = "Etat: neutre"
+            status_text.color = ft.Colors.GREY_700
+        # Optionnel: reactiver page.update() si l'etat est modifie
+        # hors evenement UI Flet (timer, thread, callback async externe).
+        # page.update()
+
+    count_observer = ctrl.count.listen(sync_from_state)
+    sync_from_state()
+
+    def on_disconnect(_: ft.Event[ft.Page]) -> None:
+        count_observer.dispose()
+
+    page.on_disconnect = on_disconnect
+
+    page.add(
+        ft.Column(
+            controls=[
+                counter_text,
+                status_text,
+                ft.Row(
+                    controls=[
+                        ft.Button("-1", on_click=lambda _: ctrl.decrement()),
+                        ft.Button("Reset", on_click=lambda _: ctrl.reset()),
+                        ft.Button("+1", on_click=lambda _: ctrl.increment()),
+                    ],
+                    tight=True,
+                ),
+                ft.Button(
+                    "+5",
+                    on_click=lambda _: ctrl.count.increment(5),
+                ),
+            ],
+            tight=True,
+        )
+    )
+
 
 if __name__ == "__main__":
     ft.run(main, view=ft.AppView.WEB_BROWSER)

@@ -171,23 +171,36 @@ async def main(page: ft.Page, width: int = 392):
 
     # Ensuite, pour tester, juste déplacer le: main(page) → Affichera l'import juste avant
 
-    # from fletx_tuto.lv00 import main  # Simple counter Flet sans réactivité
-    # from fletx_tuto.lv01 import main  # Counter avec RxInt + obx (réactivité auto)
+    from fletx_tuto.lv00 import main  # Simple counter Flet sans réactivité
+
+    # main(page)
+    from fletx_tuto.lv01 import main  # Counter avec RxInt + obx (réactivité auto)
+
+    # main(page)
 
     # lv02 dépend d'une API legacy (Xapp) absente selon la version de fletx installée.
-    # ❌ 2fix from fletx_tuto.lv02 import main  # type: ignore[assignment]
+    from fletx_tuto.lv02 import main  # type: ignore[assignment]
 
-    # lv03 routing initialise des vues (page.views), pas forcement page.controls.
-    from fletx_tuto.lv03_routing import main  # Routing
+    # main(page)
     #
-    from fletx_tuto.my_project.main import main  # fletx new my_project           # Create a new project
-        # fletx generate controller Home # Add a controller
-        #fletx run --web --watch        # Run with hot reload
+    # lv03 routing initialise des vues (page.views), pas forcement page.controls.
+    from fletx_tuto.lv03_routing import main  # Routing + dynamic footer
+
+    # await main(page)
+    #
+    from fletx_tuto.lv04 import main  # Routing + dynamic footer
+
+    # gc7(page, "LIGHT")
     await main(page)
+    #
+    # from fletx_tuto.my_project.main import main  # fletx new my_project           # Create a new project
+    # fletx generate controller Home # Add a controller
+    # fletx run --web --watch        # Run with hot reload
 
     #################################### Dev ###################################
 
     from devs.lv00_dev import dev as main
+
     # main(page)
 
     if not page.controls and not page.views:

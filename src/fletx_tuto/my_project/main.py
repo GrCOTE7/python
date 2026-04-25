@@ -43,8 +43,8 @@ async def main(page: ft.Page):
         dark_theme=dark_theme,
         theme_mode=ft.ThemeMode.SYSTEM,
         window_config={
-            "width": 400,
-            "height": 810,
+            # "width": 400,
+            # "height": 810,
             "resizable": True,
             "maximizable": True,
         },
