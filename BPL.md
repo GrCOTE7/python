@@ -1,5 +1,7 @@
 # BPL Quotidien (Une lecon - ISC - 2mnPy - BdC - Graven - Jordy + Indently - Fooxpy)
 
+## Bilan
+
 |   Id  | Auteur |     Vues    |    2c    | N & Tps  |   Vus    |    %   |
 |------:|:------:|------------:|---------:|---------:|---------:|-------:|
 |     4 | SriEdy |    1 197 386 |      254 |      598 |      344 |  57.5% |
@@ -18,9 +20,9 @@
 |       |        |             |          |          |          |        |
 |       |        |             |    20:54 |    21:16 |    00:22 |   1.7% |
 |       |        |             |          |          |          |        |
-|     7 | Gravn  |   26 919 287 |       95 |      177 |       82 |  46.3% |
+|     7 | Gravn  |   26 921 753 |       96 |      178 |       82 |  46.1% |
 |       |        |             |          |          |          |        |
-|       |        |             |    26:56 |    49:54 |    22:58 |  46.0% |
+|       |        |             |    27:10 |    50:09 |    22:58 |  45.8% |
 |       |        |             |          |          |          |        |
 |    18 | Jordy  |      365 211 |      193 |      201 |        8 |   4.0% |
 |       |        |             |          |          |          |        |
@@ -30,13 +32,13 @@
 |       |        |             |          |          |          |        |
 |       |        |             |    90:55 |   114:12 |    23:16 |  20.4% |
 |       |        |             |          |          |          |        |
-|    21 | Foxxy  |      806 361 |      312 |      319 |        7 |   2.2% |
+|    21 | Foxxy  |      806 361 |      311 |      319 |        8 |   2.5% |
 |       |        |             |          |          |          |        |
-|       |        |             |    65:41 |    66:49 |    01:08 |   1.7% |
+|       |        |             |    65:34 |    66:49 |    01:15 |   1.9% |
 |       |        |             |          |          |          |        |
-|     8 | TOTAL  |   58 488 774 |     1 850 |     2 522 |      672 |  26.6% |
+|     8 | TOTAL  |   58 491 240 |     1 850 |     2 523 |      673 |  26.7% |
 |       |        |             |          |          |          |        |
-|       |        |             |   362:02 |   487:09 |   125:05 |  25.7% |
+|       |        |             |   362:09 |   487:24 |   125:12 |  25.7% |
 
 ## 1 IN Auteur **[sriedynurcahyo3894](https://www.youtube.com/@sriedynurcahyo3894/videos)** ( **598** videos - 1 197 386 vues - 116 heures et 42 minutes )
 
@@ -1101,9 +1103,9 @@
 
 * [x] [17/02/2022 **Comment interroger une base de données en SQL** 3 338 **22:11**](https://www.youtube.com/watch?v=pBPaPwyjLiQ)
 
-## 5 FR Auteur **[Gravenilvectuto](https://www.youtube.com/@Gravenilvectuto/videos)** ( **177** videos - 26 919 287 vues - 49 heures et 54 minutes )
+## 5 FR Auteur **[Gravenilvectuto](https://www.youtube.com/@Gravenilvectuto/videos)** ( **178** videos - 26 921 753 vues - 50 heures et 9 minutes )
 
-### Pas vus (95 - 26 heures et 56 minutes)
+### Pas vus (96 - 27 heures et 10 minutes)
 
 * [ ] [17/03/2026 **J'organise mon salon à Paris la defense - Asynconf 2026** 1 108 **04:57**](https://www.youtube.com/watch?v=xP47FjwMYn4)
 * [ ] [17/02/2026 **Créer son site en Python avec Django - Initiation** 11 361 **01:15:30**](https://www.youtube.com/watch?v=hrdZ-lT_i3A)
@@ -1200,6 +1202,7 @@
 * [ ] [07/05/2018 **APPRENDRE LE PYTHON #2 ? LES VARIABLES** 1 059 375 **10:50**](https://www.youtube.com/watch?v=nvyX8JfoOWY)
 * [ ] [07/05/2018 **APPRENDRE LE PYTHON #1 ? LES BASES & PREREQUIS** 2 962 579 **09:27**](https://www.youtube.com/watch?v=psaDHhZ0cPs)
 * [ ] [10/02/2018 **COMMENT DEVENIR DEVELOPPEUR ENTREPRENEUR ? (Salon des Entrepreneurs 2018)** 13 084 **06:39**](https://www.youtube.com/watch?v=9kroKtvqB8Y)
+* [ ] [23/04/2026 **CE SALON DEV EST INCROYABLE ! (DEVOXX 2026)** 2 466 **14:23**](https://www.youtube.com/watch?v=X90vRM4HwO0)
 
 ### Vus (82 - 22 heures et 58 minutes)
 
@@ -2299,7 +2302,7 @@
 
 ## 8 FR Maths Auteur **[foxxpy](https://www.youtube.com/@foxxpy/videos)** ( **319** videos - 806 361 vues - 66 heures et 49 minutes )
 
-### Pas vus (312 - 65 heures et 41 minutes)
+### Pas vus (311 - 65 heures et 34 minutes)
 
 * [ ] [03/11/2022 **[Maths - 6ème] - Critères de divisibilité par 9 - 25 exercices corrigés** 753 **07:32**](https://www.youtube.com/watch?v=5FspXw3J_Es)
 * [ ] [20/10/2022 **[Maths - 6ème] - Critères de divisibilité par 7 - 25 exercices corrigés** 552 **10:19**](https://www.youtube.com/watch?v=E4Bqa_NVayE)
@@ -2612,10 +2615,10 @@
 * [ ] [13/11/2019 **[Codingame - Puzzle moyen] - 1. Shadows of the Knight [Python3]** 10 114 **12:20**](https://www.youtube.com/watch?v=uHhJExSU7uE)
 * [ ] [11/11/2019 **[Python] - Résoudre 'pip' n'est pas reconnu en tant que commande interne sur Windows 10** 51 040 **01:31**](https://www.youtube.com/watch?v=pjCWtppLN3k)
 * [ ] [10/11/2019 **[Codingame - Puzzle facile] - 7. Ascii Art [Python3]** 6 022 **15:15**](https://www.youtube.com/watch?v=4dFZRQKRCVQ)
-* [ ] [09/11/2019 **[Algorithme] - 14. Tri à bulles [Python3]** 12 441 **07:34**](https://www.youtube.com/watch?v=48KD2VnKeg4)
 
-### Vus (7 - 1 heure et 8 minutes)
+### Vus (8 - 1 heure et 15 minutes)
 
+* [x] [09/11/2019 **[Algorithme] - 14. Tri à bulles [Python3]** 12 441 **07:34**](https://www.youtube.com/watch?v=48KD2VnKeg4)
 * [x] [04/11/2019 **[Algorithme] - 13. Échanger les valeurs de 2 variables [Python]** 4 332 **03:02**](https://www.youtube.com/watch?v=pY9w0CEx65I)
 * [x] [03/11/2019 **[Codingame - Puzzle facile] - 6. Chevaux de course [Python3]** 2 640 **10:16**](https://www.youtube.com/watch?v=B4v9s5Fu2eI)
 * [x] [30/10/2019 **[Codingame - Puzzle facile] - 5. Défibrillateurs [Python3]** 1 282 **08:24**](https://www.youtube.com/watch?v=UkTuIft8Uuw)

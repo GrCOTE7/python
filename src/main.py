@@ -188,10 +188,9 @@ async def main(page: ft.Page, width: int = 392):
 
     # await main(page)
     #
-    from fletx_tuto.lv04 import main  # Routing + dynamic footer
-
-    # gc7(page, "LIGHT")
-    await main(page)
+    from fletx_tuto.lv04 import main  # FletXr[all]]
+    # * [/] FletXr[all]]
+    # await main(page)
     #
     # from fletx_tuto.my_project.main import main  # fletx new my_project           # Create a new project
     # fletx generate controller Home # Add a controller
