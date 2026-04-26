@@ -33,9 +33,11 @@ def CounterView(counter: Counter):
             ),
             ft.Divider(color=ft.Colors.LIGHT_GREEN_ACCENT_400, thickness=2),
             ft.Text(f"Compteur = {counter.value}", size=24),
-            ft.Button("Incrémenter", on_click=increment),
+            ft.Button("Incrémenter", on_click=increment, disabled=not editing),
             ft.Button(
-                "Mode édition: " + ("ON" if editing else "OFF"), on_click=toggle_edit
+                "Mode édition: " + ("ON" if editing else "OFF"),
+                on_click=toggle_edit,
+                color=ft.Colors.GREEN if editing else ft.Colors.RED,
             ),
         ]
     )

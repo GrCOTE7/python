@@ -13,7 +13,6 @@ def main(page: ft.Page):
     # gc7(page, mode='LIGHT')
     page.add(
         ft.Column(
-            expand=True,
             spacing=0,
             controls=[
                 ft.Text(title, size=18, weight=ft.FontWeight.BOLD),
@@ -24,14 +23,14 @@ def main(page: ft.Page):
             ],
         )
     )
-    page.scroll = ft.ScrollMode.AUTO
+    # page.scroll = ft.ScrollMode.AUTO
+    page.scroll = None
     page.horizontal_alignment = ft.CrossAxisAlignment.STRETCH
     # page.spacing = 20
     # page.bgcolor = ft.Colors.GREEN_900
 
     lvs = []
     renderers: list[Callable[[], object]] = []
-
 
     # lvs.append(Lv00("Salut !"))  # Simple class with a custom text
     # lvs.append(Lv00())  # Simple class with a custom text
@@ -43,9 +42,8 @@ def main(page: ft.Page):
     # lvs.append(Lv05())  # Row, Column, Container, Safearea, Stack
     # lvs.append(Lv06())  # ResponsiveRow
     # lvs.append(Lv07())  # Shadow & Action - Joli btn
-    lvs.append(Lv08())  # A container in another
+    # lvs.append(Lv08())  # A container in another
     #
-    # ❌ Vérif les cookbooks en les réactivant 1 à 1
     # lvs.append(Lv09(page))  # Fonts
     #
     # lvs.append(Lv10())  # .env
@@ -54,13 +52,13 @@ def main(page: ft.Page):
     #
     # lvs.append(Lv12(page))  # Imperative CRUD
     # renderers.append(lambda: Lv13(page))  # Declarative CRUD (uses page.render)
-    # renderers.append(lambda: Lv14(page))  # Declarative CRUD (uses page.render)
+    # renderers.append(lambda: Lv14(page))  # Declarative CRUD (uses page.render) + Dynamic Edit Btn
     #
     # lvs.append(Lv15())  # Drag & Drop
     # lvs.append(Lv16(page)) # Keyboard Shotcuts
     #
-    # lvs.append(Lv17(page))  # Async
-    # lvs.append(Lv18())  # Countdowns
+    # lvs.append(Lv17(page))  # Async Msgs
+    # lvs.append(Lv18())  # Async Countdowns
     #
     # lvs.append(Lv19())  # Large list
     # lvs.append(Lv20())  # Large list - Simplier Chargement par lots)
@@ -73,6 +71,7 @@ def main(page: ft.Page):
     # lvs.append(Lv25(page))  # Routing & Navigation
     # lvs.append(Lv26(page))  # Idem Lv25 mais page dans fichiers séparés
     # lvs.append(Lv27(page))  # Confirm pop (pour back)
+    #
     # lvs.append(Lv28(page))  # Simple drawer (Menu Burger)
     # lvs.append(Lv29(page))  # Simple drawer + Navigation
     # lvs.append(Lv30(page))  # Route templates (parameterized routes)
@@ -82,7 +81,7 @@ def main(page: ft.Page):
     page.adaptive = True  # Optimize iOS et Android platforms
     # lvs.append(Lv31(page))  # Adaptive apps
     #
-    # lvs.append(Lv32())  # DataTable sortable
+    lvs.append(Lv32())  # DataTable sortable
 
     # gc7(page, mode='LIGHT')
     # gc7(page, width=500)

@@ -802,8 +802,9 @@ class Lv17(ft.Container):  # Async
             return
         print("Task NON démarrée...")
         self._task_started = True
-        page = cast(ft.Page, self.page)
-        page.run_task(self.main, page)
+        page = self.page
+        if isinstance(page, ft.Page):
+            page.run_task(self.main, page)
 
     async def main(self, page: ft.Page):
         self.page_resize(page)
@@ -832,8 +833,9 @@ class Countdown(ft.Text):
 
     def did_mount(self):
         self.running = True
-        page = cast(ft.Page, self.page)
-        page.run_task(self.update_timer)
+        page = self.page
+        if isinstance(page, ft.Page):
+            page.run_task(self.update_timer)
 
     def will_unmount(self):
         self.running = False
@@ -848,7 +850,7 @@ class Countdown(ft.Text):
             self.seconds -= 1
 
 
-class Lv18(ft.Container):  # Countdown
+class Lv18(ft.Container):  # Async Countdowns
 
     def __init__(self):
         self.message = ft.Text(
@@ -1172,8 +1174,9 @@ class Lv22(
         # Affiche vite un premier écran de lignes.
         self.append_batch(self.initial_batch)
 
-        page = cast(ft.Page, self.page)
-        page.run_task(self.load_items)
+        page = self.page
+        if isinstance(page, ft.Page):
+            page.run_task(self.load_items)
 
     def will_unmount(self):
         self._alive = False

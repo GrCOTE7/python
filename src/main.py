@@ -147,7 +147,6 @@ async def main(page: ft.Page, width: int = 392):
     #
     ################################## CookBook ################################
 
-    # # ❌ Finir de Vérif les cookbooks en les réactivant 1 à 1
     # # (CRUD, Async, PubSub, Routing, etc.)
     from cookbook.main import main  # Une série ~30 exemples classés par thème
 
