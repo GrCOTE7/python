@@ -232,12 +232,12 @@ class Lv04(ft.Container):  # 3 blocs in a stack with different expand values and
 class Lv05(ft.Container):  # Row, Column, Container, Safearea, Stack
 
     def __init__(self):
-        content = self.mySerie()
+        content = self.myCard()
+        # content = self.mySerie()
         super().__init__(content=content)
 
-    def myCard(self, myLabel: str = ""):
+    def myCard(self, myLabel: str = "Label"):
         return ft.Card(
-            shape=ft.ContinuousRectangleBorder(radius=10),
             content=ft.Container(
                 padding=ft.Padding.symmetric(horizontal=7, vertical=-3),
                 border_radius=ft.BorderRadius.all(4),
@@ -352,15 +352,12 @@ class Lv08(ft.Container):  # A container in another
 
     def __init__(self):
         super().__init__(
-            content=self.myLv08(),
-            # alignment=ft.Alignment.CENTER,
-            # alignment=ft.Alignment(0, -1),
-            # alignment=ft.Alignment(0, 1),
-            alignment=ft.Alignment(1, 1),
-            bgcolor=ft.Colors.RED,
-            width=392,
-            height=984,  # 984
+            expand=True,
             padding=ft.Padding.symmetric(horizontal=8, vertical=13),
+            bgcolor=ft.Colors.RED,
+            border_radius=ft.BorderRadius.all(10),
+            alignment=ft.Alignment(1, 1),
+            content=self.myLv08(),
         )
 
     def myLv08(self):

@@ -8,11 +8,12 @@ from .lvAll import *
 def main(page: ft.Page):
     print(f"Dans src/main → {page.route = }")
     title = "Cookbook"
-    gc7(page, defaultColors=False)
+    # gc7(page, defaultColors=False)
     page.title = title.replace("-", "|")
     # gc7(page, mode='LIGHT')
     page.add(
         ft.Column(
+            expand=True,
             spacing=0,
             controls=[
                 ft.Text(title, size=18, weight=ft.FontWeight.BOLD),
@@ -33,8 +34,7 @@ def main(page: ft.Page):
 
 
     # lvs.append(Lv00("Salut !"))  # Simple class with a custom text
-    # ❌ Vérif les cookbooks en les réactivant 1 à 1
-    lvs.append(Lv00())  # Simple class with a custom text
+    # lvs.append(Lv00())  # Simple class with a custom text
     #
     # lvs.append(Lv01())  # Form with a text field and a button
     # lvs.append(Lv02())  # 3 blocs in a row with different expand values and colors
@@ -42,9 +42,10 @@ def main(page: ft.Page):
     # lvs.append(Lv04())  # 3 blocs in a stack with different expand values and colors
     # lvs.append(Lv05())  # Row, Column, Container, Safearea, Stack
     # lvs.append(Lv06())  # ResponsiveRow
-    # lvs.append(Lv07())  # Shadow & Action
-    # lvs.append(Lv08())  # A container in another
+    # lvs.append(Lv07())  # Shadow & Action - Joli btn
+    lvs.append(Lv08())  # A container in another
     #
+    # ❌ Vérif les cookbooks en les réactivant 1 à 1
     # lvs.append(Lv09(page))  # Fonts
     #
     # lvs.append(Lv10())  # .env

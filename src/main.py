@@ -13,7 +13,7 @@ async def main(page: ft.Page, width: int = 392):
     # gc7(page, mode="LIGHT", width=width)
     # 1520 → à droite écran 1 si défini - 1912 à gche écran 2 si indéfini
 
-    left = 1520 # Ligne à commenter pour avoir l'app sur écran #2
+    left = 1520  # Ligne à commenter pour avoir l'app sur écran #2
 
     gc7(page, left=1520 if "left" in locals() else 1912)
 
@@ -143,32 +143,21 @@ async def main(page: ft.Page, width: int = 392):
 
     # # * [/] Solitaire general rules
     # from examples.lv39_main import main
-
     # # main(page)
-    # #
+    #
+    ################################## CookBook ################################
 
-    # ################################## CookBook ################################
-    # from cookbook.main import main  # Une série ~30 exemples classés par thème
-
-    # # (CRUD, Async, PubSub, Routing, etc.)
-    # # gc7(page, "LIGHT", width=976)
     # # ❌ Finir de Vérif les cookbooks en les réactivant 1 à 1
-    # # main(page)
+    # # (CRUD, Async, PubSub, Routing, etc.)
+    from cookbook.main import main  # Une série ~30 exemples classés par thème
+
+    # gc7(page, "LIGHT", width=976)
+    main(page)
     # #
 
     # # ❌ Cf. fin de tuto + Étudier le seul qui corrige le pb de double clic → Le comprendre complètement à la fin - D:\flet_doc\sdk\python\examples\tutorials\solitaire_declarative\solitaire-final\main.py
 
-    # ################################### FLETX ##################################
-
-    # # Pour tester rapidement:
-    # # À considérer : PY3.13.13 - Flet 0.84.0 - FletX 0.2.0
-    # # Fork du GH (Git clone https://github.com/GrCOTE7/python Py)
-    # # → Clone en local de VOTRE repo → Un dossier Py/ (Là où vous avez lancé)
-    # # À la racine (Py/) : Si vous êtes sous Win: ./go + enter
-    # # Et sinon: uv run --active run flet -r
-    # # Régler la ligne 16 si la résolution de votre écran n'est pas 1920x1080 (ex: 2560x1440 → left=2000) pour que la fenêtre s'ouvre sur le bon écran, et si pas 2 écrans, la commenter pour avoir le rendu de la fenêtre de l'app à droite de votre écran principal
-
-    # # Ensuite, pour tester, juste déplacer le: main(page) → Affichera l'import juste avant
+    ################################### FLETX ##################################
 
     # from fletx_tuto.lv00 import main  # Simple counter Flet sans réactivité
 
@@ -182,14 +171,15 @@ async def main(page: ft.Page, width: int = 392):
 
     # # main(page)
     # #
-    # # lv03 routing initialise des vues (page.views), pas forcement page.controls.
+    # lv03 routing initialise des vues (page.views), pas forcement page.controls.
     # from fletx_tuto.lv03_routing import main  # Routing + dynamic footer
+    # await main(page)
 
     # # await main(page)
     # #
-    # from fletx_tuto.lv04 import main  # FletXr[all]]
     # # * [/] FletXr[all]]
-    # # await main(page)
+    # from fletx_tuto.lv04 import main  # FletXr[all]
+    # await main(page)
     # #
     # # from fletx_tuto.my_project.main import main  # fletx new my_project           # Create a new project
     # # fletx generate controller Home # Add a controller
@@ -197,8 +187,8 @@ async def main(page: ft.Page, width: int = 392):
 
     #################################### Dev ###################################
 
-    from devs.lv00_dev import main as main
-    main(page)
+    # from devs.lv00_dev import main as main
+    # main(page)
 
     if not page.controls and not page.views:
         page.add(
@@ -215,8 +205,18 @@ async def main(page: ft.Page, width: int = 392):
                 ],
             )
         )
-    
+
 
 if __name__ == "__main__":
     print(datetime.datetime.now().strftime("%H:%M:%S"), "> ")
     ft.run(main)
+
+# Pour tester rapidement:
+# À considérer : PY3.13.13 - Flet 0.84.0 - FletX 0.2.0
+# Fork du GH (Git clone https://github.com/GrCOTE7/python Py)
+# → Clone en local de VOTRE repo → Un dossier Py/ (Là où vous avez lancé)
+# À la racine (Py/) : Si vous êtes sous Win: ./go + enter
+# Et sinon: uv run --active run flet -r
+# Régler la ligne 16 si la résolution de votre écran n'est pas 1920x1080 (ex: 2560x1440 → left=2000) pour que la fenêtre s'ouvre sur le bon écran, et si pas 2 écrans, la commenter pour avoir le rendu de la fenêtre de l'app à droite de votre écran principal
+
+# Ensuite, pour tester, juste déplacer le: main(page) → Affichera l'import juste avant
