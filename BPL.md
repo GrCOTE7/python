@@ -1,7 +1,5 @@
 # BPL Quotidien (Une lecon - ISC - 2mnPy - BdC - Graven - Jordy + Indently - Fooxpy)
 
-## Bilan
-
 |   Id  | Auteur |     Vues    |    2c    | N & Tps  |   Vus    |    %   |
 |------:|:------:|------------:|---------:|---------:|---------:|-------:|
 |     4 | SriEdy |    1 197 386 |      254 |      598 |      344 |  57.5% |
@@ -1107,6 +1105,7 @@
 
 ### Pas vus (96 - 27 heures et 10 minutes)
 
+* [ ] [23/04/2026 **CE SALON DEV EST INCROYABLE ! (DEVOXX 2026)** 2 466 **14:23**](https://www.youtube.com/watch?v=X90vRM4HwO0)
 * [ ] [17/03/2026 **J'organise mon salon à Paris la defense - Asynconf 2026** 1 108 **04:57**](https://www.youtube.com/watch?v=xP47FjwMYn4)
 * [ ] [17/02/2026 **Créer son site en Python avec Django - Initiation** 11 361 **01:15:30**](https://www.youtube.com/watch?v=hrdZ-lT_i3A)
 * [ ] [06/02/2026 **J’ai créé une extension VS Code (et tu vas l’adorer)** 6 391 **05:27**](https://www.youtube.com/watch?v=eqhXSvV2QYc)
@@ -1202,7 +1201,6 @@
 * [ ] [07/05/2018 **APPRENDRE LE PYTHON #2 ? LES VARIABLES** 1 059 375 **10:50**](https://www.youtube.com/watch?v=nvyX8JfoOWY)
 * [ ] [07/05/2018 **APPRENDRE LE PYTHON #1 ? LES BASES & PREREQUIS** 2 962 579 **09:27**](https://www.youtube.com/watch?v=psaDHhZ0cPs)
 * [ ] [10/02/2018 **COMMENT DEVENIR DEVELOPPEUR ENTREPRENEUR ? (Salon des Entrepreneurs 2018)** 13 084 **06:39**](https://www.youtube.com/watch?v=9kroKtvqB8Y)
-* [ ] [23/04/2026 **CE SALON DEV EST INCROYABLE ! (DEVOXX 2026)** 2 466 **14:23**](https://www.youtube.com/watch?v=X90vRM4HwO0)
 
 ### Vus (82 - 22 heures et 58 minutes)
 
