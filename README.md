@@ -205,3 +205,9 @@ pip freeze > requirements.txt
 
 * Créer le requirements.txt selon les imports du projet :
 * pipreqs D:\langages\Python\Core\Py --ignore .venv --force --encoding=utf-8
+
+---
+
+Resources
+
+[ICONS](https://fonts.google.com/icons)

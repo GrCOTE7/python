@@ -143,12 +143,12 @@ def gc7_rules(
     if defaultColors:
         page.bgcolor = "#303030" if mode == "DARK" else "#EEEEEE"
 
-    if _is_mobile_platform(page):
-        # Respecte la safe area : status bar, encoche, barre de navigation système
-        m = page.media
-        page.padding = ft.Padding(
-            top=m.padding.top + 5,
-            bottom=m.padding.bottom + 5,
-            left=m.padding.left + 10,
-            right=m.padding.right + 10,
-        )
+    # if _is_mobile_platform(page):
+    #     # Respecte la safe area : status bar, encoche, barre de navigation système
+    #     m = page.media
+    #     page.padding = ft.Padding(
+    #         top=m.padding.top + 5,
+    #         bottom=m.padding.bottom + 5,
+    #         left=m.padding.left + 10,
+    #         right=m.padding.right + 10,
+    #     )

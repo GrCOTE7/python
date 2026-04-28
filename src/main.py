@@ -23,8 +23,13 @@ async def main(page: ft.Page, width: int = 392):
     # from basis.scroll_example import main
     # from basis.lv01_essai import essai as main
     # from basis.lv02 import main # Simple routing
-    from basis.lv03 import main # Simple routing
-    # from basis.lv99_ready import main # 
+    # from basis.lv03 import main # Routing with params (ex: /about/Lionel)
+    #
+    gc7(page, "LIGHT", left=1520) # 1912 pour écran #2 - Sinon 1520
+    from basis.lv04 import main  #
+
+    #
+    # from basis.lv99_ready import main #
 
     # from examples.lv04_calc_ui import calc as main  # Juste le design
     # from examples.lv05_calc_ui_reusable import calc as main  # Opérationnel
