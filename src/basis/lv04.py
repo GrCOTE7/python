@@ -217,16 +217,47 @@ def main(page: Page):
                             on_click=lambda _: print("Optimize Now!"),
                             content=Row(
                                 [
-                                    Icon(Icons.TOUCH_APP, color=Colors.LIGHT_GREEN_400, size=30),
+                                    Icon(
+                                        Icons.TOUCH_APP,
+                                        color=Colors.LIGHT_GREEN_400,
+                                        size=30,
+                                    ),
                                     Text(
                                         "Optimize Now!",
                                         size=30,
                                         # weight=FontWeight.BOLD,
                                         color=Colors.LIGHT_GREEN_400,
                                     ),
-                                ]
+                                ],
                             ),
-                        )
+                        ),
+                        TextButton(
+                            on_click=lambda _: print("Optimize Now!"),
+                            style=ButtonStyle(
+                                bgcolor="black",
+                                padding=Padding.symmetric(horizontal=21, vertical=10),
+                                shape=RoundedRectangleBorder(radius=30),
+                                side=BorderSide(3, Colors.LIGHT_GREEN_400),
+                                overlay_color=Colors.with_opacity(
+                                    0.2, Colors.LIGHT_GREEN_400
+                                ),
+                            ),
+                            content=Row(
+                                [
+                                    Icon(
+                                        Icons.TOUCH_APP,
+                                        color=Colors.LIGHT_GREEN_400,
+                                        size=30,
+                                    ),
+                                    Text(
+                                        "Optimize Now!",
+                                        size=30,
+                                        color=Colors.LIGHT_GREEN_400,
+                                    ),
+                                ],
+                                alignment=MainAxisAlignment.CENTER,
+                            ),
+                        ),
                     ],
                     alignment=MainAxisAlignment.CENTER,
                 ),
