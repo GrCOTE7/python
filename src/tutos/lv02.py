@@ -1,4 +1,4 @@
-from flet import *
+from flet import * # type: ignore[import] 
 
 # * [ ] [19/11/2022 **Flet tutorial design - Movie App Design** 7 302 **18:48**](https://www.youtube.com/watch?v=vsMBD_QXuDg)
 
