@@ -2,9 +2,9 @@
 
 |   Id  | Auteur |     Vues    |    2c    | N & Tps  |   Vus    |    %   |
 |------:|:------:|------------:|---------:|---------:|---------:|-------:|
-|     4 | SriEdy |    1 197 386 |      254 |      598 |      344 |  57.5% |
+|     4 | SriEdy |    1 197 386 |      247 |      598 |      351 |  58.7% |
 |       |        |             |          |          |          |        |
-|       |        |             |    52:59 |   116:42 |    63:43 |  54.6% |
+|       |        |             |    51:16 |   116:42 |    65:26 |  56.1% |
 |       |        |             |          |          |          |        |
 |    14 |  ISC   |    1 829 557 |      243 |      290 |       47 |  16.2% |
 |       |        |             |          |          |          |        |
@@ -18,34 +18,30 @@
 |       |        |             |          |          |          |        |
 |       |        |             |    20:54 |    21:16 |    00:22 |   1.7% |
 |       |        |             |          |          |          |        |
-|     7 | Gravn  |   26 921 753 |       96 |      178 |       82 |  46.1% |
+|     7 | Gravn  |   26 921 753 |       95 |      178 |       83 |  46.6% |
 |       |        |             |          |          |          |        |
-|       |        |             |    27:10 |    50:09 |    22:58 |  45.8% |
+|       |        |             |    26:56 |    50:09 |    23:12 |  46.3% |
 |       |        |             |          |          |          |        |
 |    18 | Jordy  |      365 211 |      193 |      201 |        8 |   4.0% |
 |       |        |             |          |          |          |        |
 |       |        |             |    70:09 |    80:23 |    10:14 |  12.7% |
 |       |        |             |          |          |          |        |
-|    20 | Indent |   25 544 142 |      620 |      796 |      176 |  22.1% |
+|    20 | Indent |   25 544 142 |      620 |      797 |      177 |  22.2% |
 |       |        |             |          |          |          |        |
-|       |        |             |    91:21 |   114:37 |    23:16 |  20.3% |
+|       |        |             |    91:22 |   114:48 |    23:26 |  20.4% |
 |       |        |             |          |          |          |        |
 |    21 | Foxxy  |      806 361 |      300 |      319 |       19 |   6.0% |
 |       |        |             |          |          |          |        |
 |       |        |             |    63:20 |    66:49 |    03:29 |   5.2% |
 |       |        |             |          |          |          |        |
-|     8 | TOTAL  |   58 498 650 |     1 841 |     2 525 |      684 |  27.1% |
+|     8 | TOTAL  |   58 498 650 |     1 833 |     2 526 |      693 |  27.4% |
 |       |        |             |          |          |          |        |
-|       |        |             |   360:21 |   487:49 |   127:26 |  26.1% |
+|       |        |             |   358:25 |   488:00 |   129:33 |  26.5% |
 
 ## 1 IN Auteur **[sriedynurcahyo3894](https://www.youtube.com/@sriedynurcahyo3894/videos)** ( **598** videos - 1 197 386 vues - 116 heures et 42 minutes )
 
-### Pas vus (254 - 52 heures et 59 minutes)
+### Pas vus (247 - 51 heures et 16 minutes)
 
-* [ ] [01/07/2025 **Flet Tutorial - FleetingViews Framework and shared data** 431 **12:09**](https://www.youtube.com/watch?v=Q9srpWaTP68)
-* [ ] [22/06/2025 **Flet Tutorial - FletX (GetX) simple Reactive and Routing** 775 **11:11**](https://www.youtube.com/watch?v=yYnd7uFKiYE)
-* [ ] [29/05/2025 **Flet Tutorial -  Google Maps Embed** 466 **02:57**](https://www.youtube.com/watch?v=Ppg_-xnVoUM)
-* [ ] [29/03/2025 **Flet Tutorial - Realtime App Simple** 680 **11:15**](https://www.youtube.com/watch?v=c8TaTDiefwI)
 * [ ] [29/01/2025 **Mesop Tutorial - Make Simple List Todos** 260 **09:41**](https://www.youtube.com/watch?v=TucUTIJeic0)
 * [ ] [27/01/2025 **Flet Tutorial - NeoState Routing Authentication Example** 306 **08:39**](https://www.youtube.com/watch?v=sx3I2V0fv8k)
 * [ ] [20/01/2025 **Flet Tutorial - FletX Inject_in_state** 679 **09:03**](https://www.youtube.com/watch?v=rthHQ-tSO44)
@@ -293,12 +289,13 @@
 * [ ] [07/12/2022 **Flet Tutorial -  Movie App Redesign** 2 022 **20:11**](https://www.youtube.com/watch?v=Yafykc3AzFg)
 * [ ] [06/12/2022 **Flet Tutorial - GITHUB LOGIN OAUTH** 357 **18:51**](https://www.youtube.com/watch?v=uvxh68PRhkQ)
 * [ ] [20/11/2022 **Flet Tutorial - GoJek Redesign** 19 775 **33:17**](https://www.youtube.com/watch?v=5uBivF9C0xw)
-* [ ] [19/11/2022 **Flet tutorial design - Movie App Design** 7 302 **18:48**](https://www.youtube.com/watch?v=vsMBD_QXuDg)
-* [ ] [17/11/2022 **Flet Tutorial Design - Cleaner App** 4 800 **33:59**](https://www.youtube.com/watch?v=xKgFiDSDtXk)
-* [x] [09/11/2022 **Flet Tutorial - Navigation Between Pages** 12 835 **12:45**](https://www.youtube.com/watch?v=BAAqg2qd6OI)
 
-### Vus (344 - 63 heures et 43 minutes)
+### Vus (351 - 65 heures et 26 minutes)
 
+* [x] [01/07/2025 **Flet Tutorial - FleetingViews Framework and shared data** 431 **12:09**](https://www.youtube.com/watch?v=Q9srpWaTP68)
+* [x] [22/06/2025 **Flet Tutorial - FletX (GetX) simple Reactive and Routing** 775 **11:11**](https://www.youtube.com/watch?v=yYnd7uFKiYE)
+* [x] [29/05/2025 **Flet Tutorial -  Google Maps Embed** 466 **02:57**](https://www.youtube.com/watch?v=Ppg_-xnVoUM)
+* [x] [29/03/2025 **Flet Tutorial - Realtime App Simple** 680 **11:15**](https://www.youtube.com/watch?v=c8TaTDiefwI)
 * [x] [10/02/2024 **KivyMD Tutorial - add Webview Google Maps** 1 123 **11:21**](https://www.youtube.com/watch?v=5GJg4IV92vM)
 * [x] [24/10/2023 **SOLVED - CORS ERROR WITHOUT SERVER in 5 Minutes** 1 349 **05:55**](https://www.youtube.com/watch?v=l1lVD3hb3aE)
 * [x] [02/10/2023 **ReactPy Tutorial - Deploy Web To Glitch** 347 **05:22**](https://www.youtube.com/watch?v=YXQERqEhMuw)
@@ -463,8 +460,11 @@
 * [x] [11/12/2022 **PySide6 Tutorial Layouts - QVBoxLayout,QHBoxLayout,QGridLayout,QFormLayout** 5 675 **14:59**](https://www.youtube.com/watch?v=Mmo0Lqj7oGk)
 * [x] [10/12/2022 **Pyside6 Tutorial - Instalation , Hot reload and Create Basic Hello World App** 1 081 **06:17**](https://www.youtube.com/watch?v=VeHKuXKBcAM)
 * [x] [09/12/2022 **Express Js Deploy Free and Instant in 3 minutes | CYCLIC** 1 149 **04:02**](https://www.youtube.com/watch?v=rW82E4WV_9Y)
+* [x] [19/11/2022 **Flet tutorial design - Movie App Design** 7 302 **18:48**](https://www.youtube.com/watch?v=vsMBD_QXuDg)
+* [x] [17/11/2022 **Flet Tutorial Design - Cleaner App** 4 800 **33:59**](https://www.youtube.com/watch?v=xKgFiDSDtXk)
 * [x] [16/11/2022 **QuasarJS Tutorial - Design App Salary** 607 **28:08**](https://www.youtube.com/watch?v=-GJrv2E7d30)
 * [x] [12/11/2022 **Deno Socket.io Tutorial  -  Create Simple Chat** 773 **13:12**](https://www.youtube.com/watch?v=znbQ2KHxcEk)
+* [x] [09/11/2022 **Flet Tutorial - Navigation Between Pages** 12 835 **12:45**](https://www.youtube.com/watch?v=BAAqg2qd6OI)
 * [x] [08/11/2022 **Flet tutorial Supabase - Integration Supabase Database** 2 996 **12:28**](https://www.youtube.com/watch?v=yep2FdchtM4)
 * [x] [08/11/2022 **Flet Tutorial Firebase - Integration Firestore with Flet | Part1** 2 827 **18:39**](https://www.youtube.com/watch?v=EjiTwMChSzs)
 * [x] [06/11/2022 **Flet Tutorial 3 - CRUD TODO** 2 654 **19:47**](https://www.youtube.com/watch?v=SGmXf_abbiY)
@@ -1103,9 +1103,8 @@
 
 ## 5 FR Auteur **[Gravenilvectuto](https://www.youtube.com/@Gravenilvectuto/videos)** ( **178** videos - 26 921 753 vues - 50 heures et 9 minutes )
 
-### Pas vus (96 - 27 heures et 10 minutes)
+### Pas vus (95 - 26 heures et 56 minutes)
 
-* [ ] [23/04/2026 **CE SALON DEV EST INCROYABLE ! (DEVOXX 2026)** 2 466 **14:23**](https://www.youtube.com/watch?v=X90vRM4HwO0)
 * [ ] [17/03/2026 **J'organise mon salon à Paris la defense - Asynconf 2026** 1 108 **04:57**](https://www.youtube.com/watch?v=xP47FjwMYn4)
 * [ ] [17/02/2026 **Créer son site en Python avec Django - Initiation** 11 361 **01:15:30**](https://www.youtube.com/watch?v=hrdZ-lT_i3A)
 * [ ] [06/02/2026 **J’ai créé une extension VS Code (et tu vas l’adorer)** 6 391 **05:27**](https://www.youtube.com/watch?v=eqhXSvV2QYc)
@@ -1202,8 +1201,9 @@
 * [ ] [07/05/2018 **APPRENDRE LE PYTHON #1 ? LES BASES & PREREQUIS** 2 962 579 **09:27**](https://www.youtube.com/watch?v=psaDHhZ0cPs)
 * [ ] [10/02/2018 **COMMENT DEVENIR DEVELOPPEUR ENTREPRENEUR ? (Salon des Entrepreneurs 2018)** 13 084 **06:39**](https://www.youtube.com/watch?v=9kroKtvqB8Y)
 
-### Vus (82 - 22 heures et 58 minutes)
+### Vus (83 - 23 heures et 12 minutes)
 
+* [x] [23/04/2026 **CE SALON DEV EST INCROYABLE ! (DEVOXX 2026)** 2 466 **14:23**](https://www.youtube.com/watch?v=X90vRM4HwO0)
 * [x] [20/04/2026 **MON Plus GROS evenement tech de 2026 ! Bande annonce** 1 062 **00:24**](https://www.youtube.com/watch?v=m_IMRjlrcPI)
 * [x] [17/04/2026 **J’ouvre une arène de code INFINIE 😳 (Viens affronter les autres !)** 1 142 **07:29**](https://www.youtube.com/watch?v=97MSV1ciMZs)
 * [x] [23/03/2026 **Apprendre à coder à l’ère de l’IA (le vrai problème)** 8 979 **07:57**](https://www.youtube.com/watch?v=cGxZR0hnNhc)
@@ -1496,9 +1496,9 @@
 * [x] [04/08/2019 **Calculatrice scientifique python et C avec interface graphique** 984 **05:55**](https://www.youtube.com/watch?v=j0m_TwnNCQc)
 * [x] [04/08/2019 **Calculatrice JAVA-RMI client server** 1 040 **13:24**](https://www.youtube.com/watch?v=ggSAnfoQUFU)
 
-## 7 GB Auteur **[Indently](https://www.youtube.com/@Indently/videos)** ( **796** videos - 25 544 142 vues - 114 heures et 37 minutes )
+## 7 GB Auteur **[Indently](https://www.youtube.com/@Indently/videos)** ( **797** videos - 25 544 142 vues - 114 heures et 48 minutes )
 
-### Pas vus (620 - 91 heures et 21 minutes)
+### Pas vus (620 - 91 heures et 22 minutes)
 
 * [ ] [18/02/2026 **It's 2026 - Time to switch to Linux** 13 749 **04:38**](https://www.youtube.com/watch?v=T_LNtZkaiaI)
 * [ ] [12/02/2026 **Python with UV is ULTRA Fast** 12 601 **08:19**](https://www.youtube.com/watch?v=5nw_H7oqrIk)
@@ -2119,10 +2119,11 @@
 * [ ] [22/01/2021 **Easy QR Code Generator in Python Tutorial (2021)** 3 263 **05:42**](https://www.youtube.com/watch?v=XvUFTFvdYeU)
 * [ ] [N/A **Zed + Local AI = Awesome (Free AI Tutorial)** 0 **07:09**](https://www.youtube.com/watch?v=_cDUB0b1p3w)
 * [ ] [N/A **Functional Programming in Python is Awesome** 0 **15:33**](https://www.youtube.com/watch?v=A7lGxqCuFN4)
-* [ ] [25/04/2026 **Dependency Injection in Python is Awesome** 7 410 **10:25**](https://www.youtube.com/watch?v=J1adhPWc-1c)
+* [ ] [N/A **There's a NEW built-in function coming in Python 3.15** 0 **10:42**](https://www.youtube.com/watch?v=5Qew5Vo7-4w)
 
-### Vus (176 - 23 heures et 16 minutes)
+### Vus (177 - 23 heures et 26 minutes)
 
+* [x] [25/04/2026 **Dependency Injection in Python is Awesome** 7 410 **10:25**](https://www.youtube.com/watch?v=J1adhPWc-1c)
 * [x] [21/04/2026 **Build a Local AI Agent in Python with Tools (Part 3)** 506 **17:34**](https://www.youtube.com/watch?v=zV4i7Re1obA)
 * [x] [16/04/2026 **Build a Local AI Agent in Python with Context (Part 2)** 2 712 **11:54**](https://www.youtube.com/watch?v=ILKQftdngaE)
 * [x] [13/04/2026 **Build a Local AI Agent in Python in only 15 Minutes** 12 575 **15:00**](https://www.youtube.com/watch?v=LykXu60aKoY)

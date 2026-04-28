@@ -17,7 +17,7 @@ async def main(page: ft.Page, width: int = 392):
 
     gc7(page, left=1520 if "left" in locals() else 1912)
 
-    ################################### Base ###################################
+    ################################## Bases ###################################
     # from examples.lv00_matrice import main
 
     # from basis.scroll_example import main
@@ -25,8 +25,8 @@ async def main(page: ft.Page, width: int = 392):
     # from basis.lv02 import main # Simple routing
     # from basis.lv03 import main # Routing with params (ex: /about/Lionel)
     #
-    gc7(page, "LIGHT", left=1520) # 1912 pour écran #2 - Sinon 1520
-    from basis.lv04 import main  #
+    # gc7(page, "LIGHT", left=1520) # 1912 pour écran #2 - Sinon 1520
+    # from basis.lv04 import main  #
 
     #
     # from basis.lv99_ready import main #
@@ -50,6 +50,18 @@ async def main(page: ft.Page, width: int = 392):
     # # gc7(page, "LIGHT", width=976)
 
     # from basis.lv03_ready import main
+    # main(page)
+
+    ################################## Tutos ###################################
+
+    # gc7(page, "LIGHT", left=1520)  # 1912 pour écran #2 - Sinon 1520
+
+    gc7(page, left=1520)  # 1912 pour écran #2 - Sinon 1520
+    # from tutos.lv01 import main  # Design Simple
+    # * [ ] En cours
+    from tutos.lv02 import main  # Design Movie App
+    # from tutos.lv03 import main  # * [ ] Tutos récents (Routing, FletX, etc.)
+
     main(page)
 
     ################################### ToDo ###################################
