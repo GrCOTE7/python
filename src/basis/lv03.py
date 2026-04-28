@@ -4,6 +4,10 @@ import flet as ft
 def main(page: ft.Page):
     page.title = "LV 03 - Routing #03"
 
+    async def go_about(_: ft.Event[ft.Button]):
+        # await some_api_call() # Une méthode asynchrone pour faire une requête API avant de changer de route
+        await page.push_route("/about")
+
     def route_change(e: ft.RouteChangeEvent | None = None):
         print(f"Route change: {page.route}")
 
@@ -14,8 +18,10 @@ def main(page: ft.Page):
                 route="/",
                 controls=[
                     ft.Text("Home page"),
-                    ft.ElevatedButton(
-                        "Go to about page", on_click=lambda _: page.go("/about")
+                    ft.Button(
+                        # "Go to about page", on_click=lambda _: page.go("/about")
+                        "Go to about page",
+                        on_click=go_about,
                     ),
                     ft.Text("Oki", color=ft.Colors.BLACK, size=20),
                 ],
@@ -27,8 +33,8 @@ def main(page: ft.Page):
                     route="/about",
                     controls=[
                         ft.Text("About page"),
-                        ft.ElevatedButton(
-                            "Go to home page", on_click=lambda _: page.go("/")
+                        ft.Button(
+                            "Go to home page", on_click=lambda e: page.push_route("/")
                         ),
                     ],
                 ),
@@ -36,10 +42,10 @@ def main(page: ft.Page):
 
         page.update()
 
-    def view_pop(e: ft.ViewPopEvent):
+    async def view_pop(e: ft.ViewPopEvent):
         page.views.pop()
         top_view = page.views[-1]
-        page.go(top_view.route)
+        await page.push_route(top_view.route)
 
     page.on_route_change = route_change
 

@@ -17,7 +17,7 @@ async def main(page: ft.Page, width: int = 392):
 
     gc7(page, left=1520 if "left" in locals() else 1912)
 
-    # ################################### Base ###################################
+    ################################### Base ###################################
     # from examples.lv00_matrice import main
 
     # from basis.scroll_example import main
@@ -47,7 +47,7 @@ async def main(page: ft.Page, width: int = 392):
     # from basis.lv03_ready import main
     main(page)
 
-    # ################################### ToDo ###################################
+    ################################### ToDo ###################################
 
     # from examples.lv06_todo_simple import todo_list as main  # Simple field + add btn
 
@@ -97,7 +97,7 @@ async def main(page: ft.Page, width: int = 392):
     # # main(page)
     # # return  # render_views incompatible avec page.controls / page.add() ci-dessous
 
-    # ################################### CHAT ###################################
+    ################################### CHAT ###################################
 
     # # * [/] chat
 
@@ -114,7 +114,7 @@ async def main(page: ft.Page, width: int = 392):
     # # gc7(page, "LIGHT")
     # # main(page)
 
-    # ################################ SOLITAIRE  ################################
+    ################################ SOLITAIRE  ################################
 
     # from examples.lv30_a1_stack import main  # 3 image blocs
     # from examples.lv30_a2_stack import main  # 3 cards (Bleu-blanc-rouge)
