@@ -13,9 +13,9 @@ class Ready(ft.Container):
         self.border_radius = ft.BorderRadius.all(12)
         self.padding = 20
 
-        self._value: int = 123
+        self.value = "Ready."
 
-        self.content = ft.Text(str(self._value), color=ft.Colors.WHITE, size=20)
+        self.content = ft.Text(self.value, color=ft.Colors.CYAN_100, size=20)
 
 
 def main(page: ft.Page):

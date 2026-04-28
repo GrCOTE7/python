@@ -22,7 +22,9 @@ async def main(page: ft.Page, width: int = 392):
 
     # from basis.scroll_example import main
     # from basis.lv01_essai import essai as main
-    # from basis.lv02_ready import main
+    # from basis.lv02 import main # Simple routing
+    from basis.lv03 import main # Simple routing
+    # from basis.lv99_ready import main # 
 
     # from examples.lv04_calc_ui import calc as main  # Juste le design
     # from examples.lv05_calc_ui_reusable import calc as main  # Opérationnel
@@ -42,7 +44,8 @@ async def main(page: ft.Page, width: int = 392):
     # # gc7(page, width=976)
     # # gc7(page, "LIGHT", width=976)
 
-    # # main(page)
+    # from basis.lv03_ready import main
+    main(page)
 
     # ################################### ToDo ###################################
 
@@ -148,10 +151,9 @@ async def main(page: ft.Page, width: int = 392):
     ################################## CookBook ################################
 
     # # (CRUD, Async, PubSub, Routing, etc.)
-    from cookbook.main import main  # Une série ~30 exemples classés par thème
-
+    # from cookbook.main import main  # Une série ~30 exemples classés par thème
     # gc7(page, "LIGHT", width=976)
-    main(page)
+    # main(page)
     # #
 
     # # ❌ Cf. fin de tuto + Étudier le seul qui corrige le pb de double clic → Le comprendre complètement à la fin - D:\flet_doc\sdk\python\examples\tutorials\solitaire_declarative\solitaire-final\main.py

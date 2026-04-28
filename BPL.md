@@ -26,17 +26,17 @@
 |       |        |             |          |          |          |        |
 |       |        |             |    70:09 |    80:23 |    10:14 |  12.7% |
 |       |        |             |          |          |          |        |
-|    20 | Indent |   25 536 732 |      618 |      794 |      176 |  22.2% |
+|    20 | Indent |   25 544 142 |      620 |      796 |      176 |  22.1% |
 |       |        |             |          |          |          |        |
-|       |        |             |    90:55 |   114:12 |    23:16 |  20.4% |
+|       |        |             |    91:21 |   114:37 |    23:16 |  20.3% |
 |       |        |             |          |          |          |        |
-|    21 | Foxxy  |      806 361 |      311 |      319 |        8 |   2.5% |
+|    21 | Foxxy  |      806 361 |      300 |      319 |       19 |   6.0% |
 |       |        |             |          |          |          |        |
-|       |        |             |    65:34 |    66:49 |    01:15 |   1.9% |
+|       |        |             |    63:20 |    66:49 |    03:29 |   5.2% |
 |       |        |             |          |          |          |        |
-|     8 | TOTAL  |   58 491 240 |     1 850 |     2 523 |      673 |  26.7% |
+|     8 | TOTAL  |   58 498 650 |     1 841 |     2 525 |      684 |  27.1% |
 |       |        |             |          |          |          |        |
-|       |        |             |   362:09 |   487:24 |   125:12 |  25.7% |
+|       |        |             |   360:21 |   487:49 |   127:26 |  26.1% |
 
 ## 1 IN Auteur **[sriedynurcahyo3894](https://www.youtube.com/@sriedynurcahyo3894/videos)** ( **598** videos - 1 197 386 vues - 116 heures et 42 minutes )
 
@@ -295,7 +295,7 @@
 * [ ] [20/11/2022 **Flet Tutorial - GoJek Redesign** 19 775 **33:17**](https://www.youtube.com/watch?v=5uBivF9C0xw)
 * [ ] [19/11/2022 **Flet tutorial design - Movie App Design** 7 302 **18:48**](https://www.youtube.com/watch?v=vsMBD_QXuDg)
 * [ ] [17/11/2022 **Flet Tutorial Design - Cleaner App** 4 800 **33:59**](https://www.youtube.com/watch?v=xKgFiDSDtXk)
-* [ ] [09/11/2022 **Flet Tutorial - Navigation Between Pages** 12 835 **12:45**](https://www.youtube.com/watch?v=BAAqg2qd6OI)
+* [x] [09/11/2022 **Flet Tutorial - Navigation Between Pages** 12 835 **12:45**](https://www.youtube.com/watch?v=BAAqg2qd6OI)
 
 ### Vus (344 - 63 heures et 43 minutes)
 
@@ -1496,9 +1496,9 @@
 * [x] [04/08/2019 **Calculatrice scientifique python et C avec interface graphique** 984 **05:55**](https://www.youtube.com/watch?v=j0m_TwnNCQc)
 * [x] [04/08/2019 **Calculatrice JAVA-RMI client server** 1 040 **13:24**](https://www.youtube.com/watch?v=ggSAnfoQUFU)
 
-## 7 GB Auteur **[Indently](https://www.youtube.com/@Indently/videos)** ( **794** videos - 25 536 732 vues - 114 heures et 12 minutes )
+## 7 GB Auteur **[Indently](https://www.youtube.com/@Indently/videos)** ( **796** videos - 25 544 142 vues - 114 heures et 37 minutes )
 
-### Pas vus (618 - 90 heures et 55 minutes)
+### Pas vus (620 - 91 heures et 21 minutes)
 
 * [ ] [18/02/2026 **It's 2026 - Time to switch to Linux** 13 749 **04:38**](https://www.youtube.com/watch?v=T_LNtZkaiaI)
 * [ ] [12/02/2026 **Python with UV is ULTRA Fast** 12 601 **08:19**](https://www.youtube.com/watch?v=5nw_H7oqrIk)
@@ -2118,6 +2118,8 @@
 * [ ] [25/01/2021 **Creating a Telegram Bot in Python 3.9 Tutorial (Fast & Easy)** 245 034 **13:07**](https://www.youtube.com/watch?v=PTAkiukJK7E)
 * [ ] [22/01/2021 **Easy QR Code Generator in Python Tutorial (2021)** 3 263 **05:42**](https://www.youtube.com/watch?v=XvUFTFvdYeU)
 * [ ] [N/A **Zed + Local AI = Awesome (Free AI Tutorial)** 0 **07:09**](https://www.youtube.com/watch?v=_cDUB0b1p3w)
+* [ ] [N/A **Functional Programming in Python is Awesome** 0 **15:33**](https://www.youtube.com/watch?v=A7lGxqCuFN4)
+* [ ] [25/04/2026 **Dependency Injection in Python is Awesome** 7 410 **10:25**](https://www.youtube.com/watch?v=J1adhPWc-1c)
 
 ### Vus (176 - 23 heures et 16 minutes)
 
@@ -2300,7 +2302,7 @@
 
 ## 8 FR Maths Auteur **[foxxpy](https://www.youtube.com/@foxxpy/videos)** ( **319** videos - 806 361 vues - 66 heures et 49 minutes )
 
-### Pas vus (311 - 65 heures et 34 minutes)
+### Pas vus (300 - 63 heures et 20 minutes)
 
 * [ ] [03/11/2022 **[Maths - 6ème] - Critères de divisibilité par 9 - 25 exercices corrigés** 753 **07:32**](https://www.youtube.com/watch?v=5FspXw3J_Es)
 * [ ] [20/10/2022 **[Maths - 6ème] - Critères de divisibilité par 7 - 25 exercices corrigés** 552 **10:19**](https://www.youtube.com/watch?v=E4Bqa_NVayE)
@@ -2602,20 +2604,20 @@
 * [ ] [28/01/2020 **[Codingame - Puzzle facile] - 16.  Happy numbers [Python3]** 313 **06:41**](https://www.youtube.com/watch?v=864fyaFnvr0)
 * [ ] [28/01/2020 **[Codingame - Puzzle facile] - 15.  Credit Card Verifier [Python3]** 209 **12:52**](https://www.youtube.com/watch?v=5iGU6Nbk2IM)
 * [ ] [28/01/2020 **[Codingame - Puzzle facile] - 14. 1x1x1 Rubik's cube movements [Python3]** 218 **13:58**](https://www.youtube.com/watch?v=EUZkV2LNZtI)
-* [ ] [23/12/2019 **[Codingame - Puzzle facile] - 13.  Jack Silver: The Casino [Python3]** 287 **10:40**](https://www.youtube.com/watch?v=ClSELHHOQ2o)
-* [ ] [15/12/2019 **[Codingame - Puzzle facile] - 11.  Detective Pikaptcha EP1 [Python3]** 939 **12:20**](https://www.youtube.com/watch?v=TS1XfvQdjgE)
-* [ ] [15/12/2019 **[Codingame - Puzzle facile] - 12.  Detective Pikaptcha EP2 [Python3]** 778 **26:49**](https://www.youtube.com/watch?v=bVd4Iky7aoI)
-* [ ] [01/12/2019 **[Codingame - Puzzle facile] - 10. The River II [Python3]** 435 **09:03**](https://www.youtube.com/watch?v=98CO-KpJLjI)
-* [ ] [27/11/2019 **[Algorithme] - 15. Inverser une chaîne de caractères [Python]** 4 201 **08:28**](https://www.youtube.com/watch?v=2p-zIktxW1E)
-* [ ] [24/11/2019 **[Codingame - Puzzle facile] - 9. The River I [Python3]** 754 **09:21**](https://www.youtube.com/watch?v=jzGcjxnChPg)
-* [ ] [20/11/2019 **[Codingame - Puzzle moyen] - 2. The Urinal Problem [Python3]** 834 **15:03**](https://www.youtube.com/watch?v=0GsjQ_uCUTw)
-* [ ] [17/11/2019 **[Codingame - Puzzle facile] - 8. MIME Type [Python3]** 1 447 **12:51**](https://www.youtube.com/watch?v=7k8K_SVvUB4)
-* [ ] [13/11/2019 **[Codingame - Puzzle moyen] - 1. Shadows of the Knight [Python3]** 10 114 **12:20**](https://www.youtube.com/watch?v=uHhJExSU7uE)
-* [ ] [11/11/2019 **[Python] - Résoudre 'pip' n'est pas reconnu en tant que commande interne sur Windows 10** 51 040 **01:31**](https://www.youtube.com/watch?v=pjCWtppLN3k)
-* [ ] [10/11/2019 **[Codingame - Puzzle facile] - 7. Ascii Art [Python3]** 6 022 **15:15**](https://www.youtube.com/watch?v=4dFZRQKRCVQ)
 
-### Vus (8 - 1 heure et 15 minutes)
+### Vus (19 - 3 heures et 29 minutes)
 
+* [x] [23/12/2019 **[Codingame - Puzzle facile] - 13.  Jack Silver: The Casino [Python3]** 287 **10:40**](https://www.youtube.com/watch?v=ClSELHHOQ2o)
+* [x] [15/12/2019 **[Codingame - Puzzle facile] - 11.  Detective Pikaptcha EP1 [Python3]** 939 **12:20**](https://www.youtube.com/watch?v=TS1XfvQdjgE)
+* [x] [15/12/2019 **[Codingame - Puzzle facile] - 12.  Detective Pikaptcha EP2 [Python3]** 778 **26:49**](https://www.youtube.com/watch?v=bVd4Iky7aoI)
+* [x] [01/12/2019 **[Codingame - Puzzle facile] - 10. The River II [Python3]** 435 **09:03**](https://www.youtube.com/watch?v=98CO-KpJLjI)
+* [x] [27/11/2019 **[Algorithme] - 15. Inverser une chaîne de caractères [Python]** 4 201 **08:28**](https://www.youtube.com/watch?v=2p-zIktxW1E)
+* [x] [24/11/2019 **[Codingame - Puzzle facile] - 9. The River I [Python3]** 754 **09:21**](https://www.youtube.com/watch?v=jzGcjxnChPg)
+* [x] [20/11/2019 **[Codingame - Puzzle moyen] - 2. The Urinal Problem [Python3]** 834 **15:03**](https://www.youtube.com/watch?v=0GsjQ_uCUTw)
+* [x] [17/11/2019 **[Codingame - Puzzle facile] - 8. MIME Type [Python3]** 1 447 **12:51**](https://www.youtube.com/watch?v=7k8K_SVvUB4)
+* [x] [13/11/2019 **[Codingame - Puzzle moyen] - 1. Shadows of the Knight [Python3]** 10 114 **12:20**](https://www.youtube.com/watch?v=uHhJExSU7uE)
+* [x] [11/11/2019 **[Python] - Résoudre 'pip' n'est pas reconnu en tant que commande interne sur Windows 10** 51 040 **01:31**](https://www.youtube.com/watch?v=pjCWtppLN3k)
+* [x] [10/11/2019 **[Codingame - Puzzle facile] - 7. Ascii Art [Python3]** 6 022 **15:15**](https://www.youtube.com/watch?v=4dFZRQKRCVQ)
 * [x] [09/11/2019 **[Algorithme] - 14. Tri à bulles [Python3]** 12 441 **07:34**](https://www.youtube.com/watch?v=48KD2VnKeg4)
 * [x] [04/11/2019 **[Algorithme] - 13. Échanger les valeurs de 2 variables [Python]** 4 332 **03:02**](https://www.youtube.com/watch?v=pY9w0CEx65I)
 * [x] [03/11/2019 **[Codingame - Puzzle facile] - 6. Chevaux de course [Python3]** 2 640 **10:16**](https://www.youtube.com/watch?v=B4v9s5Fu2eI)
