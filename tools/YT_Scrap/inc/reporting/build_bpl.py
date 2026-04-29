@@ -24,7 +24,10 @@ DEFAULT_BPL_TITLE = "# BPL Quotidien (Une lecon - ISC - 2mnPy - BdC - Graven - J
 
 # 7 chaines cibles. Les IDs "scrap_id" correspondent a inc/authors.py.
 TARGET_AUTHORS = [
+    {"author": "DevSenate", "label": "IN Auteur", "scrap_id": 22},
     {"author": "sriedynurcahyo3894", "label": "IN Auteur", "scrap_id": 4},
+    {"author": "codewithjoshoffical", "label": "US Auteur", "scrap_id": 23},
+    {"author": "addinyy", "label": "IN Auteur", "scrap_id": 24},
     {"author": "InformatiqueSansComplexe", "label": "FR Auteur", "scrap_id": 14},
     {"author": "2minutesPy", "label": "FR/GB Auteur", "scrap_id": 17},
     {"author": "bandedecodeurs", "label": "FR Auteur", "scrap_id": 11},

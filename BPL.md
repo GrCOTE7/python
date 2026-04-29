@@ -2,9 +2,21 @@
 
 |   Id  | Auteur |     Vues    |    2c    | N & Tps  |   Vus    |    %   |
 |------:|:------:|------------:|---------:|---------:|---------:|-------:|
+|    22 | DevSenate |      111 462 |       15 |       26 |       11 |  42.3% |
+|       |        |             |          |          |          |        |
+|       |        |             |    04:07 |    10:40 |    06:33 |  61.4% |
+|       |        |             |          |          |          |        |
 |     4 | SriEdy |    1 197 386 |      251 |      598 |      347 |  58.0% |
 |       |        |             |          |          |          |        |
 |       |        |             |    51:53 |   116:42 |    64:48 |  55.5% |
+|       |        |             |          |          |          |        |
+|    23 | codewithjoshoffical |    1 981 377 |      181 |      181 |        0 |   0.0% |
+|       |        |             |          |          |          |        |
+|       |        |             |    95:49 |    95:49 |    00:00 |   0.0% |
+|       |        |             |          |          |          |        |
+|    24 | addinyy |       33 871 |       18 |       27 |        9 |  33.3% |
+|       |        |             |          |          |          |        |
+|       |        |             |    03:17 |    04:09 |    00:51 |  20.5% |
 |       |        |             |          |          |          |        |
 |    14 |  ISC   |    1 829 557 |      243 |      290 |       47 |  16.2% |
 |       |        |             |          |          |          |        |
@@ -34,11 +46,45 @@
 |       |        |             |          |          |          |        |
 |       |        |             |    63:20 |    66:49 |    03:29 |   5.2% |
 |       |        |             |          |          |          |        |
-|     8 | TOTAL  |   58 498 650 |     1 837 |     2 526 |      689 |  27.3% |
+|    11 | TOTAL  |   60 625 360 |     2 051 |     2 760 |      709 |  25.7% |
 |       |        |             |          |          |          |        |
-|       |        |             |   359:02 |   488:00 |   128:55 |  26.4% |
+|       |        |             |   462:15 |   598:38 |   136:19 |  22.8% |
 
-## 1 IN Auteur **[sriedynurcahyo3894](https://www.youtube.com/@sriedynurcahyo3894/videos)** ( **598** videos - 1 197 386 vues - 116 heures et 42 minutes )
+## 1 IN Auteur **[DevSenate](https://www.youtube.com/@DevSenate/videos)** ( **26** videos - 111 462 vues - 10 heures et 40 minutes )
+
+### Pas vus (15 - 4 heures et 7 minutes)
+
+* [ ] [15/12/2025 **iOS Calculator UI in Python | Simple Flet Project for Beginners** 387 **18:36**](https://www.youtube.com/watch?v=oYsPyFDPJBc)
+* [ ] [17/10/2025 **Animated Tab Switcher in Python Flet | Smooth UI Animation Tutorial** 954 **13:52**](https://www.youtube.com/watch?v=gDUBrxAF97c)
+* [ ] [11/10/2025 **Beautiful Expandable Card in Flet | Python UI Tutorial** 530 **19:58**](https://www.youtube.com/watch?v=F6Ea5e-3RRM)
+* [ ] [04/10/2025 **Python Flet Image Slider Tutorial | Create a Modern Carousel UI** 832 **16:48**](https://www.youtube.com/watch?v=Vbu1UAaoJxw)
+* [ ] [14/09/2025 **Flet 1.0 – Build Web Apps with Pure Python (No HTML, No JS)** 7 119 **12:42**](https://www.youtube.com/watch?v=lB7lAhEpXzA)
+* [ ] [19/06/2025 **How to Deploy a Python Flet App as a Static Website (Free Hosting with Netlify)** 3 260 **03:51**](https://www.youtube.com/watch?v=6N76lZQgHio)
+* [ ] [04/05/2025 **Responsive Web & App with Flet – Mobile & Desktop Layouts!** 2 892 **08:02**](https://www.youtube.com/watch?v=fUOI7gYUOrk)
+* [ ] [19/04/2025 **Animated Sidebar UI with Flet | Python App Design Tutorial** 7 640 **15:46**](https://www.youtube.com/watch?v=xvwbtMUOZPg)
+* [ ] [27/03/2025 **Modern Profile Card UI with Flet – Master Row, Column & Stack!** 1 363 **04:31**](https://www.youtube.com/watch?v=u-y0rAHcnYU)
+* [ ] [20/03/2025 **Build a Simple Form in 5 Minutes – Python Flet Tutorial** 5 658 **04:52**](https://www.youtube.com/watch?v=YN4Jj0NZG5s)
+* [ ] [18/03/2025 **Python Flet: Build Your First App (Beginner Tutorial)** 2 352 **03:21**](https://www.youtube.com/watch?v=3GIBLhtx7UM)
+* [ ] [09/03/2025 **How to Set Up Neovim on Windows | Install & Configure Easily!** 3 031 **22:04**](https://www.youtube.com/watch?v=mIy5FIIMJEA)
+* [ ] [08/12/2024 **🤫Type Writer Effect in Python Flet | Custom Auto Writer Component | Async** 1 105 **12:06**](https://www.youtube.com/watch?v=AuF6TWdqG8s)
+* [ ] [18/10/2024 **e-yooso z19 white cyan keyboard unbox** 308 **00:50**](https://www.youtube.com/watch?v=SDy6wz9H0ys)
+* [ ] [28/06/2024 **Note taking App in python Flet, python mobile programming** 3 394 **01:30:05**](https://www.youtube.com/watch?v=TiK6q-qttkk)
+
+### Vus (11 - 6 heures et 33 minutes)
+
+* [x] [15/10/2023 **Key press displayer widget for desktop | Python Flet Widget | flutter python** 1 190 **19:16**](https://www.youtube.com/watch?v=AGD8z0Wa1RI)
+* [x] [10/08/2023 **iBotNet software project Video** 237 **02:51**](https://www.youtube.com/watch?v=Y-LWRGBgrKQ)
+* [x] [27/07/2023 **Python Flet Web Login Page design | flutter python** 9 089 **33:20**](https://www.youtube.com/watch?v=GvXaXRzieYk)
+* [x] [22/07/2023 **Flet Sidebar Navigation Glass Design | in python flet | flutter python** 16 237 **45:17**](https://www.youtube.com/watch?v=ANN0JsiGs40)
+* [x] [16/07/2023 **Python Flet Card Design | Python flet | Blur Effect | Shadow** 3 666 **28:33**](https://www.youtube.com/watch?v=8eizyYp3mzg)
+* [x] [07/07/2023 **python flet product design | flet mobile** 17 755 **29:12**](https://www.youtube.com/watch?v=w6erTuHI47c)
+* [x] [30/06/2023 **python Flet | mobile Login screen** 5 639 **53:54**](https://www.youtube.com/watch?v=ygBw2RhC-nc)
+* [x] [01/06/2023 **Demon Slayer game in python | pygame | 2D | KNY game** 533 **00:50**](https://www.youtube.com/watch?v=qN9V979tEvw)
+* [x] [20/04/2023 **python flet | login page | design | no talking | flet** 7 652 **22:15**](https://www.youtube.com/watch?v=ymBKDg94M2M)
+* [x] [16/04/2023 **Python flet | product design | mobile app | no talking | relax |** 5 972 **52:27**](https://www.youtube.com/watch?v=yzjO-sK6Q5c)
+* [x] [24/01/2023 **python mobile dastur | starbucks | python dasturlash | python flet** 2 667 **01:45:32**](https://www.youtube.com/watch?v=o_5ypIlhOg0)
+
+## 2 IN Auteur **[sriedynurcahyo3894](https://www.youtube.com/@sriedynurcahyo3894/videos)** ( **598** videos - 1 197 386 vues - 116 heures et 42 minutes )
 
 ### Pas vus (251 - 51 heures et 53 minutes)
 
@@ -644,7 +690,226 @@
 * [x] [07/11/2020 **metasploit education** 493 **05:16**](https://www.youtube.com/watch?v=s6k0fzxdPOw)
 * [x] [30/12/2019 **pembuatan mikrotik hostpot router os** 26 **04:42**](https://www.youtube.com/watch?v=8JKmSbCfouw)
 
-## 2 FR Auteur **[InformatiqueSansComplexe](https://www.youtube.com/@InformatiqueSansComplexe/videos)** ( **290** videos - 1 829 557 vues - 34 heures et 1 minute )
+## 3 US Auteur **[codewithjoshoffical](https://www.youtube.com/@codewithjoshoffical/videos)** ( **181** videos - 1 981 377 vues - 95 heures et 49 minutes )
+
+* [ ] [09/04/2026 **Websites Tried to Block This… It Still Worked** 479 **18:51**](https://www.youtube.com/watch?v=ny9kcR2x6WQ)
+* [ ] [02/04/2026 **Stop Writing Web Scrapers... Let an Agent Do It Instead** 571 **22:01**](https://www.youtube.com/watch?v=5Ybuz9_1F0s)
+* [ ] [27/02/2026 **I Built a Python CLI Tool From a 3-Minute Voice Rant** 937 **06:30**](https://www.youtube.com/watch?v=T1BaeYxbscc)
+* [ ] [12/02/2026 **Make Your Python Code 10x Faster (7 Simple Fixes)** 2 240 **14:11**](https://www.youtube.com/watch?v=BicfcF_NkjY)
+* [ ] [05/02/2026 **This New Language Makes Python Fast** 15 146 **12:14**](https://www.youtube.com/watch?v=FhpGtW_DGGA)
+* [ ] [15/01/2026 **Build a Python ML App Fast With Gradio** 2 752 **23:56**](https://www.youtube.com/watch?v=loxDDO3VXV4)
+* [ ] [01/01/2026 **The Easiest Way to Make a Python CLI** 4 621 **12:54**](https://www.youtube.com/watch?v=R5jeQTFloag)
+* [ ] [18/12/2025 **Stop Writing This Much ORM Code (SQLModel + FastAPI)** 4 603 **18:40**](https://www.youtube.com/watch?v=HDyT7x5S1j4)
+* [ ] [11/12/2025 **STOP Using pip + venv. UV Just Replaced Everything...** 15 716 **10:55**](https://www.youtube.com/watch?v=flAneKTg8Nk)
+* [ ] [27/11/2025 **Python Ursina Engine: How to Build a 3D Platformer (Beginner Tutorial)** 3 697 **23:58**](https://www.youtube.com/watch?v=lhnOYiwOfeo)
+* [ ] [20/11/2025 **Flet + Python: Build a Cross-Platform Stock Market App with Live API & Modern UI** 8 427 **48:25**](https://www.youtube.com/watch?v=Uuh4XOsKB1c)
+* [ ] [13/11/2025 **Web Scraping with Python & Scrapy for Beginners: Build a Real-World Web Crawler Project** 6 355 **23:35**](https://www.youtube.com/watch?v=nVCJBBNapJo)
+* [ ] [06/11/2025 **AI Project: Build a Resume Reader in Python with OpenAI (Can AI Read Your Resume?)** 1 561 **34:34**](https://www.youtube.com/watch?v=zbXZQlCWYzo)
+* [ ] [30/10/2025 **Flet + Python: Build a Cross-Platform App (Desktop | Mobile | Web) in 30 Minutes** 52 889 **30:15**](https://www.youtube.com/watch?v=jqAQ4oQGUH0)
+* [ ] [23/10/2025 **Engineering Workflow: How I Plan a Python Project Before Writing Code** 4 194 **10:20**](https://www.youtube.com/watch?v=gxRctjz1LC0)
+* [ ] [16/10/2025 **I Gave 4 AI App Builders the Same Prompt — The Results Shocked Me** 571 **07:24**](https://www.youtube.com/watch?v=jphcg52uJaw)
+* [ ] [09/10/2025 **Learn Python in 2 Hours — Complete Course for Beginners [2026]** 16 582 **01:41:43**](https://www.youtube.com/watch?v=crgQOez8d4k)
+* [ ] [02/10/2025 **10 Nooby Python Mistakes Beginners Make — Fix Them Fast (Code Examples)** 1 091 **13:20**](https://www.youtube.com/watch?v=0XjO177iEbk)
+* [ ] [25/09/2025 **Python Asynchronous Programming Tutorial: Asyncio, async & await Explained** 3 443 **19:12**](https://www.youtube.com/watch?v=ngXbyui-weA)
+* [ ] [18/09/2025 **Web Scraping in Python — Reddit Scraper with BeautifulSoup [No API]** 5 126 **34:19**](https://www.youtube.com/watch?v=2Ry78DUeONw)
+* [ ] [11/09/2025 **Face Mask Detection Tutorial — TensorFlow 2 (CNN)** 1 564 **38:23**](https://www.youtube.com/watch?v=0nOHK8FtXmM)
+* [ ] [04/09/2025 **12 Minutes to Learn NumPy (Python): Arrays, Reshape, Arange & Linspace** 1 344 **17:14**](https://www.youtube.com/watch?v=Db7P4pvQNb8)
+* [ ] [28/08/2025 **Secure FastAPI API with JWT (OAuth2) – Python Token Authentication Tutorial** 13 276 **46:47**](https://www.youtube.com/watch?v=KxR3OONvDvo)
+* [ ] [21/08/2025 **FastAPI SQLAlchemy Tutorial 2025 — Build a REST API with SQL** 22 586 **34:51**](https://www.youtube.com/watch?v=xq1Snezb1rs)
+* [ ] [14/08/2025 **Python Roadmap: 7-Step Plan to Learn Python FAST** 1 965 **25:57**](https://www.youtube.com/watch?v=4YGZwsXt0P4)
+* [ ] [07/08/2025 **FastAPI Crash Course 2025: Python Tutorial for Absolute Beginners** 19 908 **42:10**](https://www.youtube.com/watch?v=nWWPlEO0he8)
+* [ ] [31/07/2025 **Graphs & Data Structures in Programming: BFS vs DFS Algorithms Explained!** 1 521 **31:18**](https://www.youtube.com/watch?v=1Kpgcnr5TpA)
+* [ ] [24/07/2025 **Tree Data Structure: Simple Tutorial for Beginners in Python** 2 408 **27:33**](https://www.youtube.com/watch?v=0Bkn0scvqdg)
+* [ ] [17/07/2025 **Queues in Python Explained [ Step-by-Step Guide to Data Structures & Algorithms ]** 1 544 **18:46**](https://www.youtube.com/watch?v=buRJGWOVtDc)
+* [ ] [10/07/2025 **if __name__ == "__main__" in Python: The Most Important Line You’ll Ever Learn** 4 908 **10:11**](https://www.youtube.com/watch?v=3eBEhXrh4cQ)
+* [ ] [03/07/2025 **How to Hash Passwords in Python with Bcrypt [Secure & Practical]** 3 240 **29:45**](https://www.youtube.com/watch?v=YIUNTJEQwQ4)
+* [ ] [26/06/2025 **Context Managers in Python – Step-by-Step Tutorial to Managing Resources** 1 251 **22:34**](https://www.youtube.com/watch?v=-K2B3Fn00-c)
+* [ ] [19/06/2025 **Julius AI Tutorial: Python Data Project for Beginners** 2 512 **37:59**](https://www.youtube.com/watch?v=EGJf81W6K8k)
+* [ ] [12/06/2025 **How to Generate Secure Random Passwords in Python [String & Secrets] - Easy Edition** 1 661 **17:37**](https://www.youtube.com/watch?v=yEqgL7jzpGY)
+* [ ] [05/06/2025 **Python Match Case vs If-Else: How the Match Statement Simplifies Complex Conditions** 1 865 **12:29**](https://www.youtube.com/watch?v=RXZu25r0oEI)
+* [ ] [29/05/2025 **Build a Conversational AI Chatbot in Python [ Flet + Murf API Full Guide ]** 1 852 **55:07**](https://www.youtube.com/watch?v=DDfQe4Xd3BI)
+* [ ] [22/05/2025 **Best Way to Store Data in Python? Classes vs Dataclasses vs NamedTuple (Full Comparison)** 2 756 **26:02**](https://www.youtube.com/watch?v=ASOjvas17LA)
+* [ ] [15/05/2025 **Hyperparameter Tuning in Python: Boost Model Accuracy with Scikit-Learn** 3 169 **30:54**](https://www.youtube.com/watch?v=JJpVCJGg7Z8)
+* [ ] [08/05/2025 **Build a Python Portfolio That Makes You Stand Out in 2025 [YourWare AI]** 3 575 **21:27**](https://www.youtube.com/watch?v=i5_iFatibRI)
+* [ ] [01/05/2025 **Build a Django Authentication System – Secure Login & Signup with Python | Full Tutorial** 6 788 **46:35**](https://www.youtube.com/watch?v=9WaV5KZpGaY)
+* [ ] [24/04/2025 **Django Tutorial (2025) – Build a Full Python Web App from Scratch** 17 264 **52:18**](https://www.youtube.com/watch?v=l0QEGvAX8rU)
+* [ ] [17/04/2025 **Python Django Tutorial for Web Applications (Step-by-Step Setup in 25 Minutes)** 10 475 **26:16**](https://www.youtube.com/watch?v=ndJeakZJGeQ)
+* [ ] [10/04/2025 **Build a Django REST API with Custom AI Agents and Zencoder [Full Tutorial]** 1 648 **14:33**](https://www.youtube.com/watch?v=rbSbgxUHbZ4)
+* [ ] [03/04/2025 **Flask Chat App with SocketIO | Build Real-Time Chat in Python** 10 259 **01:05:17**](https://www.youtube.com/watch?v=o5vDco6OVTs)
+* [ ] [27/03/2025 **Build a text to speech app with Murf API - on Python & Flet (Easy Tutorial!)** 5 705 **41:05**](https://www.youtube.com/watch?v=nmPFOrDLDf4)
+* [ ] [20/03/2025 **Python Flet App – Build Desktop & Mobile Apps with One Codebase (No Flutter Needed!)** 35 299 **34:30**](https://www.youtube.com/watch?v=M4Sz_vM9_pw)
+* [ ] [13/03/2025 **Python args and kwargs Tutorial: How to Use *args and **kwargs** 2 627 **13:23**](https://www.youtube.com/watch?v=JjHEhJqOimQ)
+* [ ] [06/03/2025 **Build a Kivy Python App – Step-by-Step Mobile App Tutorial** 54 620 **25:23**](https://www.youtube.com/watch?v=zAy7bqFUJLg)
+* [ ] [27/02/2025 **Python List & Dictionary Comprehensions Explained: Write Faster, Cleaner Code** 2 172 **17:00**](https://www.youtube.com/watch?v=jTK8faAN4V4)
+* [ ] [20/02/2025 **Python 3D Game Development: Create Your Own Minecraft with Ursina Engine (Full Tutorial)** 43 863 **38:16**](https://www.youtube.com/watch?v=7vSKU2nsMV8)
+* [ ] [13/02/2025 **Python Generators: The Must-Know Trick to Write Faster, Memory-Efficient Code** 3 370 **09:48**](https://www.youtube.com/watch?v=kynYlXHeBh4)
+* [ ] [06/02/2025 **LSTM Time Series Forecasting with TensorFlow & Python – Step-by-Step Tutorial** 64 433 **49:52**](https://www.youtube.com/watch?v=94PlBzgeq90)
+* [ ] [30/01/2025 **How to Test Python Code with PyTest (Best Practices & Examples)** 9 629 **29:51**](https://www.youtube.com/watch?v=WxMFCfFRY2w)
+* [ ] [23/01/2025 **Machine Learning Pipelines in Python: Step-by-Step Guide with Scikit-Learn** 18 824 **28:42**](https://www.youtube.com/watch?v=777Qb0gHuJU)
+* [ ] [16/01/2025 **Python Machine Learning for Dummies: Scikit-Learn Tutorial for Beginners** 47 711 **37:35**](https://www.youtube.com/watch?v=SW0YGA9d8y8)
+* [ ] [09/01/2025 **Build a REST API in Python | API Crash Course** 40 527 **44:41**](https://www.youtube.com/watch?v=Ha3ls0EAtW8)
+* [ ] [02/01/2025 **Decorators in Python: The Complete Guide** 7 306 **13:59**](https://www.youtube.com/watch?v=BeNH2WdETYc)
+* [ ] [26/12/2024 **Streamlit Tutorial: Build Python Apps in less than a day** 28 256 **34:38**](https://www.youtube.com/watch?v=8W8NQFFbDcU)
+* [ ] [19/12/2024 **Python Walrus Operator _ Save Space In Our Coding** 2 957 **08:26**](https://www.youtube.com/watch?v=b2drBIDOY20)
+* [ ] [12/12/2024 **How to Use the Python Debug Module the Right Way** 1 822 **18:20**](https://www.youtube.com/watch?v=hBE8xc4apqo)
+* [ ] [05/12/2024 **Python SQL Alchemy: Never Write SQL Syntax Again** 21 442 **49:47**](https://www.youtube.com/watch?v=jobpptS9f8I)
+* [ ] [28/11/2024 **SQL in Python for Beginners | Python Tutorial** 20 580 **42:26**](https://www.youtube.com/watch?v=tXJtY51xHq8)
+* [ ] [21/11/2024 **All Python List Methods in 12 Minutes** 5 613 **12:09**](https://www.youtube.com/watch?v=FUEzZ-O1AhA)
+* [ ] [14/11/2024 **All Python Dictionary Methods in 14 Minutes** 4 941 **14:08**](https://www.youtube.com/watch?v=tGa94wcoXiQ)
+* [ ] [07/11/2024 **SQL in Python - Build an Expense Tracker Desktop Application** 18 498 **01:08:17**](https://www.youtube.com/watch?v=I8S9V8AYjtA)
+* [ ] [31/10/2024 **Stop Using Print in Python** 64 027 **09:44**](https://www.youtube.com/watch?v=QFTBpDpFHVo)
+* [ ] [24/10/2024 **How to Test Python Code - Unit Testing Tutorial** 9 273 **29:14**](https://www.youtube.com/watch?v=FUrui0DpK5I)
+* [ ] [17/10/2024 **Python Data Classes: Simplify Your Code and Save HOURS** 2 879 **16:09**](https://www.youtube.com/watch?v=DgFkLJmwOBA)
+* [ ] [10/10/2024 **Top 5 F-String Tricks Every Python Beginner Should Know** 2 131 **16:27**](https://www.youtube.com/watch?v=LQC7NtCu-qI)
+* [ ] [03/10/2024 **Top 10 Built-in Python Modules You Should Know** 3 779 **27:13**](https://www.youtube.com/watch?v=gAUze0R3Dl0)
+* [ ] [26/09/2024 **ASMR Programming with Python & SQL – No Talking Database Tutorial** 4 964 **39:49**](https://www.youtube.com/watch?v=4So5WN9zwrE)
+* [ ] [19/09/2024 **ASMR Programming - Battleship in JavaScript - No Talking** 828 **37:25**](https://www.youtube.com/watch?v=95x_vuRovFY)
+* [ ] [05/09/2024 **5 Best Python Habits for Better Code** 2 785 **20:32**](https://www.youtube.com/watch?v=hcC-9mO1l6A)
+* [ ] [29/08/2024 **Create a Python Audio App with PyQt – Fast & Easy GUI Development** 10 839 **50:28**](https://www.youtube.com/watch?v=wdEpWCFf40U)
+* [ ] [22/08/2024 **Data Aggregation in Python with Pandas: A Step-by-Step Tutorial to Boost Your Data Analysis Skills** 2 491 **24:08**](https://www.youtube.com/watch?v=39zsi3LkCdM)
+* [ ] [15/08/2024 **Introduction to Dash Plotly - Interactive Dashboards in Python** 27 276 **01:08:23**](https://www.youtube.com/watch?v=ArnxeE1NuMM)
+* [ ] [08/08/2024 **Build a Python Interactive Data Dashboard with Dash & Plotly | Data Analytics: World Happiness Index** 10 669 **58:48**](https://www.youtube.com/watch?v=3-s95QV2DFw)
+* [ ] [01/08/2024 **Data Analysis Project in Python | How to Analyze Coral Reef Bleaching with Pandas & Matplotlib |** 2 649 **46:46**](https://www.youtube.com/watch?v=sAkzKo8Ft2Y)
+* [ ] [25/07/2024 **Learn Data Visualization with Matplotlib in Python: A Beginner’s Guide** 17 707 **32:28**](https://www.youtube.com/watch?v=gvn8RIG38CM)
+* [ ] [18/07/2024 **Top techniques to clean data with Pandas [ Beginner-Friendly Python Tutorial ]** 3 348 **39:03**](https://www.youtube.com/watch?v=hnGuedS-Rss)
+* [ ] [11/07/2024 **Learn Data Analytics with Pandas: Data Grouping and Aggregating Tutorial** 2 554 **32:31**](https://www.youtube.com/watch?v=zao608rFswY)
+* [ ] [04/07/2024 **Learn Data Analytics with Pandas: Master Data Filtering in Python** 6 175 **38:10**](https://www.youtube.com/watch?v=xiRLM7fRe_I)
+* [ ] [27/06/2024 **Pandas vs Polars: The Ultimate 2024 Speed and Performance Showdown** 3 754 **20:24**](https://www.youtube.com/watch?v=TDF39Yd-gA8)
+* [ ] [20/06/2024 **Python vs Other Programming Languages: Which Should You Learn?** 1 579 **06:32**](https://www.youtube.com/watch?v=s4JdO7Twq-w)
+* [ ] [13/06/2024 **Bootstrap in Flask Full Course: Learn to Integrate Bootstrap into a Flask App** 15 738 **01:04:57**](https://www.youtube.com/watch?v=5EUOvXjahLY)
+* [ ] [06/06/2024 **How to Create a Virtual Environment for Python: Easy 2024 Guide** 10 074 **13:58**](https://www.youtube.com/watch?v=ySk09NKutm8)
+* [ ] [30/05/2024 **Secure OAuth 2.0 in Flask: Python User Authentication Guide** 14 893 **33:32**](https://www.youtube.com/watch?v=wctDfjx4xIw)
+* [ ] [23/05/2024 **Python Authentication: Create a Secure Login System with Flask and SQL Alchemy** 42 844 **01:07:49**](https://www.youtube.com/watch?v=Fr2MxT9M0V4)
+* [ ] [16/05/2024 **Python: Build a Fitness Tracker Desktop App from Scratch with PyQt and SQL** 27 333 **01:14:07**](https://www.youtube.com/watch?v=4y9BWBkj9Bo)
+* [ ] [09/05/2024 **Top 5 Must-Read Programming Books for Beginners [2024]** 2 235 **11:42**](https://www.youtube.com/watch?v=DCF29AsJEWc)
+* [ ] [25/04/2024 **The Winning Formula: Hard and Soft Skills for Coding Success | Episode #49** 464 **10:56**](https://www.youtube.com/watch?v=gtZTsqot38I)
+* [ ] [25/04/2024 **5 Mini Python Projects - Perfect for Beginners** 4 064 **15:30**](https://www.youtube.com/watch?v=FC5I_Js3b40)
+* [ ] [18/04/2024 **Python Class Descriptors: Your Secret Weapon for Efficiency | Episode #48** 235 **10:53**](https://www.youtube.com/watch?v=ihXY_ZKUTps)
+* [ ] [18/04/2024 **Pygame Tutorial: Create Tetris from Scratch in Python** 6 283 **01:38:07**](https://www.youtube.com/watch?v=JkjiFPNH0Ng)
+* [ ] [12/04/2024 **Python Class Methods: Your Gateway to Advanced Programming!** 337 **11:21**](https://www.youtube.com/watch?v=aVdz9aakEIA)
+* [ ] [11/04/2024 **Python Game Development: Step-by-Step Beginner's Guide to PyGame** 2 089 **44:55**](https://www.youtube.com/watch?v=_BIAu6396-A)
+* [ ] [06/04/2024 **Take Your Code to New Heights: A Journey into Python Decorators** 210 **13:24**](https://www.youtube.com/watch?v=uO1zwxf0PF8)
+* [ ] [04/04/2024 **Linked Lists 101: Your Essential Guide to Data Structures for Beginners** 1 054 **18:24**](https://www.youtube.com/watch?v=lqT37A7LJx8)
+* [ ] [02/04/2024 **Easy Flask App Deployment with PythonAnywhere | Beginner's Step-by-Step Guide** 25 162 **10:10**](https://www.youtube.com/watch?v=Bx_jHawKn5A)
+* [ ] [28/03/2024 **Decoding Python Data Storage: Master Your Data with Classes | Episode #45** 192 **11:20**](https://www.youtube.com/watch?v=fOmqon45g80)
+* [ ] [28/03/2024 **Flask Full Course: Build Stunning Web Apps Fast | Python Flask Tutorial** 171 427 **01:25:41**](https://www.youtube.com/watch?v=45P3xQPaYxc)
+* [ ] [22/03/2024 **Python Data Classes: The Ultimate Beginner's Guide | Episode #44** 295 **11:38**](https://www.youtube.com/watch?v=86Ea6u0M8X4)
+* [ ] [21/03/2024 **Explore Stacks - The Ultimate Guide | Data Structure Tutorial** 1 552 **17:53**](https://www.youtube.com/watch?v=e35MASb03EM)
+* [ ] [14/03/2024 **Python App Development: Build Modern GUIs in 7 Hours (Beginners Course)** 282 108 **06:42:28**](https://www.youtube.com/watch?v=f_9NBdSAo-g)
+* [ ] [12/03/2024 **Python in Depth: Understanding Static and Abstract Methods for Enhanced Programming | Episode #43** 244 **11:23**](https://www.youtube.com/watch?v=BPqTINE_1Ns)
+* [ ] [07/03/2024 **Build a Python Mobile Application in Minutes | Kivy GUI Tutorial | Code with Josh** 15 807 **35:26**](https://www.youtube.com/watch?v=a9T63RTlblY)
+* [ ] [05/03/2024 **Explore Python's OOP Principles: A Comprehensive Overview | Episode #42** 190 **12:17**](https://www.youtube.com/watch?v=jzwkOiTzyH0)
+* [ ] [29/02/2024 **Python Abstraction Explained: Mastering OOP Concepts | Code with Josh** 4 268 **19:57**](https://www.youtube.com/watch?v=WwpsdzOBE2M)
+* [ ] [27/02/2024 **Python KNN Essentials: A Strategy to Start Classification | Episode #41** 134 **11:39**](https://www.youtube.com/watch?v=iWMsEew6UKQ)
+* [ ] [22/02/2024 **Object-Oriented Programming with Python in 2024 | 7-Hour FREE Course for Beginners** 105 479 **06:45:36**](https://www.youtube.com/watch?v=-YhddS9_uus)
+* [ ] [21/02/2024 **Getting Started with Linear Regression in Python | Episode #40** 120 **10:36**](https://www.youtube.com/watch?v=vM8xoZkfV-M)
+* [ ] [15/02/2024 **Quick Guide to Polymorphism in Object-Oriented Programming** 2 324 **19:38**](https://www.youtube.com/watch?v=y0zQsLJev88)
+* [ ] [13/02/2024 **Choosing the Right Model: Your Path to Machine Learning Success | Episode #39** 108 **10:01**](https://www.youtube.com/watch?v=NQihAqnZ3y0)
+* [ ] [08/02/2024 **The Pillars of Object Oriented Programming: Encapsulation, Inheritance, Polymorphism and Abstraction** 10 894 **20:09**](https://www.youtube.com/watch?v=TXSsVjIX3_g)
+* [ ] [06/02/2024 **Unlocking Model Performance: A Deep Dive into train_test_split Python Tutorial | Episode #38** 65 **10:30**](https://www.youtube.com/watch?v=gleZGX7qgQs)
+* [ ] [01/02/2024 **Creating Python Games with Pygame 2024 - FREE Python Course Part 2 - Code With Josh** 13 488 **02:45:31**](https://www.youtube.com/watch?v=5fGHothN_lg)
+* [ ] [01/02/2024 **FREE Python Course for Beginners (13 HOURS) - Code With Josh** 203 771 **10:12:24**](https://www.youtube.com/watch?v=rM-jDeSgOQw)
+* [ ] [29/01/2024 **The Essential Primer: Data Preprocessing Techniques for Machine Learning Newbies | Episode #37** 244 **10:52**](https://www.youtube.com/watch?v=NQp7JOmIx5I)
+* [ ] [25/01/2024 **Using CSV Files in Python: Mastering OOP with a Mini Project** 4 130 **27:44**](https://www.youtube.com/watch?v=Kk2TkaQ2Y3Q)
+* [ ] [23/01/2024 **Your Gateway to Machine Learning in Python: ML Made Easy** 110 **11:21**](https://www.youtube.com/watch?v=O9vRYNTGarQ)
+* [ ] [18/01/2024 **Master Object Oriented Programming: Python Class Project in 20 Minutes | Code with Josh** 6 251 **23:23**](https://www.youtube.com/watch?v=dKYzEpPEMx0)
+* [ ] [16/01/2024 **Enhance Your Workflow: Advanced Matplotlib Techniques Unveiled | Episode #35** 122 **11:57**](https://www.youtube.com/watch?v=eFm_CSOPNuI)
+* [ ] [11/01/2024 **Mastering Iterables, Iterators, and Itertools in Python | Python Tutorial | Code with Josh** 794 **21:45**](https://www.youtube.com/watch?v=NUqYfuz_xvs)
+* [ ] [09/01/2024 **Transform Data into Stories: Elevate Insights with Matplotlib | Episode #34** 111 **11:10**](https://www.youtube.com/watch?v=XMiDs9M1HOg)
+* [ ] [04/01/2024 **Top 9 Python Errors and How to Solve Them Easily [ CODE WITH JOSH ]** 1 074 **21:19**](https://www.youtube.com/watch?v=XxdHq6cxNIc)
+* [ ] [02/01/2024 **Python Data Science Essentials: A Comprehensive Guide to Grouping and Pivot Tables | Episode #33** 129 **09:55**](https://www.youtube.com/watch?v=i8X2VvjcRqA)
+* [ ] [28/12/2023 **6 Advanced Python Hacks in 2024 Every Developer Should Know | Code with Josh** 2 724 **32:27**](https://www.youtube.com/watch?v=wnfTMvZDbiQ)
+* [ ] [26/12/2023 **Elevate Your Data Analysis: Strategies for Data Grouping in Pandas | Episode #32** 75 **09:04**](https://www.youtube.com/watch?v=eNKqU21fwck)
+* [ ] [21/12/2023 **The Question You've Never Been Asked in Your Life | What Do You Want To Learn? | Code with Josh** 164 **01:50**](https://www.youtube.com/watch?v=YJYC0I6Z1ig)
+* [ ] [21/12/2023 **Python Pandas 101: Navigating Null Values Like a Pro for Data Cleaning | Episode #31** 127 **09:06**](https://www.youtube.com/watch?v=C7fXAr70ZSg)
+* [ ] [14/12/2023 **How to Build a MOBILE Application with Kivy | Python GUI Tutorial | Code with Josh** 3 079 **28:21**](https://www.youtube.com/watch?v=f7qfYl__Rog)
+* [ ] [13/12/2023 **Python Powerhouse: Your Ultimate Guide to Data Manipulation with Pandas | Episode #30** 123 **10:32**](https://www.youtube.com/watch?v=waSypF6SZH8)
+* [ ] [07/12/2023 **How I Built a SPEECH Recognition Desktop Application | Python GUI Tutorial | Code with Josh** 1 926 **23:49**](https://www.youtube.com/watch?v=L6bynAS6kjU)
+* [ ] [05/12/2023 **Maximize Your Data: Your Guide to 5 Decision-Making Essentials | Episode #29 | PyPod Chronicles** 55 **12:50**](https://www.youtube.com/watch?v=1VKeGO5W30c)
+* [ ] [30/11/2023 **Learn to Create a Desktop OpenWeather API App in Minutes | Python GUI Tutorial | Code with Josh** 3 508 **18:22**](https://www.youtube.com/watch?v=h_Aiijsv-zI)
+* [ ] [28/11/2023 **A Final Verdict on Flask vs. Django for Python Beginners | Episode #28** 176 **12:16**](https://www.youtube.com/watch?v=67CfeYNwEG0)
+* [ ] [23/11/2023 **Build a Python Desktop Application in Minutes | Python GUI tutorial | Code with Josh** 52 056 **18:40**](https://www.youtube.com/watch?v=RQOXVpaFYMU)
+* [ ] [21/11/2023 **Journey into Flask: Python Beginner's Manual for Success | Episode #27 | PyPod Chronicles** 116 **10:33**](https://www.youtube.com/watch?v=yAxhkEpxkBM)
+* [ ] [16/11/2023 **List Comprehensions in Python in less than 15 Minutes | Code with Josh** 809 **14:15**](https://www.youtube.com/watch?v=QGbRdY2ga-o)
+* [ ] [14/11/2023 **Git 101 - Your Ultimate Beginner's Handbook | Episode #26** 139 **11:22**](https://www.youtube.com/watch?v=MhXuUTbteSc)
+* [ ] [09/11/2023 **Explore Game Development Using PyGame [CODE WITH JOSH]** 330 **14:22**](https://www.youtube.com/watch?v=qyA8Oem91uc)
+* [ ] [08/11/2023 **Python's Powerhouse: Exploring Advanced Libraries for Innovation | Episode #25** 85 **10:52**](https://www.youtube.com/watch?v=1IKHhNKMu_w)
+* [ ] [02/11/2023 **Python Lambda Functions Explained | Beginners Guide to Efficient Programming | Code with Josh** 526 **15:05**](https://www.youtube.com/watch?v=7FFusJuFlgo)
+* [ ] [01/11/2023 **Simplify and Optimize: The Ultimate Guide to Python Modules | Episode #24** 93 **12:53**](https://www.youtube.com/watch?v=_BTgxd4-G08)
+* [ ] [31/10/2023 **Deciphering the Blueprint of Python Objects | Episode #23** 54 **11:52**](https://www.youtube.com/watch?v=xRkaaOlIqoU)
+* [ ] [30/10/2023 **Crack the Code: A Dive into Python's Data Structures | Episode #22** 67 **13:06**](https://www.youtube.com/watch?v=noXOZauNLfc)
+* [ ] [29/10/2023 **Elevate Code Efficiency: Create Python Functions for Code Reusability | Episode #21** 71 **11:42**](https://www.youtube.com/watch?v=s51MaPHB404)
+* [ ] [28/10/2023 **Efficient Code Repetition with Loops in Python | Episode #20** 84 **10:53**](https://www.youtube.com/watch?v=Xeka9t_qG8s)
+* [ ] [27/10/2023 **Python FAST-TRACK: Mastering the Basics of Week One! | Episode #19** 70 **09:18**](https://www.youtube.com/watch?v=8Jtc7aQ_uAk)
+* [ ] [26/10/2023 **Complete Python Journey - Master Python from Basics to Git | Episode #18** 112 **12:58**](https://www.youtube.com/watch?v=LQUuw7yF4b4)
+* [ ] [26/10/2023 **Mastering Python With These Advanced Modules That DEVELOPERS Don't Want You To Know | Code with Josh** 727 **14:29**](https://www.youtube.com/watch?v=R2uYra4nVMY)
+* [ ] [25/10/2023 **The DYNAMIC DUO for Aspiring Programmers! | Episode #17** 35 **11:04**](https://www.youtube.com/watch?v=an1Uw28Mi7M)
+* [ ] [24/10/2023 **The Battle Between PYTHON GUI Frameworks | Episode #16** 98 **13:25**](https://www.youtube.com/watch?v=FsSXKm2zwMY)
+* [ ] [23/10/2023 **Python's POWER TRIO - PyQt, Matplotlib, and SQL - Transform Your Regimen | Episode #15** 59 **12:22**](https://www.youtube.com/watch?v=t_wZc9o2HlI)
+* [ ] [22/10/2023 **Elevate Your DATA STORYTELLING: Python Dashboards with Plotly's Dash | Episode #14** 95 **10:13**](https://www.youtube.com/watch?v=sJNrFInOq2Y)
+* [ ] [21/10/2023 **Matplotlib vs. Plotly: The Ultimate SHOWDOWN of Python Data Visualization Giants | Episode #13** 322 **12:08**](https://www.youtube.com/watch?v=O-1uTdQ-i1o)
+* [ ] [20/10/2023 **Unleash the Power of Plotly: Elevate Your Python Visualizations | Episode #12** 80 **12:42**](https://www.youtube.com/watch?v=2P48vatt4fQ)
+* [ ] [19/10/2023 **The ULTIMATE GUIDE to Python Creating MODULES and Code Organization | Code with Josh** 1 226 **18:10**](https://www.youtube.com/watch?v=c_5pZYXCAuU)
+* [ ] [18/10/2023 **Master the Art of VISUAL STORYTELLING in Python | Episode #11** 195 **12:08**](https://www.youtube.com/watch?v=-eOBwAFxzIk)
+* [ ] [17/10/2023 **The Ultimate FINANCE App JOURNEY: Python, PyQt, and Matplotlib | Episode #10** 172 **13:24**](https://www.youtube.com/watch?v=SsjtgyKbR7I)
+* [ ] [16/10/2023 **Python APP DEVELOPMENT: Discover the POWER of PyQt5 | Episode #9** 93 **11:31**](https://www.youtube.com/watch?v=5JZ8Q5ZmCtM)
+* [ ] [15/10/2023 **Python Error Management with Exceptions | Episode #8** 104 **10:00**](https://www.youtube.com/watch?v=kSbTTf5YmfQ)
+* [ ] [14/10/2023 **LEVEL UP your PYTHON Skills with PyGame | Episode #7** 100 **09:18**](https://www.youtube.com/watch?v=Ah8wve7QDsc)
+* [ ] [13/10/2023 **The ULTIMATE Python Data Structure SHOWDOWN | Episode #6** 118 **13:15**](https://www.youtube.com/watch?v=B2F1peV-Z4E)
+* [ ] [13/10/2023 **SUPERCHARGE Your PYTHON with Inheritance and Superclasses | Episode #5** 100 **07:29**](https://www.youtube.com/watch?v=VXCHOEP1sTY)
+* [ ] [12/10/2023 **The INFAMOUS intro to Python OBJECT_ORIENTED Programming (OOP) | Episode #4** 165 **09:46**](https://www.youtube.com/watch?v=IosORea3UsY)
+* [ ] [12/10/2023 **Discover the ART of Repeating Code in PYTHON | Episode #3** 200 **07:25**](https://www.youtube.com/watch?v=MHzZOmjLIh8)
+* [ ] [12/10/2023 **Python FUNCTION CREATION Made Easy | Code Reusability | Code with Josh** 694 **16:27**](https://www.youtube.com/watch?v=lbWCP-KMun8)
+* [ ] [12/10/2023 **A Comprehensive BEGINNER'S GUIDE to Python Functions | Episode #2** 301 **08:22**](https://www.youtube.com/watch?v=vo9TEe125iA)
+* [ ] [12/10/2023 **COVERING the FUNDAMENTALS of Python for Beginners | Episode #1** 745 **10:38**](https://www.youtube.com/watch?v=K9aTljEMRpE)
+* [ ] [05/10/2023 **Python While Loop and For Loop Made Easy | Repeat Code with Python | Code with Josh** 607 **18:37**](https://www.youtube.com/watch?v=K9Qge9xqigo)
+* [ ] [28/09/2023 **Master the Basics of Python in One Week | Your First Week with Python | Code with Josh** 1 049 **17:49**](https://www.youtube.com/watch?v=xqjv4oKr_Kg)
+* [ ] [21/09/2023 **Only 7 Steps to MASTER THE FUNDAMENTALS of Python | Code with Josh** 2 796 **17:14**](https://www.youtube.com/watch?v=b0lZ-vU13so)
+* [ ] [14/09/2023 **ERROR Handling in Python | Try and Except Statements | Code with Josh** 306 **15:10**](https://www.youtube.com/watch?v=r9n9231t-eA)
+* [ ] [07/09/2023 **Python Dictionaries and Sets: Your ULTIMATE Data Structure Guide | Code with Josh** 825 **15:36**](https://www.youtube.com/watch?v=4qBTtf6W5Aw)
+* [ ] [01/09/2023 **The DATA STRUCTURES of Python | List and Tuple Differences | Code with Josh** 689 **14:07**](https://www.youtube.com/watch?v=GQk2K_Rr6bU)
+* [ ] [24/08/2023 **Python SUPERCLASS and INHERITANCE | Learn OOP Inheritance | Code with Josh** 1 979 **12:39**](https://www.youtube.com/watch?v=v1Z4102UMc4)
+* [ ] [16/08/2023 **The Secrets of OBJECT-ORIENTED Programming for Dummies | Code with Josh** 10 015 **15:25**](https://www.youtube.com/watch?v=JM279KD0DZ0)
+* [ ] [10/08/2023 **MASTERING the basics of LOOPS in Python** 846 **15:10**](https://www.youtube.com/watch?v=k26qdz1n4vs)
+* [ ] [10/08/2023 **ELEVATE Your CODING with Python Functions | Code with Josh** 671 **13:48**](https://www.youtube.com/watch?v=VzLHXaTNMAM)
+* [ ] [10/08/2023 **Before the PYTHON Basics: LEVEL UP your coding** 708 **14:15**](https://www.youtube.com/watch?v=BgT2oB4nvkc)
+
+## 4 IN Auteur **[addinyy](https://www.youtube.com/@addinyy/videos)** ( **27** videos - 33 871 vues - 4 heures et 9 minutes )
+
+### Pas vus (18 - 3 heures et 17 minutes)
+
+* [ ] [16/07/2024 **How to Create a slider Modal in Python Flet** 1 304 **24:30**](https://www.youtube.com/watch?v=wgALXwfBs60)
+* [ ] [16/07/2024 **How to a Product List Page in Python Flet** 816 **12:58**](https://www.youtube.com/watch?v=k3F8LprR05w)
+* [ ] [29/06/2024 **How to Pass Logged-In Users Between Pages Using Tokens and also Hash Password** 898 **17:10**](https://www.youtube.com/watch?v=48P8x4sP4-o)
+* [ ] [04/05/2024 **How to create a top bar and making it responsive in Flet (part 12)** 779 **14:59**](https://www.youtube.com/watch?v=B9T_SqDItP4)
+* [ ] [03/04/2024 **How to Create a side bar in python with flet (part 11)** 873 **10:57**](https://www.youtube.com/watch?v=sd757tUt7X4)
+* [ ] [01/04/2024 **Dashboard Interface with Graph and cards in python with Flet (Part 10)** 961 **07:49**](https://www.youtube.com/watch?v=aTTvqWC4ZG8)
+* [ ] [01/04/2024 **Dashboard Interface in python with Flet (Part 9)** 1 602 **14:48**](https://www.youtube.com/watch?v=KN9ikZJ6nNA)
+* [ ] [20/03/2024 **SQL Login Validation in python with Flet (Part 8)** 1 035 **07:36**](https://www.youtube.com/watch?v=UOkoSsCWMNk)
+* [ ] [20/03/2024 **SQL Signup Validation in python with Flet (Part 7)** 1 289 **14:40**](https://www.youtube.com/watch?v=JyPvw22pkFk)
+* [ ] [11/03/2024 **How to create SQLite database in Flet (Part 6)** 1 827 **06:33**](https://www.youtube.com/watch?v=y1neELLGQtg)
+* [ ] [11/03/2024 **Navigating Between Pages in Flet(updated Part 5)** 1 374 **04:18**](https://www.youtube.com/watch?v=X_o9f9Q-0QU)
+* [ ] [07/03/2024 **How to use custom font and create sign up page in Python Flet  - Flet Authentication (Part 4)** 1 274 **06:37**](https://www.youtube.com/watch?v=HwxZrVtmnlU)
+* [ ] [05/03/2024 **How to Create a login page in Python Flet  - Flet Authentication (Part 3)** 2 903 **14:29**](https://www.youtube.com/watch?v=e7ShE-Xt74I)
+* [ ] [04/03/2024 **How to route from one page to another in Python Flet  - Flet Authentication (Part 2)** 3 613 **06:57**](https://www.youtube.com/watch?v=vA7p9PZUznA)
+* [ ] [04/03/2024 **Python Flet Authentication Desktop app with SQLite - Introduction (Part 1)** 10 400 **12:22**](https://www.youtube.com/watch?v=An8Pn3A30vk)
+* [ ] [28/02/2024 **How to compress images in Django** 243 **09:34**](https://www.youtube.com/watch?v=TyHoykUdeHI)
+* [ ] [14/02/2024 **How to Generate Barcode using python (new way)** 248 **07:10**](https://www.youtube.com/watch?v=MldUh93VxHs)
+* [ ] [30/12/2021 **How to edit an object in Django on the same page** 486 **04:19**](https://www.youtube.com/watch?v=TJrAVn-x4Z8)
+
+### Vus (9 - 51 minutes)
+
+* [x] [15/04/2026 **This Website Looks Good… But It’s Losing Him Clients Daily** 12 **04:25**](https://www.youtube.com/watch?v=l-4SQRHRalA)
+* [x] [08/04/2026 **Why AI Marketing Fails in Africa** 44 **05:29**](https://www.youtube.com/watch?v=DwxSc56lR84)
+* [x] [01/04/2026 **Why Your AI-Built App Gets Slower As You Grow** 43 **06:33**](https://www.youtube.com/watch?v=aeHsPSW5DQs)
+* [x] [26/03/2026 **We Reviewed This Booking Website… Here’s What It’s Missing** 1 642 **09:25**](https://www.youtube.com/watch?v=q_rNewP_VDM)
+* [x] [24/03/2026 **Why Your Website Is Not Bringing Sales** 18 **06:44**](https://www.youtube.com/watch?v=D8cdNMZchCk)
+* [x] [20/02/2026 **Why Your Business Is Busy But You’re Still Broke** 21 **02:57**](https://www.youtube.com/watch?v=7McFKdv5rVM)
+* [x] [11/02/2026 **Why Cheap Projects Always End Badly (For Both Sides)** 25 **04:05**](https://www.youtube.com/watch?v=fq9m5rMu4kQ)
+* [x] [08/02/2025 **How to use django-check-seo to check your SEO performance locally** 80 **02:37**](https://www.youtube.com/watch?v=90MgneCD_gQ)
+* [x] [01/03/2024 **How to create a custom management command in Django** 61 **09:02**](https://www.youtube.com/watch?v=fLwIQszE2eE)
+
+## 5 FR Auteur **[InformatiqueSansComplexe](https://www.youtube.com/@InformatiqueSansComplexe/videos)** ( **290** videos - 1 829 557 vues - 34 heures et 1 minute )
 
 ### Pas vus (243 - 30 heures et 52 minutes)
 
@@ -942,7 +1207,7 @@
 * [x] [27/01/2020 **Informatique sans complexe - Le réseau** 1 378 **02:44**](https://www.youtube.com/watch?v=U50EIUElVDI)
 * [x] [27/01/2020 **Informatique Sans Complexe - Le binaire** 4 553 **02:10**](https://www.youtube.com/watch?v=QItdlkRaCps)
 
-## 3 FR/GB Auteur **[2minutesPy](https://www.youtube.com/@2minutesPy/videos)** ( **93** videos - 1 083 548 vues - 3 heures et 52 minutes )
+## 6 FR/GB Auteur **[2minutesPy](https://www.youtube.com/@2minutesPy/videos)** ( **93** videos - 1 083 548 vues - 3 heures et 52 minutes )
 
 ### Pas vus (86 - 3 heures et 36 minutes)
 
@@ -1043,7 +1308,7 @@
 * [x] [15/09/2023 **Python's __init__ Method | 2MinutesPy** 48 833 **01:46**](https://www.youtube.com/watch?v=mYKGYr0xaXw)
 * [x] [10/09/2023 **Python's ABC (Abstract Base Class) in 2 Minutes** 9 456 **02:11**](https://www.youtube.com/watch?v=G-w5PvPQl5Q)
 
-## 4 FR Auteur **[bandedecodeurs](https://www.youtube.com/@bandedecodeurs/videos)** ( **50** videos - 750 692 vues - 21 heures et 16 minutes )
+## 7 FR Auteur **[bandedecodeurs](https://www.youtube.com/@bandedecodeurs/videos)** ( **50** videos - 750 692 vues - 21 heures et 16 minutes )
 
 ### Pas vus (49 - 20 heures et 54 minutes)
 
@@ -1101,7 +1366,7 @@
 
 * [x] [17/02/2022 **Comment interroger une base de données en SQL** 3 338 **22:11**](https://www.youtube.com/watch?v=pBPaPwyjLiQ)
 
-## 5 FR Auteur **[Gravenilvectuto](https://www.youtube.com/@Gravenilvectuto/videos)** ( **178** videos - 26 921 753 vues - 50 heures et 9 minutes )
+## 8 FR Auteur **[Gravenilvectuto](https://www.youtube.com/@Gravenilvectuto/videos)** ( **178** videos - 26 921 753 vues - 50 heures et 9 minutes )
 
 ### Pas vus (95 - 26 heures et 56 minutes)
 
@@ -1287,7 +1552,7 @@
 * [x] [05/10/2016 **LES BASES DU CSS - CREER UN SITE ? HTML/CSS #2** 400 243 **22:09**](https://www.youtube.com/watch?v=CadRnbEVjiQ)
 * [x] [01/10/2016 **CREER UN SITE ? HTML/CSS #1 - LES BASES** 1 273 957 **19:21**](https://www.youtube.com/watch?v=J9w-cir5a6U)
 
-## 6 FR Auteur **[JordyBayo](https://www.youtube.com/@JordyBayo/videos)** ( **201** videos - 365 211 vues - 80 heures et 23 minutes )
+## 9 FR Auteur **[JordyBayo](https://www.youtube.com/@JordyBayo/videos)** ( **201** videos - 365 211 vues - 80 heures et 23 minutes )
 
 ### Pas vus (193 - 70 heures et 9 minutes)
 
@@ -1496,7 +1761,7 @@
 * [x] [04/08/2019 **Calculatrice scientifique python et C avec interface graphique** 984 **05:55**](https://www.youtube.com/watch?v=j0m_TwnNCQc)
 * [x] [04/08/2019 **Calculatrice JAVA-RMI client server** 1 040 **13:24**](https://www.youtube.com/watch?v=ggSAnfoQUFU)
 
-## 7 GB Auteur **[Indently](https://www.youtube.com/@Indently/videos)** ( **797** videos - 25 544 142 vues - 114 heures et 48 minutes )
+## 10 GB Auteur **[Indently](https://www.youtube.com/@Indently/videos)** ( **797** videos - 25 544 142 vues - 114 heures et 48 minutes )
 
 ### Pas vus (620 - 91 heures et 22 minutes)
 
@@ -2301,7 +2566,7 @@
 * [x] [27/02/2020 **(Java 2020) Creating a custom icon for your app in Android Studio** 2 584 **01:21**](https://www.youtube.com/watch?v=U7rZ1Io6TgA)
 * [x] [26/02/2020 **(Java 2020) How to create an Increment +1 App in Android Studio** 1 581 **02:42**](https://www.youtube.com/watch?v=20M_YZRR85c)
 
-## 8 FR Maths Auteur **[foxxpy](https://www.youtube.com/@foxxpy/videos)** ( **319** videos - 806 361 vues - 66 heures et 49 minutes )
+## 11 FR Maths Auteur **[foxxpy](https://www.youtube.com/@foxxpy/videos)** ( **319** videos - 806 361 vues - 66 heures et 49 minutes )
 
 ### Pas vus (300 - 63 heures et 20 minutes)
 
