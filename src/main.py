@@ -53,17 +53,17 @@ async def main(page: ft.Page, width: int = 392):
     # main(page)
 
     ################################## Tutos ###################################
- 
+
     # gc7(page, "LIGHT", left=1520)  # 1912 pour écran #2 - Sinon 1520
 
     gc7(page, left=1520)  # 1912 pour écran #2 - Sinon 1520
     # from tutos.lv01 import main  # Design Simple
     # from tutos.movies.main import main  # Design Movie App - TMDB API (The Movie Database)
     # ❌ Tuto en cours
-    from tutos.lv02 import main  # * [ ] Tutos récents (Routing, FletX, etc.)
+    # from tutos.lv02 import main  # * [ ] Tutos récents (Routing, FletX, etc.)
     # from tutos.lv03 import main  #
 
-    main(page)
+    # main(page)
 
     ################################### ToDo ###################################
 
@@ -206,8 +206,10 @@ async def main(page: ft.Page, width: int = 392):
 
     #################################### Dev ###################################
 
-    # from devs.lv00_dev import main as main
-    # main(page)
+    # from devs.lv00_devs import main # Divers ways to do things (ex: reverse a string, sum digits)
+    from devs.lv01 import main
+
+    main(page)
 
     if not page.controls and not page.views:
         page.add(
