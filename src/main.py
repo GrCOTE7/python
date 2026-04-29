@@ -59,8 +59,9 @@ async def main(page: ft.Page, width: int = 392):
     gc7(page, left=1520)  # 1912 pour écran #2 - Sinon 1520
     # from tutos.lv01 import main  # Design Simple
     # * [ ] En cours
-    from tutos.lv02 import main  # Design Movie App
-    # from tutos.lv03 import main  # * [ ] Tutos récents (Routing, FletX, etc.)
+    from tutos.movies.main import main  # Design Movie App - TMDB API (The Movie Database)
+    # from tutos.lv02 import main  # * [ ] Tutos récents (Routing, FletX, etc.)
+    # from tutos.lv03 import main  #
 
     main(page)
 
