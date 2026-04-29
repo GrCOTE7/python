@@ -2,9 +2,9 @@
 
 |   Id  | Auteur |     Vues    |    2c    | N & Tps  |   Vus    |    %   |
 |------:|:------:|------------:|---------:|---------:|---------:|-------:|
-|     4 | SriEdy |    1 197 386 |      247 |      598 |      351 |  58.7% |
+|     4 | SriEdy |    1 197 386 |      251 |      598 |      347 |  58.0% |
 |       |        |             |          |          |          |        |
-|       |        |             |    51:16 |   116:42 |    65:26 |  56.1% |
+|       |        |             |    51:53 |   116:42 |    64:48 |  55.5% |
 |       |        |             |          |          |          |        |
 |    14 |  ISC   |    1 829 557 |      243 |      290 |       47 |  16.2% |
 |       |        |             |          |          |          |        |
@@ -34,14 +34,18 @@
 |       |        |             |          |          |          |        |
 |       |        |             |    63:20 |    66:49 |    03:29 |   5.2% |
 |       |        |             |          |          |          |        |
-|     8 | TOTAL  |   58 498 650 |     1 833 |     2 526 |      693 |  27.4% |
+|     8 | TOTAL  |   58 498 650 |     1 837 |     2 526 |      689 |  27.3% |
 |       |        |             |          |          |          |        |
-|       |        |             |   358:25 |   488:00 |   129:33 |  26.5% |
+|       |        |             |   359:02 |   488:00 |   128:55 |  26.4% |
 
 ## 1 IN Auteur **[sriedynurcahyo3894](https://www.youtube.com/@sriedynurcahyo3894/videos)** ( **598** videos - 1 197 386 vues - 116 heures et 42 minutes )
 
-### Pas vus (247 - 51 heures et 16 minutes)
+### Pas vus (251 - 51 heures et 53 minutes)
 
+* [ ] [01/07/2025 **Flet Tutorial - FleetingViews Framework and shared data** 431 **12:09**](https://www.youtube.com/watch?v=Q9srpWaTP68)
+* [ ] [22/06/2025 **Flet Tutorial - FletX (GetX) simple Reactive and Routing** 775 **11:11**](https://www.youtube.com/watch?v=yYnd7uFKiYE)
+* [ ] [29/05/2025 **Flet Tutorial -  Google Maps Embed** 466 **02:57**](https://www.youtube.com/watch?v=Ppg_-xnVoUM)
+* [ ] [29/03/2025 **Flet Tutorial - Realtime App Simple** 680 **11:15**](https://www.youtube.com/watch?v=c8TaTDiefwI)
 * [ ] [29/01/2025 **Mesop Tutorial - Make Simple List Todos** 260 **09:41**](https://www.youtube.com/watch?v=TucUTIJeic0)
 * [ ] [27/01/2025 **Flet Tutorial - NeoState Routing Authentication Example** 306 **08:39**](https://www.youtube.com/watch?v=sx3I2V0fv8k)
 * [ ] [20/01/2025 **Flet Tutorial - FletX Inject_in_state** 679 **09:03**](https://www.youtube.com/watch?v=rthHQ-tSO44)
@@ -290,12 +294,8 @@
 * [ ] [06/12/2022 **Flet Tutorial - GITHUB LOGIN OAUTH** 357 **18:51**](https://www.youtube.com/watch?v=uvxh68PRhkQ)
 * [ ] [20/11/2022 **Flet Tutorial - GoJek Redesign** 19 775 **33:17**](https://www.youtube.com/watch?v=5uBivF9C0xw)
 
-### Vus (351 - 65 heures et 26 minutes)
+### Vus (347 - 64 heures et 48 minutes)
 
-* [x] [01/07/2025 **Flet Tutorial - FleetingViews Framework and shared data** 431 **12:09**](https://www.youtube.com/watch?v=Q9srpWaTP68)
-* [x] [22/06/2025 **Flet Tutorial - FletX (GetX) simple Reactive and Routing** 775 **11:11**](https://www.youtube.com/watch?v=yYnd7uFKiYE)
-* [x] [29/05/2025 **Flet Tutorial -  Google Maps Embed** 466 **02:57**](https://www.youtube.com/watch?v=Ppg_-xnVoUM)
-* [x] [29/03/2025 **Flet Tutorial - Realtime App Simple** 680 **11:15**](https://www.youtube.com/watch?v=c8TaTDiefwI)
 * [x] [10/02/2024 **KivyMD Tutorial - add Webview Google Maps** 1 123 **11:21**](https://www.youtube.com/watch?v=5GJg4IV92vM)
 * [x] [24/10/2023 **SOLVED - CORS ERROR WITHOUT SERVER in 5 Minutes** 1 349 **05:55**](https://www.youtube.com/watch?v=l1lVD3hb3aE)
 * [x] [02/10/2023 **ReactPy Tutorial - Deploy Web To Glitch** 347 **05:22**](https://www.youtube.com/watch?v=YXQERqEhMuw)
