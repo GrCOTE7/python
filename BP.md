@@ -8,6 +8,8 @@
 
 ### Urgences
 
+* [ ] détruire e:/devs/demokit → Py
+* [ ] Refaire marcher lionelcote.gh.io (dev/cv_lc)
 * [ ] → APK: Automatisation build + transfert
 * [ ] → APK: Moyens pour simuler erreurs / Phone
 * [ ] → APK: ALL on E:

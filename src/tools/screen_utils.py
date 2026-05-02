@@ -126,29 +126,23 @@ def gc7_rules(
     name: str = "Ready",
     left: int = 1912,
     # left: int = 1520,  # 1912 - 392
-    width: int = 392,
-    height: int | None = None,
+    # width: int = 392,
+    width: int = 400,
+    height: int = 1088,
     defaultColors: bool = True,
 ) -> None:
-    if height is None:
-        heights_by_left = {
-            1912: 1088,
-            1520: 1039,
-        }
-        height = heights_by_left.get(left, 1088)
-
     configure_window(page, left=left, width=width, height=height)
     page.theme_mode = ft.ThemeMode.LIGHT if mode == "LIGHT" else ft.ThemeMode.DARK
     page.title = f"GC7 - {name}"
     if defaultColors:
         page.bgcolor = "#303030" if mode == "DARK" else "#EEEEEE"
 
-    # if _is_mobile_platform(page):
-    #     # Respecte la safe area : status bar, encoche, barre de navigation système
-    #     m = page.media
-    #     page.padding = ft.Padding(
-    #         top=m.padding.top + 5,
-    #         bottom=m.padding.bottom + 5,
-    #         left=m.padding.left + 10,
-    #         right=m.padding.right + 10,
-    #     )
+    if _is_mobile_platform(page):
+        # Respecte la safe area : status bar, encoche, barre de navigation système
+        m = page.media
+        page.padding = ft.Padding(
+            top=m.padding.top + 5,
+            bottom=m.padding.bottom + 5,
+            left=m.padding.left + 10,
+            right=m.padding.right + 10,
+        )

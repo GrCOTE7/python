@@ -211,3 +211,7 @@ pip freeze > requirements.txt
 Resources
 
 [ICONS](https://fonts.google.com/icons)
+
+Faire fonctionner Git sur E:\
+
+git config --global core.fsyncMethod writeout-only

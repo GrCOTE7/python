@@ -1,5 +1,6 @@
 # Se placer dans le dossier "tutos"
-# Set-Location -Path "$PSScriptRoot\tutos"
+Set-Location -Path "$PSScriptRoot/.."
 
 # Lancer l'app Flet via uv
-uv run --active flet run -r
+# uv run --active flet run -r
+./go

@@ -1,21 +1,19 @@
 from re import A
 
 import flet as ft
-import datetime, time
-import asyncio
-import importlib.util
+import datetime, time, asyncio, importlib.util
 from pathlib import Path
 from tools.screen_utils import gc7_rules as gc7
 
 
-async def main(page: ft.Page, width: int = 392):
+async def main(page: ft.Page, width: int = 400):
     # gc7(page, mode="LIGHT", name="Cookbook", width=900, height=700)
     # gc7(page, mode="LIGHT", width=width)
     # 1520 → à droite écran 1 si défini - 1912 à gche écran 2 si indéfini
 
-    left = 1520  # Ligne à commenter pour avoir l'app sur écran #2
+    left = 22222  # Ligne à commenter pour avoir l'app sur écran #2
 
-    gc7(page, left=1520 if "left" in locals() else 1912)
+    gc7(page, left=1526 if "left" in locals() else 1912)
 
     ################################## Bases ###################################
     # from examples.lv00_matrice import main
@@ -56,7 +54,7 @@ async def main(page: ft.Page, width: int = 392):
 
     # gc7(page, "LIGHT", left=1520)  # 1912 pour écran #2 - Sinon 1520
 
-    gc7(page, left=1520)  # 1912 pour écran #2 - Sinon 1520
+    # gc7(page, left=1520)  # 1912 pour écran #2 - Sinon 1520
     # from tutos.lv01 import main  # Design Simple
     # from tutos.movies.main import main  # Design Movie App - TMDB API (The Movie Database)
     # ❌ Tuto en cours
@@ -207,7 +205,10 @@ async def main(page: ft.Page, width: int = 392):
     #################################### Dev ###################################
 
     # from devs.lv00_devs import main # Divers ways to do things (ex: reverse a string, sum digits)
-    from devs.lv01 import main # Countdown avec tic-tac (Beep) - Asynchrone + Threading pour le son
+    # from devs.lv01 import main # Countdown avec tic-tac (Beep) - Asynchrone + Threading pour le son
+    from devs.lv03_audio import (
+        main,
+    )  # Countdown avec tic-tac (Beep) - Asynchrone + Threading pour le son
 
     main(page)
 
