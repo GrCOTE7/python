@@ -1503,7 +1503,7 @@ class Lv26(ft.Column):  # Routing & Navigation with separated pages
         return route_log
 
 
-class Lv27(ft.Column):  # Routing & Navigation with separated pages
+class Lv27(ft.Column):  # Routing Confirm pop (pour back)
 
     def __init__(
         self, page: ft.Page, txt: str = "Page d'accueil au lancement (Uniquement)"
@@ -1600,10 +1600,10 @@ class Lv27(ft.Column):  # Routing & Navigation with separated pages
         return route_log
 
 
-class Lv28(ft.Column):  # Routing & Navigation with separated pages
+class Lv28(ft.Column): # Simple drawer (Design Menu Burger)
 
     def __init__(
-        self, page: ft.Page, txt: str = "Page d'accueil au lancement (Uniquement)"
+        self, page: ft.Page, txt: str = "Page d'accueil au lancement (Design Uniquement)"
     ):
         self.page_ref = page
         self.simple_drawer(page)
@@ -1678,7 +1678,7 @@ class Lv28(ft.Column):  # Routing & Navigation with separated pages
         )
 
 
-class Lv29(ft.Column):  # Routing & Navigation with separated pages
+class Lv29(ft.Column):  # Simple drawer + Navigation
 
     def __init__(
         self, page: ft.Page, txt: str = "Page d'accueil Lv29 (Lancement Uniquement)"

@@ -21,10 +21,11 @@ async def main(page: ft.Page, width: int = 400):
     # from basis.scroll_example import main
     # from basis.lv01_essai import essai as main
     # from basis.lv02 import main # Simple routing
-    # from basis.lv03 import main # Routing with params (ex: /about/Lionel)
+    # from basis.lv03 import main  # Routing with params (ex: /about/Lionel)
+
     #
     # gc7(page, "LIGHT", left=1520) # 1912 pour écran #2 - Sinon 1520
-    # from basis.lv04 import main  #
+    # from basis.lv04 import main  # ready
 
     #
     # from basis.lv99_ready import main #
@@ -59,7 +60,7 @@ async def main(page: ft.Page, width: int = 400):
     # from tutos.movies.main import main  # Design Movie App - TMDB API (The Movie Database)
     # ❌ Tuto en cours
     # from tutos.lv02 import main  # * [ ] Tutos récents (Routing, FletX, etc.)
-    # from tutos.lv03 import main  #
+    # from tutos.lv03 import main  # ready
 
     # main(page)
 
@@ -167,7 +168,7 @@ async def main(page: ft.Page, width: int = 400):
     ################################## CookBook ################################
 
     # # (CRUD, Async, PubSub, Routing, etc.)
-    # from cookbook.main import main  # Une série ~30 exemples classés par thème
+    from cookbook.main import main  # Une série ~30 exemples classés par thème
     # gc7(page, "LIGHT", width=976)
     # main(page)
     # #
@@ -206,9 +207,7 @@ async def main(page: ft.Page, width: int = 400):
 
     # from devs.lv00_devs import main # Divers ways to do things (ex: reverse a string, sum digits)
     # from devs.lv01 import main # Countdown avec tic-tac (Beep) - Asynchrone + Threading pour le son
-    from devs.lv03_audio import (
-        main,
-    )  # Countdown avec tic-tac (Beep) - Asynchrone + Threading pour le son
+    # from devs.lv03_audio import main # Countdown avec tic-tac (Beep) - Asynchrone + Threading pour le son
 
     main(page)
 

@@ -8,7 +8,10 @@
 
 ### Urgences
 
-* [ ] détruire e:/devs/demokit → Py
+* [/] Cf. [Maikel GGLe APP need testers](https://discord.com/channels/981374556059086931/1247163952186654790/1502624757596819567)
+* [ ] Cf. [Bruno BROWN - Flet PKG APP + GH](https://brunobrown.github.io/flet-pkg-app/)
+* [ ] Cf. [Flet Modern UI Template](https://discord.com/channels/981374556059086931/1243237230080688199/1502478218257764422)
+* [ ] Détruire e:/devs/demokit → Py
 * [ ] Refaire marcher lionelcote.gh.io (dev/cv_lc)
 * [ ] → APK: Automatisation build + transfert
 * [ ] → APK: Moyens pour simuler erreurs / Phone

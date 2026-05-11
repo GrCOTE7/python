@@ -33,7 +33,7 @@ def configure_window(
     *,
     left: int = 1912,
     top: int = 0,
-    width: int = 392,
+    width: int = 400,
     height: int = 1088,
 ) -> None:
     page.window.left = left

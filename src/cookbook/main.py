@@ -73,7 +73,7 @@ def main(page: ft.Page):
     # lvs.append(Lv27(page))  # Confirm pop (pour back)
     #
     # lvs.append(Lv28(page))  # Simple drawer (Menu Burger)
-    # lvs.append(Lv29(page))  # Simple drawer + Navigation
+    lvs.append(Lv29(page))  # Simple drawer + Navigation
     # lvs.append(Lv30(page))  # Route templates (parameterized routes)
     #
     # gc7(page, mode="LIGHT", width=700)
@@ -81,7 +81,7 @@ def main(page: ft.Page):
     page.adaptive = True  # Optimize iOS et Android platforms
     # lvs.append(Lv31(page))  # Adaptive apps
     #
-    lvs.append(Lv32())  # DataTable sortable
+    # lvs.append(Lv32())  # DataTable sortable
 
     # gc7(page, mode='LIGHT')
     # gc7(page, width=500)

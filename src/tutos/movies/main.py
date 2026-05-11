@@ -14,7 +14,7 @@ def main(page: Page):
     page.title = "Tutos #02"
     page.appbar = appmenu
 
-    # page.add(Text("Ready to watch a movie?"))
+    page.add(Text("Ready to watch a movie?"))
     page.add(section1)
 
 
