@@ -9,6 +9,7 @@
 ### Urgences
 
 * [ ] Add https://www.youtube.com/@alanbecker/videos dans scraping
+* [ ] Add https://www.youtube.com/@3Blue1Brown/videos dans scraping
 * [ ] Cf. [Ini Kotlin - Base pour Android Studio - 1H13](https://www.youtube.com/watch?v=F5u0WNozaWg)
 * [ ] Cf. [Kotlin Complet - 4H01](https://www.youtube.com/watch?v=YRjY3jRrQYY)
 * [/] Cf. [Maikel GGLe APP need testers](https://discord.com/channels/981374556059086931/1247163952186654790/1502624757596819567)

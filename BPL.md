@@ -1155,7 +1155,7 @@
 * [ ] [14/06/2021 **Une ampoule connectée, c'est quoi ?** 6 229 **03:57**](https://www.youtube.com/watch?v=Sv26NkwFzpw)
 * [ ] [07/06/2021 **Wordpress®, c'est quoi ?** 8 510 **03:11**](https://www.youtube.com/watch?v=-ACYvMaJCVY)
 * [ ] [12/04/2021 **Kubernetes, c'est quoi ?** 12 665 **03:57**](https://www.youtube.com/watch?v=dHPBVjxIIsM)
-* [ ] [22/02/2021 **7 menaces courantes sur Internet** 933 **04:07**](https://www.youtube.com/watch?v=WwjeE4o-5hU)
+* [x] [22/02/2021 **7 menaces courantes sur Internet** 933 **04:07**](https://www.youtube.com/watch?v=WwjeE4o-5hU)
 
 ### Vus (47 - 3 heures et 9 minutes)
 
