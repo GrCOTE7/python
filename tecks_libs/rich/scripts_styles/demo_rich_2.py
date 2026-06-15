@@ -14,17 +14,24 @@ contenu = """
 console.print(Markdown(contenu))
 
 console.print("\n")
+
 tree = Tree("📂 Arbre")
-src = tree.add("📂 Répertoire")
-src.add("📄 fichier")
+src = tree.add("📂 Branche")
+branchette = src.add("📂 Branchette")
+branchette.add("📄 Feuille 1")
+src = tree.add("📂 Autre Branche")
+src.add("📄 Feuille 2")
+
+
 console.print(tree)
-console.print("\n")
-table = Table(title="Tableau")
-table.add_column("Nombre", style="green", justify="center")
-table.add_column("Carré", justify="center")
-table.add_row("2", "4")
-table.add_row("3", "9")
-console.print(table)
-console.print("[bold]Barre de progression[/bold]")
-for etape in track(range(10), description="Traitement..."):
-    time.sleep(0.2)
+
+# console.print("\n")
+# table = Table(title="Tableau")
+# table.add_column("Nombre", style="green", justify="center")
+# table.add_column("Carré", justify="center")
+# table.add_row("2", "4")
+# table.add_row("3", "9")
+# console.print(table)
+# console.print("[bold]Barre de progression[/bold]")
+# for etape in track(range(10), description="Traitement..."):
+#     time.sleep(0.2)
