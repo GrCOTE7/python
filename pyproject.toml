@@ -14,11 +14,15 @@ keywords = [
 authors = [{ name = "Aadminli", email = "GrCOTE7@gmail.com" }]
 
 dependencies = [
+    "cryptography>=46.0.7",
     "flet==0.84.0",
     "flet-audio>=0.84.0",
+    "lorem>=0.1.1",
     "mysql>=0.0.3",
     "mysql-connector>=2.2.9",
     "pymox_kit",
+    "pyperclip>=1.11.0",
+    "scapy>=2.7.0",
     "tabulate",
     "yt_dlp",
 ]
