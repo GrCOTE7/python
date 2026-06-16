@@ -16,7 +16,7 @@ if __name__ == "__main__":
     w = 45
     cls()
 
-    n = int(1e8)  # → 1e8
+    n = int(1e6)  # → 1e8
     
     prevent(n, genre := "classique")
     s = top.time()
