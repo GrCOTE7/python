@@ -18,13 +18,13 @@ if __name__ == "__main__":
     w = 45
     cls()
 
-    n = int(1e9)  # → 1e8
+    n = int(1e8)  # → 1e8
+    
     prevent(n, genre := "classique")
     s = top.time()
     for i in range(n):  # Ce i est global... <=> Recherche dans un dictionnaire
         if i < 8:
             print(f"{i} ", sep=" ", end="")
-
     print(f"... {i}\nBoucle {genre} : {(top.time() - s):.2f}")
 
     sl(color="french")
