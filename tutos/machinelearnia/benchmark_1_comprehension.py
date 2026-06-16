@@ -16,25 +16,25 @@ if __name__ == "__main__":
     w = 45
     cls()
 
-    n = int(1e3) # 1e8
-    prevent(n, 'classique')
+    n = int(1e11)  # → 1e8
+    prevent(n, genre := "classique")
     s = top.time()
     for i in range(n):  # Ce i est global... <=> Recherche dans un dictionnaire
         if i < 8:
             print(f"{i} ", sep=" ", end="")
 
     print(f"... {i}")
-    print(f'Boucle classique : {(top.time() - s):.2f}"')
+    print(f'Boucle {genre} : {(top.time() - s):.2f}"')
 
-    sl()
-    
-    prevent(n, 'compréhension')
+    sl(color="french")
+
+    prevent(n, genre := "compréhension")
     s = top.time()
     print(*(i for i in range(n) if i < 9), end="\b")  # Ici, les var sont générées
     print(f"... {i}")
-    print(f'Boucle compréhension : {(top.time() - s):.2f}"')
+    print(f'Boucle {genre} : {(top.time() - s):.2f}"')
 
     top.sleep(3)
-    sl(w)
+    sl(color=GREEN)
 
-    print('Fini.')
+    print("Fini.")

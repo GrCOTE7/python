@@ -232,7 +232,7 @@ def nbCliCols(n, color=WHITE):
 
 
 def sl(
-    color: str | None = None,
+    color: str | int | None = None,
     w: int = CLIW,
     trait="─",
     finTrait="",
