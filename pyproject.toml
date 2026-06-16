@@ -25,6 +25,7 @@ dependencies = [
     "pymox_kit",
     "pyperclip>=1.11.0",
     "scapy>=2.7.0",
+    "scikit-image>=0.26.0",
     "scikit-learn>=1.9.0",
     "tabulate",
     "yt_dlp",
@@ -68,11 +69,14 @@ compile.packages = true
 compile.cleanup = true
 build_number = 1
 
-[tool.flet.app]
+[tool.flet.app] 
+
+# App à lancer
 # path = "."
 # path = "tools"
 # path = "tutos/flet"
 path = "src"          # Mes essais Flets
+
 assets_dir = "assets"
 
 
