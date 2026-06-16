@@ -3,7 +3,7 @@ import flet as ft
 
 @ft.control
 class Matrice(ft.Column):
-    def init(self):
+    def __init__(self):
         self.title = ft.Text("Matrice Ready.", size=24)
         self.controls = [self.title]
 

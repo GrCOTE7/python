@@ -33,7 +33,7 @@ class Card(ft.GestureDetector):
             width=CARD_WIDTH,
             height=CARD_HEIGHT,
             border_radius=ft.BorderRadius.all(6),
-            content=ft.Image(src="src/examples/assets/images/card_back0.png"),
+            content=ft.Image(src="../src/examples/assets/images/card_back0.png"),
         )
 
         self.draggable_pile = [self]

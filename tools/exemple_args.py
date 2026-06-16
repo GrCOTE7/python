@@ -1,6 +1,7 @@
 import lorem, random
-from tools import cls, cliW, ls, sb, eb, pf, exit
-from sub_tools import cliWR, caller_info, nf, pf, tbl
+# from tools import cls, cliW, ls, sb, eb, pf, exit
+# from sub_tools import cliWR, caller_info, nf, pf, tbl
+from tools import cls, ls, exit
 
 if __name__ == "__main__":
     cls()

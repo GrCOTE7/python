@@ -9,7 +9,6 @@ app = FastAPI()
 
 # get, put, post, delete
 
-
 class CoordIn(BaseModel):
     pw: str
     lat: float

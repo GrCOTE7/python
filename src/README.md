@@ -330,14 +330,14 @@ Outil **ultra‑rapide** et minimaliste pour installer, exécuter et gérer des 
 Run as a desktop app:
 
 ```bash
-uv run **active flet run *r
-uv run **active flet run script.py *r
+uv run --active flet run -r
+uv run **active flet run script.py -r
 ```
 
 Run as a web app:
 
 ```bash
-uv run flet run **web *r
+uv run flet run --web -r
 ```
 
 Option *r => Phone: http://<IP*de*votre*PC>:8550
@@ -350,8 +350,8 @@ Option 2 — Application Flet sur le téléphone (rendu natif identique à l'APK
 Installez l'application Flet depuis le Play Store. Puis lancez en local:
 
 ```bash
-uv run flet run **web **host 0.0.0.0 **port 8550 *r
-uv run flet run **web **host 192.168.80.205 **port 8550 *r
+uv run flet run --web --host 0.0.0.0 --port 8550 -r
+uv run flet run --web --host 192.168.80.205 --port 8550 -r
 ```
 
 Avantages: rendu 100% fidèle à l'APK, hot reload, aucun build
@@ -360,7 +360,7 @@ Limite: l'app Flet doit être installée une fois sur le téléphone
 Construire apk
 
 ```bash
-uv run flet build apk *v
+uv run flet build apk -v
 ```
 
 C:\gsm\build\flutter\android\app\build.gradle.kts
@@ -391,7 +391,7 @@ tasks.register<Delete>("clean") {
 Pour savoir quel Py est utilisé par uv
 
 ```bash
- uv run python *c "import sys; print(sys.executable)"
+ uv run python -c "import sys; print(sys.executable)"
 ```
 
 For more details on running the app, refer to the [Getting Started Guide](https://flet.dev/docs/getting*started/).
@@ -409,7 +409,7 @@ For more details on building and signing `.apk` or `.aab`, refer to the [Android
 ### iOS
 
 ```bash
-flet build ipa *v
+flet build ipa -v
 ```
 
 For more details on building and signing `.ipa`, refer to the [iOS Packaging Guide](https://flet.dev/docs/publish/ios/).
@@ -417,7 +417,7 @@ For more details on building and signing `.ipa`, refer to the [iOS Packaging Gui
 ### macOS
 
 ```bash
-flet build macos *v
+flet build macos -v
 ```
 
 For more details on building macOS package, refer to the [macOS Packaging Guide](https://flet.dev/docs/publish/macos/).
@@ -425,7 +425,7 @@ For more details on building macOS package, refer to the [macOS Packaging Guide]
 ### Linux
 
 ```bash
-flet build linux *v
+flet build linux -v
 ```
 
 For more details on building Linux package, refer to the [Linux Packaging Guide](https://flet.dev/docs/publish/linux/).
@@ -433,7 +433,7 @@ For more details on building Linux package, refer to the [Linux Packaging Guide]
 ### Windows
 
 ```bash
-flet build windows *v
+flet build windows -v
 ```
 
 For more details on building Windows package, refer to the [Windows Packaging Guide](https://flet.dev/docs/publish/windows/).
@@ -441,27 +441,30 @@ For more details on building Windows package, refer to the [Windows Packaging Gu
 ---
 
 ```bash
-+*******************************************************+
++-------------------------------------------------------+
 |                       PAGE                            |
-|  +**************** Row (center) *******************+  |
-|  |  +************** Container *******************+ |  |
+|  +---------------- Row (center) -------------------+  |
+|  |  +--------------  Container ------------------+ |  |
 |  |  | width=250 or expand                        | |  |
-|  |  |  +************ Column *******************+ | |  |
+|  |  |  +------------ Column -------------------+ | |  |
 |  |  |  |  [ self.title ]                       | | |  |
 |  |  |  |                                       | | |  |
 |  |  |  |  [ new_task ] [ add_btn ]             | | |  |
 |  |  |  |                                       | | |  |
 |  |  |  |  [ tasks_view ]                       | | |  |
-|  |  |  +***************************************+ | |  |
-|  |  +********************************************+ |  |
-|  +*************************************************+  |
-+*******************************************************+
+|  |  |  +---------------------------------------+ | |  |
+|  |  +--------------------------------------------+ |  |
+|  +-------------------------------------------------+  |
++-------------------------------------------------------+
 ```
 
 tips :
 
 Pouruignorer un faux positif des hints flet
+
+```markdown
 # type: ignore 
+```
 
 ---
 

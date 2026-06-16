@@ -10,9 +10,11 @@ console = Console()
 
 rich.traceback.install()
 
+
 def plante():
-    print('\nUn exemple d\'affichage d\'un bug :')
-    return 1/0
+    print("\nUn exemple d'affichage d'un bug :")
+    return 1 / 0
+
 
 contenu = """
 # Titre 1
@@ -36,9 +38,9 @@ for etape in track(range(100), description="Chargement..."):
     time.sleep(0.01)
 
 
-
-tree = Tree('📂 Mes fichiers')
+tree = Tree("📂 Mes fichiers")
 src = tree.add("📂 src")
+src.add("📂 src2")
 src.add("📄 fichier1.py")
 src.add("📄 fichier2.py")
 

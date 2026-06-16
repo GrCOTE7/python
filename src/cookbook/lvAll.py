@@ -232,12 +232,12 @@ class Lv04(ft.Container):  # 3 blocs in a stack with different expand values and
 class Lv05(ft.Container):  # Row, Column, Container, Safearea, Stack
 
     def __init__(self):
-        content = self.mySerie()
+        content = self.myCard()
+        # content = self.mySerie()
         super().__init__(content=content)
 
-    def myCard(self, myLabel: str = ""):
+    def myCard(self, myLabel: str = "Label"):
         return ft.Card(
-            shape=ft.ContinuousRectangleBorder(radius=10),
             content=ft.Container(
                 padding=ft.Padding.symmetric(horizontal=7, vertical=-3),
                 border_radius=ft.BorderRadius.all(4),
@@ -352,15 +352,12 @@ class Lv08(ft.Container):  # A container in another
 
     def __init__(self):
         super().__init__(
-            content=self.myLv08(),
-            # alignment=ft.Alignment.CENTER,
-            # alignment=ft.Alignment(0, -1),
-            # alignment=ft.Alignment(0, 1),
-            alignment=ft.Alignment(1, 1),
-            bgcolor=ft.Colors.RED,
-            width=392,
-            height=984,  # 984
+            expand=True,
             padding=ft.Padding.symmetric(horizontal=8, vertical=13),
+            bgcolor=ft.Colors.RED,
+            border_radius=ft.BorderRadius.all(10),
+            alignment=ft.Alignment(1, 1),
+            content=self.myLv08(),
         )
 
     def myLv08(self):
@@ -805,8 +802,9 @@ class Lv17(ft.Container):  # Async
             return
         print("Task NON démarrée...")
         self._task_started = True
-        page = cast(ft.Page, self.page)
-        page.run_task(self.main, page)
+        page = self.page
+        if isinstance(page, ft.Page):
+            page.run_task(self.main, page)
 
     async def main(self, page: ft.Page):
         self.page_resize(page)
@@ -835,8 +833,9 @@ class Countdown(ft.Text):
 
     def did_mount(self):
         self.running = True
-        page = cast(ft.Page, self.page)
-        page.run_task(self.update_timer)
+        page = self.page
+        if isinstance(page, ft.Page):
+            page.run_task(self.update_timer)
 
     def will_unmount(self):
         self.running = False
@@ -851,7 +850,7 @@ class Countdown(ft.Text):
             self.seconds -= 1
 
 
-class Lv18(ft.Container):  # Countdown
+class Lv18(ft.Container):  # Async Countdowns
 
     def __init__(self):
         self.message = ft.Text(
@@ -1175,8 +1174,9 @@ class Lv22(
         # Affiche vite un premier écran de lignes.
         self.append_batch(self.initial_batch)
 
-        page = cast(ft.Page, self.page)
-        page.run_task(self.load_items)
+        page = self.page
+        if isinstance(page, ft.Page):
+            page.run_task(self.load_items)
 
     def will_unmount(self):
         self._alive = False
@@ -1503,7 +1503,7 @@ class Lv26(ft.Column):  # Routing & Navigation with separated pages
         return route_log
 
 
-class Lv27(ft.Column):  # Routing & Navigation with separated pages
+class Lv27(ft.Column):  # Routing Confirm pop (pour back)
 
     def __init__(
         self, page: ft.Page, txt: str = "Page d'accueil au lancement (Uniquement)"
@@ -1600,10 +1600,10 @@ class Lv27(ft.Column):  # Routing & Navigation with separated pages
         return route_log
 
 
-class Lv28(ft.Column):  # Routing & Navigation with separated pages
+class Lv28(ft.Column): # Simple drawer (Design Menu Burger)
 
     def __init__(
-        self, page: ft.Page, txt: str = "Page d'accueil au lancement (Uniquement)"
+        self, page: ft.Page, txt: str = "Page d'accueil au lancement (Design Uniquement)"
     ):
         self.page_ref = page
         self.simple_drawer(page)
@@ -1678,7 +1678,7 @@ class Lv28(ft.Column):  # Routing & Navigation with separated pages
         )
 
 
-class Lv29(ft.Column):  # Routing & Navigation with separated pages
+class Lv29(ft.Column):  # Simple drawer + Navigation
 
     def __init__(
         self, page: ft.Page, txt: str = "Page d'accueil Lv29 (Lancement Uniquement)"

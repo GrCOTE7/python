@@ -50,7 +50,7 @@ def main(page: ft.Page):
 
     page.add(
         getImg(
-            path=str(Path(__file__).parent / "imgs" / "chanteur.jpg"),
+            path=str(Path(__file__).parent / "assets" / "images" / "chanteur.jpg"),
             title="Lionel chanteur",
         )
     )

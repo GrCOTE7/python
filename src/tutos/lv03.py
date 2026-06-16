@@ -1,0 +1,12 @@
+from flet import *  # type: ignore[import]
+
+
+def main(page: Page):
+    page.title = "Tutos #03"
+
+    page.add(Text("Ready"))
+
+
+if __name__ == "__main__":
+
+    run(main)

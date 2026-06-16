@@ -6,6 +6,8 @@ sys.path.append(str(tools_path))
 
 from tools import *
 
+# Resource de livre sur l'IA : https://drive.google.com/drive/folders/1jIJMyBOeWiVxLCUUtLvEFEFCnWxbh6cs?usp=sharing
+
 
 if __name__ == "__main__":
 

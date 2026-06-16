@@ -2,7 +2,6 @@ import flet as ft
 
 from .templates import rapidTemplate
 
-
 @ft.control
 class rapidTest(ft.Column):
     title_text: str = "RapidTest"
@@ -52,7 +51,7 @@ class rapidTest(ft.Column):
         )
 
 
-def blocs(page: ft.Page):
+def main(page: ft.Page):
     title = "Dev (Flet Blocs)"
     page.title = title
 
@@ -65,4 +64,4 @@ def blocs(page: ft.Page):
 
 if __name__ == "__main__":
 
-    ft.run(blocs)
+    ft.run(main)

@@ -1,4 +1,11 @@
 import flet as ft
+import sys
+from pathlib import Path
+
+# Allow running this file directly: python src/examples/lv38_main.py
+SRC_ROOT = Path(__file__).resolve().parents[1]
+if str(SRC_ROOT) not in sys.path:
+    sys.path.insert(0, str(SRC_ROOT))
 
 from examples.lv38_solitaire import Solitaire
 from tools.screen_utils import gc7_rules as gc7

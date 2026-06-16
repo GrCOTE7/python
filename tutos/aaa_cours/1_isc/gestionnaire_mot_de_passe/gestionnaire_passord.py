@@ -34,7 +34,6 @@ def initialise_base():
     conn.commit()
     conn.close()
 
-
 def generer_mot_de_passe(longueur=16):
     alphabet = string.ascii_letters + string.digits + string.punctuation
     return "".join(secrets.choice(alphabet) for i in range(longueur))

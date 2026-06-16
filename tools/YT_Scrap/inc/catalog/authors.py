@@ -2,30 +2,32 @@ import sys
 from pymox_kit import *
 
 AUTHORS = {
-        
-        0: "doro2255",
-        1: "LionelCOTE",
-        2: "c57-u5s",
-        3: "Alphorm",
-        4: "sriedynurcahyo3894",
-        5: "coach-exam",
-        6: "CodeAvecJonathan",
-        7: "Gravenilvectuto",
-        8: "hassanbahi",
-        9: "donaldprogrammeur",
-        10: "DataAvecJB",
-        11: "bandedecodeurs",
-        12: "MasteringAI-q9g",
-        13: "KevinDegila",
-        14: "InformatiqueSansComplexe",
-        15: "MachineLearnia",
-        16: "CodeGoat-s2y",
-        17: "2minutesPy",
-        18: "JordyBayo",
-        19: "Faireaimerlesmathématiques-h4w",
-        20: "Indently",
-        21: "foxxpy"
-    }
+    0: "doro2255",
+    1: "LionelCOTE",
+    2: "c57-u5s",
+    3: "lineindent",
+    4: "sriedynurcahyo3894",
+    5: "coach-exam",
+    6: "CodeAvecJonathan",
+    7: "Gravenilvectuto",
+    8: "hassanbahi",
+    9: "donaldprogrammeur",
+    10: "DataAvecJB",
+    11: "bandedecodeurs",
+    12: "MasteringAI-q9g",
+    13: "KevinDegila",
+    14: "InformatiqueSansComplexe",
+    15: "MachineLearnia",
+    16: "CodeGoat-s2y",
+    17: "2minutesPy",
+    18: "JordyBayo",
+    19: "Faireaimerlesmathématiques-h4w",
+    20: "Indently",
+    21: "foxxpy",
+    22: "DevSenate",
+    23: "codewithjoshoffical",
+    24: "addinyy",
+}
 
 # Pour mise au point du script ❌ toutes en partant du bas sauf tseries et alphorn
 #  0 AUTHOR = "doro2255"                 #      1 video  -              29 vues -               7 minutes

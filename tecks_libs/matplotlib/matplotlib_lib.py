@@ -6,7 +6,7 @@ from typing import Any, cast
 
 from utils.posit import place_figure_on_monitor
 
-# flet run -d -r .\tecks_libs\matplotlib\matplotlib_lib.py
+# uv run flet run -d -r .\tecks_libs\matplotlib\matplotlib_lib.py
 
 # Assure que le backend est TkAgg
 matplotlib.use("TkAgg")
@@ -16,7 +16,7 @@ def voitures(title="Voitures"):
     fig, ax = plt.subplots()
 
     types = ["Essence", "Diesel", "Hybride", "Electrique", "Autres"]
-    counts = [46, 30, 12, 5, 7]
+    counts = [46, 30, 12, 5, 7]  # 46, 30, 12, 5, 7
     year = 2024
 
     title += f" en {year}"
@@ -96,8 +96,7 @@ def graphs(titre="Sinusoide"):
 
 if __name__ == "__main__":
 
-    print("Ok")
+    print("Ready.")
 
-    # voitures(title="Voitures")
-    voitures(title="Répartition des types de voitures")
+    # voitures(title="Répartition des types de voitures")
     graphs()
