@@ -206,18 +206,23 @@ BLACK, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, WHITE = range(8)
 # cli: Console Line Interface - W: width - R: Réel
 
 
-def nf(f, dec=2):
-    "Number Format 123456.789 → 123 456,79"
+def nf(x, dec=0):
+    """
+    Format number without using locale.
+    1234567.89 → 1 234 567,89
+    """
     try:
-        f = float(f)
-        return locale.format_string(f"%.{dec}f", f, grouping=True)
-    except ValueError:
-        src = caller_info()
-        # print(src)
-        print(
-            f"⚠️ Errorfor nf() in main_tools:\n\033[1;31mBad data type ({type(f).__name__}) -> {f} (Line {src[2]} in {src[0]}){EB}"
-        )
-        return str(f)
+        x = float(x)
+    except Exception:
+        return str(x)
+
+    # Format with dot as decimal separator
+    s = f"{x:,.{dec}f}"
+
+    # Replace US separators with French ones
+    s = s.replace(",", " ").replace(".", ",")
+
+    return s
 
 
 def frenchLine(
