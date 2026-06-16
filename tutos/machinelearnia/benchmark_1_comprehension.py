@@ -3,7 +3,9 @@ import flet as ft
 import sys
 from pathlib import Path
 
-sys.path.append(str(Path(__file__).resolve().parents[2]))
+ROOT = Path(__file__).resolve().parents[2]  # /workspaces/python
+sys.path.append(str(ROOT))
+
 
 from tools import *
 import time as top
