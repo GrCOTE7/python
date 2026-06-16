@@ -23,6 +23,7 @@ dependencies = [
     "pymox_kit",
     "pyperclip>=1.11.0",
     "scapy>=2.7.0",
+    "scikit-learn>=1.9.0",
     "tabulate",
     "yt_dlp",
 ]

@@ -35,6 +35,7 @@ reflex
 Requests
 rich
 scapy
+scikit_learn
 scipy
 selenium
 tabulate
