@@ -16,6 +16,15 @@ async def main(page: ft.Page, width: int = 400):
     gc7(page, width=500, left=locals().get("left", 1520) if "left" in locals() else 1520)
     # type: ignore si on utilise pas get(key)
 
+    # Settings pour vidéo :
+    # left = 955  # 855
+    # gc7(
+    #     page,
+    #     height=770,
+    #     width=500,
+    #     left=locals().get("left", 1520) if "left" in locals() else 1520,
+    # )
+
     ################################## Bases ###################################
     # from examples.lv00_matrice import main
 
@@ -62,7 +71,7 @@ async def main(page: ft.Page, width: int = 400):
     from tutos.lv02 import tuto_lv02 # Graphique Matplotlib in flet App
     tuto_lv02(page)
     page.update()
-    
+
     # * [-] Tuto en cours
     # from tutos.lv03 import main  #   # * [ ] Tutos récents (Routing, FletX, etc.)
     # from tutos.lv04 import main  # ready
