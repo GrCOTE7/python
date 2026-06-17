@@ -2,6 +2,7 @@ import flet as ft
 import matplotlib.pyplot as plt
 from matplotlib.ticker import MultipleLocator
 
+
 def graph():
     x = [1, 2, 3]
     y = [4, 6, 7]
@@ -10,7 +11,7 @@ def graph():
     plt.title("Graphique simple")
     plt.xlabel("Axe X")
     plt.ylabel("Axe Y")
-    
+
     ax = plt.gca()
 
     # Grille principale : 1 unité
@@ -26,6 +27,7 @@ def graph():
 
     plt.show()
 
+
 if __name__ == "__main__":
-    
+
     graph()
