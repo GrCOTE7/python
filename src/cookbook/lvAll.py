@@ -1802,7 +1802,7 @@ class Lv30(ft.Column):  # Route templates (parameterized routes)
             await page.push_route("/account/A-100/orders/O-900")
 
         async def go_unknown(e):
-            await page.push_route("/something/else")
+            await page.push_route("/404_page")
 
         def route_change(e):
             troute = ft.TemplateRoute(page.route)
@@ -1848,7 +1848,7 @@ class Lv30(ft.Column):  # Route templates (parameterized routes)
                         ft.OutlinedButton(
                             "/account/A-100/orders/O-900", on_click=go_order
                         ),
-                        ft.OutlinedButton("/something/else", on_click=go_unknown),
+                        ft.OutlinedButton("/something/else (404)", on_click=go_unknown),
                     ],
                 ),
             ]

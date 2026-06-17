@@ -32,7 +32,7 @@ def main(page: ft.Page):
     lvs = []
     renderers: list[Callable[[], object]] = []
 
-    # lvs.append(Lv00("Salut !"))  # Simple class with a custom text
+    lvs.append(Lv00("Salut !"))  # Simple class with a custom text
     # lvs.append(Lv00())  # Simple class with a custom text
     #
     # lvs.append(Lv01())  # Form with a text field and a button
@@ -73,7 +73,7 @@ def main(page: ft.Page):
     # lvs.append(Lv27(page))  # Confirm pop (pour back)
     #
     # lvs.append(Lv28(page))  # Simple drawer (Menu Burger)
-    lvs.append(Lv29(page))  # Simple drawer + Navigation
+    # lvs.append(Lv29(page))  # Simple drawer + Navigation
     # lvs.append(Lv30(page))  # Route templates (parameterized routes)
     #
     # gc7(page, mode="LIGHT", width=700)

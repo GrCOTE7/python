@@ -9,11 +9,12 @@ from tools.screen_utils import gc7_rules as gc7
 async def main(page: ft.Page, width: int = 400):
     # gc7(page, mode="LIGHT", name="Cookbook", width=900, height=700)
     # gc7(page, mode="LIGHT", width=width)
+
     # 1520 → à droite écran 1 si défini - 1912 à gche écran 2 si indéfini
 
-    left = 22222  # Ligne à commenter pour avoir l'app sur écran #2
-
-    gc7(page, left=1526 if "left" in locals() else 1912)
+    left = 1912  # Ligne à commenter pour avoir l'app sur écran #1
+    gc7(page, width=500, left=locals().get("left", 1520) if "left" in locals() else 1520)
+    # type: ignore si on utilise pas get(key)
 
     ################################## Bases ###################################
     # from examples.lv00_matrice import main
@@ -58,13 +59,17 @@ async def main(page: ft.Page, width: int = 400):
     # gc7(page, left=1520)  # 1912 pour écran #2 - Sinon 1520
     # from tutos.lv01 import main  # Design Simple
     # from tutos.movies.main import main  # Design Movie App - TMDB API (The Movie Database)
-    # ❌ Tuto en cours
-    # from tutos.lv02 import main  # * [ ] Tutos récents (Routing, FletX, etc.)
-    # from tutos.lv03 import main  # ready
+    from tutos.lv02 import tuto_lv02 # Graphique Matplotlib in flet App
+    tuto_lv02(page)
+    page.update()
+    
+    # * [-] Tuto en cours
+    # from tutos.lv03 import main  #   # * [ ] Tutos récents (Routing, FletX, etc.)
+    # from tutos.lv04 import main  # ready
 
     # main(page)
 
-    ################################### ToDo ###################################
+    ################################# .ToDoApp #################################
 
     # from examples.lv06_todo_simple import todo_list as main  # Simple field + add btn
 
@@ -168,12 +173,13 @@ async def main(page: ft.Page, width: int = 400):
     ################################## CookBook ################################
 
     # # (CRUD, Async, PubSub, Routing, etc.)
-    from cookbook.main import main  # Une série ~30 exemples classés par thème
+    # from cookbook.main import main  # Une série ~30 exemples classés par thème
+
     # gc7(page, "LIGHT", width=976)
     # main(page)
     # #
 
-    # # ❌ Cf. fin de tuto + Étudier le seul qui corrige le pb de double clic → Le comprendre complètement à la fin - D:\flet_doc\sdk\python\examples\tutorials\solitaire_declarative\solitaire-final\main.py
+    # ❌ Cf. en fin de tuto + Étudier le seul qui corrige le pb de double clic → Le comprendre complètement à la fin - D:\flet_doc\sdk\python\examples\tutorials\solitaire_declarative\solitaire-final\main.py
 
     ################################### FLETX ##################################
 
@@ -209,7 +215,7 @@ async def main(page: ft.Page, width: int = 400):
     # from devs.lv01 import main # Countdown avec tic-tac (Beep) - Asynchrone + Threading pour le son
     # from devs.lv03_audio import main # Countdown avec tic-tac (Beep) - Asynchrone + Threading pour le son
 
-    main(page)
+    # main(page)
 
     if not page.controls and not page.views:
         page.add(
@@ -229,7 +235,7 @@ async def main(page: ft.Page, width: int = 400):
 
 
 if __name__ == "__main__":
-    print(datetime.datetime.now().strftime("%H:%M:%S"), "> ")
+    print(datetime.datetime.now().strftime("%H:%M:%S"), "src/ >")
     ft.run(main)
 
 # Pour tester rapidement:
@@ -238,6 +244,8 @@ if __name__ == "__main__":
 # → Clone en local de VOTRE repo → Un dossier Py/ (Là où vous avez lancé)
 # À la racine (Py/) : Si vous êtes sous Win: ./go + enter
 # Et sinon: uv run --active run flet -r
-# Régler la ligne 16 si la résolution de votre écran n'est pas 1920x1080 (ex: 2560x1440 → left=2000) pour que la fenêtre s'ouvre sur le bon écran, et si pas 2 écrans, la commenter pour avoir le rendu de la fenêtre de l'app à droite de votre écran principal
+# Régler la ligne 15 si la résolution de votre écran n'est pas 1920x1080 (ex: 2560x1440 → left=2000) pour que la fenêtre s'ouvre sur le bon écran, et si pas 2 écrans, la commenter pour avoir le rendu de la fenêtre de l'app à droite de votre écran principal
 
 # Ensuite, pour tester, juste déplacer le: main(page) → Affichera l'import juste avant
+
+# Possibilité alternative : Utiliser un codespace (raccourci = ' ,' (virgule) sur la page GH de votre fork)
