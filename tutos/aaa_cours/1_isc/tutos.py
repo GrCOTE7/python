@@ -1,7 +1,7 @@
 import flet
 from pymox_kit import *
 
-# flet run -d -r .\tutos\aaa_cours\1_isc\tutos.py
+# uv run flet run -d -r .\tutos\aaa_cours\1_isc\tutos.py
 
 
 def division(a, b):
@@ -72,11 +72,11 @@ def getTable(fichier):
     f = open(fichier, "r")
     champs = f.readline().rstrip().split(";")
     tab = []
-    for ligne in f:
-        data = ligne.rstrip().split(";")
-        data[1] = int(data[1])
-        data[2] = float(data[2])
-        tab.append(data)
+    # for ligne in f:
+    #     data = ligne.rstrip().split(";")
+    #     data[1] = int(data[1])
+    #     data[2] = float(data[2])
+    #     tab.append(data)
     f.close()
 
     return champs, tab
@@ -121,12 +121,13 @@ def tablesV2():
 
 def tables():
     path = "./tutos/aaa_cours/1_isc/"
-    champs, tab = getTable(path + "/restaurants.csv")
-    champs2, tab2 = getTable(path + "/restaurants2.csv")
-    print("", champs, "\n", *tab)
-    print("", champs2, "\n", *tab2)
-    print(tab + tab2)
-    print(supprimeDoublons(tab + tab2, 0))
+    print(path)
+    champs, tab = getTable(path + "restaurants.csv")
+    # champs2, tab2 = getTable(path + "/restaurants2.csv")
+    # print("", champs, "\n", *tab)
+    # print("", champs2, "\n", *tab2)
+    # print(tab + tab2)
+    # print(supprimeDoublons(tab + tab2, 0))
 
 
 def variables():
@@ -162,4 +163,4 @@ if __name__ == "__main__":
 
     cls()
     main()
-    end()
+    # end()

@@ -8,11 +8,12 @@ sys.path.append(str(Path(__file__).resolve().parents[2]))
 
 from tools import *
 
+
 def simple_comptage(n=1e8):  # 1e8
     n = int(n)
 
     print(f"Je compte jusqu'à {nf(n,0)}...")
-    
+
     s = top.time()
     # global i
     for i in range(n):
@@ -23,11 +24,12 @@ def simple_comptage(n=1e8):  # 1e8
     # Mise dans une fonction, les var sont locales... + rapides !
 
     sl(color="french")
-    
-    s = top.time()
-    print(*(i for i in range(n) if i < 9), end="\b")
+
+    t = top.time()
+    print(*(i2 for i2 in range(n) if i2 < 9), end="\b")
     print(f"... {nf(i)}.")
-    print(f'Boucle compréhension : {(top.time() - s):.2f}"')
+    print(f'Boucle compréhension : {(top.time() - t):.2f}"')
+
 
 # uv run flet run .\tutos\machinelearnia\benchmark_2_comprehension.py
 

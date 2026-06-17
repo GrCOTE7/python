@@ -1,6 +1,5 @@
 import os, sys, inspect, locale, shutil
 
-
 def get_cli_width(default=80):
     """Récupère la largeur réelle de la console avec plusieurs stratégies."""
 
