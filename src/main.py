@@ -17,8 +17,8 @@ async def main(page: ft.Page, width: int = 400):
     # type: ignore si on utilise pas get(key)
     
     # Settings pour vidéo :
-    left = 955 # 855 - w 500
-    gc7(page, height=770, width=400, left=locals().get("left", 1520) if "left" in locals() else 1520)
+    left = 855 # 855 - w 500
+    gc7(page, height=770, width=500, left=locals().get("left", 1520) if "left" in locals() else 1520)
 
     ################################## Bases ###################################
     # from examples.lv00_matrice import main
