@@ -4,6 +4,7 @@ import io
 import base64
 
 import matplotlib.pyplot as plt
+from matplotlib.ticker import MultipleLocator
 import tempfile
 import flet as ft
 
@@ -12,6 +13,10 @@ def fig_to_tempfile():
     fig, ax = plt.subplots()
     ax.plot([1, 2, 3], [3, 1, 4])
     ax.set_title("Exemple simple Matplotlib")
+
+    ax.xaxis.set_major_locator(MultipleLocator(1))
+    ax.yaxis.set_major_locator(MultipleLocator(1))
+    plt.grid(which="major", axis='y', color="#ccc", linewidth=1)
 
     tmp = tempfile.NamedTemporaryFile(delete=False, suffix=".png")
     fig.savefig(tmp.name)
