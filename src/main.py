@@ -12,9 +12,13 @@ async def main(page: ft.Page, width: int = 400):
 
     # 1520 → à droite écran 1 si défini - 1912 à gche écran 2 si indéfini
 
-    left = 1912  # Ligne à commenter pour avoir l'app sur écran #1
-    gc7(page, width=500, left=locals().get("left", 1520) if "left" in locals() else 1520)
+    # left = 1912  # Ligne à commenter pour avoir l'app sur écran #1 # 2ar
+    # gc7(page, width=500, left=locals().get("left", 1520) if "left" in locals() else 1520) # 2ar
     # type: ignore si on utilise pas get(key)
+    
+    # Settings pour vidéo :
+    left = 955 # 855
+    gc7(page, height=770, width=500, left=locals().get("left", 1520) if "left" in locals() else 1520)
 
     ################################## Bases ###################################
     # from examples.lv00_matrice import main

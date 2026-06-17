@@ -28,7 +28,7 @@ def tuto_lv02(page):
         ft.Stack(
             controls=[
                 ft.Text(
-                    "Un graph inséré dans une App Flet",
+                    "Un graph ins ds une app Flet",
                     top=0,
                     left=0,
                     color="cyan",
