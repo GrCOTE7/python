@@ -2,7 +2,7 @@
   "name": "Mon Python Dev Container",
   "build": {
     "dockerfile": "Dockerfile",
-    "context": ".devcontainer"
+    "context": ".."
   },
 
   "features": {
