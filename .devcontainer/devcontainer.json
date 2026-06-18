@@ -1,3 +1,36 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8c21b3204b6cba1a908d3ad45d7c91e17fb6365e7cd2e76f19b4e662e4750483
-size 735
+{
+  "name": "Mon Python Dev Container",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".devcontainer"
+  },
+
+  "features": {
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.12"
+    }
+  },
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "mhutchie.git-graph",
+        "hnw.vscode-auto-open-markdown-preview",
+        "gruntfuggly.todo-tree",
+        "ms-toolsai.jupyter"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python3.13",
+        "todo-tree.ripgrep.ripgrep": "/usr/bin/vscode-ripgrep",
+        "workbench.startupEditor": "readme",
+        "workbench.editorRestoreMode": "all",
+        "explorer.openEditors.visible": 7
+      }
+    }
+  },
+  "postCreateCommand": "./.devcontainer/postCreateCommand.sh",
+
+  "remoteUser": "root"
+}
