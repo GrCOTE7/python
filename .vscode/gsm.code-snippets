@@ -1,0 +1,100 @@
+{
+    "Insert Cross": {
+        "prefix": ["cx"],
+        "body": [
+            "❌ "
+        ],
+        "description": "Insère ❌ avec un espace"
+    },
+    "Insert NoIssue": {
+        "prefix": ["interdit"],
+        "body": [
+            "⛔ "
+        ],
+        "description": "Insère ⛔ avec un espace"
+    },
+    "Insert Done Checkbox": {
+        "prefix": ["done", "dx"],
+        "body": [
+            "* [x]"
+        ],
+        "description": "Insère * [x]"
+    },
+    "Insert External Arrow": {
+        "prefix": ["ext", "elk"],
+        "body": [
+            "↗️ "
+        ],
+        "description": "Insère ↗️ avec un espace"
+    },
+    "Insert Yes": {
+        "prefix": ["ok", "oui", "yes"],
+        "body": [
+            "✅ "
+        ],
+        "description": "Insère ✅ avec un espace"
+    },
+    "Insert No": {
+        "prefix": ["nok", "non", "no"],
+        "body": [
+            "🟥 "
+        ],
+        "description": "Insère 🟥 avec un espace"
+    },
+    "Insert Pin": {
+        "prefix": ["pin", "note", "retient"],
+        "body": [
+            "📌 "
+        ],
+        "description": "Insère 📌 avec un espace"
+    },
+    "Insert Goal": {
+        "prefix": ["goal", "obj"],
+        "body": [
+            "🎯 "
+        ],
+        "description": "Insère 🎯 avec un espace"
+    },
+    "Insert Unicorn": {
+        "prefix": ["gc7", "licorne"],
+        "body": [
+            "🦄 "
+        ],
+        "description": "Insère 🦄 avec un espace"
+    },
+    "Insert Todo Checkbox": {
+        "prefix": ["todo", "td"],
+        "body": [
+            "* [ ] "
+        ],
+        "description": "Insère * [ ]"
+    },
+    "Insert Valid": {
+        "prefix": ["tdec", "tec", "ec"],
+        "body": [
+            "* [-] "
+        ],
+        "description": "Insère * [-] avec un espace"
+    },
+    "Insert Check Mark": {
+        "prefix": ["valid", "val"],
+        "body": [
+            "✔ "
+        ],
+        "description": "Insère ✔ avec un espace"
+    },
+    "Insert Warning": {
+        "prefix": ["warn", "warning"],
+        "body": [
+            "⚠️ "
+        ],
+        "description": "Insère ⚠️ avec un espace"
+    },
+    "Insert X Ray": {
+        "prefix": ["xray", "rad"],
+        "body": [
+            "☢️ "
+        ],
+        "description": "Insère ☢️ avec un espace"
+    },
+}
