@@ -13,7 +13,7 @@ async def main(page: ft.Page, width: int = 400):
     # 1520 → à droite écran 1 si défini - 1912 à gche écran 2 si indéfini
 
     left = 1912  # Ligne à commenter pour avoir l'app sur écran #1
-    gc7(page, width=500, left=locals().get("left", 1520) if "left" in locals() else 1520)
+    gc7(page, width=640, left=locals().get("left", 1520) if "left" in locals() else 1520)
     # type: ignore si on utilise pas get(key)
 
     # Settings pour vidéo :
