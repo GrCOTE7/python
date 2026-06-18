@@ -11,7 +11,34 @@ import flet as ft
 
 def fig_to_tempfile():
     fig, ax = plt.subplots()
-    ax.plot([1, 2, 3], [3, 1, 4])
+    points = {
+        "A": (1, 1),
+        "B": (2, 3),
+        "C": (3, 2),
+        "D": (4, 4),
+    }
+
+    x, y = zip(*points.values())
+    # marker: . , o, ^ v < > s p * x D _ latex: r"$\alpha$" beta Gamma times - r"$OKi$" - r"$\frac{1}{2}$"
+    ax.plot(
+        x,
+        y,
+        marker=r"$\gamma$",
+        markersize=15,
+        markerfacecolor="grey",
+        color="red",
+        label="Courbe de la Vie",
+        linewidth=2,
+        linestyle="-",
+    )  # linestyle -, --, -., :
+    labels = ["A", "B", "C", "D"]
+    
+    ax.legend(loc='lower right')
+
+    # Ajouter les labels
+    for xi, yi, label in zip(x, y, labels):
+        ax.text(xi, yi, label, fontsize=16, ha='right', va='bottom', color='blue')
+
     ax.set_title("Exemple simple Matplotlib")
 
     ax.xaxis.set_major_locator(MultipleLocator(1))
