@@ -200,8 +200,8 @@ if __name__ == "__main__":
     # exemple6() # make_reression()
     # exemple7() # Aff des neighbors
     # exemple8() # file not found
-    exemple9() # Division par 0
+    exemple9()  # Division par 0
 
     sleep(1)
     sl(w)
-    print('Ready.')
+    print("Ready.")
