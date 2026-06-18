@@ -8,8 +8,27 @@ from matplotlib.ticker import MultipleLocator
 import tempfile
 import flet as ft
 
+def fig_to_base64(): # Pour codespace et mobile
+    # Création du graphique
+    fig, ax = plt.subplots()
+    ax.plot([1, 2, 3, 2], [3, 1, 4, 2], marker='o', color='blue', label='Données')
+    ax.set_title("Exemple simple Matplotlib")
 
-def fig_to_tempfile():
+    # graduations
+    ax.xaxis.set_major_locator(MultipleLocator(1))
+    ax.yaxis.set_major_locator(MultipleLocator(1))
+    plt.grid(which="major", axis='y', color="#ccc", linewidth=1)
+
+    # Sauvegarde en mémoire
+    buf = io.BytesIO()
+    fig.savefig(buf, format="png")
+    plt.close(fig)
+
+    # Conversion base64
+    img_base64 = base64.b64encode(buf.getvalue()).decode("utf-8")
+    return img_base64
+
+def fig_to_tempfile(): # Pour local
     fig, ax = plt.subplots()
     points = {
         "A": (1, 1),
@@ -54,7 +73,7 @@ def fig_to_tempfile():
 def tuto_lv02(page):
     page.title = "Tutos #02 - Graphique Matplotlib"
 
-    img_path = fig_to_tempfile()
+    img_base64 = fig_to_base64()
 
     page.add(
         ft.Stack(
@@ -66,7 +85,14 @@ def tuto_lv02(page):
                     color="cyan",
                     size=30,
                 ),
-                ft.Image(src=img_path, top=50, width=500, height=400, fit="contain") # type: ignore
+                # ft.Image(src=img_path, top=50, width=500, height=400, fit="contain") # type: ignore
+                ft.Image(
+                    src=f"data:image/png;base64,{img_base64}",
+                    top=70,
+                    width=600,
+                    height=400,
+                    fit="contain",
+                )
             ],
         )
     )
