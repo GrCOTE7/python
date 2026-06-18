@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/devcontainers/python:3.11
+FROM mcr.microsoft.com/devcontainers/python:3.12
 
 # Install curl first (if not already present)
 RUN apt-get update && apt-get install -y \
