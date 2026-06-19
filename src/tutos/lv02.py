@@ -84,7 +84,7 @@ def tuto_lv02(page):
                     color="cyan",
                     size=25,
                 ),
-                width=450,
+                width=380,
                 alignment=ft.alignment.Alignment(0, 0),  # centre
                 top=0,
             ),
@@ -92,7 +92,7 @@ def tuto_lv02(page):
                 ft.Image(
                     src=f"data:image/png;base64,{img_base64}",
                     top=15,
-                    width=450,
+                    width=380,
                     height=400,
                     fit="contain",
                 )

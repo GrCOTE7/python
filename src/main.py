@@ -10,21 +10,16 @@ async def main(page: ft.Page, width: int = 500):
     # gc7(page, mode="LIGHT", name="Cookbook", width=900, height=700)
     # gc7(page, mode="LIGHT", width=width)
 
+
     # 1520 → à droite écran 1 si défini - 1912 à gche écran 2 si indéfini
-
-    left = 1912  # Ligne à commenter pour avoir l'app sur écran #1
-    gc7(page, left=locals().get("left", 1426) if "left" in locals() else 1426)
-    # type: ignore si on utilise pas get(key)
-
+    # left = 1912  # Ligne à commenter pour avoir l'app sur écran #1
+    # gc7(page, left=locals().get("left", 1426) if "left" in locals() else 1426)
+    # # type: ignore si on utilise pas get(key)
+    
     # Settings pour vidéo :
-    # left = 955  # 855
-    # gc7(
-    #     page,
-    #     height=770,
-    #     width=500,
-    #     left=locals().get("left", 1520) if "left" in locals() else 1520,
-    # )
-
+    left = 935 # 855 - w 500
+    gc7(page, height=770, width=420, left=locals().get("left", 1520) if "left" in locals() else 1520)
+        
     ################################## Bases ###################################
     # from examples.lv00_matrice import main
 
