@@ -17,7 +17,7 @@ markmap:
   ```python
   uv run --active flet run -r
   ```
-  
+   dfgsd
   → Utilise le Py du venv activé
   
   ```python
@@ -26,8 +26,6 @@ markmap:
   PUIS
   .\env\Scripts\activate
     ```
-
-* Installation de Django et Sav des versions des librairies :
 
   ```python
   pip install django

@@ -11,7 +11,7 @@ import flet as ft
 def fig_to_base64(): # Pour codespace et mobile
     # Création du graphique
     fig, ax = plt.subplots()
-    ax.plot([1, 2, 3, 2], [3, 1, 4, 2], marker='o', color='blue', label='Données')
+    ax.plot([1, 2, 3, 4], [1, 3, 2, 4], marker='o', color='blue', label='Données')
     ax.set_title("Exemple simple Matplotlib")
 
     # graduations
@@ -78,18 +78,21 @@ def tuto_lv02(page):
     page.add(
         ft.Stack(
             controls=[
-                ft.Text(
+                ft.Container(
+                content=ft.Text(
                     "Un graph inséré dans une App Flet",
-                    top=0,
-                    left=0,
                     color="cyan",
-                    size=30,
+                    size=25,
                 ),
+                width=450,
+                alignment=ft.alignment.Alignment(0, 0),  # centre
+                top=0,
+            ),
                 # ft.Image(src=img_path, top=50, width=500, height=400, fit="contain") # type: ignore
                 ft.Image(
                     src=f"data:image/png;base64,{img_base64}",
-                    top=70,
-                    width=600,
+                    top=15,
+                    width=450,
                     height=400,
                     fit="contain",
                 )
