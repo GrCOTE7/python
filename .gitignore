@@ -7,3 +7,5 @@
 # divers/yt_videos/cache
 pymox_shadow.png
 */**/cache/**
+**/node_modules/**
+package-lock.json
