@@ -82,7 +82,7 @@ def tuto_lv02(page):
                 content=ft.Text(
                     "Un graph inséré dans une App Flet",
                     color="cyan",
-                    size=25,
+                    size=24,
                 ),
                 width=380,
                 alignment=ft.alignment.Alignment(0, 0),  # centre
@@ -91,7 +91,7 @@ def tuto_lv02(page):
                 # ft.Image(src=img_path, top=50, width=500, height=400, fit="contain") # type: ignore
                 ft.Image(
                     src=f"data:image/png;base64,{img_base64}",
-                    top=15,
+                    top=0,
                     width=380,
                     height=400,
                     fit="contain", # type: ignore
