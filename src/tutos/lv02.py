@@ -94,7 +94,7 @@ def tuto_lv02(page):
                     top=15,
                     width=380,
                     height=400,
-                    fit="contain",
+                    fit="contain", # type: ignore
                 )
             ],
         )
