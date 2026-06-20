@@ -70,7 +70,7 @@ async def main(page: ft.Page, width: int = 500):
     # Un tableau en HTML avec latex
     from tutos.lv03 import lv03
 
-    lv03(page)
+    await lv03(page)
 
     # from tutos.lv04 import main  # * [ ] Tutos récents (Routing, FletX, etc.)
 

@@ -2,6 +2,9 @@ export default {
   root: ".",
   server: {
     port: 5173,
-    open: "/tableau.html"
+    open: "/tableau.html",
+    watch: {
+      usePolling: true
+    }
   }
 }
