@@ -25,3 +25,16 @@ td {
   font-weight: bold;
   width: 250px;
 }
+
+.centered {
+  text-align: center;
+  margin: 0;
+}
+
+.centered+.centered {
+  /* text-align: center; */
+  color: gray;
+  font-style: italic;
+  margin-bottom: 10px;
+
+}
