@@ -12,7 +12,7 @@ from main_tools import *
 GITHUB_USER = "GrCOTE7" # 
 REPO = "python" # ❌ err
 
-BRANCH = "main"
+BRANCH = "master"
 
 def files_list():
     
@@ -29,10 +29,12 @@ def files_list():
 
 def add_badge_to_notebook(nb_path: Path):
     
+    nb_path = nb_path.resolve()
+    
     with nb_path.open("r", encoding="utf-8") as f:
         nb = json.load(f)
 
-    REPO_ROOT = Path("D:/Py/tutos/machinelearnia")  # racine du dépôt local
+    REPO_ROOT = Path("D:/Py")  # racine locale correspondant à GitHub
     relative_path = nb_path.relative_to(REPO_ROOT).as_posix()
     
     # Badge Colab
@@ -43,9 +45,9 @@ def add_badge_to_notebook(nb_path: Path):
 """
 
 
-# https://colab.research.google.com/github/GrCOTE7/deep_learning_course/blob/gc7/01-01%20Introduction%20au%20Deep%20Learning.ipynb
+# https://colab.research.google.com/github/GrCOTE7/deep_learning_course/blob/gc7/01-01%20Introduction%20au%20Deep%20Learning.ipynb ✅  ← Marche (réf)
 
-# https://colab.research.google.com/github/GrCOTE7/python/blob/master/tutos/machinelearnia/0_for_test.ipynb ✅ 
+# https://colab.research.google.com/github/GrCOTE7/python/blob/master/tutos/machinelearnia/0_for_test.ipynb ✅ ← Ceci est le bon lien
 
 # https://colab.research.google.com/github/GrCOTE7/python/blob/main/machinelearnia/0_for_test.ipynb
 
@@ -153,7 +155,7 @@ def main():
     #     print(f)
     f0 = files[len(files)-1]
     print(f"{f0 = }")
-    # add_badge_to_notebook(f0)
+    add_badge_to_notebook(f0)
     # add_badge_and_timer(f0) # À la fin
 
 # Parcours récursif du repo
@@ -163,7 +165,7 @@ def main():
 
 if __name__ == "__main__":
 
-    cls()
+    # cls()
     
     print()
     main()
