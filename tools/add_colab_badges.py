@@ -7,7 +7,8 @@ from main_tools import *
 # Script pour ajouter un badge "Open in Colab" à tous les notebooks d'un repo GitHub
 # et l'import du chrono (class Top)
 
-# uv run flet run .\tools\add_colab_badges.py
+# Local: uv run flet run ./tools/add_colab_badges.py
+# Codespace :  uvx watchfiles ".venv/bin/python3 tools/add_colab_badges.py" .
 
 GITHUB_USER = "GrCOTE7" # 
 REPO = "python" # ❌ err
