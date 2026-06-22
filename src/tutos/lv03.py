@@ -49,7 +49,9 @@ async def lv03(page: ft.Page):
     #     )
     # )
 
+    page.add(ft.Text('Ready'))
 
+    
 if __name__ == "__main__":
     print(">>> MAIN <<<")
     ft.app(target=lv03)
