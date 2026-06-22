@@ -152,7 +152,7 @@ def main():
     # for f in files:
     #     print(f)
     f0 = files[len(files)-1]
-    print(f0)
+    print(f"{f0 = }")
     # add_badge_to_notebook(f0)
     # add_badge_and_timer(f0) # À la fin
 
