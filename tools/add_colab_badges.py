@@ -7,10 +7,9 @@ from main_tools import *
 # Script pour ajouter un badge "Open in Colab" à tous les notebooks d'un repo GitHub
 # et l'import du chrono (class Top)
 
-
-GITHUB_USER = "GrCOTE7"
-REPO = "deep_learning_course"
-BRANCH = "main"  # ou "main" selon ton repo
+GITHUB_USER = "GrCOTE7" # 
+REPO = "deep_learning_course" # ❌ err
+BRANCH = "main"
 
 def add_badge_to_notebook(nb_path: Path):
     with nb_path.open("r", encoding="utf-8") as f:
