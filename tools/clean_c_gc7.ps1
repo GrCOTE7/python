@@ -23,7 +23,8 @@ foreach ($path in $targets) {
 
         Write-Host "`n$path : $sizeGB Go"
 
-        $choice = Read-Host "Supprimer ce dossier ? (o/n)"
+        # $choice = Read-Host "Supprimer ce dossier ? (o/n)"
+        $choice = "o"
         if ($choice -eq "o") {
             try {
                 Remove-Item -Recurse -Force $path
