@@ -10,45 +10,45 @@
 |       |        |             |          |          |          |        |
 |       |        |             |    51:53 |   116:42 |    64:48 |  55.5% |
 |       |        |             |          |          |          |        |
-|    23 | codewithjoshoffical |    1 981 377 |      181 |      181 |        0 |   0.0% |
+|    23 | codewithjoshoffical |    1 983 464 |      182 |      183 |        1 |   0.5% |
 |       |        |             |          |          |          |        |
-|       |        |             |    95:49 |    95:49 |    00:00 |   0.0% |
+|       |        |             |    96:44 |    96:57 |    00:12 |   0.2% |
 |       |        |             |          |          |          |        |
 |    24 | addinyy |       33 871 |       18 |       27 |        9 |  33.3% |
 |       |        |             |          |          |          |        |
 |       |        |             |    03:17 |    04:09 |    00:51 |  20.5% |
 |       |        |             |          |          |          |        |
-|    14 |  ISC   |    1 829 557 |      243 |      290 |       47 |  16.2% |
+|    14 |  ISC   |    1 830 968 |      242 |      292 |       50 |  17.1% |
 |       |        |             |          |          |          |        |
-|       |        |             |    30:52 |    34:01 |    03:09 |   9.3% |
+|       |        |             |    30:40 |    34:08 |    03:28 |  10.2% |
 |       |        |             |          |          |          |        |
-|    17 |  2mn   |    1 083 548 |       86 |       93 |        7 |   7.5% |
+|    17 |  2mn   |    1 106 278 |       88 |       95 |        7 |   7.4% |
 |       |        |             |          |          |          |        |
-|       |        |             |    03:36 |    03:52 |    00:15 |   6.5% |
+|       |        |             |    03:41 |    03:57 |    00:15 |   6.3% |
 |       |        |             |          |          |          |        |
 |    11 |  BdC   |      750 692 |       49 |       50 |        1 |   2.0% |
 |       |        |             |          |          |          |        |
 |       |        |             |    20:54 |    21:16 |    00:22 |   1.7% |
 |       |        |             |          |          |          |        |
-|     7 | Gravn  |   26 921 753 |       95 |      178 |       83 |  46.6% |
+|     7 | Gravn  |   26 924 323 |       96 |      179 |       83 |  46.4% |
 |       |        |             |          |          |          |        |
-|       |        |             |    26:56 |    50:09 |    23:12 |  46.3% |
+|       |        |             |    27:04 |    50:17 |    23:12 |  46.1% |
 |       |        |             |          |          |          |        |
 |    18 | Jordy  |      365 211 |      193 |      201 |        8 |   4.0% |
 |       |        |             |          |          |          |        |
 |       |        |             |    70:09 |    80:23 |    10:14 |  12.7% |
 |       |        |             |          |          |          |        |
-|    20 | Indent |   25 544 142 |      620 |      797 |      177 |  22.2% |
+|    20 | Indent |   25 630 299 |      639 |      817 |      178 |  21.8% |
 |       |        |             |          |          |          |        |
-|       |        |             |    91:22 |   114:48 |    23:26 |  20.4% |
+|       |        |             |    93:38 |   117:15 |    23:37 |  20.1% |
 |       |        |             |          |          |          |        |
-|    21 | Foxxy  |      806 361 |      300 |      319 |       19 |   6.0% |
+|    21 | Foxxy  |      806 361 |      299 |      319 |       20 |   6.3% |
 |       |        |             |          |          |          |        |
-|       |        |             |    63:20 |    66:49 |    03:29 |   5.2% |
+|       |        |             |    63:06 |    66:49 |    03:43 |   5.6% |
 |       |        |             |          |          |          |        |
-|    11 | TOTAL  |   60 625 360 |     2 051 |     2 760 |      709 |  25.7% |
+|    11 | TOTAL  |   60 740 315 |     2 072 |     2 787 |      715 |  25.7% |
 |       |        |             |          |          |          |        |
-|       |        |             |   462:15 |   598:38 |   136:19 |  22.8% |
+|       |        |             |   465:13 |   602:33 |   137:15 |  22.8% |
 
 ## 1 IN Auteur **[DevSenate](https://www.youtube.com/@DevSenate/videos)** ( **26** videos - 111 462 vues - 10 heures et 40 minutes )
 
@@ -690,15 +690,18 @@
 * [x] [07/11/2020 **metasploit education** 493 **05:16**](https://www.youtube.com/watch?v=s6k0fzxdPOw)
 * [x] [30/12/2019 **pembuatan mikrotik hostpot router os** 26 **04:42**](https://www.youtube.com/watch?v=8JKmSbCfouw)
 
-## 3 US Auteur **[codewithjoshoffical](https://www.youtube.com/@codewithjoshoffical/videos)** ( **181** videos - 1 981 377 vues - 95 heures et 49 minutes )
+## 3 US Auteur **[codewithjoshoffical](https://www.youtube.com/@codewithjoshoffical/videos)** ( **183** videos - 1 983 464 vues - 96 heures et 57 minutes )
 
+### Pas vus (182 - 96 heures et 44 minutes)
+
+* [ ] [05/06/2026 **Python CRUD App Tutorial with PostgreSQL, SQLAlchemy, Docker & Pydantic** 1 773 **38:01**](https://www.youtube.com/watch?v=u0KBmgs6jKY)
+* [ ] [23/05/2026 **I Intentionally Broke My FastAPI App... Sentry Caught Everything** 314 **29:23**](https://www.youtube.com/watch?v=5RRPwe6U2zE)
 * [ ] [09/04/2026 **Websites Tried to Block This… It Still Worked** 479 **18:51**](https://www.youtube.com/watch?v=ny9kcR2x6WQ)
 * [ ] [02/04/2026 **Stop Writing Web Scrapers... Let an Agent Do It Instead** 571 **22:01**](https://www.youtube.com/watch?v=5Ybuz9_1F0s)
 * [ ] [27/02/2026 **I Built a Python CLI Tool From a 3-Minute Voice Rant** 937 **06:30**](https://www.youtube.com/watch?v=T1BaeYxbscc)
 * [ ] [12/02/2026 **Make Your Python Code 10x Faster (7 Simple Fixes)** 2 240 **14:11**](https://www.youtube.com/watch?v=BicfcF_NkjY)
 * [ ] [05/02/2026 **This New Language Makes Python Fast** 15 146 **12:14**](https://www.youtube.com/watch?v=FhpGtW_DGGA)
 * [ ] [15/01/2026 **Build a Python ML App Fast With Gradio** 2 752 **23:56**](https://www.youtube.com/watch?v=loxDDO3VXV4)
-* [ ] [01/01/2026 **The Easiest Way to Make a Python CLI** 4 621 **12:54**](https://www.youtube.com/watch?v=R5jeQTFloag)
 * [ ] [18/12/2025 **Stop Writing This Much ORM Code (SQLModel + FastAPI)** 4 603 **18:40**](https://www.youtube.com/watch?v=HDyT7x5S1j4)
 * [ ] [11/12/2025 **STOP Using pip + venv. UV Just Replaced Everything...** 15 716 **10:55**](https://www.youtube.com/watch?v=flAneKTg8Nk)
 * [ ] [27/11/2025 **Python Ursina Engine: How to Build a 3D Platformer (Beginner Tutorial)** 3 697 **23:58**](https://www.youtube.com/watch?v=lhnOYiwOfeo)
@@ -874,6 +877,10 @@
 * [ ] [10/08/2023 **ELEVATE Your CODING with Python Functions | Code with Josh** 671 **13:48**](https://www.youtube.com/watch?v=VzLHXaTNMAM)
 * [ ] [10/08/2023 **Before the PYTHON Basics: LEVEL UP your coding** 708 **14:15**](https://www.youtube.com/watch?v=BgT2oB4nvkc)
 
+### Vus (1 - 12 minutes)
+
+* [x] [01/01/2026 **The Easiest Way to Make a Python CLI** 4 621 **12:54**](https://www.youtube.com/watch?v=R5jeQTFloag)
+
 ## 4 IN Auteur **[addinyy](https://www.youtube.com/@addinyy/videos)** ( **27** videos - 33 871 vues - 4 heures et 9 minutes )
 
 ### Pas vus (18 - 3 heures et 17 minutes)
@@ -909,12 +916,12 @@
 * [x] [08/02/2025 **How to use django-check-seo to check your SEO performance locally** 80 **02:37**](https://www.youtube.com/watch?v=90MgneCD_gQ)
 * [x] [01/03/2024 **How to create a custom management command in Django** 61 **09:02**](https://www.youtube.com/watch?v=fLwIQszE2eE)
 
-## 5 FR Auteur **[InformatiqueSansComplexe](https://www.youtube.com/@InformatiqueSansComplexe/videos)** ( **290** videos - 1 829 557 vues - 34 heures et 1 minute )
+## 5 FR Auteur **[InformatiqueSansComplexe](https://www.youtube.com/@InformatiqueSansComplexe/videos)** ( **292** videos - 1 830 968 vues - 34 heures et 8 minutes )
 
-### Pas vus (243 - 30 heures et 52 minutes)
+### Pas vus (242 - 30 heures et 40 minutes)
 
-* [ ] [12/03/2026 **La fin des développeurs Odoo** 429 **11:24**](https://www.youtube.com/watch?v=UFo9wySvXqw)
-* [ ] [02/03/2026 **J'ai demandé à l'IA de coder un module Odoo... grosse erreur** 474 **03:27**](https://www.youtube.com/watch?v=2eg8jTvd7jM)
+* [ ] [18/05/2026 **J'ai viré ChatGPT de mon code Python — voilà ce que j'utilise** 900 **04:56**](https://www.youtube.com/watch?v=aTqEaq3XsW0)
+* [ ] [04/05/2026 **MCP : le protocole qui connecte ton IA au monde réel** 511 **01:53**](https://www.youtube.com/watch?v=cRVhlC_d0fE)
 * [ ] [24/02/2026 **Ton module Odoo est dangereux !** 301 **06:45**](https://www.youtube.com/watch?v=VGSJOv5oK-M)
 * [ ] [17/02/2026 **J'ai créé un module Odoo en 10 minutes...et ça plante !** 471 **09:15**](https://www.youtube.com/watch?v=vlTb5a2D7sE)
 * [ ] [10/02/2026 **Facturation électronique : Faut-il paniquer ?** 379 **04:40**](https://www.youtube.com/watch?v=pbKUxx9h4zY)
@@ -1155,9 +1162,8 @@
 * [ ] [14/06/2021 **Une ampoule connectée, c'est quoi ?** 6 229 **03:57**](https://www.youtube.com/watch?v=Sv26NkwFzpw)
 * [ ] [07/06/2021 **Wordpress®, c'est quoi ?** 8 510 **03:11**](https://www.youtube.com/watch?v=-ACYvMaJCVY)
 * [ ] [12/04/2021 **Kubernetes, c'est quoi ?** 12 665 **03:57**](https://www.youtube.com/watch?v=dHPBVjxIIsM)
-* [x] [22/02/2021 **7 menaces courantes sur Internet** 933 **04:07**](https://www.youtube.com/watch?v=WwjeE4o-5hU)
 
-### Vus (47 - 3 heures et 9 minutes)
+### Vus (50 - 3 heures et 28 minutes)
 
 * [x] [20/04/2026 **Le Vibe Coding, c'est quoi ? (et c'est vraiment utile ?)** 121 **02:40**](https://www.youtube.com/watch?v=CX2qNV_n2Wc)
 * [x] [13/04/2026 **Python datetime : arrête de galérer avec les dates** 247 **07:43**](https://www.youtube.com/watch?v=wSzt-wie4uw)
@@ -1165,6 +1171,8 @@
 * [x] [30/03/2026 **L'IA m'a appris and, or, not en Python — je ne code plus jamais mes conditions comme avant** 114 **10:21**](https://www.youtube.com/watch?v=X-9uZA-_6zM)
 * [x] [23/03/2026 **J'ai demandé à l'IA de m'apprendre les conditions Python — voilà ce qui s'est passé** 374 **12:07**](https://www.youtube.com/watch?v=QmeQn4-yHFo)
 * [x] [16/03/2026 **J'ai demandé à l'IA de m'apprendre les variables Python — voilà ce qui s'est passé** 990 **12:35**](https://www.youtube.com/watch?v=4u0imOeh3WQ)
+* [x] [12/03/2026 **La fin des développeurs Odoo** 429 **11:24**](https://www.youtube.com/watch?v=UFo9wySvXqw)
+* [x] [02/03/2026 **J'ai demandé à l'IA de coder un module Odoo... grosse erreur** 474 **03:27**](https://www.youtube.com/watch?v=2eg8jTvd7jM)
 * [x] [31/05/2021 **IONIC®, c'est quoi ?** 3 876 **04:00**](https://www.youtube.com/watch?v=CVSlApLJNdo)
 * [x] [24/05/2021 **AWS : Comment ne pas se ruiner ?** 463 **03:32**](https://www.youtube.com/watch?v=qh3wVnRha9k)
 * [x] [17/05/2021 **AWS® : Qui est responsable de quoi ?** 220 **03:44**](https://www.youtube.com/watch?v=UnFFAIF6D_o)
@@ -1178,6 +1186,7 @@
 * [x] [15/03/2021 **Installer Docker sur Windows** 35 616 **03:35**](https://www.youtube.com/watch?v=SYMPIdMC2qo)
 * [x] [08/03/2021 **Le CPL, c'est quoi ?** 8 264 **02:33**](https://www.youtube.com/watch?v=blRw-0iaGnk)
 * [x] [01/03/2021 **DHCP, c'est quoi ?** 5 451 **03:06**](https://www.youtube.com/watch?v=44ONmO8qDw8)
+* [x] [22/02/2021 **7 menaces courantes sur Internet** 933 **04:07**](https://www.youtube.com/watch?v=WwjeE4o-5hU)
 * [x] [15/02/2021 **Angular, c'est quoi ?** 8 562 **03:48**](https://www.youtube.com/watch?v=i7qZaRLImSU)
 * [x] [08/02/2021 **Le phishing, c'est quoi ?** 8 730 **02:49**](https://www.youtube.com/watch?v=PRSyNoUUXKk)
 * [x] [01/02/2021 **Cookies** 354 **02:57**](https://www.youtube.com/watch?v=P2ytN18WCsA)
@@ -1207,10 +1216,12 @@
 * [x] [27/01/2020 **Informatique sans complexe - Le réseau** 1 378 **02:44**](https://www.youtube.com/watch?v=U50EIUElVDI)
 * [x] [27/01/2020 **Informatique Sans Complexe - Le binaire** 4 553 **02:10**](https://www.youtube.com/watch?v=QItdlkRaCps)
 
-## 6 FR/GB Auteur **[2minutesPy](https://www.youtube.com/@2minutesPy/videos)** ( **93** videos - 1 083 548 vues - 3 heures et 52 minutes )
+## 6 FR/GB Auteur **[2minutesPy](https://www.youtube.com/@2minutesPy/videos)** ( **95** videos - 1 106 278 vues - 3 heures et 57 minutes )
 
-### Pas vus (86 - 3 heures et 36 minutes)
+### Pas vus (88 - 3 heures et 41 minutes)
 
+* [ ] [18/05/2026 **How to Handle Async Code in Python?** 6 507 **02:53**](https://www.youtube.com/watch?v=4SyXKlCw2aU)
+* [ ] [03/05/2026 **What's new in Python 3.15 | Early look** 16 223 **02:38**](https://www.youtube.com/watch?v=X3STC_9FdP0)
 * [ ] [11/03/2026 **Why Deferring Now… Not Earlier!** 797 **02:48**](https://www.youtube.com/watch?v=45yD9UvuUmU)
 * [ ] [07/03/2026 **Challenge: Prompts ONLY and Full-stack App is READY 🚀** 519 **02:51**](https://www.youtube.com/watch?v=HywYRduZayQ)
 * [ ] [16/01/2026 **Your Auth Works… Until You Add Organizations** 700 **03:43**](https://www.youtube.com/watch?v=YIAxblbM4Sc)
@@ -1366,10 +1377,11 @@
 
 * [x] [17/02/2022 **Comment interroger une base de données en SQL** 3 338 **22:11**](https://www.youtube.com/watch?v=pBPaPwyjLiQ)
 
-## 8 FR Auteur **[Gravenilvectuto](https://www.youtube.com/@Gravenilvectuto/videos)** ( **178** videos - 26 921 753 vues - 50 heures et 9 minutes )
+## 8 FR Auteur **[Gravenilvectuto](https://www.youtube.com/@Gravenilvectuto/videos)** ( **179** videos - 26 924 323 vues - 50 heures et 17 minutes )
 
-### Pas vus (95 - 26 heures et 56 minutes)
+### Pas vus (96 - 27 heures et 4 minutes)
 
+* [ ] [19/06/2026 **ASYNCONF 2026 ! MON PLUS GROS EVENEMENT ARRIVE ! J-7** 2 570 **08:23**](https://www.youtube.com/watch?v=9Pui2Do21pA)
 * [ ] [17/03/2026 **J'organise mon salon à Paris la defense - Asynconf 2026** 1 108 **04:57**](https://www.youtube.com/watch?v=xP47FjwMYn4)
 * [ ] [17/02/2026 **Créer son site en Python avec Django - Initiation** 11 361 **01:15:30**](https://www.youtube.com/watch?v=hrdZ-lT_i3A)
 * [ ] [06/02/2026 **J’ai créé une extension VS Code (et tu vas l’adorer)** 6 391 **05:27**](https://www.youtube.com/watch?v=eqhXSvV2QYc)
@@ -1761,10 +1773,22 @@
 * [x] [04/08/2019 **Calculatrice scientifique python et C avec interface graphique** 984 **05:55**](https://www.youtube.com/watch?v=j0m_TwnNCQc)
 * [x] [04/08/2019 **Calculatrice JAVA-RMI client server** 1 040 **13:24**](https://www.youtube.com/watch?v=ggSAnfoQUFU)
 
-## 10 GB Auteur **[Indently](https://www.youtube.com/@Indently/videos)** ( **797** videos - 25 544 142 vues - 114 heures et 48 minutes )
+## 10 GB Auteur **[Indently](https://www.youtube.com/@Indently/videos)** ( **817** videos - 25 630 299 vues - 117 heures et 15 minutes )
 
-### Pas vus (620 - 91 heures et 22 minutes)
+### Pas vus (639 - 93 heures et 38 minutes)
 
+* [ ] [03/07/2026 ***args vs **kwargs Explained in 8 Minutes** 2 802 **08:00**](https://www.youtube.com/watch?v=xQ1Z2JWkn6g)
+* [ ] [28/06/2026 **I love Generator Expressions in Python** 4 993 **06:09**](https://www.youtube.com/watch?v=q-2KvDXPvj0)
+* [ ] [23/06/2026 **70 Built-in Python Functions explained in under 15 minutes** 9 815 **13:11**](https://www.youtube.com/watch?v=ZysTNS0YOrY)
+* [ ] [18/06/2026 **"yield from" is Awesome in Python** 6 866 **04:00**](https://www.youtube.com/watch?v=XlW4K8oqqLw)
+* [ ] [13/06/2026 **How to design a good function in Python** 8 356 **08:30**](https://www.youtube.com/watch?v=YTuQ2nmg1Yg)
+* [ ] [09/06/2026 **Should you still learn Python in 2026?** 5 123 **06:41**](https://www.youtube.com/watch?v=uNcJe3JawxY)
+* [ ] [06/06/2026 **Weak references are Awesome in Python** 6 626 **10:53**](https://www.youtube.com/watch?v=UXGxMnu7qig)
+* [ ] [01/06/2026 **This is probably the biggest misconception about Python** 14 080 **07:02**](https://www.youtube.com/watch?v=gtxhpV4zMrQ)
+* [ ] [28/05/2026 **Optionals are Awesome in Python** 5 663 **04:59**](https://www.youtube.com/watch?v=gEJJK_Fxki8)
+* [ ] [23/05/2026 **3 Major Bugs You Should Avoid in Python** 6 223 **08:41**](https://www.youtube.com/watch?v=CxuGaLNejvc)
+* [ ] [18/05/2026 **Did I just ruin Python with Enforced Static Typing?** 7 648 **06:28**](https://www.youtube.com/watch?v=LRGKtGnsufM)
+* [ ] [13/05/2026 **Generators are Awesome in Python** 7 962 **09:07**](https://www.youtube.com/watch?v=uVX4yWJpKgg)
 * [ ] [18/02/2026 **It's 2026 - Time to switch to Linux** 13 749 **04:38**](https://www.youtube.com/watch?v=T_LNtZkaiaI)
 * [ ] [12/02/2026 **Python with UV is ULTRA Fast** 12 601 **08:19**](https://www.youtube.com/watch?v=5nw_H7oqrIk)
 * [ ] [06/02/2026 **UV in Python is Awesome** 26 639 **11:04**](https://www.youtube.com/watch?v=8zggSBvTQbM)
@@ -2384,9 +2408,16 @@
 * [ ] [22/01/2021 **Easy QR Code Generator in Python Tutorial (2021)** 3 263 **05:42**](https://www.youtube.com/watch?v=XvUFTFvdYeU)
 * [ ] [N/A **Zed + Local AI = Awesome (Free AI Tutorial)** 0 **07:09**](https://www.youtube.com/watch?v=_cDUB0b1p3w)
 * [ ] [N/A **Functional Programming in Python is Awesome** 0 **15:33**](https://www.youtube.com/watch?v=A7lGxqCuFN4)
-* [ ] [N/A **There's a NEW built-in function coming in Python 3.15** 0 **10:42**](https://www.youtube.com/watch?v=5Qew5Vo7-4w)
+* [ ] [N/A **"__init__.py" Explained in Just 7 minutes (Beginner Tutorial)** 0 **06:50**](https://www.youtube.com/watch?v=xn7nZLWXYSg)
+* [ ] [N/A **The Dispatcher Pattern in Python is Awesome** 0 **05:51**](https://www.youtube.com/watch?v=elKxnxtx5IE)
+* [ ] [N/A **"Everything in Python is an Object" (Wait... What?)** 0 **06:53**](https://www.youtube.com/watch?v=d7dhT2cBkJE)
+* [ ] [N/A **Making tutorials isn't always easy.** 0 **00:16**](https://www.youtube.com/watch?v=RuO9BhKXLzY)
+* [ ] [N/A **Learn Python Testing in 15 minutes (Unittest vs Pytest)** 0 **15:43**](https://www.youtube.com/watch?v=69ZNyVeJ6ik)
+* [ ] [N/A **Learn how "__init__" works in Python in 5 minutes** 0 **05:42**](https://www.youtube.com/watch?v=JZE6uy2xuD0)
+* [ ] [N/A **Python's worst features (IMO)** 0 **06:20**](https://www.youtube.com/watch?v=uM9Jti8a9g4)
+* [ ] [N/A **Why You Should NEVER Use "== None" in Python** 0 **05:43**](https://www.youtube.com/watch?v=jZz7U65vB_8)
 
-### Vus (177 - 23 heures et 26 minutes)
+### Vus (178 - 23 heures et 37 minutes)
 
 * [x] [25/04/2026 **Dependency Injection in Python is Awesome** 7 410 **10:25**](https://www.youtube.com/watch?v=J1adhPWc-1c)
 * [x] [21/04/2026 **Build a Local AI Agent in Python with Tools (Part 3)** 506 **17:34**](https://www.youtube.com/watch?v=zV4i7Re1obA)
@@ -2565,10 +2596,11 @@
 * [x] [28/02/2020 **(Java 2020) Creating a custom Alert Dialog Box in Android Studio** 3 836 **02:17**](https://www.youtube.com/watch?v=_5bSz4tsdP4)
 * [x] [27/02/2020 **(Java 2020) Creating a custom icon for your app in Android Studio** 2 584 **01:21**](https://www.youtube.com/watch?v=U7rZ1Io6TgA)
 * [x] [26/02/2020 **(Java 2020) How to create an Increment +1 App in Android Studio** 1 581 **02:42**](https://www.youtube.com/watch?v=20M_YZRR85c)
+* [x] [N/A **There's a NEW built-in function coming in Python 3.15** 0 **10:42**](https://www.youtube.com/watch?v=5Qew5Vo7-4w)
 
 ## 11 FR Maths Auteur **[foxxpy](https://www.youtube.com/@foxxpy/videos)** ( **319** videos - 806 361 vues - 66 heures et 49 minutes )
 
-### Pas vus (300 - 63 heures et 20 minutes)
+### Pas vus (299 - 63 heures et 6 minutes)
 
 * [ ] [03/11/2022 **[Maths - 6ème] - Critères de divisibilité par 9 - 25 exercices corrigés** 753 **07:32**](https://www.youtube.com/watch?v=5FspXw3J_Es)
 * [ ] [20/10/2022 **[Maths - 6ème] - Critères de divisibilité par 7 - 25 exercices corrigés** 552 **10:19**](https://www.youtube.com/watch?v=E4Bqa_NVayE)
@@ -2869,10 +2901,10 @@
 * [ ] [09/02/2020 **[Codingame - Puzzle facile] - 17. Lumen [Python3]** 487 **20:55**](https://www.youtube.com/watch?v=nBn6FOvPshI)
 * [ ] [28/01/2020 **[Codingame - Puzzle facile] - 16.  Happy numbers [Python3]** 313 **06:41**](https://www.youtube.com/watch?v=864fyaFnvr0)
 * [ ] [28/01/2020 **[Codingame - Puzzle facile] - 15.  Credit Card Verifier [Python3]** 209 **12:52**](https://www.youtube.com/watch?v=5iGU6Nbk2IM)
-* [ ] [28/01/2020 **[Codingame - Puzzle facile] - 14. 1x1x1 Rubik's cube movements [Python3]** 218 **13:58**](https://www.youtube.com/watch?v=EUZkV2LNZtI)
 
-### Vus (19 - 3 heures et 29 minutes)
+### Vus (20 - 3 heures et 43 minutes)
 
+* [x] [28/01/2020 **[Codingame - Puzzle facile] - 14. 1x1x1 Rubik's cube movements [Python3]** 218 **13:58**](https://www.youtube.com/watch?v=EUZkV2LNZtI)
 * [x] [23/12/2019 **[Codingame - Puzzle facile] - 13.  Jack Silver: The Casino [Python3]** 287 **10:40**](https://www.youtube.com/watch?v=ClSELHHOQ2o)
 * [x] [15/12/2019 **[Codingame - Puzzle facile] - 11.  Detective Pikaptcha EP1 [Python3]** 939 **12:20**](https://www.youtube.com/watch?v=TS1XfvQdjgE)
 * [x] [15/12/2019 **[Codingame - Puzzle facile] - 12.  Detective Pikaptcha EP2 [Python3]** 778 **26:49**](https://www.youtube.com/watch?v=bVd4Iky7aoI)
