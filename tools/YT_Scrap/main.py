@@ -43,7 +43,7 @@ def resolve_selection(raw_selection):
     if isinstance(raw_selection, str):
         return parse_selection(raw_selection)
 
-    raise ValueError(f"type de selection non supporte: {type(raw_selection).__name__}")
+    raise ValueError(f"type de selection non supporté : {type(raw_selection).__name__}")
 
 
 def _normalize_selection_ids(selection):
@@ -105,7 +105,7 @@ if __name__ == "__main__":
     try:
         user_selection = resolve_selection(raw_selection)
     except Exception as exc:
-        parser.error(f"selection invalide: {exc}")
+        parser.error(f"sélection invalide : {exc}")
 
     if user_selection is None:
         # Par defaut, on scrape la liste coeur (7 IDs).
@@ -120,7 +120,7 @@ if __name__ == "__main__":
     bpl_path = script_dir.parent.parent / "BPL.md"
 
     # Synchronise d'abord les coches BPL vers le tracking.
-    # Ainsi, le tableau CLI de run_scrap utilise l'etat le plus recent.
+    # Ainsi, le tableau CLI de run_scrap utilise l'état le plus récent.
     pre_seen, pre_unseen, pre_ignored = import_states_into_tracking(
         db_path=db_path,
         bpl_path=bpl_path,

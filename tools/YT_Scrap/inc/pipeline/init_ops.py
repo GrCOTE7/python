@@ -20,8 +20,9 @@ def build_init_context(
     output_file = os.path.join(storage_dir, f"{author}_videos.json")
     output_md_file = os.path.join(storage_dir, f"{author}_YT.md")
 
+    # Durée du cache
     # cache_ttl = 60 # 86400
-    cache_ttl = 86400
+    cache_ttl = 604_800 # 7 jours
     max_cumulated_403_errors = 7
     pause_on_rate_limit = 5
     max_stall_retries = 3
