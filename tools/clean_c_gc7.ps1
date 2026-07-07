@@ -1,4 +1,7 @@
 # --- CLEAN C: INTELLIGENT POUR LIONEL ---
+[System.Console]::InputEncoding = [System.Text.Encoding]::UTF8
+[System.Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+$OutputEncoding = [System.Text.Encoding]::UTF8
 
 Write-Host "=== Nettoyage intelligent du disque C: ===" -ForegroundColor Cyan
 
