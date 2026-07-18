@@ -134,7 +134,7 @@ if __name__ == "__main__":
     )
     write_info = build_bpl(db_path=db_path, bpl_path=bpl_path, targets=bpl_targets)
     print(
-        "BPL genere "
+        "BPL généré"
         f"(pre_sync seen={pre_seen}, unseen={pre_unseen}, ids_hors_db={pre_ignored}) "
         f"(seen_sync={updated_seen}, unseen_sync={updated_unseen}, ids_hors_db={ignored_not_found}) "
         f"-> {bpl_path} | write={write_info.get('written')} | reason={write_info.get('reason')}"

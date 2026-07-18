@@ -22,33 +22,33 @@
 |       |        |             |          |          |          |        |
 |       |        |             |    30:40 |    34:08 |    03:28 |  10.2% |
 |       |        |             |          |          |          |        |
-|    17 |  2mn   |    1 106 278 |       88 |       95 |        7 |   7.4% |
+|    17 |  2mn   |    1 106 583 |       89 |       96 |        7 |   7.3% |
 |       |        |             |          |          |          |        |
-|       |        |             |    03:41 |    03:57 |    00:15 |   6.3% |
+|       |        |             |    03:43 |    03:59 |    00:15 |   6.3% |
 |       |        |             |          |          |          |        |
 |    11 |  BdC   |      750 692 |       49 |       50 |        1 |   2.0% |
 |       |        |             |          |          |          |        |
 |       |        |             |    20:54 |    21:16 |    00:22 |   1.7% |
 |       |        |             |          |          |          |        |
-|     7 | Gravn  |   26 924 323 |       96 |      179 |       83 |  46.4% |
+|     7 | Gravn  |   26 932 295 |       98 |      181 |       83 |  45.9% |
 |       |        |             |          |          |          |        |
-|       |        |             |    27:04 |    50:17 |    23:12 |  46.1% |
+|       |        |             |    27:16 |    50:29 |    23:12 |  46.0% |
 |       |        |             |          |          |          |        |
 |    18 | Jordy  |      365 211 |      193 |      201 |        8 |   4.0% |
 |       |        |             |          |          |          |        |
 |       |        |             |    70:09 |    80:23 |    10:14 |  12.7% |
 |       |        |             |          |          |          |        |
-|    20 | Indent |   25 630 299 |      639 |      817 |      178 |  21.8% |
+|    20 | Indent |   25 631 897 |      644 |      822 |      178 |  21.7% |
 |       |        |             |          |          |          |        |
-|       |        |             |    93:38 |   117:15 |    23:37 |  20.1% |
+|       |        |             |    94:11 |   117:48 |    23:37 |  20.0% |
 |       |        |             |          |          |          |        |
 |    21 | Foxxy  |      806 361 |      299 |      319 |       20 |   6.3% |
 |       |        |             |          |          |          |        |
 |       |        |             |    63:06 |    66:49 |    03:43 |   5.6% |
 |       |        |             |          |          |          |        |
-|    11 | TOTAL  |   60 740 315 |     2 072 |     2 787 |      715 |  25.7% |
+|    11 | TOTAL  |   60 750 190 |     2 080 |     2 795 |      715 |  25.6% |
 |       |        |             |          |          |          |        |
-|       |        |             |   465:13 |   602:33 |   137:15 |  22.8% |
+|       |        |             |   466:00 |   603:20 |   137:15 |  22.7% |
 
 ## 1 IN Auteur **[DevSenate](https://www.youtube.com/@DevSenate/videos)** ( **26** videos - 111 462 vues - 10 heures et 40 minutes )
 
@@ -1216,10 +1216,11 @@
 * [x] [27/01/2020 **Informatique sans complexe - Le réseau** 1 378 **02:44**](https://www.youtube.com/watch?v=U50EIUElVDI)
 * [x] [27/01/2020 **Informatique Sans Complexe - Le binaire** 4 553 **02:10**](https://www.youtube.com/watch?v=QItdlkRaCps)
 
-## 6 FR/GB Auteur **[2minutesPy](https://www.youtube.com/@2minutesPy/videos)** ( **95** videos - 1 106 278 vues - 3 heures et 57 minutes )
+## 6 FR/GB Auteur **[2minutesPy](https://www.youtube.com/@2minutesPy/videos)** ( **96** videos - 1 106 583 vues - 3 heures et 59 minutes )
 
-### Pas vus (88 - 3 heures et 41 minutes)
+### Pas vus (89 - 3 heures et 43 minutes)
 
+* [ ] [09/07/2026 **My App's Database Got Corrupted... Here's How I Fixed It in Minutes** 305 **01:50**](https://www.youtube.com/watch?v=xj7uT8xUVcY)
 * [ ] [18/05/2026 **How to Handle Async Code in Python?** 6 507 **02:53**](https://www.youtube.com/watch?v=4SyXKlCw2aU)
 * [ ] [03/05/2026 **What's new in Python 3.15 | Early look** 16 223 **02:38**](https://www.youtube.com/watch?v=X3STC_9FdP0)
 * [ ] [11/03/2026 **Why Deferring Now… Not Earlier!** 797 **02:48**](https://www.youtube.com/watch?v=45yD9UvuUmU)
@@ -1377,10 +1378,12 @@
 
 * [x] [17/02/2022 **Comment interroger une base de données en SQL** 3 338 **22:11**](https://www.youtube.com/watch?v=pBPaPwyjLiQ)
 
-## 8 FR Auteur **[Gravenilvectuto](https://www.youtube.com/@Gravenilvectuto/videos)** ( **179** videos - 26 924 323 vues - 50 heures et 17 minutes )
+## 8 FR Auteur **[Gravenilvectuto](https://www.youtube.com/@Gravenilvectuto/videos)** ( **181** videos - 26 932 295 vues - 50 heures et 29 minutes )
 
-### Pas vus (96 - 27 heures et 4 minutes)
+### Pas vus (98 - 27 heures et 16 minutes)
 
+* [ ] [15/07/2026 **Apprendre le langage Rust #2 - Installation et Premier Projet** 3 301 **08:21**](https://www.youtube.com/watch?v=aBUqnhhyVNg)
+* [ ] [14/07/2026 **Apprendre le langage Rust #1 - Introduction** 4 671 **03:16**](https://www.youtube.com/watch?v=5vQtP3hgavs)
 * [ ] [19/06/2026 **ASYNCONF 2026 ! MON PLUS GROS EVENEMENT ARRIVE ! J-7** 2 570 **08:23**](https://www.youtube.com/watch?v=9Pui2Do21pA)
 * [ ] [17/03/2026 **J'organise mon salon à Paris la defense - Asynconf 2026** 1 108 **04:57**](https://www.youtube.com/watch?v=xP47FjwMYn4)
 * [ ] [17/02/2026 **Créer son site en Python avec Django - Initiation** 11 361 **01:15:30**](https://www.youtube.com/watch?v=hrdZ-lT_i3A)
@@ -1773,10 +1776,11 @@
 * [x] [04/08/2019 **Calculatrice scientifique python et C avec interface graphique** 984 **05:55**](https://www.youtube.com/watch?v=j0m_TwnNCQc)
 * [x] [04/08/2019 **Calculatrice JAVA-RMI client server** 1 040 **13:24**](https://www.youtube.com/watch?v=ggSAnfoQUFU)
 
-## 10 GB Auteur **[Indently](https://www.youtube.com/@Indently/videos)** ( **817** videos - 25 630 299 vues - 117 heures et 15 minutes )
+## 10 GB Auteur **[Indently](https://www.youtube.com/@Indently/videos)** ( **822** videos - 25 631 897 vues - 117 heures et 48 minutes )
 
-### Pas vus (639 - 93 heures et 38 minutes)
+### Pas vus (644 - 94 heures et 11 minutes)
 
+* [ ] [15/07/2026 **Big News + New Python Course!** 1 598 **02:09**](https://www.youtube.com/watch?v=nljfoleEqWM)
 * [ ] [03/07/2026 ***args vs **kwargs Explained in 8 Minutes** 2 802 **08:00**](https://www.youtube.com/watch?v=xQ1Z2JWkn6g)
 * [ ] [28/06/2026 **I love Generator Expressions in Python** 4 993 **06:09**](https://www.youtube.com/watch?v=q-2KvDXPvj0)
 * [ ] [23/06/2026 **70 Built-in Python Functions explained in under 15 minutes** 9 815 **13:11**](https://www.youtube.com/watch?v=ZysTNS0YOrY)
@@ -2416,6 +2420,10 @@
 * [ ] [N/A **Learn how "__init__" works in Python in 5 minutes** 0 **05:42**](https://www.youtube.com/watch?v=JZE6uy2xuD0)
 * [ ] [N/A **Python's worst features (IMO)** 0 **06:20**](https://www.youtube.com/watch?v=uM9Jti8a9g4)
 * [ ] [N/A **Why You Should NEVER Use "== None" in Python** 0 **05:43**](https://www.youtube.com/watch?v=jZz7U65vB_8)
+* [ ] [N/A **The Infinite Loop Problem in Python** 0 **07:26**](https://www.youtube.com/watch?v=L6r0HBz9sT4)
+* [ ] [N/A **"NotImplemented" is Awesome in Python** 0 **06:40**](https://www.youtube.com/watch?v=xUBIbhPC_rQ)
+* [ ] [N/A **Learn FastAPI In Only 10 Minutes** 0 **10:10**](https://www.youtube.com/watch?v=v6G_JJK01zU)
+* [ ] [N/A **Method Chaining is Awesome in Python** 0 **06:52**](https://www.youtube.com/watch?v=VuVdN5cywcE)
 
 ### Vus (178 - 23 heures et 37 minutes)
 
