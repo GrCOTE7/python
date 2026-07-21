@@ -1,7 +1,7 @@
 from datetime import datetime as dt
 
 import flet as ft
-import tools.screen_utils as screen_utils
+from . import screen_utils
 
 THEME_MODE = ft.ThemeMode.DARK
 
@@ -63,6 +63,8 @@ def toggleTheme(page: ft.Page, on_change=None) -> ft.IconButton:
         tooltip="Changer le thème",
         on_click=None,
     )
+    # print(currentTime, "-", page.route, "-", page.theme_mode, ">")
+    # page.update()
 
     def toggle(e):
         is_light = page.theme_mode == ft.ThemeMode.LIGHT

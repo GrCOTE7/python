@@ -106,6 +106,17 @@ class Lv02(ft.SafeArea):  # 3 blocs in a row with different expand values and co
 
     def threeBlocs(self):
         ink = ft.TextStyle(color=ft.Colors.BLACK_87, size=24)
+
+        def smallCntr(color="CYAN_300"):
+            return ft.Container(
+                expand=1,
+                height=60,
+                bgcolor=getattr(ft.Colors, color),
+                alignment=ft.Alignment.CENTER,
+                border_radius=8,
+                content=ft.Text("1", style=ink),
+            )
+
         return ft.Container(
             width=500,
             padding=10,
@@ -114,30 +125,16 @@ class Lv02(ft.SafeArea):  # 3 blocs in a row with different expand values and co
             content=ft.Row(
                 spacing=8,
                 controls=[
-                    ft.Container(
-                        expand=1,
-                        height=60,
-                        bgcolor=ft.Colors.CYAN_300,
-                        alignment=ft.Alignment.CENTER,
-                        border_radius=8,
-                        content=ft.Text("1", style=ink),
-                    ),
+                    smallCntr(),
                     ft.Container(
                         expand=3,
-                        height=60,
+                        height=40,
                         bgcolor=ft.Colors.AMBER_300,
                         alignment=ft.Alignment.CENTER,
                         border_radius=8,
                         content=ft.Text("3", style=ink),
                     ),
-                    ft.Container(
-                        expand=1,
-                        height=60,
-                        bgcolor=ft.Colors.PINK_200,
-                        alignment=ft.Alignment.CENTER,
-                        border_radius=8,
-                        content=ft.Text("1", style=ink),
-                    ),
+                    smallCntr("PINK_200"),
                 ],
             ),
         )
@@ -147,12 +144,12 @@ class State:  # A counter (Imperative)
     counter = 0
 
 
-class Lv03(ft.SafeArea):  # A counter (Imperative)
-    counter = 0
+class Lv03i(ft.SafeArea):  # A counter (Imperative)
 
     def __init__(self):
         self.state = State()
         self.message = ft.Text("0", size=32, color=ft.Colors.BLACK_87)
+
         bloc = ft.Container(
             width=200,
             height=100,
@@ -174,22 +171,69 @@ class Lv03(ft.SafeArea):  # A counter (Imperative)
                             on_click=self.handle_button_click,
                         ),
                     ),
+                    ft.Text(
+                        "Counter - Mode imperative",
+                        color="black",
+                        size=14,
+                        offset=(0.07, 0.3),
+                    ),
                 ]
             ),
         )
 
         super().__init__(
             expand=True,
-            content=ft.Container(
-                alignment=ft.Alignment.CENTER,
-                content=bloc,
-            ),
+            content=ft.Container(alignment=ft.Alignment.CENTER, content=bloc),
         )
 
     def handle_button_click(self, e: ft.Event[ft.FloatingActionButton]):
         self.state.counter += 1
         self.message.value = str(self.state.counter)
         self.message.update()
+
+
+@ft.component
+def Lv03d():  # A counter (Declarative) (Fait après connaissance Lv13)
+    counter, set_counter = ft.use_state(0)
+
+    bloc = ft.Container(
+        width=200,
+        height=100,
+        bgcolor=ft.Colors.CYAN_200,
+        border_radius=8,
+        content=ft.Stack(
+            controls=[
+                ft.Container(
+                    expand=True,
+                    alignment=ft.Alignment.CENTER,
+                    content=ft.Text(str(counter), size=32, color=ft.Colors.BLACK_87),
+                ),
+                ft.Container(
+                    right=12,
+                    bottom=12,
+                    content=ft.FloatingActionButton(
+                        icon=ft.Icons.ADD,
+                        mini=True,
+                        on_click=lambda _: set_counter(counter + 1),
+                    ),
+                ),
+                ft.Text(
+                    "Counter - Mode declarative",
+                    color="black",
+                    size=14,
+                    offset=(0.05, 0.3),
+                ),
+            ]
+        ),
+    )
+
+    return ft.Container(
+        expand=True,
+        content=ft.Container(
+            alignment=ft.Alignment.CENTER,
+            content=bloc,
+        ),
+    )
 
 
 class Lv04(ft.Container):  # 3 blocs in a stack with different expand values and colors
@@ -233,7 +277,7 @@ class Lv05(ft.Container):  # Row, Column, Container, Safearea, Stack
 
     def __init__(self):
         content = self.myCard()
-        # content = self.mySerie()
+        # content = self.mySerie() # ← Try ICI
         super().__init__(content=content)
 
     def myCard(self, myLabel: str = "Label"):
@@ -397,7 +441,7 @@ class Lv09(ft.Container):  # Fonts
 
         doc = ft.Column()
 
-        z = ft.Row()  # z → zône
+        z = ft.Row(spacing=70)  # z → zône
 
         z.controls.append(ft.Image(src="icon.png", width=50, height=50))
 
@@ -410,17 +454,35 @@ class Lv09(ft.Container):  # Fonts
                         color=ft.Colors.AMBER,
                         size=20,
                     ),
-                    ft.Text(
-                        "2ème texte de la leçon #09",
-                        text_align=ft.TextAlign.CENTER,
-                        color=ft.Colors.AMBER,
-                        size=20,
-                        font_family="Consolas",
+                    ft.Row(
+                        controls=[
+                            ft.Text(
+                                "2",
+                                color=ft.Colors.AMBER,
+                                size=20,
+                                # font_family="Consolas",
+                            ),
+                            ft.Text(
+                                "ème",
+                                color=ft.Colors.AMBER,
+                                size=12,
+                                # font_family="Consolas",
+                                offset=(0, -0.2),
+                            ),
+                            ft.Text(
+                                " texte de la leçon #09",
+                                color=ft.Colors.AMBER,
+                                size=20,
+                                # font_family="Consolas",
+                            ),
+                        ],
+                        spacing=0,
                     ),
                 ],
                 spacing=-30,
             )
         )
+
         doc.controls.append(z)
 
         doc.controls.append(ft.Divider(color=ft.Colors.RED_ACCENT_400))
@@ -472,7 +534,7 @@ class Lv09(ft.Container):  # Fonts
         )
         doc.controls.append(
             ft.Text(
-                "Arial avec letter_spacing positif (simulation elargie)",
+                "Arial avec letter_spacing positif (simulation élargie)",
                 size=20,
                 color=ft.Colors.CYAN_700,
                 style=ft.TextStyle(font_family="Arial", letter_spacing=3),
@@ -480,7 +542,7 @@ class Lv09(ft.Container):  # Fonts
         )
         doc.controls.append(
             ft.Text(
-                "Le letter_spacing change l'espacement, pas la largeur reelle des glyphes.",
+                "Le letter_spacing change l'espacement, pas la largeur réelle des glyphes.",
                 size=14,
                 color=ft.Colors.GREY_400,
                 italic=True,
@@ -535,7 +597,7 @@ class Lv10(ft.Container):  # .env
     def myLv10(self):
 
         return ft.Text(
-            self.ct(), text_align=ft.TextAlign.CENTER, color=ft.Colors.AMBER, size=14
+            self.ct(), text_align=ft.TextAlign.CENTER, color=ft.Colors.AMBER, size=16
         )
 
     def ct(self):
@@ -606,7 +668,7 @@ class Lv11(ft.Container):  # Theming
         return txt
 
 
-class Lv12(ft.Container):  # Imperative CRUD
+class Lv12(ft.Container):  # Imperative CRUD ← Déconseillé
 
     def __init__(self, page):
         super().__init__(content=self.imperative(page))
@@ -1600,10 +1662,12 @@ class Lv27(ft.Column):  # Routing Confirm pop (pour back)
         return route_log
 
 
-class Lv28(ft.Column): # Simple drawer (Design Menu Burger)
+class Lv28(ft.Column):  # Simple drawer (Design Menu Burger)
 
     def __init__(
-        self, page: ft.Page, txt: str = "Page d'accueil au lancement (Design Uniquement)"
+        self,
+        page: ft.Page,
+        txt: str = "Page d'accueil au lancement (Design Uniquement)",
     ):
         self.page_ref = page
         self.simple_drawer(page)

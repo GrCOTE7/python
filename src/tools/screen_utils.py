@@ -1,6 +1,7 @@
+import asyncio
 import flet as ft
 from typing import Callable
-from tools.constants import theme
+from .constants import theme
 
 
 def get_colors_theme(page: ft.Page) -> dict:
@@ -31,15 +32,49 @@ def make_theme_change_handler(
 def configure_window(
     page: ft.Page,
     *,
-    left: int = 1912,
+    left: int = 1412,
     top: int = 0,
-    width: int = 400,
+    width: int = 500,
     height: int = 1088,
+    reapply_after_startup: bool = True,
 ) -> None:
+    # Desktop-only: browser sessions don't expose a native window to position/resize.
+    if getattr(page, "web", False):
+        return
+
     page.window.left = left
     page.window.top = top
     page.window.width = width
     page.window.height = height
+
+    if (
+        not reapply_after_startup
+        or _is_mobile_platform(page)
+        or not hasattr(page, "run_task")
+    ):
+        return
+
+    async def _reapply() -> None:
+        await asyncio.sleep(0.08)
+        configure_window(
+            page,
+            left=left,
+            top=top,
+            width=width,
+            height=height,
+            reapply_after_startup=False,
+        )
+
+        await asyncio.sleep(0.1)  # Laisse la session se stabiliser
+        try:
+            page.update()
+        except RuntimeError:
+            pass
+
+    try:
+        page.run_task(_reapply)
+    except Exception:
+        return
 
 
 class ZoomController:
@@ -66,7 +101,7 @@ class ZoomController:
             content=self.target,
             on_scale_start=self.on_scale_start,
             on_scale_update=self.on_scale_update,
-            on_double_tap=self.on_double_tap,
+            on_double_tap=self.on_double_tap,  # type: ignore
         )
 
     def on_scale_start(self, e: ft.ScaleStartEvent) -> None:
@@ -121,17 +156,31 @@ def _is_mobile_platform(page: ft.Page) -> bool:
 
 
 def gc7_rules(
+    # Rendu identique Galaxy A5: 373 x 742
     page: ft.Page,
     mode: str = "DARK",
     name: str = "Ready",
-    left: int = 1912,
-    # left: int = 1520,  # 1912 - 392
-    # width: int = 392,
-    width: int = 420,
-    height: int = 1088,
+    left: int = 1412,
+    # left: int = 1423,
+    # left: int = 1420,  # 1912 - 392 # video
+    # width: int = 392, ou 400
+    width: int = 516,  # Note : 2 * 8 de marge → page.windows_width = 384 // 392 - 373 Galaxy A5
+    height: int = 1040,  # Note : 1088 - 24 (padding top) - 20 (padding bottom) = 1044 → page.window_height = 1044 - 742 Galaxy A5
     defaultColors: bool = True,
 ) -> None:
-    configure_window(page, left=left, width=width, height=height)
+    height = (
+        1088 if left >= 1912 else 1040
+    )  # Pour adapter écran #2 sans la barre windows
+
+    print(width)
+
+    # VIDÉO :
+    # left=840
+    # width=520
+    # height=808
+    # height=420
+
+    configure_window(page, left=left, top=0, width=width, height=height)
     page.theme_mode = ft.ThemeMode.LIGHT if mode == "LIGHT" else ft.ThemeMode.DARK
     page.title = f"GC7 - {name}"
     if defaultColors:

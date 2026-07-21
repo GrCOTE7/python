@@ -12,8 +12,10 @@ async def main(page: ft.Page, width: int = 500):
 
     # type: ignore si on utilise pas get(key)
     # 1520 → à droite écran 1 si défini - 1912 à gche écran 2 si indéfini
-    left = 1912  # Ligne à commenter pour avoir l'app sur écran #1
-    gc7(page, left=locals().get("left", 1426) if "left" in locals() else 1426)
+    
+    # left = 1912  # Ligne à commenter pour avoir l'app sur écran #1
+    # gc7(page, left=locals().get("left", 1412) if "left" in locals() else 1426)
+    gc7(page, left=locals().get("left", 1412) if "left" in locals() else 1412)
 
     # Settings pour vidéo :
     # left = 935 # 855 - w 500
@@ -68,9 +70,8 @@ async def main(page: ft.Page, width: int = 500):
 
     # * [-] Tuto en cours
     # Un tableau en HTML avec latex
-    from tutos.lv03 import lv03
-
-    await lv03(page)
+    # from tutos.lv03 import lv03
+    # await lv03(page)
 
     # from tutos.lv04 import main  # * [ ] Tutos récents (Routing, FletX, etc.)
 
@@ -180,10 +181,10 @@ async def main(page: ft.Page, width: int = 500):
     ################################## CookBook ################################
 
     # # (CRUD, Async, PubSub, Routing, etc.)
-    # from cookbook.main import main  # Une série ~30 exemples classés par thème
+    from cookbook.main import main  # Une série ~30 exemples classés par thème
 
     # gc7(page, "LIGHT", width=976)
-    # main(page)
+    main(page)
     # #
 
     # ❌ Cf. en fin de tuto + Étudier le seul qui corrige le pb de double clic → Le comprendre complètement à la fin - D:\flet_doc\sdk\python\examples\tutorials\solitaire_declarative\solitaire-final\main.py

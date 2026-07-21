@@ -2,8 +2,9 @@ import flet as ft
 
 
 class Item(ft.Row):
-    def __init__(self, first_name, last_name):
+    def __init__(self, first_name, last_name, items_column: ft.Column):
         super().__init__()
+        self.items_column = items_column
 
         self.first_name_field = ft.TextField(first_name, width=80, dense=True)
         self.last_name_field = ft.TextField(last_name, width=80, dense=True)
@@ -31,7 +32,7 @@ class Item(ft.Row):
         ]
 
     def delete_item(self, e):
-        self.page.controls.remove(self)
+        self.items_column.controls.remove(self)
         self.page.update()
 
     def edit_item(self, e):
@@ -68,9 +69,14 @@ def main(page: ft.Page):
     page.title = "CRUD Imperative Example"
     print(page.title)
 
+    items_column = ft.Column()
+
     def add_item(e):
-        item = Item(first_name.value, last_name=last_name.value)
-        page.add(item)
+        item = Item(
+            first_name.value, last_name=last_name.value, items_column=items_column
+        )
+        items_column.controls.append(item)
+        print(item)
         first_name.value = ""
         last_name.value = ""
         page.update()
@@ -88,3 +94,15 @@ def main(page: ft.Page):
             ]
         ),
     )
+    page.add(ft.Text("Liste des items :", size=16, weight=ft.FontWeight.BOLD))
+
+    items = [
+        Item("John", "Doe", items_column=items_column),
+        Item("Jane", "Smith", items_column=items_column),
+        Item("Alice", "Johnson", items_column=items_column),
+    ]
+    items.append(Item(first_name.value, last_name.value, items_column=items_column))
+    items_column.controls.extend(items)
+
+    page.add(items_column)  # Container for the list of items
+    page.update()

@@ -15,7 +15,7 @@ class User:
 
 @ft.observable
 @dataclass
-class App:
+class AppState:
     users: list[User] = field(default_factory=list)
 
     def add_user(self, first_name: str, last_name: str):
@@ -157,7 +157,7 @@ def AddUserForm(add_user) -> ft.Control:
 @ft.component
 def AppView() -> ft.Control:
     app, _ = ft.use_state(
-        App(
+        AppState(
             users=[
                 User("John", "Doe"),
                 User("Jane", "Doe"),
