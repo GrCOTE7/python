@@ -38,7 +38,8 @@ def main(page: ft.Page):
     # lvs.append(Lv01())  # Form with a text field and a button
     # lvs.append(Lv02())  # 3 blocs in a row with different expand values and colors
     # lvs.append(Lv03i())  # A counter (imperative)
-    renderers.append(Lv03d)  # A counter (declarative)
+    # renderers.append(Lv03d)  # A counter (declarative)
+    # XXX
     # lvs.append(Lv04())  # 3 blocs in a stack with different expand values and colors
     # lvs.append(Lv05())  # Row, Column, Container, Safearea, Stack
     # lvs.append(Lv06())  # ResponsiveRow
@@ -53,9 +54,9 @@ def main(page: ft.Page):
     # ---
     # lvs.append(Lv12(page))  # Imperative CRUD ← Déconseillé
     # renderers.append(lambda: Lv13(page))  # Declarative CRUD (uses page.render) - model (@ft.observable) & UI (@ft.component)
-    # XXX
-    # renderers.append(lambda: Lv14(page))  # Declarative CRUD (uses page.render) + Dynamic Edit Btn
+    renderers.append(Lv14)  # Declarative counter (uses page.render)
     # ---
+    # XXX
     # lvs.append(Lv15())  # Drag & Drop
     # lvs.append(Lv16(page)) # Keyboard Shotcuts
     # ---

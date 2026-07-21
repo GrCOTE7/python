@@ -697,17 +697,12 @@ class Lv13(ft.Container):  # Declarative CRUD (uses page.render)
         return
 
 
-class Lv14(ft.Container):  # Minimalist Declarative Counter
-    def __init__(self, page):
-        super().__init__(content=self.declarative(page))
+@ft.component
+def Lv14():  # Minimalist Declarative Counter
+    from cookbook.crud.minimalist import Counter, CounterView
 
-    def declarative(self, page):
-
-        from cookbook.crud import minimalist
-
-        minimalist.main(page)
-
-        return
+    counter, _ = ft.use_state(Counter())
+    return CounterView(counter)
 
 
 class Lv15(ft.Container):  # Drag & Drop
