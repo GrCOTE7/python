@@ -39,7 +39,6 @@ def main(page: ft.Page):
     # lvs.append(Lv02())  # 3 blocs in a row with different expand values and colors
     # lvs.append(Lv03i())  # A counter (imperative)
     # renderers.append(Lv03d)  # A counter (declarative)
-    # XXX
     # lvs.append(Lv04())  # 3 blocs in a stack with different expand values and colors
     # lvs.append(Lv05())  # Row, Column, Container, Safearea, Stack
     # lvs.append(Lv06())  # ResponsiveRow
@@ -54,9 +53,8 @@ def main(page: ft.Page):
     # ---
     # lvs.append(Lv12(page))  # Imperative CRUD ← Déconseillé
     # renderers.append(lambda: Lv13(page))  # Declarative CRUD (uses page.render) - model (@ft.observable) & UI (@ft.component)
-    renderers.append(Lv14)  # Declarative counter (uses page.render)
+    # renderers.append(Lv14)  # Declarative counter (uses page.render)
     # ---
-    # XXX
     # lvs.append(Lv15())  # Drag & Drop
     # lvs.append(Lv16(page)) # Keyboard Shotcuts
     # ---
@@ -64,6 +62,7 @@ def main(page: ft.Page):
     # lvs.append(Lv18())  # Async Countdowns
     # ---
     # lvs.append(Lv19())  # Large list
+    # XXX
     # lvs.append(Lv20())  # Large list - Simplier Chargement par lots)
     # lvs.append(Lv21())  # Large list (Illimited ListView() + batch loading)
     # lvs.append(Lv22())  # Large list (Infinite ListView())
@@ -88,6 +87,10 @@ def main(page: ft.Page):
 
     # gc7(page, mode='LIGHT')
     # gc7(page, width=500)
+
+    # ---
+    # renderers.append(Lv33) # Users list declarative
+    renderers.append(Lv34)   # Counter (declarative)
 
     if renderers:
         # Keep declarative mode isolated from page.add/page.controls flow.

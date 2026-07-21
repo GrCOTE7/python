@@ -1,6 +1,8 @@
 import flet as ft
 import asyncio, os, sys
 from pathlib import Path
+from dataclasses import dataclass, field
+import time
 
 
 class Lv99(ft.Container):
@@ -817,25 +819,47 @@ class Lv15(ft.Container):  # Drag & Drop
 
 class Lv16(ft.Container):  # Keybord Shortcuts
     def __init__(self, page):
-        super().__init__(content=self.essai(page))
-
-    def on_keyboard(self, e: ft.KeyboardEvent, page: ft.Page):
-        page.add(
-            ft.Text(
-                f"Key: {e.key}, Shift: {e.shift}, Control: {e.ctrl}, Alt: {e.alt}, Meta: {e.meta}"
+        self.message = ft.Text(
+            "Press any key with a combination of CTRL, ALT, SHIFT and META keys..."
+        )
+        self.last_combo = ft.Text("Last combo: (none)", size=16)
+        self.history = ft.Column(spacing=4)
+        super().__init__(
+            content=ft.Column(
+                controls=[
+                    ft.Text(
+                        "Keyboard Shortcuts",
+                        size=18,
+                        weight=ft.FontWeight.BOLD,
+                    ),
+                    ft.Divider(color=ft.Colors.LIGHT_GREEN_ACCENT_400, thickness=2),
+                    self.message,
+                    self.last_combo,
+                    self.history,
+                ]
             )
         )
 
-    def essai(self, page):
-
-        page.on_keyboard_event = lambda e: self.on_keyboard(e, page)
-        page.add(
-            ft.Text(
-                "Press any key with a combination of CTRL, ALT, SHIFT and META keys..."
-            )
+    def on_keyboard(self, e: ft.KeyboardEvent):
+        combo = (
+            f"Key: {e.key}, Shift: {e.shift}, Control: {e.ctrl}, "
+            f"Alt: {e.alt}, Meta: {e.meta}"
         )
+        self.last_combo.value = f"Last combo: {combo}"
+        self.history.controls.insert(0, ft.Text(combo, size=13))
+        if len(self.history.controls) > 12:
+            self.history.controls.pop()
+        self.update()
 
-        return ft.Text("Ready.")
+    def did_mount(self):
+        page = self.page
+        if isinstance(page, ft.Page):
+            page.on_keyboard_event = self.on_keyboard
+
+    def will_unmount(self):
+        page = self.page
+        if isinstance(page, ft.Page) and page.on_keyboard_event == self.on_keyboard:
+            page.on_keyboard_event = None
 
 
 class Lv17(ft.Container):  # Async
@@ -916,7 +940,9 @@ class Lv18(ft.Container):  # Async Countdowns
             color=ft.Colors.CYAN_ACCENT_200,
             weight=ft.FontWeight.BOLD,
         )
+
         self._started = False
+        self._alive = True
         self.countdown_120 = Countdown(30)
         self.countdown_60 = Countdown(20)
         super().__init__(
@@ -924,7 +950,11 @@ class Lv18(ft.Container):  # Async Countdowns
                 controls=[
                     self.message,
                     ft.Row(
-                        controls=[self.countdown_120, self.countdown_60], spacing=20
+                        controls=[
+                            self.countdown_120,
+                            self.countdown_60,
+                        ],
+                        spacing=20,
                     ),
                 ]
             )
@@ -934,6 +964,17 @@ class Lv18(ft.Container):  # Async Countdowns
         if self._started:
             return
         self._started = True
+        page = self.page
+        if isinstance(page, ft.Page):
+            page.run_task(self._show_ready_after_delay)
+
+    def will_unmount(self):
+        self._alive = False
+
+    async def _show_ready_after_delay(self):
+        await asyncio.sleep(3)
+        if not self._alive:
+            return
         self.message.value = "Ready."
         self.message.update()
 
@@ -2037,6 +2078,66 @@ class Lv32(ft.Column):  # DataTable (sortable)
         self.table.sort_column_index = column_index
         self.table.sort_ascending = ascending
         self.table.update()
+
+
+@ft.component
+def Lv33(): # Users list declarative
+
+    @ft.observable
+    @dataclass
+    class User:
+        first_name: str
+        last_name: str
+
+    @ft.observable
+    @dataclass
+    class AppState:
+        users: list[User] = field(default_factory=list)
+
+    @ft.component
+    def UserRow(user: User, on_delete) -> ft.Control:
+        # returns a row for the current snapshot of `user`
+        return ft.Row(
+            [
+                ft.Text(f"{user.first_name} {user.last_name}"),
+                ft.Button("Delete", on_click=lambda _: on_delete(user)),
+            ]
+        )
+
+    app, _ = ft.use_state(
+        AppState(
+            users=[
+                User("John", "Doe"),
+                User("Jane", "Doe"),
+                User("Foo", "Bar"),
+            ]
+        )
+    )
+
+    return ft.Container(
+        expand=True,
+        content=ft.Column(
+            controls=[
+                ft.Text(
+                    "Lv33 - Users (Declarative)", size=18, weight=ft.FontWeight.BOLD
+                ),
+                ft.Divider(color=ft.Colors.LIGHT_GREEN_ACCENT_400, thickness=2),
+                # app.users.remove est fctn callback
+            ]
+        ),
+    )
+
+
+@ft.component
+def Lv34(): # Counter (declarative)
+    count, set_count = ft.use_state(0)
+    # Avec use_state(0), count est automatiquement observable, même si on ne met pas @ft.observable.
+    return ft.Row(
+        [
+            ft.Text(str(count)),
+            ft.Button("+", on_click=lambda _: set_count(count + 1)),
+        ]
+    )
 
 
 if __name__ == "__main__":
