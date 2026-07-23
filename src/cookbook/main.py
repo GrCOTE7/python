@@ -90,7 +90,9 @@ def main(page: ft.Page):
 
     # ---
     # renderers.append(Lv33) # Users list declarative
-    renderers.append(Lv34)   # Counter (declarative)
+    # renderers.append(Lv34)   # Counter (declarative)
+    renderers.append(Lv35)  # # Transitioned btn (Declarative)
+    # lvs.append(Lv35())  # Route templates (parameterized routes)
 
     if renderers:
         # Keep declarative mode isolated from page.add/page.controls flow.

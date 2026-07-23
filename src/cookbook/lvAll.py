@@ -2081,7 +2081,7 @@ class Lv32(ft.Column):  # DataTable (sortable)
 
 
 @ft.component
-def Lv33(): # Users list declarative
+def Lv33():  # Users list ('Declarative)
 
     @ft.observable
     @dataclass
@@ -2129,13 +2129,49 @@ def Lv33(): # Users list declarative
 
 
 @ft.component
-def Lv34(): # Counter (declarative)
+def Lv34():  # Counter (declarative)
     count, set_count = ft.use_state(0)
     # Avec use_state(0), count est automatiquement observable, même si on ne met pas @ft.observable.
     return ft.Row(
         [
             ft.Text(str(count)),
             ft.Button("+", on_click=lambda _: set_count(count + 1)),
+        ]
+    )
+
+
+@ft.component
+def Lv35():  # Transitioned btn (Declarative)
+    state, set_state = ft.use_state(True)
+
+    return ft.Row(
+        [
+            ft.Container(
+                width=100,
+                bgcolor=ft.Colors.GREEN if state else ft.Colors.RED,
+                border_radius=5,
+                animate=ft.Animation(1000, curve=ft.AnimationCurve.EASE_IN_OUT),
+                content=ft.Button(
+                    ft.AnimatedSwitcher(
+                        duration=700,
+                        transition=ft.AnimatedSwitcherTransition.FADE,
+                        content=ft.Text("GO!" if state else "Stop!", key=str(state)),
+                    ),
+                    bgcolor=ft.Colors.TRANSPARENT,
+                    color=ft.Colors.WHITE,
+                    on_click=lambda _: set_state(not state),
+                    style=ft.ButtonStyle(
+                        shape=ft.RoundedRectangleBorder(radius=5),
+                        mouse_cursor=ft.MouseCursor.CLICK,
+                    ),
+                    
+                ),
+            ),
+            ft.Text(
+                str(state),
+                opacity=1 if state else 0.4,
+                animate_opacity=700,
+            ),
         ]
     )
 
