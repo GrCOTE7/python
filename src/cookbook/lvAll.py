@@ -896,8 +896,9 @@ class Lv17(ft.Container):  # Async
             page.add(ft.Text("Hello!"))
             await asyncio.sleep(5)  # Delay execution
             page.add(ft.Text("Fait !"))
+            page.update()
 
-        page.add(ft.Button("Say hello!", on_click=button_click))
+        page.add(ft.Button("Click HERE to say Hello!", on_click=button_click))
 
         await asyncio.sleep(5)
         page.on_resize = lambda e: self.page_resize(page)
@@ -2175,6 +2176,11 @@ def Lv35():  # Transitioned btn (Declarative)
         ]
     )
 
+
+# @ft.component
+def Lv36():  # Read and Write Files
+    
+    return ft.Text('Ok')
 
 if __name__ == "__main__":
 
