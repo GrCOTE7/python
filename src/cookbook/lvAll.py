@@ -2179,8 +2179,19 @@ def Lv35():  # Transitioned btn (Declarative)
 
 # @ft.component
 def Lv36():  # Read and Write Files
+    print('Lv36')
+    app_data_path = os.getenv("FLET_APP_STORAGE_DATA")
+    my_file_path = os.path.join(app_data_path, "test_file.txt")
+    print(app_data_path, '-',my_file_path)
     
-    return ft.Text('Ok')
+    # with open(my_file_path, "w") as f:
+    #     f.write("Some file content...") # avec flet run, fait tourner en boucle
+    
+    with open(my_file_path, "r") as f:
+        file_content = f.read()
+        print(file_content)
+    
+    return ft.Text('Read and Write Files', size=24)
 
 if __name__ == "__main__":
 

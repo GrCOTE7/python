@@ -32,9 +32,9 @@ def make_theme_change_handler(
 def configure_window(
     page: ft.Page,
     *,
-    left: int = 1412,
+    left: int = 1386,
     top: int = 0,
-    width: int = 500,
+    width: int = 540,
     height: int = 1088,
     reapply_after_startup: bool = True,
 ) -> None:
@@ -160,16 +160,16 @@ def gc7_rules(
     page: ft.Page,
     mode: str = "DARK",
     name: str = "Ready",
-    left: int = 1412,
+    left: int = 1373,
     # left: int = 1423,
     # left: int = 1420,  # 1912 - 392 # video
     # width: int = 392, ou 400
-    width: int = 516,  # Note : 2 * 8 de marge → page.windows_width = 384 // 392 - 373 Galaxy A5
-    height: int = 1040,  # Note : 1088 - 24 (padding top) - 20 (padding bottom) = 1044 → page.window_height = 1044 - 742 Galaxy A5
+    width: int = 540,  # Note : 2 * 8 de marge → page.windows_width = 384 // 392 - 373 Galaxy A5
+    height: int = 1038,  # Note : 1088 - 24 (padding top) - 20 (padding bottom) = 1038 → page.window_height = 1038 - 742 Galaxy A5
     defaultColors: bool = True,
 ) -> None:
     height = (
-        1088 if left >= 1912 else 1040
+        1088 if left > 1912 else 1038
     )  # Pour adapter écran #2 sans la barre windows
 
     print(width)

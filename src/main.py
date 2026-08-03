@@ -15,7 +15,7 @@ async def main(page: ft.Page, width: int = 500):
     
     # left = 1912  # Ligne à commenter pour avoir l'app sur écran #1
     # gc7(page, left=locals().get("left", 1412) if "left" in locals() else 1426)
-    gc7(page, left=locals().get("left", 1412) if "left" in locals() else 1412)
+    gc7(page, left=locals().get("left", 1386) if "left" in locals() else 1386)
 
     # Settings pour vidéo :
     # left = 935 # 855 - w 500

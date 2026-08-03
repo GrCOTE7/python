@@ -91,9 +91,9 @@ def main(page: ft.Page):
     # ---
     # renderers.append(Lv33) # Users list declarative
     # renderers.append(Lv34)   # Counter (declarative)
-    renderers.append(Lv35)  # # Transitioned btn (Declarative)
+    # renderers.append(Lv35)  # # Transitioned btn (Declarative)
 
-    # lvs.append(Lv36())  # Read and Write Files
+    lvs.append(Lv36())  # Read and Write Files
 
     if renderers:
         # Keep declarative mode isolated from page.add/page.controls flow.
