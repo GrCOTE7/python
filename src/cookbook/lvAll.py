@@ -2181,7 +2181,7 @@ def Lv35():  # Transitioned btn (Declarative)
 def Lv36():  # Read and Write Files
     print('Lv36')
     app_data_path = os.getenv("FLET_APP_STORAGE_DATA")
-    my_file_path = os.path.join(app_data_path, "test_file.txt")
+    my_file_path = os.path.join(app_data_path, "test_file.txt") # type: ignore
     print(app_data_path, '-',my_file_path)
     
     # with open(my_file_path, "w") as f:
@@ -2191,10 +2191,14 @@ def Lv36():  # Read and Write Files
         file_content = f.read()
         print(file_content)
     
-    return ft.Text('Read and Write Files', size=24)
+    return ft.Text('Lv36 - Read and Write Files', size=24)
+
+
+# @ft.component
+def Lv37():
+    return ft.Text('Lv37 - Client Storage', size=24)
 
 if __name__ == "__main__":
-
     def app_main(page: ft.Page):
         page.add(Lv31(page))
 

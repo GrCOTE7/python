@@ -93,7 +93,8 @@ def main(page: ft.Page):
     # renderers.append(Lv34)   # Counter (declarative)
     # renderers.append(Lv35)  # # Transitioned btn (Declarative)
 
-    lvs.append(Lv36())  # Read and Write Files
+    # lvs.append(Lv36())  # Read and Write Files
+    lvs.append(Lv37())  # Client Storage
 
     if renderers:
         # Keep declarative mode isolated from page.add/page.controls flow.
