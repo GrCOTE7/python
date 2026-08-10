@@ -35,6 +35,7 @@ TARGET_AUTHORS = [
     {"author": "JordyBayo", "label": "FR Auteur", "scrap_id": 18},
     {"author": "Indently", "label": "GB Auteur", "scrap_id": 20},
     {"author": "foxxpy", "label": "FR Maths Auteur", "scrap_id": 21},
+    {"author": "SavoirPourTous", "label": "Inkscape & Blender", "scrap_id": 25},
 ]
 
 TARGET_BY_AUTHOR = {item["author"]: item for item in TARGET_AUTHORS}
@@ -371,7 +372,7 @@ def import_states_into_tracking(db_path, bpl_path):
     return updated_seen, updated_unseen, ignored_not_found
 
 
-def build_bpl(db_path, bpl_path, targets):
+def build_bpl(db_path, bpl_path, targets, filter_selection='all'):
     conn = connect_db(db_path)
     try:
         init_schema(conn)
@@ -449,6 +450,8 @@ def build_bpl(db_path, bpl_path, targets):
                     "seen_minutes": max(0, seen_seconds // 60),
                 }
             )
+            
+            
             video_word = "video" if total_count == 1 else "videos"
 
             lines.append(

@@ -27,6 +27,7 @@ AUTHORS = {
     22: "DevSenate",
     23: "codewithjoshoffical",
     24: "addinyy",
+    25: "SavoirPourTous",
 }
 
 # Pour mise au point du script ❌ toutes en partant du bas sauf tseries et alphorn
