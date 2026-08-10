@@ -14,7 +14,10 @@ from inc.reporting.build_bpl import (
 # DEV_SELECTION = 0, 1
 # DEV_SELECTION = 14, 17, 11, 1 ,2
 DEV_SELECTION = None  # To obtain heart list
-FILTER_SELECTION = None# ← Si pas défini, récupère tous, si 2026, que ceux de cette année
+# FILTER_SELECTION = None  # None|all, 2026, "2025,2026", "<2000", "<=2000", ">2000", ">=2000"
+FILTER_SELECTION = "<=2021"
+# SEEN_FILTER = None  # None|all, "seen" (vus), "unseen" (pas vus)
+SEEN_FILTER = "unseen"
 
 
 def parse_selection(raw_selection):
@@ -133,7 +136,13 @@ if __name__ == "__main__":
         db_path=db_path,
         bpl_path=bpl_path,
     )
-    write_info = build_bpl(db_path=db_path, bpl_path=bpl_path, targets=bpl_targets, filter_selection=None)
+    write_info = build_bpl(
+        db_path=db_path,
+        bpl_path=bpl_path,
+        targets=bpl_targets,
+        filter_selection=FILTER_SELECTION,
+        seen_filter=SEEN_FILTER,
+    )
     print(
         "BPL généré"
         f"(pre_sync seen={pre_seen}, unseen={pre_unseen}, ids_hors_db={pre_ignored}) "

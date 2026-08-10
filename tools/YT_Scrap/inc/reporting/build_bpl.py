@@ -19,7 +19,6 @@ from inc.tracking.tracking_store import (
     set_video_state,
 )
 
-
 DEFAULT_BPL_TITLE = "# BPL Quotidien (Une lecon - ISC - 2mnPy - BdC - Graven - Jordy + Indently - Fooxpy)"
 
 # 7 chaines cibles. Les IDs "scrap_id" correspondent a inc/authors.py.
@@ -83,11 +82,13 @@ def _build_targets(raw_authors):
             built.append(TARGET_BY_AUTHOR[name])
             continue
 
-        built.append({
-            "author": name,
-            "label": "Auteur",
-            "scrap_id": None,
-        })
+        built.append(
+            {
+                "author": name,
+                "label": "Auteur",
+                "scrap_id": None,
+            }
+        )
 
     return built
 
@@ -161,7 +162,11 @@ def _build_compact_summary_table_md(rows):
 
     table_rows = []
     for row in rows:
-        pct_n = f"{(100.0 * row['seen'] / row['videos']):.1f}%" if row["videos"] > 0 else "0.0%"
+        pct_n = (
+            f"{(100.0 * row['seen'] / row['videos']):.1f}%"
+            if row["videos"] > 0
+            else "0.0%"
+        )
         pct_t = (
             f"{(100.0 * row['seen_minutes'] / row['total_minutes']):.1f}%"
             if row["total_minutes"] > 0
@@ -190,7 +195,9 @@ def _build_compact_summary_table_md(rows):
             ]
         )
 
-    total_pct_n = f"{(100.0 * total_seen / total_videos):.1f}%" if total_videos > 0 else "0.0%"
+    total_pct_n = (
+        f"{(100.0 * total_seen / total_videos):.1f}%" if total_videos > 0 else "0.0%"
+    )
     total_pct_t = (
         f"{(100.0 * total_seen_minutes / total_minutes):.1f}%"
         if total_minutes > 0
@@ -245,11 +252,14 @@ def _build_compact_summary_table_md(rows):
     ]
 
     sepa = "|       |        |             |          |          |          |        |"
-    
+
     for index, table_row in enumerate(table_rows):
         lines.append(
             "| "
-            + " | ".join(_pad(table_row[col], widths[col], aligns[col]) for col in range(len(headers)))
+            + " | ".join(
+                _pad(table_row[col], widths[col], aligns[col])
+                for col in range(len(headers))
+            )
             + " |"
         )
         if index < len(table_rows) - 1:
@@ -324,6 +334,143 @@ def _format_published_date_fr(raw_published):
     return text
 
 
+def _extract_published_year(raw_published):
+    if raw_published is None:
+        return None
+
+    text = str(raw_published).strip()
+    if not text:
+        return None
+
+    # Cas principal du pipeline actuel: YYYYMMDD.
+    if re.fullmatch(r"\d{8}", text):
+        try:
+            return datetime.strptime(text, "%Y%m%d").year
+        except ValueError:
+            return None
+
+    # Accepte YYYY-MM-DD et YYYY/MM/DD.
+    normalized = text.replace("-", "/")
+    if re.fullmatch(r"\d{4}/\d{2}/\d{2}", normalized):
+        try:
+            return datetime.strptime(normalized, "%Y/%m/%d").year
+        except ValueError:
+            return None
+
+    # Accepte JJ/MM/AAAA.
+    if re.fullmatch(r"\d{2}/\d{2}/\d{4}", text):
+        try:
+            return datetime.strptime(text, "%d/%m/%Y").year
+        except ValueError:
+            return None
+
+    # Fallback: capture d'une annee en tete, ex: "2026...".
+    match = re.match(r"^(\d{4})", text)
+    if not match:
+        return None
+
+    year = int(match.group(1))
+    if 1900 <= year <= 2100:
+        return year
+    return None
+
+
+def _resolve_filter_year_predicate(filter_selection):
+    if filter_selection is None:
+        return None
+
+    if isinstance(filter_selection, str):
+        text = filter_selection.strip()
+        if not text or text.lower() in {"all", "default", "none"}:
+            return None
+
+        # Accepte les comparateurs: <2000, <=2000, >2000, >=2000
+        op_match = re.fullmatch(r"(<=|>=|<|>)(\d{1,4})", text)
+        if op_match:
+            operator, raw_year = op_match.groups()
+            year_limit = int(raw_year)
+
+            if operator == "<":
+                return lambda year: year is not None and year < year_limit
+            if operator == "<=":
+                return lambda year: year is not None and year <= year_limit
+            if operator == ">":
+                return lambda year: year is not None and year > year_limit
+            return lambda year: year is not None and year >= year_limit
+
+        if "," in text:
+            years = {
+                int(chunk.strip())
+                for chunk in text.split(",")
+                if chunk.strip().isdigit()
+            }
+            if not years:
+                return None
+            return lambda year: year in years
+
+        if text.isdigit():
+            exact_year = int(text)
+            return lambda year: year == exact_year
+
+        raise ValueError(
+            "filter_selection str non supporte (attendu: all, 2026, '2025,2026', <2000, <=2000, >2000, >=2000)"
+        )
+
+    if isinstance(filter_selection, int):
+        return lambda year: year == filter_selection
+
+    if isinstance(filter_selection, range):
+        years = {int(value) for value in filter_selection}
+        return lambda year: year in years
+
+    if isinstance(filter_selection, (list, tuple, set)):
+        years = {int(value) for value in filter_selection if isinstance(value, int)}
+        if not years:
+            return None
+        return lambda year: year in years
+
+    raise ValueError(
+        f"type de filter_selection non supporte : {type(filter_selection).__name__}"
+    )
+
+
+def _filter_videos_by_year(videos, year_predicate):
+    if year_predicate is None:
+        return videos
+
+    filtered = []
+    for video in videos:
+        year = _extract_published_year(video.get("published_at"))
+        if year_predicate(year):
+            filtered.append(video)
+    return filtered
+
+
+def _resolve_seen_filter(seen_filter):
+    if seen_filter is None:
+        return "all"
+
+    if isinstance(seen_filter, str):
+        value = seen_filter.strip().lower()
+        if value in {"", "all", "default", "both", "tous", "tout"}:
+            return "all"
+        if value in {"seen", "vu", "vus"}:
+            return "seen"
+        if value in {"unseen", "not_seen", "pas_vu", "pas_vus", "pas vus"}:
+            return "unseen"
+        raise ValueError("seen_filter non supporte (attendu: all, seen, unseen)")
+
+    raise ValueError(f"type de seen_filter non supporte : {type(seen_filter).__name__}")
+
+
+def _apply_seen_filter(not_seen, seen, seen_filter_mode):
+    if seen_filter_mode == "seen":
+        return [], seen
+    if seen_filter_mode == "unseen":
+        return not_seen, []
+    return not_seen, seen
+
+
 def _video_line(video, checked=False):
     url = video.get("video_url")
     if not isinstance(url, str) or not url:
@@ -338,7 +485,9 @@ def _video_line(video, checked=False):
 
 
 def _filter_existing_video_ids(conn, video_ids):
-    clean_ids = [video_id for video_id in video_ids if isinstance(video_id, str) and video_id]
+    clean_ids = [
+        video_id for video_id in video_ids if isinstance(video_id, str) and video_id
+    ]
     if not clean_ids:
         return set()
 
@@ -347,7 +496,11 @@ def _filter_existing_video_ids(conn, video_ids):
         f"SELECT video_id FROM videos WHERE video_id IN ({placeholders})",
         tuple(clean_ids),
     ).fetchall()
-    return {row["video_id"] for row in rows if isinstance(row, dict) and isinstance(row.get("video_id"), str)}
+    return {
+        row["video_id"]
+        for row in rows
+        if isinstance(row, dict) and isinstance(row.get("video_id"), str)
+    }
 
 
 def import_states_into_tracking(db_path, bpl_path):
@@ -362,20 +515,42 @@ def import_states_into_tracking(db_path, bpl_path):
     finally:
         conn.close()
 
-    seen_ids = [video_id for video_id, state in states.items() if state == "seen" and video_id in existing_ids]
-    unseen_ids = [video_id for video_id, state in states.items() if state == "unseen" and video_id in existing_ids]
+    seen_ids = [
+        video_id
+        for video_id, state in states.items()
+        if state == "seen" and video_id in existing_ids
+    ]
+    unseen_ids = [
+        video_id
+        for video_id, state in states.items()
+        if state == "unseen" and video_id in existing_ids
+    ]
 
-    updated_seen = set_video_state(db_path=db_path, video_ids=seen_ids, state="seen", source="bpl_import") if seen_ids else 0
-    updated_unseen = set_video_state(db_path=db_path, video_ids=unseen_ids, state="unseen", source="bpl_import") if unseen_ids else 0
+    updated_seen = (
+        set_video_state(
+            db_path=db_path, video_ids=seen_ids, state="seen", source="bpl_import"
+        )
+        if seen_ids
+        else 0
+    )
+    updated_unseen = (
+        set_video_state(
+            db_path=db_path, video_ids=unseen_ids, state="unseen", source="bpl_import"
+        )
+        if unseen_ids
+        else 0
+    )
     ignored_not_found = len(states) - len(existing_ids)
 
     return updated_seen, updated_unseen, ignored_not_found
 
 
-def build_bpl(db_path, bpl_path, targets, filter_selection='all'):
+def build_bpl(db_path, bpl_path, targets, filter_selection=None, seen_filter=None):
     conn = connect_db(db_path)
     try:
         init_schema(conn)
+        year_predicate = _resolve_filter_year_predicate(filter_selection)
+        seen_filter_mode = _resolve_seen_filter(seen_filter)
         title = _read_existing_title(bpl_path)
 
         available_runs = 0
@@ -406,7 +581,11 @@ def build_bpl(db_path, bpl_path, targets, filter_selection='all'):
             if not isinstance(run_id, int):
                 summary_rows.append(
                     {
-                        "id": target.get("scrap_id") if isinstance(target.get("scrap_id"), int) else index,
+                        "id": (
+                            target.get("scrap_id")
+                            if isinstance(target.get("scrap_id"), int)
+                            else index
+                        ),
                         "author": author,
                         "views": 0,
                         "videos": 0,
@@ -419,17 +598,26 @@ def build_bpl(db_path, bpl_path, targets, filter_selection='all'):
                 )
                 lines.append(f"## {index} {label} **[{author}]({author_url})**")
                 lines.append("")
-                lines.append("* [ ] Aucune donnee disponible dans tracking.sqlite3 pour cette chaine.")
+                lines.append(
+                    "* [ ] Aucune donnee disponible dans tracking.sqlite3 pour cette chaine."
+                )
                 lines.append("")
                 continue
 
             not_seen = get_not_seen_yet_videos(db_path, author, run_id=run_id)
             seen = get_seen_videos(db_path, author, run_id=run_id)
+            not_seen = _filter_videos_by_year(not_seen, year_predicate)
+            seen = _filter_videos_by_year(seen, year_predicate)
+            not_seen, seen = _apply_seen_filter(not_seen, seen, seen_filter_mode)
             all_videos = not_seen + seen
 
             total_count = len(all_videos)
-            total_views = sum(_coerce_int(video.get("views"), 0) for video in all_videos)
-            total_seconds = sum(_coerce_int(video.get("duration_seconds"), 0) for video in all_videos)
+            total_views = sum(
+                _coerce_int(video.get("views"), 0) for video in all_videos
+            )
+            total_seconds = sum(
+                _coerce_int(video.get("duration_seconds"), 0) for video in all_videos
+            )
             not_seen_seconds = sum(
                 _coerce_int(video.get("duration_seconds"), 0) for video in not_seen
             )
@@ -439,7 +627,11 @@ def build_bpl(db_path, bpl_path, targets, filter_selection='all'):
 
             summary_rows.append(
                 {
-                    "id": target.get("scrap_id") if isinstance(target.get("scrap_id"), int) else index,
+                    "id": (
+                        target.get("scrap_id")
+                        if isinstance(target.get("scrap_id"), int)
+                        else index
+                    ),
                     "author": author,
                     "views": total_views,
                     "videos": total_count,
@@ -450,8 +642,7 @@ def build_bpl(db_path, bpl_path, targets, filter_selection='all'):
                     "seen_minutes": max(0, seen_seconds // 60),
                 }
             )
-            
-            
+
             video_word = "video" if total_count == 1 else "videos"
 
             lines.append(
@@ -529,7 +720,8 @@ def _selected_targets_for_bpl(targets, selection):
     filtered = [
         target
         for target in targets
-        if isinstance(target.get("scrap_id"), int) and target["scrap_id"] in selected_ids
+        if isinstance(target.get("scrap_id"), int)
+        and target["scrap_id"] in selected_ids
     ]
     return filtered if filtered else targets
 
@@ -566,7 +758,11 @@ def main():
 
     script_dir = Path(__file__).resolve().parent
     db_path = script_dir.parent.parent / "cache" / "tracking.sqlite3"
-    bpl_path = Path(args.bpl).resolve() if args.bpl else script_dir.parent.parent.parent / "BPL.md"
+    bpl_path = (
+        Path(args.bpl).resolve()
+        if args.bpl
+        else script_dir.parent.parent.parent / "BPL.md"
+    )
     targets = _build_targets(args.authors)
 
     selection = parse_selection(args.selection)
@@ -576,7 +772,9 @@ def main():
 
     targets_for_bpl = _selected_targets_for_bpl(targets, selection)
 
-    updated_seen, updated_unseen, ignored_not_found = import_states_into_tracking(db_path, bpl_path)
+    updated_seen, updated_unseen, ignored_not_found = import_states_into_tracking(
+        db_path, bpl_path
+    )
     write_info = build_bpl(db_path, bpl_path, targets_for_bpl)
 
     print(
