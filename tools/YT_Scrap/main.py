@@ -14,9 +14,22 @@ from inc.reporting.build_bpl import (
 # DEV_SELECTION = 0, 1
 # DEV_SELECTION = 14, 17, 11, 1 ,2
 DEV_SELECTION = None  # To obtain heart list
-# FILTER_SELECTION = None  # None|all, 2026, "2025,2026", "<2000", "<=2000", ">2000", ">=2000"
-FILTER_SELECTION = "<=2021"
-# SEEN_FILTER = None  # None|all, "seen" (vus), "unseen" (pas vus)
+
+# DEV_SELECTION = 21  # Foxxy - FR-Maths (2019-2022)
+# DEV_SELECTION = 25  # SavoirPourTous - FR-Graphism (Inkscape & Blender) (24→2026)
+
+# DEV_SELECTION = 7,11,14,17,20,23 # Py
+
+# DEV_SELECTION = 4, 22, 24  # Flet - à/c. de 2022
+
+# DEV_SELECTION = 18, 26  # ai JordyBAyo : 2020+ - YAssine : 2024+
+
+# None|all, 2026, "2025,2026", "<2000", "<=2000", ">2000", ">=2000"
+FILTER_SELECTION = None
+# FILTER_SELECTION = "2022,2023,2024,2025,2026"
+FILTER_SELECTION = "2026"
+
+SEEN_FILTER = None
 SEEN_FILTER = "unseen"
 
 

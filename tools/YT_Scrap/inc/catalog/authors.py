@@ -3,7 +3,7 @@ from pymox_kit import *
 
 AUTHORS = {
     0: "doro2255",
-    1: "LionelCOTE",
+    1: "LionelCOTE", # Prog
     2: "c57-u5s",
     3: "lineindent",
     4: "sriedynurcahyo3894",
@@ -27,8 +27,10 @@ AUTHORS = {
     22: "DevSenate",
     23: "codewithjoshoffical",
     24: "addinyy",
-    25: "SavoirPourTous",
+    25: "SavoirPourTous", # Inkscape
+    26: "yassine-sdiri",  # AI
 }
+# Voir Py\tools\YT_Scrap\inc\reporting\build_bpl.py pour labels
 
 # Pour mise au point du script ❌ toutes en partant du bas sauf tseries et alphorn
 #  0 AUTHOR = "doro2255"                 #      1 video  -              29 vues -               7 minutes

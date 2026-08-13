@@ -23,18 +23,22 @@ DEFAULT_BPL_TITLE = "# BPL Quotidien (Une lecon - ISC - 2mnPy - BdC - Graven - J
 
 # 7 chaines cibles. Les IDs "scrap_id" correspondent a inc/authors.py.
 TARGET_AUTHORS = [
-    {"author": "DevSenate", "label": "IN Auteur", "scrap_id": 22},
-    {"author": "sriedynurcahyo3894", "label": "IN Auteur", "scrap_id": 4},
-    {"author": "codewithjoshoffical", "label": "US Auteur", "scrap_id": 23},
-    {"author": "addinyy", "label": "IN Auteur", "scrap_id": 24},
-    {"author": "InformatiqueSansComplexe", "label": "FR Auteur", "scrap_id": 14},
-    {"author": "2minutesPy", "label": "FR/GB Auteur", "scrap_id": 17},
-    {"author": "bandedecodeurs", "label": "FR Auteur", "scrap_id": 11},
-    {"author": "Gravenilvectuto", "label": "FR Auteur", "scrap_id": 7},
-    {"author": "JordyBayo", "label": "FR Auteur", "scrap_id": 18},
-    {"author": "Indently", "label": "GB Auteur", "scrap_id": 20},
-    {"author": "foxxpy", "label": "FR Maths Auteur", "scrap_id": 21},
-    {"author": "SavoirPourTous", "label": "Inkscape & Blender", "scrap_id": 25},
+    {"author": "foxxpy", "label": "FR-Maths", "scrap_id": 21},
+    {"author": "SavoirPourTous", "label": "FR-Graphism", "scrap_id": 25},
+    
+    {"author": "Gravenilvectuto", "label": "FR-Py", "scrap_id": 7},
+    {"author": "bandedecodeurs", "label": "FR-Py", "scrap_id": 11},
+    {"author": "InformatiqueSansComplexe", "label": "FR-Py", "scrap_id": 14},
+    {"author": "2minutesPy", "label": "FR/GB-Py", "scrap_id": 17},
+    {"author": "Indently", "label": "GB-Py", "scrap_id": 20},
+    {"author": "codewithjoshoffical", "label": "GB-Py", "scrap_id": 23},
+    
+    {"author": "sriedynurcahyo3894", "label": "Mute-Flet", "scrap_id": 4},
+    {"author": "DevSenate", "label": "GB-Py Flet", "scrap_id": 22},
+    {"author": "addinyy", "label": "GB-Py Flet", "scrap_id": 24},
+    
+    {"author": "JordyBayo", "label": "FR-AI", "scrap_id": 18},
+    {"author": "yassine-sdiri", "label": "FR-AI", "scrap_id": 26},
 ]
 
 TARGET_BY_AUTHOR = {item["author"]: item for item in TARGET_AUTHORS}
@@ -149,8 +153,8 @@ def _author_alias(author):
 
 
 def _build_compact_summary_table_md(rows):
-    headers = ["Id", "Auteur", "Vues", "2c", "N & Tps", "Vus", "%"]
-    aligns = ["right", "center", "right", "right", "right", "right", "right"]
+    headers = ["Id", "Auteur", "Label", "Vues", "2c", "N & Tps", "Vus", "%"]
+    aligns = ["right", "center", "left", "right", "right", "right", "right", "right"]
 
     total_videos = sum(row["videos"] for row in rows)
     total_views = sum(row["views"] for row in rows)
@@ -176,6 +180,7 @@ def _build_compact_summary_table_md(rows):
             [
                 str(row["id"]),
                 _author_alias(row["author"]),
+                row.get("label", ""),
                 _format_views(row["views"]),
                 _format_views(row["not_seen"]),
                 _format_views(row["videos"]),
@@ -185,6 +190,7 @@ def _build_compact_summary_table_md(rows):
         )
         table_rows.append(
             [
+                "",
                 "",
                 "",
                 "",
@@ -208,6 +214,7 @@ def _build_compact_summary_table_md(rows):
         [
             str(len(rows)),
             "TOTAL",
+            "",
             _format_views(total_views),
             _format_views(total_not_seen),
             _format_views(total_videos),
@@ -220,6 +227,7 @@ def _build_compact_summary_table_md(rows):
             "",
             "",
             "",
+            "",
             _minutes_to_hhmm(total_not_seen_minutes),
             _minutes_to_hhmm(total_minutes),
             _minutes_to_hhmm(total_seen_minutes),
@@ -227,7 +235,7 @@ def _build_compact_summary_table_md(rows):
         ]
     )
 
-    widths = [5, 6, 11, 8, 8, 8, 6]
+    widths = [5, 6, 16, 11, 8, 8, 8, 6]
 
     def _pad(text, width, align):
         # U+202F est demi-largeur visuellement dans de nombreuses polices monospace.
@@ -247,11 +255,11 @@ def _build_compact_summary_table_md(rows):
         return text.ljust(width)
 
     lines = [
-        "|   Id  | Auteur |     Vues    |    2c    | N & Tps  |   Vus    |    %   |",
-        "|------:|:------:|------------:|---------:|---------:|---------:|-------:|",
+        "|   Id  | Auteur |      Label       |     Vues    |    2c    | N & Tps  |   Vus    |    %   |",
+        "|------:|:------:|:-----------------|------------:|---------:|---------:|---------:|-------:|",
     ]
 
-    sepa = "|       |        |             |          |          |          |        |"
+    sepa = "|       |        |                  |             |          |          |          |        |"
 
     for index, table_row in enumerate(table_rows):
         lines.append(
@@ -572,6 +580,7 @@ def build_bpl(db_path, bpl_path, targets, filter_selection=None, seen_filter=Non
         lines = [title, ""]
         summary_rows = []
 
+        display_index = 0
         for index, target in enumerate(targets, start=1):
             author = target["author"]
             label = target["label"]
@@ -579,14 +588,16 @@ def build_bpl(db_path, bpl_path, targets, filter_selection=None, seen_filter=Non
             run_id = get_latest_run_id(conn, author)
 
             if not isinstance(run_id, int):
+                display_index += 1
                 summary_rows.append(
                     {
                         "id": (
                             target.get("scrap_id")
                             if isinstance(target.get("scrap_id"), int)
-                            else index
+                            else display_index
                         ),
                         "author": author,
+                        "label": label,
                         "views": 0,
                         "videos": 0,
                         "total_minutes": 0,
@@ -596,7 +607,7 @@ def build_bpl(db_path, bpl_path, targets, filter_selection=None, seen_filter=Non
                         "seen_minutes": 0,
                     }
                 )
-                lines.append(f"## {index} {label} **[{author}]({author_url})**")
+                lines.append(f"## {display_index} {label} **[{author}]({author_url})**")
                 lines.append("")
                 lines.append(
                     "* [ ] Aucune donnee disponible dans tracking.sqlite3 pour cette chaine."
@@ -625,14 +636,21 @@ def build_bpl(db_path, bpl_path, targets, filter_selection=None, seen_filter=Non
                 _coerce_int(video.get("duration_seconds"), 0) for video in seen
             )
 
+            # N'affiche pas les auteurs sans video apres application des filtres.
+            if total_count == 0:
+                continue
+
+            display_index += 1
+
             summary_rows.append(
                 {
                     "id": (
                         target.get("scrap_id")
                         if isinstance(target.get("scrap_id"), int)
-                        else index
+                        else display_index
                     ),
                     "author": author,
+                    "label": label,
                     "views": total_views,
                     "videos": total_count,
                     "total_minutes": max(0, total_seconds // 60),
@@ -646,7 +664,7 @@ def build_bpl(db_path, bpl_path, targets, filter_selection=None, seen_filter=Non
             video_word = "video" if total_count == 1 else "videos"
 
             lines.append(
-                f"## {index} {label} **[{author}]({author_url})** ( **{total_count}** {video_word} - {_format_views(total_views)} vues - {_format_duration_minutes_fr(total_seconds)} )"
+                f"## {display_index} {label} **[{author}]({author_url})** ( **{total_count}** {video_word} - {_format_views(total_views)} vues - {_format_duration_minutes_fr(total_seconds)} )"
             )
             lines.append("")
 
