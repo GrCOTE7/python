@@ -29,6 +29,7 @@ AUTHORS = {
     24: "addinyy",
     25: "SavoirPourTous", # Inkscape
     26: "yassine-sdiri",  # AI
+    27: "benoitferrere",  # AI
 }
 # Voir Py\tools\YT_Scrap\inc\reporting\build_bpl.py pour labels
 

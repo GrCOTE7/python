@@ -20,14 +20,16 @@ DEV_SELECTION = None  # To obtain heart list
 
 # DEV_SELECTION = 7,11,14,17,20,23 # Py
 
-# DEV_SELECTION = 4, 22, 24  # Flet - à/c. de 2022
+# DEV_SELECTION = 4, 22, 24  # Flet - (à/c. de 2022)
 
-# DEV_SELECTION = 18, 26  # ai JordyBAyo : 2020+ - YAssine : 2024+
+# DEV_SELECTION = 18, 26  # AI FR : JordyBAyo (2020+) - Yass (2024+)
+DEV_SELECTION = 27  # AI FR Agents IA : benoitferrere (2024+)
+DEV_SELECTION = 18, 26, 27  # AI FR
 
 # None|all, 2026, "2025,2026", "<2000", "<=2000", ">2000", ">=2000"
 FILTER_SELECTION = None
 # FILTER_SELECTION = "2022,2023,2024,2025,2026"
-FILTER_SELECTION = "2026"
+FILTER_SELECTION = "2024,2025,2026"
 
 SEEN_FILTER = None
 SEEN_FILTER = "unseen"

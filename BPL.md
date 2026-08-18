@@ -2,147 +2,23 @@
 
 |   Id  | Auteur |      Label       |     Vues    |    2c    | N & Tps  |   Vus    |    %   |
 |------:|:------:|:-----------------|------------:|---------:|---------:|---------:|-------:|
-|    25 | SavoirPourTous | FR-Graphism      |       24 202 |       24 |       24 |        0 |   0.0% |
+|    18 | Jordy  | FR-AI            |       22 311 |       19 |       19 |        0 |   0.0% |
 |       |        |                  |             |          |          |          |        |
-|       |        |                  |             |    04:04 |    04:04 |    00:00 |   0.0% |
+|       |        |                  |             |    14:35 |    14:35 |    00:00 |   0.0% |
 |       |        |                  |             |          |          |          |        |
-|     7 | Gravn  | FR-Py            |       44 080 |       11 |       11 |        0 |   0.0% |
+|    26 | yassine-sdiri | FR-AI            |   11 378 386 |      102 |      102 |        0 |   0.0% |
 |       |        |                  |             |          |          |          |        |
-|       |        |                  |             |    02:34 |    02:34 |    00:00 |   0.0% |
+|       |        |                  |             |    52:06 |    52:06 |    00:00 |   0.0% |
 |       |        |                  |             |          |          |          |        |
-|    14 |  ISC   | FR-Py            |        5 520 |       12 |       12 |        0 |   0.0% |
+|    27 | benoitferrere | FR-AI            |      168 920 |       60 |       60 |        0 |   0.0% |
 |       |        |                  |             |          |          |          |        |
-|       |        |                  |             |    01:18 |    01:18 |    00:00 |   0.0% |
+|       |        |                  |             |    18:27 |    18:27 |    00:00 |   0.0% |
 |       |        |                  |             |          |          |          |        |
-|    17 |  2mn   | FR/GB-Py         |       25 452 |        7 |        7 |        0 |   0.0% |
+|     3 | TOTAL  |                  |   11 569 617 |      181 |      181 |        0 |   0.0% |
 |       |        |                  |             |          |          |          |        |
-|       |        |                  |             |    00:18 |    00:18 |    00:00 |   0.0% |
-|       |        |                  |             |          |          |          |        |
-|    20 | Indent | GB-Py            |      255 855 |       24 |       24 |        0 |   0.0% |
-|       |        |                  |             |          |          |          |        |
-|       |        |                  |             |    03:21 |    03:21 |    00:00 |   0.0% |
-|       |        |                  |             |          |          |          |        |
-|    23 | codewithjoshoffical | GB-Py            |       24 212 |        8 |        8 |        0 |   0.0% |
-|       |        |                  |             |          |          |          |        |
-|       |        |                  |             |    02:45 |    02:45 |    00:00 |   0.0% |
-|       |        |                  |             |          |          |          |        |
-|    18 | Jordy  | FR-AI            |        3 019 |        7 |        7 |        0 |   0.0% |
-|       |        |                  |             |          |          |          |        |
-|       |        |                  |             |    05:40 |    05:40 |    00:00 |   0.0% |
-|       |        |                  |             |          |          |          |        |
-|    26 | yassine-sdiri | FR-AI            |    3 920 511 |       31 |       31 |        0 |   0.0% |
-|       |        |                  |             |          |          |          |        |
-|       |        |                  |             |    18:43 |    18:43 |    00:00 |   0.0% |
-|       |        |                  |             |          |          |          |        |
-|     8 | TOTAL  |                  |    4 302 851 |      124 |      124 |        0 |   0.0% |
-|       |        |                  |             |          |          |          |        |
-|       |        |                  |             |    38:43 |    38:43 |    00:00 |   0.0% |
+|       |        |                  |             |    85:08 |    85:08 |    00:00 |   0.0% |
 
-## 1 FR-Graphism **[SavoirPourTous](https://www.youtube.com/@SavoirPourTous/videos)** ( **24** videos - 24 202 vues - 4 heures et 4 minutes )
-
-* [ ] [31/07/2026 **De zéro à paysage : Maîtrisez le low-poly dans Blender** 154 **03:14**](https://www.youtube.com/watch?v=vBeybIWXUVs)
-* [ ] [19/07/2026 **La plateforme Savoir Pour Tous redéfinie | Formations en ligne** 105 **05:50**](https://www.youtube.com/watch?v=1dLna_Sl6vY)
-* [ ] [17/07/2026 **Inkscape 1.4.2 tuto français - Création d'un personnage (Episode 65)** 684 **15:04**](https://www.youtube.com/watch?v=uBwk8qJoIvs)
-* [ ] [08/07/2026 **ChatGPT vs GIMP : qui va vraiment gagner?** 164 **05:09**](https://www.youtube.com/watch?v=YNpYCeMj7IQ)
-* [ ] [05/07/2026 **Inkscape 1.4.2 tuto français - Reset Préférences - Suppression Inkscape (Episode 64)** 485 **04:36**](https://www.youtube.com/watch?v=6ftJE2pnsXI)
-* [ ] [28/06/2026 **Simuler la gravité avec IA dans Blender | Physique réaliste** 215 **17:18**](https://www.youtube.com/watch?v=hw_ZKBSBrRI)
-* [ ] [26/06/2026 **Inkscape 1.4.2 tuto français - Comment séparer les lettres (Episode 63)** 552 **06:58**](https://www.youtube.com/watch?v=yERkamufHxg)
-* [ ] [19/06/2026 **Connecteur Blender sur IA Claude sur Windows 11, si si c'est possible** 297 **11:26**](https://www.youtube.com/watch?v=wiywhDyK6l0)
-* [ ] [03/06/2026 **PowerShell 7.X Tuto Français - Aide sur PowerShell (Episode 05)** 173 **16:30**](https://www.youtube.com/watch?v=myO4EwDn8rc)
-* [ ] [30/05/2026 **Générer des modèles 3D à partir d'images avec Meshy AI dans Blender** 745 **09:52**](https://www.youtube.com/watch?v=fEy97j_toUk)
-* [ ] [29/05/2026 **D5 Render 2025 Français - Placer des Objets SketchUp et de la Végétation (Episode 08)** 185 **06:38**](https://www.youtube.com/watch?v=GYq1fLadUBY)
-* [ ] [23/05/2026 **Modélisation 3D assistée par IA : Meshy AI + Blender** 482 **11:43**](https://www.youtube.com/watch?v=tgRyL9DOnbk)
-* [ ] [15/05/2026 **Blender 5.1 + IA Claude : animations, Geometry Nodes et robot 3D** 877 **06:57**](https://www.youtube.com/watch?v=m7f324KZn_I)
-* [ ] [08/05/2026 **Blender 5 + ChatGPT : ce que vous pouvez vraiment faire** 771 **13:13**](https://www.youtube.com/watch?v=YK4LI0S8dC0)
-* [ ] [02/05/2026 **Claude IA intégrée à Blender | Les résultats sont dingues** 11 854 **26:50**](https://www.youtube.com/watch?v=b353YopsF3o)
-* [ ] [01/05/2026 **Claude AI crée vos modèles 3D SketchUp en quelques secondes** 1 191 **16:00**](https://www.youtube.com/watch?v=bhZWTjxGC3Y)
-* [ ] [21/03/2026 **Pourquoi tout le monde parle d’IA - Introduction** 179 **09:33**](https://www.youtube.com/watch?v=wS2R5mUxHMs)
-* [ ] [20/03/2026 **Inkscape 1.4.2 tuto français - Création d'un réveil ou d'une horloge (Episode 61)** 1 952 **13:55**](https://www.youtube.com/watch?v=GG8TIcyRzWo)
-* [ ] [15/03/2026 **Inkscape 1.4.2 tuto français - Copie Multiple (Episode 60)** 748 **06:15**](https://www.youtube.com/watch?v=st0K1s0XZuU)
-* [ ] [09/03/2026 **Nouvelle bande annonce 2026 - Nouveaux et actuels abonnés** 101 **03:58**](https://www.youtube.com/watch?v=EkLjZzJcaH0)
-* [ ] [13/02/2026 **Inkscape 1.4.2 tuto français - Gestion et alignement des icônes (Episode 59)** 398 **02:46**](https://www.youtube.com/watch?v=BqC5t4zExJg)
-* [ ] [13/02/2026 **Inkscape 1.4.2 tuto français - Problème d'affichage (Episode 58)** 245 **03:42**](https://www.youtube.com/watch?v=webJQ6euDPU)
-* [ ] [31/01/2026 **Inkscape 1.4.2 tuto français - Création d'un pigeon (Episode 57)** 864 **22:22**](https://www.youtube.com/watch?v=zufycfSKJrI)
-* [ ] [23/01/2026 **Inkscape 1.4.2 tuto français - Courbes de Béziers - Types (Episode 56)** 781 **05:04**](https://www.youtube.com/watch?v=g2GINRYD8uE)
-
-## 2 FR-Py **[Gravenilvectuto](https://www.youtube.com/@Gravenilvectuto/videos)** ( **11** videos - 44 080 vues - 2 heures et 34 minutes )
-
-* [ ] [05/08/2026 **NPM Hacké ! Attention à tes projets ⚠️** 4 132 **05:38**](https://www.youtube.com/watch?v=CPACRXWNBpc)
-* [ ] [26/07/2026 **Apprendre Rust #4  : L'Emprunt et les Références (&)** 2 158 **07:12**](https://www.youtube.com/watch?v=CrNojg7K3Pg)
-* [ ] [21/07/2026 **Apprendre Rust #3 : Variables, mémoire et ownership** 3 436 **10:49**](https://www.youtube.com/watch?v=fXRSfPqUHiM)
-* [ ] [20/07/2026 **5 THEORIES sur l'avenir de l'IA ! (sans bullshit...)** 2 486 **10:53**](https://www.youtube.com/watch?v=vE4_bWtTpVU)
-* [ ] [15/07/2026 **Apprendre le langage Rust #2 - Installation et Premier Projet** 3 301 **08:21**](https://www.youtube.com/watch?v=aBUqnhhyVNg)
-* [ ] [14/07/2026 **Apprendre le langage Rust #1 - Introduction** 4 671 **03:16**](https://www.youtube.com/watch?v=5vQtP3hgavs)
-* [ ] [19/06/2026 **ASYNCONF 2026 ! MON PLUS GROS EVENEMENT ARRIVE ! J-7** 2 570 **08:23**](https://www.youtube.com/watch?v=9Pui2Do21pA)
-* [ ] [23/04/2026 **CE SALON DEV EST INCROYABLE ! (DEVOXX 2026)** 2 466 **14:23**](https://www.youtube.com/watch?v=X90vRM4HwO0)
-* [ ] [17/03/2026 **J'organise mon salon à Paris la defense - Asynconf 2026** 1 108 **04:57**](https://www.youtube.com/watch?v=xP47FjwMYn4)
-* [ ] [17/02/2026 **Créer son site en Python avec Django - Initiation** 11 361 **01:15:30**](https://www.youtube.com/watch?v=hrdZ-lT_i3A)
-* [ ] [06/02/2026 **J’ai créé une extension VS Code (et tu vas l’adorer)** 6 391 **05:27**](https://www.youtube.com/watch?v=eqhXSvV2QYc)
-
-## 3 FR-Py **[InformatiqueSansComplexe](https://www.youtube.com/@InformatiqueSansComplexe/videos)** ( **12** videos - 5 520 vues - 1 heure et 18 minutes )
-
-* [ ] [18/05/2026 **J'ai viré ChatGPT de mon code Python — voilà ce que j'utilise** 900 **04:56**](https://www.youtube.com/watch?v=aTqEaq3XsW0)
-* [ ] [04/05/2026 **MCP : le protocole qui connecte ton IA au monde réel** 511 **01:53**](https://www.youtube.com/watch?v=cRVhlC_d0fE)
-* [ ] [12/03/2026 **La fin des développeurs Odoo** 429 **11:24**](https://www.youtube.com/watch?v=UFo9wySvXqw)
-* [ ] [02/03/2026 **J'ai demandé à l'IA de coder un module Odoo... grosse erreur** 474 **03:27**](https://www.youtube.com/watch?v=2eg8jTvd7jM)
-* [ ] [24/02/2026 **Ton module Odoo est dangereux !** 301 **06:45**](https://www.youtube.com/watch?v=VGSJOv5oK-M)
-* [ ] [17/02/2026 **J'ai créé un module Odoo en 10 minutes...et ça plante !** 471 **09:15**](https://www.youtube.com/watch?v=vlTb5a2D7sE)
-* [ ] [10/02/2026 **Facturation électronique : Faut-il paniquer ?** 379 **04:40**](https://www.youtube.com/watch?v=pbKUxx9h4zY)
-* [ ] [02/02/2026 **Odoo : cette case à cocher évite 100% des doublons à l’import** 252 **03:33**](https://www.youtube.com/watch?v=ukBXwveH-tA)
-* [ ] [26/01/2026 **Les spams n’ont plus aucune chance contre mon IA** 345 **09:43**](https://www.youtube.com/watch?v=C9nHhuKdp9A)
-* [ ] [19/01/2026 **Ton IA n'est pas intelligente...et c'est bien !** 323 **03:38**](https://www.youtube.com/watch?v=UdRZAeu_Mq4)
-* [ ] [12/01/2026 **J'ai enregistré mon IA ! Pour plus tard...** 697 **06:34**](https://www.youtube.com/watch?v=kb3724mox8s)
-* [ ] [05/01/2026 **Pomme ou Banane ? C'est ton IA qui décide !** 438 **12:48**](https://www.youtube.com/watch?v=Aw9X8EW0GJI)
-
-## 4 FR/GB-Py **[2minutesPy](https://www.youtube.com/@2minutesPy/videos)** ( **7** videos - 25 452 vues - 18 minutes )
-
-* [ ] [08/08/2026 **This Python AI Agent Turns Zoom Meetings into Jira Tasks | 2MinutesPy** 401 **01:43**](https://www.youtube.com/watch?v=j8nRgmBgjM0)
-* [ ] [09/07/2026 **My App's Database Got Corrupted... Here's How I Fixed It in Minutes** 305 **01:50**](https://www.youtube.com/watch?v=xj7uT8xUVcY)
-* [ ] [18/05/2026 **How to Handle Async Code in Python?** 6 507 **02:53**](https://www.youtube.com/watch?v=4SyXKlCw2aU)
-* [ ] [03/05/2026 **What's new in Python 3.15 | Early look** 16 223 **02:38**](https://www.youtube.com/watch?v=X3STC_9FdP0)
-* [ ] [11/03/2026 **Why Deferring Now… Not Earlier!** 797 **02:48**](https://www.youtube.com/watch?v=45yD9UvuUmU)
-* [ ] [07/03/2026 **Challenge: Prompts ONLY and Full-stack App is READY 🚀** 519 **02:51**](https://www.youtube.com/watch?v=HywYRduZayQ)
-* [ ] [16/01/2026 **Your Auth Works… Until You Add Organizations** 700 **03:43**](https://www.youtube.com/watch?v=YIAxblbM4Sc)
-
-## 5 GB-Py **[Indently](https://www.youtube.com/@Indently/videos)** ( **24** videos - 255 855 vues - 3 heures et 21 minutes )
-
-* [ ] [06/08/2026 **How to 3D Print Using Python (Beginner Tutorial) [build123d]** 1 725 **11:49**](https://www.youtube.com/watch?v=ECV8RQ8EYhk)
-* [ ] [03/08/2026 **How to 3D Print Using Python (Beginner Tutorial) [OpenSCAD]** 3 503 **15:17**](https://www.youtube.com/watch?v=Lb7cLi59SI4)
-* [ ] [30/07/2026 **I finally bought one of these!** 2 428 **01:52**](https://www.youtube.com/watch?v=3NgoJLhBp68)
-* [ ] [15/07/2026 **Big News + New Python Course!** 1 598 **02:09**](https://www.youtube.com/watch?v=nljfoleEqWM)
-* [ ] [03/07/2026 ***args vs **kwargs Explained in 8 Minutes** 2 802 **08:00**](https://www.youtube.com/watch?v=xQ1Z2JWkn6g)
-* [ ] [28/06/2026 **I love Generator Expressions in Python** 4 993 **06:09**](https://www.youtube.com/watch?v=q-2KvDXPvj0)
-* [ ] [23/06/2026 **70 Built-in Python Functions explained in under 15 minutes** 9 815 **13:11**](https://www.youtube.com/watch?v=ZysTNS0YOrY)
-* [ ] [18/06/2026 **"yield from" is Awesome in Python** 6 866 **04:00**](https://www.youtube.com/watch?v=XlW4K8oqqLw)
-* [ ] [13/06/2026 **How to design a good function in Python** 8 356 **08:30**](https://www.youtube.com/watch?v=YTuQ2nmg1Yg)
-* [ ] [09/06/2026 **Should you still learn Python in 2026?** 5 123 **06:41**](https://www.youtube.com/watch?v=uNcJe3JawxY)
-* [ ] [06/06/2026 **Weak references are Awesome in Python** 6 626 **10:53**](https://www.youtube.com/watch?v=UXGxMnu7qig)
-* [ ] [01/06/2026 **This is probably the biggest misconception about Python** 14 080 **07:02**](https://www.youtube.com/watch?v=gtxhpV4zMrQ)
-* [ ] [28/05/2026 **Optionals are Awesome in Python** 5 663 **04:59**](https://www.youtube.com/watch?v=gEJJK_Fxki8)
-* [ ] [23/05/2026 **3 Major Bugs You Should Avoid in Python** 6 223 **08:41**](https://www.youtube.com/watch?v=CxuGaLNejvc)
-* [ ] [18/05/2026 **Did I just ruin Python with Enforced Static Typing?** 7 648 **06:28**](https://www.youtube.com/watch?v=LRGKtGnsufM)
-* [ ] [13/05/2026 **Generators are Awesome in Python** 7 962 **09:07**](https://www.youtube.com/watch?v=uVX4yWJpKgg)
-* [ ] [18/02/2026 **It's 2026 - Time to switch to Linux** 13 749 **04:38**](https://www.youtube.com/watch?v=T_LNtZkaiaI)
-* [ ] [12/02/2026 **Python with UV is ULTRA Fast** 12 601 **08:19**](https://www.youtube.com/watch?v=5nw_H7oqrIk)
-* [ ] [06/02/2026 **UV in Python is Awesome** 26 639 **11:04**](https://www.youtube.com/watch?v=8zggSBvTQbM)
-* [ ] [01/02/2026 **5 Good Function Habits in Python** 14 540 **11:50**](https://www.youtube.com/watch?v=LqpdsBqa1VE)
-* [ ] [28/01/2026 **AsyncIO VS Threading VS Multiprocessing in Python** 33 927 **13:09**](https://www.youtube.com/watch?v=QlkXji08lno)
-* [ ] [19/01/2026 **Currying in Python is wack** 17 660 **08:01**](https://www.youtube.com/watch?v=eRGlksqD6j4)
-* [ ] [11/01/2026 **How to print like a Pro in Python** 17 424 **06:09**](https://www.youtube.com/watch?v=juU0sPBdLtE)
-* [ ] [04/01/2026 **5 Good Python Habits** 23 904 **13:51**](https://www.youtube.com/watch?v=9tC7-jY6ZJk)
-
-## 6 GB-Py **[codewithjoshoffical](https://www.youtube.com/@codewithjoshoffical/videos)** ( **8** videos - 24 212 vues - 2 heures et 45 minutes )
-
-* [ ] [05/06/2026 **Python CRUD App Tutorial with PostgreSQL, SQLAlchemy, Docker & Pydantic** 1 773 **38:01**](https://www.youtube.com/watch?v=u0KBmgs6jKY)
-* [ ] [23/05/2026 **I Intentionally Broke My FastAPI App... Sentry Caught Everything** 314 **29:23**](https://www.youtube.com/watch?v=5RRPwe6U2zE)
-* [ ] [09/04/2026 **Websites Tried to Block This… It Still Worked** 479 **18:51**](https://www.youtube.com/watch?v=ny9kcR2x6WQ)
-* [ ] [02/04/2026 **Stop Writing Web Scrapers... Let an Agent Do It Instead** 571 **22:01**](https://www.youtube.com/watch?v=5Ybuz9_1F0s)
-* [ ] [27/02/2026 **I Built a Python CLI Tool From a 3-Minute Voice Rant** 937 **06:30**](https://www.youtube.com/watch?v=T1BaeYxbscc)
-* [ ] [12/02/2026 **Make Your Python Code 10x Faster (7 Simple Fixes)** 2 240 **14:11**](https://www.youtube.com/watch?v=BicfcF_NkjY)
-* [ ] [05/02/2026 **This New Language Makes Python Fast** 15 146 **12:14**](https://www.youtube.com/watch?v=FhpGtW_DGGA)
-* [ ] [15/01/2026 **Build a Python ML App Fast With Gradio** 2 752 **23:56**](https://www.youtube.com/watch?v=loxDDO3VXV4)
-
-## 7 FR-AI **[JordyBayo](https://www.youtube.com/@JordyBayo/videos)** ( **7** videos - 3 019 vues - 5 heures et 40 minutes )
+## 1 FR-AI **[JordyBayo](https://www.youtube.com/@JordyBayo/videos)** ( **19** videos - 22 311 vues - 14 heures et 35 minutes )
 
 * [ ] [06/08/2026 **Claude Code : ces plugins vont tout changer** 107 **31:10**](https://www.youtube.com/watch?v=k6m8qgrpZvA)
 * [ ] [25/07/2026 **Claude Code : Pourquoi c'est l'outil indispensable en 2026 ?  [Masterclass]** 225 **01:00:46**](https://www.youtube.com/watch?v=2LRQ_he-ZAs)
@@ -151,8 +27,20 @@
 * [ ] [09/02/2026 **Le meilleur setup pour vlogging (en 2026)** 112 **17:33**](https://www.youtube.com/watch?v=BVPEnmeIcPI)
 * [ ] [31/01/2026 **Jordy Bayo Experience #12 - Mohamed Daoudi** 2 150 **01:24:42**](https://www.youtube.com/watch?v=9xoeCgNu-rE)
 * [ ] [23/01/2026 **Pourquoi j'ai arrêté de créer des tutoriels de coding** 277 **24:50**](https://www.youtube.com/watch?v=NiavTnHzXu4)
+* [ ] [27/10/2025 **Ce nouveau navigateur ChatGPT Atlas va tout changer !** 422 **36:52**](https://www.youtube.com/watch?v=qFOKTfxSN0M)
+* [ ] [18/10/2025 **Maîtrisez le NOUVEAU générateur d'agents OpenAI en 1 heure (cours complet)** 443 **01:31:22**](https://www.youtube.com/watch?v=siA-ghnW-Cg)
+* [ ] [17/09/2025 **Mon SaaS: Le Futur du Travail (et comment en profiter)** 737 **10:08**](https://www.youtube.com/watch?v=TWzoDU9-tpI)
+* [ ] [06/09/2025 **Guide complet : ChatGPT, Claude, Gemini – Masterclass** 300 **04:07:29**](https://www.youtube.com/watch?v=JKcjK9AGhpo)
+* [ ] [25/08/2025 **Comment j'ai créé une startup SaaS (de l'idée au revenu )** 12 587 **12:03**](https://www.youtube.com/watch?v=b8QPDCRX1bw)
+* [ ] [03/08/2025 **Tu Vas Comprendre  La Blockchain Simplement - en 15min** 121 **14:50**](https://www.youtube.com/watch?v=vnMgoVeI5E4)
+* [ ] [10/06/2025 **Je teste CODEX l'éditeur de code de OpenAI pour la première fois.** 1 376 **19:54**](https://www.youtube.com/watch?v=X6y1jfMhOH4)
+* [ ] [14/04/2025 **je me relance désormais dans l'IA - virage 360 DÉGRÉ** 211 **11:27**](https://www.youtube.com/watch?v=qjfsjbzyEts)
+* [ ] [31/01/2025 **Travailler à l’international sans quitter l’Afrique : la vérité choc !** 1 631 **05:58**](https://www.youtube.com/watch?v=1RJMKDrrqGs)
+* [ ] [11/06/2024 **Comprendre Le MLOps En Seulement 30 Minutes 🔥** 751 **25:41**](https://www.youtube.com/watch?v=32Q0SY4kfx8)
+* [ ] [31/03/2024 **Jordy Bayo Experience #11 - Mohamed Gandoura** 342 **53:41**](https://www.youtube.com/watch?v=-a2lHIucYak)
+* [ ] [28/01/2024 **Mon plan 2024** 371 **06:08**](https://www.youtube.com/watch?v=wbbC9NjtSNA)
 
-## 8 FR-AI **[yassine-sdiri](https://www.youtube.com/@yassine-sdiri/videos)** ( **31** videos - 3 920 511 vues - 18 heures et 43 minutes )
+## 2 FR-AI **[yassine-sdiri](https://www.youtube.com/@yassine-sdiri/videos)** ( **102** videos - 11 378 386 vues - 52 heures et 6 minutes )
 
 * [ ] [09/08/2026 **Personne ne réalise ce que le nouveau ChatGPT peut faire** 30 788 **22:27**](https://www.youtube.com/watch?v=4km3oLGe-iQ)
 * [ ] [02/08/2026 **Comment Vivre de l'IA en 2026 (sans compétence technique)** 15 695 **39:12**](https://www.youtube.com/watch?v=Vv1eXHqOZlI)
@@ -185,3 +73,137 @@
 * [ ] [25/01/2026 **Claude de A à Z : Le cours complet** 305 999 **37:07**](https://www.youtube.com/watch?v=z0Hxx4gutBE)
 * [ ] [18/01/2026 **Comprendre le NOUVEAU Google AI Studio en 20 Minutes** 157 640 **21:25**](https://www.youtube.com/watch?v=Z8myUXypozU)
 * [ ] [11/01/2026 **7 Erreurs IA à Absolument Éviter en 2026** 36 118 **19:36**](https://www.youtube.com/watch?v=p6ye5pPQ7Ts)
+* [ ] [21/12/2025 **Ces métiers qui vont disparaître avec l'IA (et comment sauver le votre)** 16 262 **14:40**](https://www.youtube.com/watch?v=BU3_TwsxaaU)
+* [ ] [14/12/2025 **Comment Créer Un Site Web à 10’000€ Avec l’IA en 23 Minutes** 162 349 **23:01**](https://www.youtube.com/watch?v=rs6xRxeYuXo)
+* [ ] [07/12/2025 **L’IA de Google vient de DÉTRUIRE le règne de ChatGPT** 114 639 **21:18**](https://www.youtube.com/watch?v=lh8QAo4oXFw)
+* [ ] [23/11/2025 **10 Formations IA GRATUITES à Absolument Connaître en 2026** 79 316 **21:38**](https://www.youtube.com/watch?v=WA1imsvPTgg)
+* [ ] [16/11/2025 **3 Méthodes pour maîtriser l'IA mieux que 99% de la population** 17 437 **18:37**](https://www.youtube.com/watch?v=BXyn-0WOHPk)
+* [ ] [09/11/2025 **Comment Trouver Son Premier Client IA (Étape Par Étape)** 22 188 **25:30**](https://www.youtube.com/watch?v=MKbXzAu8cCQ)
+* [ ] [02/11/2025 **Cette IA va Faire EXPLOSER ta Productivité (gagne +25h/semaine)** 29 962 **20:09**](https://www.youtube.com/watch?v=5Bb4_5FXZXY)
+* [ ] [26/10/2025 **Les MCP ont créé l’IA parfaite (et voici comment l’utiliser)** 40 062 **26:23**](https://www.youtube.com/watch?v=KVmrBLqyagg)
+* [ ] [19/10/2025 **Tout Comprendre sur l'IA en Seulement 12 Minutes** 31 004 **11:45**](https://www.youtube.com/watch?v=Gt6mk2oKrfw)
+* [ ] [12/10/2025 **Comment Gagner de l’Argent avec l’IA** 92 341 **16:28**](https://www.youtube.com/watch?v=-aFI7M5zCt8)
+* [ ] [05/10/2025 **Je Crée un Business en 20 min avec 4 IA GRATUITE de Google** 163 900 **22:34**](https://www.youtube.com/watch?v=JG1TcUROLDE)
+* [ ] [28/09/2025 **Comment Créer des Publicités Virales avec l’IA (prompt secret)** 51 268 **30:08**](https://www.youtube.com/watch?v=7i0wjuHvAsM)
+* [ ] [21/09/2025 **Comment maîtriser l'IA mieux que 99% des entrepreneurs (3 secrets)** 34 358 **22:15**](https://www.youtube.com/watch?v=b1LIXsHRQl0)
+* [ ] [08/09/2025 **Cette Technologie IA Va Remplacer Des Millions (Voici Comment se Préparer)** 59 076 **25:06**](https://www.youtube.com/watch?v=woHp2D3JPOI)
+* [ ] [01/09/2025 **5 Utilisations Incroyable du Nouveau ChatGPT! (automatisez tout)** 76 572 **23:14**](https://www.youtube.com/watch?v=TWbj-gJds6A)
+* [ ] [24/08/2025 **Il quitte Louis Vuitton pour devenir Expert IA (contrat 6900€)** 9 454 **35:11**](https://www.youtube.com/watch?v=9DeCcBKHj-o)
+* [ ] [11/08/2025 **11 erreurs que j’ai faites en levant 500’000€ à 20 ans** 8 220 **17:45**](https://www.youtube.com/watch?v=mETGrIvT0JU)
+* [ ] [03/08/2025 **Créer un Agent IA WhatsApp en Seulement 30 min (Tutoriel n8n)** 84 550 **37:36**](https://www.youtube.com/watch?v=zndri9XxLt4)
+* [ ] [28/07/2025 **Comment l’IA tue les jobs de la classe moyenne (et c'est voulu)** 37 646 **15:06**](https://www.youtube.com/watch?v=GJAQXJLE2Jk)
+* [ ] [21/07/2025 **13 Outils IA Qui Font Exploser Des Business (avec zéro employé)** 96 953 **22:22**](https://www.youtube.com/watch?v=xkmHaEqM13A)
+* [ ] [06/07/2025 **Comment Créer des Agents IA en 2026 : Formation Complète Débutant** 178 295 **04:01:30**](https://www.youtube.com/watch?v=nboNlCGFKw4)
+* [ ] [15/06/2025 **Apprends 10x Plus Vite : La Méthode IA (Presque) Illégale** 36 193 **25:26**](https://www.youtube.com/watch?v=ZZ2paFTunww)
+* [ ] [01/06/2025 **Comment Remplacer une Équipe Marketing COMPLÈTE avec l’IA** 37 300 **36:58**](https://www.youtube.com/watch?v=bppCWe03MzY)
+* [ ] [25/05/2025 **8 Compétences IA INDISPENSABLE Pour Survivre en 2026** 69 771 **23:26**](https://www.youtube.com/watch?v=2z1BZ_jWatc)
+* [ ] [18/05/2025 **5 Solutions IA que les Business s’Arrachent en 2026** 30 824 **14:27**](https://www.youtube.com/watch?v=WMdwP-ixRBg)
+* [ ] [05/05/2025 **Comment Créer Une Application à 10’000€ Avec l’IA (sans coder)** 147 351 **40:01**](https://www.youtube.com/watch?v=BUI7od7R15k)
+* [ ] [27/04/2025 **Cette Technologie IA Fait Exploser Des Business (avec zéro employé)** 152 427 **36:47**](https://www.youtube.com/watch?v=5wEPh8AAxFA)
+* [ ] [20/04/2025 **Comment Automatiser un Business avec l’IA en 3 Étapes (Guide Débutant)** 49 726 **29:02**](https://www.youtube.com/watch?v=bis3VvL5da8)
+* [ ] [13/04/2025 **20 Utilisations Du Nouveau ChatGPT à ABSOLUMENT Connaître en 2026** 63 220 **21:36**](https://www.youtube.com/watch?v=vxKtbHQXWEk)
+* [ ] [23/03/2025 **La méthode infaillible pour TOUT apprendre avec l'IA** 125 035 **25:37**](https://www.youtube.com/watch?v=aiTSY-aLAgY)
+* [ ] [09/03/2025 **5 Méthodes Concrètes Pour Gagner de l'Argent Avec l’IA (sans expérience)** 64 613 **24:39**](https://www.youtube.com/watch?v=Wv37AqUHlbo)
+* [ ] [02/03/2025 **Quelles sont les 7 niveaux d’évolution de l’IA ? (plus que 3)** 19 141 **15:41**](https://www.youtube.com/watch?v=6XgXs4tszNQ)
+* [ ] [23/02/2025 **Quel est le meilleur outil IA pour VOUS ? Comparatif COMPLET** 30 990 **25:22**](https://www.youtube.com/watch?v=sDDFqbaHob8)
+* [ ] [16/02/2025 **Comment utiliser DeepSeek mieux que 99% de la population** 25 915 **35:05**](https://www.youtube.com/watch?v=XY0FHLXFWUg)
+* [ ] [09/02/2025 **Formation Intelligence Artificielle: Comment Devenir un Expert IA en 2026 | Guide Complet Débutant** 785 544 **03:00:55**](https://www.youtube.com/watch?v=Oi_sweaa0EE)
+* [ ] [26/01/2025 **Les agents IA ChatGPT arrivent ENFIN en France (Ils travaillent à ta place)** 27 190 **21:56**](https://www.youtube.com/watch?v=DoH1Q_P5fZU)
+* [ ] [19/01/2025 **Comment utiliser l'IA de Google mieux que 99% de la population** 101 725 **20:52**](https://www.youtube.com/watch?v=prk8aHT8nsM)
+* [ ] [12/01/2025 **Qu'est ce qu'un AGENT IA ? (et pourquoi tout le monde en parle)** 67 208 **12:46**](https://www.youtube.com/watch?v=Uau3KVjR2Tk)
+* [ ] [05/01/2025 **Tournage avec Brut. (j'ai demandé aux parisiens si l'IA était une menace)** 4 144 **06:34**](https://www.youtube.com/watch?v=tkWajSx6z08)
+* [ ] [29/12/2024 **J'ai testé 600 outils IA et voici les meilleurs** 93 785 **09:19**](https://www.youtube.com/watch?v=rfo3305l7Nc)
+* [ ] [22/12/2024 **La Vérité Cachée sur l’IA: 6 Étapes Pour Survivre en 2026** 31 804 **19:33**](https://www.youtube.com/watch?v=v5VQ4-ucR_4)
+* [ ] [12/12/2024 **Cette IA est terrifiante (et elle est 100% autonome)** 41 999 **24:40**](https://www.youtube.com/watch?v=K1gC_I-MOG0)
+* [ ] [08/12/2024 **11 Applications IA GRATUITES à Absolument Connaître en 2026** 720 303 **19:43**](https://www.youtube.com/watch?v=ZyIxfRi41uk)
+* [ ] [01/12/2024 **Comment Ajouter ChatGPT Vocal à Son Site Web en 2026 (Guide complet)** 17 424 **23:14**](https://www.youtube.com/watch?v=Qrk_ipNcH1I)
+* [ ] [24/11/2024 **Comment Créer Sa Propre Application IA (en moins de 30min)** 64 060 **21:52**](https://www.youtube.com/watch?v=nS2L2Ub6FVQ)
+* [ ] [17/11/2024 **Comment créer une App COMPLÈTE avec l’IA (vous n’allez pas le croire)** 600 654 **18:16**](https://www.youtube.com/watch?v=EzcW9L4D9s4)
+* [ ] [10/11/2024 **J’ai Utilisé l’IA Pour Cloner une APP en 24H** 223 681 **22:44**](https://www.youtube.com/watch?v=6C-5xgs8IZs)
+* [ ] [04/11/2024 **ChatGPT vient de DÉTRUIRE l’empire Google** 17 702 **21:19**](https://www.youtube.com/watch?v=oaIiHbvVdXY)
+* [ ] [28/10/2024 **L'assistant vocal ChatGPT arrive ENFIN en France (et ça fait peur)** 187 042 **20:08**](https://www.youtube.com/watch?v=aKhP0hgJaUY)
+* [ ] [23/10/2024 **Formation CHATGPT: Comment utiliser ChatGPT en 2026 (TUTO Complet)** 162 746 **01:19:43**](https://www.youtube.com/watch?v=Tuok-McFtYo)
+* [ ] [14/10/2024 **Créer un Agent IA Vocal en Seulement 20 min (Tutoriel Débutant)** 31 525 **22:53**](https://www.youtube.com/watch?v=UjG4MPc59Go)
+* [ ] [07/10/2024 **Cette IA Crée Des Graphiques INCROYABLES en 10 Secondes** 31 909 **13:57**](https://www.youtube.com/watch?v=qnkGbBgmyp4)
+* [ ] [30/09/2024 **Comment utiliser ChatGPT mieux que 99% de la population** 139 978 **24:36**](https://www.youtube.com/watch?v=8YUxdeFZyXg)
+* [ ] [23/09/2024 **6 Solutions d’Intelligence Artificielle à CRÉER en 2026 (sans expérience)** 86 767 **35:13**](https://www.youtube.com/watch?v=M16UXgwn6Wo)
+* [ ] [19/08/2024 **Cette IA vient de DÉTRUIRE le règne de ChatGPT** 174 856 **21:46**](https://www.youtube.com/watch?v=2gN11pS1E1E)
+* [ ] [12/08/2024 **Je laisse ChatGPT répondre à mes appels pendant 24h** 36 388 **22:43**](https://www.youtube.com/watch?v=mzJPy_CXOME)
+* [ ] [06/08/2024 **Cette IA Crée une Application COMPLÈTE en 10 min ! IMPRESSIONNANT !** 275 035 **21:23**](https://www.youtube.com/watch?v=oOz2zPjJk0o)
+* [ ] [31/07/2024 **Comment maîtriser l'IA mieux que 99% de la population (3 secrets)** 407 045 **18:49**](https://www.youtube.com/watch?v=Q4x_E1WD57s)
+* [ ] [27/07/2024 **L’IA va remplacer ces 12 métiers en 2027** 270 082 **18:00**](https://www.youtube.com/watch?v=FpxbvgvU5ps)
+* [ ] [08/07/2024 **Cette IA est la plus grande MENACE depuis ChatGPT** 188 792 **18:48**](https://www.youtube.com/watch?v=BlvzD4WrYdY)
+* [ ] [01/07/2024 **J’ai Créé une Armée d’Agents IA Pour me Remplacer !** 58 011 **23:49**](https://www.youtube.com/watch?v=sAexOcGzLmU)
+* [ ] [24/06/2024 **Automatiser toutes vos tâches dans Perplexity (Ma technique secrète)** 25 567 **20:47**](https://www.youtube.com/watch?v=8kBp8VPmKVc)
+* [ ] [17/06/2024 **J’ai arrêté d’utiliser Excel et Google Sheet à cause de cette IA** 53 692 **09:54**](https://www.youtube.com/watch?v=-OgwVx_u-QU)
+* [ ] [10/06/2024 **Cette IA Crée Du Contenu à l’INFINI ! (100% Original)** 23 550 **21:13**](https://www.youtube.com/watch?v=tPtkjHghfCo)
+* [ ] [03/06/2024 **J’ai arrêté d’utiliser Google et ChatGPT à cause de cette IA** 176 125 **23:16**](https://www.youtube.com/watch?v=9vTVzD7fMsA)
+* [ ] [27/05/2024 **12 Utilisations INCROYABLES de GPT-4o ! (Le futur de l’IA)** 26 648 **22:36**](https://www.youtube.com/watch?v=yGTWl98pnm0)
+* [ ] [20/05/2024 **Voici le meilleur agent IA à créer en 2025** 4 549 **14:15**](https://www.youtube.com/watch?v=y3rDjSCpmTk)
+* [ ] [19/05/2024 **7 Outils IA Gratuit à ABSOLUMENT Connaître en 2026** 23 195 **13:29**](https://www.youtube.com/watch?v=hLAKS_jIZsA)
+* [ ] [06/05/2024 **Les 5 MEILLEURS Agents IA à Intégrer Dans WhatsApp** 8 005 **20:25**](https://www.youtube.com/watch?v=lPXgk1dRrJY)
+* [ ] [22/04/2024 **Création d’un Agent IA en LIVE** 5 489 **21:42**](https://www.youtube.com/watch?v=2o23omvW8k0)
+* [ ] [06/04/2024 **Comment créer un Agent IA d’onboarding client** 5 298 **23:49**](https://www.youtube.com/watch?v=J8vm-TvBj58)
+
+## 3 FR-AI **[benoitferrere](https://www.youtube.com/@benoitferrere/videos)** ( **60** videos - 168 920 vues - 18 heures et 27 minutes )
+
+* [ ] [27/07/2026 **Ce qui manque à 90% des Agents IA** 87 **05:11**](https://www.youtube.com/watch?v=-HZkW87UjcA)
+* [ ] [25/07/2026 **J’ai connecté Kimi K3 à une ontologie métier - Démonstration** 700 **16:26**](https://www.youtube.com/watch?v=9bg_9-sWvp0)
+* [ ] [20/07/2026 **Claude + MCP + Ontologie : une démo métier concrète** 245 **22:18**](https://www.youtube.com/watch?v=P03D0xCFMwg)
+* [ ] [13/07/2026 **J'ai benchmarké 4 Architectures IA sur le même cas d'usage. Voici les résultats** 264 **20:13**](https://www.youtube.com/watch?v=4vhMbB8GpLU)
+* [ ] [07/07/2026 **Pourquoi les Agents IA perdent en mémoire ? | Contexte Rot, Compression et fenêtre de contexte** 113 **18:20**](https://www.youtube.com/watch?v=Fx4eF97eOKQ)
+* [ ] [05/07/2026 **Tu dois comprendre les AI Agent Harness & le Loop Engineering en 20 minutes | LLM Ops, Eval & RAG** 643 **18:03**](https://www.youtube.com/watch?v=O0WUFWGUf1k)
+* [ ] [28/06/2026 **L'application Hermes Desktop change tout ! (Full Setup en 15 minutes)** 902 **14:54**](https://www.youtube.com/watch?v=glsA-N2jlu0)
+* [ ] [25/06/2026 **Ce nouveau modèle de Qwen simule le monde : Je t'explique tout (Qwen Agent World)** 312 **07:33**](https://www.youtube.com/watch?v=oA8P3WtIdRA)
+* [ ] [21/06/2026 **Architecture complète d'Hermès | Mémoire, contexte et gateway expliqués** 713 **22:31**](https://www.youtube.com/watch?v=EA-6ZQmu8YM)
+* [ ] [09/06/2026 **Tes GPU IA sont sous-exploités : NVIDIA Dynamo expliqué** 89 **14:51**](https://www.youtube.com/watch?v=H4FufF3VV8I)
+* [ ] [29/04/2026 **Ton RAG sous performe ? Voilà pourquoi : Query Optimization** 79 **10:51**](https://www.youtube.com/watch?v=zegoPtwcys8)
+* [ ] [28/04/2026 **Les 6 Concepts clés pour réduire les coûts de tes LLMS (FinOps IA)** 79 **08:55**](https://www.youtube.com/watch?v=8zTzUYetQmQ)
+* [ ] [23/04/2026 **Réduire les coûts de tokens de 99.9% avec le Programmatic Tool Calling sur n8n** 159 **15:46**](https://www.youtube.com/watch?v=xfQwFKGgImQ)
+* [ ] [17/03/2026 **Ce que tu dois comprendre sur le mécanisme d'attention sur tes LLMS Aujourd'hui** 110 **16:07**](https://www.youtube.com/watch?v=33slAYZ1dBI)
+* [ ] [11/03/2026 **Sécurisez ces Agent IA : Ce que tout le monde oublie** 233 **41:27**](https://www.youtube.com/watch?v=h0vG08kB3po)
+* [ ] [05/03/2026 **Anthropic a complètement changé ta MANIERE DE CODER avec leurs nouvelles versions de skills** 3 935 **14:24**](https://www.youtube.com/watch?v=rhZ3NW6sLi0)
+* [ ] [04/03/2026 **Pourquoi Le System Design est Devenu Critique en IA?** 316 **10:56**](https://www.youtube.com/watch?v=vxTZhZ1WIAU)
+* [ ] [02/03/2026 **Construire une ontologie sans coder : le cas d'usage assurance** 137 **06:12**](https://www.youtube.com/watch?v=lU5cUmeBaIM)
+* [ ] [01/03/2026 **Comment l'IA lie votre logique métier à la prise de décision ?** 134 **06:04**](https://www.youtube.com/watch?v=4R43XTV3eiA)
+* [ ] [10/02/2026 **Tes Agents IA ont accès à tes flux métiers grâce à cette plateforme.** 262 **05:00**](https://www.youtube.com/watch?v=5NPTCDBjsdQ)
+* [ ] [07/09/2025 **Améliores ton RAG avec ces 2 techniques (Tuto  + use-case Financier)** 748 **15:01**](https://www.youtube.com/watch?v=kBaENsM8nqE)
+* [ ] [26/08/2025 **Les 6 nœuds essentiels à maitriser sur n8n - Démo & Exemple** 1 189 **34:25**](https://www.youtube.com/watch?v=cZArONj83D8)
+* [ ] [17/08/2025 **Créer tes Agents IA avec le Context Engineering** 1 012 **29:52**](https://www.youtube.com/watch?v=53oFRKAOeYI)
+* [ ] [06/08/2025 **La vidéo pour enfin comprendre le RAG en 30 minutes !** 1 388 **29:30**](https://www.youtube.com/watch?v=9QFfbK4zvJo)
+* [ ] [03/08/2025 **Masterclass Langgraph et construis ton premier système IA !** 5 210 **46:37**](https://www.youtube.com/watch?v=jEAwG_U3Qpk)
+* [ ] [30/06/2025 **Cet Agent IA Ultime Navigue comme un humain - n8n & Airtop (Tuto + Démo)** 687 **09:42**](https://www.youtube.com/watch?v=Tg80Njv0GP0)
+* [ ] [20/06/2025 **Matching IA Qonto : 100 % automatisé avec n8n | Tutoriel + Démo** 872 **21:43**](https://www.youtube.com/watch?v=E3XpbzFjhuY)
+* [ ] [01/06/2025 **Ce Système IA cartographie complètement les entreprises - n8n** 2 688 **24:00**](https://www.youtube.com/watch?v=t77t4MAIKIU)
+* [ ] [03/05/2025 **Les webhooks sur n8n de débutant à Pro : Etape par étape** 7 106 **24:25**](https://www.youtube.com/watch?v=sh6K862NAkk)
+* [ ] [01/05/2025 **Maitrise toutes les fonctions sur n8n en une seule vidéo ! Tuto Débutant** 1 633 **50:12**](https://www.youtube.com/watch?v=Wr8Jq0khD20)
+* [ ] [29/04/2025 **Comment j'ai créer l'Infrastructure IA Local Ultime pour tes Agents IA** 3 749 **13:25**](https://www.youtube.com/watch?v=M32PMSSmJqs)
+* [ ] [21/04/2025 **Comment créer un Agent IA qui s'améliore - Tuto n8n (Template inclus)** 5 487 **20:54**](https://www.youtube.com/watch?v=EsuEjAWrqOI)
+* [ ] [24/03/2025 **Créer un Agent IA avec un MCP sur n8n avec Docker en 13 minutes** 7 496 **13:54**](https://www.youtube.com/watch?v=UyNLn4v559o)
+* [ ] [03/03/2025 **Comment Créer Des Agents IA Vraiment Efficaces ? (Ma Méthodologie)** 2 472 **21:51**](https://www.youtube.com/watch?v=WkOwQGmABnM)
+* [ ] [24/02/2025 **Mise à jour n8n : C'est devenu 10x plus facile de créer tes Agents IA** 4 685 **06:22**](https://www.youtube.com/watch?v=A48cDeXZWnI)
+* [ ] [23/02/2025 **Comment formater 99% de vos documents complexes avec l'IA ?** 3 293 **10:30**](https://www.youtube.com/watch?v=gDjTyr8OF-c)
+* [ ] [06/02/2025 **Multi Agent IA + RAG : La Solution Ultime – (tuto + template)** 4 133 **19:49**](https://www.youtube.com/watch?v=-wInzQPth8E)
+* [ ] [28/01/2025 **Copie cet Agent IA Indispensable pour ton Formulaire en 30 minutes - n8n (tuto + template)** 2 460 **32:54**](https://www.youtube.com/watch?v=EMAJsGUZAyg)
+* [ ] [22/01/2025 **Comment connecter Google à ton Agent IA en 5 minutes - tuto n8n (2025)** 9 678 **05:07**](https://www.youtube.com/watch?v=Jb_VKKBPIis)
+* [ ] [21/01/2025 **Agent IA Immobilier fais ton inventaire ultra rapidement - n8n (tuto + template)** 3 041 **27:50**](https://www.youtube.com/watch?v=Oika8vDsSM0)
+* [ ] [17/01/2025 **La seule vidéo dont tu as besoin pour Construire des Agents IA n8n en 2025** 34 395 **40:58**](https://www.youtube.com/watch?v=UhhhBOdVM_A)
+* [ ] [14/01/2025 **Le Prompt IA Pour Tous les Dominer** 1 979 **05:55**](https://www.youtube.com/watch?v=wWc8CQWa50I)
+* [ ] [12/01/2025 **Agent IA Ultime qui Gère tes Factures (tuto + template)** 3 631 **15:14**](https://www.youtube.com/watch?v=6CYqIpLLBaQ)
+* [ ] [09/01/2025 **Agent IA + Machine Learning = Prédiction du Désabonnement (tuto & template)** 1 278 **13:33**](https://www.youtube.com/watch?v=AfRuMi8pshk)
+* [ ] [05/01/2025 **Copie cet Agent IA Data-Visualisation - n8n & nocodb (tuto + template)** 2 812 **09:43**](https://www.youtube.com/watch?v=j4zQK7U49Ho)
+* [ ] [02/01/2025 **Ce Multi Agent IA Crée du Contenu avec ton style - n8n (Tuto & Template)** 2 859 **07:54**](https://www.youtube.com/watch?v=mRoJaDTLsEo)
+* [ ] [01/01/2025 **Comment Prédire un Prêt Financier grâce à un Agent IA Vocale + Machine Learning (tuto & template)** 444 **01:20:03**](https://www.youtube.com/watch?v=j6g5kMX2Nrw)
+* [ ] [31/12/2024 **Copie le Meilleur Agent IA Vocal - n8n et ElevenLabs (Tuto + Template)** 5 516 **23:46**](https://www.youtube.com/watch?v=zBASfE_fUlk)
+* [ ] [20/12/2024 **Transforme tes vidéos Youtube en workflow Surpuissant - n8n (NO CODE)** 1 135 **06:28**](https://www.youtube.com/watch?v=ux5XIjjm9Hg)
+* [ ] [18/12/2024 **Comment construire un Agent IA Vocal en 10 minutes - Tutoriel | ElevenLabs** 2 798 **09:55**](https://www.youtube.com/watch?v=cJgpJ3q8iNI)
+* [ ] [16/12/2024 **Installer localement n8n avec Docker - Tutoriel** 24 753 **08:14**](https://www.youtube.com/watch?v=-FGMGw2MY0c)
+* [ ] [12/12/2024 **Créer un Agent IA de Scraping avec n8n (Template inclus)** 4 870 **08:35**](https://www.youtube.com/watch?v=hZDoP9aqOz0)
+* [ ] [27/11/2024 **Tuto Airtable  -  Lier Plusieurs Tables** 1 111 **13:04**](https://www.youtube.com/watch?v=qENzVNAzfD4)
+* [ ] [21/11/2024 **Tuto Airtable   Les Automatisations** 632 **07:38**](https://www.youtube.com/watch?v=gZM-kqsG0O4)
+* [ ] [20/11/2024 **Tuto Airtable  - Les Formules (Ma méthode INFAILLIBLE)** 589 **08:23**](https://www.youtube.com/watch?v=s-xuIDOXGb4)
+* [ ] [19/11/2024 **Les 4 Niveaux d'utilisation de l'IA dans un Business** 351 **08:46**](https://www.youtube.com/watch?v=OCTSeoESDo8)
+* [ ] [16/11/2024 **Comment utiliser les Regex avec Make** 186 **25:17**](https://www.youtube.com/watch?v=qxBVRhj-vII)
+* [ ] [14/11/2024 **Les 3 Meilleurs Use Cases sur Airtable** 240 **08:41**](https://www.youtube.com/watch?v=5KYdbSUODD8)
+* [ ] [07/11/2024 **La To-Do list pour te Délivrer de l'Opérationnel (Airtable)** 309 **18:42**](https://www.youtube.com/watch?v=mQp8-_WaxVg)
+* [ ] [06/11/2024 **Masteclass CRM + IA  - (Airtable & Make.com)** 493 **32:38**](https://www.youtube.com/watch?v=GD8WsycAHiY)

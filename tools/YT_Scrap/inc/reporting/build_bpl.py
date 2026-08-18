@@ -25,20 +25,18 @@ DEFAULT_BPL_TITLE = "# BPL Quotidien (Une lecon - ISC - 2mnPy - BdC - Graven - J
 TARGET_AUTHORS = [
     {"author": "foxxpy", "label": "FR-Maths", "scrap_id": 21},
     {"author": "SavoirPourTous", "label": "FR-Graphism", "scrap_id": 25},
-    
     {"author": "Gravenilvectuto", "label": "FR-Py", "scrap_id": 7},
     {"author": "bandedecodeurs", "label": "FR-Py", "scrap_id": 11},
     {"author": "InformatiqueSansComplexe", "label": "FR-Py", "scrap_id": 14},
     {"author": "2minutesPy", "label": "FR/GB-Py", "scrap_id": 17},
     {"author": "Indently", "label": "GB-Py", "scrap_id": 20},
     {"author": "codewithjoshoffical", "label": "GB-Py", "scrap_id": 23},
-    
     {"author": "sriedynurcahyo3894", "label": "Mute-Flet", "scrap_id": 4},
     {"author": "DevSenate", "label": "GB-Py Flet", "scrap_id": 22},
     {"author": "addinyy", "label": "GB-Py Flet", "scrap_id": 24},
-    
     {"author": "JordyBayo", "label": "FR-AI", "scrap_id": 18},
     {"author": "yassine-sdiri", "label": "FR-AI", "scrap_id": 26},
+    {"author": "benoitferrere", "label": "FR-AI", "scrap_id": 27},
 ]
 
 TARGET_BY_AUTHOR = {item["author"]: item for item in TARGET_AUTHORS}
