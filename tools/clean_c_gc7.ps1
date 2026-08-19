@@ -1,4 +1,8 @@
 # ============================================================
+# tools/clean_c_gc7.ps1
+# ============================================================
+
+# ============================================================
 # NETTOYAGE SYSTEMATIQUE MULTI-DISQUES (C:, D:, E:)
 # ============================================================
 
@@ -214,15 +218,12 @@ function Clear-FolderContents {
 # ============================================================
 
 Write-Host "`n============================================================" -ForegroundColor Cyan
-Write-Host "VIDAGE DE LA CORBEILLE" -ForegroundColor Cyan
+Write-Host "VIDAGE DE LA CORBEILLE (C: et E:)" -ForegroundColor Cyan
 Write-Host "============================================================" -ForegroundColor Cyan
 
 try {
 
-    # Mesure avant suppression.
-    # Cette valeur est informative uniquement : Windows ne permet
-    # pas toujours de répartir proprement la taille par disque.
-
+    # Mesure avant suppression pour C, D et E (D est pris en compte juste pour info)
     $recycleBefore = [int64]0
 
     foreach ($drive in $drives) {
@@ -235,28 +236,25 @@ try {
         }
     }
 
-    Clear-RecycleBin -Force -ErrorAction Stop
+    # On vide explicitement C: et E: (D: a posé problème car c'est une clé USB, on l'exclut)
+    Clear-RecycleBin -DriveLetter C, E -Force -ErrorAction Stop
 
     $recycleBinFreed = $recycleBefore
 
-    Write-Host "Corbeille vidée." -ForegroundColor Green
+    Write-Host "Corbeille vidée pour C: et E:." -ForegroundColor Green
 
     if ($recycleBefore -gt 0) {
 
-        Write-Host `
-            "Taille estimée libérée : $([math]::Round($recycleBefore / 1GB, 3)) Go" `
-            -ForegroundColor Green
+        Write-Host "Taille estimée libérée (C+D+E) : $([math]::Round($recycleBefore / 1GB, 3)) Go" -ForegroundColor Green
     }
     else {
 
-        Write-Host "Corbeille déjà vide." -ForegroundColor DarkGray
+        Write-Host "Corbeilles déjà vides." -ForegroundColor DarkGray
     }
 }
 catch {
 
-    Write-Host `
-        "Impossible de vider automatiquement la corbeille." `
-        -ForegroundColor DarkYellow
+    Write-Host "Impossible de vider automatiquement la corbeille pour C: et E:." -ForegroundColor DarkYellow
 }
 
 # ============================================================
@@ -490,9 +488,9 @@ foreach ($location in $searchLocations) {
                     -Path $cache.FullName `
                     -Category "__pycache__"
 
-                # Write-Host `
-                #     "  Supprimé : $($cache.FullName) ($([math]::Round($cacheSize / 1MB, 2)) Mo)" `
-                #     -ForegroundColor Green
+                Write-Host `
+                    "  Supprimé : $($cache.FullName) ($([math]::Round($cacheSize / 1MB, 2)) Mo)" `
+                    -ForegroundColor Green
             }
             catch {
 
